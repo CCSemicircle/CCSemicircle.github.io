@@ -4,13 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="软件工程,前端,NLP">
-    <meta name="description" content="
-title：Python_PyTorch10.0 Pytorch教程
-视频教程：PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】
-
-10.1 安装相关安装包10.1.1 安装NVIDA
-详见博客：Windows10 NVID">
+    <meta name="keywords" content="python,Pytorch,教程,安装教学,Debug">
+    <meta name="description" content="Python使用之PyTorch教程，包含PyTorch在深度学习项目中的常见用法，也包含一些DeBug的案例。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +17,7 @@ title：Python_PyTorch10.0 Pytorch教程
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>fdChen的掉发收集箱</title>
+    <title>Python_PyTorch | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -292,12 +287,12 @@ title：Python_PyTorch10.0 Pytorch教程
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.fdchen.host/pytorch.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Python_PyTorch</h1>
                 </div>
             </div>
         </div>
@@ -411,12 +406,33 @@ title：Python_PyTorch10.0 Pytorch教程
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Debug/">
+                                <span class="chip bg-color">Debug</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/Pytorch/">
+                                <span class="chip bg-color">Pytorch</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -425,7 +441,7 @@ title：Python_PyTorch10.0 Pytorch教程
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-03-16
+                    2022-01-01
                 </div>
                 
 
@@ -434,7 +450,7 @@ title：Python_PyTorch10.0 Pytorch教程
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.7k
+                    2.8k
                 </div>
                 
 
@@ -461,57 +477,62 @@ title：Python_PyTorch10.0 Pytorch教程
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="title：Python-PyTorch"><a href="#title：Python-PyTorch" class="headerlink" title="title：Python_PyTorch"></a>title：Python_PyTorch</h2><h2 id="10-0-Pytorch教程"><a href="#10-0-Pytorch教程" class="headerlink" title="10.0 Pytorch教程"></a>10.0 Pytorch教程</h2><ul>
+                <h1 id="0-Pytorch教程"><a href="#0-Pytorch教程" class="headerlink" title="0 Pytorch教程"></a>0 Pytorch教程</h1><ul>
 <li>视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hE411t7RN?p=1">PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】</a></li>
 </ul>
-<h2 id="10-1-安装相关安装包"><a href="#10-1-安装相关安装包" class="headerlink" title="10.1 安装相关安装包"></a>10.1 安装相关安装包</h2><h3 id="10-1-1-安装NVIDA"><a href="#10-1-1-安装NVIDA" class="headerlink" title="10.1.1 安装NVIDA"></a>10.1.1 安装NVIDA</h3><ul>
+<h1 id="1-安装相关安装包"><a href="#1-安装相关安装包" class="headerlink" title="1 安装相关安装包"></a>1 安装相关安装包</h1><h2 id="1-1-安装NVIDA"><a href="#1-1-安装NVIDA" class="headerlink" title="1.1 安装NVIDA"></a>1.1 安装NVIDA</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44493841/article/details/103827326">Windows10 NVIDIA 驱动程序安装</a></li>
 </ul>
-<h3 id="10-1-2-Linux安装Anaconda"><a href="#10-1-2-Linux安装Anaconda" class="headerlink" title="10.1.2 Linux安装Anaconda"></a>10.1.2 Linux安装Anaconda</h3><ul>
+<h2 id="1-2-Linux安装Anaconda"><a href="#1-2-Linux安装Anaconda" class="headerlink" title="1.2 Linux安装Anaconda"></a>1.2 Linux安装Anaconda</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/349345180">Linux安装anaconda</a></li>
 </ul>
-<h3 id="10-1-3-在conda环境中安装Pytorch"><a href="#10-1-3-在conda环境中安装Pytorch" class="headerlink" title="10.1.3 在conda环境中安装Pytorch"></a>10.1.3 在conda环境中安装Pytorch</h3><p>从官网选择对应的版本，复制下载指令即可，官网链接：</p>
+<h2 id="1-3-在conda环境中安装Pytorch"><a href="#1-3-在conda环境中安装Pytorch" class="headerlink" title="1.3 在conda环境中安装Pytorch"></a>1.3 在conda环境中安装Pytorch</h2><p>从官网选择对应的版本，复制下载指令即可，官网链接：</p>
 <p><a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
-<h2 id="10-2-常用指令"><a href="#10-2-常用指令" class="headerlink" title="10.2 常用指令"></a>10.2 常用指令</h2><h3 id="10-2-1-一般指令"><a href="#10-2-1-一般指令" class="headerlink" title="10.2.1 一般指令"></a>10.2.1 一般指令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">torch.mm(<span class="built_in">input</span>, mat2, *, out=<span class="literal">None</span>) → Tensor</span><br><span class="line"><span class="comment">#矩阵转置</span></span><br><span class="line">torch.t(<span class="built_in">input</span>) → Tensor</span><br><span class="line">tensor.t()</span><br><span class="line"><span class="comment">#生成单元矩阵，对角线为1，其余为0的矩阵</span></span><br><span class="line">torch.eye(n, m=<span class="literal">None</span>, *, out=<span class="literal">None</span>, dtype=<span class="literal">None</span>, layout=torch.strided, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>) → Tensor</span><br><span class="line"><span class="comment">#设置和运行 CUDA 操作</span></span><br><span class="line">torch.cuda()</span><br><span class="line">tensor.cuda()</span><br><span class="line"><span class="comment">#把tensor_1扩展成size的形状</span></span><br><span class="line">tensor_1.expand(size)</span><br><span class="line"><span class="comment">#把tensor_1扩展成和tensor_2一样的形状</span></span><br><span class="line">tensor_1.expand_as(tensor_2)</span><br><span class="line"><span class="comment">#修改tensor形状</span></span><br><span class="line"><span class="comment">#view不会改变自身数据，返回的新的tensor与源tensor共享内存，即更改其中一个，另外一个也会跟着改变。</span></span><br><span class="line">tensor.view(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">tensor.view(-<span class="number">1</span>)  <span class="comment"># 把tensor变为一维结构</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-常用指令"><a href="#2-常用指令" class="headerlink" title="2 常用指令"></a>2 常用指令</h1><h2 id="2-1-一般指令"><a href="#2-1-一般指令" class="headerlink" title="2.1 一般指令"></a>2.1 一般指令</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">torch.mm(<span class="built_in">input</span>, mat2, *, out=<span class="literal">None</span>) → Tensor</span><br><span class="line"><span class="comment">#矩阵转置</span></span><br><span class="line">torch.t(<span class="built_in">input</span>) → Tensor</span><br><span class="line">tensor.t()</span><br><span class="line"><span class="comment">#生成单元矩阵，对角线为1，其余为0的矩阵</span></span><br><span class="line">torch.eye(n, m=<span class="literal">None</span>, *, out=<span class="literal">None</span>, dtype=<span class="literal">None</span>, layout=torch.strided, device=<span class="literal">None</span>, requires_grad=<span class="literal">False</span>) → Tensor</span><br><span class="line"><span class="comment">#设置和运行 CUDA 操作</span></span><br><span class="line">torch.cuda()</span><br><span class="line">tensor.cuda()</span><br><span class="line"><span class="comment">#把tensor_1扩展成size的形状</span></span><br><span class="line">tensor_1.expand(size)</span><br><span class="line"><span class="comment">#把tensor_1扩展成和tensor_2一样的形状</span></span><br><span class="line">tensor_1.expand_as(tensor_2)</span><br><span class="line"><span class="comment">#修改tensor形状</span></span><br><span class="line"><span class="comment">#view不会改变自身数据，返回的新的tensor与源tensor共享内存，即更改其中一个，另外一个也会跟着改变。</span></span><br><span class="line">tensor.view(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">tensor.view(-<span class="number">1</span>)  <span class="comment"># 把tensor变为一维结构</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-2-2-查看GPU信息"><a href="#10-2-2-查看GPU信息" class="headerlink" title="10.2.2 查看GPU信息"></a>10.2.2 查看GPU信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment">#cuda是否可用；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.device_count()</span><br><span class="line"><span class="comment">#返回gpu数量；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#返回gpu名字，设备索引默认从0开始；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.current_device()</span><br><span class="line"><span class="comment">#返回当前设备索引；</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-查看GPU信息"><a href="#2-2-查看GPU信息" class="headerlink" title="2.2 查看GPU信息"></a>2.2 查看GPU信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">torch.cuda.is_available()</span><br><span class="line"><span class="comment">#cuda是否可用；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.device_count()</span><br><span class="line"><span class="comment">#返回gpu数量；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.get_device_name(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#返回gpu名字，设备索引默认从0开始；</span></span><br><span class="line"></span><br><span class="line">torch.cuda.current_device()</span><br><span class="line"><span class="comment">#返回当前设备索引；</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="2-3-保存-x2F-加载模型，torch-save-x2F-load"><a href="#2-3-保存-x2F-加载模型，torch-save-x2F-load" class="headerlink" title="2.3 保存&#x2F;加载模型，torch.save()&#x2F;load()"></a>2.3 保存&#x2F;加载模型，torch.save()&#x2F;load()</h2><p>将优化器参数、损失值等一同保存下来，然后在恢复模型的时候连同其它参数一起恢复，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">model_save_path = os.path.join(model_save_dir, <span class="string">&#x27;model.pt&#x27;</span>)</span><br><span class="line">torch.save(&#123;</span><br><span class="line">            <span class="string">&#x27;epoch&#x27;</span>: epoch,</span><br><span class="line">            <span class="string">&#x27;model_state_dict&#x27;</span>: model.state_dict(),</span><br><span class="line">            <span class="string">&#x27;optimizer_state_dict&#x27;</span>: optimizer.state_dict(),</span><br><span class="line">            <span class="string">&#x27;loss&#x27;</span>: loss,</span><br><span class="line">    		<span class="string">&#x27;metrics&#x27;</span>: metrics</span><br><span class="line">            ...</span><br><span class="line">            &#125;, model_save_path)</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><strong>加载模型</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">checkpoint = torch.load(model_save_path)</span><br><span class="line">model.load_state_dict(checkpoint[<span class="string">&#x27;model_state_dict&#x27;</span>])</span><br><span class="line">optimizer.load_state_dict(checkpoint[<span class="string">&#x27;optimizer_state_dict&#x27;</span>])</span><br><span class="line">epoch = checkpoint[<span class="string">&#x27;epoch&#x27;</span>]</span><br><span class="line">loss = checkpoint[<span class="string">&#x27;loss&#x27;</span>]</span><br><span class="line">metrics = checkpoint[<span class="string">&#x27;metrics&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
-<h2 id="10-3-重要函数"><a href="#10-3-重要函数" class="headerlink" title="10.3 重要函数"></a>10.3 重要函数</h2><h3 id="10-3-1-torch-svd-A"><a href="#10-3-1-torch-svd-A" class="headerlink" title="10.3.1 torch.svd(A)"></a>10.3.1 torch.svd(A)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#计算矩阵或矩阵批次的奇异值分解input，奇异值按降序返回</span></span><br><span class="line">torch.svd(<span class="built_in">input</span>, some=<span class="literal">True</span>, out=<span class="literal">None</span>) -&gt; (Tensor, Tensor, Tensor)</span><br><span class="line">U,S,V=torch.svd(A)。 <span class="comment">#返回对形如 n×m的实矩阵 A 进行奇异值分解的结果，使得 A=USV^T。 U 为左奇异向量，形状为 n×n，S 为特征值矩阵，形状为 n×m ，V 为右奇异向量，形状为 m×m</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-重要函数"><a href="#3-重要函数" class="headerlink" title="3 重要函数"></a>3 重要函数</h1><h2 id="3-1-torch-svd-A"><a href="#3-1-torch-svd-A" class="headerlink" title="3.1 torch.svd(A)"></a>3.1 torch.svd(A)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#计算矩阵或矩阵批次的奇异值分解input，奇异值按降序返回</span></span><br><span class="line">torch.svd(<span class="built_in">input</span>, some=<span class="literal">True</span>, out=<span class="literal">None</span>) -&gt; (Tensor, Tensor, Tensor)</span><br><span class="line">U,S,V=torch.svd(A)。 <span class="comment">#返回对形如 n×m的实矩阵 A 进行奇异值分解的结果，使得 A=USV^T。 U 为左奇异向量，形状为 n×n，S 为特征值矩阵，形状为 n×m ，V 为右奇异向量，形状为 m×m</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>基于SVD的主成分分析代码</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### PCA降维 ###</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">PCA_svd</span>(<span class="params">X, k</span>):</span><br><span class="line">    <span class="comment"># X为输入数，n*m n维m个样本</span></span><br><span class="line">    <span class="comment"># k为目标维度数</span></span><br><span class="line">    X_mean = torch.mean(X.double(), <span class="number">1</span>,<span class="literal">True</span>)</span><br><span class="line">    A = X - X_mean.expand_as(X)  <span class="comment"># 对所有样本中心化</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>,A.size())</span><br><span class="line">    U,S,V = torch.svd(torch.t(A))  <span class="comment"># 对矩阵A做特征值分解（奇异值分解），注意此处的A进行的转置</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;V&#x27;</span>,V.size())</span><br><span class="line">    <span class="keyword">return</span> torch.mm(V[:k],A)  <span class="comment"># 返回新的特征矩阵</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-2-torch-mean-input-dim-keepdim-x3D-false"><a href="#10-3-2-torch-mean-input-dim-keepdim-x3D-false" class="headerlink" title="10.3.2 torch.mean(input, dim, keepdim&#x3D;false)"></a>10.3.2 torch.mean(input, dim, keepdim&#x3D;false)</h3><ul>
+<h2 id="3-2-torch-mean-input-dim-keepdim-x3D-false"><a href="#3-2-torch-mean-input-dim-keepdim-x3D-false" class="headerlink" title="3.2 torch.mean(input, dim, keepdim&#x3D;false)"></a>3.2 torch.mean(input, dim, keepdim&#x3D;false)</h2><ul>
 <li><strong>输入</strong>( <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor"><em>Tensor</em></a> ) – 输入张量。</li>
 <li><strong>dim</strong> ( <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#int"><em>int</em></a> <em>or</em> <em>tuple of python:ints</em> ) – 要减少的一个或多个维度。</li>
 <li><strong>keepdim</strong> ( <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#bool"><em>bool</em></a> ) – 输出张量是否<code>dim</code>保留。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;torch.mean(a, <span class="number">1</span>, <span class="literal">True</span>)</span><br><span class="line">tensor([[-<span class="number">0.0163</span>],</span><br><span class="line">        [-<span class="number">0.5085</span>],</span><br><span class="line">        [-<span class="number">0.4599</span>],</span><br><span class="line">        [ <span class="number">0.1807</span>]])</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-3-unsqueeze-与squeeze"><a href="#10-3-3-unsqueeze-与squeeze" class="headerlink" title="10.3.3 unsqueeze()与squeeze()"></a>10.3.3 unsqueeze()与squeeze()</h3><p>unsqueeze()：    在指定位置增加一个维度</p>
+<h2 id="3-3-unsqueeze-与squeeze"><a href="#3-3-unsqueeze-与squeeze" class="headerlink" title="3.3 unsqueeze()与squeeze()"></a>3.3 unsqueeze()与squeeze()</h2><p>unsqueeze()：    在指定位置增加一个维度</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a的size为(2，3)</span></span><br><span class="line">a.unsqueeze(<span class="number">1</span>) <span class="comment"># a.unsqueeze(-2)</span></span><br><span class="line"><span class="comment"># a的size为(2,1,3)</span></span><br></pre></td></tr></table></figure>
 
 <p>squeeze()：在指定位置删除一个长度为1的维度，注意长度一定要为1</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a的size为(1, 2，3)</span></span><br><span class="line">a.squeeze(<span class="number">0</span>) <span class="comment"># 下标从0开始</span></span><br><span class="line"><span class="comment"># a的size为(2,3)</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-4-arange-start-end-step"><a href="#10-3-4-arange-start-end-step" class="headerlink" title="10.3.4 arange(start, end, step)"></a>10.3.4 arange(start, end, step)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">5</span>)</span><br><span class="line">tensor([ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">tensor([ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">1</span>, <span class="number">2.5</span>, <span class="number">0.5</span>)</span><br><span class="line">tensor([ <span class="number">1.0000</span>,  <span class="number">1.5000</span>,  <span class="number">2.0000</span>])</span><br></pre></td></tr></table></figure>
+<h2 id="3-4-arange-start-end-step"><a href="#3-4-arange-start-end-step" class="headerlink" title="3.4 arange(start, end, step)"></a>3.4 arange(start, end, step)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">5</span>)</span><br><span class="line">tensor([ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">tensor([ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.arange(<span class="number">1</span>, <span class="number">2.5</span>, <span class="number">0.5</span>)</span><br><span class="line">tensor([ <span class="number">1.0000</span>,  <span class="number">1.5000</span>,  <span class="number">2.0000</span>])</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-5-tensor乘法广播机制"><a href="#10-3-5-tensor乘法广播机制" class="headerlink" title="10.3.5 tensor乘法广播机制"></a>10.3.5 tensor乘法广播机制</h3><p><strong>广播的执行过程：</strong></p>
+<h2 id="3-5-tensor乘法广播机制"><a href="#3-5-tensor乘法广播机制" class="headerlink" title="3.5 tensor乘法广播机制"></a>3.5 tensor乘法广播机制</h2><p><strong>广播的执行过程：</strong></p>
 <p>1.如果维度个数不同，则在维度较少的左边补1，使得维度的个数相同。</p>
 <p>2.各维度的维度大小不同时，如果有维度为1的，直接将该维拉伸至维度相同。</p>
-<h3 id="10-3-6-enisum"><a href="#10-3-6-enisum" class="headerlink" title="10.3.6 enisum"></a>10.3.6 enisum</h3><p><img src="http://img.fdchen.host//enisum.png" alt="image-20210626003645988"></p>
+<h2 id="3-6-enisum"><a href="#3-6-enisum" class="headerlink" title="3.6 enisum"></a>3.6 enisum</h2><p><img src="http://img.fdchen.host//enisum.png" alt="image-20210626003645988"></p>
 <p><img src="http://img.fdchen.host//enisum_%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.png" alt="image-20210626003925510"></p>
-<h3 id="10-3-7-randint-low-x3D-0-high-size"><a href="#10-3-7-randint-low-x3D-0-high-size" class="headerlink" title="10.3.7 randint(low&#x3D;0,high, size)"></a>10.3.7 randint(low&#x3D;0,high, size)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randint(<span class="number">3</span>, <span class="number">10</span>, (<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line">tensor([[<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">        [<span class="number">6</span>, <span class="number">7</span>]])</span><br></pre></td></tr></table></figure>
+<h2 id="3-7-randint-low-x3D-0-high-size"><a href="#3-7-randint-low-x3D-0-high-size" class="headerlink" title="3.7 randint(low&#x3D;0,high, size)"></a>3.7 randint(low&#x3D;0,high, size)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.randint(<span class="number">3</span>, <span class="number">10</span>, (<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line">tensor([[<span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">        [<span class="number">6</span>, <span class="number">7</span>]])</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-8-torch-backends-cudnn-deterministic"><a href="#10-3-8-torch-backends-cudnn-deterministic" class="headerlink" title="10.3.8 torch.backends.cudnn.deterministic"></a>10.3.8 torch.backends.cudnn.deterministic</h3><p>torch.backends.cudnn.deterministic是啥？顾名思义，将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的</p>
+<h2 id="3-8-torch-backends-cudnn-deterministic"><a href="#3-8-torch-backends-cudnn-deterministic" class="headerlink" title="3.8 torch.backends.cudnn.deterministic"></a>3.8 torch.backends.cudnn.deterministic</h2><p>torch.backends.cudnn.deterministic是啥？顾名思义，将这个 flag 置为True的话，每次返回的卷积算法将是确定的，即默认算法。如果配合上设置 Torch 的随机种子为固定值的话，应该可以保证每次运行网络的时候相同输入的输出是固定的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置随机数种子</span></span><br><span class="line">np.random.seed(<span class="number">1</span>)</span><br><span class="line">torch.manual_seed(<span class="number">1</span>)</span><br><span class="line">torch.cuda.manual_seed_all(<span class="number">1</span>)</span><br><span class="line">torch.backends.cudnn.deterministic = <span class="literal">True</span>  <span class="comment"># 保证每次结果一样</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-3-9-torch-optim"><a href="#10-3-9-torch-optim" class="headerlink" title="10.3.9 torch.optim"></a>10.3.9 torch.optim</h3><p>torch.optim是一个实现各种优化算法的包，实质就是更新权重。</p>
+<h2 id="3-9-torch-optim"><a href="#3-9-torch-optim" class="headerlink" title="3.9 torch.optim"></a>3.9 torch.optim</h2><p>torch.optim是一个实现各种优化算法的包，实质就是更新权重。</p>
 <ul>
 <li><p>如何使用优化器</p>
 <p>要使用，torch.optim您必须构造一个优化器对象，该对象将保存当前状态并根据计算出的梯度更新参数。</p>
@@ -519,33 +540,33 @@ title：Python_PyTorch10.0 Pytorch教程
 <li><p>构建它<br>要构造一个ptimizer你必须给它一个包含Variable要优化的参数（都应该是s）的迭代。然后，您可以指定特定于优化器的选项，例如学习率、权重衰减等。示</p>
 </li>
 </ul>
-<h3 id="10-4-1-tensor拒绝计算整数的平均数，需要用到double-函数"><a href="#10-4-1-tensor拒绝计算整数的平均数，需要用到double-函数" class="headerlink" title="10.4.1 tensor拒绝计算整数的平均数，需要用到double()函数"></a>10.4.1 tensor拒绝计算整数的平均数，需要用到double()函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.mean(X.double(), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="3-10-tensor拒绝计算整数的平均数，需要用到double-函数"><a href="#3-10-tensor拒绝计算整数的平均数，需要用到double-函数" class="headerlink" title="3.10 tensor拒绝计算整数的平均数，需要用到double()函数"></a>3.10 tensor拒绝计算整数的平均数，需要用到double()函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.mean(X.double(), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-4-2-可以作为占位符接收函数不需要的返回值"><a href="#10-4-2-可以作为占位符接收函数不需要的返回值" class="headerlink" title="10.4.2 _可以作为占位符接收函数不需要的返回值"></a>10.4.2 _可以作为占位符接收函数不需要的返回值</h3><h2 id="10-5-nn的相关使用"><a href="#10-5-nn的相关使用" class="headerlink" title="10.5 nn的相关使用"></a>10.5 nn的相关使用</h2><h3 id="10-5-1-item"><a href="#10-5-1-item" class="headerlink" title="10.5.1 item()"></a>10.5.1 item()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># item()返回单个值（标量）</span></span><br><span class="line">loss.item() <span class="comment"># 获得loss的值</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-11-可以作为占位符接收函数不需要的返回值"><a href="#3-11-可以作为占位符接收函数不需要的返回值" class="headerlink" title="3.11 _可以作为占位符接收函数不需要的返回值"></a>3.11 _可以作为占位符接收函数不需要的返回值</h2><h1 id="4-nn的相关使用"><a href="#4-nn的相关使用" class="headerlink" title="4 nn的相关使用"></a>4 nn的相关使用</h1><h2 id="4-1-item"><a href="#4-1-item" class="headerlink" title="4.1 item()"></a>4.1 item()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># item()返回单个值（标量）</span></span><br><span class="line">loss.item() <span class="comment"># 获得loss的值</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-2-detach"><a href="#10-5-2-detach" class="headerlink" title="10.5.2 detach()"></a>10.5.2 detach()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># detach()阻断反向传播，返回值仍为tensor</span></span><br><span class="line">gpu_info.detach()  <span class="comment">#返回tensor，仍在gpu上</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-2-detach"><a href="#4-2-detach" class="headerlink" title="4.2 detach()"></a>4.2 detach()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># detach()阻断反向传播，返回值仍为tensor</span></span><br><span class="line">gpu_info.detach()  <span class="comment">#返回tensor，仍在gpu上</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-3-cpu"><a href="#10-5-3-cpu" class="headerlink" title="10.5.3 cpu()"></a>10.5.3 cpu()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cpu()将变量放在cpu上，仍为tensor</span></span><br><span class="line">gpu_info.cpu()</span><br><span class="line">gpu_info.cpu().detach()</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-cpu"><a href="#4-3-cpu" class="headerlink" title="4.3 cpu()"></a>4.3 cpu()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cpu()将变量放在cpu上，仍为tensor</span></span><br><span class="line">gpu_info.cpu()</span><br><span class="line">gpu_info.cpu().detach()</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-4-设置提前停止"><a href="#10-5-4-设置提前停止" class="headerlink" title="10.5.4 设置提前停止"></a>10.5.4 设置提前停止</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置提前停止，patience代表忍受该指标多少个step不变化，当忍无可忍时，调整学习率。注，可以不是连续的n次。</span></span><br><span class="line">early_stopping = EarlyStopping(patience=self.args.patience, verbose=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-设置提前停止"><a href="#4-4-设置提前停止" class="headerlink" title="4.4 设置提前停止"></a>4.4 设置提前停止</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置提前停止，patience代表忍受该指标多少个step不变化，当忍无可忍时，调整学习率。注，可以不是连续的n次。</span></span><br><span class="line">early_stopping = EarlyStopping(patience=self.args.patience, verbose=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-5-checkpoints"><a href="#10-5-5-checkpoints" class="headerlink" title="10.5.5 checkpoints"></a>10.5.5 checkpoints</h3><p>保存和加载用于推理或恢复训练的通用检查点模型有助于从上次停止的地方开始。保存一般检查点时，您必须保存的不仅仅是模型的 state_dict。</p>
+<h2 id="4-5-checkpoints"><a href="#4-5-checkpoints" class="headerlink" title="4.5 checkpoints"></a>4.5 checkpoints</h2><p>保存和加载用于推理或恢复训练的通用检查点模型有助于从上次停止的地方开始。保存一般检查点时，您必须保存的不仅仅是模型的 state_dict。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = os.path.join(self.args.checkpoints, setting)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-6-AMP"><a href="#10-5-6-AMP" class="headerlink" title="10.5.6 AMP"></a>10.5.6 AMP</h3><p>自动混合精度训练，预示着Tensor的dtype类型会自动变化，也就是框架按需自动调整tensor的dtype（其实不是完全自动，有些地方还是需要手工干预）</p>
+<h2 id="4-6-AMP"><a href="#4-6-AMP" class="headerlink" title="4.6 AMP"></a>4.6 AMP</h2><p>自动混合精度训练，预示着Tensor的dtype类型会自动变化，也就是框架按需自动调整tensor的dtype（其实不是完全自动，有些地方还是需要手工干预）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在训练最开始之前实例化一个GradScaler对象</span></span><br><span class="line">scaler = GradScaler()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> epochs:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">input</span>, target <span class="keyword">in</span> data:</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向过程(model + loss)开启 autocast</span></span><br><span class="line">        <span class="keyword">with</span> autocast():</span><br><span class="line">            output = model(<span class="built_in">input</span>)</span><br><span class="line">            loss = loss_fn(output, target)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Scales loss. 为了梯度放大.</span></span><br><span class="line">        scaler.scale(loss).backward()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># scaler.step() 首先把梯度的值unscale回来.</span></span><br><span class="line">        <span class="comment"># 如果梯度的值不是 infs 或者 NaNs, 那么调用optimizer.step()来更新权重,</span></span><br><span class="line">        <span class="comment"># 否则，忽略step调用，从而保证权重不更新（不被破坏）</span></span><br><span class="line">        scaler.step(optimizer)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 准备着，看是否要增大scaler</span></span><br><span class="line">        scaler.update()</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-7-permute"><a href="#10-5-7-permute" class="headerlink" title="10.5.7 permute()"></a>10.5.7 permute()</h3><p>**Tensor.permute(a,b,c,d, …)**：permute函数可以对任意高维矩阵进行转置&#x2F;换位，但没有 torch.permute() 这个调用方式， 只能 Tensor.permute()：</p>
+<h2 id="4-7-permute"><a href="#4-7-permute" class="headerlink" title="4.7 permute()"></a>4.7 permute()</h2><p>**Tensor.permute(a,b,c,d, …)**：permute函数可以对任意高维矩阵进行转置&#x2F;换位，但没有 torch.permute() 这个调用方式， 只能 Tensor.permute()：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; torch.randn(2,3,4,5).permute(3,2,0,1).shape</span><br><span class="line">torch.Size([5, 4, 2, 3])</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-8-transpose-input-dim0-dim1"><a href="#10-5-8-transpose-input-dim0-dim1" class="headerlink" title="10.5.8 transpose(input, dim0, dim1)"></a>10.5.8 transpose(input, dim0, dim1)</h3><p>转置&#x2F;换位tensor中指定两个维度dim0 和 dim1的数据</p>
-<h3 id="10-5-9-nn-Conv1d"><a href="#10-5-9-nn-Conv1d" class="headerlink" title="10.5.9 nn.Conv1d()"></a>10.5.9 nn.Conv1d()</h3><p>卷积操作起源于图像处理，图像处理的数据一般为[batch_size, num_channel, height, width]</p>
+<h2 id="4-8-transpose-input-dim0-dim1"><a href="#4-8-transpose-input-dim0-dim1" class="headerlink" title="4.8 transpose(input, dim0, dim1)"></a>4.8 transpose(input, dim0, dim1)</h2><p>转置&#x2F;换位tensor中指定两个维度dim0 和 dim1的数据</p>
+<h2 id="4-9-nn-Conv1d"><a href="#4-9-nn-Conv1d" class="headerlink" title="4.9 nn.Conv1d()"></a>4.9 nn.Conv1d()</h2><p>卷积操作起源于图像处理，图像处理的数据一般为[batch_size, num_channel, height, width]</p>
 <p>因此，通道数需要放在第二个维度。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义</span></span><br><span class="line">self.tokenConv = nn.Conv1d(in_channels=c_in, out_channels=d_model,kernel_size=<span class="number">3</span>, padding=padding, padding_mode=<span class="string">&#x27;circular&#x27;</span>)</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line"><span class="comment"># x的结构为 [batch_size, len, dims]</span></span><br><span class="line"><span class="comment"># 此处需要获取feed_de的序列，因而先转置，以实现对len序列进行一维卷积，最后恢复原始数据维度排布</span></span><br><span class="line">x = self.tokenConv(x.permute(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>)).transpose(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-10-nn-init-kaiming-normal"><a href="#10-5-10-nn-init-kaiming-normal" class="headerlink" title="10.5.10 nn.init.kaiming_normal_"></a>10.5.10 nn.init.kaiming_normal_</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用正态分布数据初始化模型参数</span></span><br><span class="line">nn.init.kaiming_normal_(m.weight, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;leaky_relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="4-10-nn-init-kaiming-normal"><a href="#4-10-nn-init-kaiming-normal" class="headerlink" title="4.10 nn.init.kaiming_normal_"></a>4.10 nn.init.kaiming_normal_</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用正态分布数据初始化模型参数</span></span><br><span class="line">nn.init.kaiming_normal_(m.weight, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;leaky_relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-11-nn-embedding"><a href="#10-5-11-nn-embedding" class="headerlink" title="10.5.11 nn.embedding()"></a>10.5.11 nn.embedding()</h3><p>一个简单的查找表，用于存储固定字典和大小的embedding。</p>
+<h2 id="4-11-nn-embedding"><a href="#4-11-nn-embedding" class="headerlink" title="4.11 nn.embedding()"></a>4.11 nn.embedding()</h2><p>一个简单的查找表，用于存储固定字典和大小的embedding。</p>
 <p>参数：</p>
 <ul>
 <li>**num_ embedding ** ( <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#int"><em>int</em></a> ) –embedding字典的大小</li>
@@ -558,21 +579,21 @@ title：Python_PyTorch10.0 Pytorch教程
 </ul>
 <p>变量：</p>
 <p><strong>~Embedding.weight</strong> (<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor"><em>Tensor</em></a>) – 可学习权重模块的大小</p>
-<h3 id="10-5-12-nn-parameter-Parameter"><a href="#10-5-12-nn-parameter-Parameter" class="headerlink" title="10.5.12 nn.parameter.Parameter()"></a>10.5.12 nn.parameter.Parameter()</h3><p>一种被视为模块参数的tensor。</p>
+<h2 id="4-12-nn-parameter-Parameter"><a href="#4-12-nn-parameter-Parameter" class="headerlink" title="4.12 nn.parameter.Parameter()"></a>4.12 nn.parameter.Parameter()</h2><p>一种被视为模块参数的tensor。</p>
 <p>参数：</p>
 <ul>
 <li><strong>data</strong>( <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor"><em>Tensor</em></a> ) –参数张量。</li>
 <li><strong>requires_grad</strong> ( <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#bool"><em>bool</em></a> <em>,</em> <em>optional</em> ) – 如果参数需要梯度。</li>
 </ul>
-<h3 id="10-5-13-self-register-buffer-‘pe’-pe"><a href="#10-5-13-self-register-buffer-‘pe’-pe" class="headerlink" title="10.5.13 self.register_buffer(‘pe’, pe)"></a>10.5.13 self.register_buffer(‘pe’, pe)</h3><p>1.定义parameter和buffer都只需要传入Tensor即可。也不需要将其转成gpu,这是因为，当网络进行.cuda时候，会自动将里面的层的参数，buffer等转换成相应的GPU上。</p>
+<h2 id="4-13-self-register-buffer-‘pe’-pe"><a href="#4-13-self-register-buffer-‘pe’-pe" class="headerlink" title="4.13 self.register_buffer(‘pe’, pe)"></a>4.13 self.register_buffer(‘pe’, pe)</h2><p>1.定义parameter和buffer都只需要传入Tensor即可。也不需要将其转成gpu,这是因为，当网络进行.cuda时候，会自动将里面的层的参数，buffer等转换成相应的GPU上。</p>
 <p>2.self.register_buffer可以将tensor注册成buffer,在forward中使用self.mybuffer,而不是self.mybuffer_tmp</p>
 <p>3.<strong>网络存储时也会将buffer存下，当网络load模型时，会将存储的模型的buffer也进行赋值。</strong></p>
 <p><strong>4.buffer的更新在forward中，optim.step只能更新nn.parameter类型的参数。</strong></p>
-<h3 id="10-5-14-dropout"><a href="#10-5-14-dropout" class="headerlink" title="10.5.14 dropout"></a>10.5.14 dropout</h3><p>在训练期间，使用来自伯努利分布的样本，在概率为<code>p</code>下随机将输入tensor的某些元素归零。每个通道将在每次前转呼叫中独立归零。</p>
+<h2 id="4-14-dropout"><a href="#4-14-dropout" class="headerlink" title="4.14 dropout"></a>4.14 dropout</h2><p>在训练期间，使用来自伯努利分布的样本，在概率为<code>p</code>下随机将输入tensor的某些元素归零。每个通道将在每次前转呼叫中独立归零。</p>
 <p>一种用于正则化和防止神经元协同适应的有效技术，用于抑制过拟合。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义</span></span><br><span class="line">self.dropout = nn.Dropout(p=dropout)</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">self.dropout(x)</span><br></pre></td></tr></table></figure>
 
-<h3 id="10-5-15-embedding"><a href="#10-5-15-embedding" class="headerlink" title="10.5.15 embedding()"></a>10.5.15 embedding()</h3><p>词嵌入在 pytorch 中非常简单，只需要调用 <code>torch.nn.Embedding(m, n)</code> 就可以了，m 表示单词的总数目，n 表示词嵌入的维度，其实词嵌入就相当于是一个大矩阵，矩阵的每一行表示一个单词.</p>
+<h2 id="4-15-embedding"><a href="#4-15-embedding" class="headerlink" title="4.15 embedding()"></a>4.15 embedding()</h2><p>词嵌入在 pytorch 中非常简单，只需要调用 <code>torch.nn.Embedding(m, n)</code> 就可以了，m 表示单词的总数目，n 表示词嵌入的维度，其实词嵌入就相当于是一个大矩阵，矩阵的每一行表示一个单词.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</span><br><span class="line"><span class="comment"># 定义词嵌入</span></span><br><span class="line">embeds = nn.Embedding(<span class="number">2</span>, <span class="number">5</span>) <span class="comment"># 2 个单词，维度 5</span></span><br><span class="line"><span class="comment"># 得到词嵌入矩阵</span></span><br><span class="line">embeds.weight</span><br><span class="line">Parameter containing:</span><br><span class="line">-<span class="number">1.3426</span>  <span class="number">0.7316</span> -<span class="number">0.2437</span>  <span class="number">0.4925</span> -<span class="number">0.0191</span></span><br><span class="line">-<span class="number">0.8326</span>  <span class="number">0.3367</span>  <span class="number">0.2135</span>  <span class="number">0.5059</span>  <span class="number">0.8326</span></span><br><span class="line">[torch.FloatTensor of size 2x5]</span><br></pre></td></tr></table></figure>
 
 <p>我们通过 <code>weight</code> 得到了整个词嵌入的矩阵，注意，</p>
@@ -581,8 +602,7 @@ title：Python_PyTorch10.0 Pytorch教程
 <li><strong>同时词嵌入的数值可以直接进行修改，比如我们可以读入一个预训练好的词嵌入等等。</strong></li>
 </ol>
 <p>通俗来说，如果是不读入预训练的词嵌入，nn.embedding()相当于把one-hot编码转换为低维向量，这个向量就称为嵌入，就是仅仅根据one-hot编码信息得出，包含的是顺序&#x2F;位置信息，以方便用表示每个元素(one-hot维度太大)。</p>
-<h2 id="5-16-自然指数为底的对数，-log"><a href="#5-16-自然指数为底的对数，-log" class="headerlink" title="5.16 自然指数为底的对数，.log()"></a>5.16 自然指数为底的对数，.log()</h2><h2 id="5-16-获取Parameter的tesnor，Parameter-data"><a href="#5-16-获取Parameter的tesnor，Parameter-data" class="headerlink" title="5.16 获取Parameter的tesnor，Parameter.data"></a>5.16 获取Parameter的tesnor，Parameter.data</h2><h1 id="6-torch-tensor"><a href="#6-torch-tensor" class="headerlink" title="6 torch.tensor"></a>6 torch.tensor</h1><h2 id="6-1-转置-tensor-t"><a href="#6-1-转置-tensor-t" class="headerlink" title="6.1 转置 tensor.t()"></a>6.1 转置 tensor.t()</h2><h2 id="6-2-基于列向量生成对角矩阵-torch-diag-embed-tensor"><a href="#6-2-基于列向量生成对角矩阵-torch-diag-embed-tensor" class="headerlink" title="6.2 基于列向量生成对角矩阵 torch.diag_embed(tensor)"></a>6.2 基于列向量生成对角矩阵 torch.diag_embed(tensor)</h2><h2 id="6-3-求范数-torch-norm"><a href="#6-3-求范数-torch-norm" class="headerlink" title="6.3 求范数 torch.norm()"></a>6.3 求范数 torch.norm()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.tensor <span class="keyword">as</span> tensor</span><br><span class="line"> </span><br><span class="line">a = torch.ones((<span class="number">2</span>,<span class="number">3</span>))  <span class="comment">#建立tensor</span></span><br><span class="line">a2 = torch.norm(a)      <span class="comment">#默认求2范数</span></span><br><span class="line">a1 = torch.norm(a,p=<span class="number">1</span>)  <span class="comment">#指定求1范数</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="4-16-自然指数为底的对数，-log"><a href="#4-16-自然指数为底的对数，-log" class="headerlink" title="4.16 自然指数为底的对数，.log()"></a>4.16 自然指数为底的对数，.log()</h2><h2 id="4-17-获取Parameter的tesnor，Parameter-data"><a href="#4-17-获取Parameter的tesnor，Parameter-data" class="headerlink" title="4.17 获取Parameter的tesnor，Parameter.data"></a>4.17 获取Parameter的tesnor，Parameter.data</h2><h1 id="5-torch-tensor"><a href="#5-torch-tensor" class="headerlink" title="5 torch.tensor"></a>5 torch.tensor</h1><h2 id="5-1-转置-tensor-t"><a href="#5-1-转置-tensor-t" class="headerlink" title="5.1 转置 tensor.t()"></a>5.1 转置 tensor.t()</h2><h2 id="5-2-基于列向量生成对角矩阵-torch-diag-embed-tensor"><a href="#5-2-基于列向量生成对角矩阵-torch-diag-embed-tensor" class="headerlink" title="5.2 基于列向量生成对角矩阵 torch.diag_embed(tensor)"></a>5.2 基于列向量生成对角矩阵 torch.diag_embed(tensor)</h2><h2 id="5-3-求范数-torch-norm"><a href="#5-3-求范数-torch-norm" class="headerlink" title="5.3 求范数 torch.norm()"></a>5.3 求范数 torch.norm()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.tensor <span class="keyword">as</span> tensor</span><br><span class="line"> </span><br><span class="line">a = torch.ones((<span class="number">2</span>,<span class="number">3</span>))  <span class="comment">#建立tensor</span></span><br><span class="line">a2 = torch.norm(a)      <span class="comment">#默认求2范数</span></span><br><span class="line">a1 = torch.norm(a,p=<span class="number">1</span>)  <span class="comment">#指定求1范数</span></span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -646,7 +666,19 @@ title：Python_PyTorch10.0 Pytorch教程
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Debug/">
+                                    <span class="chip bg-color">Debug</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/Pytorch/">
+                                    <span class="chip bg-color">Pytorch</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -822,13 +854,13 @@ title：Python_PyTorch10.0 Pytorch教程
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/python-tensorflow/">
+                <a href="/2022/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Pyhton_TensorFlow">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Pyhton_TensorFlow</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -856,35 +888,55 @@ title：Python_PyTorch10.0 Pytorch教程
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2022/python-pandas/">
+                <a href="/2022/python-pytorch/">
                     <div class="card-image">
                         
+                        <img src="http://img.fdchen.host/pytorch.png" class="responsive-img" alt="Python_PyTorch">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python_Pandas">
-                        
-                        <span class="card-title">Python_Pandas</span>
+                        <span class="card-title">Python_PyTorch</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Python使用之PyTorch教程，包含PyTorch在深度学习项目中的常见用法，也包含一些DeBug的案例。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fdChen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Debug/">
+                        <span class="chip bg-color">Debug</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Pytorch/">
+                        <span class="chip bg-color">Pytorch</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1069,7 +1121,7 @@ title：Python_PyTorch10.0 Pytorch教程
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.6k</span>
+                        class="white-color">132.7k</span>
             
             
             
