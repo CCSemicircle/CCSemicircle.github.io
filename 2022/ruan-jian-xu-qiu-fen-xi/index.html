@@ -1,0 +1,2869 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="软件需求分析, 软件工程,前端,NLP">
+    <meta name="description" content="1 基本的软件需求1.1 为什么要需求分析？
+它具有决策性，方向性，策略性的作用，它在软件开发的过程中，具有举足轻重的地位。在一个大型软件系统的开发中，它的作用要远远大于程序设计。
+需求是软件产品的根源，需求工作的优劣对软件产品影响最大。
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>软件需求分析 | fdChen的掉发收集箱</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fdChen的掉发收集箱</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fdChen的掉发收集箱</div>
+        <div class="logo-desc">
+            
+            一些想到什么写什么的记录
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CCSemicircle" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CCSemicircle" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">软件需求分析</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">软件工程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/CQU/" class="post-category">
+                                CQU
+                            </a>
+                        
+                            <a href="/categories/CQU/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                课程笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-03-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    24.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    84 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="1-基本的软件需求"><a href="#1-基本的软件需求" class="headerlink" title="1 基本的软件需求"></a>1 基本的软件需求</h1><h2 id="1-1-为什么要需求分析？"><a href="#1-1-为什么要需求分析？" class="headerlink" title="1.1 为什么要需求分析？"></a>1.1 为什么要需求分析？</h2><ol>
+<li>它具有<strong>决策性，方向性，策略性</strong>的作用，它在软件开发的过程中，具有举足轻重的地位。在一个大型软件系统的开发中，它的作用要远远大于程序设计。</li>
+<li>需求是<strong>软件产品的根源</strong>，需求工作的优劣对软件产品影响最大。</li>
+</ol>
+<h2 id="1-2-需求分析的任务"><a href="#1-2-需求分析的任务" class="headerlink" title="1.2 需求分析的任务"></a>1.2 需求分析的任务</h2><ol>
+<li>需求分析的任务，就是解决“做什么”的问题，就是要全面地理解用户的各项要求。</li>
+<li>需求分析模型如下：</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E6%A8%A1%E5%9E%8B.jpg" alt="需求分析模型"></p>
+<center>图1-1 需求分析模型</center>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>逻辑模型（本质模型、概念模型）</th>
+<th>物理模型（实时模型、技术模型）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现行系统</td>
+<td>描述重要的业务功能，无论系统是如何实施的。</td>
+<td>描述现实系统是如何在物理上实现的。</td>
+</tr>
+<tr>
+<td>目标系统</td>
+<td>描述新系统的主要业务功能和用户新的需求，无论系统应如何实施。</td>
+<td>描述新系统是如何实施的（包括技术）。</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>软件需求活动</li>
+</ol>
+<ul>
+<li>需求诱导</li>
+<li>需求分析</li>
+<li>需求传递</li>
+<li>需求确认</li>
+<li>需求演化</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="1-3-什么是需求分析？"><a href="#1-3-什么是需求分析？" class="headerlink" title="1.3 什么是需求分析？"></a>1.3 什么是需求分析？</h2><h3 id="1-3-1-软件需求的定义"><a href="#1-3-1-软件需求的定义" class="headerlink" title="1.3.1 软件需求的定义"></a>1.3.1 软件需求的定义</h3><p>IEEE 软件工程标准词汇表中定义软件需求为：</p>
+<p>（1）用户为解决某个问题或达到目标而需具备的条件或能力。</p>
+<p>（2）系统或系统部件为满足合同、标准、规范或其它正式文档而必须满足的条件或能力。</p>
+<p>（3）上述（1）或（2）中定义的条件或能力的文档表达。</p>
+<h3 id="1-3-2-简单理解"><a href="#1-3-2-简单理解" class="headerlink" title="1.3.2 简单理解"></a>1.3.2 简单理解</h3><p>分析软件用户的需求，细致的进行调查，把用户“做什么”的要求，最终转换为一个完全的、精细的软件逻辑模型。并写出软件的需求规格说明。准确地表达用户的要求.。</p>
+<h3 id="1-3-3-需求的层次"><a href="#1-3-3-需求的层次" class="headerlink" title="1.3.3 需求的层次"></a>1.3.3 需求的层次</h3><ul>
+<li>业务需求：表示组织或客户高层次的目标。描述了组织为什么要开发一个系统，即目标。可以用前景和范围文档表述。</li>
+<li>用户需求：描述的是用户的目标，或用户要求系统必须能完成的任务，即用户能使用系统来做些什么。可以用用例、场景描述和事件-响应表表述。</li>
+<li>功能需求：规定开发人员必须在产品中实现的软件功能，用户利用这些功能来完成任务，满足业务需求，即开发人员需要实现什么。</li>
+</ul>
+<h3 id="1-3-4-需求的级别"><a href="#1-3-4-需求的级别" class="headerlink" title="1.3.4 需求的级别"></a>1.3.4 需求的级别</h3><p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E7%9A%84%E7%BA%A7%E5%88%AB.jpg" alt="需求的级别"></p>
+<center>图1-2 需求的级别</center>
+
+<h3 id="1-3-5-不属于需求的内容"><a href="#1-3-5-不属于需求的内容" class="headerlink" title="1.3.5 不属于需求的内容"></a>1.3.5 不属于需求的内容</h3><ul>
+<li>设计和实现的细节</li>
+<li>项目的计划信息</li>
+<li>测试信息</li>
+<li>以上信息包含在项目需求中。</li>
+</ul>
+<h2 id="1-4-优秀的团队遇到糟糕的需求"><a href="#1-4-优秀的团队遇到糟糕的需求" class="headerlink" title="1.4 优秀的团队遇到糟糕的需求"></a>1.4 优秀的团队遇到糟糕的需求</h2><h3 id="1-4-1-用户参与不足"><a href="#1-4-1-用户参与不足" class="headerlink" title="1.4.1 用户参与不足"></a>1.4.1 用户参与不足</h3><h3 id="1-4-2-用户需求扩展"><a href="#1-4-2-用户需求扩展" class="headerlink" title="1.4.2 用户需求扩展"></a>1.4.2 用户需求扩展</h3><ul>
+<li>要控制项目范围的改变，首先应明确项目的业务目标、全局规划、范围、限制、成功标准以及产品的预计用途。然后参考这一框架对所有新特性和需求变更进行评估。</li>
+<li>插入的代码可能导致模块违反强内聚和弱耦合这一设计原则。要减少需求变更对质量造成的影响，处理变更时应该先对结构和设计进行适当的修改，而不是直接修改代码。</li>
+</ul>
+<h3 id="1-4-3-有歧义的需求"><a href="#1-4-3-有歧义的需求" class="headerlink" title="1.4.3 有歧义的需求"></a>1.4.3 有歧义的需求</h3><h3 id="1-4-4-镀金问题"><a href="#1-4-4-镀金问题" class="headerlink" title="1.4.4 镀金问题"></a>1.4.4 镀金问题</h3><ul>
+<li>开发人员为产品添加了一项需求说明中没有提到的功能，他认为“用户肯定会喜欢的”，则就是“镀金问题”。</li>
+<li>开发人员和需求分析员不应擅自添加特性，应该把创意和备选方案提交给客户，让客户做决定。</li>
+</ul>
+<h3 id="1-4-5-过于抽象的需求"><a href="#1-4-5-过于抽象的需求" class="headerlink" title="1.4.5 过于抽象的需求"></a>1.4.5 过于抽象的需求</h3><h3 id="1-4-6-忽略了某类用户"><a href="#1-4-6-忽略了某类用户" class="headerlink" title="1.4.6 忽略了某类用户"></a>1.4.6 忽略了某类用户</h3><h3 id="1-4-7-不准确的计划"><a href="#1-4-7-不准确的计划" class="headerlink" title="1.4.7 不准确的计划"></a>1.4.7 不准确的计划</h3><h2 id="1-5-优质需求的好处"><a href="#1-5-优质需求的好处" class="headerlink" title="1.5 优质需求的好处"></a>1.5 优质需求的好处</h2><ul>
+<li>减少需求缺陷</li>
+<li>减少开发过程中的返工</li>
+<li>减少不必要的特性</li>
+<li>降低改进成本</li>
+<li>加快开发进度</li>
+<li>提高沟通效率</li>
+<li>控制需求范围的改变</li>
+<li>项目更有序</li>
+<li>对系统测试的评估更准确</li>
+<li>提高客户和开发人员的满意度</li>
+</ul>
+<h2 id="1-6-需求开发与需求管理"><a href="#1-6-需求开发与需求管理" class="headerlink" title="1.6 需求开发与需求管理"></a>1.6 需求开发与需求管理</h2><ol>
+<li>把所有与需求直接相关单独活动统称为<strong>需求工程</strong>，需求工程中的活动可分为两大类，需求开发、需求管理。</li>
+<li>需求开发，如图：</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E5%BC%80%E5%8F%91.png" alt="需求开发"></p>
+<center>图1-4 需求开发</center>
+
+<p><strong>Tip：分别是获取、分析、编写规范、确认。</strong></p>
+<ol start="3">
+<li>需求管理，如图：</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E7%AE%A1%E7%90%86.jpg" alt="需求管理"></p>
+<center>图1-4 需求管理</center>
+
+<ol start="4">
+<li>需求开发与需求管理的分界，如图：</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E5%BC%80%E5%8F%91%E4%B8%8E%E9%9C%80%E6%B1%82%E7%AE%A1%E7%90%86%E7%9A%84%E5%88%86%E7%95%8C.png" alt="需求开发与需求管理的分界"></p>
+<center>图1-5 需求开发与需求管理的分界</center>
+
+<h2 id="1-7-优秀需求的特点"><a href="#1-7-优秀需求的特点" class="headerlink" title="1.7 优秀需求的特点"></a>1.7 优秀需求的特点</h2><h3 id="1-7-1-需求陈述的特点"><a href="#1-7-1-需求陈述的特点" class="headerlink" title="1.7.1 需求陈述的特点"></a>1.7.1 需求陈述的特点</h3><ul>
+<li>完整性</li>
+<li>正确性</li>
+<li>可行性</li>
+<li>必要性</li>
+<li>有优先次序</li>
+<li>无歧义</li>
+<li>可验证性</li>
+</ul>
+<h3 id="1-7-2-需求规格说明的特点"><a href="#1-7-2-需求规格说明的特点" class="headerlink" title="1.7.2 需求规格说明的特点"></a>1.7.2 需求规格说明的特点</h3><ul>
+<li>完整性</li>
+<li>一致性：不会与同一类型的其他需求或更高层次的业务、系统或用户需求发生冲突。</li>
+<li>可修改性</li>
+<li>可跟踪性：可跟踪的需求都有一个固定的标识符对其唯一标识。</li>
+</ul>
+<h2 id="1-8-需求与其他软件项目过程的关系"><a href="#1-8-需求与其他软件项目过程的关系" class="headerlink" title="1.8 需求与其他软件项目过程的关系"></a>1.8 需求与其他软件项目过程的关系</h2><p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E4%B8%8E%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="需求与其他软件项目过程的关系"></p>
+<center>图1-6 需求与其他软件项目过程的关系</center>
+
+<h1 id="2-客户的需求观"><a href="#2-客户的需求观" class="headerlink" title="2 客户的需求观"></a>2 客户的需求观</h1><h2 id="2-1-了解客户、最终用户、简介用户"><a href="#2-1-了解客户、最终用户、简介用户" class="headerlink" title="2.1 了解客户、最终用户、简介用户"></a>2.1 了解客户、最终用户、简介用户</h2><h3 id="2-1-1-基本概念"><a href="#2-1-1-基本概念" class="headerlink" title="2.1.1 基本概念"></a>2.1.1 基本概念</h3><p>用户是一种泛称，可细分为如下几个：</p>
+<ol>
+<li>客户：掏钱买软件的用户。</li>
+<li>最终用户：真正操作软件的用户。</li>
+<li>间接用户：间接用户既不掏钱买该软件产品，也不使用该软件，但是它可能对软件产品有很大的影响。一般为政府机构等。</li>
+</ol>
+<h3 id="2-1-2-涉众"><a href="#2-1-2-涉众" class="headerlink" title="2.1.2 涉众"></a>2.1.2 涉众</h3><p>涉众 (stakeholder) ，在软件开发项目中主要是指和这个项目有密切相关利益的人，他们共同感兴趣的就是需求分析阶段。</p>
+<p>这些涉众包括如下：</p>
+<ul>
+<li>客户</li>
+<li>用户</li>
+<li>业务或需求分析员(负责收集客户需求并编写文档，以及负责客户与开发机构之间联系沟通的人)</li>
+<li>开发人员</li>
+<li>测试人员</li>
+<li>用户文档编写者</li>
+<li>项目管理者</li>
+<li>客户管理者</li>
+</ul>
+<h2 id="2-2-客户的权利与义务"><a href="#2-2-客户的权利与义务" class="headerlink" title="2.2 客户的权利与义务"></a>2.2 客户的权利与义务</h2><h3 id="2-2-1-客户的权利"><a href="#2-2-1-客户的权利" class="headerlink" title="2.2.1 客户的权利"></a>2.2.1 客户的权利</h3><ol>
+<li>要求分析人员使用符合客户语言习惯的表达。</li>
+<li>要求分析人员了解客户系统的业务及目标。</li>
+<li>要求分析人员组织需求获取期间所介绍的信息，并编写软件需求规格说明。</li>
+<li>要求开发人员对需求过程中所产生的工作结果进行解释说明。</li>
+<li>要求开发人员在整个交流过程中保持和维护一种合作的职业态度。</li>
+<li>要求开发人员对产品的实现及需求都要提供建议，拿出主意。</li>
+<li>描述产品使其具有易用、好用的特性。</li>
+<li>可以调整需求，允许重用已有的软件组件。</li>
+<li>当需要对需求进行变更时，对成本、影响、得失（ trade-off)有个真实可信的评估。</li>
+<li>获得满足客户功能和质量要求的系统，并且这些要求是开发人员同意的。</li>
+</ol>
+<h3 id="2-2-2-客户的义务"><a href="#2-2-2-客户的义务" class="headerlink" title="2.2.2 客户的义务"></a>2.2.2 客户的义务</h3><ol>
+<li>给分析人员讲解业务及说明业务方面的术语等专业问题。</li>
+<li>抽出时间清楚地说明需求并不断完善。</li>
+<li>当说明系统需求时，力求准确详细。</li>
+<li>需要时要及时对需求做出决策。</li>
+<li>要尊重开发人员的成本估算和对需求的可行性分析。</li>
+<li>对单项需求、系统特性或使用实例划分优先级。</li>
+<li>评审需求文档和原型。</li>
+<li>一旦知道要对项目需求进行变更，要马上与开发人员联系。</li>
+<li>在要求需求变更时，应遵照开发组织确定的工作过程来处理。</li>
+<li>尊重需求工程中开发人员采用的流程（过程)。</li>
+</ol>
+<h1 id="3-需求工程的推荐方法"><a href="#3-需求工程的推荐方法" class="headerlink" title="3 需求工程的推荐方法"></a>3 需求工程的推荐方法</h1><p>7种类型：知识技能、需求获取、需求分析、规格说明、需求确认、需求管理、项目管理，共45种方法，后续章节一一讲述。</p>
+<ul>
+<li>需求工程的过程如图3-1：</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B%E7%9A%84%E8%BF%87%E7%A8%8B.png" alt="需求工程的过程"></p>
+<center>图3-1 需求工程的过程</center>
+
+<h1 id="4-需求分析员"><a href="#4-需求分析员" class="headerlink" title="4 需求分析员"></a>4 需求分析员</h1><h2 id="4-1-需求分析员的职责"><a href="#4-1-需求分析员的职责" class="headerlink" title="4.1 需求分析员的职责"></a>4.1 需求分析员的职责</h2><h3 id="4-1-0-需求分析员的概念"><a href="#4-1-0-需求分析员的概念" class="headerlink" title="4.1.0 需求分析员的概念"></a>4.1.0 需求分析员的概念</h3><ul>
+<li>需求分析员，又叫系统分析员、需求工程师、需求经理、分析员。</li>
+<li>需求分析员：<ul>
+<li>对软件项目设计的需求进行收集、分析、记录和验证等工作的主要承担者。 </li>
+<li>用户群体和软件开发团队之间进行需求沟通的桥梁。</li>
+<li>是收集和传播的中心角色。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-1-1-需求分析员的任务"><a href="#4-1-1-需求分析员的任务" class="headerlink" title="4.1.1 需求分析员的任务"></a>4.1.1 需求分析员的任务</h3><ol>
+<li>定义业务需求</li>
+<li>确定项目承担者和用户类别</li>
+<li>获取需求</li>
+<li>分析需求</li>
+<li>编制需求规格说明书</li>
+<li>为需求建模</li>
+<li>主持对需求的验证</li>
+<li>引导对需求的优先级划分</li>
+<li>管理需求</li>
+</ol>
+<h3 id="4-1-2-需求分析员的基本技能"><a href="#4-1-2-需求分析员的基本技能" class="headerlink" title="4.1.2 需求分析员的基本技能"></a>4.1.2 需求分析员的基本技能</h3><ol>
+<li>倾听的技巧</li>
+<li>交谈和提问的技巧</li>
+<li>分析能力</li>
+<li>协调的能力</li>
+<li>观察能力</li>
+<li>写作能力</li>
+<li>组织能力</li>
+<li>建模能力</li>
+<li>人际交往能力</li>
+<li>创造力</li>
+</ol>
+<h3 id="4-1-3-需求分析员的基本知识"><a href="#4-1-3-需求分析员的基本知识" class="headerlink" title="4.1.3 需求分析员的基本知识"></a>4.1.3 需求分析员的基本知识</h3><ol>
+<li>掌握需求开发和需求管理的知识</li>
+<li>理解项目关系、风险管理和质量工程</li>
+<li>掌握一些领域的知识也是必要的</li>
+</ol>
+<h2 id="4-2-如何培养需求分析员"><a href="#4-2-如何培养需求分析员" class="headerlink" title="4.2 如何培养需求分析员"></a>4.2 如何培养需求分析员</h2><ul>
+<li>需求分析员是培养出来的，而不是训练出来的，主要面向人，而不是面向“软件技术”。</li>
+</ul>
+<h3 id="4-2-1-从用户转为分析员"><a href="#4-2-1-从用户转为分析员" class="headerlink" title="4.2.1 从用户转为分析员"></a>4.2.1 从用户转为分析员</h3><ul>
+<li><p>优点：用户对领域知识和工作环境非常熟悉。</p>
+</li>
+<li><p>缺点：对软件工程知识了解较少，阻碍了与技术人员的交流。</p>
+</li>
+</ul>
+<h3 id="4-2-2-从开发人员转为分析员"><a href="#4-2-2-从开发人员转为分析员" class="headerlink" title="4.2.2 从开发人员转为分析员"></a>4.2.2 从开发人员转为分析员</h3><ul>
+<li>优点：对软件工程知识熟悉，有利于项目的实施。</li>
+<li>缺点：不少开发人员对用户没有耐心，对怎样有效的倾听、协商和引导等知识掌握不多。</li>
+</ul>
+<h3 id="4-2-3-应用领域专家"><a href="#4-2-3-应用领域专家" class="headerlink" title="4.2.3 应用领域专家"></a>4.2.3 应用领域专家</h3><ul>
+<li>优点：精通领域知识，有利于准确的定义需求。</li>
+<li>缺点：应用领域专家根据自己爱好定义需求。系统太复杂、通用性差。</li>
+<li>解决办法：可以让应用领域专家作为用户代言人。</li>
+</ul>
+<h2 id="4-3-创造一个合作的环境"><a href="#4-3-创造一个合作的环境" class="headerlink" title="4.3 创造一个合作的环境"></a>4.3 创造一个合作的环境</h2><p>很多项目中项目承担者之间关系非常紧张，不利于成功开发项目。需求分析员<strong>应引导达成一致</strong>，获得三赢：</p>
+<ul>
+<li>客户对产品感到满意。</li>
+<li>开发组织因产品的成功而感到高兴。</li>
+<li>开发团队成员为自己参加该开发而自豪。</li>
+</ul>
+<h1 id="5-确定产品前景与项目范围"><a href="#5-确定产品前景与项目范围" class="headerlink" title="5 确定产品前景与项目范围"></a>5 确定产品前景与项目范围</h1><h1 id="5-0-基本概念"><a href="#5-0-基本概念" class="headerlink" title="5.0 基本概念"></a>5.0 基本概念</h1><h3 id="5-0-1-业务需求"><a href="#5-0-1-业务需求" class="headerlink" title="5.0.1 业务需求"></a>5.0.1 业务需求</h3><ul>
+<li>代表了需求链中最高层的抽象，为软件系统定义了项目视图和范围。</li>
+</ul>
+<h3 id="5-0-2-功能需求"><a href="#5-0-2-功能需求" class="headerlink" title="5.0.2 功能需求"></a>5.0.2 功能需求</h3><ul>
+<li>必须根据用户需求来考虑，且要与业务需求所设定的目标相一致。</li>
+<li>在确定详细的功能需求之前，必须很好地解决项目的视图和范围问题。</li>
+</ul>
+<h3 id="5-0-3-领域分析（domain-analysis）"><a href="#5-0-3-领域分析（domain-analysis）" class="headerlink" title="5.0.3 领域分析（domain analysis）"></a>5.0.3 领域分析（domain analysis）</h3><ul>
+<li>领域：是指客户希望使用软件的一般性商业或技术领域。</li>
+<li>领域专家：在某个领域中，具有该领域深入知识的人。</li>
+<li>专家系统：具有与该领域专家相同智能的计算机软件系统。</li>
+<li>领域分析：是软件工程师了解背景信息的过程。</li>
+<li>领域分析的工作价值：<ul>
+<li>快速开发</li>
+<li>优化系统</li>
+<li>扩展预测</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-0-4-软件项目的类型分析"><a href="#5-0-4-软件项目的类型分析" class="headerlink" title="5.0.4 软件项目的类型分析"></a>5.0.4 软件项目的类型分析</h3><ul>
+<li>可以根据项目开始时，软件是否存在以及需求是否存在来划分项目的类型，如图5-1，可以分为四种情况：</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B.png" alt="项目的四种类型"></p>
+<center>图5-1 项目的四种类型</center>
+
+<ol>
+<li>在A和B项目中，开发小组要从头开发的新的软件。有时称为零起点（green field development），即系统从头开始构建，要从头开发新的软件。</li>
+<li>在C和D项目中，开发小组逐步改进一个现有的系统，这种情况是常见的。</li>
+<li>在A和C项目中，开发小组必须确定软件的需求。必须明白客户要求解决的问题，从而找到最好的方法去解决问题。</li>
+<li>在B和D项目中，客户要求开发小组设计和实现特定的要求，客户的机构已经做好了需求分析。</li>
+</ol>
+<h2 id="5-1-通过业务需求定义前景"><a href="#5-1-通过业务需求定义前景" class="headerlink" title="5.1 通过业务需求定义前景"></a>5.1 通过业务需求定义前景</h2><h3 id="5-1-1-项目视图"><a href="#5-1-1-项目视图" class="headerlink" title="5.1.1 项目视图"></a>5.1.1 项目视图</h3><ul>
+<li>描述了产品所涉及的各个方面和最终所具有的功能。</li>
+</ul>
+<h3 id="5-1-2-项目范围"><a href="#5-1-2-项目范围" class="headerlink" title="5.1.2 项目范围"></a>5.1.2 项目范围</h3><ul>
+<li>描述了产品应包括的部分和不应包括的部分。</li>
+<li>说明了在包括的部分与不包括的部分之间的界线。</li>
+</ul>
+<h2 id="5-2-视图和范围文档"><a href="#5-2-视图和范围文档" class="headerlink" title="5.2 视图和范围文档"></a>5.2 视图和范围文档</h2><h3 id="5-2-1-基本概念"><a href="#5-2-1-基本概念" class="headerlink" title="5.2.1 基本概念"></a>5.2.1 基本概念</h3><p>项目视图和范围文档，包括：</p>
+<ul>
+<li>业务机遇的描述、项目的视图和目标、 产品适用范围和局限性的陈述、客户的特点、项目优先级别和项目成功因素的描述。</li>
+<li>是一个相对简短的文档。</li>
+</ul>
+<h3 id="5-2-2-项目视图和范围文档模板"><a href="#5-2-2-项目视图和范围文档模板" class="headerlink" title="5.2.2 项目视图和范围文档模板"></a>5.2.2 项目视图和范围文档模板</h3><ol>
+<li><p>业务需求</p>
+<p>1.1 背景</p>
+<p>1.2 业务机遇</p>
+<p>1.3 业务目标</p>
+<p>1.4 客户或市场需求</p>
+<p>1.5 提供给客户的价值</p>
+<p>1.6 业务风险</p>
+</li>
+<li><p>项目视图的解决方案</p>
+<p>2.1 项目视图陈述</p>
+<p>2.2 主要特性</p>
+<p>2.3 假设和依赖环境</p>
+</li>
+<li><p>范围和局限性</p>
+<p>3.1 首次发行的范围</p>
+<p>3.2 随后发行的范围</p>
+<p>3.3 局限性和专用性</p>
+</li>
+<li><p>业务环境</p>
+<p>4.1 客户概貌</p>
+<p>4.2 项目优先级</p>
+</li>
+<li><p>产品成功的因素</p>
+</li>
+</ol>
+<h2 id="5-3-关联图"><a href="#5-3-关联图" class="headerlink" title="5.3 关联图"></a>5.3 关联图</h2><ol>
+<li><p>关联图（0层DFD） ：确定了通过某一接口与系统相连的外部实体——有时，称为“端点”，以及外部实体和系统之间的数据流和物流。我们把关联图，作为结构化分析方法，形成数据流图的最高抽象层。 </p>
+</li>
+<li><p>可以把关联图，写入项目视图和范围文档，或软件需求规格说明中，或者作为系统数据流模型的一部分。</p>
+</li>
+</ol>
+<h2 id="5-4-保证范围的适度"><a href="#5-4-保证范围的适度" class="headerlink" title="5.4 保证范围的适度"></a>5.4 保证范围的适度</h2><p>范围扩展，存在两个主要问题：</p>
+<ol>
+<li>全部的工作，必须重新进行，以适应变化。</li>
+<li>当项目的范围增大时，如果没有调整原先所分配的资源和时间，则属性会遭到破坏。</li>
+</ol>
+<h1 id="6-获取客户的需求"><a href="#6-获取客户的需求" class="headerlink" title="6 获取客户的需求"></a>6 获取客户的需求</h1><h2 id="6-0-征求客户的意见，必须采取以下几步"><a href="#6-0-征求客户的意见，必须采取以下几步" class="headerlink" title="6.0 征求客户的意见，必须采取以下几步"></a>6.0 征求客户的意见，必须采取以下几步</h2><ol>
+<li>明确项目用户需求的来源。</li>
+<li>明确使用该产品的不同类型的用户。</li>
+<li>与产品不同用户类的代表进行沟通。</li>
+<li>遵从项目的最终决策者的意见。</li>
+</ol>
+<h2 id="6-1-需求的来源"><a href="#6-1-需求的来源" class="headerlink" title="6.1 需求的来源"></a>6.1 需求的来源</h2><p>软件需求的典型来源：</p>
+<ol>
+<li><p>访问并与有潜力的用户探讨</p>
+</li>
+<li><p>把对目前的或竞争产品的描述，写成文档</p>
+</li>
+<li><p>系统需求规格说明</p>
+</li>
+<li><p>对当前系统的问题分析，并增强要求</p>
+</li>
+<li><p>市场调查和用户问卷调查</p>
+</li>
+<li><p>观察正在工作的用户</p>
+</li>
+<li><p>用户工作的情景分析</p>
+</li>
+<li><p>事件和响应</p>
+</li>
+</ol>
+<h2 id="6-2-用户类"><a href="#6-2-用户类" class="headerlink" title="6.2 用户类"></a>6.2 用户类</h2><ul>
+<li>产品的用户在很多方面存在着差异，不同用户，有不同需求，根据这些差异，可以把用户分成用户小组，称为用户类。</li>
+</ul>
+<h2 id="6-3-寻找用户代言人"><a href="#6-3-寻找用户代言人" class="headerlink" title="6.3 寻找用户代言人"></a>6.3 寻找用户代言人</h2><ol>
+<li><p>在获取用户需求时，要挑选合适的用户，来代表各类用户的需求。即：选择用户代言人。</p>
+</li>
+<li><p>用户代言人必须参加整个软件开发。</p>
+</li>
+<li><p>在用户代言人的参与下，广泛了解不同用户类和不同的专业层次的需求。</p>
+</li>
+</ol>
+<h2 id="6-4-用户代言人"><a href="#6-4-用户代言人" class="headerlink" title="6.4 用户代言人"></a>6.4 用户代言人</h2><h3 id="6-4-0-基本概念"><a href="#6-4-0-基本概念" class="headerlink" title="6.4.0 基本概念"></a>6.4.0 基本概念</h3><ol>
+<li>每一个工程项目，都包括为数不多的关键参与者，这些参与者来自相关的某方面用户团体，并提供客户的需求。我们称这些人为用户代言人或项目协调者。</li>
+<li>用户代言人，可能是软件公司的一员 。</li>
+<li>用户代言人要求必须对应用领域有彻底的了解，并在软件方面具有足够的经验。</li>
+</ol>
+<h3 id="6-4-1-外部用户代言人"><a href="#6-4-1-外部用户代言人" class="headerlink" title="6.4.1 外部用户代言人"></a>6.4.1 外部用户代言人</h3><ul>
+<li>公司内部用户代言人比较困难；</li>
+<li>公司外部用户代言人，如聘请一个具有丰富阅历的用户代言人，同时，为了获得更多的信息，有时需要给用户代言人，一些经济上的鼓励。</li>
+</ul>
+<h3 id="6-4-2-对用户代言人的要求"><a href="#6-4-2-对用户代言人的要求" class="headerlink" title="6.4.2 对用户代言人的要求"></a>6.4.2 对用户代言人的要求</h3><p>表6-1列出了用户代言人要进行的一些工作，不是每个代言人都需要做所有这些工作，可以该表为起点与每位代言人协商他的职责。</p>
+<center>表6-1 用户代言人可能的活动</center>
+
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>工作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计划</td>
+<td>推敲产品的范围和限制<br />定义与其他系统的接口<br />评估新系统对业务操作的影响<br />定义从现有系统到新系统的过渡方案</td>
+</tr>
+<tr>
+<td>需求</td>
+<td>收集其他用户的需求<br />开发使用范例和用例<br />解决用户提出的需求种的冲突<br />确定实现的优先级<br />确定质量和性能需求<br />评估用户界面的原型</td>
+</tr>
+<tr>
+<td>确认和验证</td>
+<td>评审需求文档<br />定义用户接受系统的标准<br />根据使用情况开发测试用例<br />提供测试数据集<br />执行beta测试（一种验收测试）</td>
+</tr>
+<tr>
+<td>用户辅助</td>
+<td>编写用户手册和帮助文档<br />准备培训资料<br />向同行演示产品</td>
+</tr>
+<tr>
+<td>变更控制</td>
+<td>评估缺陷修改请求，确定其优先级<br />评估改进请求，确定其优先级<br />评估需求变更对用户和业务流程的影响<br />参与变更决策</td>
+</tr>
+</tbody></table>
+<h3 id="6-4-3-设置多位用户代言人"><a href="#6-4-3-设置多位用户代言人" class="headerlink" title="6.4.3 设置多位用户代言人"></a>6.4.3 设置多位用户代言人</h3><p>一个人很难描述出所有用户对应用程序的需求。要从不同用户类中各挑选一名用户代言人。以图6-1为例，有3名分析员和这4名用户代言人一起工作、收集、分析并记录各用户类的需求。因为购买者和健康安全人员这两个用户类人数和需求都很少，所以由同一位需求分析员负责与这两类的用户代言人合作。最后由一名需求分析员将所有需求整理为一份需求规格说明。</p>
+<p><img src="http://img.fdchen.host/%E5%8C%96%E5%AD%A6%E5%88%B6%E5%93%81%E8%B7%9F%E8%B8%AA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%E4%BB%A3%E8%A8%80%E4%BA%BA%E6%A8%A1%E5%9E%8B.png" alt="化学制品跟踪系统中的用户代言人模型"></p>
+<center>图6-1 化学制品跟踪系统中的用户代言人模型</center>
+
+<h2 id="6-5-谁来做决策？"><a href="#6-5-谁来做决策？" class="headerlink" title="6.5 谁来做决策？"></a>6.5 谁来做决策？</h2><p>下面给出一些在项目中可能发生的决策问题：</p>
+<ol>
+<li>如果个别用户，不能在需求方面达成一致的意见，那么必须由产品代表者作出决策。 </li>
+<li>如果不同的用户类，有不一致的需求，那么必须决策出，满足哪一类用户的需求更为重要。</li>
+<li>运用项目的业务目标来决定那些是你最核心的客户。</li>
+<li>有时，客户经理所提出的需求与他所在部门的真正用户提出的需求相冲突。</li>
+<li>当开发者想象中的产品与客户需求冲突时，通常应该由客户作出决策。</li>
+<li>如果市场部门所提出的需求与开发者所想要开发的系统发生冲突时，具体情况，具体处理。</li>
+<li>没有简单的正确答案。</li>
+</ol>
+<h2 id="6-6-总结"><a href="#6-6-总结" class="headerlink" title="6.6 总结"></a>6.6 总结</h2><h3 id="6-6-1-准备调查"><a href="#6-6-1-准备调查" class="headerlink" title="6.6.1 准备调查"></a>6.6.1 准备调查</h3><ol>
+<li><p>首先，需求分析员应当起草需求调查问题表，将调查重点锁定在该问题表内，否则调查工作将变得漫无边际。</p>
+<ul>
+<li>问题表可以有多份，随着调查的深入，问题表将不断地被细化。</li>
+<li>根据经验，用户通常没有耐心回答复杂的论述题，所以问题表应当以“选择题”和“是非题”为主。</li>
+<li>制定问题表最简便的方法就是从《用户需求说明书》的模板中提取需求问题</li>
+</ul>
+</li>
+<li><p>其次，需求分析员应当确定需求调查的方式，例如：</p>
+<ul>
+<li>与用户交谈，向用户提问题。</li>
+<li>向用户群体发调查问卷。</li>
+<li>参观用户的工作流程，观察用户的操作。</li>
+<li>与同行、专家交谈，听取他们的意见。</li>
+<li>分析已经存在的同类软件产品，提取需求。</li>
+<li>从行业标准、规则中提取需求。</li>
+<li>从Internet上搜查相关资料。</li>
+</ul>
+</li>
+<li><p>最后，需求分析员与被调查者建立联系，确定调查的时间、地点、人员等，撰写需求调查计划。要特别留意的是不要漏掉典型的用户。</p>
+</li>
+</ol>
+<h3 id="6-6-2-执行调查"><a href="#6-6-2-执行调查" class="headerlink" title="6.6.2 执行调查"></a>6.6.2 执行调查</h3><ol>
+<li>准备工作完毕后，需求分析员按照计划执行调查。在调查过程中随时记录（或存储）需求信息 。</li>
+<li>需求分析员与用户面谈时应当注意以下事项：<ul>
+<li>如果与用户约好了时间，切勿迟到或早退。要注意礼节，尽可能获得用户的好感，并为下次打扰他们埋下伏笔。</li>
+<li>需求分析员应事先了解用户的身份、背景，以便随机应变。IT人士不可貌相，有些大企业的领导其外表很土气。如果你路上碰到他，以为是个勤杂工，说：“喂，老师傅，来帮我拎东西。”也许这笔生意就泡汤了。</li>
+</ul>
+</li>
+<li>需求调查，应该先了解宏观问题，再了解细节问题。</li>
+<li>如果双方气氛融洽，可以采用灵活的访谈形式，轻易不要打断用户的谈话。当双方对某些问题的交流合乎逻辑地结束后，即可继续讨论问题表中的其它问题。</li>
+<li>尽可能避免为用户添麻烦，但也不能怕给用户添麻烦而降低需求调查的力度。</li>
+<li>避免片面地听取某些用户的需求而忽视其它用户的需求。</li>
+</ol>
+<h3 id="6-6-3-《用户需求说明书》与《软件需求规格说明书》的主要区别与联系"><a href="#6-6-3-《用户需求说明书》与《软件需求规格说明书》的主要区别与联系" class="headerlink" title="6.6.3 《用户需求说明书》与《软件需求规格说明书》的主要区别与联系"></a>6.6.3 《用户需求说明书》与《软件需求规格说明书》的主要区别与联系</h3><ol>
+<li>前者主要采用自然语言（和应用域术语）来表达用户需求，其内容相对于后者而言比较粗略，不够详细。</li>
+<li>后者是前者的细化，更多地采用计算机语言和图形符号来刻画需求，产品需求是软件系统设计的直接依据。</li>
+<li>两者之间可能并不存在一一影射关系，因为软件开发商会根据产品发展战略、企业当前状况适当地调整产品需求，例如用户需求可能被分配到软件的数个版本中。</li>
+<li>软件开发人员应当依据《软件需求规格说明书》来开发当前产品。</li>
+</ol>
+<h1 id="7-聆听客户的需求"><a href="#7-聆听客户的需求" class="headerlink" title="7 聆听客户的需求"></a>7 聆听客户的需求</h1><p>需求获取是软件工程的核心任务，是在问题及其最终解决方案之间架设桥梁的第一步。 一旦理解了需求，分析者、开发者和客户就能探索出描述这些需求的多种解决方案。</p>
+<h2 id="7-1-获取需求"><a href="#7-1-获取需求" class="headerlink" title="7.1 获取需求"></a>7.1 获取需求</h2><ol>
+<li>需求获取在软件开发中，最重要、最关键，也是最困难、最易出错。</li>
+<li>需求获取只有通过客户和开发者的合作，才能成功。它需要广泛的交流。为了方便清晰地进行交流，要列出的交流小组成员。</li>
+<li>需求获取并不是客户所说的需求的简单誊本。</li>
+<li>研究表明： <ul>
+<li>一个成功的项目，在开发者和客户之间，采用了更多的交流方式。 </li>
+<li>及早并经常进行座谈讨论，是需求获取成功的一个关键途径。</li>
+</ul>
+</li>
+<li>需求获取的方式：面谈、小组讨论、解决冲突等</li>
+</ol>
+<h2 id="7-2-需求获取讨论会"><a href="#7-2-需求获取讨论会" class="headerlink" title="7.2 需求获取讨论会"></a>7.2 需求获取讨论会</h2><p>下列提示可用来指导有效的需求获取会议：</p>
+<ol>
+<li>建立基本规则</li>
+<li>不超出范围——项目范围</li>
+<li>使用活动挂图来捕获以后再考虑的一些，如：条目-停车场</li>
+<li>时间盒讨论，为每一个讨论主题分配一个固定的时间段</li>
+<li>保持较小的团队规模并找到合适的参与者</li>
+<li>取保每个人都积极地参与讨论</li>
+</ol>
+<h2 id="7-3-将客户的意见归类"><a href="#7-3-将客户的意见归类" class="headerlink" title="7.3 将客户的意见归类"></a>7.3 将客户的意见归类</h2><p>用户给出需求不可能是一个简洁、完整、组织良好的需求清单。分析者必须把这些需求，分成不同的类型。这样就能合理地编写信息文档并把它们用最合适的方式表达。除以下情形之外，需求可分为9个类别。</p>
+<p>不能归于9个类别的需求可能属于下列情形之一：</p>
+<ol>
+<li>与软件开发无关的需求。</li>
+<li>项目所受的限制条件。</li>
+<li>假设。</li>
+<li>对数据的需求。</li>
+<li>关于历史、背景或用于描述的附件信息。</li>
+</ol>
+<h3 id="7-3-1-业务需求"><a href="#7-3-1-业务需求" class="headerlink" title="7.3.1 业务需求"></a>7.3.1 业务需求</h3><ul>
+<li>业务需求描述客户和开发组织希望从产品中获得的商业利益，如财务收入，市场份额等。</li>
+</ul>
+<h3 id="7-3-2-用例或场景"><a href="#7-3-2-用例或场景" class="headerlink" title="7.3.2 用例或场景"></a>7.3.2 用例或场景</h3><ul>
+<li>用例是对用户目标或用户需要执行的业务工作的一般性描述。</li>
+<li>使用场景则是某个用例的一条特定路径。</li>
+</ul>
+<h3 id="7-3-3-业务规则"><a href="#7-3-3-业务规则" class="headerlink" title="7.3.3 业务规则"></a>7.3.3 业务规则</h3><ul>
+<li>有关业务过程的操作原则。</li>
+</ul>
+<h3 id="7-3-4-功能性需求"><a href="#7-3-4-功能性需求" class="headerlink" title="7.3.4 功能性需求"></a>7.3.4 功能性需求</h3><ul>
+<li>功能性需求描述了系统在特定条件下表现得可观察的行为，以及系统允许用户执行的操作。</li>
+</ul>
+<h3 id="7-3-5-质量属性"><a href="#7-3-5-质量属性" class="headerlink" title="7.3.5 质量属性"></a>7.3.5 质量属性</h3><ul>
+<li>质量属性是对系统实施某种行为时，或者让用户执行某种操作时，系统表现如何的陈述。</li>
+</ul>
+<h3 id="7-3-6-外部接口需求"><a href="#7-3-6-外部接口需求" class="headerlink" title="7.3.6 外部接口需求"></a>7.3.6 外部接口需求</h3><ul>
+<li>这类需求描述了系统与外部世界的联系。</li>
+</ul>
+<h3 id="7-3-7-约束"><a href="#7-3-7-约束" class="headerlink" title="7.3.7 约束"></a>7.3.7 约束</h3><ul>
+<li>对设计和实现的约束（constraint）合理地限制了开发人员可用地选择。</li>
+</ul>
+<h3 id="7-3-8-数据定义"><a href="#7-3-8-数据定义" class="headerlink" title="7.3.8 数据定义"></a>7.3.8 数据定义</h3><ul>
+<li>当客户描述一个数据项或复杂的业务数据结构的格式、允许值或缺省值时，这种描述就是数据定义。</li>
+</ul>
+<h3 id="7-3-9-解决思路"><a href="#7-3-9-解决思路" class="headerlink" title="7.3.9 解决思路"></a>7.3.9 解决思路</h3><ul>
+<li>很多被用户作为需求提出来的意见都属于解决思路，而非真正的需求。</li>
+</ul>
+<h2 id="7-4-需求获取中的注意事项"><a href="#7-4-需求获取中的注意事项" class="headerlink" title="7.4 需求获取中的注意事项"></a>7.4 需求获取中的注意事项</h2><ol>
+<li>在需求获取的过程中，可能会发现以前的产品范围定义存在误差， 不是太大就是太小 。<ul>
+<li>如果范围太大，此时获取过程，将会拖延。</li>
+<li>如果范围太小，以致不能提供一个令人满意的产品</li>
+</ul>
+</li>
+<li>需求的获取，应该把重点放在“做什么”。</li>
+</ol>
+<h2 id="7-5-寻找遗漏的需求"><a href="#7-5-寻找遗漏的需求" class="headerlink" title="7.5 寻找遗漏的需求"></a>7.5 寻找遗漏的需求</h2><p>在需求获取的过程中，遗漏的需求是不可避免的。应用下列方法可以发现遗漏的需求：</p>
+<ol>
+<li>将高层需求分解；</li>
+<li>让用户类都提出意见；</li>
+<li>跟踪系统的需求、用例、事件-响应表及业务规则等；</li>
+<li>检查边界值，查找被遗漏的需求；</li>
+<li>用多种方法表达需求信息；</li>
+<li>应用CRUDL矩阵；</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E7%94%A8%E4%BA%8E%E5%8C%96%E5%AD%A6%E5%93%81%E8%B7%9F%E8%B8%AA%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84CRUDL%E5%AE%9E%E4%BD%93%E7%94%A8%E4%BE%8B%E7%9F%A9%E9%98%B5.png" alt="用于化学品跟踪管理系统的CRUDL实体/用例矩阵"></p>
+<center>图7-1 用于化学品跟踪管理系统的CRUDL实体/用例矩阵</center>
+
+<h2 id="7-6-如何判断需求获取是否已完成"><a href="#7-6-如何判断需求获取是否已完成" class="headerlink" title="7.6 如何判断需求获取是否已完成"></a>7.6 如何判断需求获取是否已完成</h2><p>下列的提示，可能标志需求获取的过程完成：</p>
+<ol>
+<li>如果用户不能想出更多的使用实例，也许你就完成了收集需求的工作。</li>
+<li>如果用户提出新的使用实例，但你可以从其它使用实例的相关功能需求中，获得这些新的使用实例，这时也许你就完成了收集需求的工作。</li>
+<li>如果用户开始重复原先讨论过的问题，此时，也许你就完成了收集需求的工作。</li>
+<li>如果所提出的新需求，比你已确定的需求的优先级都低时，也许你就完成了收集需求的工作。</li>
+<li>如果用户提出对将来产品的要求，而不是现在我们讨论的特定产品，也许你就完成了收集需求的工作。</li>
+</ol>
+<h1 id="8-理解用户需求"><a href="#8-理解用户需求" class="headerlink" title="8 理解用户需求"></a>8 理解用户需求</h1><ul>
+<li>需求分析员们一直利用使用场景（usage scenario）来获取需求。场景是对系统的单个使用实例的描述。这种以使用场景为中心的方法称为用例法。</li>
+<li>实时系统经常使用的一种需求获取方法是列出系统必须响应的外部事件以及相应的系统响应。</li>
+</ul>
+<h2 id="8-1-用例法"><a href="#8-1-用例法" class="headerlink" title="8.1 用例法"></a>8.1 用例法</h2><h3 id="8-1-0-基本概念"><a href="#8-1-0-基本概念" class="headerlink" title="8.1.0 基本概念"></a>8.1.0 基本概念</h3><ul>
+<li><strong>用例：</strong>描述了系统与外部角色之间的一系列交互。</li>
+<li><strong>角色：</strong>指与系统交互以实现某种目的的人、软件系统或硬件设备。</li>
+<li><strong>用例法的目标：</strong>描述用户需要通过系统执行的所有工作。</li>
+<li><strong>用例图：</strong>提供了对用户需求的高级可视化表示。</li>
+</ul>
+<h3 id="8-1-1-用例与使用场景"><a href="#8-1-1-用例与使用场景" class="headerlink" title="8.1.1 用例与使用场景"></a>8.1.1 用例与使用场景</h3><ol>
+<li>用例描述中的基本内容包括：<ul>
+<li>唯一的标识</li>
+<li>一个用例名，简要地说明用户的任务，采用“动词+对象”的形式，如“下订单”。</li>
+<li>用自然语言书写的简短的文字描述。</li>
+<li>一组<strong>前置条件</strong>，只有满足这些条件才能使用用例。</li>
+<li><strong>后置条件</strong>，描述用例成功完成后的系统状态。</li>
+<li>一组带编号的步骤，描述从前置条件到后置条件过程中，系统与角色间的一系列会话步骤与交互。</li>
+</ul>
+</li>
+<li><strong>主干过程：</strong>每个用例都有一个场景被确定为时间的主干过程，也称为主过程、基本过程、普通流、主场景、主要的成功场景和快乐之路（happy path）。</li>
+<li><strong>分支过程：</strong>用例中的其他有效场景则被描述为分支过程或次要场景。</li>
+<li><strong>子用例：</strong>有时多个用例都包含一组相同的步骤。为了避免在每个用例中都重复这些步骤，可以定义一个单独的用例来包括这些相同的功能，然后由其他用例来包含这个子用例。</li>
+<li><strong>异常：</strong>妨碍任务成功的条件被称为异常。如果在需求获取过程中未能描述如何处理异常，就可能有两种结果：<ul>
+<li>开发者尽量准确地推测出如何处理这些异常。</li>
+<li>当用户遇到出错条件时，系统会发生故障，因为不曾有人想到过这种可能。</li>
+</ul>
+</li>
+<li>系统崩溃通常不在用户的需求列表中。异常有时候会被视为一种分支过程，但最好还是将他们区别开来。</li>
+<li><strong>宏用例：</strong>用户可以将一系列用例串联成一个宏用例来描述大型的任务。</li>
+</ol>
+<h3 id="8-1-2-确定用例"><a href="#8-1-2-确定用例" class="headerlink" title="8.1.2 确定用例"></a>8.1.2 确定用例</h3><p>可采用以下几种方式确定用例：</p>
+<ol>
+<li>首先明确有哪些角色，然后确定他们各自参与了哪些业务过程。</li>
+<li>确定哪些外部事件是系统必须响应的，将它们与参与的角色和特定用例关联起来。</li>
+<li>用特定场景来描述业务过程，将这些场景归纳为用例，并确定每项用例设计哪些角色。</li>
+<li>从已有的功能性需求推导出可能的用例。如果不能从某些功能性需求推到出任何用力，则要1考虑是否真正需要它们。</li>
+</ol>
+<h3 id="8-1-3-编写用例"><a href="#8-1-3-编写用例" class="headerlink" title="8.1.3 编写用例"></a>8.1.3 编写用例</h3><ol>
+<li>基本用例是比具体用例更高一层的抽象。后者讨论用户与系统交互时采用的具体动作。举例：<ul>
+<li>具体：输入化学药品的标识号。</li>
+<li>基本：指定所需的化学品。</li>
+</ul>
+</li>
+<li>明确用例边界：检查用例的描述时，必须确定前置条件和后置条件准确界定了用例的范围，即用例的前置条件必须在启动第一个步骤前就已经满足，最后一个步骤刚好满足后置条件。</li>
+</ol>
+<h3 id="8-1-4-用例与功能性需求"><a href="#8-1-4-用例与功能性需求" class="headerlink" title="8.1.4 用例与功能性需求"></a>8.1.4 用例与功能性需求</h3><ol>
+<li><strong>功能性需求</strong>是让用户得以执行用例并达成目标的系统行为。</li>
+<li><strong>用例</strong>是从角色的角度来描述系统行为，省略了很多细节。</li>
+<li>要根据自己记录和管理项目软件需求的方式来选择最合适的方法。<ul>
+<li><strong>只使用用例：</strong>一种可能的办法是把功能性需求包含在每个用例描述中，不过还是需要一个单独的补充说明来记录非功能性需求，以及所有不与特定用例相关的功能性需求。对于出现在多个用例中的需求，应该使用交叉引用而不是重复需求。</li>
+<li><strong>用例与软件需求规格说明：</strong>还有一种方法是写一个相当简单的用例描述，同时把从用例中推导出的功能性需求记录在软件需求规格说明中。如果采用这种方法，你需要在用例与相关的功能性需求之间建立起可追溯关系。</li>
+<li><strong>只使用软件需求规格说明：</strong>第三种方法是根据用例或特性来组织软件需求规格说明，并把用例和功能性需求都记录在软件需求规格说明中。这种方式不需单独的用例文档。但是需要标出重复的功能性需求，或者对每项功能性需求只声明一次，当该需求再次出现与其他用例中时，都引用最初的需求声明</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-1-5-用例的好处"><a href="#8-1-5-用例的好处" class="headerlink" title="8.1.5 用例的好处"></a>8.1.5 用例的好处</h3><ul>
+<li>用例能够帮助需求分析员和开发人员理解用户业务和应用领域。</li>
+<li>根据用例法可推导出让用户能够执行某些已知任务的功能性需求，这有助于避免出现“孤立功能”，这类在需求获取过程中看似很好的功能其实并没人使用，因为它们与用户的任务没有直接关系。</li>
+<li>用例法还有技术方面的好处，能够揭示重要的域对象，以及相互间的职责。</li>
+</ul>
+<h3 id="8-1-6使用用例时应避免的问题"><a href="#8-1-6使用用例时应避免的问题" class="headerlink" title="8.1.6使用用例时应避免的问题"></a>8.1.6使用用例时应避免的问题</h3><ol>
+<li>用例过多</li>
+<li>用例过于复杂</li>
+<li>在用例中包含用户界面设计</li>
+<li>在用例中包含数据定义</li>
+<li>用户无法理解用例</li>
+<li>尚不存在的新业务流程</li>
+<li>滥用包含和扩充关系</li>
+</ol>
+<h2 id="8-2-事件-响应表"><a href="#8-2-事件-响应表" class="headerlink" title="8.2 事件-响应表"></a>8.2 事件-响应表</h2><ol>
+<li>事件是在用户环境中发生的某种变化或活动，它能激发软件系统做出响应。</li>
+<li>事件-响应表（也称为事件表或事件列表）列出了所有这类事件和系统应对每个事件做出的反应。</li>
+<li>事件-响应表特别适用于实时控制系统。</li>
+<li>事件-响应表记录的时用户-需求层的信息。</li>
+<li>描述事件的要素属于要素级描述，描述实现的细节属于实现级的描述。</li>
+</ol>
+<h1 id="9-遵守规则"><a href="#9-遵守规则" class="headerlink" title="9 遵守规则"></a>9 遵守规则</h1><h2 id="9-1-业务的规则"><a href="#9-1-业务的规则" class="headerlink" title="9.1 业务的规则"></a>9.1 业务的规则</h2><ul>
+<li>对业务的某个方面进行定义或约束的语句称为业务规则。</li>
+</ul>
+<h3 id="9-1-1-事件"><a href="#9-1-1-事件" class="headerlink" title="9.1.1 事件"></a>9.1.1 事件</h3><ul>
+<li>是对业务的真实陈述，常常描述重要业务术语的关联。</li>
+</ul>
+<h3 id="9-1-2-约束"><a href="#9-1-2-约束" class="headerlink" title="9.1.2 约束"></a>9.1.2 约束</h3><ul>
+<li>限制了系统或它的用户可以执行哪些操作。</li>
+</ul>
+<h3 id="9-1-3-动作触发规则"><a href="#9-1-3-动作触发规则" class="headerlink" title="9.1.3 动作触发规则"></a>9.1.3 动作触发规则</h3><ul>
+<li>在特定条件下触发某个动作的规则。</li>
+</ul>
+<h3 id="9-1-4-计算"><a href="#9-1-4-计算" class="headerlink" title="9.1.4 计算"></a>9.1.4 计算</h3><ul>
+<li>有一类业务规则定义使用特定数学公式或算法进行计算。</li>
+</ul>
+<h3 id="9-1-5-推论"><a href="#9-1-5-推论" class="headerlink" title="9.1.5 推论"></a>9.1.5 推论</h3><ul>
+<li>是根据某个条件的真实性得出得出新事物的规则，也称为推导出的知识。</li>
+</ul>
+<h2 id="9-2-在文档中记录业务规则"><a href="#9-2-在文档中记录业务规则" class="headerlink" title="9.2 在文档中记录业务规则"></a>9.2 在文档中记录业务规则</h2><ul>
+<li>业务规则会影响多个应用程序，必要时建立业务规则数据库。</li>
+</ul>
+<h2 id="9-3-业务规则与需求"><a href="#9-3-业务规则与需求" class="headerlink" title="9.3 业务规则与需求"></a>9.3 业务规则与需求</h2><ul>
+<li>可以通过研讨会发现业务规则，通过从不同角度提问发现业务规则，如图9-1：</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E9%80%9A%E8%BF%87%E4%BB%8E%E4%B8%8D%E5%90%8C%E8%A7%92%E5%BA%A6%E6%8F%90%E9%97%AE%E5%8F%91%E7%8E%B0%E4%B8%9A%E5%8A%A1%E8%A7%84%E5%88%99.png" alt="通过从不同角度提问发现业务规则"></p>
+<center>图9-1 通过从不同角度提问发现业务规则</center>
+
+<h1 id="10编写需求文档"><a href="#10编写需求文档" class="headerlink" title="10编写需求文档"></a>10编写需求文档</h1><ul>
+<li>需求开发的最终成果是：客户和开发小组对将要开发的产品，达成一致协议。这一协议综合了业务需求、用户需求和软件功能需求。而使用用例文档，则只包含了用户需求。必须应用文档把他们表示出来。即编写软件需求规格说明。</li>
+<li>编写软件需求规格说明，有三种方法：<ul>
+<li><strong>文档：</strong>用结构合理的自然语言来精心编写需求文档。</li>
+<li><strong>图形化模型：</strong>这些模型可以描绘转换过程、系统状态和他们之间的变化、数据关系、逻辑流或者对象类及其关系。</li>
+<li><strong>形式化规格说明：</strong>使用数学上精确的形式逻辑语言来定义需求。</li>
+</ul>
+</li>
+</ul>
+<h2 id="10-1-软件需求规格说明"><a href="#10-1-软件需求规格说明" class="headerlink" title="10.1 软件需求规格说明"></a>10.1 软件需求规格说明</h2><h3 id="10-1-0-基本概念"><a href="#10-1-0-基本概念" class="headerlink" title="10.1.0 基本概念"></a>10.1.0 基本概念</h3><ol>
+<li>软件需求规格说明，有时也称为功能规格说明、产品规格说明、需求文档或系统规格说明。</li>
+<li>软件需求规格说明精确地阐述了一个软件系统必须提供的功能和性能以及它必须遵守的约束。</li>
+<li>软件需求规格说明是所有后续的项目规划、设计和编码的基础，也是系统测试和用户文档的基础。</li>
+<li>必须去使用软件规格说明的受众有以下几类：<ul>
+<li>客户、市场部和销售人员需要了解他们期望的得到什么样的产品。</li>
+<li>项目经理根据产品描述来估计项目的进度、工作量和所需资源。</li>
+<li>开发团队根据软件需求规格说明了解需要开发什么样的产品。</li>
+<li>测试小组使用软件需求规格说明来开发测试计划、测试用例和测试过程。</li>
+<li>软件维护和支持人员根据软件需求规格说明了解产品的每一部分的功能是什么。</li>
+<li>文档编写人员根据软件需求规格说明和用户界面设计来编写用户手册和帮助屏幕。</li>
+<li>培训人员根据软件规格说明和用户文档来编写培训材料。</li>
+<li>公司律师要确保该需求遵守相应的法律法规。</li>
+<li>分包商根据软件需求规格说明来进行工作，当然这要在合法的基础上。</li>
+</ul>
+</li>
+<li>有关需求可读性的建议：<ul>
+<li>对节、小节和单个需求的标记格式必须一致。</li>
+<li>在右边部分留下文本注释区，而不要在两边全部写满。</li>
+<li>允许不受限制地使用空白。</li>
+<li>灵活明智地使用各种可视强调标志（例如，黑体、下划线、斜体和不同字体）。</li>
+<li>创建目录表，也许还需要创建索引，这有助于读者找到他们所需要的信息。</li>
+<li>对所有图和表及进行编号，并给出标题，根据编号来引用这些图和表。</li>
+<li>使用字处理程序的交叉引用功能来引用文档中的其他位置，而不是通过页码或节号进行引用。</li>
+<li>使用超链接使读者可以跳跃到软件需求规格说明或其他文档的相关部分。</li>
+<li>引用合适的模板来组织所有的必要信息。</li>
+</ul>
+</li>
+<li>软件需求规格说明的要求：<ul>
+<li>作为产品需求的最终成果：<ul>
+<li>必须具有综合性 </li>
+<li>必须包括所有的需求</li>
+</ul>
+</li>
+<li>如果任何所期望的功能或非功能需求，未写入软件需求规格说明，那么它将不能在产品中出现。</li>
+<li>必须在开始设计和构造之前，编写出整个产品的软件需求规格说明。</li>
+<li>针对每个需求的集合，必须有一个基准协议。<ul>
+<li>基准：是指正在开发的软件需求规格说明，向已通过评审的软件需求规格说明的过渡过程。</li>
+<li>必须通过项目中，所定义的变更控制过程，来更改基准软件需求规格说明。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="10-1-1-需求的标识"><a href="#10-1-1-需求的标识" class="headerlink" title="10.1.1 需求的标识"></a>10.1.1 需求的标识</h2><ol>
+<li>序列号：最简单的方法时赋予每个需求一个唯一的标识号，如UR-9或SRS-43。如果删除某个需求，则其序列号就不能再使用。这种方式并不能提供任何相关需求再逻辑上或层次上的信息，而且其标识也不能提供有关每个需求内容的信息。</li>
+<li>层次型编号：如3.1.2等。这种方案不能产生永久性标识，一种改进是对需求中的主要部分进行层次性标号，然后用一个简短文本代码加上一个序列号来标识每个部分中的单个功能性需求。如：“3.5节——编辑功能”，那么这一节中的需求的编号可以是ED-1，ED-2等等。</li>
+<li>层次型文本标签：基于文本的层次型标签方案，如一个需求为“当打印份数大于10份时必须让用户确认”，可标识为Print.ConfirmCopies。<ul>
+<li>优点：具有一定含义，并且不受添加、删除或移动其他需求的影响。</li>
+<li>缺点：比层次型数字编号更加复杂。</li>
+</ul>
+</li>
+</ol>
+<h3 id="10-1-2-处理不完整性"><a href="#10-1-2-处理不完整性" class="headerlink" title="10.1.2 处理不完整性"></a>10.1.2 处理不完整性</h3><ol>
+<li>使用“待确定”（to be determined, TBD）符号来标记这些尚未确定的需求，</li>
+<li>把每个TBD编号，并创建一个TBD列表，这有助于方便地跟踪每个项目。 </li>
+<li>在构造需求集合之前，必须解决所有的TBD问题。如果有TBD问题尚未解决，而又要继续进行开发工作，那么尽可能推迟实现这些需求。</li>
+</ol>
+<h3 id="10-1-3-用户界面和软件需求规格说明"><a href="#10-1-3-用户界面和软件需求规格说明" class="headerlink" title="10.1.3 用户界面和软件需求规格说明"></a>10.1.3 用户界面和软件需求规格说明</h3><p>把用户界面的设计，编入软件需求规格说明。既有好处，也有坏处。</p>
+<ol>
+<li>积极方面：<ul>
+<li>探索潜在的用户界面，有助于精化需求。</li>
+<li>并使用户和系统的交互，对用户和开发人员更具有实在性。</li>
+<li>用户界面的演示，也有助于项目计划的制定和预测。</li>
+</ul>
+</li>
+<li>消极方面：<ul>
+<li>屏幕映像和用户界面机制是解决方案（设计）的描述，而不是需求。</li>
+<li>如果完成了用户界面的设计后,才能确定软件需求规格说明，那么需求开发的过程,将会花费很长的时间</li>
+<li>这将会使那些只关心开发时间的经理、客户或开发人员失去耐心。</li>
+</ul>
+</li>
+<li>一个合理的平衡点：在软件需求规格说明中，加入所选择的用户界面组件的概念映像草图，而在实<br>    现时，并不一定要精确地遵循这些方法。</li>
+</ol>
+<h2 id="10-2-软件需求规格说明模板"><a href="#10-2-软件需求规格说明模板" class="headerlink" title="10.2 软件需求规格说明模板"></a>10.2 软件需求规格说明模板</h2><p>在项目中,应采用标准的软件需求规格说明模板。可以根据项目的需要，来修改标准模板。如果模板中某一特定部分不适合你的项目，那么就在原处保留标题，并注明该项不适用。这将防止,认为是否遗漏了一些重要的部分。</p>
+<ol>
+<li><p>引言.<br>1.1 目的<br>1.2 文档约定<br>1.3 预期的读者和阅读建议<br>1.4 产品的范围<br>1.5 参考文献</p>
+</li>
+<li><p>综合描述<br>2.1 产品的前景<br>2.2 产品的功能<br>2.3 用户类和特征<br>2.4 运行环境<br>2.5 设计和实现上的限制<br>2.6 假设和依赖</p>
+</li>
+<li><p>外部接口需求<br>3.1 用户界面<br>3.2 硬件接口<br>3.3 软件接口<br>3.4 通信接口</p>
+</li>
+<li><p>系统特性<br>4.1 说明和优先级<br>4.2 激励&#x2F;响应序列<br>4.3 功能需求</p>
+</li>
+<li><p>其它非功能需求<br>5.1 性能需求<br>5.2 安全设施需求<br>5.3 安全性需求<br>5.4 软件质量属性<br>5.5 业务规则<br>5.6 用户文档</p>
+</li>
+<li><p>其它需求</p>
+<p>附录A：词汇表<br>附录B：分析模型<br>附录C：待确定问题的列表</p>
+</li>
+</ol>
+<p>每部分对应解释如下：</p>
+<ul>
+<li>引言：引言提出了对软件需求规格说明的纵览，有助于读者理解文档如何编写，且如何阅读和解释。</li>
+<li>综合描述：概述了正在定义的产品以及它所运行的环境、使用产品的用户和已知的限制、假设和依赖。</li>
+<li>外部接口需求：确定可以保证新产品与外部组件正确连接的需求。</li>
+<li>系统特性：选择一种易于理解预期产品的组织方案。</li>
+<li>其他非功能特性：列举出所有非功能需求，而不是外部接口需求和限制。</li>
+<li>其他需求：定义在软件需求规格说明中的其它部分未出现的需求。例如：国际化需求或法律上的需求。</li>
+<li>词汇表：定义所有必要的术语，以便读者可以正确地解释软件需求规格说明。包括：词头和缩写。</li>
+<li>分析模型：包括或涉及到相关的分析模型的位置。例如：数据流程图、类图、状态转换图或实体-关系图。</li>
+<li>待确定问题的列表：编辑一张在软件需求规格说明中待确定问题的列表，其中，每一表项都编上标号，以便于跟踪调查。</li>
+</ul>
+<h2 id="10-3-编写需求文档的原则"><a href="#10-3-编写需求文档的原则" class="headerlink" title="10.3 编写需求文档的原则"></a>10.3 编写需求文档的原则</h2><p>编写优秀的需求文档，没有固定的方法，一般是根据经验进行，应考虑一下几点：</p>
+<ol>
+<li>保持语句和段落的简短。</li>
+<li>采用主动语态的表达方式。</li>
+<li>编写具有正确的语法、拼写和标点的完整句子。</li>
+<li>使用的术语与词汇表中所定义的应该一致。</li>
+<li>需求陈述应该具有一致的样式。</li>
+<li>减少不确定性，避免模糊的、主观的术语。</li>
+<li>避免使用比较性的词汇。</li>
+<li>需求文档，应使用有效的技术和用户术语，而不是计算机专业术语的方式，来编写。</li>
+<li>由于需求的编写是层次化的，因此，可以把顶层不明确的需求，向低层详细分解，直到消除不明确性为止。但不要过于详细，而影响设计。</li>
+<li>必须以相同的详细程度，编写每个需求文档。</li>
+<li>不应该把多个需求集中在一个冗长的叙述段落中。</li>
+<li>文档的编写人员，应考虑用最有效的方法表达每个需求。</li>
+<li>软件需求规格说明中避免使用用有歧义的术语。</li>
+</ol>
+<h2 id="10-4-改进前后的需求"><a href="#10-4-改进前后的需求" class="headerlink" title="10.4 改进前后的需求"></a>10.4 改进前后的需求</h2><ul>
+<li>重申高质量的需求特性：完整性、正确性、可行性、必要性、设定优先级、明确性和可验证性。</li>
+<li>如果不具有这些特征，将会引起混淆，导致将来的返工。</li>
+</ul>
+<h2 id="10-5-数据字典"><a href="#10-5-数据字典" class="headerlink" title="10.5 数据字典"></a>10.5 数据字典</h2><ol>
+<li>概念：定义应用程序中，使用的所有数据元素和结构的含义、类型、数据大小、格式、度量单位、精度以及允许取值范围的共享仓库。</li>
+<li>好处：<ul>
+<li>可以把不同的需求文档和分析模型紧密结合在一起。</li>
+<li>如果所有的开发人员在数据字典上取得一致意见，那么就可以缓和集成性问题。而并不是在每个需求出现的地方定义每一个数据项。</li>
+<li>数据字典的维护独立于软件需求规格说明，并且在产品的开发和维护的任何阶段，各个风险承担者都可以访问数据字典。</li>
+<li>数据字典与数据流图配合，能清楚地表达数据处理的要求。</li>
+</ul>
+</li>
+</ol>
+<h1 id="11-需求的图形化分析"><a href="#11-需求的图形化分析" class="headerlink" title="11 需求的图形化分析"></a>11 需求的图形化分析</h1><p>软件系统中的图形化：</p>
+<p><img src="http://img.fdchen.host/%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%8C%96.png" alt="软件系统中的图形化"></p>
+<center>图11-1 软件系统中的图形化</center>
+
+<h2 id="11-1-需求建模"><a href="#11-1-需求建模" class="headerlink" title="11.1 需求建模"></a>11.1 需求建模</h2><ol>
+<li>在需求分析方面或设计方面，是否使用模型取决于建模的目的。在需求开发中通过建立模型有利于理解需求</li>
+<li>模型：描述了问题域的逻辑方面。如：数据组成、事务和转换、现实世界对象和允许的状态等。 方便了项目参与者在系统的某些方面的交流。</li>
+<li>没有一种单一的需求视图能够提供对需求的全面理解，必须在需求中综合使用文本和图形表示法来完整地描述所需的系统。</li>
+<li>分析模型应该补充完善用自然语言编写的需求规格说明，而不是替换它。</li>
+<li>重复是系统建模成功的关键所在。</li>
+</ol>
+<h2 id="11-2-从客户需求到分析模型"><a href="#11-2-从客户需求到分析模型" class="headerlink" title="11.2 从客户需求到分析模型"></a>11.2 从客户需求到分析模型</h2><ol>
+<li>通过认真听取客户如何陈述它们的需求，分析者可以挑选出关键字。这些关键字可以翻译成特定的分析模型元素。</li>
+<li>当把客户输入转变为书面的需求或模型时，还可以根据模型的每个组件回溯到需求部分。</li>
+</ol>
+<h2 id="11-3-数据流图（Data-Flow-Diagram）"><a href="#11-3-数据流图（Data-Flow-Diagram）" class="headerlink" title="11.3 数据流图（Data Flow Diagram）"></a>11.3 数据流图（Data Flow Diagram）</h2><h3 id="11-3-1-基本概念"><a href="#11-3-1-基本概念" class="headerlink" title="11.3.1 基本概念"></a>11.3.1 基本概念</h3><ol>
+<li>是结构化系统分析的基本工具。</li>
+<li>确定了系统的转化过程、系统所操纵的数据或物质的存储。</li>
+<li>可以在一个抽象的广泛范围内表示系统。</li>
+<li>是分层次的，高层数据流图提供一个整体的统览，是对软件需求规格说明的精确、详细叙述的补充。</li>
+<li>描述了功能需求怎样和使用户相结合</li>
+<li>反馈的信息，有助于理解所探讨的任务流，进行提炼加工。</li>
+</ol>
+<h3 id="11-3-2-基本DFD标识符"><a href="#11-3-2-基本DFD标识符" class="headerlink" title="11.3.2 基本DFD标识符"></a>11.3.2 基本DFD标识符</h3><ul>
+<li>矩形用于表示外部实体</li>
+<li>圆表示应用于数据或控件的过程或转换</li>
+<li>箭头表示数据流方向</li>
+<li>平行线表示数据存储</li>
+</ul>
+<h3 id="11-3-3-示例"><a href="#11-3-3-示例" class="headerlink" title="11.3.3 示例"></a>11.3.3 示例</h3><p><img src="http://img.fdchen.host/DFD%E7%A4%BA%E4%BE%8B.png" alt="DFD示例"></p>
+<center>图11-2 DFD示例</center>
+
+<h2 id="11-4-实体-联系图（Entity-Relationship-Diagram）"><a href="#11-4-实体-联系图（Entity-Relationship-Diagram）" class="headerlink" title="11.4 实体-联系图（Entity-Relationship Diagram）"></a>11.4 实体-联系图（Entity-Relationship Diagram）</h2><h3 id="11-4-1-基本概念"><a href="#11-4-1-基本概念" class="headerlink" title="11.4.1 基本概念"></a>11.4.1 基本概念</h3><ol>
+<li>实体联系图：<ul>
+<li>描绘了系统的数据关系；</li>
+<li>有助于对业务或系统数据组成的理解和交互；</li>
+<li>用一个实体联系图和一个数据字典，来记录数据关系，可以为新的业务过程，提供一个数据组成的概念性框架。</li>
+</ul>
+</li>
+</ol>
+<h3 id="11-4-2-基本ERD元素"><a href="#11-4-2-基本ERD元素" class="headerlink" title="11.4.2 基本ERD元素"></a>11.4.2 基本ERD元素</h3><ul>
+<li><strong>实体</strong>用单名词来命名。用矩形框表示。</li>
+<li>每个实体要用几个<strong>属性</strong>来描述，每个实体的单个实例具有不同的属性值。</li>
+<li><strong>关系</strong>用能描述关系的本质来命名，它确定了一对实体之间在逻辑上和数量上的连接。用菱形框表示。</li>
+</ul>
+<h3 id="11-4-5-示例"><a href="#11-4-5-示例" class="headerlink" title="11.4.5 示例"></a>11.4.5 示例</h3><p><img src="http://img.fdchen.host/ERD%E7%A4%BA%E4%BE%8B.png" alt="ERD示例"></p>
+<center>图11-2 ERD示例</center>
+
+<h3 id="11-5-状态转换图（State-Transition-Diagram）"><a href="#11-5-状态转换图（State-Transition-Diagram）" class="headerlink" title="11.5 状态转换图（State-Transition Diagram）"></a>11.5 状态转换图（State-Transition Diagram）</h3><h3 id="11-5-1-基本概念"><a href="#11-5-1-基本概念" class="headerlink" title="11.5.1 基本概念"></a>11.5.1 基本概念</h3><ol>
+<li>状态转换图：<ul>
+<li>为状态提供了一个简洁、完整、无二义性的表示。</li>
+<li>表示处理结果可能的状态转换。对于软件系统中只能存在于特定状态的那一部分，可以使用状态转换图来建模。</li>
+<li>有助于开发者理解系统的预期行为。<ul>
+<li>测试者：可以从转换路径的状态转换图中获得测试用例。</li>
+<li>用户：只要稍微学一些符号就可以读懂状态转换图。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="11-5-2-基本STD元素"><a href="#11-5-2-基本STD元素" class="headerlink" title="11.5.2 基本STD元素"></a>11.5.2 基本STD元素</h3><p><img src="http://img.fdchen.host/STD%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0.png" alt="STD基本元素"></p>
+<center>图11-3 基本STD元素</center>
+
+<h3 id="11-5-3-示例"><a href="#11-5-3-示例" class="headerlink" title="11.5.3 示例"></a>11.5.3 示例</h3><p><img src="http://img.fdchen.host/STD%E7%A4%BA%E4%BE%8B.png" alt="STD示例"></p>
+<center>图11-4 STD示例</center>
+
+<h2 id="11-6-对话图（Dialog-Map）"><a href="#11-6-对话图（Dialog-Map）" class="headerlink" title="11.6 对话图（Dialog Map）"></a>11.6 对话图（Dialog Map）</h2><h3 id="11-6-1-基本概念"><a href="#11-6-1-基本概念" class="headerlink" title="11.6.1 基本概念"></a>11.6.1 基本概念</h3><ol>
+<li>对话图（dialog map）：一种状态转换图。</li>
+<li>对话图在较高的抽象层次上表示用户界面的设计，它展示了系统的对话元素及这些元素之间的导航连接，但没有展示详细的屏幕设计。</li>
+<li>在对话图中将每个对话元素表示为一个状态（用矩形框表示），将每个允许的导航选项表示为一个转换（用箭头表示）。触发用户界面导航的条件表示为转换箭头上的文本标签。</li>
+<li>对话图是表示用例中所描述的参与者与系统之间的交互的很好的方法。</li>
+</ol>
+<h3 id="11-6-2-示例"><a href="#11-6-2-示例" class="headerlink" title="11.6.2 示例"></a>11.6.2 示例</h3><p><img src="http://img.fdchen.host/DM%E7%A4%BA%E4%BE%8B.png" alt="DM示例"></p>
+<center>图11-5 DM示例</center>
+
+<h2 id="11-7-类图（Class-Diagram）"><a href="#11-7-类图（Class-Diagram）" class="headerlink" title="11.7 类图（Class Diagram）"></a>11.7 类图（Class Diagram）</h2><h3 id="11-7-1-基本概念"><a href="#11-7-1-基本概念" class="headerlink" title="11.7.1 基本概念"></a>11.7.1 基本概念</h3><ol>
+<li>类图(class diagram)是用图形方式叙述面向对象分析所确定的类以及它们之间的关系。</li>
+<li>利用面向对象方法开发的产品并不需要特殊的需求开发方法。这是因为需求开发强调用户需要系统做什么以及系统所应包含的功能，而并不关心系统如何做。</li>
+<li>当考虑如何将问题域对象映射到系统对象，并进一步细化每个类的属性和操作时，面向对象技术可以方便需求开发到设计阶段的转换。</li>
+</ol>
+<h3 id="11-7-2-示例"><a href="#11-7-2-示例" class="headerlink" title="11.7.2 示例"></a>11.7.2 示例</h3><p><img src="http://img.fdchen.host/CD%E7%A4%BA%E4%BE%8B.png" alt="CD示例"></p>
+<center>图11-6 CD示例</center>
+
+<h2 id="11-8-决策表和决策树"><a href="#11-8-决策表和决策树" class="headerlink" title="11.8 决策表和决策树"></a>11.8 决策表和决策树</h2><h3 id="11-8-1-基本概念"><a href="#11-8-1-基本概念" class="headerlink" title="11.8.1 基本概念"></a>11.8.1 基本概念</h3><ol>
+<li>决策表：应用表格的形式进行需求表达。判定表可列出影响系统行为的所有因素的各种取值，并表明对这些因素的每一种组合所期望的系统响应动作。</li>
+<li>决策树：采用一种树形结构表达需求。用树形结构表示动作的各种分支。</li>
+</ol>
+<h3 id="11-8-2-示例"><a href="#11-8-2-示例" class="headerlink" title="11.8.2 示例"></a>11.8.2 示例</h3><ol>
+<li>决策表示例</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E5%86%B3%E7%AD%96%E8%A1%A8%E7%A4%BA%E4%BE%8B.png" alt="决策表示例"></p>
+<center>图11-7 决策表示例</center>
+
+<p>说明：</p>
+<ul>
+<li>第一行数字表示可能存在的各种需求，包括多种可能性，可以去掉一些不必要可能性，比如当前面行的条件无法满足时，后面行的条件可能无关紧要，此时后面行的可以用“-”表示。</li>
+<li>“T”和“F”表示是否满足对应行的条件。</li>
+<li>“X”表示动作入口，表示当列需求（条件）下系统采取的动作。</li>
+</ul>
+<ol start="2">
+<li>决策树示例</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E5%86%B3%E7%AD%96%E6%A0%91%E7%A4%BA%E4%BE%8B.png" alt="决策树示例"></p>
+<center>图11-8 决策树示例</center>
+
+<h2 id="11-9-最后的提醒"><a href="#11-9-最后的提醒" class="headerlink" title="11.9 最后的提醒"></a>11.9 最后的提醒</h2><ol>
+<li>所述的每一种建模都有其优点和局限性。</li>
+<li>牢记，创建的分析模型可以提供对需求理解和通信的一个等级，而这却是文本方式下的软件需求规格说明和其它单一的表示法所不能提供的。</li>
+<li>应该避免陷入在软件开发方法和模型中发生的教条的思维模式。</li>
+</ol>
+<h1 id="12-软件质量属性"><a href="#12-软件质量属性" class="headerlink" title="12 软件质量属性"></a>12 软件质量属性</h1><h2 id="12-0-基本概念"><a href="#12-0-基本概念" class="headerlink" title="12.0 基本概念"></a>12.0 基本概念</h2><ol>
+<li>软件质量属性或质量引述是系统非功能性需求的一部分。</li>
+<li>非功能需求(none-functional requirements)：描述系统展现给用户的行为和执行的操作等。包括:<ul>
+<li>产品必须遵循的标准、规范和合约</li>
+<li>外部界面的具体细节</li>
+<li>性能要求</li>
+<li>设计或实现的约束条件等</li>
+</ul>
+</li>
+<li>质量属性通过多种角度对产品的特点进行描述，从而反映产品功能。</li>
+<li>根据不同的设计，可把质量属性分类：<ul>
+<li>一种方法是把在运行时，可识别的特性与那些不可识别的特性区分开。</li>
+<li>另一种方法，是把对用户很重要的可见特性与对开发者和维护者很重要的不可见特性区分开。</li>
+</ul>
+</li>
+<li>对开发者具有重要意义的属性有：使产品易于更改、验证，并易于移植到新的平台上，从而可以间接地满足客户需要的属性。</li>
+</ol>
+<h2 id="12-1-软件质量属性"><a href="#12-1-软件质量属性" class="headerlink" title="12.1 软件质量属性"></a>12.1 软件质量属性</h2><p>如表12-1，分两类描述每个项目都要考虑的一些质量属性：</p>
+<center>表12-1 软件质量属性</center>
+
+<table>
+<thead>
+<tr>
+<th>主要对用户重要的属性</th>
+<th>主要对开发人员重要的属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可用性<br />有效性<br />灵活性<br />完整性<br />互操作性<br />可靠性<br />健壮性<br />易用性</td>
+<td>可维护性<br />可移植性<br />可重用性<br />可测试性</td>
+</tr>
+</tbody></table>
+<h2 id="12-2-定义质量属性"><a href="#12-2-定义质量属性" class="headerlink" title="12.2 定义质量属性"></a>12.2 定义质量属性</h2><p>必须根据用户对系统的期望，来确定质量属性。分析员根据每一个属性设计出许多问题。利用这些问题询问每一个用户类的代表，可以把每个属性分成：一级（不必多加考虑的属性）到五级（极其重要的属性）。这些问题的回答有助于分析员决定哪些质量特性是最重要的。然后，分析员与用户一起，为每一属性确定需求。</p>
+<h3 id="12-2-1-对用户重要的属性（理解）"><a href="#12-2-1-对用户重要的属性（理解）" class="headerlink" title="12.2.1 对用户重要的属性（理解）"></a>12.2.1 对用户重要的属性（理解）</h3><ol>
+<li>可用性</li>
+</ol>
+<ul>
+<li>系统能够正常运行的时间比例。经常用两次故障之间的时间长度或在出现故障时系统能够恢复正常的速度来表示。更正式地说，可用性等于系统的平均无故障时间（MTTF）除以平均无故障时间（MTTF）与故障修复时间（MTTR）之和。</li>
+</ul>
+<ol start="2">
+<li>有效性</li>
+</ol>
+<ul>
+<li>用来衡量系统如何优化处理器、磁盘空间或通信带宽的。</li>
+</ul>
+<ol start="3">
+<li>灵活性</li>
+</ol>
+<ul>
+<li>表明了在产品中，增加新功能时，所需工作量的大小。</li>
+<li>对于通过一系列连续的发行版本，并采用渐增型和重复型方式开发的产品是很重要的。</li>
+</ul>
+<ol start="4">
+<li>完整性</li>
+</ol>
+<ul>
+<li>主要涉及防止非法访问系统功能、防止数据丢失、防止病毒入侵，并防止私人数据进入系统。即数据和访问，必须通过特定的方法完全保护起来。</li>
+</ul>
+<ol start="5">
+<li>互操作性</li>
+</ol>
+<ul>
+<li>表明了产品与其它系统交换数据和服务的难易程度。</li>
+</ul>
+<ol start="6">
+<li>可靠性</li>
+</ol>
+<ul>
+<li>软件无故障执行一段时间的概率。</li>
+<li>健壮性和有效性有时可看成是可靠性的一部分。</li>
+</ul>
+<ol start="7">
+<li>健壮性</li>
+</ol>
+<ul>
+<li>指当系统或其组成部分遇到非法输入数据、相关软件或硬件组成部分的缺陷或异常的操作情况时，能继续正确运行功能的程度。</li>
+<li>健壮的软件，可以从发生问题的环境中完好地恢复，并且可容忍用户的错误。</li>
+</ul>
+<ol start="8">
+<li>易用性</li>
+</ol>
+<ul>
+<li>它所描述的是许多组成“用户友好”的因素。</li>
+<li>衡量准备输入、操作和理解产品输出所花费的努力。</li>
+<li>还包括对于新用户或不常使用产品的用户在学习使用产品时的难易程度。</li>
+</ul>
+<h3 id="12-2-2-对于开发人员重要的属性（理解）"><a href="#12-2-2-对于开发人员重要的属性（理解）" class="headerlink" title="12.2.2 对于开发人员重要的属性（理解）"></a>12.2.2 对于开发人员重要的属性（理解）</h3><ol>
+<li>可维护性</li>
+</ol>
+<ul>
+<li>表明了在软件中纠正一个缺陷或做一次更改的难易程度。</li>
+<li>取决于理解软件、更改软件和测试软件的难易程度。</li>
+</ul>
+<ol start="2">
+<li>可移植性</li>
+</ol>
+<ul>
+<li>度量把一个软件从一种运行环境转移到另一种运行环境中所花费的工作量。</li>
+<li>对于工程的成功是不重要的。</li>
+</ul>
+<ol start="3">
+<li>可重用性</li>
+</ol>
+<ul>
+<li>表明了一个软件组件，除了在最初开发的系统中使用之外，还可以在其它应用程序中使用的程度。</li>
+<li>开发可重用软件的费用会更大些。</li>
+</ul>
+<ol start="4">
+<li>可测试性</li>
+</ol>
+<ul>
+<li>指的是测试软件组件或集成产品时查找缺陷的难易程度。</li>
+</ul>
+<h2 id="12-3-性能需求"><a href="#12-3-性能需求" class="headerlink" title="12.3 性能需求"></a>12.3 性能需求</h2><ul>
+<li>定义了系统必须多好和多快的完成专门的功能。包括：速度、吞吐量、处理能力、定时……</li>
+</ul>
+<h2 id="12-4-属性的折中方案"><a href="#12-4-属性的折中方案" class="headerlink" title="12.4 属性的折中方案"></a>12.4 属性的折中方案</h2><ul>
+<li>为了达到产品特性的最佳平衡，必须在需求获取阶段识别、确定相关的质量属性，并且为之确定优先级。</li>
+</ul>
+<h1 id="13-通过原型法减少项目风险"><a href="#13-通过原型法减少项目风险" class="headerlink" title="13 通过原型法减少项目风险"></a>13 通过原型法减少项目风险</h1><h2 id="13-1-什么是原型和为什么要建立原型"><a href="#13-1-什么是原型和为什么要建立原型" class="headerlink" title="13.1 什么是原型和为什么要建立原型"></a>13.1 什么是原型和为什么要建立原型</h2><h3 id="13-1-1-原型的概念"><a href="#13-1-1-原型的概念" class="headerlink" title="13.1.1 原型的概念"></a>13.1.1 原型的概念</h3><ul>
+<li>一个软件原型是所提出的新产品的部分实现。</li>
+</ul>
+<h3 id="13-1-2-建立原型的主要目的"><a href="#13-1-2-建立原型的主要目的" class="headerlink" title="13.1.2 建立原型的主要目的"></a>13.1.2 建立原型的主要目的</h3><ul>
+<li>明确并完善需求</li>
+<li>探索设计选择方案</li>
+<li>发展为最终的产品</li>
+</ul>
+<h3 id="13-1-3-建立原型的主要原因"><a href="#13-1-3-建立原型的主要原因" class="headerlink" title="13.1.3 建立原型的主要原因"></a>13.1.3 建立原型的主要原因</h3><ul>
+<li>是为了解决在产品开发的早期阶段不确定和二义性的问题。不确定和二义性的问题，使开发者对产品产生困惑。建立一个原型，有助于说明和纠正它们。原型，可以使问题更具体化。</li>
+</ul>
+<h2 id="13-2-水平原型"><a href="#13-2-水平原型" class="headerlink" title="13.2 水平原型"></a>13.2 水平原型</h2><ul>
+<li><p>水平原型，也叫“行为原型”或“演示性模型” 。水平原型显示出用户界面的正面像，但是它仅包含少量的功能，并没有真正实现所有的功能，不深入到体系结构的所有层次。</p>
+</li>
+<li><p>水平原型，可以使用户判断是否有遗漏、  错误或不必要的功能。可以使用不同的屏幕设计工具或甚至使用纸和铅笔来建立水平原型。</p>
+</li>
+</ul>
+<h2 id="13-3-垂直原型"><a href="#13-3-垂直原型" class="headerlink" title="13.3 垂直原型"></a>13.3 垂直原型</h2><ul>
+<li><p>垂直原型，也叫“结构化原型”或“概念性模型”。它实现了一部分应用功能，主要在技术服务层次上实现应用程序用户界面的一部分功能，它触及到了系统实现的所有层次。</p>
+</li>
+<li><p>当不能确信所提出的构造软件的方法是否完善或者当需要优化算法，评价一个数据库的图表或测试临界时间需求时，就要开发一个垂直原型。</p>
+</li>
+</ul>
+<h2 id="13-4-抛弃性原型"><a href="#13-4-抛弃性原型" class="headerlink" title="13.4 抛弃性原型"></a>13.4 抛弃性原型</h2><ul>
+<li>在原型达到预期目的以后，将它抛弃，所以，可以花最小的代价，尽快地建立该原型。</li>
+<li>抛弃型原型，忽略了很多具体的软件构造技术。不能将抛弃型原型中的代码，移植到产品系统中。否则，将在软件生存期中遭遇种种麻烦。</li>
+<li>当遇到需求中的不确定性、二义性、不完整性或含糊性时。最合适的方法，是建立抛弃型原型。<ul>
+<li>原型，可帮助用户和开发者想象如何实现需求和发现需求中的漏洞。</li>
+<li>原型，还可以使用户判断出需求是否可以完成必要的业务过程。</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-5-演化型原型"><a href="#13-5-演化型原型" class="headerlink" title="13.5 演化型原型"></a>13.5 演化型原型</h2><ul>
+<li>演化型原型是螺旋式软件开发生命周期模型和某些面向对象软件开发过程的一个组成部分。</li>
+<li>在已经清楚地定义了需求的情况下，进化型原型为产品提供了坚实的构造基础。</li>
+<li>进化式模型，一开始就必须具有健壮性和产品质量级的代码。</li>
+<li>建立进化型原型比建立抛弃型原型所花的时间要多。</li>
+<li>一个进化型原型必须设计为易于升级和优化的。</li>
+<li>从测试和首次使用中获得的信息，将引起下一次软件原型的更新，正是这样不断增长并更新，使软件才能从一系列进化型原型，发展为实现最终完整的产品。</li>
+<li>这种原型提供了快速获得有用功能的方法。</li>
+<li>软件原型的典型应用，如图13-1：</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E8%BD%AF%E4%BB%B6%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8.png" alt="软件原型的典型应用"></p>
+<center>图13-1 软件原型的典型应用</center>
+
+<h2 id="13-6-书面和电子原型"><a href="#13-6-书面和电子原型" class="headerlink" title="13.6 书面和电子原型"></a>13.6 书面和电子原型</h2><ul>
+<li>书面原型和电子原型：用平面工具把系统是如何实现的呈现在用户面前。</li>
+</ul>
+<h3 id="13-6-1-书面原型"><a href="#13-6-1-书面原型" class="headerlink" title="13.6.1 书面原型"></a>13.6.1 书面原型</h3><ol>
+<li>是一种廉价、快速，并且不涉及高技术的方法。它可以把一个系统某部分，是如何实现的呈现在用户面前。</li>
+<li>有助于判断用户和开发者，在需求上是否达成共识。可以使在开发产品代码前，对各种可能的解决方案进行试验性的尝试。</li>
+<li>使用的工具：是纸张、索引卡、粘贴纸、塑料板、白板和标记器。在书面原型中，一个人可以充当计算机的角色。即模仿计算机的人，就会把关于显示方面的纸张和索引卡给用户看。</li>
+<li>方便了原型的快速反复性，而在需求开发中反复性是一个关键的成功因素。对于精化需求，是一种优秀的技术。</li>
+</ol>
+<h3 id="13-6-2-电子原型"><a href="#13-6-2-电子原型" class="headerlink" title="13.6.2 电子原型"></a>13.6.2 电子原型</h3><ol>
+<li>如果决定建立一个电子抛弃型原型，那么就有许多工具可以使用。这些工具包括：<ul>
+<li>编程语言</li>
+<li>脚本语言</li>
+<li>商品化的建立原型的工具包、屏幕绘图器和图形用户界面构筑师。</li>
+</ul>
+</li>
+</ol>
+<h2 id="13-7-原型的评估"><a href="#13-7-原型的评估" class="headerlink" title="13.7 原型的评估"></a>13.7 原型的评估</h2><p>在原型评价时，可以提供一些相关的问题：</p>
+<ul>
+<li>这个原型所实现功能与你所期望的一致吗？</li>
+<li>有遗漏的功能吗？</li>
+<li>你能考虑一下这个原型所没涉及的一些出错情况吗？</li>
+<li>有多余的功能吗？</li>
+<li>这些导航对于你意味着怎样的逻辑性和完整性？</li>
+<li>有更简单的方法来完成这一任务吗？</li>
+</ul>
+<h2 id="13-8-创建原型所带来的风险"><a href="#13-8-创建原型所带来的风险" class="headerlink" title="13.8 创建原型所带来的风险"></a>13.8 创建原型所带来的风险</h2><h3 id="13-8-1-风险"><a href="#13-8-1-风险" class="headerlink" title="13.8.1 风险"></a>13.8.1 风险</h3><ul>
+<li>最大的风险是用户或者经理看到一个正在运行的原型，从而以为产品即将完成。</li>
+<li>决不能把抛弃型原型，当作可交付的产品。</li>
+</ul>
+<h2 id="13-8-2-控制风险"><a href="#13-8-2-控制风险" class="headerlink" title="13.8.2 控制风险"></a>13.8.2 控制风险</h2><ol>
+<li>一种方法利用书面原型，而不是电子原型。</li>
+<li>另一种方法是使用不同于在真正开发时所用的原型法工具。这将有助于理解原型开发，并把它当作产品模型。</li>
+</ol>
+<h2 id="13-9-原型法成功的因素"><a href="#13-9-原型法成功的因素" class="headerlink" title="13.9 原型法成功的因素"></a>13.9 原型法成功的因素</h2><p>建立有效的原型，应遵循如下原则：</p>
+<ol>
+<li>在项目计划中，应包括原型风险。</li>
+<li>计划开发多个原型，因为你很少能一次成功。</li>
+<li>尽快并且廉价地建立抛弃型原型。</li>
+<li>在抛弃型原型中，不应含有：代码注释、输入数据有效性检查、保护性编码技术，或者错误处理的代码。</li>
+<li>对于已经理解的需求，不要建立原型。</li>
+<li>不能随意地增加功能。</li>
+<li>不要从水平原型的性能推测最终产品的性能。</li>
+<li>在原型屏幕显示和报表中，使用合理的模拟数据。</li>
+<li>不要期望原型可以代替需求文档。</li>
+</ol>
+<h1 id="14-设定需求优先级"><a href="#14-设定需求优先级" class="headerlink" title="14 设定需求优先级"></a>14 设定需求优先级</h1><h2 id="14-1-为什么设定需求优先级"><a href="#14-1-为什么设定需求优先级" class="headerlink" title="14.1 为什么设定需求优先级"></a>14.1 为什么设定需求优先级</h2><ul>
+<li><p>尽早确定产品应具备的最重要功能。</p>
+</li>
+<li><p>权衡合理的项目范围和进度安排、预算以及质量目标的约束，以最少的费用提供产品的最大功能。</p>
+</li>
+</ul>
+<h2 id="14-2-设定优先级的规则"><a href="#14-2-设定优先级的规则" class="headerlink" title="14.2 设定优先级的规则"></a>14.2 设定优先级的规则</h2><p>项目经理必须权衡合理的项目范围和进度安排、预算、人力资源以及质量目标的约束。把高优先级的需求放在前面，把低优先级的需求推迟到下一版本中去实现或者删除它们。</p>
+<h2 id="14-3-设定优先级的等级"><a href="#14-3-设定优先级的等级" class="headerlink" title="14.3 设定优先级的等级"></a>14.3 设定优先级的等级</h2><p>设定优先级的一般方法是：把需求分成三类：高、中、低。如表14-1描述了需求的4种可能性。</p>
+<center>表14-1 根据重要性和紧迫性来设定需求优先级</center>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>重要</th>
+<th>不重要</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>紧迫</td>
+<td>高优先级</td>
+<td>低优先级</td>
+</tr>
+<tr>
+<td>不紧迫</td>
+<td>中优先级</td>
+<td>低优先级</td>
+</tr>
+</tbody></table>
+<h2 id="14-4-根据价值、成本和风险来设定优先级"><a href="#14-4-根据价值、成本和风险来设定优先级" class="headerlink" title="14.4 根据价值、成本和风险来设定优先级"></a>14.4 根据价值、成本和风险来设定优先级</h2><h3 id="14-4-1-设定优先级过程中的参与者有："><a href="#14-4-1-设定优先级过程中的参与者有：" class="headerlink" title="14.4.1 设定优先级过程中的参与者有："></a>14.4.1 设定优先级过程中的参与者有：</h3><ol>
+<li>项目经理：他指导全过程，解决冲突，并且在必要的时候调整其它参与者的方案。</li>
+<li>重要的客户代表：例如：产品的代言人，他可以提供受益和损失程度。</li>
+<li>开发者代表：例如：开发组的技术指导者，他提供了费用和风险程度。</li>
+</ol>
+<h2 id="14-4-2-优先级设定的步骤"><a href="#14-4-2-优先级设定的步骤" class="headerlink" title="14.4.2 优先级设定的步骤"></a>14.4.2 优先级设定的步骤</h2><ol>
+<li><p>列出要设定优先级的所有需求、特性或使用实例；</p>
+<ul>
+<li>所有项都必须在同一抽象级别上；</li>
+<li>如果某些特性有逻辑上的联系，在分析中只要列出驱动较全面的项。</li>
+<li>如果有更多的项，那么就把相关的特性归成一类，并建立一个可管理的初始化列表。</li>
+<li>如果需要的话，可以在更详细的级别上进行第二轮分析。</li>
+</ul>
+</li>
+<li><p>估计每一个特性提供给客户或业务的相关利益，并用1～9划分等级，1代表可忽略的利益，9代表最大的价值。</p>
+<ul>
+<li>这些利益等级表明了与产品的业务需求的一致性。</li>
+<li>由客户代表来判断这些利益的优先级。</li>
+</ul>
+</li>
+<li><p>估计出如果没有把应该实现的特性包括到产品中，将会给客户或业务上带来的损失。使用1 ～ 9划分等级。1代表基本无损失，9代表严重损失。</p>
+<ul>
+<li>注意：对于具有低利润低损失的需求只会增加费用，而不会增加价值。</li>
+</ul>
+</li>
+<li><p>总价值栏是相对利润和相对损失的总和。总价值&#x3D; 相对利益*利益权值+ 相对损失*损失权值。</p>
+<ul>
+<li>作为一种精化，可以更改这两个因素的相对权值。</li>
+</ul>
+</li>
+<li><p>估计实现每个特性的相对费用，使用1（低）～9（高）划分等级。</p>
+<ul>
+<li>计算出由每一个特性所构成的总费用的百分比。</li>
+<li>根据需求的复杂度，所需求的用户界面的实现情况、所需要的测试量和文档等，开发者可以估算出费用。</li>
+</ul>
+</li>
+<li><p>开发者要估计出与每个特性相关的技术或风险相对程度，并利用1～9划分等级。1级表示可以轻而易举地实现编程，而9级表示需要极大努力实现编程或者使用不成熟或不熟悉的工具和技术。</p>
+<ul>
+<li>计算出每个特性所产生的风险百分比。</li>
+<li>在一般情况下，利润损失，费用和风险的权值是相等的，但是可以调整其权值。</li>
+<li>如果无需在模型中考虑风险，就把风险的权值设为0</li>
+</ul>
+</li>
+<li><p>一旦把所有的估算写入平面图，就可以利用如下公式计算出每一特性的优先级：</p>
+</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E9%9C%80%E6%B1%82%E4%BC%98%E5%85%88%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="需求优先级计算公式"></p>
+<center>图14-1 需求优先级计算公式</center>
+
+<ol start="8">
+<li>按计算出的优先级的降序排列表中的特性。<ul>
+<li>处于列表最顶端的特性，必须具有最高优先级。</li>
+<li>计算出来的优先级序列，只能作为一种指导策略的参考。</li>
+<li>客户和开发者代表应该讨论，从而达成共识。并根据使用情况来校正。</li>
+<li>可以适当调整每一因素的权值，直到所计算出的优先级序列与后来对测试集中需求的重要性评估相吻合为止。</li>
+<li>评估这些需求的优先级，以指明它们与现存的需求之间的一致性。</li>
+<li>在把需求优先级的设定，应以客观和分析为基础。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>如图14-2，化学品跟踪系统优先级计算示例：</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E4%BC%98%E5%85%88%E7%BA%A7%E8%AE%A1%E7%AE%97%E7%A4%BA%E4%BE%8B.png" alt="优先级计算示例"></p>
+<center>图14-2 优先级计算示例</center>
+
+<h1 id="15-需求确认"><a href="#15-需求确认" class="headerlink" title="15 需求确认"></a>15 需求确认</h1><h2 id="15-0-基本概念"><a href="#15-0-基本概念" class="headerlink" title="15.0 基本概念"></a>15.0 基本概念</h2><ol>
+<li>需求确认是指开发方和客户方共同对《产品需求规格说明书》进行评审，双方对需求达成共识后作出承诺。</li>
+<li>需求确认包含两个重要工作：“需求评审”和“需求承诺”。</li>
+<li>需求评审面临的困难：<ul>
+<li>需求评审的一个通病是“虎头蛇尾”。需求评审的确乏味，也比较费脑子。刚开始评审时，大家都比较认真，越到后头越马虎。</li>
+<li>需求评审涉及的人员可能比较多，有些时候让这么多人聚在一起花费比较长的时间开会并不容易。</li>
+<li>需求评审也可以分段进行。这样每次评审的时间比较短，参加评审的人员也少一些，组织会议就比较容易。</li>
+</ul>
+</li>
+<li>评审会议：<ul>
+<li>开评审会议时经常会“跑题”，导致评审效率很低。有时话匣子一打开后关不上，大家越扯越远，结果评审会议变成了聊天会议。</li>
+<li>主持人应当控制话题，避免大家讨论与主题无关的东西。</li>
+<li>开评审会议时经常会发生争议。适当的争议有利于澄清问题，比什么东西都一致赞成要好。然而当争议变为争吵时就坏事了，争吵不仅对评审工作没有好处，而且会无意中伤害伙伴之间的感情。</li>
+</ul>
+</li>
+<li>需求承诺：<ul>
+<li>是指开发方和客户方的责任人对通过了正式技术评审的《产品需求规格说明书》作出承诺，该承诺具有商业合同的效果。</li>
+</ul>
+</li>
+<li>需求确认中的问题：<ul>
+<li>需求确认，确保了需求规格说明的良好特性。</li>
+<li>需求确认，是对渐增型软件需求规格说明的反复评审，将贯穿着反复获取需求、分析和编写规格说明的整个过程。</li>
+<li>需求确认，可以减少返工，并加快系统测试，从而真正缩短了开发时间。</li>
+</ul>
+</li>
+<li>需求确认的主要活动有以下几方面：<ul>
+<li>软件需求规格说明是否正确描述了预期的系统行为和特征？</li>
+<li>从系统需求或其它来源中得到软件需求的正确性。</li>
+<li>需求是否是完整的和高质量的？</li>
+<li>所有对需求的看法是否一致？</li>
+<li>需求为继续进行产品设计、构造和测试是否提供了足够的基础？</li>
+</ul>
+</li>
+</ol>
+<h2 id="15-1-需求评审"><a href="#15-1-需求评审" class="headerlink" title="15.1 需求评审"></a>15.1 需求评审</h2><ul>
+<li><p>需求文档的评审是一项精益求精的技术。它可以发现二义性的需求和不确定的需求。需求评审分为正式评审和非正式评审。</p>
+</li>
+<li><p>非正式评审是非系统化的，不彻底的，或者在实施过程中具有不一致性。不需要记录备案。可以根据个人爱好的方式进行评审</p>
+</li>
+<li><p>正式评审遵循预先定义好的一系列步骤。内容需要记录在案。正式评审小组的成员，对评审的质量负责。</p>
+</li>
+</ul>
+<h3 id="15-1-1-审查过程"><a href="#15-1-1-审查过程" class="headerlink" title="15.1.1 审查过程"></a>15.1.1 审查过程</h3><ul>
+<li>审查是一个定义明确的分多个阶段完成的过程，由一小组受过培训的参与者完成。</li>
+</ul>
+<ol>
+<li>参与者（5-9人）</li>
+</ol>
+<p>参与者应该代表3种人的观点：</p>
+<ul>
+<li>工作产品的作者，也有可能是作者同级伙伴。</li>
+<li>先前所有的其中有条目正在接受审查的工作产品或规格说明的作者。</li>
+<li>需要根据正在审查的条目来开展工作的人。</li>
+</ul>
+<ol start="2">
+<li>审查种每个成员所扮演的角色</li>
+</ol>
+<ul>
+<li>作者</li>
+<li>仲裁者</li>
+<li>读者</li>
+<li>记录员</li>
+</ul>
+<ol start="3">
+<li>进入审查的标准</li>
+</ol>
+<ul>
+<li>文档符合标准模板。</li>
+<li>文档已经做过拼写检查和语法检查。</li>
+<li>作者已经检查了文档在版面安排上所存在的错误。</li>
+<li>已经获得了审查员所需要的先前或参考文档。</li>
+<li>在文档中打印了行序号以方便在审查中对特定位置的查阅。</li>
+<li>所有未解决的问题都被标记为TBD（待确定）。</li>
+<li>包括了文档中使用到的术语词汇表。</li>
+</ul>
+<ol start="4">
+<li>审查阶段</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E5%AE%A1%E6%9F%A5%E8%BF%87%E7%A8%8B%E9%98%B6%E6%AE%B5.png" alt="审查过程阶段"></p>
+<center>图15-1 审查过程阶段</center>
+
+<ol start="5">
+<li>结束审查的标准</li>
+</ol>
+<ul>
+<li>已经明确阐述了审查员提出的所有问题。</li>
+<li>已经正确修改了文档。</li>
+<li>修订过的文档已经进行了拼写检查和语法检查。</li>
+<li>所有TBD的问题已经全部解决，或者已经记录下每个待确定问题的解决过程，目标日期和提出问题的人。</li>
+<li>文档已经登记入项目的配置管理系统。 </li>
+<li>检查是否已将审查过的资料送到有关收集处。</li>
+</ul>
+<ol start="6">
+<li>需求审查清单</li>
+</ol>
+<ul>
+<li>审查员对所审查每一类型的需求文档，应建立一份清单。这些清单可以提醒审查员以前经常发生的需求问题。</li>
+<li>使用用例文档审查清单</li>
+</ul>
+<p>使用用例是否是独立的分散任务？<br>使用用例的目标或价值度量是否明确？<br>使用用例给操作者带来的益处是否明确？<br>使用用例是否处于抽象级别上，而不具有详细的情节？<br>使用用例中是否不包含设计和实现的细节？<br>是否记录了所有可能的可选过程？<br>是否记录了所有可能的例外条件？<br>是否存在一些普通的动作序列可以分解成独立的使用用例？<br>是否简明书写、无二义性和完整地记录了每个过程的对话？<br>使用用例中的每个操作和步骤是否都与所执行的任务相关？<br>使用用例中定义的每个过程是否都可行？<br>使用用例中定义的每个过程是否都可确认？</p>
+<ul>
+<li>软件需求规格说明的缺陷检查清单</li>
+</ul>
+<p><strong>组织和完整性</strong><br>所有对其它需求的内部交叉引用是否正确？<br>所有需求的编写在细节上是否都一致或者合适？<br>需求是否能为设计提供足够的基础？<br>是否包括了每个需求的实现优先级？<br>是否定义了所有外部硬件、软件和通信接口？<br>是否定义了功能需求内在的算法？<br>软件需求规格说明中是否包括了所有客户代表或系统的需求？<br>是否在需求中遗漏了必要的信息？如果有的话，就把它们标记为待确定的问题。<br>是否记录了所有可能的错误条件所产生的系统行为？<br><strong>正确性</strong><br>是否有需求与其它需求相冲突或重复？<br>是否简明、简洁、无二义性地表达每个需求的？<br>是否每个需求都能通过测试、演示、审查得以确认或分析？<br>是否每个需求都在项目的范围内？<br>是否每个需求都没有内容上和语法上的错误？<br>在现有的资源限制内，是否能实现所有的需求？<br>是否任一个特定的错误信息都具有唯一性和明确的意义？<br><strong>质量属性</strong><br>是否合理地确定了性能目标？<br>是否合理地确定了安全与保密方面的考虑？<br>在确定了合理的折衷情况下，是否详实地记录了其它相关的质量属性？<br><strong>可跟踪性</strong><br>是否每个需求都具有唯一性并且可以正确地识别它？<br>是否可以根据高层需求（如系统需求或使用用例）跟踪到软件功能需求？<br><strong>特殊的问题</strong><br>是否所有的需求都是名副其实的需求而不是设计或实现方案？<br>是否确定了对时间要求很高的功能并且定义了它们的时间标准？<br>是否已经明确地阐述了国际化问题？</p>
+<h3 id="15-1-2-需求评审面临的困难"><a href="#15-1-2-需求评审面临的困难" class="headerlink" title="15.1.2 需求评审面临的困难"></a>15.1.2 需求评审面临的困难</h3><ol>
+<li>大型的需求文档：可以分成几个小组，分别审查材料的不同部分。</li>
+<li>庞大的审查小组：参与者任务明确；理解审查员所代表的观点；把审查组分成若干小组。</li>
+<li>审查员在地域上的分散：视频会议；电话会议；共享网络文件夹中的电子文件，进行文档评审；基于Web的聊天工具，进行实时的远程讨论。</li>
+</ol>
+<h2 id="15-2-测试需求"><a href="#15-2-测试需求" class="headerlink" title="15.2 测试需求"></a>15.2 测试需求</h2><ul>
+<li>软件需求在概念上的测试是通过在开发早期的阶段，寻找需求错误，从而成为一种控制项目费用和进度的强有力的技术。</li>
+<li>如果能把早期的黑盒子测试设计、非正式需求评审、软件需求规格说明审查和其它需求确认技术相结合。将花比以前更少的时间、更低的费用,来构造质量更高的系统。</li>
+</ul>
+<h2 id="15-3-定义验收标准"><a href="#15-3-定义验收标准" class="headerlink" title="15.3 定义验收标准"></a>15.3 定义验收标准</h2><ul>
+<li>按接收要求制定</li>
+<li>重点放在功能需求上</li>
+</ul>
+<h1 id="16-需求开发面临的特殊难题（了解）"><a href="#16-需求开发面临的特殊难题（了解）" class="headerlink" title="16 需求开发面临的特殊难题（了解）"></a>16 需求开发面临的特殊难题（了解）</h1><h2 id="16-1-维护项目的需求"><a href="#16-1-维护项目的需求" class="headerlink" title="16.1 维护项目的需求"></a>16.1 维护项目的需求</h2><h3 id="16-1-1-开始捕获信息"><a href="#16-1-1-开始捕获信息" class="headerlink" title="16.1.1 开始捕获信息"></a>16.1.1 开始捕获信息</h3><ol>
+<li><p>现有系统：文档不全；开发人员调离或辞职。</p>
+<p>采用“逆向工程”方法从代码来理解系统。</p>
+</li>
+<li><p>增强性维护：在软件的使用过程中，用户往往会对软件提出新的功能与性能要求。为了满足这些要求，需要修改或再开发软件，以扩充软件功能、增强软件性能、改进加工效率、提高软件的可维护性。</p>
+</li>
+</ol>
+<h3 id="16-1-2-亲身实践一下新的需求技术"><a href="#16-1-2-亲身实践一下新的需求技术" class="headerlink" title="16.1.2 亲身实践一下新的需求技术"></a>16.1.2 亲身实践一下新的需求技术</h3><h3 id="16-1-3-遵循跟踪链"><a href="#16-1-3-遵循跟踪链" class="headerlink" title="16.1.3 遵循跟踪链"></a>16.1.3 遵循跟踪链</h3><h2 id="16-2-软件包解决方案的需求"><a href="#16-2-软件包解决方案的需求" class="headerlink" title="16.2 软件包解决方案的需求"></a>16.2 软件包解决方案的需求</h2><h3 id="16-2-1-开发用例"><a href="#16-2-1-开发用例" class="headerlink" title="16.2.1 开发用例"></a>16.2.1 开发用例</h3><h3 id="16-2-2-考虑业务规则"><a href="#16-2-2-考虑业务规则" class="headerlink" title="16.2.2 考虑业务规则"></a>16.2.2 考虑业务规则</h3><h3 id="16-2-3-定义质量需求"><a href="#16-2-3-定义质量需求" class="headerlink" title="16.2.3 定义质量需求"></a>16.2.3 定义质量需求</h3><h2 id="16-3-外包项目的需求"><a href="#16-3-外包项目的需求" class="headerlink" title="16.3 外包项目的需求"></a>16.3 外包项目的需求</h2><p>准备需求文档，要记住以下几点：</p>
+<ul>
+<li>提供细节——精确地给出请求</li>
+<li>避免二义性  </li>
+<li>安排与承包方的接触点</li>
+<li>定义双方都能接受的变更控制过程</li>
+<li>为需求的多次迭代和评审预留时间</li>
+<li>制定验收标准</li>
+</ul>
+<h2 id="16-4-突发型项目的需求"><a href="#16-4-突发型项目的需求" class="headerlink" title="16.4 突发型项目的需求"></a>16.4 突发型项目的需求</h2><h3 id="16-4-1-非正式用户需求规格说明"><a href="#16-4-1-非正式用户需求规格说明" class="headerlink" title="16.4.1 非正式用户需求规格说明"></a>16.4.1 非正式用户需求规格说明</h3><h3 id="16-4-2-现场客户"><a href="#16-4-2-现场客户" class="headerlink" title="16.4.2 现场客户"></a>16.4.2 现场客户</h3><h3 id="16-4-3-尽早地而且要经常地设定优先级"><a href="#16-4-3-尽早地而且要经常地设定优先级" class="headerlink" title="16.4.3 尽早地而且要经常地设定优先级"></a>16.4.3 尽早地而且要经常地设定优先级</h3><h3 id="16-4-4-简单的变更管理"><a href="#16-4-4-简单的变更管理" class="headerlink" title="16.4.4 简单的变更管理"></a>16.4.4 简单的变更管理</h3><h1 id="17-超越需求开发（了解）"><a href="#17-超越需求开发（了解）" class="headerlink" title="17 超越需求开发（了解）"></a>17 超越需求开发（了解）</h1><h2 id="17-1-从需求到项目规划"><a href="#17-1-从需求到项目规划" class="headerlink" title="17.1 从需求到项目规划"></a>17.1 从需求到项目规划</h2><h3 id="17-1-1-需求和评估"><a href="#17-1-1-需求和评估" class="headerlink" title="17.1.1 需求和评估"></a>17.1.1 需求和评估</h3><p>以下是一些常用的预估度量标准：</p>
+<ul>
+<li>功能点和特性点的多少</li>
+<li>图形用户界面元素的数量、类型和复杂度</li>
+<li>用于实现特定需求所需的源代码行数</li>
+<li>对象类的数量或者其它面向对象系统的衡量标准</li>
+<li>单个可测试需求的数量</li>
+</ul>
+<h3 id="17-1-2-需求和进度安排"><a href="#17-1-2-需求和进度安排" class="headerlink" title="17.1.2 需求和进度安排"></a>17.1.2 需求和进度安排</h3><p>正确的规划，需要考虑以下几点：</p>
+<ul>
+<li>根据对需求的清楚理解，来估计产品规模的大小。</li>
+<li>根据历史记录，了解开发小组的工作效率。</li>
+<li>需要一张综合的任务列表，以完整实现和验证每一特性或使用实例。</li>
+<li>有效的预测和规划过程。</li>
+<li>经验。</li>
+</ul>
+<h2 id="17-2-从需求到设计和编码"><a href="#17-2-从需求到设计和编码" class="headerlink" title="17.2 从需求到设计和编码"></a>17.2 从需求到设计和编码</h2><p>需求转化为设计和代码时，可能遇到下列问题：</p>
+<ul>
+<li>可能会遇到不确定和混淆的需求。</li>
+<li>如果不能马上解决问题，那么所做出的假设，猜想或解释，都要编写成文档记录下来，并由客户代表评审。</li>
+<li>如果遇到许多诸如此类的问题，说明需求还不十分清晰或具体。</li>
+<li>在这种情况下，最好安排人员，对剩余的需求进行评审，然后在开展工作。</li>
+</ul>
+<h2 id="17-3-从需求到测试"><a href="#17-3-从需求到测试" class="headerlink" title="17.3 从需求到测试"></a>17.3 从需求到测试</h2><ul>
+<li>详尽的需求，是系统测试的基础。反过来，只能通过测试，来判断软件是否满足了需求。</li>
+</ul>
+<h2 id="17-4-从需求到成功"><a href="#17-4-从需求到成功" class="headerlink" title="17.4 从需求到成功"></a>17.4 从需求到成功</h2><ul>
+<li>项目的成功之处，在于把需求文档作为发行产品的基础。</li>
+<li>需求是从产品概念，通向用户满意之路的最本质的一步。</li>
+</ul>
+<h1 id="18-需求管理的原则与实现"><a href="#18-需求管理的原则与实现" class="headerlink" title="18 需求管理的原则与实现"></a>18 需求管理的原则与实现</h1><h2 id="18-0-基本概念"><a href="#18-0-基本概念" class="headerlink" title="18.0 基本概念"></a>18.0 基本概念</h2><h3 id="18-0-1-需求管理是什么"><a href="#18-0-1-需求管理是什么" class="headerlink" title="18.0.1 需求管理是什么"></a>18.0.1 需求管理是什么</h3><p>需求管理：</p>
+<ul>
+<li>是一种获取、组织并记录系统需求的系统化方案，以及一个使客户与项目团队对不断变更的需求达成并保持一致的过程。</li>
+<li>是对所有相关活动的规划和控制。</li>
+<li>准确地强调了追踪变更以保持涉众与项目团队之间共识的重要性。</li>
+<li>包括：在工程进展过程中维持需求约定集成性和精确性的所有活动。</li>
+</ul>
+<h3 id="18-0-2-需求管理主要内容"><a href="#18-0-2-需求管理主要内容" class="headerlink" title="18.0.2 需求管理主要内容"></a>18.0.2 需求管理主要内容</h3><ul>
+<li>控制对需求基线的变动。</li>
+<li>保持项目计划与需求一致。</li>
+<li>控制单个需求和需求文档的版本情况。</li>
+<li>管理需求和联系链之间的联系或管理单个需求和其它项目之间的依赖关系。</li>
+<li>跟踪基线中需求的状态。</li>
+</ul>
+<h3 id="18-0-3-主要的需求管理活动"><a href="#18-0-3-主要的需求管理活动" class="headerlink" title="18.0.3 主要的需求管理活动"></a>18.0.3 主要的需求管理活动</h3><p><img src="http://img.fdchen.host/%E4%B8%BB%E8%A6%81%E7%9A%84%E9%9C%80%E6%B1%82%E7%AE%A1%E7%90%86%E6%B4%BB%E5%8A%A8.png" alt="主要的需求管理活动"></p>
+<center>图18-1 主要的需求管理活动</center>
+
+<h2 id="18-1-需求基线"><a href="#18-1-需求基线" class="headerlink" title="18.1 需求基线"></a>18.1 需求基线</h2><ul>
+<li><p>需求基线是某一特定产品版本中实现的功能性和非功能性需求的一组集合。</p>
+</li>
+<li><p>需求基线在客户和开发人员之间建立了计划产品功能需求和非功能需求的一个约定。</p>
+</li>
+</ul>
+<h2 id="18-2-需求管理过程"><a href="#18-2-需求管理过程" class="headerlink" title="18.2 需求管理过程"></a>18.2 需求管理过程</h2><p>需求管理过程，可考虑下列内容：</p>
+<ul>
+<li>用于控制各种需求文档和单个需求版本的工具、技术和约定。</li>
+<li>建议、处理、协商、通告新的需求和变更给有关的功能域的方法。</li>
+<li>如何制定需求基线。</li>
+<li>使用的需求状态是谁允许作出的变更。</li>
+<li>需求状态跟踪和报告过程。</li>
+<li>分析已建议变动的影响应遵循的步骤。</li>
+<li>在何种情况下，需求变更将会怎样影响项目计划和约定。</li>
+</ul>
+<h2 id="18-3-需求版本控制"><a href="#18-3-需求版本控制" class="headerlink" title="18.3 需求版本控制"></a>18.3 需求版本控制</h2><h3 id="18-3-1-概念"><a href="#18-3-1-概念" class="headerlink" title="18.3.1 概念"></a>18.3.1 概念</h3><ol>
+<li>版本控制是管理需求的一个必要方面。需求文档的每一个版本，必须被统一确定。开发组内每个成员，必须得到需求的当前版本。</li>
+<li>每一个公布的需求文档版本，应该包括一个修正版本的历史情况。即：已做变更的内容、变更日期、变更人的姓名以及变更的原因。</li>
+<li>可以使用标准修改符：例如：<ul>
+<li>中划线代表取消</li>
+<li>下化线代表添加</li>
+<li>在页边空白的竖划线指示每个变动的位置等等</li>
+</ul>
+</li>
+</ol>
+<h3 id="18-3-2-基本方法"><a href="#18-3-2-基本方法" class="headerlink" title="18.3.2 基本方法"></a>18.3.2 基本方法</h3><p>最简单方法是，根据标准约定，手工标记软件需求规格说明的每一次修改。</p>
+<p>如：</p>
+<ul>
+<li>任何新文档的第一版当标记为“1.0版(草案1)”</li>
+<li>下一稿标记为“1.0版（草案2）”</li>
+<li>文档被采纳后被标记为“1.0正式版”</li>
+<li>若只有较小的修改，可认为是“1.1版(草案1)”</li>
+<li>若有较大的修改时，可认为是“2.0版(草案1)”</li>
+</ul>
+<h3 id="18-3-3-更高级别的方法"><a href="#18-3-3-更高级别的方法" class="headerlink" title="18.3.3 更高级别的方法"></a>18.3.3 更高级别的方法</h3><ul>
+<li>用版本控制工具来存储需求文档，例如：用登录和退出程序，来管理源代码。</li>
+</ul>
+<h2 id="18-4-需求属性"><a href="#18-4-需求属性" class="headerlink" title="18.4 需求属性"></a>18.4 需求属性</h2><p>每个功能需求，应该有一些相关的信息或属性。对于每个需求，可考虑如下的属性：</p>
+<ul>
+<li>创建需求的日期</li>
+<li>需求的版本号</li>
+<li>创建需求的作者</li>
+<li>负责认可该需求的人员</li>
+<li>需求状态</li>
+<li>需求的原因或根据（或信息的出处）</li>
+<li>需求涉及的子系统</li>
+<li>需求涉及的产品版本号</li>
+<li>使用的验证方法或接受的测试标准</li>
+<li>产品的优先级或重要程度</li>
+<li>需求的稳定性</li>
+</ul>
+<h2 id="18-5-跟踪需求的状态"><a href="#18-5-跟踪需求的状态" class="headerlink" title="18.5 跟踪需求的状态"></a>18.5 跟踪需求的状态</h2><p>在整个开发过程中，跟踪每个需求的状态，是需求管理的一个重要方面。跟踪每个需求的状态，是一种精确地测量项目进度的方法。</p>
+<center>表18-1 建议的需求状态表</center>
+
+<table>
+<thead>
+<tr>
+<th>状态值</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>已建议</td>
+<td>该需求已被有权提出需求的人建议</td>
+</tr>
+<tr>
+<td>已批准</td>
+<td>该需求已被分析，估计了其对项目余下部分的影响（包括成本和对项目其余部分的干扰)，已用一个确定的产品版本号或创建编号分配到相关的基线中，软件开发团队已同意实现该项需求</td>
+</tr>
+<tr>
+<td>已实现</td>
+<td>已实现需求代码的设计、编写和单元测试</td>
+</tr>
+<tr>
+<td>已验证</td>
+<td>使用所选择的方法已验证了实现的需求，例如测试和检测，审查该需求跟踪与测试用例相符。该需求现在被认为完成</td>
+</tr>
+<tr>
+<td>已删除</td>
+<td>计划的需求已从基线中删除，但包括一个原因说明和做出删除决定的人员</td>
+</tr>
+<tr>
+<td>已否决</td>
+<td>需求已被提议，但并不计划在下一版本中实现它。要解释为什么否决这一需求，以及是谁决定否决的</td>
+</tr>
+</tbody></table>
+<h2 id="18-6-评估需求管理的工作量"><a href="#18-6-评估需求管理的工作量" class="headerlink" title="18.6 评估需求管理的工作量"></a>18.6 评估需求管理的工作量</h2><p>度量需求管理的情况，一般考虑下列活动的效果：</p>
+<ul>
+<li>提出需求变更和已建议的新需求。</li>
+<li>评估已建议的变更，包括影响分析。</li>
+<li>变更控制委员会活动。</li>
+<li>更新需求文档或数据库。</li>
+<li>在涉及人员或团队中交流需求的变更。</li>
+<li>跟踪和报告需求状态。</li>
+<li>定义和更新需求跟踪能力信息。</li>
+</ul>
+<h2 id="18-7-需求管理与能力成熟度模型（CMM）"><a href="#18-7-需求管理与能力成熟度模型（CMM）" class="headerlink" title="18.7 需求管理与能力成熟度模型（CMM）"></a>18.7 需求管理与能力成熟度模型（CMM）</h2><p>CMM需求管理的目标是：</p>
+<ol>
+<li>控制指定给软件的系统需求，为软件工程和管理应用建立基线；</li>
+<li>保持软件计划、产品和活动与指定给软件的系统需求一致。</li>
+</ol>
+<h1 id="19-变更管理"><a href="#19-变更管理" class="headerlink" title="19 变更管理"></a>19 变更管理</h1><p>不被控制的变更,是引起项目陷入混乱、不能按进度执行或软件质量低劣的原因。为了使开发组织能够控制软件项目，应确保以下事项：</p>
+<ul>
+<li>应仔细评估已建议的变更。</li>
+<li>挑选合适的人选对变更做出决定。</li>
+<li>变更应及时通知所有涉及的人员。</li>
+<li>项目要按一定的程序来采纳需求变更。</li>
+</ul>
+<h2 id="19-1-管理范围蔓延"><a href="#19-1-管理范围蔓延" class="headerlink" title="19.1 管理范围蔓延"></a>19.1 管理范围蔓延</h2><ol>
+<li>业务过程、市场机会、竞争性的产品和软件技术在开发系统期间是可以变更的。</li>
+<li>扩展需求是指在软件需求基线已经确定后，又要增添新的功能或进行较大改动。要是每个建议的需求都被采纳，对于项目出资者、参与者与客户来说项目将永远也不会完成。在项目进度表中，应对必要的需求改动留有余地。若不控制范围的扩展，将使不断地采纳新的功能，而且要不断地调整资源、进度、或质量目标。因此，项目就不可能按客户预期的进度和预期质量交付使用了。</li>
+<li>控制需求扩展的一个有效技术是原型法。</li>
+</ol>
+<h2 id="19-2-变更控制过程"><a href="#19-2-变更控制过程" class="headerlink" title="19.2 变更控制过程"></a>19.2 变更控制过程</h2><ol>
+<li>一个好的变更控制过程，给项目承担者提供了正式的建议需求变更机制。</li>
+<li>通过变更控制过程来跟踪已建议变更的状态，确保不会丢失或疏忽已建议的变更。</li>
+<li>它是一个渠道和过滤器，通过它可以确保采纳最合适的变更，使变更产生的负面影响减少到最小。</li>
+<li>变更过程应该做成文档，尽可能简单，当然首要的是有效性。</li>
+<li>避免变更过程，效率低，且冗长，又很复杂。否则，宁愿用旧方法来做出变更决定。</li>
+</ol>
+<h2 id="19-2-1-变更控制策略"><a href="#19-2-1-变更控制策略" class="headerlink" title="19.2.1 变更控制策略"></a>19.2.1 变更控制策略</h2><p>下述需求变更的策略是有用的：</p>
+<ul>
+<li>所有需求变更，必须遵循一定的过程。如果一个变更需求未被采纳,其后过程不予考虑。</li>
+<li>对于未获批准的变更，除可行性论证之外，不应再做其它设计和实现工作。</li>
+<li>简单请求一个变更不能保证能实现变更，要由项目CCB决定实现哪些变更。</li>
+<li>项目承担者，应该了解变更数据库的内容。</li>
+<li>绝不能从数据库中删除或修改变更请求的原始文档。</li>
+<li>每一个的需求变更，能够跟踪到一个经核准的变更请求。</li>
+</ul>
+<h3 id="19-2-2-变更控制过程描述"><a href="#19-2-2-变更控制过程描述" class="headerlink" title="19.2.2 变更控制过程描述"></a>19.2.2 变更控制过程描述</h3><ol>
+<li><p>绪论<br>1.1 目的<br>1.2 范围<br>1.3 定义</p>
+</li>
+<li><p>角色和责任</p>
+</li>
+<li><p>变更请求状态</p>
+</li>
+<li><p>开始条件</p>
+</li>
+<li><p>任务<br>5.1 产生变更请求<br>5.2 评估变更请求<br>5.3 作出决策<br>5.4 通知变更人员</p>
+</li>
+<li><p>验证</p>
+</li>
+<li><p>结束条件</p>
+</li>
+<li><p>变更控制状态报告</p>
+</li>
+</ol>
+<p>  附录：存储的数据项</p>
+<h2 id="19-3-变更控制委员会"><a href="#19-3-变更控制委员会" class="headerlink" title="19.3 变更控制委员会"></a>19.3 变更控制委员会</h2><ul>
+<li><p>变更控制委员会也称为配置控制委员会（configuration control board，CCB）。</p>
+</li>
+<li><p>变更控制委员会：可以由一个小组担任，也可由多个不同的组担任。负责做出决定：哪一些需求变更或新产品特性付诸应用；决定在哪一些版本中纠正哪一些错误。</p>
+</li>
+</ul>
+<h3 id="19-3-1-CCB的组成"><a href="#19-3-1-CCB的组成" class="headerlink" title="19.3.1 CCB的组成"></a>19.3.1 CCB的组成</h3><p>变更控制委员会，包括如下几方面的代表：</p>
+<ul>
+<li>产品或计划管理部门。</li>
+<li>项目管理部门。</li>
+<li>开发部门。</li>
+<li>测试或质量保证部门。</li>
+<li>市场部或客户代表。</li>
+<li>制作用户文档的部门。</li>
+<li>技术支持部门。</li>
+<li>帮助桌面或用户支持热线部门。</li>
+<li>配置管理部门。</li>
+</ul>
+<p>应该在保证权威性的前提下，尽可能地精简CCB人员。</p>
+<h3 id="19-3-2-CCB规章"><a href="#19-3-2-CCB规章" class="headerlink" title="19.3.2 CCB规章"></a>19.3.2 CCB规章</h3><p>设立变更控制委员会的第一步是写一个总则。描述变更控制委员会的目的、授权范围、成员构成、做出决策的过程及操作步骤。</p>
+<ol>
+<li>制定决策</li>
+<li>交流情况</li>
+<li>重新协商约定</li>
+</ol>
+<h3 id="19-3-3-变更控制工具"><a href="#19-3-3-变更控制工具" class="headerlink" title="19.3.3 变更控制工具"></a>19.3.3 变更控制工具</h3><p>挑选工具时，可以考虑以下几个方面：</p>
+<ul>
+<li><p>可以定义变更请求的数据项。</p>
+</li>
+<li><p>可以定义变更请求生存期的状态转换图。</p>
+</li>
+<li><p>可以加强状态转换图使经授权的用户仅能做出所允许的状态变更。</p>
+</li>
+<li><p>记录每一种状态变更的数据，确认出变更的人员。</p>
+</li>
+<li><p>可定义在提交新请求或请求状态被更新后应该自动通知的设计人员</p>
+</li>
+<li><p>可以根据需要生成标准的或定制的报告和图表。</p>
+</li>
+</ul>
+<h2 id="19-5-测量变更活动"><a href="#19-5-测量变更活动" class="headerlink" title="19.5 测量变更活动"></a>19.5 测量变更活动</h2><p>测量变更活动是评估需求的稳定性和确定某种过程改进时机的一种方法。需求变更活动考虑以下几方面：</p>
+<ul>
+<li>接收、未作决定、结束处理的变更请求的数量。</li>
+<li>已实现需求变更的合计数量。</li>
+<li>每个方面发出的变更请求的数量。</li>
+<li>每一个已应用的需求建议变更和实现变更的数量。</li>
+<li>投入处理变更的人力、物力。</li>
+</ul>
+<h2 id="19-6-变更需要付出代价：影响分析"><a href="#19-6-变更需要付出代价：影响分析" class="headerlink" title="19.6 变更需要付出代价：影响分析"></a>19.6 变更需要付出代价：影响分析</h2><p>影响分析可以提供对建议的变更的准确理解，帮助做出信息量充分的变更批准决策。通过对变更内容的检验，确定对现有的系统做出是修改或抛弃的决定，或者创建新系统以及评估每个任务的工作量。进行影响分析的能力依赖于跟踪能力数据的质量和完整性。没有人愿意做一个费时费力还要担心意想不到情况的需求变更。</p>
+<h3 id="19-6-1-影响分析的过程"><a href="#19-6-1-影响分析的过程" class="headerlink" title="19.6.1 影响分析的过程"></a>19.6.1 影响分析的过程</h3><p>影响分析有3个方面：</p>
+<ol>
+<li>理解进行变更可能涉及的问题。</li>
+<li>确定如果团队将提议的变更包括到产品中，可能必须对哪些文件、模型和文档进行修改。</li>
+<li>确定实现变更所需执行的任务。</li>
+</ol>
+<h2 id="19-6-2-影响分析报告模板"><a href="#19-6-2-影响分析报告模板" class="headerlink" title="19.6.2 影响分析报告模板"></a>19.6.2 影响分析报告模板</h2><p>如图19-1：</p>
+<p><img src="http://img.fdchen.host/%E5%BD%B1%E5%93%8D%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.png" alt="影响分析报告模板"></p>
+<center>图19-1 影响分析报告模板</center>
+
+<h1 id="20-需求链中的联系链"><a href="#20-需求链中的联系链" class="headerlink" title="20 需求链中的联系链"></a>20 需求链中的联系链</h1><ul>
+<li>需求跟踪包括编制每个需求同系统元素之间的联系文档。这些元素包括：别的需求、体系结构、其他设计部件、源代码模块、测试、帮助文件、文档等。</li>
+</ul>
+<h2 id="20-1-需求跟踪"><a href="#20-1-需求跟踪" class="headerlink" title="20.1 需求跟踪"></a>20.1 需求跟踪</h2><ol>
+<li>跟踪联系链是能跟踪一个需求使用期限的全过程。即从需求源到实现的前后生存期。跟踪能力是优秀需求规格说明书的一个特征。</li>
+<li>跟踪联系链，记录了单个需求之间的父层、互连、依赖的关系。当某个需求变更（被删除或修改）后，这种信息能够确保正确的变更传播，并将相应的任务作出正确的调整。</li>
+<li>如图20-1，</li>
+</ol>
+<p><img src="http://img.fdchen.host/%E5%9B%9B%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%9C%80%E6%B1%82%E8%B7%9F%E8%B8%AA.png" alt="四种类型的需求跟踪"></p>
+<center>图20-1 四种类型的需求跟踪</center>
+
+<h2 id="20-2-需求跟踪动机"><a href="#20-2-需求跟踪动机" class="headerlink" title="20.2 需求跟踪动机"></a>20.2 需求跟踪动机</h2><p>下面是在项目中使用需求跟踪能力的一些好处：</p>
+<ul>
+<li>审核（certification） </li>
+<li>变更影响分析</li>
+<li>维护</li>
+<li>项目跟踪</li>
+<li>再设计（重新建造） </li>
+<li>重复利用</li>
+<li>减小风险</li>
+<li>测试</li>
+</ul>
+<h2 id="20-3-需求跟踪矩阵"><a href="#20-3-需求跟踪矩阵" class="headerlink" title="20.3 需求跟踪矩阵"></a>20.3 需求跟踪矩阵</h2><p>表示需求和别的系统元素之间的联系链的最普遍方式是使用需求跟踪能力矩阵。如图20-2：</p>
+<p><img src="http://img.fdchen.host/%E4%B8%80%E7%A7%8D%E9%9C%80%E6%B1%82%E8%B7%9F%E8%B8%AA%E8%83%BD%E5%8A%9B%E7%9F%A9%E9%98%B5.png" alt="一种需求跟踪能力矩阵"></p>
+<center>图20-2 一种需求跟踪能力矩阵</center>
+
+<h2 id="20-4-需求跟踪工具"><a href="#20-4-需求跟踪工具" class="headerlink" title="20.4 需求跟踪工具"></a>20.4 需求跟踪工具</h2><ul>
+<li>需求跟踪能力，不能完全自动化。然而，一旦已确定联系链，特定工具就能帮我们管理巨大的跟踪能力信息。</li>
+<li>可以在工具的数据库中存储需求和其他信息，定义不同对象间的联系链，甚至包括同类需求的对等联系链。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fdChen</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://blog.fdchen.host/2022/ruan-jian-xu-qiu-fen-xi/">http://blog.fdchen.host/2022/ruan-jian-xu-qiu-fen-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">fdChen</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">软件工程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/shu-ju-ke-xue-dao-lun/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="数据科学导论">
+                        
+                        <span class="card-title">数据科学导论</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1 大数据概论1.0 大数据简介1.0.1 大数据的定义所涉及的数据量规模巨大到无法通过人工或者计算机，在合理的时间内达到截取、管理、处理， 并整理成为人类所能解读的形式的信息。
+1.0.2 驱动数据增长的原因
+硬件革新
+性能增强
+成本降低
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CQU/" class="post-category">
+                                    CQU
+                                </a>
+                            
+                            <a href="/categories/CQU/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    课程笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/duo-mei-ti-ji-zhu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            fdChen
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: fdChen的掉发收集箱<br />'
+            + 'Author: fdChen<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">fdChen</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">132.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="/beian.miit.gov.cn" target="_blank">湘ICP备20016057号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CCSemicircle" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2914756796" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2914756796" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/semi-circle-42/posts" class="tooltipped" target="_blank" data-tooltip="关注我的知乎" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

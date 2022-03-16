@@ -1,0 +1,1888 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="《开放域语义解析》总结, 软件工程,前端,NLP">
+    <meta name="description" content="
+本文内容主要来自「中国科学院软件研究所中文信息处理实验室」的《语义解析-暑期学校-final》，附带部分个人的理解与标注解释。
+原文章所属Github项目链接：https://github.com/casnlu/Semantic-Pars">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>《开放域语义解析》总结 | fdChen的掉发收集箱</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fdChen的掉发收集箱</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fdChen的掉发收集箱</div>
+        <div class="logo-desc">
+            
+            一些想到什么写什么的记录
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CCSemicircle" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CCSemicircle" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《开放域语义解析》总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP/" class="post-category">
+                                NLP
+                            </a>
+                        
+                            <a href="/categories/NLP/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/" class="post-category">
+                                语义解析
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-03-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    6.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    23 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>本文内容主要来自「中国科学院软件研究所中文信息处理实验室」的《语义解析-暑期学校-final》，附带部分个人的理解与标注解释。</p>
+<p>原文章所属Github项目链接：<a target="_blank" rel="noopener" href="https://github.com/casnlu/Semantic-Parsing">https://github.com/casnlu/Semantic-Parsing</a></p>
+</blockquote>
+<h1 id="1-语义解析简介"><a href="#1-语义解析简介" class="headerlink" title="1 语义解析简介"></a>1 语义解析简介</h1><ul>
+<li>自然语言多样，具有歧义，其理解依赖世界知识和情境。</li>
+<li>计算机能理解的语言时统一语义、显式结构、无歧义的。</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="1-1-研究意义"><a href="#1-1-研究意义" class="headerlink" title="1.1 研究意义"></a>1.1 研究意义</h2><p>语义解析是实现自然语言理解的关键技术之一，目的在于<strong>建立自然语言到计算机可以理解的形式化语义表示</strong>的映射。</p>
+<h2 id="1-2-任务介绍"><a href="#1-2-任务介绍" class="headerlink" title="1.2 任务介绍"></a>1.2 任务介绍</h2><ul>
+<li>任务定义</li>
+</ul>
+<p>将自然语言句子转换成计算机可识别的、可计算的、完全的语义表示，如lambda-表达式（λ演算）、SQL、语义图等。</p>
+<p><img src="http://img.fdchen.host/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%88%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%AF%E8%AF%86%E5%88%AB%E8%AF%AD%E8%A8%80.png" alt="image-20210713172827255"></p>
+<ul>
+<li>自然语言的四大层次<ul>
+<li>词法：词语的起源，以及词与词之间的关联</li>
+<li>语法：句子的语法和结构</li>
+<li>语义：句子表达的是什么意思</li>
+<li>语用：句子背后的用意</li>
+</ul>
+</li>
+<li>语言到语义由浅入深的表示方法<ul>
+<li>语义角色标注（SRL）</li>
+<li>框架语义解析（Frame-SP）</li>
+<li>语义解析（SP）</li>
+</ul>
+</li>
+<li>任务场景<ul>
+<li>语言到结构化查询语言（language to query）</li>
+<li>语言到代码（language to code）</li>
+<li>语言到机器操作指令（language to instruction）</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-重要组件"><a href="#1-3-重要组件" class="headerlink" title="1.3 重要组件"></a>1.3 重要组件</h2><ul>
+<li>核心组件<ul>
+<li>语义表示</li>
+<li>解析模型</li>
+<li>学习算法</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-1-语义表示"><a href="#1-3-1-语义表示" class="headerlink" title="1.3.1 语义表示"></a>1.3.1 语义表示</h3><ul>
+<li>框架语义表示：工业界常用<ul>
+<li>优势：结构性表示，语义明确</li>
+<li>劣势：人工定义框架，覆盖性有限</li>
+</ul>
+</li>
+<li>分布式语义表示：一种文本表示的形式，指的是低维、稠密的连续向量。<ul>
+<li>优势：应用性好，对机器友好</li>
+<li>劣势：整体表示，细粒度区分不好</li>
+</ul>
+</li>
+<li>模型理论-组合语义表示：学术界常用<ul>
+<li>优势：表达能力强，机器可直接利用</li>
+<li>劣势：难以生成</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-2-解析模型"><a href="#1-3-2-解析模型" class="headerlink" title="1.3.2 解析模型"></a>1.3.2 解析模型</h3><p>句子转换为语义表示的建模</p>
+<ul>
+<li>基于规则的模型</li>
+<li>基于统计的模型</li>
+<li>基于神经网络的模型</li>
+</ul>
+<h3 id="1-3-3-学习算法"><a href="#1-3-3-学习算法" class="headerlink" title="1.3.3 学习算法"></a>1.3.3 学习算法</h3><p>如何学习转换过程</p>
+<ul>
+<li>目的</li>
+</ul>
+<p>让解析模型从一个句子的多种候选语义表示中选择争取的语义表示</p>
+<ul>
+<li>监督学习算法</li>
+</ul>
+<p>输入：&lt;句子，语义表示&gt; 标注对</p>
+<p>目标：最大似然估计——p(语义表示|句子)</p>
+<ul>
+<li>弱监督学习算法</li>
+</ul>
+<p>输入：弱监督信号，如&lt;句子，知识库，答案&gt; ，&lt;句子，候选，点击&gt; 标注</p>
+<p>目标：最大边界似然估计，语义表示当作潜变量</p>
+<ul>
+<li>相关资源：语义解析工具包<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/percyliang/sempre">Sempre</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lil-lab/spf">Cornell SPF</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/allenai/allennlp">AllenNLP</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-4-发展历程"><a href="#1-4-发展历程" class="headerlink" title="1.4 发展历程"></a>1.4 发展历程</h2><h3 id="1-4-1-基于规则的语义解析方法"><a href="#1-4-1-基于规则的语义解析方法" class="headerlink" title="1.4.1 基于规则的语义解析方法"></a>1.4.1 基于规则的语义解析方法</h3><ul>
+<li>STUDENT系统 [Bobrow, 1964]：基于规则的线性代数求解</li>
+<li>规则系统：错误可控可溯源、起步容易&#x2F;自助构建、增量式模型</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%99%E7%9A%84%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95.png" alt="image-20210713172658619"></p>
+<h3 id="1-4-2-基于统计的语义解析方法"><a href="#1-4-2-基于统计的语义解析方法" class="headerlink" title="1.4.2 基于统计的语义解析方法"></a>1.4.2 基于统计的语义解析方法</h3><ul>
+<li>代表性方法：基于词典-组合文法的语义解析<ul>
+<li>CCG和DCS</li>
+<li>核心组件：词典（lexicon）、组合文法（grammar）、概率模型</li>
+<li>核心思想：层层递进组合词典</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E5%9F%BA%E4%BA%8E%E7%BB%9F%E8%AE%A1%E7%9A%84%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95.png" alt="image-20210713173142595"></p>
+<h3 id="1-4-3-基于语义图的语义解析方法"><a href="#1-4-3-基于语义图的语义解析方法" class="headerlink" title="1.4.3 基于语义图的语义解析方法"></a>1.4.3 基于语义图的语义解析方法</h3><p>构建语义图，而后基于知识图谱进行语义解析。</p>
+<ul>
+<li>用语义图来表示句子的语义</li>
+<li>语义解析转换为语义图构建&#x2F;生成的问题</li>
+<li>优势：<ul>
+<li>不需要提前学习词典</li>
+<li>不需要定义组合文法</li>
+<li>可充分利用知识库的约束</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E5%9F%BA%E4%BA%8E%E8%AF%AD%E4%B9%89%E5%9B%BE%E7%9A%84%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95.png" alt="image-20210713173746564"></p>
+<h3 id="1-4-4-基于神经网络的语义解析方法"><a href="#1-4-4-基于神经网络的语义解析方法" class="headerlink" title="1.4.4 基于神经网络的语义解析方法"></a>1.4.4 基于神经网络的语义解析方法</h3><ul>
+<li>将逻辑表达式序列化</li>
+<li>语义解析转换为<strong>词语序列到逻辑表达式序列</strong>的翻译过程（Seq2Seq）</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E5%9F%BA%E4%BA%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95.png" alt="image-20210713174029736"></p>
+<h1 id="2-基于词典-组合文法的语义解析"><a href="#2-基于词典-组合文法的语义解析" class="headerlink" title="2 基于词典-组合文法的语义解析"></a>2 基于词典-组合文法的语义解析</h1><h2 id="2-1-组合语义的基本准则"><a href="#2-1-组合语义的基本准则" class="headerlink" title="2.1 组合语义的基本准则"></a>2.1 组合语义的基本准则</h2><p>复杂表达式的意义由<strong>其子表达式的意义以及意义如何组合的规则</strong>共同决定。</p>
+<ul>
+<li>关键组件<ul>
+<li>词典：存储自然语言词语到词语语义的映射；语义组合的基本单元</li>
+<li>组合文法：将小语义单元组合成更大的语义单元；组合语义基本准则中的combining rule</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-代表性方法"><a href="#2-2-代表性方法" class="headerlink" title="2.2 代表性方法"></a>2.2 代表性方法</h2><h3 id="2-2-1-基于CCG的语义解析"><a href="#2-2-1-基于CCG的语义解析" class="headerlink" title="2.2.1 基于CCG的语义解析"></a>2.2.1 基于CCG的语义解析</h3><ul>
+<li>CCG (Combinatory Categorial Grammar，组合范畴文法)，由ACL终身成就奖获得者Steedman教授提出</li>
+<li>早期用于句法分析，后期由Zettlemoyer &amp; Collins(05)应用于语义解析：可以捕捉句子长距离依赖</li>
+<li>核心组件：<ul>
+<li>词典：使用CCG Category 来表示词汇语义</li>
+<li>组合文法：CCG组合算子（combinators）</li>
+<li>句子语义：使用lambda表达式表示句子语义</li>
+</ul>
+</li>
+<li>语义表示：Lambda表达式<ul>
+<li>常量Constants&#x2F;变量Var</li>
+<li>谓词Predicate</li>
+<li>逻辑连接词：与、或、非、蕴含</li>
+<li>量词</li>
+<li>额外函数：Count, argmax, average</li>
+</ul>
+</li>
+<li>词典Lexicon：词语到范畴（category）的映射（范畴同时包含句法信息和语义信息）</li>
+</ul>
+<table>
+   <tr>
+      <td rowspan="2" align="center">词语</td>
+      <td colspan="2" align="center">范畴（category）</td>
+   </tr>
+   <tr>
+      <td>句法部分</td>
+      <td>语义部分</td>
+   </tr>
+   <tr>
+      <td>Texas(德州)</td>
+      <td>NP</td>
+      <td>texas</td>
+   </tr>
+   <tr>
+      <td>borders</td>
+      <td>(S\NP)/NP</td>
+      <td>𝜆𝑥. 𝜆𝑦. 𝑏𝑜𝑟𝑑𝑒𝑟(𝑦, 𝑥)</td>
+   </tr>
+   <tr>
+      <td>Kansas(堪萨斯州)</td>
+      <td>NP</td>
+      <td>kansas</td>
+   </tr>
+   <tr>
+      <td>Kansas city(堪萨斯城)</td>
+      <td>NP</td>
+      <td>kansas_city_mo(密苏里州堪萨斯城)</td>
+   </tr>
+</table>
+
+<p>其中<em>S</em>，<em>NP</em>是CCG里面的基本类型（还有<em>N</em>） ：</p>
+<p>（1）S 表示一个完整的句子</p>
+<p>（2）NP 表示一个专有名词（实体词汇）</p>
+<p>（3）N 表示一个普通名词（类型词汇）</p>
+<p>（S\NP)&#x2F;NP是一种复合类型（二元谓词词汇）：</p>
+<p>（1）右向的slash(&#x2F;)表示右侧可以接受一个参数（ NP ），接受之后得到左侧的类型（S\NP） </p>
+<p>（2）左向的slash(\)表示左侧可以接收一个参数（ NP ），接受之后得到左侧的类型（<em>S</em>）</p>
+<p>（3）在此处得出的信息是border是一个语法上的连接词</p>
+<ul>
+<li>组合算子combinators，连接符（前三个为核心连接符）</li>
+</ul>
+<p>（1）Application conbinators应用连接符（前向 &lt; 和 后向 &gt;）</p>
+<p><img src="http://img.fdchen.host/CCG-%E5%BA%94%E7%94%A8%E8%BF%9E%E6%8E%A5%E7%AC%A6.png" alt="image-20210714155234227"></p>
+<p>举例说明：A&#x2F;B 代表 <strong>往右（后向）找一个B形成A的一种函数关系f</strong>，即得到 A: f(g)</p>
+<p>（2）Composition combinators组合连接符（前向 &lt;B 和后向 &gt;B，前后向找B）</p>
+<p>类似于组合两个函数，得到一个新函数同时保留函数的功能，多用于串联两个条件短语（如示例中的 the latest 和 one way）。</p>
+<p><img src="http://img.fdchen.host/CCG-%E7%BB%84%E5%90%88%E8%BF%9E%E6%8E%A5%E7%AC%A6.png" alt="image-20210714161445215"></p>
+<p>举例说明：A&#x2F;B 代表 <strong>往右（后向）找到一个B形成A的一种函数关系f</strong>，B&#x2F;C 代表往右（后向）找到一个C形成B的一个函数关系g，即得到：A: f(g(x))</p>
+<p>（3）Type-raising combinators类型提升连接符(T)（前向 &lt;T 和 后向 &gt;T，意味着前&#x2F;后向找T）</p>
+<p>类似于参数变为函数，函数的功能取决于新增的 T。</p>
+<p>并列：刘德华和陈奕迅的歌曲</p>
+<p>省略：播放刘德华（需要把刘德华提升为Song类型）</p>
+<p><img src="http://img.fdchen.host/CCG-%E7%B1%BB%E5%9E%8B%E6%8F%90%E5%8D%87%E7%AC%A6.png" alt="image-20210715093121593"></p>
+<p>举例说明：在例子中，border Texas and Idaho 所组成的是 (S\NP)&#x2F;NP NP and NP，假如不进行类型提升，即变成 (S\NP) and NP，无法表示并列关系，后续的NP无法解析。因而需要类型提升，把NP变为函数，其类型符取决于border的转换结果 (S\NP)，Texas, Idaho 的 NP类型变为函数后，即可利用并列 ^，将border与Texas 和 Idaho进行组合连接。</p>
+<ul>
+<li>解析过程中的歧义</li>
+</ul>
+<p>（1）Lexicon层（主要）</p>
+<p>一个词语可以映射到多个的category，比如Mississippi 既可以映射为 state: Mississippi，又可以映射为river: Mississippi。</p>
+<p>（2）组合层（可忽略）</p>
+<p>存在多种组合的可能性，但往往会得到相同的lambda-表达式。</p>
+<ul>
+<li>PCCG：估计每一个lambda-表达式的概率</li>
+</ul>
+<p>对数线性模型：S为句子，L为lambda-表达式，T为解析的过程， θ 为模型参数，f(L,T,S)为<strong>该解析的特征函数</strong>（作为一种评价指标），一个句子为解析为L的概率为：</p>
+<p><img src="http://img.fdchen.host/PCCG%E6%A8%A1%E5%9E%8B.png" alt="image-20210715100709305"></p>
+<p>原理：一个句子为解析为L的概率为，所有解析过程中，解析出为同一个Lambda-表达式的概率之和。每个过程解析成表达式的概率进行了归一化。</p>
+<p><strong>重要特征</strong>：使用词汇、使用的组合文法</p>
+<p><strong>参数学习</strong>：基于标注好的&lt;S, L&gt;对、最大化似然</p>
+<ul>
+<li>松弛的CCG文法</li>
+</ul>
+<p><strong>原因</strong>：CCG的文法过于严格，使得模型比较脆弱，特别是当面向口语化的文本的时候，会有大量词序错乱，省略的现象。</p>
+<p>（1）Relaxed Application（允许词序的变化，slash方向可变，使用 ^ 符号组合）</p>
+<p><img src="http://img.fdchen.host/%E6%9D%BE%E5%BC%9B%E7%9A%84CCG-RelaxedApplication.png" alt="image-20210715103514869"></p>
+<p>（2）Relaxed Composition（允许短语的前置或者后置，slash方向可变，使用 ^ 符号组合）</p>
+<p><img src="http://img.fdchen.host/%E6%9D%BE%E5%BC%9B%E7%9A%84CCG-RelaxedComposition.png" alt="image-20210715103817013"></p>
+<p>（3）Type-shifting（允许省略）</p>
+<p>将实体名词NP变为 N\N 类型的名词，在例子中省略了from。</p>
+<p><img src="http://img.fdchen.host/%E6%9D%BE%E5%BC%9B%E7%9A%84CCG-Type-shifting.png" alt="image-20210715104316830"></p>
+<ul>
+<li>因子化词汇</li>
+</ul>
+<p><strong>问题</strong>：词典在CCG parsing中至关重要，而词典稀疏，难以学习</p>
+<p><strong>现象</strong>：一个词语可以映射到多个类型，一个类型又会在多个词汇中共享</p>
+<p><strong>方法</strong>：因子化词汇，用参数表示的式子表示类型，以表达多种词汇到类型的映射</p>
+<h3 id="2-2-2-基于DCS的语义解析"><a href="#2-2-2-基于DCS的语义解析" class="headerlink" title="2.2.2 基于DCS的语义解析"></a>2.2.2 基于DCS的语义解析</h3><p>DCS (Dependency-based compositional semantics，依存组合语义文法)由Percy Liang于2011年提出。DCS是一种语义表示体系，同时包含了从句子到语义表示所需的词典和组合文法。与CCG类似，基于组合语义的思想，依赖于<strong>词典</strong>和<strong>组合文法</strong>。</p>
+<ul>
+<li>DCS的特点</li>
+</ul>
+<p>（1）表示能力强：需要与lambda-表达式具备等价的语义表示能力</p>
+<p>（2）简洁：与lambda-表达式相比，DCS的表示更加简洁</p>
+<p>（3）结构清晰：保有与自然语言类似的结构</p>
+<ul>
+<li>语义</li>
+</ul>
+<p>（1）集合论：一个语义表示的语义是符合其语义约束的所有值的集合。</p>
+<p>-  山东省 → {山东省} (山东) </p>
+<p>− PlaceOfBirth → {&lt;莫言，山东&gt;，&lt;秦琼，山东&gt;，&lt;居里，法国&gt;, …} </p>
+<p>− Profession→ {&lt;莫言，作家&gt;， &lt;秦琼，武将&gt;，&lt;居里，科学家&gt;}</p>
+<p>− PlaceOfBirth.山东→ {莫言，秦琼, …} (山东出生) </p>
+<p>− PlaceOfBirth.山东 ^ Profession.作家 → {莫言…} (山东出生的作家)</p>
+<ul>
+<li>词典</li>
+</ul>
+<p><strong>Unary case (u)<strong>：其语义为</strong>实体集合</strong></p>
+<p>− 实体:“Texas”→ texas {texas} </p>
+<p>− 类型：“state”→ state {纽约州、华盛顿州、密西西比州…}</p>
+<p><strong>Binary case (b)</strong>: 其语义为符合关系的<strong>元组集合</strong></p>
+<p>− 二元谓词（predicate）: “born”→ PlaceOfBirth {&lt;莫言，山东&gt;， &lt;秦琼，山东&gt;，&lt;居里，法国&gt;, …}</p>
+<ul>
+<li>组合文法-集合和集合之间的组合和转换</li>
+</ul>
+<p>（1）Join（合并）</p>
+<p>− binary (Join) unary → unary</p>
+<p>− unary (Join) binary → unary</p>
+<p>− 山东 出生 → 出生.山东</p>
+<p>− {山东} (Join) {&lt;莫言，山东&gt;，&lt;秦琼，山东&gt;，&lt;居里，法国&gt;, …} → {莫言，秦琼， …}</p>
+<p>（2）Intersection（交集）</p>
+<p>− unary (Intersection) unary → unary</p>
+<p>− 流行歌手 → 流行 AND 歌手</p>
+<p>（3）Union（并集）</p>
+<p>− unary (Union) unary → unary</p>
+<p>− 周杰伦或刘德华 → 周杰伦 OR 刘德华</p>
+<p>（4）高阶函数</p>
+<p>− Count (计数)：Count unary → unary</p>
+<p>− argmax, argmin, max, min等</p>
+<p>− 周杰伦的歌曲 数目 → Count(周杰伦的歌曲)</p>
+<ul>
+<li>解析例子（从下往上组合）</li>
+</ul>
+<p><img src="http://img.fdchen.host/DCS-%E8%A7%A3%E6%9E%90%E4%BE%8B%E5%AD%90.png" alt="image-20210715112631456"></p>
+<h2 id="2-3-从限定域到开放域"><a href="#2-3-从限定域到开放域" class="headerlink" title="2.3 从限定域到开放域"></a>2.3 从限定域到开放域</h2><p>关键问题：词典覆盖不足、结构不匹配、标注语料成本过高。</p>
+<h3 id="2-3-1-词典扩充学习"><a href="#2-3-1-词典扩充学习" class="headerlink" title="2.3.1 词典扩充学习"></a>2.3.1 词典扩充学习</h3><p>词典覆盖不足。</p>
+<ul>
+<li>使用实体对共现（Reference），核心是知识库的建立</li>
+</ul>
+<p>基本假设：文本中的三元组与知识库中的三元组若<strong>有多个共同的实体对</strong>，则文本中</p>
+<p>的关系（词语）映射到知识库中的关系（词语语义）</p>
+<ul>
+<li>使用标签传播算法，核心是语义相似度的度量</li>
+</ul>
+<p>基本假设：意思相近的词语应该映射到相同的语义</p>
+<h3 id="2-3-2-复述-x2F-重写"><a href="#2-3-2-复述-x2F-重写" class="headerlink" title="2.3.2 复述&#x2F;重写"></a>2.3.2 复述&#x2F;重写</h3><p>由自然语言多样性引起的本体不匹配问题。</p>
+<ul>
+<li>复述</li>
+</ul>
+<p>原理：将语义解析反过来，先得到句子的语义表示，然后生成新的句子，利用复述模型判断</p>
+<p>新句子与原句子是否构成复述关系。</p>
+<ul>
+<li>重写</li>
+</ul>
+<p>原理：一个句子存在另外一种表达，该表达与原句子具有相同的语义，并且其结构与目标语义表示的结构一致</p>
+<h3 id="2-3-3-弱监督学习"><a href="#2-3-3-弱监督学习" class="headerlink" title="2.3.3 弱监督学习"></a>2.3.3 弱监督学习</h3><p>语义表示难以标注。</p>
+<ul>
+<li>利用语义表示的执行结果（如问题的答案）来监督模型的学习</li>
+</ul>
+<h2 id="2-4-小结"><a href="#2-4-小结" class="headerlink" title="2.4 小结"></a>2.4 小结</h2><ul>
+<li><strong>核心组件</strong>：词典+组合文法+学习算法</li>
+<li><strong>代表性方法</strong>：CCG，DCS</li>
+<li><strong>从限定域到开放域</strong>：词典补充学习、复述&#x2F;重写、弱监督学习</li>
+<li><strong>优点</strong>：<ul>
+<li>基于组合语义的思想</li>
+<li>有词典和组合规则，整个解析过程可见，可解释性强</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>太依赖词典，若有词典未覆盖的词语，就无法解析</li>
+<li>脆弱，依赖组合文法，有些复杂的语言现象，文法也无法覆盖</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-基于语义图的语义解析"><a href="#3-基于语义图的语义解析" class="headerlink" title="3 基于语义图的语义解析"></a>3 基于语义图的语义解析</h1><ul>
+<li><p>关键组件：</p>
+<ul>
+<li>语义图表示</li>
+<li>语义图构建</li>
+</ul>
+</li>
+<li><p>使用语义图作为目标语义表示</p>
+<ul>
+<li>优点：语义图的结构与自然语言句子的结构具有类似性</li>
+</ul>
+</li>
+<li><p>语义解析过程由组合文法转换为语义图构建</p>
+<ul>
+<li>优点：可以充分使用知识库知识的约束，，从而有效减少搜索空间</li>
+</ul>
+</li>
+<li><p>语义图：</p>
+<ul>
+<li>可以看作知识库的一个子图</li>
+<li>基本组成：<ul>
+<li>节点，如实体、变量或者类型</li>
+<li>边，表示关系</li>
+<li>操作符，如count，argmax等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>语义图构建代表性方法</p>
+<ul>
+<li>DepLambda [Reddy et al, 2016]：依存树到语义图转换文法</li>
+<li>STAGG [Yih, et al., 2015]: 分步骤构建方法</li>
+<li>Template [Bast &amp; Haussmann, 2015]: 基于模板的语义图生成</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-DepLambda：依存树到语义图转换"><a href="#3-1-DepLambda：依存树到语义图转换" class="headerlink" title="3.1 DepLambda：依存树到语义图转换"></a>3.1 DepLambda：依存树到语义图转换</h2><ul>
+<li>原理：依存树与目标逻辑表达式具有类似的结构。</li>
+</ul>
+<p>（0）预处理：依存关系解析，句子→依存树</p>
+<p>（1）Dependencies to Logical Forms，利用依存关系组合词汇，依存树→Ungrounded lambda-表达式，<strong>类似CCG方法的解析过程</strong></p>
+<p><img src="http://img.fdchen.host/DepLambda-DependenciestoLogicalForms.png" alt="image-20210715232304625"></p>
+<p>（2）Map Logical Form to Ungrounded Graph，Ungrounded lambda-表达式→Ungrounded graph</p>
+<p><img src="http://img.fdchen.host/DepLambda-lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%B0UngroundedGraph.png" alt="image-20210715232005811"></p>
+<p>（3）Map Ungrounded Graph to Semantic Graph，Ungrounded graph→Grounded graph（语义图）</p>
+<p>−实体词 链接到知识库中的实体，如<em>Titanic</em> → TITANIC</p>
+<p>−关系词 链接到知识库中的关系，如<em>directed</em> → film.directed_by</p>
+<p><img src="http://img.fdchen.host/DepLambda-Grounding.png" alt="image-20210715231844543"></p>
+<h2 id="3-2-STAGG：分步搭建语义图"><a href="#3-2-STAGG：分步搭建语义图" class="headerlink" title="3.2 STAGG：分步搭建语义图"></a>3.2 STAGG：分步搭建语义图</h2><ul>
+<li>分步搭建语义图的好处：</li>
+</ul>
+<p>（1）每一步都可以使用最好的技术</p>
+<p>（2）每进行一步都可以利用知识库的约束来减少搜索空间</p>
+<ul>
+<li>基本概念</li>
+</ul>
+<p>（1）中心链</p>
+<p><img src="http://img.fdchen.host/STAGG-%E4%B8%AD%E5%BF%83%E9%93%BE.png" alt="image-20210715233337211"></p>
+<p>（2）约束</p>
+<p><img src="http://img.fdchen.host/STAGG-%E7%BA%A6%E6%9D%9F.png" alt="image-20210715233406968"></p>
+<ul>
+<li>主要步骤：</li>
+</ul>
+<p>（1）中心实体链接：识别实体</p>
+<p>识别出句子中的所有实体，特别是找到中心链上的中心实体</p>
+<p><img src="http://img.fdchen.host/STAGG-%E4%B8%AD%E5%BF%83%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5.png" alt="image-20210715233521579"></p>
+<p>（2）关系链匹配</p>
+<p>要求：与中心实体连接的长度不能超过2的所有关系链作为候选。</p>
+<p><img src="http://img.fdchen.host/STAGG-%E5%85%B3%E7%B3%BB%E9%93%BE%E5%8C%B9%E9%85%8D.png" alt="image-20210715234156009"></p>
+<p>在求出关系链后，可以通过不同的方法，如以最大似然估计为目标函数的Deep Convolutional Neural Networks，来从知识库中找到对应的目标实体集（问题答案的集合）。</p>
+<p>（3）添加约束条件</p>
+<p>最后通过将约束条件作用于目标实体集，缩小或者找到对应的目标实体（最终的问题答案）。</p>
+<p><img src="http://img.fdchen.host/STAGG-%E6%B7%BB%E5%8A%A0%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6.png" alt="image-20210715234544175"></p>
+<ul>
+<li>性能：具有高召回率。</li>
+</ul>
+<p>（1）并不需要词典，也不受限于词典的覆盖率；<br>（2）可以通过神经网络模型来建模软匹配过程，能处理模拟匹配的情况，解决OOV问题(out of vocabulary words)</p>
+<h2 id="3-3-Template：基于模板的语义图构建"><a href="#3-3-Template：基于模板的语义图构建" class="headerlink" title="3.3 Template：基于模板的语义图构建"></a>3.3 Template：基于模板的语义图构建</h2><ul>
+<li>出发点：查询往往都具有固定的若干模板(template)，可通过设计有限的模板来覆盖绝大部分的查询。基于template的方法可以把语义图构建转换为模板匹配问题，能够大大简化此问题。</li>
+<li>关键：<ul>
+<li>模板的定义</li>
+<li>模板的匹配</li>
+</ul>
+</li>
+<li>模板的定义</li>
+</ul>
+<p>3个模板覆盖Webquestions和Free917数据集中绝大部分查询。</p>
+<p><img src="http://img.fdchen.host/Template-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%AE%9A%E4%B9%89.png" alt="image-20210716000438672"></p>
+<p>其中，m是虚实体，为了关系连接而虚构的实体，需要注意的是company, film这种表示类型的词汇也属于一种关系。</p>
+<ul>
+<li>模板匹配</li>
+</ul>
+<p>（1）实体链接，识别句子中的实体</p>
+<p>（2）匹配模板，匹配上述的三个模板</p>
+<p>（3）关系匹配，根据关系在知识库中进行匹配，找到目标实体</p>
+<ul>
+<li>性能：高召回率</li>
+</ul>
+<p>模板能够覆盖大部分的问题，简化了语义图构建的过程。</p>
+<h2 id="3-4-小结"><a href="#3-4-小结" class="headerlink" title="3.4 小结"></a>3.4 小结</h2><ul>
+<li><p><strong>核心：</strong>语义图的语义表示、语义图的构建</p>
+</li>
+<li><p><strong>代表性方法：</strong>DepLambda、STAGG、Template </p>
+</li>
+<li><p><strong>优点</strong>：</p>
+<ul>
+<li>不需要词典和组合文法</li>
+<li>语义图的结构与句子的依存结构具有相似性</li>
+<li>与知识库紧密联系，可充分利用知识库知识的约束</li>
+</ul>
+</li>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li>往往依赖于一些启发式的方法来构建语义图</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-基于神经网络的语义解析"><a href="#4-基于神经网络的语义解析" class="headerlink" title="4 基于神经网络的语义解析"></a>4 基于神经网络的语义解析</h1><ul>
+<li><p>出发点：之前的模型都很复杂，模块很多</p>
+</li>
+<li><p>代表性方法：</p>
+<ul>
+<li><strong>Seq2Seq</strong> [Dong &amp; Lapata, 2016; Jia &amp; Liang, 2016],</li>
+<li><strong>Seq2Tree</strong>[Dong &amp; Lapata, 2016]</li>
+<li><strong>Seq2Act</strong> [Chen et al., 2018]</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-1-Seq2Seq-AND-Seq2Tree"><a href="#4-1-Seq2Seq-AND-Seq2Tree" class="headerlink" title="4.1 Seq2Seq AND Seq2Tree"></a>4.1 Seq2Seq AND Seq2Tree</h2><ul>
+<li><strong>Seq2Seq</strong>：把语义解析看作是机器翻译的问题。</li>
+</ul>
+<p>（1）将逻辑表达式序列化，看作一系列token，从而将语义解析转化为Seq2Seq问题。</p>
+<p>（2）语义解析中的目标语言（语义表示）具有层次结构，而Seq2Seq模型仅把语义表示扁平序列化，从而忽略了层次结构信息，导致在解码过程中需要考虑更多的长距离依赖。</p>
+<p><img src="http://img.fdchen.host/Seq2Seq.png" alt="image-20210716003448159"></p>
+<ul>
+<li><strong>Seq2Tree</strong>：弥补Seq2Seq扁平化表示的不足</li>
+</ul>
+<p>（1）层次化的decoder，不生成扁平化的语义表示序列，而是生成层次结构化的语义表示（tree） ，用&lt;n&gt;来表示树结构中的非终结符</p>
+<p><img src="http://img.fdchen.host/Seq2Tree.png" alt="image-20210716004149240"></p>
+<p>（2）在神经网络中的表示：占位符&lt;n&gt;都存放在一个队列里，直到队列为空才终止，遇到占位符&lt;n&gt;即进入下一层。</p>
+<p><img src="http://img.fdchen.host/Seq2Tree-%E5%9C%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%A4%BA.png" alt="image-20210716004303339"></p>
+<ul>
+<li>在Seq2Seq&#x2F;Seq2Tree中可以加入注意力机制：注意力机制相当于让模型学习了词语到词语的语义表示之间的软对齐。</li>
+<li>性能评估：</li>
+</ul>
+<p>（1）层次结构的decoder使得模型学习到了目标语义表示的结构，这些结构信息能够帮助生成整个语义表示</p>
+<p>（2）Attention机制让模型学习了词语到词语的语义表示之间的软对齐，起到了类似于词典的效果</p>
+<h2 id="4-2-Seq2Act"><a href="#4-2-Seq2Act" class="headerlink" title="4.2 Seq2Act"></a>4.2 Seq2Act</h2><ul>
+<li>端到端的语义图生成。</li>
+</ul>
+<p>端到端：一端输入原始数据，一端输出期望得到的结果，只关心输入和输出，中间的步骤全部都不管，形成了一个黑箱。</p>
+<p><img src="http://img.fdchen.host/Seq2Act-%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E8%AF%AD%E4%B9%89%E7%94%9F%E6%88%90.png" alt="image-20210716005626794"></p>
+<ul>
+<li>模型框架</li>
+</ul>
+<p>（1）根据Sequence-to-Action RNN Model生成动作序列</p>
+<p><strong>动作集类型</strong>有：Add variable node,  Add entity node, Add type node, Add edge, Operation action, Argument action</p>
+<p><strong>Encoder-Decoder model</strong>：bi-LSTM with attention（基于注意力机制的双向LSTM模型）</p>
+<p><img src="http://img.fdchen.host/Seq2Act-encoder-decoderModel.png" alt="image-20210716010634809"></p>
+<p>经典模型有encoder层包含双向LSTM的bi-LSTM模型，其中，输入是Action embedding。</p>
+<p><strong>Action embedding包含句法部分和结构部分</strong>，分别编码，一定程度上缓解动作的稀疏性（类似因子化词汇）。</p>
+<p>（2）根据动作序列搭建语义图</p>
+<p><img src="http://img.fdchen.host/Seq2Act-%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.png" alt="image-20210716010149285"></p>
+<ul>
+<li>性能：</li>
+</ul>
+<p>（1）动作编码更加的紧凑，一定程度解决长距离依赖的问题</p>
+<p>（2）可扩展性强，更容易在解码过程中加入知识库的约束信息，来保证解码时生成符合句法、符合语义的语义表示</p>
+<h2 id="4-3-小结"><a href="#4-3-小结" class="headerlink" title="4.3 小结"></a>4.3 小结</h2><ul>
+<li><p><strong>Seq2Seq</strong>: 直接把目标语义表示序列化</p>
+</li>
+<li><p><strong>Seq2Tree</strong>: 考虑到目标语义表示的结构性</p>
+</li>
+<li><p><strong>Seq2Act</strong>: 用语义图表示语义，用动作序列编码语义图的构建</p>
+</li>
+</ul>
+<h2 id="4-4-基于神经网络模型的扩展"><a href="#4-4-基于神经网络模型的扩展" class="headerlink" title="4.4 基于神经网络模型的扩展"></a>4.4 基于神经网络模型的扩展</h2><ul>
+<li>Constrained decoder：跟知识结合</li>
+</ul>
+<p>（1）<strong>理由</strong>：由于<strong>目标语言是形式化语言，需符合严格的条件约束</strong>，因此对比机器翻译里面的decoder，语义解析中的decoder可以使用严格的约束条件。</p>
+<p>（2）<strong>主要部分</strong>：句法条件和语义条件</p>
+<p>− 句法条件：如”(λa $0 e (and (flight $0) ) from $0 “ 下一个token应该是一个参数（实体或者变量）。</p>
+<p>− 语义条件：“(λa $0 e (and (flight $0) ) from $0 ”下一个token应该是一个城市或者机场。</p>
+<p>（3）<strong>作用</strong>：避免生成明显错误的token，从而提高最终生成准确语义表示的概率。</p>
+<p>（4）<strong>适用性</strong>：在所有的基于神经网络的语义解析方法中都可以使用。</p>
+<p>（5）<strong>Constrained decoder in Seq2Act</strong>：</p>
+<p><img src="http://img.fdchen.host/ConstrainedDecoderInSeq2Act.png" alt="image-20210716013221763"></p>
+<p>（6）<strong>Grammar constrained decoder</strong>：</p>
+<p><img src="http://img.fdchen.host/GrammerConstrainedDecoder.png" alt="image-20210716013416478"></p>
+<ul>
+<li>Coarse-to-fine：“通用结构”+“微调”</li>
+</ul>
+<p>（1）<strong>理由</strong>：自然语言与语义表示之间的gap太大</p>
+<p>（2）<strong>方案</strong>：先生成sketch，再进行grounding，简而言之，先生成大致框架，再依据句子补充实体</p>
+<p><img src="http://img.fdchen.host/Seq2Act-Corse-to-fine.png" alt="image-20210716014014214"></p>
+<p>（3）<strong>先生成sketch的好处</strong>：</p>
+<p>− 相比完整的语义表示，先生成sketch要容易很多</p>
+<p>− sketch具有一定的泛化性，很多句子具有相同的sketch</p>
+<p>− 使用sketch之后，生成的序列长度大大缩减</p>
+<p>− sketch可以为后面的decoding提供帮助</p>
+<p>（4）<strong>建模Coarse-to-fine的过程</strong>：先生成sketch，在利用sketch指导输出decoding</p>
+<p><img src="http://img.fdchen.host/Seq2Act-%E5%BB%BA%E6%A8%A1Coarse-to-fine%E7%9A%84%E8%BF%87%E7%A8%8B.png" alt="image-20210716014246654"></p>
+<p>（5）<strong>sketch指导后面的decoding的方法</strong>：辅助判断是否缺失实体，提示类型信息等</p>
+<h1 id="5-总结和展望"><a href="#5-总结和展望" class="headerlink" title="5 总结和展望"></a>5 总结和展望</h1><h2 id="5-1-现有方法总结"><a href="#5-1-现有方法总结" class="headerlink" title="5.1 现有方法总结"></a>5.1 现有方法总结</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>核心</th>
+<th>优势</th>
+<th>劣势</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基于词典-组合文法的方法</td>
+<td>词典<br />组合文法</td>
+<td>基于组合语义思想，解析过程清晰可见，可解释性强</td>
+<td>需要学习词典和语义组合文法，且容易受限于词典的覆盖度</td>
+</tr>
+<tr>
+<td>基于语义图的方法</td>
+<td>语义图表示<br />语义图的构建</td>
+<td>语义图与自然语言句子具有类似的结构；与知识库联系紧密，可充分利用知识库的知识来指导语义图的构建</td>
+<td>往往依赖于特定的手段来构建语义图，缺乏一定的通用性</td>
+</tr>
+<tr>
+<td>基于神经网络的方法</td>
+<td>Decoding中的token形式<br />Decoding中的constrains</td>
+<td>端到端，充分利用神经网络模型的表示能力和拟合能力</td>
+<td>可解释性差</td>
+</tr>
+</tbody></table>
+<h2 id="5-2-展望"><a href="#5-2-展望" class="headerlink" title="5.2 展望"></a>5.2 展望</h2><h3 id="5-2-1-低成本的模型构建"><a href="#5-2-1-低成本的模型构建" class="headerlink" title="5.2.1 低成本的模型构建"></a>5.2.1 低成本的模型构建</h3><ul>
+<li><p>思路：Transfer、弱监督&#x2F;无监督学习、预训练</p>
+</li>
+<li><p><strong>Transfer：领域迁移</strong></p>
+<ul>
+<li>关键：<strong>解耦合结构和词典</strong></li>
+<li>假设：结构在不同领域下具有通用性</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-2-符号与神经网络融合的语义解析"><a href="#5-2-2-符号与神经网络融合的语义解析" class="headerlink" title="5.2.2 符号与神经网络融合的语义解析"></a>5.2.2 符号与神经网络融合的语义解析</h3><ul>
+<li>现象：两类方法各有优势，<strong>基于符号的方法长于推理和利用知识</strong>，<strong>神经网络的方法长于表示和计算</strong>，如何在语义解析中有效融合两类方法也将成为研究者探索的点。</li>
+<li>挑战：符号在神经网络中的表示形式，以及计算方式（往往不可导）。</li>
+<li>当前方法：<strong>Neural Symbolic Machines (NSM，神经符号机)</strong><ul>
+<li>以memory的形式在neural network中引入symbolic representation。</li>
+<li>利用强化学习算法来训练模型（symbolic部分不可导）</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-3-上下文感知的语义解析"><a href="#5-2-3-上下文感知的语义解析" class="headerlink" title="5.2.3 上下文感知的语义解析"></a>5.2.3 上下文感知的语义解析</h3><ul>
+<li>问题：当前句子解析需要利用之前句子的信息，如对话理解、代码生成等。</li>
+<li>关键挑战：指代、省略、如何复用信息</li>
+<li>当前解决办法：<ul>
+<li><strong>基于CCG的方法（针对指代、省略）</strong>：增加新词汇（用!&lt;e, t&gt;表示待插入的新词汇）和文法（基于Type-shifting，同时利用!&lt;e, t&gt;表示被省略的词汇）来处理指代和省略等现象</li>
+<li><strong>基于神经网络的方法</strong>：<ul>
+<li>turn-level encoder：编码上下文信息</li>
+<li>query segment copying：用copy机制来复用信息（多用于问题复用）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://img.fdchen.host/%E4%B8%8A%E4%B8%8B%E6%96%87%E6%84%9F%E7%9F%A5%E7%9A%84%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90.png" alt="image-20210716020502352"></p>
+<h3 id="5-2-4-与物理世界交互的语义解析"><a href="#5-2-4-与物理世界交互的语义解析" class="headerlink" title="5.2.4 与物理世界交互的语义解析"></a>5.2.4 与物理世界交互的语义解析</h3><ul>
+<li>问题：解析执行一系列指令，状态随着指令的执行而发生变化，如机器人执行指令。</li>
+<li>关键挑战：如何建模之前的指令（同样有指代和省略的现象），如何建模当前环境的状态变化。</li>
+<li>当前的解决办法：<ul>
+<li><strong>基于注意力机制的encoder-decoder模型</strong>：根据特定任务定义System Action、Encoder中建模之前命令以及当前的状态（包括当前命令、之前命令、初始状态、当前状态等）</li>
+</ul>
+</li>
+</ul>
+<h1 id="6-个人理解总结"><a href="#6-个人理解总结" class="headerlink" title="6 个人理解总结"></a>6 个人理解总结</h1><ol>
+<li>基于词典-组合文法的语义解析从原理上看，更加适用于限定域，扩展到开放域的成本较高，主要是过于依赖词典和组合规则。</li>
+<li>基于语义图的语义解析可以基于知识库得到较为准确的结果，但是如何构建语义图是一个比较困难的问题，而且求解必须依赖知识库，不过有向开放域扩展的可能性，而且目前各类知识库在逐步建立，或许会有较好的前景。</li>
+<li>基于神经网络的语义解析中，虽然可解释性差，如果模型比较好，效果也应该比较好，比较适合完成非解释性的任务，像端到端的任务。</li>
+<li>展望的四个角度事实上都是自然语义理解可以发展的方向，第二个比较偏向基于目前方法进行改进，其余三个是具体的应用场景或任务层面的发展方向。</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fdChen</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/">http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">fdChen</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/nlp-mo-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="NLP学习路径">
+                        
+                        <span class="card-title">NLP学习路径</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
+                                </a>
+                            
+                            <a href="/categories/NLP/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/" class="post-category">
+                                    算法模型
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/shell-bian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Shell编程">
+                        
+                        <span class="card-title">Shell编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1 教程
+视频教程：尚硅谷Linux教程
+文字教程：Shell教程|菜鸟教程
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            <a href="/categories/Linux/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Shell/">
+                        <span class="chip bg-color">Shell</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: fdChen的掉发收集箱<br />'
+            + 'Author: fdChen<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">fdChen</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">132.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="/beian.miit.gov.cn" target="_blank">湘ICP备20016057号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CCSemicircle" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2914756796" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2914756796" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/semi-circle-42/posts" class="tooltipped" target="_blank" data-tooltip="关注我的知乎" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

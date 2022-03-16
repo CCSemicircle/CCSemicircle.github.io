@@ -1,0 +1,1945 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="NLP学习路径, 软件工程,前端,NLP">
+    <meta name="description" content="
+以下模型由CQU 高旻老师挑选，内容由本人总结，部分内容来源网络，侵删
+模型实现项目github地址：https://github.com/CQU-MinGao-NLP/NLP-learning
+
+1 N-gram模型
+基本思想
+
+N-g">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>NLP学习路径 | fdChen的掉发收集箱</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fdChen的掉发收集箱</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fdChen的掉发收集箱</div>
+        <div class="logo-desc">
+            
+            一些想到什么写什么的记录
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CCSemicircle" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CCSemicircle" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">NLP学习路径</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP/" class="post-category">
+                                NLP
+                            </a>
+                        
+                            <a href="/categories/NLP/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/" class="post-category">
+                                算法模型
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-03-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    12.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    45 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>以下模型由CQU 高旻老师挑选，内容由本人总结，部分内容来源网络，侵删</p>
+<p>模型实现项目github地址：<a target="_blank" rel="noopener" href="https://github.com/CQU-MinGao-NLP/NLP-learning">https://github.com/CQU-MinGao-NLP/NLP-learning</a></p>
+</blockquote>
+<h1 id="1-N-gram模型"><a href="#1-N-gram模型" class="headerlink" title="1 N-gram模型"></a>1 N-gram模型</h1><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>N-gram模型引入了马尔可夫假设，这是一种独立性假设，在这里说的是<strong>某一个词语出现的的概率只由其前面的n-1个词语所决定</strong>，这被称为<strong>n元语言模型</strong> ，即<strong>n-gram</strong>，当<strong>n&#x3D;2</strong>时，相应的语言模型就被称为是<strong>二元模型</strong>。</p>
+<ul>
+<li><strong>概率模型</strong></li>
+</ul>
+<p><strong>传统语言模型（无法计算）：</strong></p>
+<p><img src="https://img-service.csdnimg.cn/img_convert/b3a7a64560e2566de32f98c059e96436.png" alt="传统语言模型"></p>
+<p><strong>N-gram通用模型：</strong></p>
+<p><img src="https://img-service.csdnimg.cn/img_convert/4280e3f82f4d36a83bc1848e2429a3b0.png" alt="N-gram概率模型"></p>
+<p><strong>Bi-gram：</strong></p>
+<p><img src="https://img-service.csdnimg.cn/img_convert/65f503d308aad5b996b4ad50791959e3.png" alt="Bi-gram概率模型"></p>
+<p><strong>Tri-gram:</strong></p>
+<p><img src="https://img-service.csdnimg.cn/img_convert/a29d37d4787bc6b6a3928cf9a9fd227e.png" alt="Tri-gram概率模型"></p>
+<ul>
+<li><p>详见博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/rongsenmeng2835/article/details/108565323?spm=1001.2014.3001.5501">语言模型（一）—— 统计语言模型n-gram语言模型</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/rongsenmeng2835/article/details/108656674?spm=1001.2014.3001.5501">https://blog.csdn.net/rongsenmeng2835/article/details/108656674?spm=1001.2014.3001.5501</a>)</p>
+</li>
+</ul>
+<h1 id="2-NNLM"><a href="#2-NNLM" class="headerlink" title="2 NNLM"></a>2 NNLM</h1><ul>
+<li>论文链接：<a target="_blank" rel="noopener" href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Nerual Network Language Model</a></li>
+</ul>
+<h2 id="2-1-FFNNLM"><a href="#2-1-FFNNLM" class="headerlink" title="2.1 FFNNLM"></a>2.1 FFNNLM</h2><ul>
+<li>全称：Feedforward neural network model language model，前馈神经网络模语言模型</li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2019-07-23-6">从经典结构到改进方法，神经网络语言模型综述</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>Bengio 等人于 2003 年提出了原始 FFNNLM 的架构。这个 FFNNLM 可以写作：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/e7e35985-cbc0-4a06-a288-56c4b915cbab/640.png" alt="img"></p>
+<p>其中，H、U 和 W 是层与层之间连接的权重矩阵；d 和 b 是隐藏层和输出层的偏置。</p>
+<p>受到 N 元语言模型的启发，FFNNLM 将前 n-1 个单词作为了预测下一个单词的上下文。</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/fa95ce37-9539-4667-945e-b2ec157ef3fb/640.jpeg" alt="img"></p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>FFNNLM 通过<strong>为每个单词学习一个分布式表征</strong>来实现在连续空间上的建模。单词表征是语言模型的副产品，它往往被用于改进其它的 NLP 任务。基于 FFNNLM，Mikolov 等人于 2013 提出了两种词表征模型：「CBOW」和「Skip-gram」。FFNNLM 通过将单词转换为低维向量克服了维数诅咒。FFNNLM 引领了 NNLM 研究的潮流。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>（1）在训练前指定的上下文大小是有限的，这与人类可以使用大量的上下文信息进行预测的事实是严重不符的。</p>
+<p>（2）序列中的单词是时序相关的。而 FFNNLM 没有使用时序信息进行建模。</p>
+<p>（3）此外，全连接 NN 需要学习许多可训练的参数，即使这些参数的数量比 N 元 少，但是仍然具有很大的计算开销，十分低效。</p>
+<h1 id="3-Word-Embedding"><a href="#3-Word-Embedding" class="headerlink" title="3 Word Embedding"></a>3 Word Embedding</h1><h2 id="3-0-one-hot"><a href="#3-0-one-hot" class="headerlink" title="3.0 one-hot"></a>3.0 one-hot</h2><p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30057549/article/details/103342841?utm_source=app&app_version=4.9.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">词嵌入基础及其使用</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>one-hot，简单来说就是单词编号是多少，哪个位置就为1，其余为0。这种词表示方法的特点就是，没有保留句子中的上下文关系（任何词之间的内积为0）。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191202151029593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="one-hot"></p>
+<h2 id="3-1-TF-IDF-与-BOW"><a href="#3-1-TF-IDF-与-BOW" class="headerlink" title="3.1 TF-IDF 与 BOW"></a>3.1 TF-IDF 与 BOW</h2><h3 id="3-1-1-TF-IDF"><a href="#3-1-1-TF-IDF" class="headerlink" title="3.1.1 TF-IDF"></a>3.1.1 TF-IDF</h3><p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94446764">TF-IDF算法原理及其使用详解</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>TF-IDF（Term Frequency-inverse Document Frequency）是一种针对关键词的统计分析方法，<strong>用于评估一个词对一个文件集或者一个语料库的重要程度。一个词的重要程度跟它在文章中出现的次数成正比，跟它在语料库出现的次数成反比。这种计算方式能有效避免常用词对关键词的影响，提高了关键词与文章之间的相关性。</strong></p>
+<p>其中TF指的是某词在文章中出现的总次数，该指标通常会被归一化定义为<strong>TF&#x3D;（某词在文档中出现的次数&#x2F;文档的总词量）</strong>，这样可以防止结果偏向过长的文档（同一个词语在长文档里通常会具有比短文档更高的词频）。IDF逆向文档频率，包含某词语的文档越少，IDF值越大，说明该词语具有很强的区分能力，<strong>IDF&#x3D;log（语料库中文档总数&#x2F;包含该词的文档数+1），+1的原因是避免分母为0。TF-IDF&#x3D;TFxIDF，TF-IDF值越大表示该特征词对这个文本的重要性越大。</strong></p>
+<ul>
+<li><strong>具体实现</strong></li>
+</ul>
+<p>可以在Sklearn中调用TF-IDFVectorizer库实现TF-IDF算法，并且可以通过stopwords参数来设置文档中的停用词（没有具体意义的词，如助词，语气词等），使得停用词不纳入计算范围，提高算法的精确性。</p>
+<h3 id="3-1-2-BOW"><a href="#3-1-2-BOW" class="headerlink" title="3.1.2 BOW"></a>3.1.2 BOW</h3><p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Elenstone/article/details/105134863">词向量之词袋模型(BOW)详解</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>词袋模型（Bag-of-Words model，BOW）BoW(Bag of Words)词袋模型最初被用在文本分类中，将文档表示成特征矢量。它的<strong>基本思想是假定对于一个文本，忽略其词序和语法、句法，仅仅将其看做是一些词汇的集合，而文本中的每个词汇都是独立的。</strong>简单说就是讲每篇文档都看成一个袋子（因为里面装的都是词汇，所以称为词袋，Bag of words即因此而来），然后看这个袋子里装的都是些什么词汇，将其分类。如果文档中猪、马、牛、羊、山谷、土地、拖拉机这样的词汇多些，而银行、大厦、汽车、公园这样的词汇少些，我们就倾向于判断它是一篇描绘乡村的文档，而不是描述城镇的。</p>
+<ul>
+<li><strong>具体实现</strong></li>
+</ul>
+<ol>
+<li>首先根据<strong>语料</strong>中出现的句子分词，然后构建<strong>词袋</strong>（每一个出现的词都加进来）。计算机不认识字，只认识数字，那在计算机中怎么表示词袋模型呢？其实很简单，给每个词一个位置索引就可以了。小孩放在第一个位置，喜欢放在第二个位置，以此类推。</li>
+<li>其中key为词，value为词的索引，语料中共有9个单词， 那么每个句子我们就可以使用一个9维的向量来表示。如果句子中含有的一个词出现了一次，就让那个词的位置置为1，词出现几次就置为几，（<strong>本质是one-hot模型</strong>）</li>
+<li>将两篇文本通过词袋模型变为向量模型，通过计算向量的余弦距离来计算两个文本间的相似度。</li>
+</ol>
+<ul>
+<li><strong>缺点</strong>：基本同one-hot编码的缺点，没有上下文信息和向量稀疏。</li>
+</ul>
+<h2 id="3-2-Word-Embedding"><a href="#3-2-Word-Embedding" class="headerlink" title="3.2 Word Embedding"></a>3.2 Word Embedding</h2><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y ，例如有理数嵌入实数。word embedding，就是找到一个映射或者函数，生成在一个新的空间上的表达，该表达就是word representation。</p>
+<p>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，**把词汇表中的单词或者短语映射成由实数构成的向量上(映射)**。</p>
+<ul>
+<li><strong>具体实现</strong></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30057549/article/details/103342841?utm_source=app&app_version=4.9.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">词嵌入基础及其使用</a></p>
+<p>一种表示如下图所示，在左侧一栏是维度，表格中的值是每个词在这个维度（特征）上的取值（-1，+1），越相关，绝对值越大。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191202151033329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="WordEmbedding"></p>
+<h2 id="3-2-Word2Vec"><a href="#3-2-Word2Vec" class="headerlink" title="3.2 Word2Vec"></a>3.2 Word2Vec</h2><ul>
+<li><p>全称：Word to vector</p>
+</li>
+<li><p>论文链接：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">skip-gra</a><a target="_blank" rel="noopener" href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">m</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a></li>
+</ol>
+</li>
+<li><p><strong>语言模型种类</strong></p>
+</li>
+</ul>
+<p>（1）如果是用一个词语作为输入，来预测它周围的上下文，那这个模型叫做『Skip-gram 模型』</p>
+<p>（2）而如果是拿一个词语的上下文作为输入，来预测这个词语本身，则是 『CBOW 模型』</p>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61635013">Word2Vec详解</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p><strong>word2vec是用一个一层的神经网络把one-hot形式的稀疏词向量映射称为一个n维(n一般为几百)的稠密向量的过程。</strong>为了加快模型训练速度，其中的tricks包括Hierarchical softmax，negative sampling, Huffman Tree等。</p>
+<p>模型框架：</p>
+<p><img src="https://pic2.zhimg.com/v2-0d3bbbe2ab92b36d40ff0acb9170f311_r.jpg" alt="Word2Vec"></p>
+<h3 id="3-2-1-CBOW"><a href="#3-2-1-CBOW" class="headerlink" title="3.2.1 CBOW"></a>3.2.1 CBOW</h3><p>全称：Continuous Bag of Words（连续词袋模型）</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8fcd03fa3dad0cf4d0af1a890ace5193_720w.jpg" alt="img"></p>
+<p>1、输入层：上下文单词的One-Hot编码词向量，V为词汇表单词个数，C为上下文单词个数。以上文那句话为例，这里C&#x3D;4，所以模型的输入是（is,an,on,the）4个单词的One-Hot编码词向量。</p>
+<p>2、初始化一个权重矩阵 <img src="https://www.zhihu.com/equation?tex=W_%7BV%C3%97N%7D" alt="[公式]"> ，然后用所有输入的One-Hot编码词向量左乘该矩阵,得到维数为N的向量 <img src="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> ，这里的N由自己根据任务需要设置。</p>
+<p>3、将所得的向量 <img src="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> 相加求平均作为隐藏层向量h。</p>
+<p>4、初始化另一个权重矩阵 <img src="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ,用隐藏层向量h左乘 <img src="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ，再经激活函数处理得到V维的向量y，<strong>y的每一个元素代表相对应的每个单词的概率分布</strong>。</p>
+<p>5、<strong>y中概率最大的元素所指示的单词为预测出的中间词（target word）与true label的One-Hot编码词向量做比较，误差越小越好（根据误差更新两个权重矩阵）</strong></p>
+<p>在训练前需要定义好<strong>损失函数（一般为交叉熵代价函数）</strong>，采用梯度下降算法更新W和W’。训练完毕后，<strong>输入层的每个单词与矩阵W（左侧的权重矩阵）相乘得到的向量的就是我们想要的Distributed Representation表示的词向量，也叫做word embedding。</strong>因为<strong>One-Hot编码词向量中只有一个元素为1，其他都为0，所以第i个词向量乘以矩阵W得到的就是矩阵的第i行</strong>，所以<strong>这个矩阵也叫做look up table，有了look up table就可以免去训练过程，直接查表得到单词的词向量了</strong>。</p>
+<h3 id="3-2-2-Skip-gram"><a href="#3-2-2-Skip-gram" class="headerlink" title="3.2.2 Skip-gram"></a>3.2.2 Skip-gram</h3><p><img src="https://pic2.zhimg.com/80/v2-a04dca66f5e8456f50b4b43fb87b98dd_720w.jpg" alt="img"></p>
+<p>通过在一个大的语料库训练，得到一个从输入层到隐含层的权重模型。“apple”的上下文词是（’there’，’is’，’an’，’on’,’the’,’table’）。<strong>那么以apple的One-Hot词向量作为输入，输出则是（’there’，’is’，’an’，’on’,’the’,’table’）的One-Hot词向量。训练完成后，就得到了每个词到隐含层的每个维度的权重，就是每个词的向量（和CBOW中一样）。</strong></p>
+<ul>
+<li><strong>如何训练神经网络模型</strong></li>
+</ul>
+<p>假如我们有一个句子“There is an apple on the table”。</p>
+<p>1、首先我们选句子中间的一个词作为我们的输入词，例如我们选取“apple”作为input word；</p>
+<p>2、有了input word以后，我们再<strong>定义一个叫做skip_window的参数，它代表着我们从当前input word的一侧（左边或右边）选取词的数量。</strong>如果我们设置skip_window&#x3D;2，那么我们最终获得窗口中的词（包括input word在内）就是[‘is’,’an’,’apple’,’on’,’the’ ]。<strong>skip_window&#x3D;2代表着选取左input word左侧2个词和右侧2个词进入我们的窗口</strong>，所以整个窗口大小span&#x3D;2x2&#x3D;4。<strong>另一个参数叫num_skips，它代表着我们从整个窗口中随机选取多少个不同的词作为我们的output word</strong>，当skip_window&#x3D;2，num_skips&#x3D;2时，我们将会得到两组 (input word, output word) 形式的训练数据，即 (‘apple’, ‘an’)，(‘apple’, ‘on’)。</p>
+<p>3、<strong>神经网络基于这些训练数据中每对单词出现的次数习得统计结果，并输出一个概率分布，这个概率分布代表着到我们词典中每个词有多大可能性跟input word同时出现。</strong>举个例子，如果我们向神经网络模型中输入一个单词“中国“，那么最终模型的输出概率中，像“英国”， ”俄罗斯“这种相关词的概率将远高于像”苹果“，”蝈蝈“非相关词的概率。<strong>因为”英国“，”俄罗斯“在文本中更大可能在”中国“的窗口（Skip_window）中出现。</strong>我们将通过给神经网络输入文本中成对的单词来训练它完成上面所说的概率计算。</p>
+<p>4、<strong>通过梯度下降和反向传播更新矩阵W</strong></p>
+<p>5、W中的行向量即为每个单词的Word embedding表示</p>
+<ul>
+<li><strong>skip_window和num_skips</strong></li>
+</ul>
+<p>简单来说，<strong>skip_window和num_skips用来生成标注(label)的训练数据集，可以理解为是监督学习中的标注数据。每个(input_word, output_word)表示在模型中每个input_word 所对应的 output_word应该是什么</strong>。</p>
+<p>skip_window代表窗口大小，num_skips &#x3D; 2 表示input用于产生label的次数限制，就是对于一个中心词 在window范围 随机选取num_skips个词，产生一系列(input_id, output_id) 。</p>
+<p>在生成单词对时，会在<strong>语料库中先取出一个长度为skip_window*2+1连续单词列表</strong>，这个连续的单词列表是上面程序中的变量buffer。buffer中最中间的那个单词是Skip-Gram方法中“出现的单词”，其余skip_window*2个单词是它的“上下文”。<strong>会在skip_window*2个单词中随机选取num_skips个单词，放入的标签labels</strong>。</p>
+<p>如skip_window&#x3D;1 , num_skips&#x3D;2的情况。会首先选取一个长度为3的buffer，假设它是[‘anarchism’, ‘originated’,’as’]，此时originated为中心单词，剩下的两个单词为它的上下文。再在这两个单词中选择num_skips形成标签。由于num_skips&#x3D;2，所以实际只能将这两个单词都选上（标签不能重复），最后生成的训练数据为originated -&gt;anarchism和originated -&gt; as。</p>
+<h3 id="3-2-3-Tricks"><a href="#3-2-3-Tricks" class="headerlink" title="3.2.3 Tricks"></a>3.2.3 Tricks</h3><ul>
+<li><strong>Hierarchical Softmax</strong></li>
+</ul>
+<p>Hierarchical Softmax对原模型的改进主要有两点，<strong>第一点是从输入层到隐藏层的映射，没有采用原先的与矩阵W相乘然后相加求平均的方法，而是直接对所有输入的词向量求和。</strong>假设输入的词向量为（0，1，0，0）和（0,0,0,1），那么隐藏层的向量为（0,1,0,1）。</p>
+<p>Hierarchical Softmax的<strong>第二点改进是采用哈夫曼树来替换了原先的从隐藏层到输出层的矩阵W’。</strong>哈夫曼树的叶节点个数为词汇表的单词个数V，一个叶节点代表一个单词，而从根节点到该叶节点的路径确定了这个单词最终输出的词向量。</p>
+<p>哈夫曼树的所有内部节点就类似之前神经网络隐藏层的神经，其中，<strong>根节点的词向量对应投影后的词向量</strong>，而<strong>所有叶子节点就类似于之前神经网络softmax输出层的神经元，叶子节点的个数就是词汇表的大小</strong>。在哈夫曼树中，隐藏层到输出层的softmax映射不是一下子完成的，而是沿着哈夫曼树一步步完成的，因此这种softmax取名为”Hierarchical Softmax”。</p>
+<p><img src="https://images2017.cnblogs.com/blog/1042406/201707/1042406-20170727105752968-819608237.png" alt="HierarchicalSoftmax-Huffuman"></p>
+<ul>
+<li><strong>Negative Sampling（负采样）</strong></li>
+</ul>
+<p>比如我们有一个训练样本，中心词是w，它周围上下文共有2c个词，记为context(w)。由于这个中心词w，的确和context(w)相关，因此它是一个真实的正例。<strong>通过Negative Sampling采样，我们得到n个和w不同的中心词wi, i&#x3D;1,2,..n，这样context(w)和wi就组成了n个并不真实存在的负例。利用这一个正例和n个负例，我们进行二元逻辑回归，得到负采样对应每个词wi对应的模型参数θi，和每个词的词向量</strong>。</p>
+<h2 id="3-3-GloVe"><a href="#3-3-GloVe" class="headerlink" title="3.3 GloVe"></a>3.3 GloVe</h2><ul>
+<li>论文链接：<a target="_blank" rel="noopener" href="https://www.aclweb.org/anthology/D14-1162.pdf">Global vectors for word representation</a></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="http://www.fanyeong.com/2018/02/19/glove-in-detail/">GloVe详解</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p><strong>GloVe的全称叫Global Vectors for Word Representation，它是一个基于全局词频统计（count-based &amp; overall statistics）的词表征（word representation）工具，它可以把一个单词表达成一个由实数组成的向量，这些向量捕捉到了单词之间一些语义特性，比如相似性（similarity）、类比性（analogy）等。</strong>我们通过对向量的运算，比如欧几里得距离或者cosine相似度，可以计算出两个单词之间的语义相似性。</p>
+<ul>
+<li><strong>主要模型</strong></li>
+</ul>
+<p><strong>构建词向量（Word Vector）和共现矩阵（Co-ocurrence Matrix）之间的近似关系</strong>，论文的作者提出以下的公式可以近似地表达两者之间的关系：</p>
+<p><img src="http://img.fdchen.host/Glove-%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9E%8B.png" alt="image-20210806192653851"></p>
+<p>其中，<strong>wi^T和wj是我们最终要求解的词向量；</strong>bi和bj分别是两个词向量的bias term。</p>
+<ul>
+<li><strong>损失函数</strong></li>
+</ul>
+<p><img src="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.png" alt="image-20210806192630927"></p>
+<p>这个loss function的基本形式就是最简单的mean square loss，只不过在此基础上加了一个权重函数f(Xij)。</p>
+<p><img src="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9A%84%E6%9D%83%E5%80%BC%E5%87%BD%E6%95%B0.png" alt="image-20210806193111470"></p>
+<h1 id="4-Fasttext"><a href="#4-Fasttext" class="headerlink" title="4 Fasttext"></a>4 Fasttext</h1><ul>
+<li><p>全称：Facebook开发的一款快速文本分类器</p>
+</li>
+<li><p>论文链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1607.01759.pdf">Bag of Tricks for Efficient Text Classification</a>   关于文本分类</li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1607.04606.pdf">Enriching Word Vectors with Subword Information</a>  关于文本嵌入</li>
+</ul>
+</li>
+<li><p>以下内容来自博客：<strong>fastText原理及实践</strong></p>
+</li>
+<li><p><strong>基本思想</strong></p>
+</li>
+</ul>
+<p>fastText模型也只有三层：输入层、隐含层、输出层（Hierarchical Softmax）<strong>，输入都是多个经向量表示的单词，输出都是一个特定的target，隐含层都是对多个词向量的叠加平均。</strong>不同的是，CBOW的输入是目标单词的上下文，<strong>fastText的输入是多个单词及其n-gram特征，这些特征用来表示单个文档</strong>；CBOW的输入单词被onehot编码过，<strong>fastText的输入特征是被embedding过</strong>；CBOW的输出是目标词汇，<strong>fastText的输出是文档对应的类标。</strong></p>
+<p>值得注意的是，fastText<strong>在输入时，将单词的字符级别的n-gram向量作为额外的特征；在输出时，fastText采用了分层Softmax</strong>，大大降低了模型训练时间。</p>
+<ul>
+<li><strong>主要优点：</strong>fastText是一个快速文本分类算法</li>
+</ul>
+<ol>
+<li>fastText在保持高精度的情况下加快了训练速度和测试速度</li>
+<li>fastText不需要预训练好的词向量，fastText会自己训练词向量</li>
+<li>fastText两个重要的优化：Hierarchical Softmax、N-gram</li>
+</ol>
+<h1 id="5-textCNN"><a href="#5-textCNN" class="headerlink" title="5 textCNN"></a>5 textCNN</h1><ul>
+<li>全称+论文链接：<a href="https://link.zhihu.com/?target=https://arxiv.org/abs/1408.5882">Convolutional Neural Networks for Sentence Classification</a></li>
+</ul>
+<h2 id="5-1-CNN"><a href="#5-1-CNN" class="headerlink" title="5.1 CNN"></a>5.1 CNN</h2><ul>
+<li>基本思想：</li>
+</ul>
+<p>卷积神经网络主要由这几类层构成：<strong>输入层、卷积层，ReLU层、池化（Pooling）层和全连接层（全连接层和常规神经网络中的一样）</strong>。通过将这些层叠加起来，就可以构建一个完整的卷积神经网络。在实际应用中往往将卷积层与ReLU层共同称之为卷积层，<strong>所以卷积层经过卷积操作也是要经过激活函数的</strong>。具体说来，卷积层和全连接层（CONV&#x2F;FC）对输入执行变换操作的时候，不仅会用到激活函数，还会用到很多参数，即神经元的权值w和偏差b；而ReLU层和池化层则是进行一个固定不变的函数操作。卷积层和全连接层中的参数会随着梯度下降被训练，这样卷积神经网络计算出的分类评分就能和训练集中的每个图像的标签吻合了。</p>
+<p>详细解读见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/47184529">卷积神经网络（CNN）详解</a></p>
+<ul>
+<li><strong>卷积层</strong></li>
+</ul>
+<p><img src="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-juanji.gif" alt="卷积层"></p>
+<ul>
+<li><strong>池化层</strong></li>
+</ul>
+<p><img src="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-chihua.gif" alt="池化层"></p>
+<ul>
+<li><strong>全连接层（Fully Connected Layer）</strong></li>
+</ul>
+<p>连接所有的特征，将输出值送给分类器（如softmax分类器）。</p>
+<p><img src="http://img.fdchen.host/CNN-%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82.png" alt="image-20210730100057238"></p>
+<ul>
+<li><strong>感受野（receptive filed）</strong></li>
+</ul>
+<p>每个神经元只与输入数据的一个局部区域连接，该连接的<strong>空间大小</strong>叫做神经元的感受野（receptive field），它的尺寸是一个超参数（<strong>其实就是滤波器的空间尺寸</strong>，注意仅仅是大小相同，但是概念不一样）</p>
+<ul>
+<li><strong>滤波器（filter）</strong></li>
+</ul>
+<p>如果在一个深度切片中的所有权重都使用同一个权重向量，那么卷积层的前向传播在每个深度切片中可以看做是在计算神经元权重和输入数据体的卷积（这就是“卷积层”名字由来）。这也是为什么总是将这些权重集合称为滤波器（filter）（或卷积核（kernel）），因为它们和输入进行了卷积。</p>
+<p><strong>卷积核：</strong>二维的矩阵<br><strong>滤波器：</strong>多个卷积核组成的三维矩阵，多出的一维是通道数目。</p>
+<ul>
+<li><strong>权值共享</strong></li>
+</ul>
+<p>卷积核内每一个元素值不同，但是同一深度切片使用相同卷积核，这就是权值共享。也就是说每一层（深度切片）使用同一个卷积核（一个滤波器有也多个卷积核，且一定与输入数据深度相同）。</p>
+<ul>
+<li><strong>深度depth（与通道类似）</strong></li>
+</ul>
+<p>分为输入数据的深度和输出数据的深度，输入数据深度由输入数据决定。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190523160541489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Rob3JLaW5nMDE=,size_16,color_FFFFFF,t_70" alt="CNN-depth"></p>
+<p><strong>输出数据的深度，取决于滤波器的个数，就是有滤波器有几个，深度就是多少。</strong></p>
+<ul>
+<li><strong>通道channel</strong></li>
+</ul>
+<p><img src="http://img.fdchen.host/CNN-channel.png" alt="image-20210730092433430"></p>
+<p>可以把channels 分为三种：</p>
+<ol>
+<li>最初输入的图片样本的 channels ，取决于图片类型，比如RGB；</li>
+<li>卷积操作完成后输出的 out_channels ，取决于卷积核的数量。此时的out_channels 也会作为下一次卷积时的卷积核的 in_channels；</li>
+<li>卷积核中的 in_channels ，刚刚2中已经说了，就是上一次卷积的 out_channels ，如果是第一次做卷积，就是1中样本图片的 channels</li>
+</ol>
+<p>（详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sscc_learning/article/details/79814146">【CNN】理解卷积神经网络中的通道 channel</a>）</p>
+<ul>
+<li><strong>特征图</strong></li>
+</ul>
+<p>卷积层之后的输出结果就是特征图。</p>
+<h2 id="5-2-textCNN"><a href="#5-2-textCNN" class="headerlink" title="5.2 textCNN"></a>5.2 textCNN</h2><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>卷积神经网络的核心思想是<strong>捕捉局部特征</strong>，对于文本来说，局部特征就是<strong>由若干单词组成的滑动窗口</strong>，类似于N-gram。卷积神经网络的<strong>优势在于能够自动地对N-gram特征进行组合和筛选，获得不同抽象层次的语义信息</strong>。</p>
+<p>详细解读见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77634533">深入TextCNN（一）详述CNN及TextCNN原理</a></p>
+<p><img src="https://pic3.zhimg.com/80/v2-2ea1f0b8b166f31273b26bca3ba8e8b2_720w.jpg" alt="textCNN结构"></p>
+<h1 id="6-textRNN"><a href="#6-textRNN" class="headerlink" title="6 textRNN"></a>6 textRNN</h1><h2 id="6-1-RNN"><a href="#6-1-RNN" class="headerlink" title="6.1 RNN"></a>6.1 RNN</h2><ul>
+<li>基本思想</li>
+</ul>
+<ol>
+<li>RNN 的输入和输出可以是不定长且不等长的</li>
+<li>RNN 有多种结构，如下图：</li>
+</ol>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/06aefcee-6e74-4dde-bee1-5f82a5b85c9e/1544760758227.png" alt="img"></p>
+<ol start="3">
+<li>RNN网络和其他网络最大的不同就在于<strong>RNN能够实现某种“记忆功能”，对所处理过的信息留存有一定的记忆</strong>，具体而言就是<strong>上一个时刻的网络状态会应影响下一个时刻的网络状态。</strong></li>
+</ol>
+<p>详细解读见博客：<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2018-12-14-4">RNN 结构详解</a></p>
+<ul>
+<li><strong>隐状态</strong></li>
+</ul>
+<p>隐状态h（hidden state）可以对序列形的数据提取特征，接着再转换为输出。</p>
+<ul>
+<li><strong>RNN经典n-to-n结构示例</strong></li>
+</ul>
+<p>先从h1的计算开始看：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/c672edc7-0502-4034-b555-c5cccdde8704/1544760757932.png" alt="img"></p>
+<p>h2的计算和h1类似。要注意的是，在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点。</strong></p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/1780d8f0-3095-4523-b271-9230ca308a04/1544760758036.png" alt="img"></p>
+<p>最终的输出如下：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/0c80f834-2047-44a1-b834-083dcd59e7b4/1544760758826.png" alt="RNN-最终输出"></p>
+<p>剩下的输出类似进行（使用和y1同样的参数V和c）：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/b4ff8fa4-7e6d-405c-9900-d82e7c2c8504/1544760759148.png" alt="img"></p>
+<p>这就是最经典的RNN结构，它的输入是x1, x2, …..xn，输出为y1, y2, …yn，也就是说，<strong>输入和输出序列必须要是等长的</strong>。</p>
+<ul>
+<li><strong>缺点：</strong>容易出现梯度消失</li>
+</ul>
+<h2 id="6-2-Encoder-Decoder"><a href="#6-2-Encoder-Decoder" class="headerlink" title="6.2 Encoder-Decoder"></a>6.2 Encoder-Decoder</h2><p>Encoder-Decoder是一种 <strong>n-to-m</strong> 结构，输入、输出为不等长的序列。</p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>（1）Encoder：将 input序列 →转成→ 固定长度的向量</p>
+<p>（2）Decoder：将 固定长度的向量 →转成→ output序列</p>
+<p>（3）Encoder 与 Decoder 可以彼此独立使用，实际上经常一起使用</p>
+<p>Encoder-Decoder结构<strong>先将输入数据编码成一个上下文语义向量c</strong>，语义向量c可以有多种表达方式，最简单的方法就是把Encoder的最后一个隐状态赋值给c，还可以对最后的隐状态做一个变换得到c，也可以对所有的隐状态做变换。拿到c之后，就<strong>用另一个RNN网络对其进行解码，这部分RNN网络被称为Decoder</strong>。Decoder的RNN可以与Encoder的一样，也可以不一样。</p>
+<p>详细解读见博客：<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2018-12-14-4">RNN 结构详解</a></p>
+<ul>
+<li><strong>具体做法</strong></li>
+</ul>
+<p>具体做法就是<strong>将c当做之前的初始状态h0输入到Decoder中</strong>：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/YZHANG1270/Markdown_pic/blob/master/2018/11/RNN_01/013.jpg?raw=true"><img src="https://image.jiqizhixin.com/uploads/editor/ce3fc27e-cbf5-465d-86c1-4ffbfdac6dfa/1544760759311.png" alt="img"></a></p>
+<p><strong>还有一种做法是将c当做每一步的输入</strong>：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/89a6896c-de8e-417e-8b87-30b9b90e68e5/1544760759641.png" alt="img"></p>
+<ul>
+<li><strong>缺点：</strong></li>
+</ul>
+<p>编码和解码之间的唯一联系是固定长度的语义向量c，<strong>编码要把整个序列的信息压缩进一个固定长度的语义向量c，语义向量c无法完全表达整个序列的信息</strong>，先输入的内容携带的信息，会被后输入的信息稀释掉，或者被覆盖掉。<br>输入序列越长，这样的现象越严重，这样使得在Decoder解码时一开始就没有获得足够的输入序列信息，解码效果会打折扣。</p>
+<h2 id="6-3-Attention机制"><a href="#6-3-Attention机制" class="headerlink" title="6.3 Attention机制"></a>6.3 Attention机制</h2><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>注意力机制（attention mechanism）是对基础Encoder-Decoder的改良。Attention机制通过在每个时间输入不同的c来解决问题，每一个c会自动去选取与当前所要输出的y最合适的上下文信息，仅Decoder部分与简单RNN不同，下图是带有Attention机制的Decoder：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/483f24d7-da8d-4a66-84d0-fcb6a45bdca9/1544760760610.png" alt="img"></p>
+<p>详细解读见博客：<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2018-12-14-4">RNN 结构详解</a></p>
+<ul>
+<li><strong>具体做法</strong></li>
+</ul>
+<p>具体来说，我们<strong>用aij衡量Decoder中第i阶段与Encoder中第j阶段的hj的相关性</strong>，最终Decoder中第i阶段的输入的上下文信息 ci就来自于所有 hj 对 aij 的加权和。</p>
+<p>以机器翻译为例（将中文翻译成英文）：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/223b12fa-4da6-4a5f-8039-c043b3701ef5/1544760760445.png" alt="img"></p>
+<ul>
+<li><strong>计算权重aij</strong></li>
+</ul>
+<p>aij 同样是从模型中学出的，它实际和<strong>Decoder的第i-1阶段的隐状态</strong>、<strong>Encoder第j个阶段的隐状态</strong>有关。</p>
+<p>同样还是拿上面的机器翻译举例， a1j 的计算（此时箭头就表示对h’和 hj 同时做变换）：</p>
+<p><img src="https://image.jiqizhixin.com/uploads/editor/7c144c37-72dd-4aad-a093-954087edaf9b/1544760759945.png" alt="img"></p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>（1）让生词不只是关注全局的语义向量c，增加了“注意力范围”。表示接下来输出的词要重点关注输入序列的哪些部分。根据关注的区域来产生下一个输出。<br>（2）不要求编码器将所有信息全输入在一个固定长度的向量中。<br>（3）将输入编码成一个向量的序列，解码时，每一步选择性的从序列中挑一个子集进行处理。<br>（4）在每一个输出时，能够充分利用输入携带的信息，每个语义向量Ci不一样，注意力焦点不一样。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>（1）需要为每个输入输出组合分别计算attention。50个单词的输出输出序列需要计算2500个attention。<br>（2）attention在决定专注于某个方面之前需要遍历一遍记忆再决定下一个输出是以什么。</p>
+<ul>
+<li><strong>强化学习</strong></li>
+</ul>
+<p>Attention的另一种替代方法是强化学习，来预测关注点的大概位置。但强化学习不能用反向传播算法端到端的训练。</p>
+<p><strong>强化学习是一种试错方法，其目标是让软件智能体在特定环境中能够采取回报最大化的行为。强化学习在马尔可夫决策过程环境中主要使用的技术是动态规划（Dynamic Programming）。</strong>流行的强化学习方法包括自适应动态规划（ADP）、时间差分（TD）学习、状态-动作-回报-状态-动作（SARSA）算法、Q 学习、深度强化学习（DQN）；其应用包括下棋类游戏、机器人控制和工作调度等。</p>
+<h2 id="6-4-LSTM"><a href="#6-4-LSTM" class="headerlink" title="6.4 LSTM"></a>6.4 LSTM</h2><p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32085405">人人都能看懂的LSTM</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>长短期记忆（Long short-term memory, LSTM）是一种特殊的RNN，主要是为了解决长序列训练过程中的梯度消失和梯度爆炸问题。简单来说，就是相比普通的RNN，LSTM能够在更长的序列中有更好的表现。</p>
+<p>LSTM结构（图右）和普通RNN的主要输入输出区别如下所示。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-e4f9851cad426dfe4ab1c76209546827_720w.jpg" alt="img"></p>
+<p>相比RNN只有一个传递状态 <img src="https://www.zhihu.com/equation?tex=h%5Et+" alt="[公式]"> ，LSTM有两个传输状态，一个 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> （cell state），和一个 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> （hidden state）。（Tips：RNN中的 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 对于LSTM中的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> ）</p>
+<p>其中对于传递下去的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 改变得很慢，通常输出的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 是上一个状态传过来的 <img src="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 加上一些数值。</p>
+<p>而 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 则在不同节点下往往会有很大的区别。</p>
+<ul>
+<li>具体做法</li>
+</ul>
+<p><img src="https://pic2.zhimg.com/80/v2-556c74f0e025a47fea05dc0f76ea775d_720w.jpg" alt="img"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Codot" alt="[公式]"> 是Hadamard Product，也就是操作矩阵中对应的元素相乘，因此要求两个相乘矩阵是同型的。 <img src="https://www.zhihu.com/equation?tex=%5Coplus" alt="[公式]"> 则代表进行矩阵加法。</p>
+<p><strong>LSTM内部主要有三个阶段：</strong></p>
+<p>1.忘记阶段。这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。</p>
+<p>具体来说是通过计算得到的 <img src="https://www.zhihu.com/equation?tex=z%5Ef" alt="[公式]"> （f表示forget）来作为忘记门控，来控制上一个状态的 <img src="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 哪些需要留哪些需要忘。</p>
+<p>2.选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。主要是会对输入 <img src="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 进行选择记忆。哪些重要则着重记录下来，哪些不重要，则少记一些。当前的输入内容由前面计算得到的 <img src="https://www.zhihu.com/equation?tex=z+" alt="[公式]"> 表示。而选择的门控信号则是由 <img src="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> （i代表input)来进行控制。</p>
+<blockquote>
+<p>将上面两步得到的结果相加，即可得到传输给下一个状态的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 。也就是上图中的第一个公式。</p>
+</blockquote>
+<p>3.输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。主要是通过 <img src="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 来进行控制的。并且还对上一阶段得到的 <img src="https://www.zhihu.com/equation?tex=c%5Eo" alt="[公式]"> 进行了放缩（通过一个tanh激活函数进行变化)。</p>
+<ul>
+<li><strong>LSTM的四个状态</strong></li>
+</ul>
+<p>首先使用LSTM的当前输入 <img src="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 和上一个状态传递下来的 <img src="https://www.zhihu.com/equation?tex=h%5E%7Bt-1%7D" alt="[公式]"> 拼接训练得到四个状态。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-15c5eb554f843ec492579c6d87e1497b_720w.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-d044fd0087e1df5d2a1089b441db9970_720w.jpg" alt="img"></p>
+<p>其中， <img src="https://www.zhihu.com/equation?tex=z%5Ef+" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> ，<img src="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 是由拼接向量乘以权重矩阵之后，再通过一个 <img src="https://www.zhihu.com/equation?tex=sigmoid+" alt="[公式]"> 激活函数转换成0到1之间的数值，来作为一种门控状态。而 <img src="https://www.zhihu.com/equation?tex=z" alt="[公式]"> 则是将结果通过一个 <img src="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 激活函数将转换成-1到1之间的值（这里使用 <img src="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 是因为这里是将其做为输入数据，而不是门控信号）。</p>
+<h2 id="6-5-textRNN"><a href="#6-5-textRNN" class="headerlink" title="6.5 textRNN"></a>6.5 textRNN</h2><ul>
+<li>论文链接：<a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=F2929368FEDF4A9A7E495DC2A3137D19?doi=10.1.1.822.3091&rep=rep1&type=pdf">Recurrent</a><a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=F2929368FEDF4A9A7E495DC2A3137D19?doi=10.1.1.822.3091&rep=rep1&type=pdf"> Neural Networks for Sentence Classification</a></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://www.pianshen.com/article/6169194182/">TextRNN</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>自然语言处理中更常用的是循环神经网络（RNN, Recurrent Neural Network），<strong>能够更好的表达上下文信息</strong>。具体在文本分类任务中，Bi-directional RNN（实<strong>际使用的是双向LSTM</strong>）从某种意义上可以理解为可以捕获变长且双向的的 “n-gram” 信息。</p>
+<ul>
+<li><strong>Bi-LSTM</strong></li>
+</ul>
+<p>双向LSTM算是在自然语言处理领域非常一个标配网络了，在序列标注&#x2F;命名体识别&#x2F;seq2seq模型等很多场景都有应用，下图是Bi-LSTM用于分类问题的网络结构原理示意图，黄色的节点分别是前向和后向RNN的输出，<strong>示例中的是利用最后一个词的结果直接接全连接层softmax输出了</strong>。</p>
+<p><img src="https://www.pianshen.com/images/297/b371970c5969284fd10846f6803228e9.png" alt="在这里插入图片描述"></p>
+<h2 id="6-6-TextRNN-Attention"><a href="#6-6-TextRNN-Attention" class="headerlink" title="6.6 TextRNN + Attention"></a>6.6 TextRNN + Attention</h2><ul>
+<li><strong>基本思想：用Attention Layer代替全连接层</strong></li>
+</ul>
+<p>Att-BiLSTM包含5部分：</p>
+<p>输入层：输入句子到模型。</p>
+<p>嵌入层：将每个词映射到低维向量。</p>
+<p>LSTM层：使用BLSTM得到高层特征。</p>
+<p>注意力层：通过与权重向量加权求和，将词级别的特征合并到句子级别的特征。</p>
+<p>输出层：将句子层级的特征用于关系分类。</p>
+<p>整个网络结构如下图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-dece7cbd3dfab01fb599e2aae338d74a_720w.jpg" alt="img"></p>
+<ul>
+<li><strong>Bi-LSTM</strong></li>
+</ul>
+<p>使用BiLSTM，句子中第 <img src="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 个词的输出为，即对前向和后向的Hidden State进行拼接：</p>
+<p><img src="https://www.zhihu.com/equation?tex=h_%7Bi%7D=%5Cleft%5B%5Coverrightarrow%7Bh_%7Bi%7D%7D+%5Coplus+%5Coverleftarrow%7Bh_%7Bi%7D%7D%5Cright%5D" alt="[公式]"></p>
+<ul>
+<li><strong>Attention层</strong></li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=H=%5Bh_1,h_2,...,h_T%5D" alt="[公式]"> 为LSTM层的输出向量，T是句子长度。 <img src="https://www.zhihu.com/equation?tex=H+%5Cin+%5Cmathbb%7BR%7D%5E%7Bd%5E%7Bw%7D+%5Ctimes+T%7D" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> 是LSTM层的输出维度。 <img src="https://www.zhihu.com/equation?tex=w" alt="[公式]"> 的维度是 <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> , <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 的维度是T， <img src="https://www.zhihu.com/equation?tex=r" alt="[公式]"> 的维度是 <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> .</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Baligned%7D+M+&=%5Ctanh+(H)+%5C%5C+%5Calpha+&=%5Coperatorname%7Bsoftmax%7D%5Cleft(w%5E%7BT%7D+M%5Cright)+%5C%5C+r+&=H+%5Calpha%5E%7BT%7D+%5Cend%7Baligned%7D" alt="[公式]"></p>
+<p>然后用于最后分类的特征为 <img src="https://www.zhihu.com/equation?tex=h%5E*=tanh(r)" alt="[公式]"></p>
+<ul>
+<li><strong>输出层</strong></li>
+</ul>
+<p>最后将句子的特征 <img src="https://www.zhihu.com/equation?tex=h%5E*" alt="[公式]"> 接入softmax进行分类。</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Barray%7D%7Bc%7D+%5Chat%7Bp%7D(y+%5Cmid+S)=%5Coperatorname%7Bsoftmax%7D%5Cleft(W%5E%7B(S)%7D+h%5E%7B*%7D+b%5E%7B(S)%7D%5Cright)+%5C%5C+%5Chat%7By%7D=%5Carg+%5Cmax+_%7By%7D+%5Chat%7Bp%7D(y+%5Cmid+S)+%5Cend%7Barray%7D" alt="[公式]"></p>
+<p>然后损失函数是使用交叉熵损失，并且加入了L2正则化。</p>
+<p><img src="https://www.zhihu.com/equation?tex=J(%5Ctheta)=-%5Cfrac%7B1%7D%7Bm%7D+%5Csum_%7Bi=1%7D%5E%7Bm%7D+t_%7Bi%7D+%5Clog+%5Cleft(y_%7Bi%7D%5Cright)+%5Clambda%5C%7C%5Ctheta%5C%7C_%7BF%7D%5E%7B2%7D+" alt="[公式]"></p>
+<ul>
+<li><strong>正则化</strong></li>
+</ul>
+<p><img src="http://img.fdchen.host/L1%E4%B8%8EL2%E6%AD%A3%E5%88%99%E5%8C%96.png" alt="image-20210730130844097"></p>
+<h1 id="7-seq2seq"><a href="#7-seq2seq" class="headerlink" title="7 seq2seq"></a>7 seq2seq</h1><ul>
+<li>论文链接： <a target="_blank" rel="noopener" href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">Sequence to Sequence Learning with Neural Networks  </a></li>
+</ul>
+<p>seq2seq 是一个Encoder–Decoder 结构的网络。</p>
+<h1 id="8-Transformer"><a href="#8-Transformer" class="headerlink" title="8 Transformer"></a>8 Transformer</h1><h2 id="8-1-Transformer"><a href="#8-1-Transformer" class="headerlink" title="8.1 Transformer"></a>8.1 Transformer</h2><ul>
+<li>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.03762.pdf">Attention is All Your Need</a></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48508221">详解Transformer （Attention Is All You Need）</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-9fb280eb2a69baf5ceafcfa3581aa580_720w.jpg" alt="Transformer结构"></p>
+<ul>
+<li><strong>Attention计算方法</strong></li>
+</ul>
+<p>Attention的计算方法，整个过程可以分成7步：</p>
+<ol>
+<li>将输入单词转化成嵌入向量；</li>
+<li>根据嵌入向量得到 <img src="https://www.zhihu.com/equation?tex=q" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> 三个向量；</li>
+<li>为每个向量计算一个score： <img src="https://www.zhihu.com/equation?tex=%5Ctext%7Bscore%7D+=+q+%5Ccdot+k" alt="[公式]"> ；</li>
+<li>为了梯度的稳定，Transformer使用了score归一化，即除以 <img src="https://www.zhihu.com/equation?tex=%5Csqrt%7Bd_k%7D" alt="[公式]"> ；</li>
+<li>对score施以softmax激活函数；</li>
+<li>softmax点乘Value值 <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ，得到加权的每个输入向量的评分 <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ；</li>
+<li>相加之后得到最终的输出结果 <img src="https://www.zhihu.com/equation?tex=z" alt="[公式]"> ： <img src="https://www.zhihu.com/equation?tex=z=%5Csum+v" alt="[公式]"> 。</li>
+</ol>
+<p>实际计算过程中是采用基于矩阵的计算方式，那么论文中的 <img src="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=V" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=K+" alt="[公式]"> 的计算方式如图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-bcd0d108a5b52a991d5d5b5b74d365c6_720w.jpg" alt="img"></p>
+<p>总结为如图所示的矩阵形式：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-be73ba876922cf52df8a00a55f770284_720w.jpg" alt="img"></p>
+<p>在self-attention需要强调的最后一点是其采用了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42706477">残差网络</a> 中的short-cut结构，目的当然是解决深度学习中的退化问题，得到的最终结果如图13。</p>
+<ul>
+<li><strong>Multi-head Attention</strong></li>
+</ul>
+<p>Multi-Head Attention相当于 <img src="https://www.zhihu.com/equation?tex=h" alt="[公式]"> 个不同的self-attention的集成（ensemble），在这里我们以 <img src="https://www.zhihu.com/equation?tex=h=8" alt="[公式]"> 举例说明。Multi-Head Attention的输出分成3步：</p>
+<ol>
+<li>将数据 <img src="https://www.zhihu.com/equation?tex=X+" alt="[公式]"> 分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 <img src="https://www.zhihu.com/equation?tex=Z_i,+i%5Cin%5C%7B1,2,...,8%5C%7D" alt="[公式]"> 。</li>
+<li>将8个 <img src="https://www.zhihu.com/equation?tex=Z_i" alt="[公式]"> 按列拼成一个大的特征矩阵；</li>
+<li>特征矩阵经过一层全连接后得到输出 <img src="https://www.zhihu.com/equation?tex=Z" alt="[公式]"> 。</li>
+</ol>
+<p>整个过程如图14所示：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-c2a91ac08b34e73c7f4b415ce823840e_720w.jpg" alt="img"></p>
+<ul>
+<li><strong>Encoder-Decoder Attention</strong></li>
+</ul>
+<p>在解码器中，Transformer block比编码器中多了个encoder-cecoder attention。在encoder-decoder attention中， <img src="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> <strong>来自于解码器的上一个输出， <img src="https://www.zhihu.com/equation?tex=K" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=V" alt="[公式]"> 则来自于与编码器的输出。</strong>其计算方式完全和Attention的计算过程相同。</p>
+<p>在机器翻译中，解码过程是一个顺序操作的过程，也就是当解码第 <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 个特征向量时，我们只能看到第 <img src="https://www.zhihu.com/equation?tex=k-1" alt="[公式]"> 及其之前的解码结果，论文中把这种情况下的multi-head attention叫做masked multi-head attention。</p>
+<ul>
+<li><strong>位置编码</strong></li>
+</ul>
+<p>论文中在编码词向量时引入了位置编码（Position Embedding）的特征。具体地说，位置编码会在词向量中加入了单词的位置信息，这样Transformer就能区分不同位置的单词了。</p>
+<p>编码位置常见的模式有：a. 根据数据学习；b. 自己设计编码规则。</p>
+<p>论文给出的编码公式如下：</p>
+<p><img src="https://www.zhihu.com/equation?tex=PE(pos,+2i)+=+sin(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag3" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=PE(pos,+2i+1)+=+cos(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag4" alt="[公式]"></p>
+<p>作者这么设计的原因是考虑到在NLP任务中，除了单词的绝对位置，单词的相对位置也非常重要。</p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>（1）虽然Transformer最终也没有逃脱传统学习的套路，Transformer也只是一个全连接（或者是一维卷积）加Attention的结合体。但是<strong>其设计已经足够有创新，因为其抛弃了在NLP中最根本的RNN或者CNN并且取得了非常不错的效果</strong>，算法的设计非常精彩。</p>
+<p>（2）Transformer的设计最大的<strong>带来性能提升的关键是将任意两个单词的距离是1</strong>，这对解决NLP中棘手的长期依赖问题是非常有效的。</p>
+<p>（3）Transformer不仅仅可以应用在NLP的机器翻译领域，甚至可以<strong>不局限于NLP领域，是非常有科研潜力的一个方向</strong>。</p>
+<p>（4）<strong>算法的并行性非常好</strong>，符合目前的硬件（主要指GPU）环境。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>（1）粗暴的抛弃RNN和CNN虽然非常炫技，但是它也使<strong>模型丧失了捕捉局部特征的能力</strong>，RNN + CNN + Transformer的结合可能会带来更好的效果。（2）Transformer失去的位置信息其实在NLP中非常重要，而<strong>论文中在特征向量中加入Position Embedding也只是一个权宜之计，并没有改变Transformer结构上的固有缺陷</strong>。</p>
+<h2 id="8-2-Informer"><a href="#8-2-Informer" class="headerlink" title="8.2 Informer"></a>8.2 Informer</h2><ul>
+<li><p>详细解读见博客：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/RRv-DVm6SguQ5GC5oruf8Q">AAAI21最佳论文Informer：效果远超Transformer的长序列预测神器！</a></p>
+</li>
+<li><p><strong>基本思想：基于Transformer模型的三处改进</strong></p>
+</li>
+</ul>
+<p>（1）<strong>ProbSparse Self-Attention</strong></p>
+<p>在典型的Self-Attention机制中，少数点积对主要注意有贡献，其他点积对可以忽略，所以引入Query Sparsity评估。</p>
+<p>并且使用最大值代替复杂的对数计算，既解决了计算精度问题，也降低了计算复杂度。</p>
+<p><img src="http://img.fdchen.host/Informer-ProSparseSelfAttention%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="image-20210731210037446"></p>
+<p>（2）<strong>Self-attention Distilling</strong></p>
+<p>作为ProbSparse Self-attention的自然结果，encoder的特征映射会带来V值的冗余组合，利用distilling对具有支配特征的优势特征进行特权化，使它们的输出维度对齐。</p>
+<p>（3）<strong>Generating long sequential outputs</strong></p>
+<p>生成式长序列输出，从长序列中采样一个小部分token，作为预测序列之前的初始token，然后将初始token+初始化为0的预测序列拼接，作为Decoder的输入序列，然后通过前向过程预测所有输出，避免耗时的动态decoding。</p>
+<h1 id="9-ELMO"><a href="#9-ELMO" class="headerlink" title="9 ELMO"></a>9 ELMO</h1><ul>
+<li><p>全称：<a target="_blank" rel="noopener" href="https://www.aclweb.org/anthology/N18-1202.pdf">Embedding from Language Model</a></p>
+</li>
+<li><p><strong>基本思想</strong></p>
+</li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22795223/article/details/105924156">ELMo详解</a></p>
+<p>之前2013年的word2vec及2014年的GloVe的工作中，每个词对应一个vector，对于多义词无能为力。ELMo的工作对于此，提出了一个较好的解决方案。不同于以往的一个词对应一个向量，是固定的。<strong>在ELMo世界里，预训练好的模型不再只是向量对应关系，而是一个训练好的模型。使用时，将一句话或一段话输入模型，模型会根据上下文来推断每个词对应的词向量。</strong>这样做之后明显的好处之一就是对于多义词，可以结合前后语境对多义词进行理解。比如appele，可以根据前后文语境理解为公司或水果。</p>
+<p><strong>ELMO 本身是个根据当前上下文对 Word Embedding 动态调整的思路。</strong></p>
+<ul>
+<li><strong>算法模型</strong></li>
+</ul>
+<p>ELMo用到上文提到的双向的language model，给定N个tokens (t1, t2,…,tN), language model通过<strong>给定前面的k-1个位置的token序列计算第k个token的出现的概率:</strong></p>
+<p><img src="https://www.zhihu.com/equation?tex=p(t_1,+t_2,+...,+t_N)+=+%5Cprod_%7Bk=1%7D%5EN+p(t_k%7Ct_1,+t_2,+...,+t_%7Bk-1%7D)" alt="[公式]"></p>
+<p><strong>后向的计算方法与前向相似</strong>:</p>
+<p><img src="https://www.zhihu.com/equation?tex=p%5Cleft(t_%7B1%7D,+t_%7B2%7D,+%5Cldots,+t_%7BN%7D%5Cright)=%5Cprod_%7Bk=1%7D%5E%7BN%7D+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+t_%7Bk+2%7D,+%5Cldots,+t_%7BN%7D%5Cright)" alt="[公式]"></p>
+<p><strong>biLM训练过程中的目标就是最大化</strong>:</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Csum_%7Bk=1%7D%5E%7BN%7D%5Cleft(%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7B1%7D,+%5Cldots,+t_%7Bk-1%7D+;+%5CTheta_%7Bx%7D,+%5Cvec%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)+%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+%5Cldots,+t_%7BN%7D+;+%5CTheta_%7Bx%7D,+%5Cstackrel%7B%5Cleftarrow%7D%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)%5Cright)" alt="[公式]"></p>
+<p><strong>ELMo对于每个token <img src="https://www.zhihu.com/equation?tex=t_k" alt="[公式]"> , 通过一个L层的biLM计算出2L+1个表示:</strong></p>
+<p><img src="https://www.zhihu.com/equation?tex=R_k+=+%5C%7Bx_k%5E%7BLM%7D,+%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D,+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D+%5Cvert+j=1,+...,+L%5C%7D+=+%5C%7Bh_%7Bk,j%7D%5E%7BLM%7D+%5Cvert+j=0,...,+L%5C%7D" alt="[公式]"></p>
+<p>其中 <img src="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> 是对token进行直接编码的结果(这里是<strong>字符通过CNN编码</strong>)， <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bh%7D_%7Bk,+0%7D%5E%7BL+M%7D" alt="[公式]"> 代表 <img src="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> <img src="https://www.zhihu.com/equation?tex=h_%7Bk,j%7D%5E%7BLM%7D+=+%5B%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D;+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D%5D" alt="[公式]"> 是每个biLSTM层输出的结果。在实验中还发现不同层的biLM的输出的token表示对于不同的任务效果不同.最上面一层的输出 <img src="https://www.zhihu.com/equation?tex=%5Coverrightarrow%7B%5Cmathbf%7Bh%7D%7D_%7Bk,+L%7D%5E%7BL+M%7D" alt="[公式]"> 是用softmax来预测下面一个单词 <img src="https://www.zhihu.com/equation?tex=t_%7Bk+1%7D" alt="[公式]">。</p>
+<p>应用中将ELMo中所有层的输出R压缩为单个向量， <img src="https://www.zhihu.com/equation?tex=ELMo_k+=+E(R_k;%5CTheta+_%5Cepsilon)" alt="[公式]">，最简单的压缩方法是取最上层的结果做为token的表示: <img src="https://www.zhihu.com/equation?tex=E(R_k)+=+h_%7Bk,L%7D%5E%7BLM%7D" alt="[公式]"> ，更通用的做法是<strong>通过一些参数来联合所有层的信息得到最终的ELMo向量:</strong></p>
+<p><strong><img src="https://www.zhihu.com/equation?tex=E+L+M+o_%7Bk%7D%5E%7Bt+a+s+k%7D=E%5Cleft(R_%7Bk%7D+;+%5CTheta%5E%7Bt+a+s+k%7D%5Cright)=%5Cgamma%5E%7Bt+a+s+k%7D+%5Csum_%7Bj=0%7D%5E%7BL%7D+s_%7Bj%7D%5E%7Bt+a+s+k%7D+h_%7Bk,+j%7D%5E%7BL+M%7D" alt="[公式]"></strong></p>
+<p>其中 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname%7Btas%7D+k%7D" alt="[公式]"> 是一个softmax出来的结果, γ是一个任务相关的scale参数，我试了平均每个层的信息和学出来 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname+%7Btask%7D%7D" alt="[公式]"> 发现学习出来的效果会好很多。 文中提到γ在不同任务中取不同的值效果会有较大的差异， 需要注意， 在SQuAD中设置为0.01取得的效果要好于设置为1时。</p>
+<p>文章中提到的Pre-trained的language model是用了两层的biLM， <strong>对token进行上下文无关的编码是通过CNN对字符级进行编码，</strong> 然后将三层的输出scale到1024维， 最后对每个token输出3个1024维的向量表示。 这里之所以将3层的输出都作为token的embedding表示是因为实验已经证实不同层的LM输出的信息对于不同的任务作用是不同的， 也就是所不同层的输出捕捉到的token的信息是不相同的。</p>
+<ul>
+<li><strong>具体实现</strong></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63115885">NAACL2018:高级词向量(ELMo)详解(超详细) 经典</a></p>
+<p>ELMO 采用了典型的两阶段过程，<strong>第一个阶段是利用语言模型进行预训练；第二个阶段是在做下游任务时，从预训练网络中提取对应单词的网络各层的 Word Embedding 作为新特征补充到下游任务中。</strong></p>
+<p><img src="https://pic2.zhimg.com/80/v2-945ea2c964e548cb9a9128864b5f6d49_720w.jpg" alt="img"></p>
+<p>上图展示的是其预训练过程，它的网络结构采用了双层双向 LSTM，目前语言模型训练的任务目标是根<strong>据单词 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上下文去正确预测单词 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 之前的单词序列 Context-before 称为上文，之后的单词序列 Context-after 称为下文</strong>。图中左端的前向双层LSTM代表正方向编码器，输入的是从左到右顺序的除了预测单词外 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上文 Context-before；右端的逆向双层 LSTM 代表反方向编码器，输入的是从右到左的逆序的句子下文 Context-after；<strong>每个编码器的深度都是两层 LSTM 叠加。这个网络结构其实在 NLP 中是很常用的</strong>。</p>
+<p>使用这个网络结构利用大量语料做语言模型任务就能预先训练好这个网络，如果训练好这个网络后，输入一个新句子Snew，<strong>句子中每个单词都能得到对应的三个Embedding</strong>:<strong>最底层是单词的 Word Embedding，往上走是第一层双向LSTM中对应单词位置的 Embedding，这层编码单词的句法信息更多一些；再往上走是第二层LSTM中对应单词位置的 Embedding，这层编码单词的语义信息更多一些</strong>。也就是说，ELMO 的预训练过程不仅仅学会单词的 Word Embedding，还学会了一个双层双向的LSTM网络结构，而这两者后面都有用。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-e53a17ada1d510958215cc860c33efb9_720w.jpg" alt="img"></p>
+<p>上面介绍的是 ELMO 的第一阶段：预训练阶段。那么预训练好网络结构后，如何给下游任务使用呢？上图展示了下游任务的使用过程，比如我们的下游任务仍然是 QA 问题，此时<strong>对于问句 X，我们可以先将句子 X 作为预训练好的 ELMO 网络的输入，这样句子 X 中每个单词在 ELMO 网络中都能获得对应的三个 Embedding，之后给予这三个 Embedding 中的每一个 Embedding 一个权重a，这个权重可以学习得来，根据各自权重累加求和，将三个 Embedding 整合成一个。</strong></p>
+<p><strong>然后将整合后的这个 Embedding 作为 X 句在自己任务的那个网络结构中对应单词的输入，以此作为补充的新特征给下游任务使用。</strong>对于上图所示下游任务 QA 中的回答句子 Y 来说也是如此处理。</p>
+<p>因为 <strong>ELMO给下游提供的是每个单词的特征形式，所以这一类预训练的方法被称为“Feature-based Pre-Training”</strong>。</p>
+<ul>
+<li><strong>缺点（事后看）</strong></li>
+</ul>
+<ol>
+<li>LSTM抽取特征能力远弱于Transformer</li>
+<li>拼接方式双向融合特征，融合能力偏弱</li>
+</ol>
+<ul>
+<li><strong>ELMo到XLnet模型</strong></li>
+</ul>
+<p><img src="http://img.fdchen.host/ELMo%E5%88%B0XLnet.png" alt="ElMo到XLnet"></p>
+<h1 id="10-Bert"><a href="#10-Bert" class="headerlink" title="10 Bert"></a>10 Bert</h1><ul>
+<li>全称：Bidirectional Encoder Representations from Transformers    </li>
+<li>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for </a><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1810.04805.pdf">Language Understanding</a></li>
+<li>相关文档：<a target="_blank" rel="noopener" href="https://d94sx79yh3.feishu.cn/docs/doccnDVZtP4PCYvvR4jRWxZDDgc">Bert</a></li>
+</ul>
+<p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/46652512">【NLP】Google BERT模型原理详解</a>、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zingp/p/13849679.html">BERT模型详解</a></p>
+<ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>模型的主要创新点都在pre-train方法上，即用了<strong>Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的representation。</strong></p>
+<p>由于模型的构成元素Transformer已经解析过，就不多说了，BERT模型的结构如下图最左：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-d942b566bde7c44704b7d03a1b596c0c_720w.jpg" alt="img"></p>
+<p><strong>对比OpenAI GPT(Generative pre-trained transformer)，BERT是双向的Transformer block连接；就像单向RNN和双向RNN的区别，直觉上来讲效果会好一些。</strong></p>
+<p><strong>对比ELMo，虽然都是“双向”，但目标函数其实是不同的。</strong>ELMo是分别以<img src="https://www.zhihu.com/equation?tex=P(w_i%7C+w_1,+...w_%7Bi-1%7D)" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=P(w_i%7Cw_%7Bi+1%7D,+...w_n)" alt="[公式]"> 作为目标函数，独立训练处两个representation然后拼接，而BERT则是以 <img src="https://www.zhihu.com/equation?tex=P(w_i%7Cw_1,++...,w_%7Bi-1%7D,+w_%7Bi+1%7D,...,w_n)" alt="[公式]"> 作为目标函数训练LM。</p>
+<ul>
+<li><strong>Embedding</strong></li>
+</ul>
+<p><img src="https://pic2.zhimg.com/80/v2-11505b394299037e999d12997e9d1789_720w.jpg" alt="img"></p>
+<p>其中：</p>
+<ol>
+<li><strong>Token Embeddings</strong>是词向量，第一个单词是CLS标志，可以用于之后的分类任务</li>
+<li><strong>Segment Embeddings</strong>用来区别两种句子，因为预训练不光做LM还要做以两个句子为输入的分类任务</li>
+<li><strong>Position Embeddings</strong>和之前文章中的Transformer不一样，不是三角函数而是学习出来的</li>
+</ol>
+<ul>
+<li><strong>Pre-training Task 1: Masked LM</strong></li>
+</ul>
+<p>在将单词序列输入给 BERT 之前，每个序列中有 15％ 的单词被 [MASK] token 替换。然后<strong>模型尝试基于序列中其他未被 mask 的单词的上下文来预测被mask的原单词。最终的损失函数只计算被mask掉那个token。</strong></p>
+<p>如果一直用标记[MASK]代替（在实际预测时是碰不到这个标记的）会影响模型，具体的MASK是有trick的：</p>
+<ol>
+<li>随机mask的时候10%的单词会被替代成其他单词，10%的单词不替换，剩下80%才被替换为[MASK]。作者没有说明什么原因，应该是基于实验效果？</li>
+<li><strong>要注意的是Masked LM预训练阶段模型是不知道真正被mask的是哪个词，所以模型每个词都要关注。</strong></li>
+<li>训练技巧：序列长度太大（512）会影响训练速度，所以90%的steps都用seq_len&#x3D;128训练，余下的10%步数训练512长度的输入。</li>
+<li>具体实现注意:<ul>
+<li>i) 在encoder的输出上添加一个分类层。</li>
+<li>ii) 用嵌入矩阵乘以输出向量，将其转换为词汇的维度。</li>
+<li>iii) 用softmax计算词汇表中每个单词的概率。</li>
+</ul>
+</li>
+<li><strong>BERT的损失函数只考虑了mask的预测值，忽略了没有掩蔽的字的预测。这样的话，模型要比单向模型收敛得慢，不过结果的情境意识增加了。</strong></li>
+</ol>
+<ul>
+<li><strong>Pre-training Task 2:Next Sentence Prediction</strong></li>
+</ul>
+<p>LM存在的问题是，缺少句子之间的关系，这对许多NLP任务很重要。<strong>为预训练句子关系模型，bert使用一个非常简单的二分类任务：将两个句子A和B链接起来，预测原始文本中句子B是否排在句子A之后。</strong></p>
+<ol>
+<li><p>具体训练的时候，50％的输入对在原始文档中是前后关系，另外50％中是从语料库中随机组成的，并且是与第一句断开的。</p>
+</li>
+<li><p>为了帮助模型区分开训练中的两个句子，输入在进入模型之前要按以下方式进行处理：在第一个句子的开头插入 [CLS] 标记，在每个句子的末尾插入 [SEP] 标记。</p>
+</li>
+<li><p>将表示句子 A 或句子 B 的一个句子 embedding 添加到每个 token 上，即前文说的Segment Embeddings。</p>
+</li>
+<li><p>给每个token添加一个位置embedding，来表示它在序列中的位置。</p>
+</li>
+<li><p>为了预测第二个句子是否是第一个句子的后续句子，用下面几个步骤来预测：</p>
+<ul>
+<li>整个输入序列输入给 Transformer 模型用一个简单的分类层将[CLS]标记的输出变换为 2×1 形状的向量。</li>
+<li>用 softmax 计算 IsNextSequence 的概率。</li>
+</ul>
+</li>
+</ol>
+<p><strong>在训练BERT模型时，Masked LM和 Next Sentence Prediction 是一起训练的，目标就是要最小化两种策略的组合损失函数。</strong></p>
+<p><strong>注意：作者特意说了语料的选取很关键，要选用document-level的而不是sentence-level的，这样可以具备抽象连续长序列特征的能力。</strong></p>
+<ul>
+<li><strong>精调（Fine-tunning）</strong></li>
+</ul>
+<p><strong>对于不同的下游任务，我们仅需要对BERT不同位置的输出进行处理即可，或者直接将BERT不同位置的输出直接输入到下游模型当中。</strong>具体的如下：</p>
+<ol>
+<li>对于情感分析等单句分类任务，可以直接输入单个句子（不需要[SEP]分隔双句），将[CLS]的输出直接输入到分类器进行分类</li>
+<li>对于句子对任务（句子关系判断任务），需要用[SEP]分隔两个句子输入到模型中，然后同样仅须将[CLS]的输出送到分类器进行分类</li>
+<li>对于问答任务，将问题与答案拼接输入到BERT模型中，然后将答案位置的输出向量进行二分类并在句子方向上进行softmax（只需预测开始和结束位置即可）</li>
+<li>对于命名实体识别任务，对每个位置的输出进行分类即可，如果将每个位置的输出作为特征输入到CRF将取得更好的效果。</li>
+<li>对于常规分类任务中，需要在 Transformer 的输出之上加一个分类层。</li>
+</ol>
+<ul>
+<li><strong>优点</strong>：<strong>效果好，</strong>横扫了11项NLP任务。bert之后基本全面拥抱transformer。微调下游任务的时候，即使数据集非常小（比如小于5000个标注样本），模型性能也有不错的提升。</li>
+<li><strong>缺点</strong>：</li>
+</ul>
+<p>作者在文中主要提到的就是MLM预训练时的mask问题：</p>
+<ol>
+<li><strong>[MASK]标记在实际预测中不会出现，训练时用过多[MASK]影响模型表现</strong></li>
+<li><strong>每个batch只有15%的token被预测，所以BERT收敛得比left-to-right模型（单向模型）要慢（它们会预测每个token）</strong></li>
+</ol>
+<ul>
+<li><strong>特殊标志</strong></li>
+</ul>
+<p>BERT 的输入可以包含一个句子对 (句子 A 和句子 B)，也可以是单个句子。此外还增加了一些有特殊作用的标志位：</p>
+<ol>
+<li><strong>[CLS] 标志放在第一个句子的首位</strong>，经过 BERT 得到的的表征向量 C 可以用于后续的分类任务。</li>
+<li><strong>[SEP] 标志用于分开两个输入句子</strong>，例如输入句子 A 和 B，要在句子 A，B 后面增加 [SEP] 标志。</li>
+<li><strong>[UNK]标志指的是未知字符</strong></li>
+<li><strong>[MASK] 标志用于遮盖句子中的一些单词，将单词用 [MASK] 遮盖之后，再利用 BERT 输出的 [MASK] 向量预测单词是什么</strong>。</li>
+</ol>
+<h1 id="11-XLNet"><a href="#11-XLNet" class="headerlink" title="11 XLNet"></a>11 XLNet</h1><ul>
+<li><p>全称：XLNet: Generalized Autoregressive Pretraining for Language Understanding</p>
+</li>
+<li><p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1906.08237.pdf">https://arxiv.org/pdf/1906.08237.pdf</a></p>
+</li>
+<li><p>相关文档：<a target="_blank" rel="noopener" href="https://d94sx79yh3.feishu.cn/docs/doccnvdvaZMeTtdKVn0gMAOkVlb">XLNet</a></p>
+</li>
+</ul>
+<h1 id="12-GPT（1-2-3）"><a href="#12-GPT（1-2-3）" class="headerlink" title="12 GPT（1,2, 3）"></a>12 GPT（1,2, 3）</h1><ul>
+<li><p>全称：Generative Pre-training Transformer  </p>
+</li>
+<li><p>论文链接：</p>
+<ul>
+<li>GPT-1  <a target="_blank" rel="noopener" href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a></li>
+<li>GPT-2  <a target="_blank" rel="noopener" href="https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf">Language Models are Unsupervised Multitask Learners</a></li>
+<li>GPT-3   <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2005.14165.pdf">Language Models are Few-Shot Learners </a></li>
+</ul>
+</li>
+<li><p>相关文档：</p>
+<ul>
+<li>GPT-1+GPT-2  <a target="_blank" rel="noopener" href="https://d94sx79yh3.feishu.cn/docs/doccncdn7CtRQE9bFOoIqVmj14b">GPT1+GPT2</a>  </li>
+<li>GPT-3  <a target="_blank" rel="noopener" href="https://d94sx79yh3.feishu.cn/docs/doccnt7GykiRsOnslBPVi3bdq5c">GPT-3</a></li>
+</ul>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fdChen</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://blog.fdchen.host/2022/nlp-mo-xing/">http://blog.fdchen.host/2022/nlp-mo-xing/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">fdChen</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2022/python-debug/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python Debug">
+                        
+                        <span class="card-title">Python Debug</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            <a href="/categories/Python/Debug/" class="post-category">
+                                    Debug
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="《开放域语义解析》总结">
+                        
+                        <span class="card-title">《开放域语义解析》总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+本文内容主要来自「中国科学院软件研究所中文信息处理实验室」的《语义解析-暑期学校-final》，附带部分个人的理解与标注解释。
+原文章所属Github项目链接：https://github.com/casnlu/Semantic-Pars
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
+                                </a>
+                            
+                            <a href="/categories/NLP/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/" class="post-category">
+                                    语义解析
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: fdChen的掉发收集箱<br />'
+            + 'Author: fdChen<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">fdChen</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">132.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="/beian.miit.gov.cn" target="_blank">湘ICP备20016057号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CCSemicircle" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2914756796" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2914756796" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/semi-circle-42/posts" class="tooltipped" target="_blank" data-tooltip="关注我的知乎" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
