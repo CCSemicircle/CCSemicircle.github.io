@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tag: 笔记, 软件工程,前端,NLP">
+    <meta name="keywords" content="Tags, 软件工程,前端,NLP">
     <meta name="description" content="一些想到什么写什么的记录">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tag: 笔记 | fdChen的掉发收集箱</title>
+    <title>Tags | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -535,7 +535,7 @@
                 
                 <a href="/tags/%E7%AC%94%E8%AE%B0/" title="笔记: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
+                             chip-default "
                             data-tagname="笔记" style="background-color: #E8F8F5;">笔记
                         <span class="tag-length">3</span>
                     </span>
@@ -727,123 +727,32 @@
 </div>
 
     
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="笔记" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2022/python-debug/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python Debug">
-                            
-                            <span class="card-title">Python Debug</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Python/" class="post-category">
-                                Python
-                                </a>
-                                
-                                <a href="/categories/Python/Debug/" class="post-category">
-                                Debug
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="笔记" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2022/nlp-mo-xing/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="NLP学习路径">
-                            
-                            <span class="card-title">NLP学习路径</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/NLP/" class="post-category">
-                                NLP
-                                </a>
-                                
-                                <a href="/categories/NLP/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/" class="post-category">
-                                算法模型
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="笔记" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="《开放域语义解析》总结">
-                            
-                            <span class="card-title">《开放域语义解析》总结</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/NLP/" class="post-category">
-                                NLP
-                                </a>
-                                
-                                <a href="/categories/NLP/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/" class="post-category">
-                                语义解析
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"感想","weight":1,"link":"/tags/感想/"},{"text":"Hadoop","weight":3,"link":"/tags/Hadoop/"},{"text":"Eclipse","weight":1,"link":"/tags/Eclipse/"},{"text":"Maven Project","weight":1,"link":"/tags/Maven-Project/"},{"text":"环境配置","weight":1,"link":"/tags/环境配置/"},{"text":"Debug","weight":1,"link":"/tags/Debug/"},{"text":"Tips","weight":2,"link":"/tags/Tips/"},{"text":"使用注意事项","weight":1,"link":"/tags/使用注意事项/"},{"text":"学习笔记","weight":2,"link":"/tags/学习笔记/"},{"text":"教程","weight":6,"link":"/tags/教程/"},{"text":"HDFS","weight":1,"link":"/tags/HDFS/"},{"text":"MapReduce","weight":1,"link":"/tags/MapReduce/"},{"text":"收藏夹","weight":1,"link":"/tags/收藏夹/"},{"text":"Linux","weight":2,"link":"/tags/Linux/"},{"text":"常用命令","weight":3,"link":"/tags/常用命令/"},{"text":"大数据","weight":1,"link":"/tags/大数据/"},{"text":"MySQL","weight":1,"link":"/tags/MySQL/"},{"text":"常用用法","weight":3,"link":"/tags/常用用法/"},{"text":"Windows服务器","weight":1,"link":"/tags/Windows服务器/"},{"text":"阿里云服务器ECS","weight":1,"link":"/tags/阿里云服务器ECS/"},{"text":"MSTSC","weight":1,"link":"/tags/MSTSC/"},{"text":"笔记","weight":3,"link":"/tags/笔记/"},{"text":"软件工程","weight":1,"link":"/tags/软件工程/"},{"text":"Shell","weight":1,"link":"/tags/Shell/"},{"text":"Git","weight":1,"link":"/tags/Git/"},{"text":"GitHub","weight":1,"link":"/tags/GitHub/"},{"text":"VS Code","weight":1,"link":"/tags/VS-Code/"},{"text":"人工智能","weight":1,"link":"/tags/人工智能/"},{"text":"图搜索求解","weight":1,"link":"/tags/图搜索求解/"},{"text":"智能计算","weight":1,"link":"/tags/智能计算/"},{"text":"机器学习","weight":1,"link":"/tags/机器学习/"},{"text":"神经网络","weight":1,"link":"/tags/神经网络/"},{"text":"常用单词","weight":1,"link":"/tags/常用单词/"},{"text":"数据结构","weight":1,"link":"/tags/数据结构/"},{"text":"算法","weight":1,"link":"/tags/算法/"},{"text":"高等数学","weight":1,"link":"/tags/高等数学/"},{"text":"正则表达式","weight":1,"link":"/tags/正则表达式/"},{"text":"服创 - 经验总结","weight":1,"link":"/tags/服创-经验总结/"},{"text":"经验总结","weight":1,"link":"/tags/经验总结/"},{"text":"线性代数","weight":1,"link":"/tags/线性代数/"},{"text":"数模 - 经验总结","weight":1,"link":"/tags/数模-经验总结/"},{"text":"软件架构","weight":1,"link":"/tags/软件架构/"}], {
+        autoResize: true
+    });
+</script>
+
+    
+
 </main>
-
-
 
 
     <footer class="page-footer bg-color">
