@@ -8,9 +8,9 @@
     <meta name="description" content="0 Linux安装Tensorflow0.1 基于Anaconda环境
 创建新的虚拟环境
 
-conda creat -n env_name tensorflow&amp;#x3D;&amp;#x3D;1.14
+conda creat -n env_name tensorflow==1.14
 
-PS：1.14是版本号，1.x需要额外安装t">
+PS：1.14是版本号，1.x需要额外安装tensorflow-">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -434,7 +434,7 @@ PS：1.14是版本号，1.x需要额外安装t">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    126
+                    122
                 </div>
                 
 
@@ -467,31 +467,31 @@ PS：1.14是版本号，1.x需要额外安装t">
                 <h1 id="0-Linux安装Tensorflow"><a href="#0-Linux安装Tensorflow" class="headerlink" title="0 Linux安装Tensorflow"></a>0 Linux安装Tensorflow</h1><h2 id="0-1-基于Anaconda环境"><a href="#0-1-基于Anaconda环境" class="headerlink" title="0.1 基于Anaconda环境"></a>0.1 基于Anaconda环境</h2><ul>
 <li>创建新的虚拟环境</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda creat -n env_name tensorflow&#x3D;&#x3D;1.14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda creat -n env_name <span class="token assign-left variable">tensorflow</span><span class="token operator">==</span><span class="token number">1.14</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>PS：1.14是版本号，1.x需要额外安装tensorflow-gpu</p>
 <ul>
 <li>验证tensorflow是否安装成功</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 窗口输入如下命令
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 窗口输入如下命令</span>
 conda activate env_name
-python  # 进入python环境
-# python环境下输入
-import tensorflow as tf
-print(tf.__version__)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+python  <span class="token comment"># 进入python环境</span>
+<span class="token comment"># python环境下输入</span>
+<span class="token function">import</span> tensorflow as tf
+print<span class="token punctuation">(</span>tf.__version__<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>1.x版本tensorflow安装tensorflow-gpu</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install tensorflow-gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda <span class="token function">install</span> tensorflow-gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>验证tensorflow-gpu是否安装成功</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">python  # 进入python环境
-# python环境下输入
-import tensorflow as tf
-print(&#39;GPU&#39;,tf.test.is_gpu_available())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">python  <span class="token comment"># 进入python环境</span>
+<span class="token comment"># python环境下输入</span>
+<span class="token function">import</span> tensorflow as tf
+print<span class="token punctuation">(</span><span class="token string">'GPU'</span>,tf.test.is_gpu_available<span class="token punctuation">(</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
