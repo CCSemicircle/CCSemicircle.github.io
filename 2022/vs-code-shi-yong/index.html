@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="VS Code使用, 软件工程,前端,NLP">
@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    960
+                    947
                 </div>
                 
 
@@ -468,6 +468,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -531,7 +534,11 @@
 <ol start="3">
 <li><strong>工作空间配置信息解释</strong></li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;.&quot;</span> 为当前工作区文件所在的文件夹。</span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;../MLProjects&quot;</span> 为自行添加的（项目）文件夹路径。</span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;python.pythonPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Users\\fdChen\\AppData\\Local\\Programs\\Python\\Python39\\python.exe&quot;</span> 此为python路径</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"."</span> 为当前工作区文件所在的文件夹。
+
+<span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"../MLProjects"</span> 为自行添加的（项目）文件夹路径。
+
+<span class="token property">"python.pythonPath"</span><span class="token operator">:</span> <span class="token string">"C:\\Users\\fdChen\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"</span> 此为python路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li><strong>如何在不同的工作区启用&#x2F;禁用不同的插件</strong></li>
@@ -1015,8 +1022,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1028,7 +1035,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1093,6 +1100,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1107,7 +1115,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1144,7 +1152,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

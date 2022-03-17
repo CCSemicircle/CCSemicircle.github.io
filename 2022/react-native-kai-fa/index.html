@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="软件工程,前端,NLP">
@@ -11,7 +11,9 @@
 下载React-Native
 
 
-123npm install -g react-native-cli# 进入项目文件夹的父目录下打开cmd，输入以下命令react-nativ">
+npm install -g react-native-cli
+# 进入项目文件夹的父目录下打开cmd，输入以下命令
+react-native">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -457,6 +459,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -468,7 +473,9 @@
 <li><p>下载React-Native</p>
 </li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g react-native-cli</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入项目文件夹的父目录下打开cmd，输入以下命令</span></span><br><span class="line">react-native init myProjec</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install -g react-native-cli
+# 进入项目文件夹的父目录下打开cmd，输入以下命令
+react-native init myProjec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yinxing2008/article/details/89250436">打开安卓模拟器的开发者选项</a></li>
@@ -506,13 +513,40 @@
 <li>UI组件库：<a target="_blank" rel="noopener" href="https://reactnativeelements.com/docs/">https://reactnativeelements.com/docs/</a></li>
 <li>icon库：<a target="_blank" rel="noopener" href="https://oblador.github.io/react-native-vector-icons/">https://oblador.github.io/react-native-vector-icons/</a></li>
 </ul>
-<h2 id="常见用法"><a href="#常见用法" class="headerlink" title="#常见用法#"></a>#常见用法#</h2><h3 id="1-统一获取表单输入框值"><a href="#1-统一获取表单输入框值" class="headerlink" title="1. 统一获取表单输入框值"></a>1. 统一获取表单输入框值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">saveInputData = <span class="function">(<span class="params">dataType</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// console.log(dataType,&quot;dataType&quot;);</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// console.log(event,&quot;event&quot;);</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      [dataType]: event,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="常见用法"><a href="#常见用法" class="headerlink" title="#常见用法#"></a>#常见用法#</h2><h3 id="1-统一获取表单输入框值"><a href="#1-统一获取表单输入框值" class="headerlink" title="1. 统一获取表单输入框值"></a>1. 统一获取表单输入框值</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function-variable function">saveInputData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">dataType</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// console.log(dataType,"dataType");</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// console.log(event,"event");</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token punctuation">[</span>dataType<span class="token punctuation">]</span><span class="token operator">:</span> event<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-圆角按钮属性"><a href="#2-圆角按钮属性" class="headerlink" title="2. 圆角按钮属性"></a>2. 圆角按钮属性</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">borderRadius</span><br></pre></td></tr></table></figure>
+<h3 id="2-圆角按钮属性"><a href="#2-圆角按钮属性" class="headerlink" title="2. 圆角按钮属性"></a>2. 圆角按钮属性</h3> <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">borderRadius<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="3-动态修改组件样式"><a href="#3-动态修改组件样式" class="headerlink" title="3. 动态修改组件样式"></a>3. 动态修改组件样式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">state = &#123;</span><br><span class="line">  <span class="attr">buttonColor</span>: <span class="title class_">Color</span>.<span class="property">font</span>.<span class="property">alleviate</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  <span class="attr">buttonStyle</span>=<span class="string">&#123;&#123;</span> <span class="attr">...styles.button</span>, <span class="attr">backgroundColor:</span> <span class="attr">this.state.buttonColor</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">/&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="3-动态修改组件样式"><a href="#3-动态修改组件样式" class="headerlink" title="3. 动态修改组件样式"></a>3. 动态修改组件样式</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">state <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">buttonColor</span><span class="token operator">:</span> Color<span class="token punctuation">.</span>font<span class="token punctuation">.</span>alleviate<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>Button
+  buttonStyle<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token operator">...</span>styles<span class="token punctuation">.</span>button<span class="token punctuation">,</span> <span class="token literal-property property">backgroundColor</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>buttonColor <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-TouchableOpacity取消点击后的透明度变化"><a href="#4-TouchableOpacity取消点击后的透明度变化" class="headerlink" title="4. TouchableOpacity取消点击后的透明度变化"></a>4. TouchableOpacity取消点击后的透明度变化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// activeOpacity=&#123;1&#125;</span></span><br><span class="line"><span class="comment">// 注意不是样式属性，不能写在样式里</span></span><br><span class="line">&lt;<span class="title class_">CheckBox</span></span><br><span class="line">  center</span><br><span class="line">  containerStyle=&#123;styles.<span class="property">checkBox</span>&#125;</span><br><span class="line">  activeOpacity=&#123;<span class="number">1</span>&#125;</span><br><span class="line">  title=<span class="string">&quot;请阅读同意&quot;</span></span><br><span class="line">  textStyle=&#123;styles.<span class="property">tipsFont</span>&#125;</span><br><span class="line">  iconType=<span class="string">&quot;material-icons&quot;</span></span><br><span class="line">  checkedIcon=<span class="string">&quot;check-circle&quot;</span></span><br><span class="line">  checkedColor=&#123;<span class="title class_">Color</span>.<span class="property">font</span>.<span class="property">alleviate</span>&#125;</span><br><span class="line">  uncheckedIcon=<span class="string">&quot;radio-button-unchecked&quot;</span></span><br><span class="line">  onPress=&#123;<span class="variable language_">this</span>.<span class="property">checkAgreement</span>&#125;</span><br><span class="line">  checked=&#123;<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">agreementChecked</span>&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="4-TouchableOpacity取消点击后的透明度变化"><a href="#4-TouchableOpacity取消点击后的透明度变化" class="headerlink" title="4. TouchableOpacity取消点击后的透明度变化"></a>4. TouchableOpacity取消点击后的透明度变化</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// activeOpacity=&#123;1&#125;</span>
+<span class="token comment">// 注意不是样式属性，不能写在样式里</span>
+<span class="token operator">&lt;</span>CheckBox
+  center
+  containerStyle<span class="token operator">=</span><span class="token punctuation">&#123;</span>styles<span class="token punctuation">.</span>checkBox<span class="token punctuation">&#125;</span>
+  activeOpacity<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">&#125;</span>
+  title<span class="token operator">=</span><span class="token string">"请阅读同意"</span>
+  textStyle<span class="token operator">=</span><span class="token punctuation">&#123;</span>styles<span class="token punctuation">.</span>tipsFont<span class="token punctuation">&#125;</span>
+  iconType<span class="token operator">=</span><span class="token string">"material-icons"</span>
+  checkedIcon<span class="token operator">=</span><span class="token string">"check-circle"</span>
+  checkedColor<span class="token operator">=</span><span class="token punctuation">&#123;</span>Color<span class="token punctuation">.</span>font<span class="token punctuation">.</span>alleviate<span class="token punctuation">&#125;</span>
+  uncheckedIcon<span class="token operator">=</span><span class="token string">"radio-button-unchecked"</span>
+  onPress<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>checkAgreement<span class="token punctuation">&#125;</span>
+  checked<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>agreementChecked<span class="token punctuation">&#125;</span>
+<span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="5-alignSelf属性值"><a href="#5-alignSelf属性值" class="headerlink" title="5. alignSelf属性值"></a>5. alignSelf属性值</h3><table>
 <thead>
@@ -554,9 +588,11 @@
 <td align="left">从父元素继承该属性。请参阅 <a target="_blank" rel="noopener" href="https://techbrood.com/cssref?p=css-inherit"><em>inherit</em></a>。</td>
 </tr>
 </tbody></table>
-<h3 id="6-控制Flex子元素在主轴上的比例"><a href="#6-控制Flex子元素在主轴上的比例" class="headerlink" title="6. 控制Flex子元素在主轴上的比例"></a>6. 控制Flex子元素在主轴上的比例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性名</span></span><br><span class="line">flexGrow</span><br></pre></td></tr></table></figure>
+<h3 id="6-控制Flex子元素在主轴上的比例"><a href="#6-控制Flex子元素在主轴上的比例" class="headerlink" title="6. 控制Flex子元素在主轴上的比例"></a>6. 控制Flex子元素在主轴上的比例</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 属性名</span>
+flexGrow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="7-文本自动换行"><a href="#7-文本自动换行" class="headerlink" title="7. 文本自动换行"></a>7. 文本自动换行</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Text</span> style=&#123;styles.<span class="property">infoFont</span>&#125; selectable=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">                  textBreakStrategy=<span class="string">&quot;balanced&quot;</span>&gt;&lt;/<span class="title class_">Text</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="7-文本自动换行"><a href="#7-文本自动换行" class="headerlink" title="7. 文本自动换行"></a>7. 文本自动换行</h3><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Text</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>styles<span class="token punctuation">.</span>infoFont<span class="token punctuation">&#125;</span></span> <span class="token attr-name">selectable</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token boolean">true</span><span class="token punctuation">&#125;</span></span>
+                  <span class="token attr-name">textBreakStrategy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>balanced<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Text</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="8-原生组件官方文档"><a href="#8-原生组件官方文档" class="headerlink" title="8. 原生组件官方文档"></a>8. 原生组件官方文档</h3><ul>
 <li>API文档：<a target="_blank" rel="noopener" href="https://reactnative.cn/docs/text">https://reactnative.cn/docs/text</a></li>
@@ -564,7 +600,7 @@
 <h3 id="9-Navigation使用"><a href="#9-Navigation使用" class="headerlink" title="9. Navigation使用"></a>9. Navigation使用</h3><ul>
 <li>官方中文文档：<a target="_blank" rel="noopener" href="https://www.reactnavigation.org.cn/docs/tabnavigator">TabNavigator · React Navigation中文网</a></li>
 </ul>
-<h3 id="10-组件自动换行"><a href="#10-组件自动换行" class="headerlink" title="10. 组件自动换行"></a>10. 组件自动换行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flexWrap</span>:<span class="string">&quot;wrap&quot;</span>,</span><br></pre></td></tr></table></figure>
+<h3 id="10-组件自动换行"><a href="#10-组件自动换行" class="headerlink" title="10. 组件自动换行"></a>10. 组件自动换行</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">flexWrap</span><span class="token operator">:</span><span class="token string">"wrap"</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="11-FlatList用法"><a href="#11-FlatList用法" class="headerlink" title="11. FlatList用法"></a>11. FlatList用法</h3><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31e3cb511c73">React-native FlatList的基本用法 - 简书 (jianshu.com)</a></li>
@@ -581,7 +617,14 @@
 <h3 id="15-报错-app-mergeDexDebug-FAILED解决方法："><a href="#15-报错-app-mergeDexDebug-FAILED解决方法：" class="headerlink" title="15. 报错:app:mergeDexDebug FAILED解决方法："></a>15. 报错:app:mergeDexDebug FAILED解决方法：</h3><ul>
 <li>在android&#x2F;app&#x2F;build.gradle文件中添加如下代码:</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">  implementation &#x27;com.android.support:multidex:1.0.3&#x27; //enter the latest version,</span><br><span class="line">&#125;</span><br><span class="line">android &#123;</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        multiDexEnabled true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">dependencies &#123;
+  implementation &#39;com.android.support:multidex:1.0.3&#39; &#x2F;&#x2F;enter the latest version,
+&#125;
+android &#123;
+    defaultConfig &#123;
+        multiDexEnabled true
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>latest version：<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/build/multidex?hl=zh-cn">https://developer.android.google.cn/studio/build/multidex?hl=zh-cn</a></li>
@@ -593,14 +636,27 @@
 <h3 id="17-Style-详细说明"><a href="#17-Style-详细说明" class="headerlink" title="17. Style 详细说明"></a>17. Style 详细说明</h3><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2b4368569c03">https://www.jianshu.com/p/2b4368569c03</a></li>
 </ul>
-<h3 id="18-查看项目无法启动的错误报告"><a href="#18-查看项目无法启动的错误报告" class="headerlink" title="18. 查看项目无法启动的错误报告"></a>18. 查看项目无法启动的错误报告</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 控制台下</span><br><span class="line">android&gt;gradlew assembleDebug <span class="literal">--info</span></span><br></pre></td></tr></table></figure>
+<h3 id="18-查看项目无法启动的错误报告"><a href="#18-查看项目无法启动的错误报告" class="headerlink" title="18. 查看项目无法启动的错误报告"></a>18. 查看项目无法启动的错误报告</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token operator">/</span><span class="token operator">/</span> 控制台下
+android>gradlew assembleDebug <span class="token operator">--</span>info<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="19-无法将类-JMessageReactPackage中的构造器-JMessageReactPackage应用到给定类型"><a href="#19-无法将类-JMessageReactPackage中的构造器-JMessageReactPackage应用到给定类型" class="headerlink" title="19. 无法将类 JMessageReactPackage中的构造器 JMessageReactPackage应用到给定类型"></a>19. 无法将类 JMessageReactPackage中的构造器 JMessageReactPackage应用到给定类型</h3><ul>
 <li>使用<strong>“探花APP” React-Native教程的plugin.md文档</strong></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将Project根目录下react-native.comfig.js文件中的代码改为如下</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">dependencies</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;jmessage-react-plugin&#x27;</span>: &#123;</span><br><span class="line">      <span class="attr">platforms</span>: &#123;</span><br><span class="line">        <span class="attr">android</span>: &#123;</span><br><span class="line">          <span class="comment">// 原来是packageInstance: &#x27;new JMessageReactPackage(false)&#x27;</span></span><br><span class="line">          <span class="attr">packageInstance</span>: <span class="string">&#x27;new JMessageReactPackage()&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 将Project根目录下react-native.comfig.js文件中的代码改为如下</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">'jmessage-react-plugin'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">platforms</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">android</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// 原来是packageInstance: 'new JMessageReactPackage(false)'</span>
+          <span class="token literal-property property">packageInstance</span><span class="token operator">:</span> <span class="token string">'new JMessageReactPackage()'</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="20-报错INSTALL-FAILED-INSUFFICIENT-STORAGE"><a href="#20-报错INSTALL-FAILED-INSUFFICIENT-STORAGE" class="headerlink" title="20. 报错INSTALL_FAILED_INSUFFICIENT_STORAGE"></a>20. 报错INSTALL_FAILED_INSUFFICIENT_STORAGE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; package=&quot;xxx&quot; android:installLocation=&quot;preferExternal&quot; //增加这行代码！ android:versionCode=&quot;1&quot; android:versionName=&quot;1.0&quot; &gt;</span><br></pre></td></tr></table></figure>
+<h3 id="20-报错INSTALL-FAILED-INSUFFICIENT-STORAGE"><a href="#20-报错INSTALL-FAILED-INSUFFICIENT-STORAGE" class="headerlink" title="20. 报错INSTALL_FAILED_INSUFFICIENT_STORAGE"></a>20. 报错INSTALL_FAILED_INSUFFICIENT_STORAGE</h3><pre class="line-numbers language-none"><code class="language-none">&lt;manifest xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot; package&#x3D;&quot;xxx&quot; android:installLocation&#x3D;&quot;preferExternal&quot; &#x2F;&#x2F;增加这行代码！ android:versionCode&#x3D;&quot;1&quot; android:versionName&#x3D;&quot;1.0&quot; &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="21-样式问题Debug"><a href="#21-样式问题Debug" class="headerlink" title="21. 样式问题Debug"></a>21. 样式问题Debug</h3><ul>
 <li>设置border或者backgroundColor</li>
@@ -1000,8 +1056,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1013,7 +1069,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1078,6 +1134,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1092,7 +1149,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1129,7 +1186,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

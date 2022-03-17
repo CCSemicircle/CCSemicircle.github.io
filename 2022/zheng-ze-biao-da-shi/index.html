@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="正则表达式, 软件工程,前端,NLP">
@@ -475,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3k
+                    3.1k
                 </div>
                 
 
@@ -496,6 +496,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -649,48 +652,123 @@
 <li><code>[a-z]+\.txt</code>: 在这个正则表达式中, <code>[a-z]</code> 表示匹配一个小写字母, <code>+</code> 可以使前面的表达式匹配多次， 因此 <code>[a-z]+</code> 能够匹配一个小写字母组成的字符串。 在正则表达式中一个 <code>.</code> 表示匹配任意字符，而 <code>\.</code> 则表示匹配字符 <code>.</code>， 最后的 <code>txt</code> 表示严格匹配 <code>txt</code> 则三个字母。因此这个正则表达式的所要匹配的内容就是由纯小写字母组成的文本文件。</li>
 </ul>
 <p><code>std::regex_match</code> 用于匹配字符串和正则表达式，有很多不同的重载形式。 最简单的一个形式就是传入 <code>std::string</code> 以及一个 <code>std::regex</code> 进行匹配， 当匹配成功时，会返回 <code>true</code>，否则返回 <code>false</code>。例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;regex&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::string fnames[] = &#123;<span class="string">&quot;foo.txt&quot;</span>, <span class="string">&quot;bar.txt&quot;</span>, <span class="string">&quot;test&quot;</span>, <span class="string">&quot;a0.txt&quot;</span>, <span class="string">&quot;AAA.txt&quot;</span>&#125;;</span><br><span class="line">    <span class="comment">// 在 C++ 中 \ 会被作为字符串内的转义符，为使 \. 作为正则表达式传递进去生效，需要对 \ 进行二次转义，从而有 \\.</span></span><br><span class="line">    <span class="function">std::regex <span class="title">txt_regex</span><span class="params">(<span class="string">&quot;[a-z]+\\.txt&quot;</span>)</span></span>; </span><br><span class="line">    <span class="function">std::regex <span class="title">txt_regex</span><span class="params">(<span class="string">&quot;[a-z]+\\.txt&quot;</span>, regex::icase)</span></span>; <span class="comment">// regex::icase 不区分大小写</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;fname: fnames)</span><br><span class="line">        std::cout &lt;&lt; fname &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; std::<span class="built_in">regex_match</span>(fname, txt_regex) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;regex&gt;
+
+int main() &#123;
+    std::string fnames[] &#x3D; &#123;&quot;foo.txt&quot;, &quot;bar.txt&quot;, &quot;test&quot;, &quot;a0.txt&quot;, &quot;AAA.txt&quot;&#125;;
+    &#x2F;&#x2F; 在 C++ 中 \ 会被作为字符串内的转义符，为使 \. 作为正则表达式传递进去生效，需要对 \ 进行二次转义，从而有 \\.
+    std::regex txt_regex(&quot;[a-z]+\\.txt&quot;); 
+    std::regex txt_regex(&quot;[a-z]+\\.txt&quot;, regex::icase); &#x2F;&#x2F; regex::icase 不区分大小写
+    for (const auto &amp;fname: fnames)
+        std::cout &lt;&lt; fname &lt;&lt; &quot;: &quot; &lt;&lt; std::regex_match(fname, txt_regex) &lt;&lt; std::endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>另一种常用的形式就是依次传入 <code>std::string</code>&#x2F;<code>std::smatch</code>&#x2F;<code>std::regex</code> 三个参数， 其中 <code>std::smatch</code> 的本质其实是 <code>std::match_results</code>。 在标准库中， <code>std::smatch</code> 被定义为了 <code>std::match_results&lt;std::string::const_iterator&gt;</code>， 也就是一个子串迭代器类型的 <code>match_results</code>。 使用 <code>std::smatch</code> 可以方便的对匹配的结果进行获取，例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::regex <span class="title">base_regex</span><span class="params">(<span class="string">&quot;([a-z]+)\\.txt&quot;</span>)</span></span>;</span><br><span class="line">std::smatch base_match;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span> &amp;fname: fnames) &#123;</span><br><span class="line">    <span class="keyword">if</span> (std::<span class="built_in">regex_match</span>(fname, base_match, base_regex)) &#123;</span><br><span class="line">        <span class="comment">// std::smatch 的第一个元素匹配整个字符串</span></span><br><span class="line">        <span class="comment">// std::smatch 的第二个元素匹配了第一个括号表达式</span></span><br><span class="line">        <span class="keyword">if</span> (base_match.<span class="built_in">size</span>() == <span class="number">2</span>) &#123;</span><br><span class="line">            std::string base = base_match[<span class="number">1</span>].<span class="built_in">str</span>();</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;sub-match[0]: &quot;</span> &lt;&lt; base_match[<span class="number">0</span>].<span class="built_in">str</span>() &lt;&lt; std::endl;</span><br><span class="line">            std::cout &lt;&lt; fname &lt;&lt; <span class="string">&quot; sub-match[1]: &quot;</span> &lt;&lt; base &lt;&lt; std::endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">std::regex base_regex(&quot;([a-z]+)\\.txt&quot;);
+std::smatch base_match;
+for(const auto &amp;fname: fnames) &#123;
+    if (std::regex_match(fname, base_match, base_regex)) &#123;
+        &#x2F;&#x2F; std::smatch 的第一个元素匹配整个字符串
+        &#x2F;&#x2F; std::smatch 的第二个元素匹配了第一个括号表达式
+        if (base_match.size() &#x3D;&#x3D; 2) &#123;
+            std::string base &#x3D; base_match[1].str();
+            std::cout &lt;&lt; &quot;sub-match[0]: &quot; &lt;&lt; base_match[0].str() &lt;&lt; std::endl;
+            std::cout &lt;&lt; fname &lt;&lt; &quot; sub-match[1]: &quot; &lt;&lt; base &lt;&lt; std::endl;
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>以上两个代码段的输出结果为：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">foo.txt: <span class="number">1</span></span><br><span class="line">bar.txt: <span class="number">1</span></span><br><span class="line">test: <span class="number">0</span></span><br><span class="line">a0.txt: <span class="number">0</span></span><br><span class="line">AAA.txt: <span class="number">0</span></span><br><span class="line">sub-match[<span class="number">0</span>]: foo.txt</span><br><span class="line">foo.txt sub-match[<span class="number">1</span>]: foo</span><br><span class="line">sub-match[<span class="number">0</span>]: bar.txt</span><br><span class="line">bar.txt sub-match[<span class="number">1</span>]: bar</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">foo.txt: 1
+bar.txt: 1
+test: 0
+a0.txt: 0
+AAA.txt: 0
+sub-match[0]: foo.txt
+foo.txt sub-match[1]: foo
+sub-match[0]: bar.txt
+bar.txt sub-match[1]: bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>以下转载<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34802416/article/details/79307102">https://blog.csdn.net/qq_34802416/article/details/79307102</a></p>
 </blockquote>
 <h3 id="3-2-1-regex-match"><a href="#3-2-1-regex-match" class="headerlink" title="3.2.1 regex_match"></a>3.2.1 regex_match</h3><h4 id="3-2-1-1-基本概念"><a href="#3-2-1-1-基本概念" class="headerlink" title="3.2.1.1 基本概念"></a>3.2.1.1 基本概念</h4><p>match是全文匹配，即要求整个字符串符合匹配规则。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为0</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d+&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为1</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为0
+cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d+&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 <p>上述方法返回值为bool值，主要用于if条件表达式中。</p>
 <h4 id="3-2-1-2-匹配结果"><a href="#3-2-1-2-匹配结果" class="headerlink" title="3.2.1.2 匹配结果"></a>3.2.1.2 匹配结果</h4><p>更多的时候我们希望能够获得匹配结果（字符串），对结果进行操作。这时就需要对匹配结果进行存储，共有两种存储方式。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">match_results&lt;string::const_iterator&gt; result;</span><br><span class="line">smatch result;			<span class="comment">//推荐</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">match_results&lt;string::const_iterator&gt; result;
+smatch result;			&#x2F;&#x2F;推荐<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 <p>第二种方式使用起来更简洁、方便，推荐使用。</p>
 <h4 id="3-2-1-3-实例"><a href="#3-2-1-3-实例" class="headerlink" title="3.2.1.3 实例"></a>3.2.1.3 实例</h4><p>下面看一个match方法匹配的实例，看看实际应用：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;Hello_2018&quot;</span>;</span><br><span class="line">smatch result;</span><br><span class="line"><span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;	<span class="comment">//匹配5个任意单字符 + 下划线 + 4个数字</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">regex_match</span>(str, result, pattern))</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; result[<span class="number">0</span>] &lt;&lt; endl;		<span class="comment">//完整匹配结果，Hello_2018</span></span><br><span class="line">	cout &lt;&lt; result[<span class="number">1</span>] &lt;&lt; endl;		<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	cout &lt;&lt; result[<span class="number">2</span>] &lt;&lt; endl;		<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;结果显示形式2&quot;</span>&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt; result.<span class="built_in">str</span>() &lt;&lt; endl;	<span class="comment">//完整结果，Hello_2018</span></span><br><span class="line">	cout&lt;&lt; result.<span class="built_in">str</span>(<span class="number">1</span>) &lt;&lt; endl;	<span class="comment">//第一组匹配的数据，Hello</span></span><br><span class="line">	cout &lt;&lt; result.<span class="built_in">str</span>(<span class="number">2</span>) &lt;&lt; endl;	<span class="comment">//第二组匹配的数据，2018</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历结果</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; result.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; result[i] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018&quot;;
+smatch result;
+regex pattern(&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;);	&#x2F;&#x2F;匹配5个任意单字符 + 下划线 + 4个数字
+
+if (regex_match(str, result, pattern))
+&#123;
+	cout &lt;&lt; result[0] &lt;&lt; endl;		&#x2F;&#x2F;完整匹配结果，Hello_2018
+	cout &lt;&lt; result[1] &lt;&lt; endl;		&#x2F;&#x2F;第一组匹配的数据，Hello
+	cout &lt;&lt; result[2] &lt;&lt; endl;		&#x2F;&#x2F;第二组匹配的数据，2018
+	cout&lt;&lt;&quot;结果显示形式2&quot;&lt;&lt;endl;
+	cout&lt;&lt; result.str() &lt;&lt; endl;	&#x2F;&#x2F;完整结果，Hello_2018
+	cout&lt;&lt; result.str(1) &lt;&lt; endl;	&#x2F;&#x2F;第一组匹配的数据，Hello
+	cout &lt;&lt; result.str(2) &lt;&lt; endl;	&#x2F;&#x2F;第二组匹配的数据，2018
+&#125;
+
+&#x2F;&#x2F;遍历结果
+for (int i &#x3D; 0; i &lt; result.size(); ++i)
+&#123;
+	cout &lt;&lt; result[i] &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>result[]与result.str()这两种方式能够获得相同的值，我更喜欢用数组形式的。<br><strong>在匹配规则中，以括号()的方式来划分组别</strong>，实例中的规则共有两个括号，所以共有两组数据。</p>
 <h3 id="3-2-2-regex-search"><a href="#3-2-2-regex-search" class="headerlink" title="3.2.2 regex_search"></a>3.2.2 regex_search</h3><h4 id="3-2-2-1-基本概念"><a href="#3-2-2-1-基本概念" class="headerlink" title="3.2.2.1 基本概念"></a>3.2.2.1 基本概念</h4><p>search是搜索匹配，即搜索字符串中存在符合规则的子字符串。<br>match与search一比较便知：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为0</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_search</span>(<span class="string">&quot;123&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;\\d&quot;</span>)) &lt;&lt; endl;		<span class="comment">//结果为1</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为0
+cout &lt;&lt; regex_search(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h4 id="3-2-2-2-实例"><a href="#3-2-2-2-实例" class="headerlink" title="3.2.2.2 实例"></a>3.2.2.2 实例</h4><p>直接看例子：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;Hello 2018, Bye 2017&quot;</span>;</span><br><span class="line">smatch result;</span><br><span class="line"><span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;\\d&#123;4&#125;&quot;</span>)</span></span>;	<span class="comment">//匹配四个数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//迭代器声明</span></span><br><span class="line">string::const_iterator iterStart = str.<span class="built_in">begin</span>();</span><br><span class="line">string::const_iterator iterEnd = str.<span class="built_in">end</span>();</span><br><span class="line">string temp;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">regex_search</span>(iterStart, iterEnd, result, pattern))</span><br><span class="line">&#123;</span><br><span class="line">	temp = result[<span class="number">0</span>];</span><br><span class="line">	cout &lt;&lt; temp &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	iterStart = result[<span class="number">0</span>].second;	<span class="comment">//更新搜索起始位置,搜索剩下的字符串</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出结果：2018 2017</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello 2018, Bye 2017&quot;;
+smatch result;
+regex pattern(&quot;\\d&#123;4&#125;&quot;);	&#x2F;&#x2F;匹配四个数字
+
+&#x2F;&#x2F;迭代器声明
+string::const_iterator iterStart &#x3D; str.begin();
+string::const_iterator iterEnd &#x3D; str.end();
+string temp;
+while (regex_search(iterStart, iterEnd, result, pattern))
+&#123;
+	temp &#x3D; result[0];
+	cout &lt;&lt; temp &lt;&lt; &quot; &quot;;
+	iterStart &#x3D; result[0].second;	&#x2F;&#x2F;更新搜索起始位置,搜索剩下的字符串
+&#125;
+&#x2F;&#x2F; 输出结果：2018 2017<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 <p>只需要利用迭代器就可以很轻松的访问到所有匹配的结果值。</p>
 <h3 id="3-2-3-regex-replace"><a href="#3-2-3-regex-replace" class="headerlink" title="3.2.3 regex_replace"></a>3.2.3 regex_replace</h3><h4 id="3-2-3-1-基本概念"><a href="#3-2-3-1-基本概念" class="headerlink" title="3.2.3.1 基本概念"></a>3.2.3.1 基本概念</h4><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;Hello_2018!&quot;</span>;</span><br><span class="line"><span class="function">regex <span class="title">pattern</span><span class="params">(<span class="string">&quot;Hello&quot;</span>)</span></span>;	</span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：_2018，将Hello替换为&quot;&quot;</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern, <span class="string">&quot;Hi&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hi_2018，将Hello替换为Hi</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018!&quot;;
+regex pattern(&quot;Hello&quot;);	
+cout &lt;&lt; regex_replace(str, pattern, &quot;&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：_2018，将Hello替换为&quot;&quot;
+cout &lt;&lt; regex_replace(str, pattern, &quot;Hi&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hi_2018，将Hello替换为Hi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="3-2-3-2-扩展"><a href="#3-2-3-2-扩展" class="headerlink" title="3.2.3.2 扩展"></a>3.2.3.2 扩展</h4><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">&quot;Hello_2018!&quot;</span>;	</span><br><span class="line"><span class="function">regex <span class="title">pattern2</span><span class="params">(<span class="string">&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;</span>)</span></span>;				<span class="comment">//匹配3个任意字符+2个任意字符+下划线+4个数字</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_replace</span>(str, pattern2, <span class="string">&quot;$1$3$2&quot;</span>) &lt;&lt; endl;	<span class="comment">//输出：Hel2018lo，交换位置顺序</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018!&quot;;	
+regex pattern2(&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;);				&#x2F;&#x2F;匹配3个任意字符+2个任意字符+下划线+4个数字
+cout &lt;&lt; regex_replace(str, pattern2, &quot;$1$3&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容
+cout &lt;&lt; regex_replace(str, pattern2, &quot;$1$3$2&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hel2018lo，交换位置顺序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>$n用于表示第n组匹配数据</strong>（组这个概念在文章前面部分提到过），所以我们可以利用这种方式来将字符串的内容进行调整。</p>
 <h3 id="3-2-4-匹配忽略大小写"><a href="#3-2-4-匹配忽略大小写" class="headerlink" title="3.2.4 匹配忽略大小写"></a>3.2.4 匹配忽略大小写</h3><p>有时我们希望能够匹配的时候忽略大小写，这时候就要用到Regex的语法选项了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;aaaAAA&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;a*&quot;</span>, regex::icase)) &lt;&lt; endl;	<span class="comment">//结果为1</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">regex_match</span>(<span class="string">&quot;aaaAAA&quot;</span>, <span class="built_in">regex</span>(<span class="string">&quot;a*&quot;</span>)) &lt;&lt; endl;					<span class="comment">//结果为0</span></span><br><span class="line"><span class="comment">// regex::icase：匹配时忽略大小写。</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;, regex::icase)) &lt;&lt; endl;	&#x2F;&#x2F;结果为1
+cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; endl;					&#x2F;&#x2F;结果为0
+&#x2F;&#x2F; regex::icase：匹配时忽略大小写。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-2-5-帮助网站"><a href="#3-2-5-帮助网站" class="headerlink" title="3.2.5 帮助网站"></a>3.2.5 帮助网站</h3><p>附上两个写正则表达式常用到的网站</p>
 <ul>
@@ -1167,8 +1245,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1180,7 +1258,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1245,6 +1323,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1259,7 +1338,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1296,7 +1375,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

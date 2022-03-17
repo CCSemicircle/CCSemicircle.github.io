@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Shell编程, 软件工程,前端,NLP">
@@ -486,6 +486,9 @@ test 条">
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -972,8 +975,8 @@ test 条">
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -985,7 +988,7 @@ test 条">
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1050,6 +1053,7 @@ test 条">
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1064,7 +1068,7 @@ test 条">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1101,7 +1105,7 @@ test 条">
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

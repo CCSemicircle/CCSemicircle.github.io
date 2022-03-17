@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="软件工程,前端,NLP">
@@ -11,7 +11,7 @@
 2. List.add()
 List.add()加入的元素为对应元素的引用，而不是值，示例如下：
 
-12">
+//">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -456,7 +456,7 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    160
+                    156
                 </div>
                 
 
@@ -478,6 +478,9 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -489,7 +492,21 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
 <h3 id="2-List-add"><a href="#2-List-add" class="headerlink" title="2. List.add()"></a>2. List.add()</h3><ul>
 <li>List.add()加入的元素为对应元素的引用，而不是值，示例如下：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// EdgeNode的变量为x0,deltaX,yMax</span></span><br><span class="line">EdgeNode edgeNode=<span class="keyword">new</span> <span class="title class_">EdgeNode</span>(<span class="number">3</span>,-<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">List&lt;EdgeNode&gt; NET = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;EdgeNode&gt;();</span><br><span class="line"></span><br><span class="line">NET.add(edgeNode);</span><br><span class="line"></span><br><span class="line">edgeNode.setX0(<span class="number">2.0</span>);</span><br><span class="line"></span><br><span class="line">NET.add(edgeNode);</span><br><span class="line"></span><br><span class="line">System.out.println(NET.get(<span class="number">0</span>).getX0()+<span class="string">&quot; &quot;</span>+NET.get(<span class="number">1</span>).getX0());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出结果如下：</span></span><br><span class="line"><span class="number">2.0</span> <span class="number">2.0</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// EdgeNode的变量为x0,deltaX,yMax</span>
+<span class="token class-name">EdgeNode</span> edgeNode<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">EdgeNode</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">EdgeNode</span><span class="token punctuation">></span></span> NET <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">EdgeNode</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+NET<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>edgeNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+edgeNode<span class="token punctuation">.</span><span class="token function">setX0</span><span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+NET<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>edgeNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>NET<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>NET<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getX0</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 输出结果如下：</span>
+<span class="token number">2.0</span> <span class="token number">2.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-交换函数"><a href="#3-交换函数" class="headerlink" title="3. 交换函数"></a>3. 交换函数</h3><ul>
 <li>直接交换和用包装类交换都不能交换两个数的值，而采用数组交换和成员变量交换是可以做到的。</li>
@@ -935,8 +952,8 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -948,7 +965,7 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1013,6 +1030,7 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1027,7 +1045,7 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1064,7 +1082,7 @@ List.add()加入的元素为对应元素的引用，而不是值，示例如下�
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

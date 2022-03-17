@@ -1,14 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="python常用用法, 软件工程,前端,NLP">
     <meta name="description" content="0 安装环境
 使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python Interpreter。
 
-1 文件操作1.1 创建文件和文件夹1.1.1 创建文件夹1234567891011121314151617">
+1 文件操作1.1 创建文件和文件夹1.1.1 创建文件夹### 创建文件夹
+import os
+
+def ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -445,14 +448,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    9 Min
+                    8 Min
                 </div>
                 
 
@@ -467,6 +470,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -475,19 +481,44 @@
                 <h1 id="0-安装环境"><a href="#0-安装环境" class="headerlink" title="0 安装环境"></a>0 安装环境</h1><ol>
 <li>使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python Interpreter。</li>
 </ol>
-<h1 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1 文件操作"></a>1 文件操作</h1><h2 id="1-1-创建文件和文件夹"><a href="#1-1-创建文件和文件夹" class="headerlink" title="1.1 创建文件和文件夹"></a>1.1 创建文件和文件夹</h2><h3 id="1-1-1-创建文件夹"><a href="#1-1-1-创建文件夹" class="headerlink" title="1.1.1 创建文件夹"></a>1.1.1 创建文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 创建文件夹</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mkdir</span>(<span class="params">path</span>):</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):                   <span class="comment">#判断是否存在文件夹如果不存在则创建为文件夹</span></span><br><span class="line">		os.makedirs(path)            <span class="comment">#makedirs 创建文件时如果路径不存在会创建这个路径</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;---  new folder...  ---&quot;</span>)</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;---  OK  ---&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span> <span class="string">&quot;---  There is this folder!  ---&quot;</span></span><br><span class="line"></span><br><span class="line">file_path = <span class="string">&quot;G:\\xxoo\\test&quot;</span></span><br><span class="line">mkdir(file_path)             <span class="comment">#调用函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line">folder = os.getcwd()[:-<span class="number">4</span>] + <span class="string">&#x27;new_folder\\test\\&#x27;</span></span><br><span class="line"><span class="comment">#获取此py文件路径，在此路径选创建在new_folder文件夹中的test文件夹</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(folder):</span><br><span class="line">    os.makedirs(folder)</span><br></pre></td></tr></table></figure>
+<h1 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1 文件操作"></a>1 文件操作</h1><h2 id="1-1-创建文件和文件夹"><a href="#1-1-创建文件和文件夹" class="headerlink" title="1.1 创建文件和文件夹"></a>1.1 创建文件和文件夹</h2><h3 id="1-1-1-创建文件夹"><a href="#1-1-1-创建文件夹" class="headerlink" title="1.1.1 创建文件夹"></a>1.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
+<span class="token keyword">import</span> os
 
-<h3 id="1-1-2-创建文件"><a href="#1-1-2-创建文件" class="headerlink" title="1.1.2 创建文件"></a>1.1.2 创建文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;C:\\Users\Administrator\\Desktop\\&#x27;</span> + <span class="string">&#x27;new&#x27;</span> + <span class="string">&#x27;.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<span class="token keyword">def</span> <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>                   <span class="token comment">#判断是否存在文件夹如果不存在则创建为文件夹</span>
+		os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>path<span class="token punctuation">)</span>            <span class="token comment">#makedirs 创建文件时如果路径不存在会创建这个路径</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---  new folder...  ---"</span><span class="token punctuation">)</span>
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---  OK  ---"</span><span class="token punctuation">)</span>
+	<span class="token keyword">else</span><span class="token punctuation">:</span>
+		<span class="token keyword">print</span> <span class="token string">"---  There is this folder!  ---"</span>
 
-<h2 id="1-2-获取文件路径"><a href="#1-2-获取文件路径" class="headerlink" title="1.2 获取文件路径"></a>1.2 获取文件路径</h2><h3 id="1-2-1-获取-py文件路径"><a href="#1-2-1-获取-py文件路径" class="headerlink" title="1.2.1 获取.py文件路径"></a>1.2.1 获取.py文件路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>(os.getcwd())</span><br></pre></td></tr></table></figure>
+file_path <span class="token operator">=</span> <span class="token string">"G:\\xxoo\\test"</span>
+mkdir<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>             <span class="token comment">#调用函数</span>
 
-<h3 id="1-2-2-获取文件绝对路径"><a href="#1-2-2-获取文件绝对路径" class="headerlink" title="1.2.2 获取文件绝对路径"></a>1.2.2 获取文件绝对路径</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.abspath(file_path)</span><br></pre></td></tr></table></figure>
+
+<span class="token keyword">import</span> os
+ 
+folder <span class="token operator">=</span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'new_folder\\test\\'</span>
+<span class="token comment">#获取此py文件路径，在此路径选创建在new_folder文件夹中的test文件夹</span>
+ 
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>folder<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>folder<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-1-2-创建文件"><a href="#1-1-2-创建文件" class="headerlink" title="1.1.2 创建文件"></a>1.1.2 创建文件</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
+ 
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'C:\\Users\Administrator\\Desktop\\'</span> <span class="token operator">+</span> <span class="token string">'new'</span> <span class="token operator">+</span> <span class="token string">'.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span>
+<span class="token builtin">file</span><span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="1-2-获取文件路径"><a href="#1-2-获取文件路径" class="headerlink" title="1.2 获取文件路径"></a>1.2 获取文件路径</h2><h3 id="1-2-1-获取-py文件路径"><a href="#1-2-1-获取-py文件路径" class="headerlink" title="1.2.1 获取.py文件路径"></a>1.2.1 获取.py文件路径</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="1-2-2-获取文件绝对路径"><a href="#1-2-2-获取文件绝对路径" class="headerlink" title="1.2.2 获取文件绝对路径"></a>1.2.2 获取文件绝对路径</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h1 id="4-装饰器"><a href="#4-装饰器" class="headerlink" title="4 装饰器"></a>4 装饰器</h1><h2 id="4-1-staticmethod或-classmetho"><a href="#4-1-staticmethod或-classmetho" class="headerlink" title="4.1 @staticmethod或@classmetho"></a>4.1 @staticmethod或@classmetho</h2><ul>
 <li>通常来说，我们使用一个类的方法时，首先要实例化这个类，再用实例化的类来调用其方法</li>
 <li>使用@staticmethod或@classmethod，就可以不需要实例化，直接类名.方法名()来调用。</li>
 </ul>
-<h1 id="5-matplotlib"><a href="#5-matplotlib" class="headerlink" title="5 matplotlib"></a>5 matplotlib</h1><h2 id="5-1-散点图-matplotlib-pyplot-scatter"><a href="#5-1-散点图-matplotlib-pyplot-scatter" class="headerlink" title="5.1 散点图 matplotlib.pyplot.scatter"></a>5.1 散点图 <a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">matplotlib.pyplot.scatter</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.scatter(x, y, s=<span class="literal">None</span>, c=<span class="literal">None</span>, marker=<span class="literal">None</span>, cmap=<span class="literal">None</span>, norm=<span class="literal">None</span>, vmin=<span class="literal">None</span>, vmax=<span class="literal">None</span>, alpha=<span class="literal">None</span>, linewidths=<span class="literal">None</span>, *, edgecolors=<span class="literal">None</span>, plotnonfinite=<span class="literal">False</span>, data=<span class="literal">None</span>, **kwargs</span><br></pre></td></tr></table></figure>
+<h1 id="5-matplotlib"><a href="#5-matplotlib" class="headerlink" title="5 matplotlib"></a>5 matplotlib</h1><h2 id="5-1-散点图-matplotlib-pyplot-scatter"><a href="#5-1-散点图-matplotlib-pyplot-scatter" class="headerlink" title="5.1 散点图 matplotlib.pyplot.scatter"></a>5.1 散点图 <a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">matplotlib.pyplot.scatter</a></h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">matplotlib<span class="token punctuation">.</span>pyplot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> norm<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> vmin<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> vmax<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> linewidths<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> edgecolors<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> plotnonfinite<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>参数说明：</li>
@@ -505,54 +536,132 @@
 <h1 id="6-错误和异常"><a href="#6-错误和异常" class="headerlink" title="6 错误和异常"></a>6 错误和异常</h1><h2 id="6-1-assert断言"><a href="#6-1-assert断言" class="headerlink" title="6.1 assert断言"></a>6.1 assert断言</h2><ul>
 <li>语法格式如下：</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assert expression</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">assert expression<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>等价于：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if not expression:</span><br><span class="line">    raise AssertionError</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">if not expression:
+    raise AssertionError<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
 <li>assert 后面也可以紧跟参数:</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assert expression [, arguments]</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">assert expression [, arguments]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>等价于：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if not expression:</span><br><span class="line">    raise AssertionError(arguments)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">if not expression:
+    raise AssertionError(arguments)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h1 id="7-时间与日期"><a href="#7-时间与日期" class="headerlink" title="7 时间与日期"></a>7 时间与日期</h1><h2 id="7-1-计算Python的代码块或程序的运行时间"><a href="#7-1-计算Python的代码块或程序的运行时间" class="headerlink" title="7.1 计算Python的代码块或程序的运行时间"></a>7.1 计算Python的代码块或程序的运行时间</h2><ul>
 <li>方法一</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">start = datetime.datetime.now()</span><br><span class="line">run_function():</span><br><span class="line">    <span class="comment"># do something</span></span><br><span class="line"></span><br><span class="line">end = datetime.datetime.now()</span><br><span class="line"><span class="built_in">print</span> (end-start)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> datetime
+start <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+run_function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># do something</span>
+
+end <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>方法二</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">start = time.time()</span><br><span class="line">run_function()</span><br><span class="line">end = time.time()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>(end-start)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+run_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+end <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span> <span class="token builtin">str</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>方法三，推荐使用</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">start = time.clock()</span><br><span class="line">run_function()</span><br><span class="line">end = time.clock()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>(end-start)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Python3.8不再支持time.clock，但在调用时依然包含该方法；需要用用time.perf_counter()替换</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+start <span class="token operator">=</span> time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
+run_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+end <span class="token operator">=</span> time<span class="token punctuation">.</span>clock<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<h1 id="8-PyMySQL"><a href="#8-PyMySQL" class="headerlink" title="8 PyMySQL"></a>8 PyMySQL</h1><h2 id="8-1-安装"><a href="#8-1-安装" class="headerlink" title="8.1 安装"></a>8.1 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install PyMySQL</span><br><span class="line">python3 setup.py install</span><br></pre></td></tr></table></figure>
+<span class="token keyword">print</span> <span class="token builtin">str</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span>
 
-<h2 id="8-2-数据库连接"><a href="#8-2-数据库连接" class="headerlink" title="8.2 数据库连接"></a>8.2 数据库连接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;testuser&quot;</span>,<span class="string">&quot;test123&quot;</span>,<span class="string">&quot;TESTDB&quot;</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">&quot;SELECT VERSION()&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;Database version : %s &quot;</span> % data)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+<span class="token comment"># Python3.8不再支持time.clock，但在调用时依然包含该方法；需要用用time.perf_counter()替换</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="8-3-增删改查操作"><a href="#8-3-增删改查操作" class="headerlink" title="8.3 增删改查操作"></a>8.3 增删改查操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;testuser&quot;</span>,<span class="string">&quot;test123&quot;</span>,<span class="string">&quot;TESTDB&quot;</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用cursor()方法获取操作游标 </span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment">### 具体执行语句放在此处 ###</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+<h1 id="8-PyMySQL"><a href="#8-PyMySQL" class="headerlink" title="8 PyMySQL"></a>8 PyMySQL</h1><h2 id="8-1-安装"><a href="#8-1-安装" class="headerlink" title="8.1 安装"></a>8.1 安装</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip3 install PyMySQL
+python3 setup.py install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="8-2-数据库连接"><a href="#8-2-数据库连接" class="headerlink" title="8.2 数据库连接"></a>8.2 数据库连接</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymysql
+ 
+<span class="token comment"># 打开数据库连接</span>
+db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span><span class="token string">"testuser"</span><span class="token punctuation">,</span><span class="token string">"test123"</span><span class="token punctuation">,</span><span class="token string">"TESTDB"</span> <span class="token punctuation">)</span>
+ 
+<span class="token comment"># 使用 cursor() 方法创建一个游标对象 cursor</span>
+cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># 使用 execute()  方法执行 SQL 查询 </span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT VERSION()"</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># 使用 fetchone() 方法获取单条数据.</span>
+data <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"Database version : %s "</span> <span class="token operator">%</span> data<span class="token punctuation">)</span>
+ 
+<span class="token comment"># 关闭数据库连接</span>
+db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="8-3-增删改查操作"><a href="#8-3-增删改查操作" class="headerlink" title="8.3 增删改查操作"></a>8.3 增删改查操作</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymysql
+ 
+<span class="token comment"># 打开数据库连接</span>
+db <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span><span class="token string">"testuser"</span><span class="token punctuation">,</span><span class="token string">"test123"</span><span class="token punctuation">,</span><span class="token string">"TESTDB"</span> <span class="token punctuation">)</span>
+ 
+<span class="token comment"># 使用cursor()方法获取操作游标 </span>
+cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ 
+<span class="token comment">### 具体执行语句放在此处 ###</span>
+ 
+<span class="token comment"># 关闭数据库连接</span>
+db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>插入</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL 插入语句</span></span><br><span class="line">sql = <span class="string">&quot;&quot;&quot;INSERT INTO EMPLOYEE(FIRST_NAME,</span></span><br><span class="line"><span class="string">         LAST_NAME, AGE, SEX, INCOME)</span></span><br><span class="line"><span class="string">         VALUES (&#x27;Mac&#x27;, &#x27;Mohan&#x27;, 20, &#x27;M&#x27;, 2000)&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">   <span class="comment"># 执行sql语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 提交到数据库执行</span></span><br><span class="line">   db.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">   <span class="comment"># 如果发生错误则回滚</span></span><br><span class="line">   db.rollback()</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># SQL 插入语句</span>
+sql <span class="token operator">=</span> <span class="token triple-quoted-string string">"""INSERT INTO EMPLOYEE(FIRST_NAME,
+         LAST_NAME, AGE, SEX, INCOME)
+         VALUES ('Mac', 'Mohan', 20, 'M', 2000)"""</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+   <span class="token comment"># 执行sql语句</span>
+   cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+   <span class="token comment"># 提交到数据库执行</span>
+   db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+   <span class="token comment"># 如果发生错误则回滚</span>
+   db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>删除</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL 删除语句</span></span><br><span class="line">sql = <span class="string">&quot;DELETE FROM EMPLOYEE WHERE AGE &gt; %s&quot;</span> % (<span class="number">20</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">   <span class="comment"># 执行SQL语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 提交修改</span></span><br><span class="line">   db.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">   <span class="comment"># 发生错误时回滚</span></span><br><span class="line">   db.rollback()</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># SQL 删除语句</span>
+sql <span class="token operator">=</span> <span class="token string">"DELETE FROM EMPLOYEE WHERE AGE > %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+   <span class="token comment"># 执行SQL语句</span>
+   cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+   <span class="token comment"># 提交修改</span>
+   db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+   <span class="token comment"># 发生错误时回滚</span>
+   db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>修改</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL 更新语句</span></span><br><span class="line">sql = <span class="string">&quot;UPDATE EMPLOYEE SET AGE = AGE + 1 WHERE SEX = &#x27;%c&#x27;&quot;</span> % (<span class="string">&#x27;M&#x27;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">   <span class="comment"># 执行SQL语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 提交到数据库执行</span></span><br><span class="line">   db.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">   <span class="comment"># 发生错误时回滚</span></span><br><span class="line">   db.rollback()</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># SQL 更新语句</span>
+sql <span class="token operator">=</span> <span class="token string">"UPDATE EMPLOYEE SET AGE = AGE + 1 WHERE SEX = '%c'"</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token string">'M'</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+   <span class="token comment"># 执行SQL语句</span>
+   cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+   <span class="token comment"># 提交到数据库执行</span>
+   db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+   <span class="token comment"># 发生错误时回滚</span>
+   db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>查询<ul>
@@ -562,9 +671,27 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SQL 查询语句</span></span><br><span class="line">sql = <span class="string">&quot;SELECT * FROM EMPLOYEE \</span></span><br><span class="line"><span class="string">       WHERE INCOME &gt; %s&quot;</span> % (<span class="number">1000</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">   <span class="comment"># 执行SQL语句</span></span><br><span class="line">   cursor.execute(sql)</span><br><span class="line">   <span class="comment"># 获取所有记录列表</span></span><br><span class="line">   results = cursor.fetchall()</span><br><span class="line">   <span class="keyword">for</span> row <span class="keyword">in</span> results:</span><br><span class="line">      fname = row[<span class="number">0</span>]</span><br><span class="line">      lname = row[<span class="number">1</span>]</span><br><span class="line">      age = row[<span class="number">2</span>]</span><br><span class="line">      sex = row[<span class="number">3</span>]</span><br><span class="line">      income = row[<span class="number">4</span>]</span><br><span class="line">       <span class="comment"># 打印结果</span></span><br><span class="line">      <span class="built_in">print</span> (<span class="string">&quot;fname=%s,lname=%s,age=%s,sex=%s,income=%s&quot;</span> % \</span><br><span class="line">             (fname, lname, age, sex, income ))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;Error: unable to fetch data&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># SQL 查询语句</span>
+sql <span class="token operator">=</span> "SELECT <span class="token operator">*</span> FROM EMPLOYEE \
+       WHERE INCOME <span class="token operator">></span> <span class="token operator">%</span>s" <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+   <span class="token comment"># 执行SQL语句</span>
+   cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+   <span class="token comment"># 获取所有记录列表</span>
+   results <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token keyword">for</span> row <span class="token keyword">in</span> results<span class="token punctuation">:</span>
+      fname <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+      lname <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+      age <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+      sex <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+      income <span class="token operator">=</span> row<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+       <span class="token comment"># 打印结果</span>
+      <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"fname=%s,lname=%s,age=%s,sex=%s,income=%s"</span> <span class="token operator">%</span> \
+             <span class="token punctuation">(</span>fname<span class="token punctuation">,</span> lname<span class="token punctuation">,</span> age<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> income <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"Error: unable to fetch data"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="9-字符串"><a href="#9-字符串" class="headerlink" title="9 字符串"></a>9 字符串</h1><h2 id="9-1-其他类型转为字符串"><a href="#9-1-其他类型转为字符串" class="headerlink" title="9.1 其他类型转为字符串"></a>9.1 其他类型转为字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>()</span><br></pre></td></tr></table></figure>
+<h1 id="9-字符串"><a href="#9-字符串" class="headerlink" title="9 字符串"></a>9 字符串</h1><h2 id="9-1-其他类型转为字符串"><a href="#9-1-其他类型转为字符串" class="headerlink" title="9.1 其他类型转为字符串"></a>9.1 其他类型转为字符串</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -585,10 +712,10 @@
 </ul>
 <h1 id="12-tqdm"><a href="#12-tqdm" class="headerlink" title="12 tqdm"></a>12 tqdm</h1><p>Tqdm 是一个快速，可扩展的Python进度条，可以在 Python 长循环中添加一个进度提示信息，用户只需要封装任意的迭代器 tqdm(iterator)。</p>
 <h1 id="13-字典dict"><a href="#13-字典dict" class="headerlink" title="13 字典dict"></a>13 字典dict</h1><h2 id="13-1-update"><a href="#13-1-update" class="headerlink" title="13.1 update()"></a>13.1 update()</h2><p>把字典dict2的键&#x2F;值对更新到dict里。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>.update(dict2)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">dict</span><span class="token punctuation">.</span>update<span class="token punctuation">(</span>dict2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="13-2-get"><a href="#13-2-get" class="headerlink" title="13.2 get()"></a>13.2 get()</h2><p>返回指定键的值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>.get(key, default=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">dict</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span>key<span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>参数：</strong></p>
 <ul>
@@ -597,20 +724,51 @@
 </ul>
 <h1 id="14-字符串str"><a href="#14-字符串str" class="headerlink" title="14 字符串str"></a>14 字符串str</h1><h2 id="14-1-strip"><a href="#14-1-strip" class="headerlink" title="14.1 strip()"></a>14.1 strip()</h2><p>Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
 <h2 id="14-2-eval"><a href="#14-2-eval" class="headerlink" title="14.2 eval()"></a>14.2 eval()</h2><p>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;x = <span class="number">7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>( <span class="string">&#x27;3 * x&#x27;</span> )</span><br><span class="line"><span class="number">21</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&#x27;pow(2,2)&#x27;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&#x27;2 + 2&#x27;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=<span class="number">81</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&quot;n + 4&quot;</span>)</span><br><span class="line"><span class="number">85</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>x <span class="token operator">=</span> <span class="token number">7</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span> <span class="token string">'3 * x'</span> <span class="token punctuation">)</span>
+<span class="token number">21</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token string">'pow(2,2)'</span><span class="token punctuation">)</span>
+<span class="token number">4</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token string">'2 + 2'</span><span class="token punctuation">)</span>
+<span class="token number">4</span>
+<span class="token operator">>></span><span class="token operator">></span> n<span class="token operator">=</span><span class="token number">81</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token string">"n + 4"</span><span class="token punctuation">)</span>
+<span class="token number">85</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h1 id="15-列表List"><a href="#15-列表List" class="headerlink" title="15 列表List"></a>15 列表List</h1><h2 id="15-1-extend"><a href="#15-1-extend" class="headerlink" title="15.1 extend()"></a>15.1 extend()</h2><p>extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。</p>
 <h2 id="15-2-pop"><a href="#15-2-pop" class="headerlink" title="15.2 pop()"></a>15.2 pop()</h2><p>去掉列表中的一个元素（默认最后一个元素）</p>
-<h2 id="15-3-将list与元组放置在一个list中"><a href="#15-3-将list与元组放置在一个list中" class="headerlink" title="15.3 将list与元组放置在一个list中"></a>15.3 将list与元组放置在一个list中</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">each_data=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">data0 = [<span class="built_in">tuple</span>([<span class="number">0</span>,<span class="number">1</span>])]</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> each_data:</span><br><span class="line">    data0.append(j)  <span class="comment"># 正确用法 [(0, 1), 4, 5]</span></span><br><span class="line">    </span><br><span class="line">data1 = [<span class="built_in">tuple</span>([<span class="number">0</span>,<span class="number">1</span>])]+each_data  <span class="comment"># 正确用法 [(0, 1), 4, 5] ，但是要求each_data要为list，不能为ndarray等</span></span><br><span class="line"></span><br><span class="line">data2 =[<span class="built_in">tuple</span>([<span class="number">0</span>,<span class="number">1</span>]),each_data]  <span class="comment"># 错误用法，[(0, 1), [2, 3, 4]]</span></span><br><span class="line"></span><br><span class="line">data3 = [[<span class="number">0</span>,<span class="number">1</span>],each_data] <span class="comment"># 错误用法 [[0, 1], [2, 3, 4]]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="15-3-将list与元组放置在一个list中"><a href="#15-3-将list与元组放置在一个list中" class="headerlink" title="15.3 将list与元组放置在一个list中"></a>15.3 将list与元组放置在一个list中</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">each_data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+data0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> j <span class="token keyword">in</span> each_data<span class="token punctuation">:</span>
+    data0<span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span>  <span class="token comment"># 正确用法 [(0, 1), 4, 5]</span>
+    
+data1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">+</span>each_data  <span class="token comment"># 正确用法 [(0, 1), 4, 5] ，但是要求each_data要为list，不能为ndarray等</span>
 
-<h2 id="15-4-生成tuple必须从其他序列转为tuple"><a href="#15-4-生成tuple必须从其他序列转为tuple" class="headerlink" title="15.4 生成tuple必须从其他序列转为tuple"></a>15.4 生成tuple必须从其他序列转为tuple</h2><h2 id="15-5-list包含数字，不能直接转化成字符串"><a href="#15-5-list包含数字，不能直接转化成字符串" class="headerlink" title="15.5 list包含数字，不能直接转化成字符串"></a>15.5 list包含数字，不能直接转化成字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="string">&#x27;%s&#x27;</span> %<span class="built_in">id</span> <span class="keyword">for</span> <span class="built_in">id</span> <span class="keyword">in</span> list1))</span><br></pre></td></tr></table></figure>
+data2 <span class="token operator">=</span><span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>each_data<span class="token punctuation">]</span>  <span class="token comment"># 错误用法，[(0, 1), [2, 3, 4]]</span>
+
+data3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>each_data<span class="token punctuation">]</span> <span class="token comment"># 错误用法 [[0, 1], [2, 3, 4]]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="15-4-生成tuple必须从其他序列转为tuple"><a href="#15-4-生成tuple必须从其他序列转为tuple" class="headerlink" title="15.4 生成tuple必须从其他序列转为tuple"></a>15.4 生成tuple必须从其他序列转为tuple</h2><h2 id="15-5-list包含数字，不能直接转化成字符串"><a href="#15-5-list包含数字，不能直接转化成字符串" class="headerlink" title="15.5 list包含数字，不能直接转化成字符串"></a>15.5 list包含数字，不能直接转化成字符串</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'%s'</span> <span class="token operator">%</span><span class="token builtin">id</span> <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span> list1<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="15-6-负数索引，从后往前索引"><a href="#15-6-负数索引，从后往前索引" class="headerlink" title="15.6 负数索引，从后往前索引"></a>15.6 负数索引，从后往前索引</h2><h2 id="15-7-zip-同时遍历两个list"><a href="#15-7-zip-同时遍历两个list" class="headerlink" title="15.7 zip() 同时遍历两个list"></a>15.7 zip() 同时遍历两个list</h2><h1 id="16-数字Number"><a href="#16-数字Number" class="headerlink" title="16 数字Number"></a>16 数字Number</h1><h2 id="16-1-round"><a href="#16-1-round" class="headerlink" title="16.1 round()"></a>16.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
-<h1 id="17-基本用法"><a href="#17-基本用法" class="headerlink" title="17 基本用法"></a>17 基本用法</h1><h2 id="17-1-查看变量类型，type"><a href="#17-1-查看变量类型，type" class="headerlink" title="17.1 查看变量类型，type()"></a>17.1 查看变量类型，type()</h2><h2 id="17-2-手动释放内存，del-gc-collect"><a href="#17-2-手动释放内存，del-gc-collect" class="headerlink" title="17.2 手动释放内存，del + gc.collect()"></a>17.2 手动释放内存，del + gc.collect()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gc</span><br><span class="line"><span class="keyword">del</span> a</span><br><span class="line">gc.collect()</span><br></pre></td></tr></table></figure>
+<h1 id="17-基本用法"><a href="#17-基本用法" class="headerlink" title="17 基本用法"></a>17 基本用法</h1><h2 id="17-1-查看变量类型，type"><a href="#17-1-查看变量类型，type" class="headerlink" title="17.1 查看变量类型，type()"></a>17.1 查看变量类型，type()</h2><h2 id="17-2-手动释放内存，del-gc-collect"><a href="#17-2-手动释放内存，del-gc-collect" class="headerlink" title="17.2 手动释放内存，del + gc.collect()"></a>17.2 手动释放内存，del + gc.collect()</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gc
+<span class="token keyword">del</span> a
+gc<span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="17-3-格式化时间，time-strftime-‘-m-d’-time-localtime"><a href="#17-3-格式化时间，time-strftime-‘-m-d’-time-localtime" class="headerlink" title="17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())"></a>17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 格式化成2016-03-20 11:45:39形式</span></span><br><span class="line"><span class="built_in">print</span> time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, time.localtime()) </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 格式化成Sat Mar 28 22:24:24 2016形式</span></span><br><span class="line"><span class="built_in">print</span> time.strftime(<span class="string">&quot;%a %b %d %H:%M:%S %Y&quot;</span>, time.localtime()) </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 将格式字符串转换为时间戳</span></span><br><span class="line">a = <span class="string">&quot;Sat Mar 28 22:24:24 2016&quot;</span></span><br><span class="line"><span class="built_in">print</span> time.mktime(time.strptime(a,<span class="string">&quot;%a %b %d %H:%M:%S %Y&quot;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="17-3-格式化时间，time-strftime-‘-m-d’-time-localtime"><a href="#17-3-格式化时间，time-strftime-‘-m-d’-time-localtime" class="headerlink" title="17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())"></a>17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+ 
+<span class="token comment"># 格式化成2016-03-20 11:45:39形式</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+ 
+<span class="token comment"># 格式化成Sat Mar 28 22:24:24 2016形式</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+  
+<span class="token comment"># 将格式字符串转换为时间戳</span>
+a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 22:24:24 2016"</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1010,8 +1168,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1023,7 +1181,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1088,6 +1246,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1102,7 +1261,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1139,7 +1298,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

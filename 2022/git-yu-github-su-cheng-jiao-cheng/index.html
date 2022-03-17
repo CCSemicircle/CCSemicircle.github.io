@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Git 与 GitHub 速成教程, 软件工程,前端,NLP">
@@ -484,6 +484,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -496,7 +499,7 @@
 <h1 id="4-建立SSH连接后，利用Git-提交文件至远程仓库"><a href="#4-建立SSH连接后，利用Git-提交文件至远程仓库" class="headerlink" title="4 建立SSH连接后，利用Git 提交文件至远程仓库"></a>4 建立SSH连接后，利用Git 提交文件至远程仓库</h1><p><font color="green">&#x2F;&#x2F; 删除文件需要单独使用 git rm xxx(文件名)，一一删除</font></p>
 <ul>
 <li>**git config –global user.name “username” **  &#x2F;&#x2F;配置用户名 </li>
-<li>**git config –global user.email “<a href="mailto:&#120;&#120;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#120;&#120;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>“ ** &#x2F;&#x2F;配置邮箱</li>
+<li>**git config –global user.email “<a href="mailto:&#x78;&#120;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x78;&#120;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>“ ** &#x2F;&#x2F;配置邮箱</li>
 <li><strong>git init</strong>  &#x2F;&#x2F;初始化生成一个本地仓库</li>
 <li>**git add . ** &#x2F;&#x2F;添加到暂存区</li>
 <li><strong>git commit –m “message”</strong>  &#x2F;&#x2F;提交到本地仓库 </li>
@@ -961,8 +964,8 @@ autono
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -974,7 +977,7 @@ autono
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1039,6 +1042,7 @@ autono
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1053,7 +1057,7 @@ autono
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1090,7 +1094,7 @@ autono
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

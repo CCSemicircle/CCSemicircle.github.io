@@ -1,13 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python_Pandas, 软件工程,前端,NLP">
-    <meta name="description" content="1 DataFrame1.1 修改某一列数据1df[&amp;#x27;col&amp;#x27;] = df[&amp;#x27;col&amp;#x27;].map(lambda x: x**2)
-
-1.2 比较两列是否相等123456df = pd.concat([">
+    <meta name="keywords" content="python,pandas,教程,Debug">
+    <meta name="description" content="Python使用之Pandas教程，包含Pandas在数据分析及数据处理项目中的常见用法，也包含一些DeBug的案例。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -289,7 +287,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.fdchen.host/pandas.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -408,12 +406,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Debug/">
+                                <span class="chip bg-color">Debug</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/Pandas/">
+                                <span class="chip bg-color">Pandas</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -422,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-03-16
+                    2022-01-02
                 </div>
                 
 
@@ -431,7 +450,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    343
+                    317
                 </div>
                 
 
@@ -453,41 +472,53 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-DataFrame"><a href="#1-DataFrame" class="headerlink" title="1 DataFrame"></a>1 DataFrame</h1><h2 id="1-1-修改某一列数据"><a href="#1-1-修改某一列数据" class="headerlink" title="1.1 修改某一列数据"></a>1.1 修改某一列数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;col&#x27;</span>] = df[<span class="string">&#x27;col&#x27;</span>].<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+                <h1 id="1-DataFrame"><a href="#1-DataFrame" class="headerlink" title="1 DataFrame"></a>1 DataFrame</h1><h2 id="1-1-修改某一列数据"><a href="#1-1-修改某一列数据" class="headerlink" title="1.1 修改某一列数据"></a>1.1 修改某一列数据</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'col'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'col'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="1-2-比较两列是否相等"><a href="#1-2-比较两列是否相等" class="headerlink" title="1.2 比较两列是否相等"></a>1.2 比较两列是否相等</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df = pd.concat([df1, df2], axis=<span class="number">1</span>)</span><br><span class="line">df[<span class="string">&#x27;result&#x27;</span>] = np.where(df[<span class="string">&#x27;col1&#x27;</span>] == df[<span class="string">&#x27;col2&#x27;</span>], <span class="string">&#x27;no change&#x27;</span>, <span class="string">&#x27;changed&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> (df)</span><br><span class="line">   col1  col2     result</span><br><span class="line"><span class="number">0</span>  audi  audi  no change</span><br><span class="line"><span class="number">1</span>  cars  bike    changed</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-比较两列是否相等"><a href="#1-2-比较两列是否相等" class="headerlink" title="1.2 比较两列是否相等"></a>1.2 比较两列是否相等</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df1<span class="token punctuation">,</span> df2<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'result'</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'col1'</span><span class="token punctuation">]</span> <span class="token operator">==</span> df<span class="token punctuation">[</span><span class="token string">'col2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'no change'</span><span class="token punctuation">,</span> <span class="token string">'changed'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+   col1  col2     result
+<span class="token number">0</span>  audi  audi  no change
+<span class="token number">1</span>  cars  bike    changed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="1-3-按某列条件检索行数据"><a href="#1-3-按某列条件检索行数据" class="headerlink" title="1.3 按某列条件检索行数据"></a>1.3 按某列条件检索行数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lc.loc[lc[&quot;grade&quot;] == &quot;B&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-按某列条件检索行数据"><a href="#1-3-按某列条件检索行数据" class="headerlink" title="1.3 按某列条件检索行数据"></a>1.3 按某列条件检索行数据</h2><pre class="line-numbers language-pyth" data-language="pyth"><code class="language-pyth">lc.loc[lc[&quot;grade&quot;] &#x3D;&#x3D; &quot;B&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="1-4-检查某列是否存在"><a href="#1-4-检查某列是否存在" class="headerlink" title="1.4 检查某列是否存在"></a>1.4 检查某列是否存在</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">&#x27;A&#x27;</span> <span class="keyword">in</span> df.columns</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-检查某列是否存在"><a href="#1-4-检查某列是否存在" class="headerlink" title="1.4 检查某列是否存在"></a>1.4 检查某列是否存在</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token string">'A'</span> <span class="token keyword">in</span> df<span class="token punctuation">.</span>columns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="1-5-索引与列互相转化"><a href="#1-5-索引与列互相转化" class="headerlink" title="1.5 索引与列互相转化"></a>1.5 索引与列互相转化</h2><ul>
 <li>列 –&gt; 索引</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.set_index(<span class="string">&#x27;date&#x27;</span>, inplace=<span class="literal">True</span>) <span class="comment"># column 改为 index</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>set_index<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># column 改为 index</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>索引 –&gt; 列</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;index&#x27;</span>] = df.index</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">'index'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>index<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="1-6-修改列顺序"><a href="#1-6-修改列顺序" class="headerlink" title="1.6 修改列顺序"></a>1.6 修改列顺序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 0代表插入位置，&#x27;id&#x27;代表列名，df_id代表列数据</span></span><br><span class="line">df.insert(<span class="number">0</span>,<span class="string">&#x27;id&#x27;</span>,df_id) </span><br></pre></td></tr></table></figure>
+<h2 id="1-6-修改列顺序"><a href="#1-6-修改列顺序" class="headerlink" title="1.6 修改列顺序"></a>1.6 修改列顺序</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"> <span class="token comment"># 0代表插入位置，'id'代表列名，df_id代表列数据</span>
+df<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">'id'</span><span class="token punctuation">,</span>df_id<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="1-7-采样随机样本"><a href="#1-7-采样随机样本" class="headerlink" title="1.7 采样随机样本"></a>1.7 采样随机样本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DataFrame.sample( n = <span class="literal">None</span> , frac = <span class="literal">None</span> , replace = <span class="literal">False</span> , weights = <span class="literal">None</span> , random_state = <span class="literal">None</span> , axis = <span class="literal">None</span> , ignore_index = <span class="literal">False</span> )</span><br><span class="line"><span class="comment"># 从目标轴采样随机样本</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-7-采样随机样本"><a href="#1-7-采样随机样本" class="headerlink" title="1.7 采样随机样本"></a>1.7 采样随机样本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">DataFrame<span class="token punctuation">.</span>sample<span class="token punctuation">(</span> n <span class="token operator">=</span> <span class="token boolean">None</span> <span class="token punctuation">,</span> frac <span class="token operator">=</span> <span class="token boolean">None</span> <span class="token punctuation">,</span> replace <span class="token operator">=</span> <span class="token boolean">False</span> <span class="token punctuation">,</span> weights <span class="token operator">=</span> <span class="token boolean">None</span> <span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token boolean">None</span> <span class="token punctuation">,</span> axis <span class="token operator">=</span> <span class="token boolean">None</span> <span class="token punctuation">,</span> ignore_index <span class="token operator">=</span> <span class="token boolean">False</span> <span class="token punctuation">)</span>
+<span class="token comment"># 从目标轴采样随机样本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="1-8-loc按照名称选取，iloc按照索引选取"><a href="#1-8-loc按照名称选取，iloc按照索引选取" class="headerlink" title="1.8 loc按照名称选取，iloc按照索引选取"></a>1.8 loc按照名称选取，iloc按照索引选取</h2><h1 id="2-操作csv文件"><a href="#2-操作csv文件" class="headerlink" title="2 操作csv文件"></a>2 操作csv文件</h1><h2 id="2-1-读取csv"><a href="#2-1-读取csv" class="headerlink" title="2.1 读取csv"></a>2.1 读取csv</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&#x27;data_df.csv&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-loc按照名称选取，iloc按照索引选取"><a href="#1-8-loc按照名称选取，iloc按照索引选取" class="headerlink" title="1.8 loc按照名称选取，iloc按照索引选取"></a>1.8 loc按照名称选取，iloc按照索引选取</h2><h1 id="2-操作csv文件"><a href="#2-操作csv文件" class="headerlink" title="2 操作csv文件"></a>2 操作csv文件</h1><h2 id="2-1-读取csv"><a href="#2-1-读取csv" class="headerlink" title="2.1 读取csv"></a>2.1 读取csv</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'data_df.csv'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>index_col：将第一列变为index</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_csv(<span class="string">&#x27;1.csv&#x27;</span>, index_col=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'1.csv'</span><span class="token punctuation">,</span> index_col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="2-2-写入csv"><a href="#2-2-写入csv" class="headerlink" title="2.2 写入csv"></a>2.2 写入csv</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#index表示设定是否需要行索引，设定为FALSE表明不需要，就不会生成新的行索引</span></span><br><span class="line"><span class="comment">#header表明是否需要列索引，设定为True（默认设置）表明需要，那么之前df的列标签就会保存。</span></span><br><span class="line">data_df.to_csv(<span class="string">&#x27;data_df.csv&#x27;</span>,index=<span class="literal">False</span>,header=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-写入csv"><a href="#2-2-写入csv" class="headerlink" title="2.2 写入csv"></a>2.2 写入csv</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#index表示设定是否需要行索引，设定为FALSE表明不需要，就不会生成新的行索引</span>
+<span class="token comment">#header表明是否需要列索引，设定为True（默认设置）表明需要，那么之前df的列标签就会保存。</span>
+data_df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'data_df.csv'</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>header<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -552,7 +583,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Debug/">
+                                    <span class="chip bg-color">Debug</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/Pandas/">
+                                    <span class="chip bg-color">Pandas</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -728,13 +771,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/python-tensorflow/">
+                <a href="/2022/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Pyhton_TensorFlow">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Pyhton_TensorFlow</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -765,32 +808,51 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/python-numpy/">
+                <a href="/2022/python-pytorch/">
                     <div class="card-image">
                         
+                        <img src="http://img.fdchen.host/pytorch.png" class="responsive-img" alt="Python_PyTorch">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python_Numpy">
-                        
-                        <span class="card-title">Python_Numpy</span>
+                        <span class="card-title">Python_PyTorch</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Python使用之PyTorch教程，包含PyTorch在深度学习项目中的常见用法，也包含一些DeBug的案例。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fdChen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Debug/">
+                        <span class="chip bg-color">Debug</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Pytorch/">
+                        <span class="chip bg-color">Pytorch</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -883,8 +945,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -896,7 +958,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -961,6 +1023,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -975,7 +1038,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1012,7 +1075,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

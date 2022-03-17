@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Pyhton_TensorFlow, 软件工程,前端,NLP">
     <meta name="description" content="0 Linux安装Tensorflow0.1 基于Anaconda环境
 创建新的虚拟环境
 
-1conda creat -n env_name tensorflow==1.14
+conda creat -n env_name tensorflow&amp;#x3D;&amp;#x3D;1.14
 
-PS：1.14是版本号，1.x需要额外安装tensorflow">
+PS：1.14是版本号，1.x需要额外安装t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -434,7 +434,7 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    120
+                    126
                 </div>
                 
 
@@ -456,6 +456,9 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -464,23 +467,31 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
                 <h1 id="0-Linux安装Tensorflow"><a href="#0-Linux安装Tensorflow" class="headerlink" title="0 Linux安装Tensorflow"></a>0 Linux安装Tensorflow</h1><h2 id="0-1-基于Anaconda环境"><a href="#0-1-基于Anaconda环境" class="headerlink" title="0.1 基于Anaconda环境"></a>0.1 基于Anaconda环境</h2><ul>
 <li>创建新的虚拟环境</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda creat -n env_name tensorflow==1.14</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda creat -n env_name tensorflow&#x3D;&#x3D;1.14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>PS：1.14是版本号，1.x需要额外安装tensorflow-gpu</p>
 <ul>
 <li>验证tensorflow是否安装成功</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">窗口输入如下命令</span></span><br><span class="line">conda activate env_name</span><br><span class="line">python  # 进入python环境</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">python环境下输入</span></span><br><span class="line">import tensorflow as tf</span><br><span class="line">print(tf.__version__)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 窗口输入如下命令
+conda activate env_name
+python  # 进入python环境
+# python环境下输入
+import tensorflow as tf
+print(tf.__version__)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>1.x版本tensorflow安装tensorflow-gpu</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow-gpu</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install tensorflow-gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>验证tensorflow-gpu是否安装成功</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python  # 进入python环境</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">python环境下输入</span></span><br><span class="line">import tensorflow as tf</span><br><span class="line">print(&#x27;GPU&#x27;,tf.test.is_gpu_available())</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">python  # 进入python环境
+# python环境下输入
+import tensorflow as tf
+print(&#39;GPU&#39;,tf.test.is_gpu_available())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -770,13 +781,13 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/python-pandas/">
+                <a href="/2022/python-numpy/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python_Pandas">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python_Numpy">
                         
-                        <span class="card-title">Python_Pandas</span>
+                        <span class="card-title">Python_Numpy</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -888,8 +899,8 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -901,7 +912,7 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -966,6 +977,7 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -980,7 +992,7 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1017,7 +1029,7 @@ PS：1.14是版本号，1.x需要额外安装tensorflow">
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 

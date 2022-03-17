@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
 
-
+<link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python Debug, 软件工程,前端,NLP">
     <meta name="description" content="1. JSON读取大量数据错误：JSONDecodeError: Extra data: line 2 column 1或者ValueError: Extra data
 可以逐行读取，然后再处理成列表
 
-12345678910import ">
+import json
+
+# 由于文">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -449,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    215
+                    205
                 </div>
                 
 
@@ -471,6 +473,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -479,22 +484,32 @@
                 <h3 id="1-JSON读取大量数据错误：JSONDecodeError-Extra-data-line-2-column-1或者ValueError-Extra-data"><a href="#1-JSON读取大量数据错误：JSONDecodeError-Extra-data-line-2-column-1或者ValueError-Extra-data" class="headerlink" title="1. JSON读取大量数据错误：JSONDecodeError: Extra data: line 2 column 1或者ValueError: Extra data"></a>1. JSON读取大量数据错误：JSONDecodeError: Extra data: line 2 column 1或者ValueError: Extra data</h3><ul>
 <li>可以逐行读取，然后再处理成列表</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 由于文件中有多行，直接读取会出现错误，因此一行一行读取</span></span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&quot;papers.json&quot;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">papers = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> file.readlines():</span><br><span class="line">    dic = json.loads(line)</span><br><span class="line">    papers.append(dic)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(papers))</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> json
+
+<span class="token comment"># 由于文件中有多行，直接读取会出现错误，因此一行一行读取</span>
+<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"papers.json"</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+papers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token builtin">file</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dic <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+    papers<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dic<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>papers<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="2-‘gbk’-codec-can’t-decode-byte-0xbf-in-position-2-illegal-multibyte-sequence"><a href="#2-‘gbk’-codec-can’t-decode-byte-0xbf-in-position-2-illegal-multibyte-sequence" class="headerlink" title="2. ‘gbk’ codec can’t decode byte 0xbf in position 2: illegal multibyte sequence"></a>2. ‘gbk’ codec can’t decode byte 0xbf in position 2: illegal multibyte sequence</h3><ul>
 <li>在打开文本时候，可以指明打开方式：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(path, encoding=<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'gbk'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="3-连接mysql数据库报错-init-takes-1-positional-argument-but-5-were-given"><a href="#3-连接mysql数据库报错-init-takes-1-positional-argument-but-5-were-given" class="headerlink" title="3. 连接mysql数据库报错__init__() takes 1 positional argument but 5 were given"></a>3. 连接mysql数据库报错__init__() takes 1 positional argument but 5 were given</h3><ul>
 <li>把连接语句修改成如下</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db=pymysql.connect(host=dbhost,user=dbuser,password=dbpass,database=dbname)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">db<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>host<span class="token operator">=</span>dbhost<span class="token punctuation">,</span>user<span class="token operator">=</span>dbuser<span class="token punctuation">,</span>password<span class="token operator">=</span>dbpass<span class="token punctuation">,</span>database<span class="token operator">=</span>dbname<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="4-PyTorch错误：The-“freeze-support-”-line-can-be-omitted-if-the-program-is-not-going-to-be-frozen-to-produce-an-executable"><a href="#4-PyTorch错误：The-“freeze-support-”-line-can-be-omitted-if-the-program-is-not-going-to-be-frozen-to-produce-an-executable" class="headerlink" title="4. PyTorch错误：The “freeze_support()” line can be omitted if the program is not going to be frozen to produce an executable."></a>4. PyTorch错误：The “freeze_support()” line can be omitted if the program is not going to be frozen to produce an executable.</h3><ul>
 <li>将你要运行的代码块放到main函数中运行即可</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># your code</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># your code</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -921,8 +936,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -934,7 +949,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -999,6 +1014,7 @@
 
     <footer class="page-footer bg-color">
     
+    <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
          style="margin-bottom: 0px !important;">
@@ -1013,7 +1029,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">132.7k</span>
+                        class="white-color">131.5k</span>
             
             
             
@@ -1050,7 +1066,7 @@
 
 
 
-    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
