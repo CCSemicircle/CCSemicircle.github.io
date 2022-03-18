@@ -295,9 +295,9 @@
     <category term="数据库" scheme="http://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="常用用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
-    
     <category term="MySQL" scheme="http://blog.fdchen.host/tags/MySQL/"/>
+    
+    <category term="常用用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
