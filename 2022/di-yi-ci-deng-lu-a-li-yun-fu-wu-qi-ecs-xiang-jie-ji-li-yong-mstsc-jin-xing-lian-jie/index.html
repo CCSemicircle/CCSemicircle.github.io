@@ -31,19 +31,20 @@
 
 
     <title>第一次登录阿里云Windows服务器ECS详解及利用MSTSC进行连接 | fdChen的掉发收集箱</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//css/my.css">
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="fdChen的掉发收集箱" type="application/atom+xml">
+</head>
 
 
 
@@ -55,8 +56,18 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/logo.png" class="logo-img" alt="LOGO">
                     
+                    <div class="brand-logo">
+                        <a href="/" class="waves-effect waves-light">
+                            <div>
+                                
+                                <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                                
+                                <span class="logo-span">fdChen的掉发收集箱</span>
+                            </div>
+                        </a>
+                    </div>
                     <span class="logo-span">fdChen的掉发收集箱</span>
                 </a>
             </div>
@@ -143,7 +154,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">fdChen的掉发收集箱</div>
         <div class="logo-desc">
@@ -300,7 +311,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -318,7 +329,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -486,7 +497,7 @@
 
         
         <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/prism/prism.css">
         
 
         
@@ -494,28 +505,28 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="1-配置规则"><a href="#1-配置规则" class="headerlink" title="1 配置规则"></a>1 配置规则</h1><ol>
-<li>在实例详情里面进入“<strong>本实例安全组</strong>”界面，<br><img src="https://img-blog.csdnimg.cn/2020030717415913.png" alt="在这里插入图片描述"></li>
-<li>进入对应实例界面，选择“<strong>快速创建规则</strong>”<br><img src="https://img-blog.csdnimg.cn/20200307174518170.png" alt="在这里插入图片描述"></li>
-<li>选择常用的端口，如：SSH, HTTP, HTTPS, MYSQL等，<br>授权对象自行选择：<br>将端口授权给单个IP地址，填写：123.123.123.123，直接填IP地址即可；<br>将端口授权给IP地址段，填写：10.10.10.1&#x2F;24，直接填IP地址段；<br>将端口授权给全部IP，填写：0.0.0.0&#x2F;0，将端口授权给所有人。<br><img src="https://img-blog.csdnimg.cn/20200307175132754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><span id="more"></span>
-<h1 id="2-登录连接"><a href="#2-登录连接" class="headerlink" title="2 登录连接"></a>2 登录连接</h1><h2 id="2-0-重置实例密码"><a href="#2-0-重置实例密码" class="headerlink" title="2.0 重置实例密码"></a>2.0 重置实例密码</h2><font color="red"><strong>第一次登录需要重置实例密码</strong></font>，如图，选择“<strong>重置实例密码</strong>”。<br><img src="https://img-blog.csdnimg.cn/20200307171231277.png" alt="在这里插入图片描述"><br><font color="red"><strong>Tips：每次重置实例密码之后必须重启才能生效！</strong></font><h2 id="2-1-网页远程连接——不支持文件传输"><a href="#2-1-网页远程连接——不支持文件传输" class="headerlink" title="2.1 网页远程连接——不支持文件传输"></a>2.1 网页远程连接——不支持文件传输</h2>网页远程连接服务器有两个途径，<strong>workbench</strong> 与 <strong>VNC</strong>。<h3 id="2-1-1-workbench连接"><a href="#2-1-1-workbench连接" class="headerlink" title="2.1.1 workbench连接"></a>2.1.1 workbench连接</h3>workbench是直接远程连接桌面，如图，用户名在购买之后会以短信形式发送给你，一般是administrator。<br><img src="https://img-blog.csdnimg.cn/20200307171211732.png" alt="在这里插入图片描述"><h3 id="2-1-2-VNC连接"><a href="#2-1-2-VNC连接" class="headerlink" title="2.1.2 VNC连接"></a>2.1.2 VNC连接</h3>VNC 是 virtual network connection的简称，第一次连接会给一个“远程连接密码”，只会出现一次，一定要记录下来。<br><font color="red"><strong>Tips：“远程连接密码”，只会出现一次，一定要记录下来    ！</strong></font><br><img src="https://img-blog.csdnimg.cn/20200307172156893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>登录之后，在左上角输入指令。<br><img src="https://img-blog.csdnimg.cn/20200307172245784.png" alt="在这里插入图片描述"><br>选择 “CTRL + ALT + DELETE” 进入登录界面，密码是之前设置的“实例密码”，不是远程连接密码。<br><img src="https://img-blog.csdnimg.cn/20200307182019801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h3 id="2-1-3-workbench-与-VNC-的区别"><a href="#2-1-3-workbench-与-VNC-的区别" class="headerlink" title="2.1.3 workbench 与 VNC 的区别"></a>2.1.3 workbench 与 VNC 的区别</h3></li>
+<li>在实例详情里面进入“<strong>本实例安全组</strong>”界面，<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/2020030717415913.png" alt="在这里插入图片描述"></li>
+<li>进入对应实例界面，选择“<strong>快速创建规则</strong>”<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307174518170.png" alt="在这里插入图片描述"></li>
+<li>选择常用的端口，如：SSH, HTTP, HTTPS, MYSQL等，<br>授权对象自行选择：<br>将端口授权给单个IP地址，填写：123.123.123.123，直接填IP地址即可；<br>将端口授权给IP地址段，填写：10.10.10.1&#x2F;24，直接填IP地址段；<br>将端口授权给全部IP，填写：0.0.0.0&#x2F;0，将端口授权给所有人。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307175132754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><span id="more"></span>
+<h1 id="2-登录连接"><a href="#2-登录连接" class="headerlink" title="2 登录连接"></a>2 登录连接</h1><h2 id="2-0-重置实例密码"><a href="#2-0-重置实例密码" class="headerlink" title="2.0 重置实例密码"></a>2.0 重置实例密码</h2><font color="red"><strong>第一次登录需要重置实例密码</strong></font>，如图，选择“<strong>重置实例密码</strong>”。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307171231277.png" alt="在这里插入图片描述"><br><font color="red"><strong>Tips：每次重置实例密码之后必须重启才能生效！</strong></font><h2 id="2-1-网页远程连接——不支持文件传输"><a href="#2-1-网页远程连接——不支持文件传输" class="headerlink" title="2.1 网页远程连接——不支持文件传输"></a>2.1 网页远程连接——不支持文件传输</h2>网页远程连接服务器有两个途径，<strong>workbench</strong> 与 <strong>VNC</strong>。<h3 id="2-1-1-workbench连接"><a href="#2-1-1-workbench连接" class="headerlink" title="2.1.1 workbench连接"></a>2.1.1 workbench连接</h3>workbench是直接远程连接桌面，如图，用户名在购买之后会以短信形式发送给你，一般是administrator。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307171211732.png" alt="在这里插入图片描述"><h3 id="2-1-2-VNC连接"><a href="#2-1-2-VNC连接" class="headerlink" title="2.1.2 VNC连接"></a>2.1.2 VNC连接</h3>VNC 是 virtual network connection的简称，第一次连接会给一个“远程连接密码”，只会出现一次，一定要记录下来。<br><font color="red"><strong>Tips：“远程连接密码”，只会出现一次，一定要记录下来    ！</strong></font><br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307172156893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>登录之后，在左上角输入指令。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307172245784.png" alt="在这里插入图片描述"><br>选择 “CTRL + ALT + DELETE” 进入登录界面，密码是之前设置的“实例密码”，不是远程连接密码。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200307182019801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h3 id="2-1-3-workbench-与-VNC-的区别"><a href="#2-1-3-workbench-与-VNC-的区别" class="headerlink" title="2.1.3 workbench 与 VNC 的区别"></a>2.1.3 workbench 与 VNC 的区别</h3></li>
 <li>离开连接页面之后，workbench连接可以保持很久，VNC会很快关闭。</li>
 <li>······（未完待续，之后补充）<h2 id="2-2-利用MSTSC连接——Windows-系统-连接-Windows-系统"><a href="#2-2-利用MSTSC连接——Windows-系统-连接-Windows-系统" class="headerlink" title="2.2 利用MSTSC连接——Windows 系统 连接 Windows 系统"></a>2.2 利用MSTSC连接——Windows 系统 连接 Windows 系统</h2></li>
 <li>MSTSC（Microsoft terminal services client），创建与终端服务器或其他远程计算机的连接，编辑现有“远程桌面连接(.rdp)”配置文件，并将 Windows XP 连接（使用“客户端国防部设备 接管理器”创建的连接）迁移到新的 .rdp 文件中。MSTSC还有一种说法，Microsoft Telnet Screen Control ，即“微软远程桌面控制”。</li>
-<li>打开“<strong>控制面板</strong>” &gt; “<strong>用户账户</strong>”  &gt; “<strong>凭据管理器</strong>” 界面 ，如图，选择“<strong>添加Windows凭据</strong>”。<br><img src="https://img-blog.csdnimg.cn/20200309175620221.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>如图输入相应信息，点击“<strong>确认</strong>”即可。<br><img src="https://img-blog.csdnimg.cn/20200309180150645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>打开MSTSC连接界面：“<strong>win + R</strong>” 进入下图界面，输入 “<strong>mstsc</strong>”，点击“<strong>确认</strong>”即可。<br><img src="https://img-blog.csdnimg.cn/20200309201742164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>经过上面的步骤进入下图界面会自动补全服务器网址，有多个网址时在下拉栏选择，如有其它网址未保存至本地计算机“<strong>Windows凭据</strong>”，需要手动输入服务器公网网址与用户名。<br><img src="https://img-blog.csdnimg.cn/20200309202058746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>点击左下角的“<strong>显示选项</strong>”，进入如下界面<br><img src="https://img-blog.csdnimg.cn/20200309202439885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>点击“<strong>本地资源</strong>”，进入如下界面<br><img src="https://img-blog.csdnimg.cn/20200309202534694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>点击“<strong>详细信息</strong>”，勾选你要映射到服务器的磁盘<br><font color="red"><strong>Tips：经过映射的磁盘里的文件在连接服务器之后可直接复制到服务器上。</strong></font><br><img src="https://img-blog.csdnimg.cn/20200309202612760.png" alt="在这里插入图片描述"></li>
-<li>点击“<strong>连接</strong>”，出现如图警告，选择“<strong>查看证书</strong>”<br><img src="https://img-blog.csdnimg.cn/20200309202908100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>选择“<strong>安装证书</strong>”<br><img src="https://img-blog.csdnimg.cn/20200309203050779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>选择“<strong>本地计算机</strong>”，进入“<strong>下一步</strong>”<br><img src="https://img-blog.csdnimg.cn/20200309203123598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>勾选“<strong>将所有证书都放入下列存储</strong>”，<strong>浏览</strong>选择“<strong>受信任的根证书颁发机构</strong>”，进入“<strong>下一步</strong>”<br><img src="https://img-blog.csdnimg.cn/20200309203222683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>点击“<strong>完成</strong>”，出现此窗口即可<br><img src="https://img-blog.csdnimg.cn/20200309203525316.png" alt="在这里插入图片描述"></li>
-<li>点击“<strong>确认</strong>”，然后下图也点击“<strong>确认</strong>”，<br><img src="https://img-blog.csdnimg.cn/20200309203050779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>最后点击“<strong>是</strong>”，即完成连接。<br><img src="https://img-blog.csdnimg.cn/20200309202908100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>之后再进行登录，会出现“<strong>名称不匹配</strong>”错误，选择“<strong>是</strong>”忽略即可。<br><img src="https://img-blog.csdnimg.cn/20200325145807955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h2 id="2-3-利用XShell和XFTP配合连接——适用于Linux、UNIX系统"><a href="#2-3-利用XShell和XFTP配合连接——适用于Linux、UNIX系统" class="headerlink" title="2.3 利用XShell和XFTP配合连接——适用于Linux、UNIX系统"></a>2.3 利用XShell和XFTP配合连接——适用于Linux、UNIX系统</h2></li>
+<li>打开“<strong>控制面板</strong>” &gt; “<strong>用户账户</strong>”  &gt; “<strong>凭据管理器</strong>” 界面 ，如图，选择“<strong>添加Windows凭据</strong>”。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309175620221.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>如图输入相应信息，点击“<strong>确认</strong>”即可。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309180150645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>打开MSTSC连接界面：“<strong>win + R</strong>” 进入下图界面，输入 “<strong>mstsc</strong>”，点击“<strong>确认</strong>”即可。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309201742164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>经过上面的步骤进入下图界面会自动补全服务器网址，有多个网址时在下拉栏选择，如有其它网址未保存至本地计算机“<strong>Windows凭据</strong>”，需要手动输入服务器公网网址与用户名。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202058746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>点击左下角的“<strong>显示选项</strong>”，进入如下界面<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202439885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>点击“<strong>本地资源</strong>”，进入如下界面<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202534694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>点击“<strong>详细信息</strong>”，勾选你要映射到服务器的磁盘<br><font color="red"><strong>Tips：经过映射的磁盘里的文件在连接服务器之后可直接复制到服务器上。</strong></font><br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202612760.png" alt="在这里插入图片描述"></li>
+<li>点击“<strong>连接</strong>”，出现如图警告，选择“<strong>查看证书</strong>”<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202908100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>选择“<strong>安装证书</strong>”<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309203050779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>选择“<strong>本地计算机</strong>”，进入“<strong>下一步</strong>”<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309203123598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>勾选“<strong>将所有证书都放入下列存储</strong>”，<strong>浏览</strong>选择“<strong>受信任的根证书颁发机构</strong>”，进入“<strong>下一步</strong>”<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309203222683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>点击“<strong>完成</strong>”，出现此窗口即可<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309203525316.png" alt="在这里插入图片描述"></li>
+<li>点击“<strong>确认</strong>”，然后下图也点击“<strong>确认</strong>”，<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309203050779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>最后点击“<strong>是</strong>”，即完成连接。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200309202908100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>之后再进行登录，会出现“<strong>名称不匹配</strong>”错误，选择“<strong>是</strong>”忽略即可。<br><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20200325145807955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h2 id="2-3-利用XShell和XFTP配合连接——适用于Linux、UNIX系统"><a href="#2-3-利用XShell和XFTP配合连接——适用于Linux、UNIX系统" class="headerlink" title="2.3 利用XShell和XFTP配合连接——适用于Linux、UNIX系统"></a>2.3 利用XShell和XFTP配合连接——适用于Linux、UNIX系统</h2></li>
 </ol>
 <p><strong>PS</strong>：</p>
 <ol>
@@ -608,12 +619,12 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/share/js/social-share.min.js"></script>
     
 
     
@@ -731,10 +742,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -783,7 +794,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="常用单词">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/featureimages/0.jpg" class="responsive-img" alt="常用单词">
                         
                         <span class="card-title">常用单词</span>
                     </div>
@@ -839,7 +850,7 @@ autono
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="线性代数">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/featureimages/13.jpg" class="responsive-img" alt="线性代数">
                         
                         <span class="card-title">线性代数</span>
                     </div>
@@ -923,21 +934,21 @@ autono
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/codeBlock/codeShrink.js"></script>
 
 
     </div>
@@ -958,7 +969,7 @@ autono
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -966,7 +977,7 @@ autono
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('1'),
-            headingSelector: 'h1, h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -978,7 +989,7 @@ autono
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1046,7 +1057,7 @@ autono
     <script src="/js/prism/prism.js" async></script>
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1080,9 +1091,63 @@ autono
 
             <!-- 运行天数提醒. -->
             
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "3";
+                        var startDate = "16";
+                        var startHour = "17";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
             <br>
             
-                <span id="icp"><img src="/medias/icp.png"
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//medias/icp.png"
                                     style="vertical-align: text-bottom;"/>
                 <a href="/beian.miit.gov.cn" target="_blank">湘ICP备20016057号</a>
             </span>
@@ -1118,6 +1183,10 @@ autono
     </a>
 
 
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
 
 </div>
     </div>
@@ -1237,13 +1306,21 @@ $(function () {
     </a>
 </div>
 
+    
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//js/matery.js"></script>
+
+    <!-- 引入Googlefonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+    </style>
+
+
 
     
 
@@ -1253,7 +1330,7 @@ $(function () {
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/others/sakura-small.js"><\/script>');
             }
         </script>
     
@@ -1266,7 +1343,7 @@ $(function () {
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/others/TencentCaptcha.js"></script>
         <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
@@ -1299,10 +1376,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1315,23 +1392,29 @@ $(function () {
     <script type="text/javascript" color="18, 150, 219"
         pointColor="18, 150, 219" opacity='0.7'
         zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
+        src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/background/canvas-nest.js"></script>
     
 
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/background/ribbon.min.js" async="async"></script>
     
 
     
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn//libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
