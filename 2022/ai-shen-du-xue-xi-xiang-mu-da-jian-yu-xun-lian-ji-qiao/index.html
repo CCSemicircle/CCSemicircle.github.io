@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    266
+                    413
                 </div>
                 
 
@@ -514,7 +514,33 @@
 
 <h1 id="2-调参技巧"><a href="#2-调参技巧" class="headerlink" title="2 调参技巧"></a>2 调参技巧</h1><h2 id="2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应"><a href="#2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应" class="headerlink" title="2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应"></a>2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应</h2><h2 id="2-2-为节省时间，避免用循环，尽量用矩阵操作"><a href="#2-2-为节省时间，避免用循环，尽量用矩阵操作" class="headerlink" title="2.2 为节省时间，避免用循环，尽量用矩阵操作"></a>2.2 为节省时间，避免用循环，尽量用矩阵操作</h2><p>循环操作虽然只增加2-3秒，但是在大数据集下，会显得尤为突出，2-3秒在很多个batch下会被放大</p>
 <h2 id="2-3-模型的内容尽量写在forward里，避免循环调用函数"><a href="#2-3-模型的内容尽量写在forward里，避免循环调用函数" class="headerlink" title="2.3 模型的内容尽量写在forward里，避免循环调用函数"></a>2.3 模型的内容尽量写在forward里，避免循环调用函数</h2><p>当数据集大时会非常损耗时间，本来1秒的运行时间可能会因为循环调用函数变成10+秒</p>
-<h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2>
+<h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2><h2 id="2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor"><a href="#2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor" class="headerlink" title="2.7 报错 WARNING:root:NaN or Inf found in input tensor."></a>2.7 报错 WARNING:root:NaN or Inf found in input tensor.</h2><p>目前可能的原因有多种：</p>
+<ul>
+<li><strong>梯度消失或梯度爆炸</strong></li>
+</ul>
+<ol>
+<li>调小或调大学习率</li>
+<li>增大正则惩罚，如L1&#x2F;L2正则化</li>
+</ol>
+<ul>
+<li><strong>显存或内存不够</strong></li>
+</ul>
+<ol>
+<li>调小batch_size（训练与测试的batch size过大都有可能导致报错）</li>
+</ol>
+<ul>
+<li><strong>代码错误</strong>：可以通过将loss设置为0检查</li>
+</ul>
+<ol>
+<li>检查有无除法，将可能除0的地方，替换成1e-8</li>
+</ol>
+<ul>
+<li><strong>数据集有问题</strong>：可以通过将loss设置为0检查</li>
+</ul>
+<ol>
+<li>检查是否有越界数据或者Nan、Inf的数据</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -798,12 +824,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
                         <span class="chip bg-color">常用命令</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
@@ -1043,7 +1069,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">122k</span>
+                        class="white-color">122.1k</span>
             
             
             
