@@ -161,11 +161,11 @@
     
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
     <category term="Git" scheme="http://blog.fdchen.host/tags/Git/"/>
     
     <category term="GitHub" scheme="http://blog.fdchen.host/tags/GitHub/"/>
+    
+    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
