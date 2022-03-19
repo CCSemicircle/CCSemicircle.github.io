@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.fdchen.host/2020/java-eclipse-chuang-jian-maven-project-huan-jing-pei-zhi-debug/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2020/cqu-ruan-jian-xu-qiu-fen-xi/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2020/cqu-duo-mei-ti-ji-zhu/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/java-springboot-debug/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/python-pytorch/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/python-numpy/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/python-tensorflow/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2021/python-jupyter/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2021/python-debug/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2022/python-pandas/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2020/fen-bu-shi-ji-suan-kuang-jia-mapreduce/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2020/fen-bu-shi-wen-jian-xi-tong-hdfs/</loc>
+    <lastmod>2022-03-19</lastmod>
+  </url>
+  <url>
     <loc>http://blog.fdchen.host/2021/linux-shell-bian-cheng/</loc>
     <lastmod>2022-03-18</lastmod>
   </url>
@@ -9,27 +69,7 @@
     <lastmod>2022-03-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2022/springboot-debug/</loc>
-    <lastmod>2022-03-18</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2020/java-ji-ben-yong-fa/</loc>
-    <lastmod>2022-03-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/python-pandas/</loc>
-    <lastmod>2022-03-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2020/eclipse-chuang-jian-maven-project-huan-jing-pei-zhi-debug/</loc>
-    <lastmod>2022-03-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2020/ruan-jian-xu-qiu-fen-xi/</loc>
-    <lastmod>2022-03-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2020/duo-mei-ti-ji-zhu/</loc>
     <lastmod>2022-03-18</lastmod>
   </url>
   <url>
@@ -45,40 +85,12 @@
     <lastmod>2022-03-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2022/python-pytorch/</loc>
-    <lastmod>2022-03-17</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2022/di-yi-ci-deng-lu-a-li-yun-fu-wu-qi-ecs-xiang-jie-ji-li-yong-mstsc-jin-xing-lian-jie/</loc>
     <lastmod>2022-03-16</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</loc>
-    <lastmod>2022-03-16</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/python-tensorflow/</loc>
-    <lastmod>2022-03-16</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/ke-yan-ru-men-tips/</loc>
-    <lastmod>2022-03-15</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/python-numpy/</loc>
-    <lastmod>2022-03-05</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/mysql-shi-yong/</loc>
-    <lastmod>2022-01-02</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2022/fu-chuang-zong-jie/</loc>
     <lastmod>2021-12-28</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/python-debug/</loc>
-    <lastmod>2021-12-07</lastmod>
   </url>
   <url>
     <loc>http://blog.fdchen.host/2022/chang-yong-dan-ci/</loc>
@@ -125,24 +137,12 @@
     <lastmod>2021-07-05</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2022/python-jupyter/</loc>
-    <lastmod>2021-06-22</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2022/zheng-ze-biao-da-shi/</loc>
     <lastmod>2021-05-13</lastmod>
   </url>
   <url>
     <loc>http://blog.fdchen.host/2022/vs-code-shi-yong/</loc>
     <lastmod>2021-01-05</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/fen-bu-shi-ji-suan-kuang-jia-mapreduce-ge-shi-diao-zheng-zhi-1.7/</loc>
-    <lastmod>2020-10-25</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2022/fen-bu-shi-wen-jian-xi-tong-hdfs/</loc>
-    <lastmod>2020-10-25</lastmod>
   </url>
   <url>
     <loc>http://blog.fdchen.host/2022/shou-cang-jia/</loc>

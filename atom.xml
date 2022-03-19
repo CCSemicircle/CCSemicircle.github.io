@@ -161,11 +161,11 @@
     
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
+    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
     <category term="Git" scheme="http://blog.fdchen.host/tags/Git/"/>
     
     <category term="GitHub" scheme="http://blog.fdchen.host/tags/GitHub/"/>
-    
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
@@ -275,145 +275,6 @@
   </entry>
   
   <entry>
-    <title>MySQL使用</title>
-    <link href="http://blog.fdchen.host/2022/mysql-shi-yong/"/>
-    <id>http://blog.fdchen.host/2022/mysql-shi-yong/</id>
-    <published>2022-03-16T12:13:15.648Z</published>
-    <updated>2022-01-02T20:01:20.029Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1-安装配置MySQL-Navicat&quot;&gt;&lt;a href=&quot;#1-安装配置MySQL-Navicat&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数据库" scheme="http://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="常用用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
-    
-    <category term="MySQL" scheme="http://blog.fdchen.host/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://blog.fdchen.host/2022/ke-yan-ru-men-tips/"/>
-    <id>http://blog.fdchen.host/2022/ke-yan-ru-men-tips/</id>
-    <published>2022-03-16T12:13:05.273Z</published>
-    <updated>2022-03-15T13:10:48.307Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-Pytorch使用技巧&quot;&gt;&lt;a href=&quot;#1-Pytorch使用技巧&quot; class=&quot;headerlink&quot; title=&quot;1 Pytorch使用技巧&quot;&gt;&lt;/a&gt;1 Pytorch使用技巧&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分布式计算框架MapReduce</title>
-    <link href="http://blog.fdchen.host/2022/fen-bu-shi-ji-suan-kuang-jia-mapreduce-ge-shi-diao-zheng-zhi-1.7/"/>
-    <id>http://blog.fdchen.host/2022/fen-bu-shi-ji-suan-kuang-jia-mapreduce-ge-shi-diao-zheng-zhi-1.7/</id>
-    <published>2022-03-16T12:12:28.607Z</published>
-    <updated>2020-10-25T11:59:08.317Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;1-MapReduce概述&quot;&gt;&lt;a href=&quot;#1-MapReduce概述&quot; class=&quot;headerlink&quot; title=&quot;1 MapReduce概述&quot;&gt;&lt;/a&gt;1 MapReduce概述&lt;/h1&gt;&lt;h2 id=&quot;1-1-MapReduce定义&quot;&gt;&lt;a href=&quot;#1-1-MapReduce定义&quot; class=&quot;headerlink&quot; title=&quot;1.1 MapReduce定义&quot;&gt;&lt;/a&gt;1.1 MapReduce定义&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;MapReduce是一个&lt;strong&gt;分布式运算程序的编程框架&lt;/strong&gt;，是用户开发“基于Hadoop的&lt;br&gt;数据分析应用”的核心框架。&lt;/li&gt;
-&lt;li&gt;MapReducet核心功能是&lt;strong&gt;将用户编写的业务逻辑代码和自带默认组件整合成一个&lt;br&gt;完整的分布式运算程序，并发运行在一个Hadoop集群上。&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;1-2-MapReduce优缺点&quot;&gt;&lt;a href=&quot;#1-2-MapReduce优缺点&quot; class=&quot;headerlink&quot; title=&quot;1.2 MapReduce优缺点&quot;&gt;&lt;/a&gt;1.2 MapReduce优缺点&lt;/h2&gt;&lt;h3 id=&quot;1-2-1-优点&quot;&gt;&lt;a href=&quot;#1-2-1-优点&quot; class=&quot;headerlink&quot; title=&quot;1.2.1 优点&quot;&gt;&lt;/a&gt;1.2.1 优点&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;MapReduce易于编程&lt;br&gt;它简单的实现一些接口，就可以完成一个分布式程序，这个分布式程序可以分布到大量廉价的PC机器上运行。也就是说你写一个分布式程序，跟写一个简单的串行程序是一模一样的。就是因为这个特点使得MapReduce编程变得非常流行。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;良好的扩展性&lt;br&gt;当尔的计算资源不能得到满足的时候，你可以通过简单的增加机器来扩展它的计算能力。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;高容错性&lt;br&gt;MapReduce设计的初衷就是使程序能够部署在廉价的PC机器上，这就要求它具有很高的容错性。比如其中一台机器挂了，它可以把上面的计算任务转移到另外一个节点上运行，不至于这个任务运行失败，而且这个过程不需要人工参与，而完全是由Hadoop内部完成的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;适合PB级以上海量数据的离线处理&lt;br&gt;可以实现上千台服务器集群并发工作，提供好据处理能力。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;1-2-2-缺点&quot;&gt;&lt;a href=&quot;#1-2-2-缺点&quot; class=&quot;headerlink&quot; title=&quot;1.2.2 缺点&quot;&gt;&lt;/a&gt;1.2.2 缺点&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;不擅长实时计算&lt;br&gt;MapReduce无法像MySQL一样，在毫秒或者秒级内返回结果。&lt;/li&gt;
-&lt;li&gt;不擅长流式计算&lt;br&gt;流式计算的输入数据是动态的，而MapReduce的输入数据集是静态的，不能动态变化。这是因为MapReduce自身的设计特点决定了数据源必须是静态的。&lt;/li&gt;
-&lt;li&gt;不擅长DAG（有向图）计算&lt;br&gt;多个应用程序存在依赖关系，后一个应用程序的输入为前一个的输出。在这种情兄下，MapReduce并不是不能做，而是使用后，每个MapReducef作业的输出结果都会写入到磁盘，会造成大量的磁盘I&amp;#x2F;O，导致性能非常的低下。&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="大数据分析" scheme="http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="Hadoop工具使用教程" scheme="http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Hadoop%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Hadoop" scheme="http://blog.fdchen.host/tags/Hadoop/"/>
-    
-    <category term="MapReduce" scheme="http://blog.fdchen.host/tags/MapReduce/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分布式文件系统HDFS</title>
-    <link href="http://blog.fdchen.host/2022/fen-bu-shi-wen-jian-xi-tong-hdfs/"/>
-    <id>http://blog.fdchen.host/2022/fen-bu-shi-wen-jian-xi-tong-hdfs/</id>
-    <published>2022-03-16T12:12:28.604Z</published>
-    <updated>2020-10-25T11:58:56.920Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;1-HDFS概述&quot;&gt;&lt;a href=&quot;#1-HDFS概述&quot; class=&quot;headerlink&quot; title=&quot;1 HDFS概述&quot;&gt;&lt;/a&gt;1 HDFS概述&lt;/h1&gt;&lt;h2 id=&quot;1-1-HDFS产生背景及定义&quot;&gt;&lt;a href=&quot;#1-1-HDFS产生背景及定义&quot; class=&quot;headerlink&quot; title=&quot;1.1 HDFS产生背景及定义&quot;&gt;&lt;/a&gt;1.1 HDFS产生背景及定义&lt;/h2&gt;&lt;h3 id=&quot;1-1-1-HDFS产生背景&quot;&gt;&lt;a href=&quot;#1-1-1-HDFS产生背景&quot; class=&quot;headerlink&quot; title=&quot;1.1.1 HDFS产生背景&quot;&gt;&lt;/a&gt;1.1.1 HDFS产生背景&lt;/h3&gt;&lt;p&gt;随着数据量越来越大，在一个操作系统存不下所有的数据，那么就分配到更多的操作系统&lt;br&gt;管理的磁盘中，但是不方便管理和维护，迫切需要一种系统来管理多台机器上的文件，这就是&lt;br&gt;分布式文件管理系统。HDFS只是分布式文件管理系统中的一种。&lt;/p&gt;
-&lt;h3 id=&quot;1-1-2-HDFS定义&quot;&gt;&lt;a href=&quot;#1-1-2-HDFS定义&quot; class=&quot;headerlink&quot; title=&quot;1.1.2 HDFS定义&quot;&gt;&lt;/a&gt;1.1.2 HDFS定义&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;HDFS(Hadoop Distributed File System)，它是一个文件系统，用于存储文件，通过目录树&lt;br&gt;来定位文件;其次，它是分布式的，由很多服务器联合起来实现其功能，集群中的服务器有各&lt;br&gt;自的角色。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;HDFS的使用场景：&lt;strong&gt;适合一次写入，多次读出的场景，且不支持文件的修改&lt;/strong&gt;。适合用来做数&lt;br&gt;据分析，并不适合用来做网盘应用。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-2-HDFS-优缺点&quot;&gt;&lt;a href=&quot;#1-2-HDFS-优缺点&quot; class=&quot;headerlink&quot; title=&quot;1.2 HDFS 优缺点&quot;&gt;&lt;/a&gt;1.2 HDFS 优缺点&lt;/h2&gt;&lt;h3 id=&quot;1-2-1-优点&quot;&gt;&lt;a href=&quot;#1-2-1-优点&quot; class=&quot;headerlink&quot; title=&quot;1.2.1 优点&quot;&gt;&lt;/a&gt;1.2.1 优点&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;高容错性&lt;ul&gt;
-&lt;li&gt;数据自动保存多个副本。通过增加副本的形式，提高容错性。&lt;/li&gt;
-&lt;li&gt;某一个副本丢失以后，可以自动恢复。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;适合处理大数据&lt;ul&gt;
-&lt;li&gt;数据规模：能够处理数据规模达到GB、TB甚至PB级别的数据。&lt;/li&gt;
-&lt;li&gt;文件规模：能够处理百万规模以上的文件数量，数量相当大。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;可构建在廉价机器上，通过多副本机制，提高可靠性。&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="大数据分析" scheme="http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    <category term="Hadoop工具使用教程" scheme="http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Hadoop%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Hadoop" scheme="http://blog.fdchen.host/tags/Hadoop/"/>
-    
-    <category term="HDFS" scheme="http://blog.fdchen.host/tags/HDFS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>React开发</title>
     <link href="http://blog.fdchen.host/2022/react-kai-fa/"/>
     <id>http://blog.fdchen.host/2022/react-kai-fa/</id>
@@ -478,129 +339,6 @@
   </entry>
   
   <entry>
-    <title>python常用用法</title>
-    <link href="http://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
-    <id>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
-    <published>2022-03-16T12:10:36.230Z</published>
-    <updated>2022-03-16T05:38:45.729Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
-    
-    
-    <category term="常用用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pyhton_TensorFlow</title>
-    <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
-    <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
-    <published>2022-03-16T12:10:36.227Z</published>
-    <updated>2022-03-16T04:16:12.469Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-Linux安装Tensorflow&quot;&gt;&lt;a href=&quot;#0-Linux安装Tensorflow&quot; class=&quot;headerlink&quot; title=&quot;0 Linux安装Tensorflow&quot;&gt;&lt;/a&gt;0 Linux安装Tensorflow&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python_Numpy</title>
-    <link href="http://blog.fdchen.host/2022/python-numpy/"/>
-    <id>http://blog.fdchen.host/2022/python-numpy/</id>
-    <published>2022-03-16T12:10:36.218Z</published>
-    <updated>2022-03-05T09:18:47.890Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt; import numpy as np&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;1-基本矩阵操作&quot;&gt;&lt;a href=&quot;#1-基本矩阵操作&quot; class=&quot;headerlink&quot; title=&quot;1 基本矩阵操作&quot;&gt;&lt;/a&gt;1</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>jupyter常用用法</title>
-    <link href="http://blog.fdchen.host/2022/python-jupyter/"/>
-    <id>http://blog.fdchen.host/2022/python-jupyter/</id>
-    <published>2022-03-16T12:10:36.214Z</published>
-    <updated>2021-06-22T17:40:20.331Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-Jupyter安装&quot;&gt;&lt;a href=&quot;#1-Jupyter安装&quot; class=&quot;headerlink&quot; title=&quot;1 Jupyter安装&quot;&gt;&lt;/a&gt;1 Jupyter安装&lt;/h1&gt;&lt;h2 id=&quot;1-1-修改Jupyter默认文件及目录&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="jupyter" scheme="http://blog.fdchen.host/categories/jupyter/"/>
-    
-    
-    <category term="常用用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python Debug</title>
-    <link href="http://blog.fdchen.host/2022/python-debug/"/>
-    <id>http://blog.fdchen.host/2022/python-debug/</id>
-    <published>2022-03-16T12:10:36.208Z</published>
-    <updated>2021-12-07T11:27:52.685Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;1-JSON读取大量数据错误：JSONDecodeError-Extra-data-line-2-column-1或者ValueError-Extra-data&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
-    
-    <category term="Debug" scheme="http://blog.fdchen.host/categories/Python/Debug/"/>
-    
-    
-    <category term="笔记" scheme="http://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>NLP模型</title>
     <link href="http://blog.fdchen.host/2022/nlp-mo-xing/"/>
     <id>http://blog.fdchen.host/2022/nlp-mo-xing/</id>
@@ -626,6 +364,236 @@
     
     
     <category term="笔记" scheme="http://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《开放域语义解析》总结</title>
+    <link href="http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/"/>
+    <id>http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/</id>
+    <published>2022-03-16T12:09:38.311Z</published>
+    <updated>2021-08-07T02:25:22.174Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文内容主要来自「中国科学院软件研究所中文信息处理实验室」的《语义解析-暑期学校-final》，附带部分个人的理解与标注解释。&lt;/p&gt;
+&lt;p&gt;原文章所属Github项目链接：&lt;a href=&quot;https://github.com/casnlu/Semantic-Parsing&quot;&gt;https://github.com/casnlu/Semantic-Parsing&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-语义解析简介&quot;&gt;&lt;a href=&quot;#1-语义解析简介&quot; class=&quot;headerlink&quot; title=&quot;1 语义解析简介&quot;&gt;&lt;/a&gt;1 语义解析简介&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;自然语言多样，具有歧义，其理解依赖世界知识和情境。&lt;/li&gt;
+&lt;li&gt;计算机能理解的语言时统一语义、显式结构、无歧义的。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
+    
+    <category term="语义解析" scheme="http://blog.fdchen.host/categories/NLP/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="笔记" scheme="http://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环境配置与软件安装</title>
+    <link href="http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/"/>
+    <id>http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/</id>
+    <published>2022-03-16T12:07:40.418Z</published>
+    <updated>2021-07-05T13:48:32.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-Typora-PicGo-七牛云搭建博客写作环境&quot;&gt;&lt;a href=&quot;#1-Typora-PicGo-七牛云搭建博客写作环境&quot; class=&quot;headerlink&quot; title=&quot;1. Typora+PicGo+七牛云搭建博客写作环境&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="Tips" scheme="http://blog.fdchen.host/tags/Tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服创总结</title>
+    <link href="http://blog.fdchen.host/2022/fu-chuang-zong-jie/"/>
+    <id>http://blog.fdchen.host/2022/fu-chuang-zong-jie/</id>
+    <published>2022-03-16T12:07:24.187Z</published>
+    <updated>2021-12-28T12:27:40.833Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;纪念人生中唯一一次服创&lt;/p&gt;
+&lt;p&gt;结果：全国三等奖&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0. 前言&quot;&gt;&lt;/a&gt;0. 前言&lt;/h1&gt;&lt;p&gt;服创（大学生服务外包创新创业大赛），应该是第一次作为队长带领伙伴们参加比赛，可以说压力还是有点大——怕没能担好这个责任，没能带大家拿下好成绩。最后还确实出现了失误，而且队内气氛也没有调节好，即便到了最后还是感觉交流有点少（也可能是这个原因，导致我自己也没有太多难忘的回忆，更多是内疚和自责），等等问题。下面重点还是以反思为主。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="服创 - 经验总结" scheme="http://blog.fdchen.host/tags/%E6%9C%8D%E5%88%9B-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美赛总结</title>
+    <link href="http://blog.fdchen.host/2022/mei-sai-zong-jie/"/>
+    <id>http://blog.fdchen.host/2022/mei-sai-zong-jie/</id>
+    <published>2022-03-16T12:05:49.371Z</published>
+    <updated>2021-07-18T08:25:57.438Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;纪念人生中唯一一次美赛&lt;/p&gt;
+&lt;p&gt;2021年D题——S奖&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0. 前言&quot;&gt;&lt;/a&gt;0. 前言&lt;/h1&gt;&lt;p&gt;当时参加美赛可以说是临时起意，先是朋友问我有没有兴趣打数模，但是我考虑到自己更喜欢本专业（软件）竞赛，就没有答应。但是，在从学校回家的路上，想了很多——每每坐在车上，看着窗外的风景，人就喜欢胡思乱想，自己虽然可以保研，但是好像竞赛的经历还是少了一点，万一老师问为什么没有打过数模，岂不是没话可说。然后凑巧的是，刚好在表白墙上看到了美赛招募队友（也可能是天意？那为什么不让我获奖，问号脸）虽然，看看最后的成绩，照样没什么好说的，但是这毕竟是第一次，也可能是最后一次，还是写点东西纪念一下。&lt;/p&gt;
+&lt;p&gt;PS：这种方式挺好的，属于自己一方小天地，写下自己的一点小感悟，以后应该也会写一些东西纪念一下。希望以后多看看书，提升一下文化素养。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="数模 - 经验总结" scheme="http://blog.fdchen.host/tags/%E6%95%B0%E6%A8%A1-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>收藏夹</title>
+    <link href="http://blog.fdchen.host/2022/shou-cang-jia/"/>
+    <id>http://blog.fdchen.host/2022/shou-cang-jia/</id>
+    <published>2022-03-16T12:04:17.408Z</published>
+    <updated>2020-10-24T06:44:48.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-机器学习&quot;&gt;&lt;a href=&quot;#1-机器学习&quot; class=&quot;headerlink&quot; title=&quot;1 机器学习&quot;&gt;&lt;/a&gt;1 机器学习&lt;/h1&gt;&lt;h2 id=&quot;1-1-学习笔记&quot;&gt;&lt;a href=&quot;#1-1-学习笔记&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="收藏夹" scheme="http://blog.fdchen.host/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>答辩经验</title>
+    <link href="http://blog.fdchen.host/2022/da-bian-jing-yan/"/>
+    <id>http://blog.fdchen.host/2022/da-bian-jing-yan/</id>
+    <published>2022-03-16T12:03:54.716Z</published>
+    <updated>2021-07-18T08:23:37.040Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;1-PPT制作&quot;&gt;&lt;a href=&quot;#1-PPT制作&quot; class=&quot;headerlink&quot; title=&quot;1. PPT制作&quot;&gt;&lt;/a&gt;1. PPT制作&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;图片大小要合适，要让大家看得清&lt;/li&gt;
+&lt;li&gt;每一个符号或表示都应该是有解释的&lt;/li&gt;
+&lt;li&gt;表格需要统一格式：都三线表或都格子表&lt;/li&gt;
+&lt;li&gt;当遇到一张PPT下多图时，图片叠加+动画依次展示&lt;/li&gt;
+&lt;li&gt;行间距1.3-1.5&lt;/li&gt;
+&lt;li&gt;PPT尽可能少用动画，一定不要用切换动画&lt;/li&gt;
+&lt;li&gt;一般PPT 15-18页为宜&lt;/li&gt;
+&lt;li&gt;最后一页可以不用谢谢观看，并无实质作用&lt;/li&gt;
+&lt;li&gt;字体一般21号以上&lt;/li&gt;
+&lt;li&gt;整体配色同样需要考虑&lt;/li&gt;
+&lt;li&gt;多用数据和图表，数据醒目，图表清晰&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="经验总结" scheme="http://blog.fdchen.host/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从入门到入坟——我的第一篇博客</title>
+    <link href="http://blog.fdchen.host/2022/cong-ru-men-dao-ru-fen-wo-de-di-yi-pian-bo-ke/"/>
+    <id>http://blog.fdchen.host/2022/cong-ru-men-dao-ru-fen-wo-de-di-yi-pian-bo-ke/</id>
+    <published>2022-03-16T12:03:46.543Z</published>
+    <updated>2020-09-10T10:37:20.602Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;1-为什么要写博客？——Debug方法的进化论&quot;&gt;&lt;a href=&quot;#1-为什么要写博客？——Debug方法的进化论&quot; class=&quot;headerlink&quot; title=&quot;1 为什么要写博客？——Debug方法的进化论&quot;&gt;&lt;/a&gt;1 为什么要写博客？——Debug方法的进化论&lt;/h1&gt;&lt;h2 id=&quot;1-1-收藏网址&quot;&gt;&lt;a href=&quot;#1-1-收藏网址&quot; class=&quot;headerlink&quot; title=&quot;1.1 收藏网址&quot;&gt;&lt;/a&gt;1.1 收藏网址&lt;/h2&gt;&lt;p&gt;其实，在大学我才开始接触计算机专业，刚开始学的时候懵懵懂懂，很多简单的东西都不明白，但“浏览器”是个好东西，不懂就查。不过很多时候遇到的一些Bug，过了几天就又不会调了。于是到后来我查到一些重要的知识点或Bug解决方案，我就会把网址收藏起来，但是也没怎么好好分类，往往还夹杂着别的学科，就像图片中看到的，乱七八糟，有时候就算知道曾经收藏过，找也要找很久。(图片来自浏览器的收藏夹)&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200410091718104.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="感想" scheme="http://blog.fdchen.host/tags/%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pyhton_TensorFlow</title>
+    <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
+    <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
+    <published>2022-03-16T04:16:00.000Z</published>
+    <updated>2022-03-19T16:33:42.788Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-Linux安装Tensorflow&quot;&gt;&lt;a href=&quot;#0-Linux安装Tensorflow&quot; class=&quot;headerlink&quot; title=&quot;0 Linux安装Tensorflow&quot;&gt;&lt;/a&gt;0 Linux安装Tensorflow&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="TensorFlow" scheme="http://blog.fdchen.host/tags/TensorFlow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python_常用用法</title>
+    <link href="http://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
+    <id>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
+    <published>2022-03-15T19:18:00.000Z</published>
+    <updated>2022-03-19T16:53:02.078Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   

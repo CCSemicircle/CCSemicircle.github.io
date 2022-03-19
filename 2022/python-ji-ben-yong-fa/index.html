@@ -14,14 +14,8 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python常用用法, 软件工程,前端,NLP">
-    <meta name="description" content="0 安装环境
-使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python Interpreter。
-
-1 文件操作1.1 创建文件和文件夹1.1.1 创建文件夹### 创建文件夹
-import os
-
-def ">
+    <meta name="keywords" content="python,Pytorch,教程,环境配置">
+    <meta name="description" content="Python的安装与使用，包含基本数据结构与使用文件读写等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +27,7 @@ def ">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python常用用法 | fdChen的掉发收集箱</title>
+    <title>python_常用用法 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +308,12 @@ def ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.fdchen.host/python.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python常用用法</h1>
+                    <h1 class="description center-align post-title">python_常用用法</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +429,12 @@ def ">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常用用法</span>
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                                <span class="chip bg-color">常用命令</span>
                             </a>
                         
                     </div>
@@ -605,6 +603,20 @@ end <span class="token operator">=</span> time<span class="token punctuation">.<
 
 <span class="token comment"># Python3.8不再支持time.clock，但在调用时依然包含该方法；需要用用time.perf_counter()替换</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="7-2-格式化时间，time-strftime-‘-m-d’-time-localtime"><a href="#7-2-格式化时间，time-strftime-‘-m-d’-time-localtime" class="headerlink" title="7.2 格式化时间，time.strftime(‘%m-%d’, time.localtime())"></a>7.2 格式化时间，time.strftime(‘%m-%d’, time.localtime())</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+ 
+<span class="token comment"># 格式化成2016-03-20 11:45:39形式</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+ 
+<span class="token comment"># 格式化成Sat Mar 28 22:24:24 2016形式</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+  
+<span class="token comment"># 将格式字符串转换为时间戳</span>
+a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 22:24:24 2016"</span>
+<span class="token keyword">print</span> time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="8-PyMySQL"><a href="#8-PyMySQL" class="headerlink" title="8 PyMySQL"></a>8 PyMySQL</h1><h2 id="8-1-安装"><a href="#8-1-安装" class="headerlink" title="8.1 安装"></a>8.1 安装</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip3 install PyMySQL
 python3 setup.py install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -716,8 +728,8 @@ sql <span class="token operator">=</span> "SELECT <span class="token operator">*
 
 
 
-<h1 id="11-pickle数据持久存储"><a href="#11-pickle数据持久存储" class="headerlink" title="11 pickle数据持久存储"></a>11 pickle数据持久存储</h1><p>python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。</p>
-<h2 id="11-1-读取-写入-文件"><a href="#11-1-读取-写入-文件" class="headerlink" title="11.1 读取\写入 文件"></a>11.1 读取\写入 文件</h2><ul>
+<h1 id="10-pickle数据持久存储"><a href="#10-pickle数据持久存储" class="headerlink" title="10 pickle数据持久存储"></a>10 pickle数据持久存储</h1><p>python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。</p>
+<h2 id="10-1-读取-写入-文件"><a href="#10-1-读取-写入-文件" class="headerlink" title="10.1 读取\写入 文件"></a>10.1 读取\写入 文件</h2><ul>
 <li><p>pickle.dump(obj, file, [,protocol])</p>
 <p>注解：将对象obj保存到文件file中去。<br>参数：</p>
 <ul>
@@ -731,11 +743,11 @@ sql <span class="token operator">=</span> "SELECT <span class="token operator">*
 </ul>
 </li>
 </ul>
-<h1 id="12-tqdm"><a href="#12-tqdm" class="headerlink" title="12 tqdm"></a>12 tqdm</h1><p>Tqdm 是一个快速，可扩展的Python进度条，可以在 Python 长循环中添加一个进度提示信息，用户只需要封装任意的迭代器 tqdm(iterator)。</p>
-<h1 id="13-字典dict"><a href="#13-字典dict" class="headerlink" title="13 字典dict"></a>13 字典dict</h1><h2 id="13-1-update"><a href="#13-1-update" class="headerlink" title="13.1 update()"></a>13.1 update()</h2><p>把字典dict2的键&#x2F;值对更新到dict里。</p>
+<h1 id="11-tqdm"><a href="#11-tqdm" class="headerlink" title="11 tqdm"></a>11 tqdm</h1><p>Tqdm 是一个快速，可扩展的Python进度条，可以在 Python 长循环中添加一个进度提示信息，用户只需要封装任意的迭代器 tqdm(iterator)。</p>
+<h1 id="12-字典dict"><a href="#12-字典dict" class="headerlink" title="12 字典dict"></a>12 字典dict</h1><h2 id="12-1-update"><a href="#12-1-update" class="headerlink" title="12.1 update()"></a>12.1 update()</h2><p>把字典dict2的键&#x2F;值对更新到dict里。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">dict</span><span class="token punctuation">.</span>update<span class="token punctuation">(</span>dict2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="13-2-get"><a href="#13-2-get" class="headerlink" title="13.2 get()"></a>13.2 get()</h2><p>返回指定键的值。</p>
+<h2 id="12-2-get"><a href="#12-2-get" class="headerlink" title="12.2 get()"></a>12.2 get()</h2><p>返回指定键的值。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">dict</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span>key<span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>参数：</strong></p>
@@ -743,8 +755,8 @@ sql <span class="token operator">=</span> "SELECT <span class="token operator">*
 <li>key – 字典中要查找的键。</li>
 <li>default – 如果指定键的值不存在时，返回该默认值。</li>
 </ul>
-<h1 id="14-字符串str"><a href="#14-字符串str" class="headerlink" title="14 字符串str"></a>14 字符串str</h1><h2 id="14-1-strip"><a href="#14-1-strip" class="headerlink" title="14.1 strip()"></a>14.1 strip()</h2><p>Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
-<h2 id="14-2-eval"><a href="#14-2-eval" class="headerlink" title="14.2 eval()"></a>14.2 eval()</h2><p>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</p>
+<h1 id="13-字符串str"><a href="#13-字符串str" class="headerlink" title="13 字符串str"></a>13 字符串str</h1><h2 id="13-1-strip"><a href="#13-1-strip" class="headerlink" title="13.1 strip()"></a>13.1 strip()</h2><p>Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
+<h2 id="13-2-eval"><a href="#13-2-eval" class="headerlink" title="13.2 eval()"></a>13.2 eval()</h2><p>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>x <span class="token operator">=</span> <span class="token number">7</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span> <span class="token string">'3 * x'</span> <span class="token punctuation">)</span>
 <span class="token number">21</span>
@@ -758,9 +770,9 @@ sql <span class="token operator">=</span> "SELECT <span class="token operator">*
 
 
 
-<h1 id="15-列表List"><a href="#15-列表List" class="headerlink" title="15 列表List"></a>15 列表List</h1><h2 id="15-1-extend"><a href="#15-1-extend" class="headerlink" title="15.1 extend()"></a>15.1 extend()</h2><p>extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。</p>
-<h2 id="15-2-pop"><a href="#15-2-pop" class="headerlink" title="15.2 pop()"></a>15.2 pop()</h2><p>去掉列表中的一个元素（默认最后一个元素）</p>
-<h2 id="15-3-将list与元组放置在一个list中"><a href="#15-3-将list与元组放置在一个list中" class="headerlink" title="15.3 将list与元组放置在一个list中"></a>15.3 将list与元组放置在一个list中</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">each_data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+<h1 id="14-列表List"><a href="#14-列表List" class="headerlink" title="14 列表List"></a>14 列表List</h1><h2 id="14-1-extend"><a href="#14-1-extend" class="headerlink" title="14.1 extend()"></a>14.1 extend()</h2><p>extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。</p>
+<h2 id="14-2-pop"><a href="#14-2-pop" class="headerlink" title="14.2 pop()"></a>14.2 pop()</h2><p>去掉列表中的一个元素（默认最后一个元素）</p>
+<h2 id="14-3-将list与元组放置在一个list中"><a href="#14-3-将list与元组放置在一个list中" class="headerlink" title="14.3 将list与元组放置在一个list中"></a>14.3 将list与元组放置在一个list中</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">each_data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
 data0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span> j <span class="token keyword">in</span> each_data<span class="token punctuation">:</span>
     data0<span class="token punctuation">.</span>append<span class="token punctuation">(</span>j<span class="token punctuation">)</span>  <span class="token comment"># 正确用法 [(0, 1), 4, 5]</span>
@@ -772,25 +784,12 @@ data2 <span class="token operator">=</span><span class="token punctuation">[</sp
 data3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>each_data<span class="token punctuation">]</span> <span class="token comment"># 错误用法 [[0, 1], [2, 3, 4]]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="15-4-生成tuple必须从其他序列转为tuple"><a href="#15-4-生成tuple必须从其他序列转为tuple" class="headerlink" title="15.4 生成tuple必须从其他序列转为tuple"></a>15.4 生成tuple必须从其他序列转为tuple</h2><h2 id="15-5-list包含数字，不能直接转化成字符串"><a href="#15-5-list包含数字，不能直接转化成字符串" class="headerlink" title="15.5 list包含数字，不能直接转化成字符串"></a>15.5 list包含数字，不能直接转化成字符串</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'%s'</span> <span class="token operator">%</span><span class="token builtin">id</span> <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span> list1<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="14-4-生成tuple必须从其他序列转为tuple"><a href="#14-4-生成tuple必须从其他序列转为tuple" class="headerlink" title="14.4 生成tuple必须从其他序列转为tuple"></a>14.4 生成tuple必须从其他序列转为tuple</h2><h2 id="14-5-list包含数字，不能直接转化成字符串"><a href="#14-5-list包含数字，不能直接转化成字符串" class="headerlink" title="14.5 list包含数字，不能直接转化成字符串"></a>14.5 list包含数字，不能直接转化成字符串</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'%s'</span> <span class="token operator">%</span><span class="token builtin">id</span> <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span> list1<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="15-6-负数索引，从后往前索引"><a href="#15-6-负数索引，从后往前索引" class="headerlink" title="15.6 负数索引，从后往前索引"></a>15.6 负数索引，从后往前索引</h2><h2 id="15-7-zip-同时遍历两个list"><a href="#15-7-zip-同时遍历两个list" class="headerlink" title="15.7 zip() 同时遍历两个list"></a>15.7 zip() 同时遍历两个list</h2><h1 id="16-数字Number"><a href="#16-数字Number" class="headerlink" title="16 数字Number"></a>16 数字Number</h1><h2 id="16-1-round"><a href="#16-1-round" class="headerlink" title="16.1 round()"></a>16.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
-<h1 id="17-基本用法"><a href="#17-基本用法" class="headerlink" title="17 基本用法"></a>17 基本用法</h1><h2 id="17-1-查看变量类型，type"><a href="#17-1-查看变量类型，type" class="headerlink" title="17.1 查看变量类型，type()"></a>17.1 查看变量类型，type()</h2><h2 id="17-2-手动释放内存，del-gc-collect"><a href="#17-2-手动释放内存，del-gc-collect" class="headerlink" title="17.2 手动释放内存，del + gc.collect()"></a>17.2 手动释放内存，del + gc.collect()</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gc
+<h2 id="14-6-负数索引，从后往前索引"><a href="#14-6-负数索引，从后往前索引" class="headerlink" title="14.6 负数索引，从后往前索引"></a>14.6 负数索引，从后往前索引</h2><h2 id="14-7-zip-同时遍历两个list"><a href="#14-7-zip-同时遍历两个list" class="headerlink" title="14.7 zip() 同时遍历两个list"></a>14.7 zip() 同时遍历两个list</h2><h1 id="15-数字Number"><a href="#15-数字Number" class="headerlink" title="15 数字Number"></a>15 数字Number</h1><h2 id="15-1-round"><a href="#15-1-round" class="headerlink" title="15.1 round()"></a>15.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
+<h1 id="16-基本语法"><a href="#16-基本语法" class="headerlink" title="16 基本语法"></a>16 基本语法</h1><h2 id="16-1-查看变量类型，type"><a href="#16-1-查看变量类型，type" class="headerlink" title="16.1 查看变量类型，type()"></a>16.1 查看变量类型，type()</h2><h1 id="17-内存管理"><a href="#17-内存管理" class="headerlink" title="17 内存管理"></a>17 内存管理</h1><h2 id="17-1-手动释放内存，del-gc-collect"><a href="#17-1-手动释放内存，del-gc-collect" class="headerlink" title="17.1 手动释放内存，del + gc.collect()"></a>17.1 手动释放内存，del + gc.collect()</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gc
 <span class="token keyword">del</span> a
 gc<span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="17-3-格式化时间，time-strftime-‘-m-d’-time-localtime"><a href="#17-3-格式化时间，time-strftime-‘-m-d’-time-localtime" class="headerlink" title="17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())"></a>17.3 格式化时间，time.strftime(‘%m-%d’, time.localtime())</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
- 
-<span class="token comment"># 格式化成2016-03-20 11:45:39形式</span>
-<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
- 
-<span class="token comment"># 格式化成Sat Mar 28 22:24:24 2016形式</span>
-<span class="token keyword">print</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
-  
-<span class="token comment"># 将格式字符串转换为时间戳</span>
-a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 22:24:24 2016"</span>
-<span class="token keyword">print</span> time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token string">"%a %b %d %H:%M:%S %Y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -855,8 +854,12 @@ a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 2
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常用用法</span>
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                                    <span class="chip bg-color">常用命令</span>
                                 </a>
                             
                         </div>
@@ -1034,19 +1037,18 @@ a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 2
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/react/">
+                <a href="/2022/python-tensorflow/">
                     <div class="card-image">
                         
+                        <img src="http://img.fdchen.host/tensorflow.png" class="responsive-img" alt="Pyhton_TensorFlow">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="React 开发相关">
-                        
-                        <span class="card-title">React 开发相关</span>
+                        <span class="card-title">Pyhton_TensorFlow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Python使用之TensorFlow教程，包含TensorFlow在深度学习项目中的常见用法，也包含环境配置与一些易错用法
                         
                     </div>
                     <div class="publish-info">
@@ -1055,11 +1057,27 @@ a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 2
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fdChen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/TensorFlow/">
+                        <span class="chip bg-color">TensorFlow</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1071,32 +1089,52 @@ a <span class="token operator">=</span> <span class="token string">"Sat Mar 28 2
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/python-tensorflow/">
+                <a href="/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Pyhton_TensorFlow">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="AI_深度学习项目搭建与训练技巧">
                         
-                        <span class="card-title">Pyhton_TensorFlow</span>
+                        <span class="card-title">AI_深度学习项目搭建与训练技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            深度学习项目训练与调优技巧
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fdChen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI/" class="post-category">
+                                    AI
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/Pytorch/">
+                        <span class="chip bg-color">Pytorch</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">
+                        <span class="chip bg-color">模型训练</span>
+                    </a>
+                    
                 </div>
                 
             </div>
