@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
+    <loc>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/</loc>
+    <loc>http://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2021/linux-shell-bian-cheng/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
@@ -17,15 +21,27 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
+    <loc>http://blog.fdchen.host/2021/yuan-ji-chu-vs-code-shi-yong/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2020/cqu-ruan-jian-xu-qiu-fen-xi/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
     <loc>http://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
     <loc>http://blog.fdchen.host/2020/sui-bi-shou-cang-jia/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2021/yuan-ji-chu-vs-code-shi-yong/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
@@ -81,10 +97,6 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2022/python-pytorch/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
@@ -113,19 +125,7 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>http://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2021/linux-shell-bian-cheng/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
     <loc>http://blog.fdchen.host/2020/java-eclipse-chuang-jian-maven-project-huan-jing-pei-zhi-debug/</loc>
-    <lastmod>2022-03-19</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.fdchen.host/2020/cqu-ruan-jian-xu-qiu-fen-xi/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
