@@ -368,34 +368,6 @@
   </entry>
   
   <entry>
-    <title>《开放域语义解析》总结</title>
-    <link href="http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/"/>
-    <id>http://blog.fdchen.host/2022/kai-fang-yu-yu-yi-jie-xi-zong-jie/</id>
-    <published>2022-03-16T12:09:38.311Z</published>
-    <updated>2021-08-07T02:25:22.174Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文内容主要来自「中国科学院软件研究所中文信息处理实验室」的《语义解析-暑期学校-final》，附带部分个人的理解与标注解释。&lt;/p&gt;
-&lt;p&gt;原文章所属Github项目链接：&lt;a href=&quot;https://github.com/casnlu/Semantic-Parsing&quot;&gt;https://github.com/casnlu/Semantic-Parsing&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;1-语义解析简介&quot;&gt;&lt;a href=&quot;#1-语义解析简介&quot; class=&quot;headerlink&quot; title=&quot;1 语义解析简介&quot;&gt;&lt;/a&gt;1 语义解析简介&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;自然语言多样，具有歧义，其理解依赖世界知识和情境。&lt;/li&gt;
-&lt;li&gt;计算机能理解的语言时统一语义、显式结构、无歧义的。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
-    
-    <category term="语义解析" scheme="http://blog.fdchen.host/categories/NLP/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/"/>
-    
-    
-    <category term="笔记" scheme="http://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>环境配置与软件安装</title>
     <link href="http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/"/>
     <id>http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/</id>
@@ -547,7 +519,7 @@
     <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
     <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
     <published>2022-03-16T04:16:00.000Z</published>
-    <updated>2022-03-19T16:33:42.788Z</updated>
+    <updated>2022-03-20T11:55:43.841Z</updated>
     
     
       
@@ -594,6 +566,35 @@
     <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
     <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI_深度学习项目搭建与训练技巧</title>
+    <link href="http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
+    <id>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
+    <published>2022-03-15T13:10:00.000Z</published>
+    <updated>2022-03-19T17:25:01.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-Pytorch使用技巧&quot;&gt;&lt;a href=&quot;#1-Pytorch使用技巧&quot; class=&quot;headerlink&quot; title=&quot;1 Pytorch使用技巧&quot;&gt;&lt;/a&gt;1 Pytorch使用技巧&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="AI" scheme="http://blog.fdchen.host/categories/AI/"/>
+    
+    
+    <category term="深度学习" scheme="http://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Pytorch" scheme="http://blog.fdchen.host/tags/Pytorch/"/>
+    
+    <category term="模型训练" scheme="http://blog.fdchen.host/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   

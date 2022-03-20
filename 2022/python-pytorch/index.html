@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -564,6 +564,10 @@ epoch <span class="token operator">=</span> checkpoint<span class="token punctua
 loss <span class="token operator">=</span> checkpoint<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span>
 metrics <span class="token operator">=</span> checkpoint<span class="token punctuation">[</span><span class="token string">'metrics'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="2-4-模型加速，torch-backends-cudnn-benchmark-x3D-True"><a href="#2-4-模型加速，torch-backends-cudnn-benchmark-x3D-True" class="headerlink" title="2.4 模型加速，torch.backends.cudnn.benchmark&#x3D;True"></a>2.4 模型加速，torch.backends.cudnn.benchmark&#x3D;True</h2><p>让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速。适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的，其实也就是一般情况下都比较适用。反之，如果卷积层的设置一直变化，将会导致程序不停地做优化，反而会耗费更多的时间。</p>
+<ul>
+<li>具体详情见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73711222">torch.backends.cudnn.benchmark ?!</a></li>
+</ul>
 <h1 id="3-重要函数"><a href="#3-重要函数" class="headerlink" title="3 重要函数"></a>3 重要函数</h1><h2 id="3-1-torch-svd-A"><a href="#3-1-torch-svd-A" class="headerlink" title="3.1 torch.svd(A)"></a>3.1 torch.svd(A)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#计算矩阵或矩阵批次的奇异值分解input，奇异值按降序返回</span>
 torch<span class="token punctuation">.</span>svd<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> some<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>Tensor<span class="token punctuation">,</span> Tensor<span class="token punctuation">,</span> Tensor<span class="token punctuation">)</span>
 U<span class="token punctuation">,</span>S<span class="token punctuation">,</span>V<span class="token operator">=</span>torch<span class="token punctuation">.</span>svd<span class="token punctuation">(</span>A<span class="token punctuation">)</span>。 <span class="token comment">#返回对形如 n×m的实矩阵 A 进行奇异值分解的结果，使得 A=USV^T。 U 为左奇异向量，形状为 n×n，S 为特征值矩阵，形状为 n×m ，V 为右奇异向量，形状为 m×m</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -1273,7 +1277,7 @@ a1 <span class="token operator">=</span> torch<span class="token punctuation">.<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">122.1k</span>
+                        class="white-color">122.3k</span>
             
             
             
