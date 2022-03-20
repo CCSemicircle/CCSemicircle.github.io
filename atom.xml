@@ -159,13 +159,13 @@
     <category term="Git 与 GitHub" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/Git-%E4%B8%8E-GitHub/"/>
     
     
-    <category term="Git" scheme="http://blog.fdchen.host/tags/Git/"/>
-    
-    <category term="GitHub" scheme="http://blog.fdchen.host/tags/GitHub/"/>
-    
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="Git" scheme="http://blog.fdchen.host/tags/Git/"/>
+    
+    <category term="GitHub" scheme="http://blog.fdchen.host/tags/GitHub/"/>
     
   </entry>
   
@@ -563,9 +563,9 @@
     <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
     <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
