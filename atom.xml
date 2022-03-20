@@ -6,7 +6,7 @@
   <link href="http://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="http://blog.fdchen.host/"/>
-  <updated>2021-05-13T10:07:47.251Z</updated>
+  <updated>2022-03-20T12:22:30.039Z</updated>
   <id>http://blog.fdchen.host/</id>
   
   <author>
@@ -17,164 +17,285 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>正则表达式</title>
-    <link href="http://blog.fdchen.host/2022/zheng-ze-biao-da-shi/"/>
-    <id>http://blog.fdchen.host/2022/zheng-ze-biao-da-shi/</id>
-    <published>2022-03-16T12:13:58.748Z</published>
-    <updated>2021-05-13T10:07:47.251Z</updated>
+    <title>Pyhton_TensorFlow</title>
+    <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
+    <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
+    <published>2022-03-16T04:16:00.000Z</published>
+    <updated>2022-03-20T12:22:30.039Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Tip: &lt;a href=&quot;https://regexr.com/&quot;&gt;正则表达式练习网站点此进入&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-常用匹配符号&quot;&gt;&lt;a href=&quot;#1-常用匹配符号&quot; class=&quot;headerlink&quot; title=&quot;1 常用匹配符号&quot;&gt;&lt;/a&gt;1 常用匹配符号&lt;/h1&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;符号&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;.&lt;/td&gt;
-&lt;td&gt;匹配除断行之外的任意字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\w&lt;/td&gt;
-&lt;td&gt;匹配阿拉伯数字、英文大小写字母和下划线&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\W&lt;/td&gt;
-&lt;td&gt;匹配被\w排除在外的字符（非阿拉伯数字、英文大小写字母或下划线）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\d&lt;/td&gt;
-&lt;td&gt;匹配阿拉伯数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\D&lt;/td&gt;
-&lt;td&gt;匹配被\d排除在外的字符（非阿拉伯数字）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\s&lt;/td&gt;
-&lt;td&gt;匹配空白字符：空格、制表符tab、断行等&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\S&lt;/td&gt;
-&lt;td&gt;匹配被\s排除在外的字符（非空白字符）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\b&lt;/td&gt;
-&lt;td&gt;匹配单词的开始或结束，意思是出现空白字符即停止之前的匹配&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[]&lt;/td&gt;
-&lt;td&gt;代表1个字符，比如选择[yY]代表选择y或Y的1个字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[选择范围]&lt;/td&gt;
-&lt;td&gt;匹配括号中范围内的任意一个字符（采用Unicode编码），比如[0-9]匹配数字0-9、[a-z]匹配小写字母a-z、[\u4e00-\u9fa5]匹配所有汉字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[范围]+&lt;/td&gt;
-&lt;td&gt;重复上一个字符&lt;strong&gt;一次或多次&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[范围]*&lt;/td&gt;
-&lt;td&gt;重复上一个字符&lt;strong&gt;零次或多次&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[范围]?&lt;/td&gt;
-&lt;td&gt;重复上一个字符&lt;strong&gt;零次或一次&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;{a,b}&lt;/td&gt;
-&lt;td&gt;重复上一个字符&lt;strong&gt;a次至b次&lt;/strong&gt;，{a,}代表至少a次，但不能表示最多几次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;()&lt;/td&gt;
-&lt;td&gt;分组匹配，将括号里的表达式匹配的字符分为一组，可以用$1, $2调用（调用有限制）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;^&lt;/td&gt;
-&lt;td&gt;1. &lt;strong&gt;限定开头&lt;/strong&gt;，匹配输入字符串的开始位置，比如 &amp;#x2F;^A&amp;#x2F;会匹配”An e”中的A；2. 在中括号表达式中使用，当该符号在中括号表达式中使用时，表示&lt;strong&gt;不接受该中括号表达式中的字符集合&lt;/strong&gt;，比如：&amp;#x2F;[^a-z\s]&amp;#x2F;会匹配”my 3 sisters”中的”3” ，这里的”^”的意思是字符类的否定，上面的正则表达式的意思是匹配不是（a到z和空白字符）的字符。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-Linux安装Tensorflow&quot;&gt;&lt;a href=&quot;#0-Linux安装Tensorflow&quot; class=&quot;headerlink&quot; title=&quot;0 Linux安装Tensorflow&quot;&gt;&lt;/a&gt;0 Linux安装Tensorflow&lt;/h1&gt;&lt;h2</summary>
+        
+      
     
     
     
-    <category term="猿基础" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="正则表达式" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
-    <category term="正则表达式" scheme="http://blog.fdchen.host/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <category term="TensorFlow" scheme="http://blog.fdchen.host/tags/TensorFlow/"/>
     
   </entry>
   
   <entry>
-    <title>VS Code使用</title>
-    <link href="http://blog.fdchen.host/2022/vs-code-shi-yong/"/>
-    <id>http://blog.fdchen.host/2022/vs-code-shi-yong/</id>
-    <published>2022-03-16T12:13:58.744Z</published>
-    <updated>2021-01-05T07:51:00.020Z</updated>
+    <title>python_常见用法</title>
+    <link href="http://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
+    <id>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
+    <published>2022-03-15T19:18:00.000Z</published>
+    <updated>2022-03-20T15:10:38.062Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;1-文件夹与工作空间的区别&quot;&gt;&lt;a href=&quot;#1-文件夹与工作空间的区别&quot; class=&quot;headerlink&quot; title=&quot;1 文件夹与工作空间的区别&quot;&gt;&lt;/a&gt;1 文件夹与工作空间的区别&lt;/h1&gt;&lt;h2 id=&quot;1-1-文件夹&quot;&gt;&lt;a href=&quot;#1-1-文件夹&quot; class=&quot;headerlink&quot; title=&quot;1.1 文件夹&quot;&gt;&lt;/a&gt;1.1 文件夹&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在VS Code的 &lt;strong&gt;“文件”&lt;/strong&gt; 菜单中， &lt;strong&gt;“打开文件夹（Open Folder）”&lt;/strong&gt; 是指开打项目文件夹的根目录。一个项目文件夹(Project Folder)包含一个或多个文件夹与项目相关的文件夹，以及与该项目相关的VS Code配置(放在.vscode文件夹中)。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-2-工作空间&quot;&gt;&lt;a href=&quot;#1-2-工作空间&quot; class=&quot;headerlink&quot; title=&quot;1.2 工作空间&quot;&gt;&lt;/a&gt;1.2 工作空间&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在VS Code中，工作空间(workspace)具体指后缀为*.code-workspace的文件，它是一个 &lt;strong&gt;JSON with Comments&lt;/strong&gt; 格式的文件，里面包含了所有与该工作空间相关联的文件夹，以及相关的VS Code配置信息，如下图所示。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.fdchen.host/%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E7%A4%BA%E4%BE%8B.png&quot; alt=&quot;工作空间信息示例&quot;&gt;&lt;/p&gt;
-&lt;center&gt;图1-1 工作空间信息示例&lt;/center&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
+        
+      
     
     
     
-    <category term="猿基础" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="编辑器使用" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8/"/>
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="VS Code" scheme="http://blog.fdchen.host/tags/VS-Code/"/>
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>Git 与 GitHub 速成教程</title>
-    <link href="http://blog.fdchen.host/2022/git-yu-github-su-cheng-jiao-cheng/"/>
-    <id>http://blog.fdchen.host/2022/git-yu-github-su-cheng-jiao-cheng/</id>
-    <published>2022-03-16T12:13:58.736Z</published>
-    <updated>2021-07-17T06:17:55.266Z</updated>
+    <title>AI_深度学习项目搭建与训练技巧</title>
+    <link href="http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
+    <id>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
+    <published>2022-03-15T13:10:00.000Z</published>
+    <updated>2022-03-20T15:34:25.422Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;1-文字版教程&quot;&gt;&lt;a href=&quot;#1-文字版教程&quot; class=&quot;headerlink&quot; title=&quot;1 文字版教程&quot;&gt;&lt;/a&gt;1 文字版教程&lt;/h1&gt;&lt;p&gt;转载：&lt;a href=&quot;https://www.cnblogs.com/zhangxiaoyong/p/6000084.html#_label13&quot;&gt;《史上最详细的Git教程》&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;2-视频教程&quot;&gt;&lt;a href=&quot;#2-视频教程&quot; class=&quot;headerlink&quot; title=&quot;2 视频教程&quot;&gt;&lt;/a&gt;2 视频教程&lt;/h1&gt;&lt;p&gt;转载：&lt;a href=&quot;https://www.bilibili.com/video/av10475153/?p=1&quot;&gt;《【教程】学会Git玩转Github【全】》&lt;/a&gt;&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-Pytorch使用技巧&quot;&gt;&lt;a href=&quot;#1-Pytorch使用技巧&quot; class=&quot;headerlink&quot; title=&quot;1 Pytorch使用技巧&quot;&gt;&lt;/a&gt;1 Pytorch使用技巧&lt;/h1&gt;&lt;h2</summary>
+        
+      
     
     
     
-    <category term="猿基础" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/"/>
+    <category term="AI" scheme="http://blog.fdchen.host/categories/AI/"/>
     
-    <category term="Git 与 GitHub" scheme="http://blog.fdchen.host/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/Git-%E4%B8%8E-GitHub/"/>
+    
+    <category term="深度学习" scheme="http://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Pytorch" scheme="http://blog.fdchen.host/tags/Pytorch/"/>
+    
+    <category term="模型训练" scheme="http://blog.fdchen.host/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python_Numpy</title>
+    <link href="http://blog.fdchen.host/2022/python-numpy/"/>
+    <id>http://blog.fdchen.host/2022/python-numpy/</id>
+    <published>2022-03-05T09:18:00.000Z</published>
+    <updated>2022-03-20T12:23:17.879Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-基本矩阵操作&quot;&gt;&lt;a href=&quot;#1-基本矩阵操作&quot; class=&quot;headerlink&quot; title=&quot;1 基本矩阵操作&quot;&gt;&lt;/a&gt;1 基本矩阵操作&lt;/h1&gt;&lt;h2 id=&quot;1-1-纵向连接矩阵，np-r-a-b&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
-    <category term="Git" scheme="http://blog.fdchen.host/tags/Git/"/>
-    
-    <category term="GitHub" scheme="http://blog.fdchen.host/tags/GitHub/"/>
+    <category term="Numpy" scheme="http://blog.fdchen.host/tags/Numpy/"/>
     
   </entry>
   
   <entry>
-    <title>常用单词</title>
-    <link href="http://blog.fdchen.host/2022/chang-yong-dan-ci/"/>
-    <id>http://blog.fdchen.host/2022/chang-yong-dan-ci/</id>
-    <published>2022-03-16T12:13:50.832Z</published>
-    <updated>2021-10-26T12:33:18.377Z</updated>
+    <title>Java_SprinBoot_Debug</title>
+    <link href="http://blog.fdchen.host/2022/java-springboot-debug/"/>
+    <id>http://blog.fdchen.host/2022/java-springboot-debug/</id>
+    <published>2022-01-03T06:24:00.000Z</published>
+    <updated>2022-03-20T12:22:52.800Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-Spring-Boot项目如何独立运行-springboot项目打包&quot;&gt;&lt;a href=&quot;#1-Spring-Boot项目如何独立运行-springboot项目打包&quot; class=&quot;headerlink&quot; title=&quot;1. Spring</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://blog.fdchen.host/categories/Java/"/>
+    
+    
+    <category term="Debug" scheme="http://blog.fdchen.host/tags/Debug/"/>
+    
+    <category term="SpringBoot" scheme="http://blog.fdchen.host/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL使用</title>
+    <link href="http://blog.fdchen.host/2022/shu-ju-ku-mysql/"/>
+    <id>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</id>
+    <published>2022-01-02T20:01:00.000Z</published>
+    <updated>2022-03-20T12:23:55.929Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-安装配置MySQL-Navicat&quot;&gt;&lt;a href=&quot;#1-安装配置MySQL-Navicat&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="http://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="Debug" scheme="http://blog.fdchen.host/tags/Debug/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="MySQL" scheme="http://blog.fdchen.host/tags/MySQL/"/>
+    
+    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python_Pandas</title>
+    <link href="http://blog.fdchen.host/2022/python-pandas/"/>
+    <id>http://blog.fdchen.host/2022/python-pandas/</id>
+    <published>2022-01-01T16:00:00.000Z</published>
+    <updated>2022-03-20T12:23:24.089Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-DataFrame&quot;&gt;&lt;a href=&quot;#1-DataFrame&quot; class=&quot;headerlink&quot; title=&quot;1 DataFrame&quot;&gt;&lt;/a&gt;1 DataFrame&lt;/h1&gt;&lt;h2 id=&quot;1-1-修改某一列数据&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Pandas" scheme="http://blog.fdchen.host/tags/Pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python_PyTorch</title>
+    <link href="http://blog.fdchen.host/2022/python-pytorch/"/>
+    <id>http://blog.fdchen.host/2022/python-pytorch/</id>
+    <published>2021-12-31T16:00:00.000Z</published>
+    <updated>2022-03-20T12:23:33.939Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-Pytorch教程&quot;&gt;&lt;a href=&quot;#0-Pytorch教程&quot; class=&quot;headerlink&quot; title=&quot;0 Pytorch教程&quot;&gt;&lt;/a&gt;0 Pytorch教程&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;视频教程：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="Pytorch" scheme="http://blog.fdchen.host/tags/Pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔_服创总结</title>
+    <link href="http://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/"/>
+    <id>http://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/</id>
+    <published>2021-12-28T12:27:00.000Z</published>
+    <updated>2022-03-20T16:26:22.398Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;纪念人生中唯一一次服创&lt;/p&gt;
+&lt;p&gt;结果：全国三等奖&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0. 前言&quot;&gt;&lt;/a&gt;0. 前言&lt;/h1&gt;&lt;p&gt;服创（大学生服务外包创新创业大赛），应该是第一次作为队长带领伙伴们参加比赛，可以说压力还是有点大——怕没能担好这个责任，没能带大家拿下好成绩。最后还确实出现了失误，而且队内气氛也没有调节好，即便到了最后还是感觉交流有点少（也可能是这个原因，导致我自己也没有太多难忘的回忆，更多是内疚和自责），等等问题。下面重点还是以反思为主。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="服创 - 经验总结" scheme="http://blog.fdchen.host/tags/%E6%9C%8D%E5%88%9B-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python_Debug</title>
+    <link href="http://blog.fdchen.host/2021/python-debug/"/>
+    <id>http://blog.fdchen.host/2021/python-debug/</id>
+    <published>2021-12-07T11:27:00.000Z</published>
+    <updated>2022-03-20T12:23:04.626Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-JSON读取大量数据错误：JSONDecodeError-Extra-data-line-2-column-1或者ValueError-Extra-data&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="Debug" scheme="http://blog.fdchen.host/tags/Debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语_常用单词</title>
+    <link href="http://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/"/>
+    <id>http://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/</id>
+    <published>2021-10-26T12:33:00.000Z</published>
+    <updated>2022-03-20T15:25:44.256Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;1-论文常用单词&quot;&gt;&lt;a href=&quot;#1-论文常用单词&quot; class=&quot;headerlink&quot; title=&quot;1. 论文常用单词&quot;&gt;&lt;/a&gt;1. 论文常用单词&lt;/h1&gt;&lt;ol&gt;
@@ -199,37 +320,64 @@
   </entry>
   
   <entry>
-    <title>第一次登录阿里云Windows服务器ECS详解及利用MSTSC进行连接</title>
-    <link href="http://blog.fdchen.host/2022/di-yi-ci-deng-lu-a-li-yun-fu-wu-qi-ecs-xiang-jie-ji-li-yong-mstsc-jin-xing-lian-jie/"/>
-    <id>http://blog.fdchen.host/2022/di-yi-ci-deng-lu-a-li-yun-fu-wu-qi-ecs-xiang-jie-ji-li-yong-mstsc-jin-xing-lian-jie/</id>
-    <published>2022-03-16T12:13:40.857Z</published>
-    <updated>2022-03-16T12:29:05.753Z</updated>
+    <title>Linux_Shell编程</title>
+    <link href="http://blog.fdchen.host/2021/linux-shell-bian-cheng/"/>
+    <id>http://blog.fdchen.host/2021/linux-shell-bian-cheng/</id>
+    <published>2021-10-05T05:48:00.000Z</published>
+    <updated>2022-03-20T12:21:36.224Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;1-配置规则&quot;&gt;&lt;a href=&quot;#1-配置规则&quot; class=&quot;headerlink&quot; title=&quot;1 配置规则&quot;&gt;&lt;/a&gt;1 配置规则&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;在实例详情里面进入“&lt;strong&gt;本实例安全组&lt;/strong&gt;”界面，&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/2020030717415913.png&quot; alt=&quot;在这里插入图片描述&quot;&gt;&lt;/li&gt;
-&lt;li&gt;进入对应实例界面，选择“&lt;strong&gt;快速创建规则&lt;/strong&gt;”&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200307174518170.png&quot; alt=&quot;在这里插入图片描述&quot;&gt;&lt;/li&gt;
-&lt;li&gt;选择常用的端口，如：SSH, HTTP, HTTPS, MYSQL等，&lt;br&gt;授权对象自行选择：&lt;br&gt;将端口授权给单个IP地址，填写：123.123.123.123，直接填IP地址即可；&lt;br&gt;将端口授权给IP地址段，填写：10.10.10.1&amp;#x2F;24，直接填IP地址段；&lt;br&gt;将端口授权给全部IP，填写：0.0.0.0&amp;#x2F;0，将端口授权给所有人。&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200307175132754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODU2NTg3,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot;&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;1-教程&quot;&gt;&lt;a href=&quot;#1-教程&quot; class=&quot;headerlink&quot; title=&quot;1 教程&quot;&gt;&lt;/a&gt;1 教程&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;视频教程：&lt;a href=&quot;https://www.bilibili.com/video/BV1dW411M7xL?p=58&quot;&gt;尚硅谷Linux教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文字教程：&lt;a href=&quot;https://www.runoob.com/linux/linux-shell.html&quot;&gt;Shell教程|菜鸟教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
-    <category term="服务器配置" scheme="http://blog.fdchen.host/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    <category term="Linux" scheme="http://blog.fdchen.host/categories/Linux/"/>
     
     
-    <category term="Windows服务器" scheme="http://blog.fdchen.host/tags/Windows%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <category term="Shell" scheme="http://blog.fdchen.host/tags/Shell/"/>
     
-    <category term="阿里云服务器ECS" scheme="http://blog.fdchen.host/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS/"/>
-    
-    <category term="MSTSC" scheme="http://blog.fdchen.host/tags/MSTSC/"/>
+    <category term="教程 - 常用命令" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
-    <title>线性代数</title>
-    <link href="http://blog.fdchen.host/2022/xian-xing-dai-shu/"/>
-    <id>http://blog.fdchen.host/2022/xian-xing-dai-shu/</id>
-    <published>2022-03-16T12:13:25.540Z</published>
-    <updated>2021-08-04T13:33:04.263Z</updated>
+    <title>NLP_经典模型</title>
+    <link href="http://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/"/>
+    <id>http://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/</id>
+    <published>2021-09-26T06:42:00.000Z</published>
+    <updated>2022-03-20T16:22:45.874Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;以下模型由CQU 高旻老师挑选，内容由本人总结，部分内容来源网络，侵删&lt;/p&gt;
+&lt;p&gt;模型实现项目github地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
+    
+    
+    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="经典模型" scheme="http://blog.fdchen.host/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学_线性代数</title>
+    <link href="http://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/"/>
+    <id>http://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/</id>
+    <published>2021-08-13T12:20:00.000Z</published>
+    <updated>2022-03-20T15:41:25.508Z</updated>
     
     
       
@@ -250,11 +398,11 @@
   </entry>
   
   <entry>
-    <title>常用数学原理</title>
-    <link href="http://blog.fdchen.host/2022/chang-yong-shu-xue-yuan-li/"/>
-    <id>http://blog.fdchen.host/2022/chang-yong-shu-xue-yuan-li/</id>
-    <published>2022-03-16T12:13:25.534Z</published>
-    <updated>2021-08-12T13:21:37.064Z</updated>
+    <title>数学_高等数学数学</title>
+    <link href="http://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/"/>
+    <id>http://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/</id>
+    <published>2021-08-12T13:21:00.000Z</published>
+    <updated>2022-03-20T15:40:06.026Z</updated>
     
     
       
@@ -275,32 +423,38 @@
   </entry>
   
   <entry>
-    <title>React开发</title>
-    <link href="http://blog.fdchen.host/2022/react-kai-fa/"/>
-    <id>http://blog.fdchen.host/2022/react-kai-fa/</id>
-    <published>2022-03-16T12:11:43.596Z</published>
-    <updated>2021-07-21T09:23:16.763Z</updated>
+    <title>NLP_《开放域语义解析》总结</title>
+    <link href="http://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/"/>
+    <id>http://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/</id>
+    <published>2021-08-07T02:25:00.000Z</published>
+    <updated>2022-03-20T14:51:05.727Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-常见用法&quot;&gt;&lt;a href=&quot;#1-常见用法&quot; class=&quot;headerlink&quot; title=&quot;1 常见用法&quot;&gt;&lt;/a&gt;1 常见用法&lt;/h1&gt;&lt;h3 id=&quot;1-map和reduce&quot;&gt;&lt;a href=&quot;#1-map和reduce&quot;</summary>
-        
-      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;原文章所属Github项目链接：&lt;a href=&quot;https://github.com/casnlu/Semantic-Parsing&quot;&gt;https://github.com/casnlu/Semantic-Parsing&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-语义解析简介&quot;&gt;&lt;a href=&quot;#1-语义解析简介&quot; class=&quot;headerlink&quot; title=&quot;1 语义解析简介&quot;&gt;&lt;/a&gt;1 语义解析简介&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;自然语言多样，具有歧义，其理解依赖世界知识和情境。&lt;/li&gt;
+&lt;li&gt;计算机能理解的语言时统一语义、显式结构、无歧义的。&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
+    <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
+    
+    
+    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="语义解析" scheme="http://blog.fdchen.host/tags/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://blog.fdchen.host/2022/react-native-kai-fa/"/>
-    <id>http://blog.fdchen.host/2022/react-native-kai-fa/</id>
-    <published>2022-03-16T12:11:43.593Z</published>
-    <updated>2021-07-21T16:25:00.804Z</updated>
+    <title>前端开发_ReactNative</title>
+    <link href="http://blog.fdchen.host/2021/qian-duan-kai-fa-reactnative/"/>
+    <id>http://blog.fdchen.host/2021/qian-duan-kai-fa-reactnative/</id>
+    <published>2021-07-21T16:25:00.000Z</published>
+    <updated>2022-03-20T15:16:51.283Z</updated>
     
     
       
@@ -314,15 +468,23 @@
     
     
     
+    <category term="前端开发" scheme="http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="React Native" scheme="http://blog.fdchen.host/tags/React-Native/"/>
+    
+    <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>React 开发相关</title>
-    <link href="http://blog.fdchen.host/2022/react/"/>
-    <id>http://blog.fdchen.host/2022/react/</id>
-    <published>2022-03-16T12:11:43.588Z</published>
-    <updated>2021-07-24T11:55:38.845Z</updated>
+    <title>前端开发_React</title>
+    <link href="http://blog.fdchen.host/2021/qian-duan-kai-fa-react/"/>
+    <id>http://blog.fdchen.host/2021/qian-duan-kai-fa-react/</id>
+    <published>2021-07-21T09:23:00.000Z</published>
+    <updated>2022-03-20T15:11:03.550Z</updated>
     
     
       
@@ -335,92 +497,23 @@
     
     
     
+    <category term="前端开发" scheme="http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="React" scheme="http://blog.fdchen.host/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>NLP模型</title>
-    <link href="http://blog.fdchen.host/2022/nlp-mo-xing/"/>
-    <id>http://blog.fdchen.host/2022/nlp-mo-xing/</id>
-    <published>2022-03-16T12:10:02.632Z</published>
-    <updated>2022-03-18T05:42:16.978Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;以下模型由CQU 高旻老师挑选，内容由本人总结，部分内容来源网络，侵删&lt;/p&gt;
-&lt;p&gt;模型实现项目github地址：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
-    
-    <category term="算法模型" scheme="http://blog.fdchen.host/categories/NLP/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B/"/>
-    
-    
-    <category term="笔记" scheme="http://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>环境配置与软件安装</title>
-    <link href="http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/"/>
-    <id>http://blog.fdchen.host/2022/huan-jing-pei-zhi-yu-ruan-jian-an-zhuang/</id>
-    <published>2022-03-16T12:07:40.418Z</published>
-    <updated>2021-07-05T13:48:32.797Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-Typora-PicGo-七牛云搭建博客写作环境&quot;&gt;&lt;a href=&quot;#1-Typora-PicGo-七牛云搭建博客写作环境&quot; class=&quot;headerlink&quot; title=&quot;1. Typora+PicGo+七牛云搭建博客写作环境&quot;&gt;&lt;/a&gt;1.</summary>
-        
-      
-    
-    
-    
-    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="Tips" scheme="http://blog.fdchen.host/tags/Tips/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服创总结</title>
-    <link href="http://blog.fdchen.host/2022/fu-chuang-zong-jie/"/>
-    <id>http://blog.fdchen.host/2022/fu-chuang-zong-jie/</id>
-    <published>2022-03-16T12:07:24.187Z</published>
-    <updated>2021-12-28T12:27:40.833Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;纪念人生中唯一一次服创&lt;/p&gt;
-&lt;p&gt;结果：全国三等奖&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;0-前言&quot;&gt;&lt;a href=&quot;#0-前言&quot; class=&quot;headerlink&quot; title=&quot;0. 前言&quot;&gt;&lt;/a&gt;0. 前言&lt;/h1&gt;&lt;p&gt;服创（大学生服务外包创新创业大赛），应该是第一次作为队长带领伙伴们参加比赛，可以说压力还是有点大——怕没能担好这个责任，没能带大家拿下好成绩。最后还确实出现了失误，而且队内气氛也没有调节好，即便到了最后还是感觉交流有点少（也可能是这个原因，导致我自己也没有太多难忘的回忆，更多是内疚和自责），等等问题。下面重点还是以反思为主。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="服创 - 经验总结" scheme="http://blog.fdchen.host/tags/%E6%9C%8D%E5%88%9B-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>美赛总结</title>
-    <link href="http://blog.fdchen.host/2022/mei-sai-zong-jie/"/>
-    <id>http://blog.fdchen.host/2022/mei-sai-zong-jie/</id>
-    <published>2022-03-16T12:05:49.371Z</published>
-    <updated>2021-07-18T08:25:57.438Z</updated>
+    <title>随笔_美赛总结</title>
+    <link href="http://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/"/>
+    <id>http://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/</id>
+    <published>2021-07-18T08:25:00.000Z</published>
+    <updated>2022-03-20T16:27:48.189Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -435,41 +528,16 @@
     <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="数模 - 经验总结" scheme="http://blog.fdchen.host/tags/%E6%95%B0%E6%A8%A1-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <category term="美赛 - 经验总结" scheme="http://blog.fdchen.host/tags/%E7%BE%8E%E8%B5%9B-%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
-    <title>收藏夹</title>
-    <link href="http://blog.fdchen.host/2022/shou-cang-jia/"/>
-    <id>http://blog.fdchen.host/2022/shou-cang-jia/</id>
-    <published>2022-03-16T12:04:17.408Z</published>
-    <updated>2020-10-24T06:44:48.002Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-机器学习&quot;&gt;&lt;a href=&quot;#1-机器学习&quot; class=&quot;headerlink&quot; title=&quot;1 机器学习&quot;&gt;&lt;/a&gt;1 机器学习&lt;/h1&gt;&lt;h2 id=&quot;1-1-学习笔记&quot;&gt;&lt;a href=&quot;#1-1-学习笔记&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="收藏夹" scheme="http://blog.fdchen.host/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>答辩经验</title>
-    <link href="http://blog.fdchen.host/2022/da-bian-jing-yan/"/>
-    <id>http://blog.fdchen.host/2022/da-bian-jing-yan/</id>
-    <published>2022-03-16T12:03:54.716Z</published>
-    <updated>2021-07-18T08:23:37.040Z</updated>
+    <title>随笔_答辩经验</title>
+    <link href="http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/"/>
+    <id>http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/</id>
+    <published>2021-07-18T08:23:00.000Z</published>
+    <updated>2022-03-20T16:28:43.239Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;1-PPT制作&quot;&gt;&lt;a href=&quot;#1-PPT制作&quot; class=&quot;headerlink&quot; title=&quot;1. PPT制作&quot;&gt;&lt;/a&gt;1. PPT制作&lt;/h1&gt;&lt;ol&gt;
@@ -492,109 +560,6 @@
     
     
     <category term="经验总结" scheme="http://blog.fdchen.host/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从入门到入坟——我的第一篇博客</title>
-    <link href="http://blog.fdchen.host/2022/cong-ru-men-dao-ru-fen-wo-de-di-yi-pian-bo-ke/"/>
-    <id>http://blog.fdchen.host/2022/cong-ru-men-dao-ru-fen-wo-de-di-yi-pian-bo-ke/</id>
-    <published>2022-03-16T12:03:46.543Z</published>
-    <updated>2020-09-10T10:37:20.602Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;1-为什么要写博客？——Debug方法的进化论&quot;&gt;&lt;a href=&quot;#1-为什么要写博客？——Debug方法的进化论&quot; class=&quot;headerlink&quot; title=&quot;1 为什么要写博客？——Debug方法的进化论&quot;&gt;&lt;/a&gt;1 为什么要写博客？——Debug方法的进化论&lt;/h1&gt;&lt;h2 id=&quot;1-1-收藏网址&quot;&gt;&lt;a href=&quot;#1-1-收藏网址&quot; class=&quot;headerlink&quot; title=&quot;1.1 收藏网址&quot;&gt;&lt;/a&gt;1.1 收藏网址&lt;/h2&gt;&lt;p&gt;其实，在大学我才开始接触计算机专业，刚开始学的时候懵懵懂懂，很多简单的东西都不明白，但“浏览器”是个好东西，不懂就查。不过很多时候遇到的一些Bug，过了几天就又不会调了。于是到后来我查到一些重要的知识点或Bug解决方案，我就会把网址收藏起来，但是也没怎么好好分类，往往还夹杂着别的学科，就像图片中看到的，乱七八糟，有时候就算知道曾经收藏过，找也要找很久。(图片来自浏览器的收藏夹)&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200410091718104.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NlbWljaXJjbGVfQ0hFTg==,size_16,color_FFFFFF,t_70&quot; alt=&quot;在这里插入图片描述&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="http://blog.fdchen.host/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="感想" scheme="http://blog.fdchen.host/tags/%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pyhton_TensorFlow</title>
-    <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
-    <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
-    <published>2022-03-16T04:16:00.000Z</published>
-    <updated>2022-03-20T11:55:43.841Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-Linux安装Tensorflow&quot;&gt;&lt;a href=&quot;#0-Linux安装Tensorflow&quot; class=&quot;headerlink&quot; title=&quot;0 Linux安装Tensorflow&quot;&gt;&lt;/a&gt;0 Linux安装Tensorflow&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
-    
-    
-    <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="TensorFlow" scheme="http://blog.fdchen.host/tags/TensorFlow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python_常用用法</title>
-    <link href="http://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
-    <id>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
-    <published>2022-03-15T19:18:00.000Z</published>
-    <updated>2022-03-19T16:53:02.078Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
-    
-    
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    <category term="常用命令" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AI_深度学习项目搭建与训练技巧</title>
-    <link href="http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
-    <id>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
-    <published>2022-03-15T13:10:00.000Z</published>
-    <updated>2022-03-19T17:25:01.540Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-Pytorch使用技巧&quot;&gt;&lt;a href=&quot;#1-Pytorch使用技巧&quot; class=&quot;headerlink&quot; title=&quot;1 Pytorch使用技巧&quot;&gt;&lt;/a&gt;1 Pytorch使用技巧&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="AI" scheme="http://blog.fdchen.host/categories/AI/"/>
-    
-    
-    <category term="深度学习" scheme="http://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="Pytorch" scheme="http://blog.fdchen.host/tags/Pytorch/"/>
-    
-    <category term="模型训练" scheme="http://blog.fdchen.host/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"/>
     
   </entry>
   
