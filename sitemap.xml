@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
+    
+    <lastmod>2022-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</loc>
     
     <lastmod>2022-03-20</lastmod>
@@ -156,15 +165,6 @@
   
   <url>
     <loc>http://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
     
     <lastmod>2022-03-20</lastmod>
     
@@ -429,49 +429,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/Hadoop/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/HDFS/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/MapReduce/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/%E6%84%9F%E6%83%B3/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -485,6 +443,13 @@
   </url>
   
   <url>
+    <loc>http://blog.fdchen.host/tags/%E6%84%9F%E6%83%B3/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.fdchen.host/tags/SpringBoot/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -492,14 +457,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/Numpy/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/Pandas/</loc>
+    <loc>http://blog.fdchen.host/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -527,14 +485,56 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/</loc>
+    <loc>http://blog.fdchen.host/tags/Jupyter/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/Jupyter/</loc>
+    <loc>http://blog.fdchen.host/tags/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/Numpy/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/Hadoop/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/MapReduce/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/HDFS/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/Pandas/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -555,21 +555,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.fdchen.host/tags/MySQL/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/Shell/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -583,7 +569,21 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/</loc>
+    <loc>http://blog.fdchen.host/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/Shell/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.fdchen.host/tags/React-Native/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -597,6 +597,13 @@
   </url>
   
   <url>
+    <loc>http://blog.fdchen.host/tags/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2022-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.fdchen.host/tags/React/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -604,14 +611,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2022-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.fdchen.host/tags/React-Native/</loc>
+    <loc>http://blog.fdchen.host/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -632,7 +632,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <loc>http://blog.fdchen.host/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -646,14 +646,14 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
+    <loc>http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%8D%95%E8%AF%8D/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%8D%95%E8%AF%8D/</loc>
+    <loc>http://blog.fdchen.host/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -697,7 +697,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <loc>http://blog.fdchen.host/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -711,7 +711,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>http://blog.fdchen.host/categories/AI/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -725,7 +725,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/categories/AI/</loc>
+    <loc>http://blog.fdchen.host/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -746,7 +746,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/categories/NLP/</loc>
+    <loc>http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -760,7 +760,7 @@
   </url>
   
   <url>
-    <loc>http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
+    <loc>http://blog.fdchen.host/categories/NLP/</loc>
     <lastmod>2022-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
