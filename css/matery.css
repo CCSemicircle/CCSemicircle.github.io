@@ -542,16 +542,16 @@ header .go-back i {
     transform: translate3d(0px, 0px, 0px);
 }
 
-.bg-cover:before, 
-.bg-cover:after { 
-    position: absolute; 
-    z-index: 1; 
-    width: 100%; 
-    height: 100%; 
-    display: block; 
-    left: 0; top: 0; 
-    content: ""; 
-    backdrop-filter: blur(0.1vw); 
+.bg-cover:before,
+.bg-cover:after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0; top: 0;
+    content: "";
+    backdrop-filter: blur(0.1vw);
     background: rgba(0, 0, 0, 0.1); }
 
 
