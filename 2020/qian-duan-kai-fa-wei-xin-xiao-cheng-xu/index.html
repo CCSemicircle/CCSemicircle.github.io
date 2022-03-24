@@ -27,7 +27,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>前端开发_微信小程序 | fdChen的掉发收集箱</title>
+    <title>微信小程序 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -303,7 +303,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">前端开发_微信小程序</h1>
+                    <h1 class="description center-align post-title">微信小程序</h1>
                 </div>
             </div>
         </div>
@@ -419,16 +419,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">微信小程序</span>
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                <span class="chip bg-color">常见用法</span>
                             </a>
                         
                             <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">环境配置</span>
                             </a>
                         
-                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常见用法</span>
+                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">微信小程序</span>
                             </a>
                         
                     </div>
@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    760
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    8 分
                 </div>
                 
 
@@ -596,6 +596,136 @@
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>imgurl<span class="token operator">=</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>result<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43848576/article/details/98472926">https://blog.csdn.net/weixin_43848576/article/details/98472926</a></p>
+<h2 id="1-7-数据类型转换，parseInt-‘1’"><a href="#1-7-数据类型转换，parseInt-‘1’" class="headerlink" title="1.7 数据类型转换，parseInt(‘1’)"></a>1.7 数据类型转换，parseInt(‘1’)</h2><ul>
+<li>字符串转float，int</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token string">"字符串内容"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将字符串值转成浮点数</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"字符串内容"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将字符串值转成整数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>强制类型转换</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">String</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//把给定的值转换成字符串</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//把给定的值转换成Boolean型； </span>
+<span class="token function">Number</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//把给定的值转换成数字（可以是整数或浮点数）； </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>保留几位小数点</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">NumberObject<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span>位数<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>获取几位数：四舍五入</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Number</span><span class="token punctuation">(</span><span class="token number">135</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//returns   1e+2</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token number">135.77</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//returns   135.7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/shanshan_1117/article/details/89371296">https://blog.csdn.net/shanshan_1117/article/details/89371296</a></p>
+<h2 id="1-8-模块化，module-exports"><a href="#1-8-模块化，module-exports" class="headerlink" title="1.8 模块化，module.exports"></a>1.8 模块化，module.exports</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/panlaixing/p/6736499.html">微信小程序module.exports 模块化</a></li>
+</ul>
+<h2 id="1-9-获取当前屏幕可见区域的宽高"><a href="#1-9-获取当前屏幕可见区域的宽高" class="headerlink" title="1.9 获取当前屏幕可见区域的宽高"></a>1.9 获取当前屏幕可见区域的宽高</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">getSystemInfo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>windowWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>windowHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="1-10-小程序寻址范围"><a href="#1-10-小程序寻址范围" class="headerlink" title="1.10 小程序寻址范围"></a>1.10 小程序寻址范围</h2><ul>
+<li><p>仅支持相对寻址，不能寻址至项目文件外</p>
+</li>
+<li><p>解决办法是采用云存储，使用网页访问方式，例：<a target="_blank" rel="noopener" href="http://192.168.2.201:88/uploads/images/userAvatar/firstimg.png">http://192.168.2.201:88/uploads/images/userAvatar/firstimg.png</a></p>
+</li>
+</ul>
+<h2 id="1-11-修改data中数组或对象里面的某一项值"><a href="#1-11-修改data中数组或对象里面的某一项值" class="headerlink" title="1.11 修改data中数组或对象里面的某一项值"></a>1.11 修改data中数组或对象里面的某一项值</h2><ul>
+<li>修改对象中的某一项值</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 先定义</span>
+<span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">list</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">data1</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">passengers</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">''</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">// 修改</span>
+<span class="token keyword">var</span> that<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">,</span>
+num<span class="token operator">=</span><span class="token string">"list.data1"</span><span class="token punctuation">;</span>
+that<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token operator">:</span>that<span class="token punctuation">.</span>data<span class="token punctuation">.</span>list<span class="token punctuation">.</span>data1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token constant">XXX</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>修改数组的某一项</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 动态绑定input的值</span>
+<span class="token function-variable function">inputVal</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> e<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> index <span class="token operator">=</span> e<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token string">'passengers['</span><span class="token operator">+</span>index<span class="token operator">+</span><span class="token string">'].'</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token operator">:</span> e<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>value
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lw_1220/article/details/97928464">https://blog.csdn.net/lw_1220/article/details/97928464</a></p>
+<h2 id="1-12-特殊效果——左滑、气泡动画等"><a href="#1-12-特殊效果——左滑、气泡动画等" class="headerlink" title="1.12 特殊效果——左滑、气泡动画等"></a>1.12 特殊效果——左滑、气泡动画等</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/anda0109/article/details/76922875">微信小程序特殊效果合集—左滑、气泡各种酷炫动画</a></li>
+</ul>
+<h2 id="1-13-wx-for使用"><a href="#1-13-wx-for使用" class="headerlink" title="1.13 wx:for使用"></a>1.13 wx:for使用</h2><ul>
+<li><p>最好绑定wx:key&#x3D;”index”不然语法不严谨而且会报警告</p>
+</li>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hxfghgh/article/details/80521890">微信小程序：wx:for循环输出的使用方法以及简单例子</a></p>
+</li>
+</ul>
+<h3 id="1-13-1-wk-key作用"><a href="#1-13-1-wk-key作用" class="headerlink" title="1.13.1 wk:key作用"></a>1.13.1 wk:key作用</h3><p>如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并希望列表中的项目保持自己的特征和状态（如&lt;input&#x2F;&gt; 中的输入内容&lt;switch&#x2F;&gt; 的选中状态），需要使用wx:key来指定列表中项目的唯一的标识符。</p>
+<p>wx:key 的值以两种形式提供</p>
+<ol>
+<li>wx:key&#x3D;”property” 其中property是代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。类似于字典的key值</li>
+<li>wx:key&#x3D;”*this”， 保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：</li>
+</ol>
+<p><strong>当数据改变触发渲染层重新渲染的时候，会校正带有key的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。</strong></p>
+<p>不添加wx:key情况：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>block</span> <span class="token attr-name"><span class="token namespace">wx:</span>for-items</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;userInfoList&#125;&#125;<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>会出现warning： Now you can provide attr “wx:key” for a “wx:for” to improve performance.，如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</p>
+<p>推荐array 的 每一个item都添加一个唯一识别的property来管理，这样就可以去掉warning，如果使用保留关键字，好像会出现显示的item都是最后一个的。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>block</span> <span class="token attr-name"><span class="token namespace">wx:</span>for-items</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;userInfoList&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userInfoListId<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/psxiao/p/12299751.html">https://www.cnblogs.com/psxiao/p/12299751.html</a></p>
+<h2 id="1-14-一行2个图片列表"><a href="#1-14-一行2个图片列表" class="headerlink" title="1.14 一行2个图片列表"></a>1.14 一行2个图片列表</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="http://www.lanrenmb.com/xiaochengxujiaocheng/9128_2.html">微信小程序列表页样式布局之一行2个图片列表制作教程(2)</a></li>
+</ul>
+<h2 id="1-15-小程序form表单提交"><a href="#1-15-小程序form表单提交" class="headerlink" title="1.15 小程序form表单提交"></a>1.15 小程序form表单提交</h2><ul>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/56c404b5ba3c">小程序form表单提交</a></p>
+</li>
+<li><p>form表单注意事项：</p>
+</li>
+</ul>
+<ol>
+<li>form表单中超过一个input标签设置了auto-focus或focus，将无法调用提交方法</li>
+<li>form表单中的提交按键必须为button，不能为text或其他</li>
+</ol>
+<h2 id="1-16-小程序Cannot-read-property-‘elem’-of-undefined"><a href="#1-16-小程序Cannot-read-property-‘elem’-of-undefined" class="headerlink" title="1.16 小程序Cannot read property ‘elem’ of undefined"></a>1.16 小程序Cannot read property ‘elem’ of undefined</h2><p>基础库2.10.1的问题，换成别的基础库就可以了</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Kf_loseHair/article/details/104590506/">https://blog.csdn.net/Kf_loseHair/article/details/104590506/</a></p>
+<h2 id="1-17-Unexpected-token-lt-in-JSON-at-position-0-的错误解析"><a href="#1-17-Unexpected-token-lt-in-JSON-at-position-0-的错误解析" class="headerlink" title="1.17 Unexpected token &lt; in JSON at position 0 的错误解析"></a>1.17 Unexpected token &lt; in JSON at position 0 的错误解析</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017545154">Unexpected token &lt; in JSON at position 0 的错误解析</a></li>
+</ul>
+<h2 id="1-18-小程序设置延时"><a href="#1-18-小程序设置延时" class="headerlink" title="1.18 小程序设置延时"></a>1.18 小程序设置延时</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+     <span class="token comment">//要延时执行的代码</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token comment">//延迟时间 这里是1秒</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="1-19-小程序如何动态控制view组件高度"><a href="#1-19-小程序如何动态控制view组件高度" class="headerlink" title="1.19 小程序如何动态控制view组件高度"></a>1.19 小程序如何动态控制view组件高度</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://www.jb51.net/article/129805.htm">微信小程序实现动态改变view标签宽度和高度的方法</a></li>
+</ul>
+<h2 id="1-20-rpx和px的换算"><a href="#1-20-rpx和px的换算" class="headerlink" title="1.20 rpx和px的换算"></a>1.20 rpx和px的换算</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6877373754601013255">微信小程序 - rpx和px互转，以及系统给的 pixelRatio 值比例不对</a></li>
+</ul>
+<h2 id="1-21-微信小程序动态触发点击事件"><a href="#1-21-微信小程序动态触发点击事件" class="headerlink" title="1.21 微信小程序动态触发点击事件"></a>1.21 微信小程序动态触发点击事件</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fb618a61744c">微信小程序动态触发点击事件</a></li>
+</ul>
+<h2 id="1-22-微信小程序设置文字复制功能"><a href="#1-22-微信小程序设置文字复制功能" class="headerlink" title="1.22 微信小程序设置文字复制功能"></a>1.22 微信小程序设置文字复制功能</h2><p>text设置属性  selectable&#x3D;”true”</p>
+<h2 id="1-23-Button组件的宽高设置"><a href="#1-23-Button组件的宽高设置" class="headerlink" title="1.23 Button组件的宽高设置"></a>1.23 Button组件的宽高设置</h2><p>在css(wxss)里面直接设置button的width,height是无效的！！！必须在html(wxml)里面的style进行设置！</p>
 <h1 id="2-后端连接"><a href="#2-后端连接" class="headerlink" title="2 后端连接"></a>2 后端连接</h1><h2 id="2-1-连接M有SQL数据库"><a href="#2-1-连接M有SQL数据库" class="headerlink" title="2.1 连接M有SQL数据库"></a>2.1 连接M有SQL数据库</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38882327/article/details/91377526">微信小程序连接数据库</a></li>
 </ul>
@@ -608,7 +738,18 @@
 <h2 id="2-3-JSON取值方式"><a href="#2-3-JSON取值方式" class="headerlink" title="2.3 JSON取值方式"></a>2.3 JSON取值方式</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://www.jb51.net/article/121989.htm">实例详解JSON取值(key是中文或者数字)方式</a></li>
 </ul>
-<h1 id="3-开发工具技巧"><a href="#3-开发工具技巧" class="headerlink" title="3 开发工具技巧"></a>3 开发工具技巧</h1><h2 id="3-1-检查网络状态"><a href="#3-1-检查网络状态" class="headerlink" title="3.1 检查网络状态"></a>3.1 检查网络状态</h2>
+<h2 id="2-4-complete帮助debug"><a href="#2-4-complete帮助debug" class="headerlink" title="2.4 complete帮助debug"></a>2.4 complete帮助debug</h2><p>不论success或fail都可以打印返回结果</p>
+<h2 id="2-5-网络请求一直在pending，可能是访问接口网址不完整"><a href="#2-5-网络请求一直在pending，可能是访问接口网址不完整" class="headerlink" title="2.5 网络请求一直在pending，可能是访问接口网址不完整"></a>2.5 网络请求一直在pending，可能是访问接口网址不完整</h2><ul>
+<li>可以在微信开发者工具栏查看</li>
+</ul>
+<h1 id="3-开发工具技巧"><a href="#3-开发工具技巧" class="headerlink" title="3 开发工具技巧"></a>3 开发工具技巧</h1><h2 id="3-1-调试器部分工具栏功能介绍"><a href="#3-1-调试器部分工具栏功能介绍" class="headerlink" title="3.1 调试器部分工具栏功能介绍"></a>3.1 调试器部分工具栏功能介绍</h2><ol>
+<li><strong>Console：</strong>打印台</li>
+<li><strong>Source：</strong>项目文件信息</li>
+<li><strong>Network：</strong>查看网络请求状态</li>
+<li><strong>Storage：</strong>查看全局存储信息</li>
+<li><strong>AppData：</strong>查看全局变量</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -672,16 +813,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">微信小程序</span>
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                    <span class="chip bg-color">常见用法</span>
                                 </a>
                             
                                 <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">环境配置</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常见用法</span>
+                                <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">微信小程序</span>
                                 </a>
                             
                         </div>
@@ -911,9 +1052,9 @@
                 <a href="/2020/qian-duan-kai-fa-wei-xin-xiao-cheng-xu/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/小程序.jpg" class="responsive-img" alt="前端开发_微信小程序">
+                        <img src="https://img.fdchen.host/小程序.jpg" class="responsive-img" alt="微信小程序">
                         
-                        <span class="card-title">前端开发_微信小程序</span>
+                        <span class="card-title">微信小程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -942,16 +1083,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                        <span class="chip bg-color">常见用法</span>
                     </a>
                     
                     <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                         <span class="chip bg-color">环境配置</span>
                     </a>
                     
-                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                        <span class="chip bg-color">常见用法</span>
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
@@ -1139,7 +1280,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">123.5k</span>
+                        class="white-color">125.5k</span>
             
             
             

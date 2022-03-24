@@ -6,7 +6,7 @@
   <link href="http://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="http://blog.fdchen.host/"/>
-  <updated>2022-03-24T10:13:04.746Z</updated>
+  <updated>2022-03-24T13:29:51.095Z</updated>
   <id>http://blog.fdchen.host/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Pyhton_TensorFlow</title>
+    <title>TensorFlow</title>
     <link href="http://blog.fdchen.host/2022/python-tensorflow/"/>
     <id>http://blog.fdchen.host/2022/python-tensorflow/</id>
     <published>2022-03-16T04:16:00.000Z</published>
-    <updated>2022-03-24T10:13:04.746Z</updated>
+    <updated>2022-03-24T13:29:51.095Z</updated>
     
     
       
@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title>python_常见用法</title>
+    <title>Python_常见用法</title>
     <link href="http://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
     <id>http://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
     <published>2022-03-15T19:18:00.000Z</published>
-    <updated>2022-03-24T10:13:12.752Z</updated>
+    <updated>2022-03-24T13:25:42.798Z</updated>
     
     
       
@@ -65,18 +65,18 @@
     <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
-    <title>AI_深度学习项目搭建与训练技巧</title>
+    <title>深度学习项目搭建与训练技巧</title>
     <link href="http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
     <id>http://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
     <published>2022-03-15T13:10:00.000Z</published>
-    <updated>2022-03-24T10:12:19.174Z</updated>
+    <updated>2022-03-24T13:29:02.126Z</updated>
     
     
       
@@ -101,11 +101,11 @@
   </entry>
   
   <entry>
-    <title>Python_Numpy</title>
+    <title>Numpy</title>
     <link href="http://blog.fdchen.host/2022/python-numpy/"/>
     <id>http://blog.fdchen.host/2022/python-numpy/</id>
     <published>2022-03-05T09:18:00.000Z</published>
-    <updated>2022-03-24T10:12:44.433Z</updated>
+    <updated>2022-03-24T13:29:25.340Z</updated>
     
     
       
@@ -128,11 +128,11 @@
   </entry>
   
   <entry>
-    <title>Java_SprinBoot_Debug</title>
+    <title>SprinBoot_Debug</title>
     <link href="http://blog.fdchen.host/2022/java-springboot-debug/"/>
     <id>http://blog.fdchen.host/2022/java-springboot-debug/</id>
     <published>2022-01-03T06:24:00.000Z</published>
-    <updated>2022-03-24T10:12:25.006Z</updated>
+    <updated>2022-03-24T13:29:07.244Z</updated>
     
     
       
@@ -155,18 +155,18 @@
   </entry>
   
   <entry>
-    <title>数据库_MySQL使用</title>
+    <title>MySQL使用</title>
     <link href="http://blog.fdchen.host/2022/shu-ju-ku-mysql/"/>
     <id>http://blog.fdchen.host/2022/shu-ju-ku-mysql/</id>
     <published>2022-01-02T20:01:00.000Z</published>
-    <updated>2022-03-24T10:13:20.065Z</updated>
+    <updated>2022-03-24T13:29:59.603Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-安装配置MySQL-Navicat&quot;&gt;&lt;a href=&quot;#1-安装配置MySQL-Navicat&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;0-安装配置&quot;&gt;&lt;a href=&quot;#0-安装配置&quot; class=&quot;headerlink&quot; title=&quot;0 安装配置&quot;&gt;&lt;/a&gt;0 安装配置&lt;/h1&gt;&lt;h2 id=&quot;0-1-MySQL-Navicat&quot;&gt;&lt;a href=&quot;#0-1-MySQL-Navicat&quot;</summary>
         
       
     
@@ -175,9 +175,9 @@
     <category term="数据库" scheme="http://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="Debug" scheme="http://blog.fdchen.host/tags/Debug/"/>
     
@@ -186,11 +186,11 @@
   </entry>
   
   <entry>
-    <title>Python_Pandas</title>
+    <title>Pandas</title>
     <link href="http://blog.fdchen.host/2022/python-pandas/"/>
     <id>http://blog.fdchen.host/2022/python-pandas/</id>
     <published>2022-01-01T16:00:00.000Z</published>
-    <updated>2022-03-24T10:12:49.960Z</updated>
+    <updated>2022-03-24T13:29:33.389Z</updated>
     
     
       
@@ -213,11 +213,11 @@
   </entry>
   
   <entry>
-    <title>Python_PyTorch</title>
+    <title>PyTorch</title>
     <link href="http://blog.fdchen.host/2022/python-pytorch/"/>
     <id>http://blog.fdchen.host/2022/python-pytorch/</id>
     <published>2021-12-31T16:00:00.000Z</published>
-    <updated>2022-03-24T10:12:58.756Z</updated>
+    <updated>2022-03-24T13:29:43.320Z</updated>
     
     
       
@@ -234,20 +234,20 @@
     <category term="Python" scheme="http://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="Pytorch" scheme="http://blog.fdchen.host/tags/Pytorch/"/>
     
   </entry>
   
   <entry>
-    <title>随笔_服创总结</title>
+    <title>服创总结</title>
     <link href="http://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/"/>
     <id>http://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/</id>
     <published>2021-12-28T12:27:00.000Z</published>
-    <updated>2022-03-20T16:34:29.529Z</updated>
+    <updated>2022-03-24T13:28:26.175Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -293,11 +293,11 @@
   </entry>
   
   <entry>
-    <title>英语_常用单词</title>
+    <title>常用单词</title>
     <link href="http://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/"/>
     <id>http://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/</id>
     <published>2021-10-26T12:33:00.000Z</published>
-    <updated>2022-03-24T10:11:34.636Z</updated>
+    <updated>2022-03-24T13:28:33.901Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;1-论文常用单词&quot;&gt;&lt;a href=&quot;#1-论文常用单词&quot; class=&quot;headerlink&quot; title=&quot;1. 论文常用单词&quot;&gt;&lt;/a&gt;1. 论文常用单词&lt;/h1&gt;&lt;ol&gt;
@@ -322,11 +322,11 @@
   </entry>
   
   <entry>
-    <title>Linux_Shell编程</title>
+    <title>Shell编程</title>
     <link href="http://blog.fdchen.host/2021/linux-shell-bian-cheng/"/>
     <id>http://blog.fdchen.host/2021/linux-shell-bian-cheng/</id>
     <published>2021-10-05T05:48:00.000Z</published>
-    <updated>2022-03-24T10:05:37.706Z</updated>
+    <updated>2022-03-24T13:27:27.065Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;1-教程&quot;&gt;&lt;a href=&quot;#1-教程&quot; class=&quot;headerlink&quot; title=&quot;1 教程&quot;&gt;&lt;/a&gt;1 教程&lt;/h1&gt;&lt;ol&gt;
@@ -339,11 +339,11 @@
     <category term="Linux" scheme="http://blog.fdchen.host/categories/Linux/"/>
     
     
-    <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    <category term="Shell" scheme="http://blog.fdchen.host/tags/Shell/"/>
     
     <category term="教程" scheme="http://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="Shell" scheme="http://blog.fdchen.host/tags/Shell/"/>
+    <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
@@ -377,11 +377,11 @@
   </entry>
   
   <entry>
-    <title>数学_线性代数</title>
+    <title>_线性代数</title>
     <link href="http://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/"/>
     <id>http://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/</id>
     <published>2021-08-13T12:20:00.000Z</published>
-    <updated>2022-03-24T10:06:25.574Z</updated>
+    <updated>2022-03-24T13:28:14.036Z</updated>
     
     
       
@@ -402,11 +402,11 @@
   </entry>
   
   <entry>
-    <title>数学_高等数学数学</title>
+    <title>高等数学</title>
     <link href="http://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/"/>
     <id>http://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/</id>
     <published>2021-08-12T13:21:00.000Z</published>
-    <updated>2022-03-24T10:06:20.292Z</updated>
+    <updated>2022-03-24T13:28:07.875Z</updated>
     
     
       
@@ -427,11 +427,11 @@
   </entry>
   
   <entry>
-    <title>NLP_《开放域语义解析》总结</title>
+    <title>《开放域语义解析》总结</title>
     <link href="http://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/"/>
     <id>http://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/</id>
     <published>2021-08-07T02:25:00.000Z</published>
-    <updated>2022-03-24T10:05:56.510Z</updated>
+    <updated>2022-03-24T13:27:40.292Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -447,18 +447,18 @@
     <category term="NLP" scheme="http://blog.fdchen.host/categories/NLP/"/>
     
     
-    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="语义解析" scheme="http://blog.fdchen.host/tags/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/"/>
+    
+    <category term="学习笔记" scheme="http://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
-    <title>前端开发_ReactNative</title>
+    <title>ReactNative</title>
     <link href="http://blog.fdchen.host/2021/qian-duan-kai-fa-reactnative/"/>
     <id>http://blog.fdchen.host/2021/qian-duan-kai-fa-reactnative/</id>
     <published>2021-07-21T16:25:00.000Z</published>
-    <updated>2022-03-24T10:06:15.347Z</updated>
+    <updated>2022-03-24T13:27:58.814Z</updated>
     
     
       
@@ -475,20 +475,20 @@
     <category term="前端开发" scheme="http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="React Native" scheme="http://blog.fdchen.host/tags/React-Native/"/>
     
   </entry>
   
   <entry>
-    <title>前端开发_React</title>
+    <title>React</title>
     <link href="http://blog.fdchen.host/2021/qian-duan-kai-fa-react/"/>
     <id>http://blog.fdchen.host/2021/qian-duan-kai-fa-react/</id>
     <published>2021-07-21T09:23:00.000Z</published>
-    <updated>2022-03-24T10:06:09.923Z</updated>
+    <updated>2022-03-24T13:27:50.102Z</updated>
     
     
       
@@ -504,20 +504,20 @@
     <category term="前端开发" scheme="http://blog.fdchen.host/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="http://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="http://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="React" scheme="http://blog.fdchen.host/tags/React/"/>
     
   </entry>
   
   <entry>
-    <title>随笔_美赛总结</title>
+    <title>美赛总结</title>
     <link href="http://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/"/>
     <id>http://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/</id>
     <published>2021-07-18T08:25:00.000Z</published>
-    <updated>2022-03-20T16:34:48.669Z</updated>
+    <updated>2022-03-24T13:26:09.516Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -539,11 +539,11 @@
   </entry>
   
   <entry>
-    <title>随笔_答辩经验</title>
+    <title>答辩经验</title>
     <link href="http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/"/>
     <id>http://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/</id>
     <published>2021-07-18T08:23:00.000Z</published>
-    <updated>2022-03-20T16:28:43.239Z</updated>
+    <updated>2022-03-24T13:28:19.785Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;1-PPT制作&quot;&gt;&lt;a href=&quot;#1-PPT制作&quot; class=&quot;headerlink&quot; title=&quot;1. PPT制作&quot;&gt;&lt;/a&gt;1. PPT制作&lt;/h1&gt;&lt;ol&gt;

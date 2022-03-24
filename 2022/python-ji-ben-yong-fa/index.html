@@ -27,7 +27,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python_常见用法 | fdChen的掉发收集箱</title>
+    <title>Python_常见用法 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -303,7 +303,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python_常见用法</h1>
+                    <h1 class="description center-align post-title">Python_常见用法</h1>
                 </div>
             </div>
         </div>
@@ -419,12 +419,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
-                            </a>
-                        
                             <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                 <span class="chip bg-color">常见用法</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                     </div>
@@ -457,14 +457,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -490,6 +490,11 @@
                 <h1 id="0-安装环境"><a href="#0-安装环境" class="headerlink" title="0 安装环境"></a>0 安装环境</h1><ol>
 <li>使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python Interpreter。</li>
 </ol>
+<h2 id="0-1-pip不是内部命令问题"><a href="#0-1-pip不是内部命令问题" class="headerlink" title="0.1 pip不是内部命令问题"></a>0.1 pip不是内部命令问题</h2><ul>
+<li>查看是否添加环境变量，没有则添加</li>
+</ul>
+<p>将C:\Program Files (x86)\Python\Python36-32\Scripts添加到环境变量Path中</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wochunyang/article/details/52312370">https://blog.csdn.net/wochunyang/article/details/52312370</a></p>
 <h1 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1 文件操作"></a>1 文件操作</h1><h2 id="1-1-创建文件和文件夹"><a href="#1-1-创建文件和文件夹" class="headerlink" title="1.1 创建文件和文件夹"></a>1.1 创建文件和文件夹</h2><h3 id="1-1-1-创建文件夹"><a href="#1-1-1-创建文件夹" class="headerlink" title="1.1.1 创建文件夹"></a>1.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
 <span class="token keyword">import</span> os
 
@@ -781,6 +786,19 @@ data3 <span class="token operator">=</span> <span class="token punctuation">[</s
 <span class="token keyword">del</span> a
 gc<span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h1 id="18-Json数据"><a href="#18-Json数据" class="headerlink" title="18 Json数据"></a>18 Json数据</h1><h2 id="18-1-Json数据与普通数据的互转"><a href="#18-1-Json数据与普通数据的互转" class="headerlink" title="18.1 Json数据与普通数据的互转"></a>18.1 Json数据与普通数据的互转</h2><p>JSON 值可以是：</p>
+<ol>
+<li>数字（整数或浮点数）</li>
+<li>字符串（在双引号中）</li>
+<li>逻辑值（true 或 false）</li>
+<li>数组（在中括号中）</li>
+<li>对象（在大括号中）</li>
+<li>null</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>  <span class="token comment"># 对数据进行编码。</span>
+json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>json_data<span class="token punctuation">)</span>  <span class="token comment">#对数据进行解码。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -844,12 +862,12 @@ gc<span class="token punctuation">.</span>collect<span class="token punctuation"
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                     <span class="chip bg-color">常见用法</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                         </div>
@@ -1030,9 +1048,9 @@ gc<span class="token punctuation">.</span>collect<span class="token punctuation"
                 <a href="/2022/python-tensorflow/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/tensorflow.jpg" class="responsive-img" alt="Pyhton_TensorFlow">
+                        <img src="https://img.fdchen.host/tensorflow.jpg" class="responsive-img" alt="TensorFlow">
                         
-                        <span class="card-title">Pyhton_TensorFlow</span>
+                        <span class="card-title">TensorFlow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1082,9 +1100,9 @@ gc<span class="token punctuation">.</span>collect<span class="token punctuation"
                 <a href="/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/AI.jpg" class="responsive-img" alt="AI_深度学习项目搭建与训练技巧">
+                        <img src="https://img.fdchen.host/AI.jpg" class="responsive-img" alt="深度学习项目搭建与训练技巧">
                         
-                        <span class="card-title">AI_深度学习项目搭建与训练技巧</span>
+                        <span class="card-title">深度学习项目搭建与训练技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1309,7 +1327,7 @@ gc<span class="token punctuation">.</span>collect<span class="token punctuation"
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">123.5k</span>
+                        class="white-color">125.5k</span>
             
             
             

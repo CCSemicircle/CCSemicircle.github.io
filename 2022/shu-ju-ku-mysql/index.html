@@ -27,7 +27,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据库_MySQL使用 | fdChen的掉发收集箱</title>
+    <title>MySQL使用 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -303,7 +303,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据库_MySQL使用</h1>
+                    <h1 class="description center-align post-title">MySQL使用</h1>
                 </div>
             </div>
         </div>
@@ -419,12 +419,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
-                            </a>
-                        
                             <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                 <span class="chip bg-color">常见用法</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                             <a href="/tags/Debug/">
@@ -465,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    579
+                    765
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -495,7 +495,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-安装配置MySQL-Navicat"><a href="#1-安装配置MySQL-Navicat" class="headerlink" title="1.安装配置MySQL+Navicat"></a>1.安装配置MySQL+Navicat</h3><ul>
+                <h1 id="0-安装配置"><a href="#0-安装配置" class="headerlink" title="0 安装配置"></a>0 安装配置</h1><h2 id="0-1-MySQL-Navicat"><a href="#0-1-MySQL-Navicat" class="headerlink" title="0.1 MySQL+Navicat"></a>0.1 MySQL+Navicat</h2><ul>
 <li><p>详见博客：<a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-install.html">MySQL 安装</a> （简单版，无可视化界面）</p>
 <ul>
 <li>修改root用户临时密码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Exception_sir/article/details/82111014">mysql 修改密码报错解决</a></li>
@@ -512,56 +512,73 @@
 <li>查看MySQL服务名，“管理工具”  –&gt; “服务”</li>
 <li>破解版Navicat，详见博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3af7fccc22c7">Navicat Premium v15 中文最新破解版（附：激活工具）</a></li>
 </ul>
-<h3 id="2-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES"><a href="#2-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES" class="headerlink" title="2.登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)"></a>2.登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36675754/article/details/81381341">在MySQL登录时出现Access denied for user ‘root‘@‘localhost‘ (using password: YES) 拒绝访问，并可修改MySQL密码</a></li>
+<h2 id="0-2-windows下MySQL-my-ini文件位置"><a href="#0-2-windows下MySQL-my-ini文件位置" class="headerlink" title="0.2 windows下MySQL my.ini文件位置"></a>0.2 windows下MySQL my.ini文件位置</h2><ul>
+<li>C:\ProgramData\MySQL\MySQL Server 8.0</li>
 </ul>
-<h3 id="3-发生系统错误5"><a href="#3-发生系统错误5" class="headerlink" title="3.发生系统错误5"></a>3.发生系统错误5</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/aaa333qwe/article/details/75195938">net stop mysql 发生系统错误 5。</a></li>
+<h2 id="0-3-centOS-7-安装MySQL"><a href="#0-3-centOS-7-安装MySQL" class="headerlink" title="0.3 centOS 7 安装MySQL"></a>0.3 centOS 7 安装MySQL</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a774630093/article/details/79270080">CentOS7 64位安装mysql教程，亲测完美</a></li>
 </ul>
-<h3 id="4-报错-Duplicate-foreign-key-constraint-name-‘idXXXX’"><a href="#4-报错-Duplicate-foreign-key-constraint-name-‘idXXXX’" class="headerlink" title="4.报错 Duplicate foreign key constraint name ‘idXXXX’"></a>4.报错 Duplicate foreign key constraint name ‘idXXXX’</h3><ul>
-<li>因为在之前已经加过一个名称为idmanagetype外键索引了 ，如果重复则报错，在名称后面加一个1成功了。</li>
+<h2 id="0-4-centOS-7-执行sql文件"><a href="#0-4-centOS-7-执行sql文件" class="headerlink" title="0.4 centOS 7 执行sql文件"></a>0.4 centOS 7 执行sql文件</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaishi/p/7575301.html">Centos 执行sql文件</a></li>
 </ul>
-<h3 id="5-Navicat连接远程主机数据库报错"><a href="#5-Navicat连接远程主机数据库报错" class="headerlink" title="5.Navicat连接远程主机数据库报错"></a>5.Navicat连接远程主机数据库报错</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/MTbaby/article/details/56836986">解决Navicat无法连接到MySQL的问题</a></li>
+<h2 id="0-5-JDBC数据库驱动的下载、安装与连接"><a href="#0-5-JDBC数据库驱动的下载、安装与连接" class="headerlink" title="0.5 JDBC数据库驱动的下载、安装与连接"></a>0.5 JDBC数据库驱动的下载、安装与连接</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/pan_junbiao/article/details/86626741">JDBC数据库驱动的下载、安装与连接</a></li>
 </ul>
-<h3 id="6-workbench-执行语句"><a href="#6-workbench-执行语句" class="headerlink" title="6. workbench 执行语句"></a>6. workbench 执行语句</h3><ul>
+<h1 id="1-常见用法"><a href="#1-常见用法" class="headerlink" title="1 常见用法"></a>1 常见用法</h1><h2 id="1-1-workbench-执行语句"><a href="#1-1-workbench-执行语句" class="headerlink" title="1.1 workbench 执行语句"></a>1.1 workbench 执行语句</h2><ul>
 <li>新建tab(new tab) ctrl+t</li>
 <li>执行当前语句(execute current statement) ctrl+enter</li>
 <li>执行全部或选中的语句(execute all or selection) ctrl+shift+enter</li>
 <li>查看执行计划(explain current statement) ctrl+alt+x</li>
 </ul>
-<h3 id="7-text数据类型"><a href="#7-text数据类型" class="headerlink" title="7. text数据类型"></a>7. text数据类型</h3><ul>
+<h2 id="1-2-text数据类型"><a href="#1-2-text数据类型" class="headerlink" title="1.2 text数据类型"></a>1.2 text数据类型</h2><ul>
 <li><code>TEXT</code>可用于存储可以从<code>1</code>字节到<code>4GB</code>长度的文本字符串。</li>
 <li>TINYTEXT - 1个字节(255个字符)</li>
 <li>TEXT - 64KB(65,535个字符)</li>
 <li>MEDIUMTEXT - 16MB(16,777,215个字符)</li>
 <li>LONGTEXT - 4GB(4,294,967,295个字符)</li>
 </ul>
-<h3 id="8-命令行登录Mysql"><a href="#8-命令行登录Mysql" class="headerlink" title="8. 命令行登录Mysql"></a>8. 命令行登录Mysql</h3><ul>
+<h2 id="1-3-命令行登录Mysql"><a href="#1-3-命令行登录Mysql" class="headerlink" title="1.3 命令行登录Mysql"></a>1.3 命令行登录Mysql</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/helloxiaozhe/article/details/76229074">命令行登录Mysql，远程登录Mysql的方法</a></li>
 </ul>
-<h3 id="9-连接-mysql-出现Client-does-not-support-authentication-protocol-requested-by-server"><a href="#9-连接-mysql-出现Client-does-not-support-authentication-protocol-requested-by-server" class="headerlink" title="9. 连接 mysql 出现Client does not support authentication protocol requested by server"></a>9. 连接 mysql 出现Client does not support authentication protocol requested by server</h3><ul>
+<h2 id="1-4-设置字段值取反操作"><a href="#1-4-设置字段值取反操作" class="headerlink" title="1.4 设置字段值取反操作"></a>1.4 设置字段值取反操作</h2><ul>
+<li>对布尔值取反，使用 ~。</li>
+</ul>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">update</span> <span class="token keyword">set</span> <span class="token keyword">status</span><span class="token operator">=</span><span class="token operator">~</span><span class="token keyword">status</span> <span class="token keyword">where</span> id<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment"># status的值为true || false。</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>对0、1 数值取反，使用abs() 取绝对值。</li>
+</ul>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">update</span> <span class="token keyword">set</span> <span class="token keyword">status</span><span class="token operator">=</span>abs<span class="token punctuation">(</span><span class="token keyword">status</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">where</span> id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment"># status的值为0 || 1。</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里如果数据表里的值一开始为0，那么会报一个错：</p>
+<p>[Err] 1690 - BIGINT UNSIGNED value is out of range in ‘(resume.r_resume.status - 1)’</p>
+<p>原因：取绝对值之前得到负值，看看是不是status勾选了unsigned，去掉再试试。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xinxinmifan/p/11548935.html">https://www.cnblogs.com/xinxinmifan/p/11548935.html</a></p>
+<h1 id="2-Debug"><a href="#2-Debug" class="headerlink" title="2 Debug"></a>2 Debug</h1><h2 id="2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES"><a href="#2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES" class="headerlink" title="2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)"></a>2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36675754/article/details/81381341">在MySQL登录时出现Access denied for user ‘root‘@‘localhost‘ (using password: YES) 拒绝访问，并可修改MySQL密码</a></li>
+</ul>
+<h2 id="2-2-发生系统错误5"><a href="#2-2-发生系统错误5" class="headerlink" title="2.2 发生系统错误5"></a>2.2 发生系统错误5</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/aaa333qwe/article/details/75195938">net stop mysql 发生系统错误 5。</a></li>
+</ul>
+<h2 id="2-3-报错-Duplicate-foreign-key-constraint-name-‘idXXXX’"><a href="#2-3-报错-Duplicate-foreign-key-constraint-name-‘idXXXX’" class="headerlink" title="2.3 报错 Duplicate foreign key constraint name ‘idXXXX’"></a>2.3 报错 Duplicate foreign key constraint name ‘idXXXX’</h2><ul>
+<li>因为在之前已经加过一个名称为idmanagetype外键索引了 ，如果重复则报错，在名称后面加一个1成功了。</li>
+</ul>
+<h2 id="2-4-Navicat连接远程主机数据库报错"><a href="#2-4-Navicat连接远程主机数据库报错" class="headerlink" title="2.4 Navicat连接远程主机数据库报错"></a>2.4 Navicat连接远程主机数据库报错</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/MTbaby/article/details/56836986">解决Navicat无法连接到MySQL的问题</a></li>
+</ul>
+<h2 id="2-5-连接-mysql-出现Client-does-not-support-authentication-protocol-requested-by-server"><a href="#2-5-连接-mysql-出现Client-does-not-support-authentication-protocol-requested-by-server" class="headerlink" title="2.5 连接 mysql 出现Client does not support authentication protocol requested by server"></a>2.5 连接 mysql 出现Client does not support authentication protocol requested by server</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013700358/article/details/80306560">navicat 连接 mysql 出现Client does not support authentication protocol requested by server解决方案</a></li>
 </ul>
-<h3 id="10-windows下MySQL-my-ini文件位置"><a href="#10-windows下MySQL-my-ini文件位置" class="headerlink" title="10. windows下MySQL my.ini文件位置"></a>10. windows下MySQL my.ini文件位置</h3><ul>
-<li>C:\ProgramData\MySQL\MySQL Server 8.0</li>
-</ul>
-<h3 id="11-centOS-7-安装MySQL"><a href="#11-centOS-7-安装MySQL" class="headerlink" title="11. centOS 7 安装MySQL"></a>11. centOS 7 安装MySQL</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a774630093/article/details/79270080">CentOS7 64位安装mysql教程，亲测完美</a></li>
-</ul>
-<h3 id="12-centOS-7-执行sql文件"><a href="#12-centOS-7-执行sql文件" class="headerlink" title="12. centOS 7 执行sql文件"></a>12. centOS 7 执行sql文件</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaishi/p/7575301.html">Centos 执行sql文件</a></li>
-</ul>
-<h3 id="13-JDBC数据库驱动的下载、安装与连接"><a href="#13-JDBC数据库驱动的下载、安装与连接" class="headerlink" title="13. JDBC数据库驱动的下载、安装与连接"></a>13. JDBC数据库驱动的下载、安装与连接</h3><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/pan_junbiao/article/details/86626741">JDBC数据库驱动的下载、安装与连接</a></li>
-</ul>
-<h3 id="14-IDEA-Database报红色下划线"><a href="#14-IDEA-Database报红色下划线" class="headerlink" title="14. IDEA Database报红色下划线"></a>14. IDEA Database报红色下划线</h3><ul>
+<h2 id="2-6-IDEA-Database报红色下划线"><a href="#2-6-IDEA-Database报红色下划线" class="headerlink" title="2.6 IDEA Database报红色下划线"></a>2.6 IDEA Database报红色下划线</h2><ul>
 <li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a328062954/article/details/105312090">IDEA Database报红色下划线</a></p>
 </li>
 <li><p><strong>注意使用Test conection，一般可以按照提示解决问题</strong></p>
 </li>
 <li><p>修改了这里的文件，也要注意修改application.yml&#x2F;application-dev.yml里关于数据库的设置，特别是password</p>
 </li>
+</ul>
+<h2 id="2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误"><a href="#2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误" class="headerlink" title="2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误"></a>2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/cainiao_accp/article/details/68962579">MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</a></li>
 </ul>
 
                 
@@ -627,12 +644,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                     <span class="chip bg-color">常见用法</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                                 <a href="/tags/Debug/">
@@ -821,9 +838,9 @@
                 <a href="/2022/java-springboot-debug/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/springboot.jpg" class="responsive-img" alt="Java_SprinBoot_Debug">
+                        <img src="https://img.fdchen.host/springboot.jpg" class="responsive-img" alt="SprinBoot_Debug">
                         
-                        <span class="card-title">Java_SprinBoot_Debug</span>
+                        <span class="card-title">SprinBoot_Debug</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -873,9 +890,9 @@
                 <a href="/2022/python-pandas/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/pandas.jpg" class="responsive-img" alt="Python_Pandas">
+                        <img src="https://img.fdchen.host/pandas.jpg" class="responsive-img" alt="Pandas">
                         
-                        <span class="card-title">Python_Pandas</span>
+                        <span class="card-title">Pandas</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1096,7 +1113,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">123.5k</span>
+                        class="white-color">125.5k</span>
             
             
             
