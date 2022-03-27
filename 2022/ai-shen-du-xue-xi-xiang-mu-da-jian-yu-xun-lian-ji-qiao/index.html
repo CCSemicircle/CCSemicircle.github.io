@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    699
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    12 分
                 </div>
                 
 
@@ -492,7 +492,77 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="0-核心思想"><a href="#0-核心思想" class="headerlink" title="0 核心思想"></a>0 核心思想</h1><h2 id="0-1-尽可能地用计算机代替人工完成任务"><a href="#0-1-尽可能地用计算机代替人工完成任务" class="headerlink" title="0.1 尽可能地用计算机代替人工完成任务"></a>0.1 尽可能地用计算机代替人工完成任务</h2><p>虽然在短期需要一些额外的工作，但是长远开看可以节省很多的时间和成本。</p>
-<h2 id="0-2-当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获"><a href="#0-2-当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获" class="headerlink" title="0.2 当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获"></a>0.2 当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获</h2><h2 id="0-3-在工程上，先解决80-的问题，在慢慢解决剩下20-的文图"><a href="#0-3-在工程上，先解决80-的问题，在慢慢解决剩下20-的文图" class="headerlink" title="0.3 在工程上，先解决80%的问题，在慢慢解决剩下20%的文图"></a>0.3 在工程上，先解决80%的问题，在慢慢解决剩下20%的文图</h2><h1 id="1-Pytorch使用技巧"><a href="#1-Pytorch使用技巧" class="headerlink" title="1 Pytorch使用技巧"></a>1 Pytorch使用技巧</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
+<h2 id="0-2-当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获"><a href="#0-2-当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获" class="headerlink" title="0.2 当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获"></a>0.2 当出现问题时，不用凑合的办法修正，去找到出现问题的原因，或许会有意外的收获</h2><h2 id="0-3-在工程上，先解决80-的问题，在慢慢解决剩下20-的文图"><a href="#0-3-在工程上，先解决80-的问题，在慢慢解决剩下20-的文图" class="headerlink" title="0.3 在工程上，先解决80%的问题，在慢慢解决剩下20%的文图"></a>0.3 在工程上，先解决80%的问题，在慢慢解决剩下20%的文图</h2><h2 id="0-4-科学炼丹——快、准、稳"><a href="#0-4-科学炼丹——快、准、稳" class="headerlink" title="0.4 科学炼丹——快、准、稳"></a>0.4 科学炼丹——快、准、稳</h2><blockquote>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/HOgdhAzyti0N2TZBmt_4Iw">别再喊我调参侠!夕小瑶”科学炼丹”手册了解一下</a></p>
+</blockquote>
+<h3 id="0-4-1-“准”字诀"><a href="#0-4-1-“准”字诀" class="headerlink" title="0.4.1 “准”字诀"></a>0.4.1 “准”字诀</h3><ol>
+<li><strong>做好调研，找准起点</strong></li>
+</ol>
+<p>在开始调研之前，先定位算法问题所对口的学术会议或期刊，如下：</p>
+<ul>
+<li><strong>query-doc相关性匹配</strong>：SIGIR，CIKM等IR强相关的会议，而不是NLP的会议；</li>
+<li><strong>NLI、问答、对话等语义匹配问题</strong>：ACL、EMNLP、NAACL、COLING等NLP会议，而不是IR会议；</li>
+<li><strong>改进算法模型问题</strong>：ICLR、NIPS等深度学习、神经网络会议</li>
+<li><strong>无法找到对口的问题：</strong>AAAI和IJCAI会议</li>
+</ul>
+<p>但是定位会议是为寻找相关模型服务的，在定位好对口的期刊或会议后，<strong>寻找几篇近两年内发表的跟待解决问题相接近的paper，了解这些paper后，追根朔源，通过这些paper里的related work与实验的baselines章节，了解到该算法问题更早的工作。</strong></p>
+<ol start="2">
+<li><strong>构建策略迭代闭环，找准努力方向</strong></li>
+</ol>
+<p>一个比较通用的迭代闭环是：</p>
+<p><strong>数据集分析 - 预处理策略 - 算法策略 - 模型评价 - case study</strong></p>
+<p><strong>（1）数据集分析</strong></p>
+<p>在开始之前对数据集做个简单的分析，可能有助于大大降低之后的体力劳动（提前排除不靠谱的策略和不敏感的超参数），并大大降低<br>初次接触新任务时犯致命错误的概率。</p>
+<p><strong>（2）预处理策略与算法策略</strong></p>
+<p>这个环节最直接方法就是搬运上一节的调研结果，将一些paper中比较有效的策略搬过来进行验证。不过，<strong>尤其是注意一个meaningful的问题，即搬运这个策略，甚至设计一个新的策略，目的是什么？要解决什么问题？</strong>毕竟很多paper中的策略的适用场景是很局限的，毫无目的的搬运可能会大大增加无用功。同时，这也是避免“结果主义”（魔改的模型结果好再去找原因）炼丹。</p>
+<p><strong>（3）模型评价</strong></p>
+<p>业务中可能有一些模棱两可的算法任务，如何无偏地评价一个模型的好坏，就需要在大规模开搞之前仔细设计清楚了。没有一个客观、无偏且自动的评价指标，策略迭代无疑会非常缓慢甚至到后期推翻重来。</p>
+<p>即便是有一些常用的指标，也要经过你自己的思考之后再决定是否采用。</p>
+<p><strong>（4）case study</strong></p>
+<p>简单的说，<strong>case study就是针对犯的错误，进行反思和总结，分析原因，吸取经验和教训，给出改进措施，保证以后不再犯相同的错误或者类似的错误。</strong><br>每一次尝试之后都要做case study，同时做好记录（可见后文），这样可以不断减少无用功。</p>
+<ol start="3">
+<li><strong>重视bug，找准翻车原因</strong></li>
+</ol>
+<p>实际上，在策略迭代过程中，刚实现一个策略时，非常容易出现bug，当初步模型效果不好时，优先考虑是存在bug。<strong>一方面可以通过打印中间过程结果检查，一方面可以通过观察模型效果检查。</strong><br>有时候调参和使用一些算法策略可以缓解bug带来的影响，导致小白误以为继续卖力的调参和疯狂试错就一定能把这个鸿沟填平。实际上，比起算法和超参，bug往往致命的多。当然了，对于一些特殊的算法问题（比如众所周知的RL问题），超参数确实极其敏感，需要具体问题具体分析。</p>
+<h3 id="0-4-2-“快”字诀"><a href="#0-4-2-“快”字诀" class="headerlink" title="0.4.2 “快”字诀"></a>0.4.2 “快”字诀</h3><ol>
+<li><strong>摆脱“洁癖”，提高写代码速度</strong></li>
+</ol>
+<p>算法探索具有极强的不确定性，很可能你写了半天的代码最后由于不work而完全废弃，因此，从代码风格上来说，<strong>一定要避免把代码写成系统，各种面向对象的封装技巧一顿乱怼是非常不必要的。</strong><br>允许一些”垃圾代码“的存在可以大大提高实验迭代的效率。</p>
+<ul>
+<li><strong>如何利用”垃圾代码片段“</strong></li>
+</ul>
+<p>（1）最简单的方法是<strong>直接使用粘合剂”Bash Script”。即将功能零散的代码片段通过bash管道命令连接起来，这样还能通过”&amp;”+wait命令的组合拳实现对大规模数据集的（多进程）并行处理。</strong></p>
+<p>（2）<strong>对shell实在不熟悉的也可以使用jupyter notebook来进行粘合。</strong>不过，强烈建议每个NLP算法工程师熟练使用bash和vim，相当多的数据处理和分析是不需要使用python的，习惯了之后这些bash命令和vim技巧会对炼丹效率有非常明显的提升。</p>
+<p>（3）<strong>对于更加碎片化的小代码(比如边分析边修改逻辑生成一个小字典)，则可以考虑使用ipython，完成任务后一条magic命令%save就让这些碎片代码变得可复用了。</strong></p>
+<ol start="2">
+<li><strong>分规模验证，快速完成实验</strong></li>
+</ol>
+<p>Debug的四个阶段：</p>
+<p><strong>第一阶段：调通代码。</strong>可以通过<strong>人为捏造有规律的少量几条数据，修正代码的语法错误与逻辑错误。</strong></p>
+<p><strong>第二阶段：验证收敛性。</strong>在数据集中<strong>取出几百或几千条样本进行训练，看看若干epoch之后训练loss是否能降低到接近0。</strong></p>
+<p><strong>第三阶段：小规模实验。在万级或十万级别的小样本集上验证模型表现，分析超参数敏感性，并且调整超参数取值。</strong>这一阶段在数据规模不大时（比如几十万或者一二百万）其实可有可无，当训练数据集非常大（亿级别）还是有必要的。</p>
+<p><strong>第四阶段：大规模实验。即有多少训练数据就上多少，甚至多训练几个epoch。此时应该保证代码是高度靠谱，基本无需调参的，否则试错代价往往难以承受。</strong></p>
+<ol start="3">
+<li><strong>理性调参，把算力和时间留给策略探索</strong></li>
+</ol>
+<p>超参数和所处环境，有的与网络结构和预训练模型强耦合等等。因此，调参的第一步， 也是<strong>最重要的一步是进行超参数敏感性分析，找到对当前任务性能影响最大的几个超参数之后再进行精调。</strong></p>
+<p><strong>要确定各个超参数的敏感性，一方面可以根据自身经验来定，一方面可以根据各paper中的取值（差异大的超参数可能是敏感超参，大家都取值相同的一般不敏感）</strong>，实在不确定， 跑两三组实验就够确定敏感性了，完全没有必要来个“网格搜索”。</p>
+<h3 id="0-4-3-”稳“字诀"><a href="#0-4-3-”稳“字诀" class="headerlink" title="0.4.3 ”稳“字诀"></a>0.4.3 ”稳“字诀</h3><ol>
+<li><strong>实验管理与代码管理</strong></li>
+</ol>
+<p><strong>实验管理就是要记录下来每一次实验的策略名和对应的实验结果，一般以表格的形式记录。</strong>这里可以用excel、markdown编辑器等记录，当然更建议使用支持云端同步的工具来记录(比如语雀、石墨文档、印象笔记或内网的相关工具等)，以防电脑被偷、文件误删等意外导致的悲剧。<br>但是，有时候实验着急，对策略的描述不够仔细怎么办？比如某次实验同时改变了具体策略、还改了超参数、预训练模型等一堆东西， 不能用一个名字概括全部，怎么办呢?<br><strong>最简单的做法就是与版本管理工具配合，再也不用担心未来settings丢失、 模型无法复现、模型无法追溯环境等问题了。而要实现版本管理，也很简单，Git自 然是不二之选。</strong></p>
+<ul>
+<li><strong>怎么用Git管理版本和实验迭代呢？</strong></li>
+</ul>
+<p>首先，<strong>务必保证训练日志、eval日志是以文件的形式存了下来，而不是打印到屏幕上变成过眼云烟了；此外,需要保证每一次运行时的settings （比如超参数、数据集版本、ckpt存储路径等）都能保存到日志文件中，且尽量封装一个run.sh来维护训练任务的启动环境。</strong></p>
+<p>接下来看每个人自己的习惯，此处引用原文作者的习惯：</p>
+<p><strong>（1）主线策略每成功推进一步，就调用git tag打个tag。</strong>这里的tag即策略名，与实验管理的表格中的策略名对齐。</p>
+<p><strong>（2）如果要在某个策略的基础上尝试一个很不靠谱的探索，那么可以在当前策略的基础上拉一个分支出来，在这个分支上完成相应事情后切回主分支。</strong>当然啦，万一这个分支上的策略work了，就可以考虑将其转正，合入主分支并打上相关tag。</p>
+<p><strong>最后一定要记得做好备份工作，即周期性的将环境中的关键代码push到github等远程仓库。</strong>当然了，对于ckpt、数据集这种大型文件，可以写入.gitignore文件中以免把仓库撑爆，这些大型文件的最佳归宿当然就是hadoop集群啦。</p>
+<blockquote>
+<p>更多Git使用技巧参考：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/z_zFveiiLu9vLvWuBcsaIg">Git从入门到进阶，你想要的全在这里</a></p>
+</blockquote>
+<h1 id="1-Pytorch使用技巧"><a href="#1-Pytorch使用技巧" class="headerlink" title="1 Pytorch使用技巧"></a>1 Pytorch使用技巧</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
 <li>self.training通过model.train() &#x2F; model.eval() 设置值</li>
 </ul>
 <h2 id="1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型"><a href="#1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型" class="headerlink" title="1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型"></a>1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### train_label 为 doK_matrix (0,0) 1.0</span>
@@ -531,9 +601,25 @@
 <ol>
 <li>检查是否有越界数据或者Nan、Inf的数据</li>
 </ol>
+<h2 id="2-8-留点数据用于最终验证"><a href="#2-8-留点数据用于最终验证" class="headerlink" title="2.8 留点数据用于最终验证"></a>2.8 留点数据用于最终验证</h2><p>如果数据还算充裕，最好能留⼀部分数据，在训练结束之后再⽆偏验证⼀下模型们的表现。</p>
 <h1 id="3-权重初始化"><a href="#3-权重初始化" class="headerlink" title="3 权重初始化"></a>3 权重初始化</h1><h2 id="3-1-Xavier"><a href="#3-1-Xavier" class="headerlink" title="3.1 Xavier"></a>3.1 Xavier</h2><p>对于每个经过的层，我们希望方差保持相同，这有助于防止梯度爆炸或消失。换句话说，我们需要以使 x 和 y  的方差保持相同的方式来初始化权重，此初始化过程称为Xavier初始化（Xavier initialization）。（Xavier 读音 zeivier）</p>
 <h1 id="4-多分类问题的评价指标"><a href="#4-多分类问题的评价指标" class="headerlink" title="4 多分类问题的评价指标"></a>4 多分类问题的评价指标</h1><h2 id="4-1-准确率、召回率与F1分数"><a href="#4-1-准确率、召回率与F1分数" class="headerlink" title="4.1 准确率、召回率与F1分数"></a>4.1 准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h1 id="5-模型收敛技巧"><a href="#5-模型收敛技巧" class="headerlink" title="5 模型收敛技巧"></a>5 模型收敛技巧</h1><h2 id="5-1-避免陷入“高原平坦区”"><a href="#5-1-避免陷入“高原平坦区”" class="headerlink" title="5.1 避免陷入“高原平坦区”"></a>5.1 避免陷入“高原平坦区”</h2><p>以下内容节选自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTNZOPgWZiN28Hm30SwstA">《你的模型真的陷⼊局部最优点了吗？》</a></p>
+<p>在⾼维空间⾥（深度学习问题上）真正可怕的不是局部最优也不是鞍点问题，⽽是⼀些特殊地形。⽐如⼤⾯积的平坦区域。</p>
+<p>在平坦区域，虽然导数不为0但是却不⼤。虽然是在不断下降但是路程却⾮常⻓。对于优化算法来说，它需要⾛很多很多步才有可能⾛过这⼀⽚平坦区域。甚⾄在这段地形的⼆阶导数过于特殊的情况下，⼀阶优化算法⾛⽆穷多步也⾛不出去（设想⼀下，如果终点在⼀⽶外，但是你第⼀次⾛0.5⽶，后续每⼀步都是前⼀步的⼀半⻓度，那么你永远也⾛不到⾯前的⼀⽶终点处）。 </p>
+<p>所以相⽐于栽到最优点和鞍点上，优化算法更有可能载到这种类似平坦区的地形中（如果这个平坦区⼜是“⾼原地带”，即loss值很⾼的地带，那么恭喜你悲剧了）。更糟糕的是，由于⾼维地形难以可视化，还有很多更复杂的未知地形会导致假收敛，<strong>⼀旦陷⼊到这些危险地形中，⼏乎是⽆解的。</strong> </p>
+<p><strong>所以说，在深度学习中，与其担忧模型陷⼊局部最优点怎么跳出来，更不如去好好考虑：</strong></p>
+<ol>
+<li><p>去设计⼀个尽量没有“平坦区”等危险地形的loss空间，即着⼿于loss函数的设计以及深度学习模型的设计； </p>
+</li>
+<li><p>尽量让模型的初始化点远离空间中的危险地带，让最优化游戏开始于简单模式，即着⼿于模型参数的初始化策略； </p>
+</li>
+<li><p>让最优化过程更智能⼀点，该加速冲时加速冲，该⼤胆跳跃时就⼤胆跳，该慢慢踱步时慢慢⾛，对危险地形有⼀定的判断⼒，如梯度截断策略；</p>
+</li>
+<li><p>开外挂，本来下⼀步要⾛向死亡的，结果被外挂给拽回了安全区，如batch normalization策略等</p>
+</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -817,12 +903,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                         <span class="chip bg-color">常见用法</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
@@ -1062,7 +1148,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">126.2k</span>
+                        class="white-color">129.2k</span>
             
             
             
