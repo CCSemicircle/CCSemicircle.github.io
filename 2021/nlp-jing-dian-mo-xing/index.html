@@ -29,7 +29,7 @@
 
     <title>NLP_经典模型 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
@@ -45,6 +45,16 @@
 
 
 
+   <style>
+    body{
+       background-image: url(https://img.fdchen.host/wall.jpg);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
 
 <body>
     <header class="navbar-fixed">
@@ -52,10 +62,12 @@
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">fdChen的掉发收集箱</span>
+                    <div>
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">fdChen的掉发收集箱</span>
+                    </div>
                 </a>
             </div>
             
@@ -141,7 +153,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">fdChen的掉发收集箱</div>
         <div class="logo-desc">
@@ -499,13 +511,13 @@
 <li><strong>概率模型</strong></li>
 </ul>
 <p><strong>传统语言模型（无法计算）：</strong></p>
-<p><img src="https://img-service.csdnimg.cn/img_convert/b3a7a64560e2566de32f98c059e96436.png" alt="传统语言模型"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-service.csdnimg.cn/img_convert/b3a7a64560e2566de32f98c059e96436.png" alt="传统语言模型"></p>
 <p><strong>N-gram通用模型：</strong></p>
-<p><img src="https://img-service.csdnimg.cn/img_convert/4280e3f82f4d36a83bc1848e2429a3b0.png" alt="N-gram概率模型"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-service.csdnimg.cn/img_convert/4280e3f82f4d36a83bc1848e2429a3b0.png" alt="N-gram概率模型"></p>
 <p><strong>Bi-gram：</strong></p>
-<p><img src="https://img-service.csdnimg.cn/img_convert/65f503d308aad5b996b4ad50791959e3.png" alt="Bi-gram概率模型"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-service.csdnimg.cn/img_convert/65f503d308aad5b996b4ad50791959e3.png" alt="Bi-gram概率模型"></p>
 <p><strong>Tri-gram:</strong></p>
-<p><img src="https://img-service.csdnimg.cn/img_convert/a29d37d4787bc6b6a3928cf9a9fd227e.png" alt="Tri-gram概率模型"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-service.csdnimg.cn/img_convert/a29d37d4787bc6b6a3928cf9a9fd227e.png" alt="Tri-gram概率模型"></p>
 <ul>
 <li><p>详见博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/rongsenmeng2835/article/details/108565323?spm=1001.2014.3001.5501">语言模型（一）—— 统计语言模型n-gram语言模型</a></p>
 </li>
@@ -523,10 +535,10 @@
 <li><strong>基本思想</strong></li>
 </ul>
 <p>Bengio 等人于 2003 年提出了原始 FFNNLM 的架构。这个 FFNNLM 可以写作：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/e7e35985-cbc0-4a06-a288-56c4b915cbab/640.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/e7e35985-cbc0-4a06-a288-56c4b915cbab/640.png" alt="img"></p>
 <p>其中，H、U 和 W 是层与层之间连接的权重矩阵；d 和 b 是隐藏层和输出层的偏置。</p>
 <p>受到 N 元语言模型的启发，FFNNLM 将前 n-1 个单词作为了预测下一个单词的上下文。</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/fa95ce37-9539-4667-945e-b2ec157ef3fb/640.jpeg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/fa95ce37-9539-4667-945e-b2ec157ef3fb/640.jpeg" alt="img"></p>
 <ul>
 <li><strong>优点</strong></li>
 </ul>
@@ -542,7 +554,7 @@
 <li><strong>基本思想</strong></li>
 </ul>
 <p>one-hot，简单来说就是单词编号是多少，哪个位置就为1，其余为0。这种词表示方法的特点就是，没有保留句子中的上下文关系（任何词之间的内积为0）。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191202151029593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="one-hot"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20191202151029593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="one-hot"></p>
 <h2 id="3-1-TF-IDF-与-BOW"><a href="#3-1-TF-IDF-与-BOW" class="headerlink" title="3.1 TF-IDF 与 BOW"></a>3.1 TF-IDF 与 BOW</h2><h3 id="3-1-1-TF-IDF"><a href="#3-1-1-TF-IDF" class="headerlink" title="3.1.1 TF-IDF"></a>3.1.1 TF-IDF</h3><p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94446764">TF-IDF算法原理及其使用详解</a></p>
 <ul>
 <li><strong>基本思想</strong></li>
@@ -579,7 +591,7 @@
 </ul>
 <p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30057549/article/details/103342841?utm_source=app&app_version=4.9.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">词嵌入基础及其使用</a></p>
 <p>一种表示如下图所示，在左侧一栏是维度，表格中的值是每个词在这个维度（特征）上的取值（-1，+1），越相关，绝对值越大。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191202151033329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="WordEmbedding"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20191202151033329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwMDU3NTQ5,size_16,color_FFFFFF,t_70" alt="WordEmbedding"></p>
 <h2 id="3-2-Word2Vec"><a href="#3-2-Word2Vec" class="headerlink" title="3.2 Word2Vec"></a>3.2 Word2Vec</h2><ul>
 <li><p>全称：Word to vector</p>
 </li>
@@ -600,16 +612,16 @@
 </ul>
 <p><strong>word2vec是用一个一层的神经网络把one-hot形式的稀疏词向量映射称为一个n维(n一般为几百)的稠密向量的过程。</strong>为了加快模型训练速度，其中的tricks包括Hierarchical softmax，negative sampling, Huffman Tree等。</p>
 <p>模型框架：</p>
-<p><img src="https://pic2.zhimg.com/v2-0d3bbbe2ab92b36d40ff0acb9170f311_r.jpg" alt="Word2Vec"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/v2-0d3bbbe2ab92b36d40ff0acb9170f311_r.jpg" alt="Word2Vec"></p>
 <h3 id="3-2-1-CBOW"><a href="#3-2-1-CBOW" class="headerlink" title="3.2.1 CBOW"></a>3.2.1 CBOW</h3><p>全称：Continuous Bag of Words（连续词袋模型）</p>
-<p><img src="https://pic4.zhimg.com/80/v2-8fcd03fa3dad0cf4d0af1a890ace5193_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic4.zhimg.com/80/v2-8fcd03fa3dad0cf4d0af1a890ace5193_720w.jpg" alt="img"></p>
 <p>1、输入层：上下文单词的One-Hot编码词向量，V为词汇表单词个数，C为上下文单词个数。以上文那句话为例，这里C&#x3D;4，所以模型的输入是（is,an,on,the）4个单词的One-Hot编码词向量。</p>
-<p>2、初始化一个权重矩阵 <img src="https://www.zhihu.com/equation?tex=W_%7BV%C3%97N%7D" alt="[公式]"> ，然后用所有输入的One-Hot编码词向量左乘该矩阵,得到维数为N的向量 <img src="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> ，这里的N由自己根据任务需要设置。</p>
-<p>3、将所得的向量 <img src="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> 相加求平均作为隐藏层向量h。</p>
-<p>4、初始化另一个权重矩阵 <img src="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ,用隐藏层向量h左乘 <img src="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ，再经激活函数处理得到V维的向量y，<strong>y的每一个元素代表相对应的每个单词的概率分布</strong>。</p>
+<p>2、初始化一个权重矩阵 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7BV%C3%97N%7D" alt="[公式]"> ，然后用所有输入的One-Hot编码词向量左乘该矩阵,得到维数为N的向量 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> ，这里的N由自己根据任务需要设置。</p>
+<p>3、将所得的向量 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%CF%89_1+%CF%89_2,%E2%80%A6,%CF%89_c" alt="[公式]"> 相加求平均作为隐藏层向量h。</p>
+<p>4、初始化另一个权重矩阵 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ,用隐藏层向量h左乘 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7BN%C3%97V%7D%5E%7B%27%7D" alt="[公式]"> ，再经激活函数处理得到V维的向量y，<strong>y的每一个元素代表相对应的每个单词的概率分布</strong>。</p>
 <p>5、<strong>y中概率最大的元素所指示的单词为预测出的中间词（target word）与true label的One-Hot编码词向量做比较，误差越小越好（根据误差更新两个权重矩阵）</strong></p>
 <p>在训练前需要定义好<strong>损失函数（一般为交叉熵代价函数）</strong>，采用梯度下降算法更新W和W’。训练完毕后，<strong>输入层的每个单词与矩阵W（左侧的权重矩阵）相乘得到的向量的就是我们想要的Distributed Representation表示的词向量，也叫做word embedding。</strong>因为<strong>One-Hot编码词向量中只有一个元素为1，其他都为0，所以第i个词向量乘以矩阵W得到的就是矩阵的第i行</strong>，所以<strong>这个矩阵也叫做look up table，有了look up table就可以免去训练过程，直接查表得到单词的词向量了</strong>。</p>
-<h3 id="3-2-2-Skip-gram"><a href="#3-2-2-Skip-gram" class="headerlink" title="3.2.2 Skip-gram"></a>3.2.2 Skip-gram</h3><p><img src="https://pic2.zhimg.com/80/v2-a04dca66f5e8456f50b4b43fb87b98dd_720w.jpg" alt="img"></p>
+<h3 id="3-2-2-Skip-gram"><a href="#3-2-2-Skip-gram" class="headerlink" title="3.2.2 Skip-gram"></a>3.2.2 Skip-gram</h3><p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/80/v2-a04dca66f5e8456f50b4b43fb87b98dd_720w.jpg" alt="img"></p>
 <p>通过在一个大的语料库训练，得到一个从输入层到隐含层的权重模型。“apple”的上下文词是（’there’，’is’，’an’，’on’,’the’,’table’）。<strong>那么以apple的One-Hot词向量作为输入，输出则是（’there’，’is’，’an’，’on’,’the’,’table’）的One-Hot词向量。训练完成后，就得到了每个词到隐含层的每个维度的权重，就是每个词的向量（和CBOW中一样）。</strong></p>
 <ul>
 <li><strong>如何训练神经网络模型</strong></li>
@@ -633,7 +645,7 @@
 <p>Hierarchical Softmax对原模型的改进主要有两点，<strong>第一点是从输入层到隐藏层的映射，没有采用原先的与矩阵W相乘然后相加求平均的方法，而是直接对所有输入的词向量求和。</strong>假设输入的词向量为（0，1，0，0）和（0,0,0,1），那么隐藏层的向量为（0,1,0,1）。</p>
 <p>Hierarchical Softmax的<strong>第二点改进是采用哈夫曼树来替换了原先的从隐藏层到输出层的矩阵W’。</strong>哈夫曼树的叶节点个数为词汇表的单词个数V，一个叶节点代表一个单词，而从根节点到该叶节点的路径确定了这个单词最终输出的词向量。</p>
 <p>哈夫曼树的所有内部节点就类似之前神经网络隐藏层的神经，其中，<strong>根节点的词向量对应投影后的词向量</strong>，而<strong>所有叶子节点就类似于之前神经网络softmax输出层的神经元，叶子节点的个数就是词汇表的大小</strong>。在哈夫曼树中，隐藏层到输出层的softmax映射不是一下子完成的，而是沿着哈夫曼树一步步完成的，因此这种softmax取名为”Hierarchical Softmax”。</p>
-<p><img src="https://images2017.cnblogs.com/blog/1042406/201707/1042406-20170727105752968-819608237.png" alt="HierarchicalSoftmax-Huffuman"></p>
+<p><img src="/medias/loading.gif" data-original="https://images2017.cnblogs.com/blog/1042406/201707/1042406-20170727105752968-819608237.png" alt="HierarchicalSoftmax-Huffuman"></p>
 <ul>
 <li><strong>Negative Sampling（负采样）</strong></li>
 </ul>
@@ -650,14 +662,14 @@
 <li><strong>主要模型</strong></li>
 </ul>
 <p><strong>构建词向量（Word Vector）和共现矩阵（Co-ocurrence Matrix）之间的近似关系</strong>，论文的作者提出以下的公式可以近似地表达两者之间的关系：</p>
-<p><img src="http://img.fdchen.host/Glove-%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9E%8B.png" alt="image-20210806192653851"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Glove-%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9E%8B.png" alt="image-20210806192653851"></p>
 <p>其中，<strong>wi^T和wj是我们最终要求解的词向量；</strong>bi和bj分别是两个词向量的bias term。</p>
 <ul>
 <li><strong>损失函数</strong></li>
 </ul>
-<p><img src="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.png" alt="image-20210806192630927"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.png" alt="image-20210806192630927"></p>
 <p>这个loss function的基本形式就是最简单的mean square loss，只不过在此基础上加了一个权重函数f(Xij)。</p>
-<p><img src="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9A%84%E6%9D%83%E5%80%BC%E5%87%BD%E6%95%B0.png" alt="image-20210806193111470"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Glove-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9A%84%E6%9D%83%E5%80%BC%E5%87%BD%E6%95%B0.png" alt="image-20210806193111470"></p>
 <h1 id="4-Fasttext"><a href="#4-Fasttext" class="headerlink" title="4 Fasttext"></a>4 Fasttext</h1><ul>
 <li><p>全称：Facebook开发的一款快速文本分类器</p>
 </li>
@@ -693,16 +705,16 @@
 <ul>
 <li><strong>卷积层</strong></li>
 </ul>
-<p><img src="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-juanji.gif" alt="卷积层"></p>
+<p><img src="/medias/loading.gif" data-original="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-juanji.gif" alt="卷积层"></p>
 <ul>
 <li><strong>池化层</strong></li>
 </ul>
-<p><img src="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-chihua.gif" alt="池化层"></p>
+<p><img src="/medias/loading.gif" data-original="https://easy-ai.oss-cn-shanghai.aliyuncs.com/2019-06-19-chihua.gif" alt="池化层"></p>
 <ul>
 <li><strong>全连接层（Fully Connected Layer）</strong></li>
 </ul>
 <p>连接所有的特征，将输出值送给分类器（如softmax分类器）。</p>
-<p><img src="http://img.fdchen.host/CNN-%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82.png" alt="image-20210730100057238"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/CNN-%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82.png" alt="image-20210730100057238"></p>
 <ul>
 <li><strong>感受野（receptive filed）</strong></li>
 </ul>
@@ -720,12 +732,12 @@
 <li><strong>深度depth（与通道类似）</strong></li>
 </ul>
 <p>分为输入数据的深度和输出数据的深度，输入数据深度由输入数据决定。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190523160541489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Rob3JLaW5nMDE=,size_16,color_FFFFFF,t_70" alt="CNN-depth"></p>
+<p><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20190523160541489.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Rob3JLaW5nMDE=,size_16,color_FFFFFF,t_70" alt="CNN-depth"></p>
 <p><strong>输出数据的深度，取决于滤波器的个数，就是有滤波器有几个，深度就是多少。</strong></p>
 <ul>
 <li><strong>通道channel</strong></li>
 </ul>
-<p><img src="http://img.fdchen.host/CNN-channel.png" alt="image-20210730092433430"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/CNN-channel.png" alt="image-20210730092433430"></p>
 <p>可以把channels 分为三种：</p>
 <ol>
 <li>最初输入的图片样本的 channels ，取决于图片类型，比如RGB；</li>
@@ -742,7 +754,7 @@
 </ul>
 <p>卷积神经网络的核心思想是<strong>捕捉局部特征</strong>，对于文本来说，局部特征就是<strong>由若干单词组成的滑动窗口</strong>，类似于N-gram。卷积神经网络的<strong>优势在于能够自动地对N-gram特征进行组合和筛选，获得不同抽象层次的语义信息</strong>。</p>
 <p>详细解读见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77634533">深入TextCNN（一）详述CNN及TextCNN原理</a></p>
-<p><img src="https://pic3.zhimg.com/80/v2-2ea1f0b8b166f31273b26bca3ba8e8b2_720w.jpg" alt="textCNN结构"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic3.zhimg.com/80/v2-2ea1f0b8b166f31273b26bca3ba8e8b2_720w.jpg" alt="textCNN结构"></p>
 <h1 id="6-textRNN"><a href="#6-textRNN" class="headerlink" title="6 textRNN"></a>6 textRNN</h1><h2 id="6-1-RNN"><a href="#6-1-RNN" class="headerlink" title="6.1 RNN"></a>6.1 RNN</h2><ul>
 <li>基本思想</li>
 </ul>
@@ -750,7 +762,7 @@
 <li>RNN 的输入和输出可以是不定长且不等长的</li>
 <li>RNN 有多种结构，如下图：</li>
 </ol>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/06aefcee-6e74-4dde-bee1-5f82a5b85c9e/1544760758227.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/06aefcee-6e74-4dde-bee1-5f82a5b85c9e/1544760758227.png" alt="img"></p>
 <ol start="3">
 <li>RNN网络和其他网络最大的不同就在于<strong>RNN能够实现某种“记忆功能”，对所处理过的信息留存有一定的记忆</strong>，具体而言就是<strong>上一个时刻的网络状态会应影响下一个时刻的网络状态。</strong></li>
 </ol>
@@ -763,13 +775,13 @@
 <li><strong>RNN经典n-to-n结构示例</strong></li>
 </ul>
 <p>先从h1的计算开始看：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/c672edc7-0502-4034-b555-c5cccdde8704/1544760757932.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/c672edc7-0502-4034-b555-c5cccdde8704/1544760757932.png" alt="img"></p>
 <p>h2的计算和h1类似。要注意的是，在计算时，<strong>每一步使用的参数U、W、b都是一样的，也就是说每个步骤的参数都是共享的，这是RNN的重要特点。</strong></p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/1780d8f0-3095-4523-b271-9230ca308a04/1544760758036.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/1780d8f0-3095-4523-b271-9230ca308a04/1544760758036.png" alt="img"></p>
 <p>最终的输出如下：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/0c80f834-2047-44a1-b834-083dcd59e7b4/1544760758826.png" alt="RNN-最终输出"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/0c80f834-2047-44a1-b834-083dcd59e7b4/1544760758826.png" alt="RNN-最终输出"></p>
 <p>剩下的输出类似进行（使用和y1同样的参数V和c）：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/b4ff8fa4-7e6d-405c-9900-d82e7c2c8504/1544760759148.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/b4ff8fa4-7e6d-405c-9900-d82e7c2c8504/1544760759148.png" alt="img"></p>
 <p>这就是最经典的RNN结构，它的输入是x1, x2, …..xn，输出为y1, y2, …yn，也就是说，<strong>输入和输出序列必须要是等长的</strong>。</p>
 <ul>
 <li><strong>缺点：</strong>容易出现梯度消失</li>
@@ -787,9 +799,9 @@
 <li><strong>具体做法</strong></li>
 </ul>
 <p>具体做法就是<strong>将c当做之前的初始状态h0输入到Decoder中</strong>：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/YZHANG1270/Markdown_pic/blob/master/2018/11/RNN_01/013.jpg?raw=true"><img src="https://image.jiqizhixin.com/uploads/editor/ce3fc27e-cbf5-465d-86c1-4ffbfdac6dfa/1544760759311.png" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/YZHANG1270/Markdown_pic/blob/master/2018/11/RNN_01/013.jpg?raw=true"><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/ce3fc27e-cbf5-465d-86c1-4ffbfdac6dfa/1544760759311.png" alt="img"></a></p>
 <p><strong>还有一种做法是将c当做每一步的输入</strong>：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/89a6896c-de8e-417e-8b87-30b9b90e68e5/1544760759641.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/89a6896c-de8e-417e-8b87-30b9b90e68e5/1544760759641.png" alt="img"></p>
 <ul>
 <li><strong>缺点：</strong></li>
 </ul>
@@ -798,20 +810,20 @@
 <li><strong>基本思想</strong></li>
 </ul>
 <p>注意力机制（attention mechanism）是对基础Encoder-Decoder的改良。Attention机制通过在每个时间输入不同的c来解决问题，每一个c会自动去选取与当前所要输出的y最合适的上下文信息，仅Decoder部分与简单RNN不同，下图是带有Attention机制的Decoder：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/483f24d7-da8d-4a66-84d0-fcb6a45bdca9/1544760760610.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/483f24d7-da8d-4a66-84d0-fcb6a45bdca9/1544760760610.png" alt="img"></p>
 <p>详细解读见博客：<a target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/2018-12-14-4">RNN 结构详解</a></p>
 <ul>
 <li><strong>具体做法</strong></li>
 </ul>
 <p>具体来说，我们<strong>用aij衡量Decoder中第i阶段与Encoder中第j阶段的hj的相关性</strong>，最终Decoder中第i阶段的输入的上下文信息 ci就来自于所有 hj 对 aij 的加权和。</p>
 <p>以机器翻译为例（将中文翻译成英文）：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/223b12fa-4da6-4a5f-8039-c043b3701ef5/1544760760445.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/223b12fa-4da6-4a5f-8039-c043b3701ef5/1544760760445.png" alt="img"></p>
 <ul>
 <li><strong>计算权重aij</strong></li>
 </ul>
 <p>aij 同样是从模型中学出的，它实际和<strong>Decoder的第i-1阶段的隐状态</strong>、<strong>Encoder第j个阶段的隐状态</strong>有关。</p>
 <p>同样还是拿上面的机器翻译举例， a1j 的计算（此时箭头就表示对h’和 hj 同时做变换）：</p>
-<p><img src="https://image.jiqizhixin.com/uploads/editor/7c144c37-72dd-4aad-a093-954087edaf9b/1544760759945.png" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://image.jiqizhixin.com/uploads/editor/7c144c37-72dd-4aad-a093-954087edaf9b/1544760759945.png" alt="img"></p>
 <ul>
 <li><strong>优点</strong></li>
 </ul>
@@ -831,30 +843,30 @@
 </ul>
 <p>长短期记忆（Long short-term memory, LSTM）是一种特殊的RNN，主要是为了解决长序列训练过程中的梯度消失和梯度爆炸问题。简单来说，就是相比普通的RNN，LSTM能够在更长的序列中有更好的表现。</p>
 <p>LSTM结构（图右）和普通RNN的主要输入输出区别如下所示。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-e4f9851cad426dfe4ab1c76209546827_720w.jpg" alt="img"></p>
-<p>相比RNN只有一个传递状态 <img src="https://www.zhihu.com/equation?tex=h%5Et+" alt="[公式]"> ，LSTM有两个传输状态，一个 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> （cell state），和一个 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> （hidden state）。（Tips：RNN中的 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 对于LSTM中的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> ）</p>
-<p>其中对于传递下去的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 改变得很慢，通常输出的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 是上一个状态传过来的 <img src="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 加上一些数值。</p>
-<p>而 <img src="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 则在不同节点下往往会有很大的区别。</p>
+<p><img src="/medias/loading.gif" data-original="https://pic4.zhimg.com/80/v2-e4f9851cad426dfe4ab1c76209546827_720w.jpg" alt="img"></p>
+<p>相比RNN只有一个传递状态 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5Et+" alt="[公式]"> ，LSTM有两个传输状态，一个 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> （cell state），和一个 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> （hidden state）。（Tips：RNN中的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 对于LSTM中的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> ）</p>
+<p>其中对于传递下去的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 改变得很慢，通常输出的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 是上一个状态传过来的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 加上一些数值。</p>
+<p>而 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5Et" alt="[公式]"> 则在不同节点下往往会有很大的区别。</p>
 <ul>
 <li>具体做法</li>
 </ul>
-<p><img src="https://pic2.zhimg.com/80/v2-556c74f0e025a47fea05dc0f76ea775d_720w.jpg" alt="img"></p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Codot" alt="[公式]"> 是Hadamard Product，也就是操作矩阵中对应的元素相乘，因此要求两个相乘矩阵是同型的。 <img src="https://www.zhihu.com/equation?tex=%5Coplus" alt="[公式]"> 则代表进行矩阵加法。</p>
+<p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/80/v2-556c74f0e025a47fea05dc0f76ea775d_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Codot" alt="[公式]"> 是Hadamard Product，也就是操作矩阵中对应的元素相乘，因此要求两个相乘矩阵是同型的。 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Coplus" alt="[公式]"> 则代表进行矩阵加法。</p>
 <p><strong>LSTM内部主要有三个阶段：</strong></p>
 <p>1.忘记阶段。这个阶段主要是对上一个节点传进来的输入进行<strong>选择性</strong>忘记。简单来说就是会 “忘记不重要的，记住重要的”。</p>
-<p>具体来说是通过计算得到的 <img src="https://www.zhihu.com/equation?tex=z%5Ef" alt="[公式]"> （f表示forget）来作为忘记门控，来控制上一个状态的 <img src="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 哪些需要留哪些需要忘。</p>
-<p>2.选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。主要是会对输入 <img src="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 进行选择记忆。哪些重要则着重记录下来，哪些不重要，则少记一些。当前的输入内容由前面计算得到的 <img src="https://www.zhihu.com/equation?tex=z+" alt="[公式]"> 表示。而选择的门控信号则是由 <img src="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> （i代表input)来进行控制。</p>
+<p>具体来说是通过计算得到的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Ef" alt="[公式]"> （f表示forget）来作为忘记门控，来控制上一个状态的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5E%7Bt-1%7D" alt="[公式]"> 哪些需要留哪些需要忘。</p>
+<p>2.选择记忆阶段。这个阶段将这个阶段的输入有选择性地进行“记忆”。主要是会对输入 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 进行选择记忆。哪些重要则着重记录下来，哪些不重要，则少记一些。当前的输入内容由前面计算得到的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z+" alt="[公式]"> 表示。而选择的门控信号则是由 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> （i代表input)来进行控制。</p>
 <blockquote>
-<p>将上面两步得到的结果相加，即可得到传输给下一个状态的 <img src="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 。也就是上图中的第一个公式。</p>
+<p>将上面两步得到的结果相加，即可得到传输给下一个状态的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Et" alt="[公式]"> 。也就是上图中的第一个公式。</p>
 </blockquote>
-<p>3.输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。主要是通过 <img src="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 来进行控制的。并且还对上一阶段得到的 <img src="https://www.zhihu.com/equation?tex=c%5Eo" alt="[公式]"> 进行了放缩（通过一个tanh激活函数进行变化)。</p>
+<p>3.输出阶段。这个阶段将决定哪些将会被当成当前状态的输出。主要是通过 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 来进行控制的。并且还对上一阶段得到的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=c%5Eo" alt="[公式]"> 进行了放缩（通过一个tanh激活函数进行变化)。</p>
 <ul>
 <li><strong>LSTM的四个状态</strong></li>
 </ul>
-<p>首先使用LSTM的当前输入 <img src="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 和上一个状态传递下来的 <img src="https://www.zhihu.com/equation?tex=h%5E%7Bt-1%7D" alt="[公式]"> 拼接训练得到四个状态。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-15c5eb554f843ec492579c6d87e1497b_720w.jpg" alt="img"></p>
-<p><img src="https://pic1.zhimg.com/80/v2-d044fd0087e1df5d2a1089b441db9970_720w.jpg" alt="img"></p>
-<p>其中， <img src="https://www.zhihu.com/equation?tex=z%5Ef+" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> ，<img src="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 是由拼接向量乘以权重矩阵之后，再通过一个 <img src="https://www.zhihu.com/equation?tex=sigmoid+" alt="[公式]"> 激活函数转换成0到1之间的数值，来作为一种门控状态。而 <img src="https://www.zhihu.com/equation?tex=z" alt="[公式]"> 则是将结果通过一个 <img src="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 激活函数将转换成-1到1之间的值（这里使用 <img src="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 是因为这里是将其做为输入数据，而不是门控信号）。</p>
+<p>首先使用LSTM的当前输入 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=x%5Et" alt="[公式]"> 和上一个状态传递下来的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5E%7Bt-1%7D" alt="[公式]"> 拼接训练得到四个状态。</p>
+<p><img src="/medias/loading.gif" data-original="https://pic4.zhimg.com/80/v2-15c5eb554f843ec492579c6d87e1497b_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic1.zhimg.com/80/v2-d044fd0087e1df5d2a1089b441db9970_720w.jpg" alt="img"></p>
+<p>其中， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Ef+" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Ei" alt="[公式]"> ，<img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z%5Eo" alt="[公式]"> 是由拼接向量乘以权重矩阵之后，再通过一个 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=sigmoid+" alt="[公式]"> 激活函数转换成0到1之间的数值，来作为一种门控状态。而 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z" alt="[公式]"> 则是将结果通过一个 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 激活函数将转换成-1到1之间的值（这里使用 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=tanh" alt="[公式]"> 是因为这里是将其做为输入数据，而不是门控信号）。</p>
 <h2 id="6-5-textRNN"><a href="#6-5-textRNN" class="headerlink" title="6.5 textRNN"></a>6.5 textRNN</h2><ul>
 <li>论文链接：<a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=F2929368FEDF4A9A7E495DC2A3137D19?doi=10.1.1.822.3091&rep=rep1&type=pdf">Recurrent</a><a target="_blank" rel="noopener" href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=F2929368FEDF4A9A7E495DC2A3137D19?doi=10.1.1.822.3091&rep=rep1&type=pdf"> Neural Networks for Sentence Classification</a></li>
 </ul>
@@ -867,7 +879,7 @@
 <li><strong>Bi-LSTM</strong></li>
 </ul>
 <p>双向LSTM算是在自然语言处理领域非常一个标配网络了，在序列标注&#x2F;命名体识别&#x2F;seq2seq模型等很多场景都有应用，下图是Bi-LSTM用于分类问题的网络结构原理示意图，黄色的节点分别是前向和后向RNN的输出，<strong>示例中的是利用最后一个词的结果直接接全连接层softmax输出了</strong>。</p>
-<p><img src="https://www.pianshen.com/images/297/b371970c5969284fd10846f6803228e9.png" alt="在这里插入图片描述"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.pianshen.com/images/297/b371970c5969284fd10846f6803228e9.png" alt="在这里插入图片描述"></p>
 <h2 id="6-6-TextRNN-Attention"><a href="#6-6-TextRNN-Attention" class="headerlink" title="6.6 TextRNN + Attention"></a>6.6 TextRNN + Attention</h2><ul>
 <li><strong>基本思想：用Attention Layer代替全连接层</strong></li>
 </ul>
@@ -878,29 +890,29 @@
 <p>注意力层：通过与权重向量加权求和，将词级别的特征合并到句子级别的特征。</p>
 <p>输出层：将句子层级的特征用于关系分类。</p>
 <p>整个网络结构如下图：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-dece7cbd3dfab01fb599e2aae338d74a_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic3.zhimg.com/80/v2-dece7cbd3dfab01fb599e2aae338d74a_720w.jpg" alt="img"></p>
 <ul>
 <li><strong>Bi-LSTM</strong></li>
 </ul>
-<p>使用BiLSTM，句子中第 <img src="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 个词的输出为，即对前向和后向的Hidden State进行拼接：</p>
-<p><img src="https://www.zhihu.com/equation?tex=h_%7Bi%7D=%5Cleft%5B%5Coverrightarrow%7Bh_%7Bi%7D%7D+%5Coplus+%5Coverleftarrow%7Bh_%7Bi%7D%7D%5Cright%5D" alt="[公式]"></p>
+<p>使用BiLSTM，句子中第 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=i" alt="[公式]"> 个词的输出为，即对前向和后向的Hidden State进行拼接：</p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h_%7Bi%7D=%5Cleft%5B%5Coverrightarrow%7Bh_%7Bi%7D%7D+%5Coplus+%5Coverleftarrow%7Bh_%7Bi%7D%7D%5Cright%5D" alt="[公式]"></p>
 <ul>
 <li><strong>Attention层</strong></li>
 </ul>
-<p><img src="https://www.zhihu.com/equation?tex=H=%5Bh_1,h_2,...,h_T%5D" alt="[公式]"> 为LSTM层的输出向量，T是句子长度。 <img src="https://www.zhihu.com/equation?tex=H+%5Cin+%5Cmathbb%7BR%7D%5E%7Bd%5E%7Bw%7D+%5Ctimes+T%7D" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> 是LSTM层的输出维度。 <img src="https://www.zhihu.com/equation?tex=w" alt="[公式]"> 的维度是 <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> , <img src="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 的维度是T， <img src="https://www.zhihu.com/equation?tex=r" alt="[公式]"> 的维度是 <img src="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> .</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Baligned%7D+M+&=%5Ctanh+(H)+%5C%5C+%5Calpha+&=%5Coperatorname%7Bsoftmax%7D%5Cleft(w%5E%7BT%7D+M%5Cright)+%5C%5C+r+&=H+%5Calpha%5E%7BT%7D+%5Cend%7Baligned%7D" alt="[公式]"></p>
-<p>然后用于最后分类的特征为 <img src="https://www.zhihu.com/equation?tex=h%5E*=tanh(r)" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=H=%5Bh_1,h_2,...,h_T%5D" alt="[公式]"> 为LSTM层的输出向量，T是句子长度。 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=H+%5Cin+%5Cmathbb%7BR%7D%5E%7Bd%5E%7Bw%7D+%5Ctimes+T%7D" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> 是LSTM层的输出维度。 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=w" alt="[公式]"> 的维度是 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> , <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Calpha" alt="[公式]"> 的维度是T， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=r" alt="[公式]"> 的维度是 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=d%5Ew" alt="[公式]"> .</p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Cbegin%7Baligned%7D+M+&=%5Ctanh+(H)+%5C%5C+%5Calpha+&=%5Coperatorname%7Bsoftmax%7D%5Cleft(w%5E%7BT%7D+M%5Cright)+%5C%5C+r+&=H+%5Calpha%5E%7BT%7D+%5Cend%7Baligned%7D" alt="[公式]"></p>
+<p>然后用于最后分类的特征为 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5E*=tanh(r)" alt="[公式]"></p>
 <ul>
 <li><strong>输出层</strong></li>
 </ul>
-<p>最后将句子的特征 <img src="https://www.zhihu.com/equation?tex=h%5E*" alt="[公式]"> 接入softmax进行分类。</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Barray%7D%7Bc%7D+%5Chat%7Bp%7D(y+%5Cmid+S)=%5Coperatorname%7Bsoftmax%7D%5Cleft(W%5E%7B(S)%7D+h%5E%7B*%7D+b%5E%7B(S)%7D%5Cright)+%5C%5C+%5Chat%7By%7D=%5Carg+%5Cmax+_%7By%7D+%5Chat%7Bp%7D(y+%5Cmid+S)+%5Cend%7Barray%7D" alt="[公式]"></p>
+<p>最后将句子的特征 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h%5E*" alt="[公式]"> 接入softmax进行分类。</p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Cbegin%7Barray%7D%7Bc%7D+%5Chat%7Bp%7D(y+%5Cmid+S)=%5Coperatorname%7Bsoftmax%7D%5Cleft(W%5E%7B(S)%7D+h%5E%7B*%7D+b%5E%7B(S)%7D%5Cright)+%5C%5C+%5Chat%7By%7D=%5Carg+%5Cmax+_%7By%7D+%5Chat%7Bp%7D(y+%5Cmid+S)+%5Cend%7Barray%7D" alt="[公式]"></p>
 <p>然后损失函数是使用交叉熵损失，并且加入了L2正则化。</p>
-<p><img src="https://www.zhihu.com/equation?tex=J(%5Ctheta)=-%5Cfrac%7B1%7D%7Bm%7D+%5Csum_%7Bi=1%7D%5E%7Bm%7D+t_%7Bi%7D+%5Clog+%5Cleft(y_%7Bi%7D%5Cright)+%5Clambda%5C%7C%5Ctheta%5C%7C_%7BF%7D%5E%7B2%7D+" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=J(%5Ctheta)=-%5Cfrac%7B1%7D%7Bm%7D+%5Csum_%7Bi=1%7D%5E%7Bm%7D+t_%7Bi%7D+%5Clog+%5Cleft(y_%7Bi%7D%5Cright)+%5Clambda%5C%7C%5Ctheta%5C%7C_%7BF%7D%5E%7B2%7D+" alt="[公式]"></p>
 <ul>
 <li><strong>正则化</strong></li>
 </ul>
-<p><img src="http://img.fdchen.host/L1%E4%B8%8EL2%E6%AD%A3%E5%88%99%E5%8C%96.png" alt="image-20210730130844097"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/L1%E4%B8%8EL2%E6%AD%A3%E5%88%99%E5%8C%96.png" alt="image-20210730130844097"></p>
 <h1 id="7-seq2seq"><a href="#7-seq2seq" class="headerlink" title="7 seq2seq"></a>7 seq2seq</h1><ul>
 <li>论文链接： <a target="_blank" rel="noopener" href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">Sequence to Sequence Learning with Neural Networks  </a></li>
 </ul>
@@ -913,49 +925,49 @@
 <li><strong>基本思想</strong></li>
 </ul>
 <p>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。更准确地讲，Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-9fb280eb2a69baf5ceafcfa3581aa580_720w.jpg" alt="Transformer结构"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic1.zhimg.com/80/v2-9fb280eb2a69baf5ceafcfa3581aa580_720w.jpg" alt="Transformer结构"></p>
 <ul>
 <li><strong>Attention计算方法</strong></li>
 </ul>
 <p>Attention的计算方法，整个过程可以分成7步：</p>
 <ol>
 <li>将输入单词转化成嵌入向量；</li>
-<li>根据嵌入向量得到 <img src="https://www.zhihu.com/equation?tex=q" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> 三个向量；</li>
-<li>为每个向量计算一个score： <img src="https://www.zhihu.com/equation?tex=%5Ctext%7Bscore%7D+=+q+%5Ccdot+k" alt="[公式]"> ；</li>
-<li>为了梯度的稳定，Transformer使用了score归一化，即除以 <img src="https://www.zhihu.com/equation?tex=%5Csqrt%7Bd_k%7D" alt="[公式]"> ；</li>
+<li>根据嵌入向量得到 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=q" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=k" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=v" alt="[公式]"> 三个向量；</li>
+<li>为每个向量计算一个score： <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Ctext%7Bscore%7D+=+q+%5Ccdot+k" alt="[公式]"> ；</li>
+<li>为了梯度的稳定，Transformer使用了score归一化，即除以 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Csqrt%7Bd_k%7D" alt="[公式]"> ；</li>
 <li>对score施以softmax激活函数；</li>
-<li>softmax点乘Value值 <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ，得到加权的每个输入向量的评分 <img src="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ；</li>
-<li>相加之后得到最终的输出结果 <img src="https://www.zhihu.com/equation?tex=z" alt="[公式]"> ： <img src="https://www.zhihu.com/equation?tex=z=%5Csum+v" alt="[公式]"> 。</li>
+<li>softmax点乘Value值 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ，得到加权的每个输入向量的评分 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=v" alt="[公式]"> ；</li>
+<li>相加之后得到最终的输出结果 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z" alt="[公式]"> ： <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=z=%5Csum+v" alt="[公式]"> 。</li>
 </ol>
-<p>实际计算过程中是采用基于矩阵的计算方式，那么论文中的 <img src="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=V" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=K+" alt="[公式]"> 的计算方式如图：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-bcd0d108a5b52a991d5d5b5b74d365c6_720w.jpg" alt="img"></p>
+<p>实际计算过程中是采用基于矩阵的计算方式，那么论文中的 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=V" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=K+" alt="[公式]"> 的计算方式如图：</p>
+<p><img src="/medias/loading.gif" data-original="https://pic3.zhimg.com/80/v2-bcd0d108a5b52a991d5d5b5b74d365c6_720w.jpg" alt="img"></p>
 <p>总结为如图所示的矩阵形式：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-be73ba876922cf52df8a00a55f770284_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic1.zhimg.com/80/v2-be73ba876922cf52df8a00a55f770284_720w.jpg" alt="img"></p>
 <p>在self-attention需要强调的最后一点是其采用了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42706477">残差网络</a> 中的short-cut结构，目的当然是解决深度学习中的退化问题，得到的最终结果如图13。</p>
 <ul>
 <li><strong>Multi-head Attention</strong></li>
 </ul>
-<p>Multi-Head Attention相当于 <img src="https://www.zhihu.com/equation?tex=h" alt="[公式]"> 个不同的self-attention的集成（ensemble），在这里我们以 <img src="https://www.zhihu.com/equation?tex=h=8" alt="[公式]"> 举例说明。Multi-Head Attention的输出分成3步：</p>
+<p>Multi-Head Attention相当于 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h" alt="[公式]"> 个不同的self-attention的集成（ensemble），在这里我们以 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h=8" alt="[公式]"> 举例说明。Multi-Head Attention的输出分成3步：</p>
 <ol>
-<li>将数据 <img src="https://www.zhihu.com/equation?tex=X+" alt="[公式]"> 分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 <img src="https://www.zhihu.com/equation?tex=Z_i,+i%5Cin%5C%7B1,2,...,8%5C%7D" alt="[公式]"> 。</li>
-<li>将8个 <img src="https://www.zhihu.com/equation?tex=Z_i" alt="[公式]"> 按列拼成一个大的特征矩阵；</li>
-<li>特征矩阵经过一层全连接后得到输出 <img src="https://www.zhihu.com/equation?tex=Z" alt="[公式]"> 。</li>
+<li>将数据 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=X+" alt="[公式]"> 分别输入到图13所示的8个self-attention中，得到8个加权后的特征矩阵 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=Z_i,+i%5Cin%5C%7B1,2,...,8%5C%7D" alt="[公式]"> 。</li>
+<li>将8个 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=Z_i" alt="[公式]"> 按列拼成一个大的特征矩阵；</li>
+<li>特征矩阵经过一层全连接后得到输出 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=Z" alt="[公式]"> 。</li>
 </ol>
 <p>整个过程如图14所示：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-c2a91ac08b34e73c7f4b415ce823840e_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic3.zhimg.com/80/v2-c2a91ac08b34e73c7f4b415ce823840e_720w.jpg" alt="img"></p>
 <ul>
 <li><strong>Encoder-Decoder Attention</strong></li>
 </ul>
-<p>在解码器中，Transformer block比编码器中多了个encoder-cecoder attention。在encoder-decoder attention中， <img src="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> <strong>来自于解码器的上一个输出， <img src="https://www.zhihu.com/equation?tex=K" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=V" alt="[公式]"> 则来自于与编码器的输出。</strong>其计算方式完全和Attention的计算过程相同。</p>
-<p>在机器翻译中，解码过程是一个顺序操作的过程，也就是当解码第 <img src="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 个特征向量时，我们只能看到第 <img src="https://www.zhihu.com/equation?tex=k-1" alt="[公式]"> 及其之前的解码结果，论文中把这种情况下的multi-head attention叫做masked multi-head attention。</p>
+<p>在解码器中，Transformer block比编码器中多了个encoder-cecoder attention。在encoder-decoder attention中， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=Q" alt="[公式]"> <strong>来自于解码器的上一个输出， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=K" alt="[公式]"> 和 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=V" alt="[公式]"> 则来自于与编码器的输出。</strong>其计算方式完全和Attention的计算过程相同。</p>
+<p>在机器翻译中，解码过程是一个顺序操作的过程，也就是当解码第 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=k" alt="[公式]"> 个特征向量时，我们只能看到第 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=k-1" alt="[公式]"> 及其之前的解码结果，论文中把这种情况下的multi-head attention叫做masked multi-head attention。</p>
 <ul>
 <li><strong>位置编码</strong></li>
 </ul>
 <p>论文中在编码词向量时引入了位置编码（Position Embedding）的特征。具体地说，位置编码会在词向量中加入了单词的位置信息，这样Transformer就能区分不同位置的单词了。</p>
 <p>编码位置常见的模式有：a. 根据数据学习；b. 自己设计编码规则。</p>
 <p>论文给出的编码公式如下：</p>
-<p><img src="https://www.zhihu.com/equation?tex=PE(pos,+2i)+=+sin(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag3" alt="[公式]"></p>
-<p><img src="https://www.zhihu.com/equation?tex=PE(pos,+2i+1)+=+cos(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag4" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=PE(pos,+2i)+=+sin(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag3" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=PE(pos,+2i+1)+=+cos(%5Cfrac%7Bpos%7D%7B10000%5E%7B%5Cfrac%7B2i%7D%7Bd_%7Bmodel%7D%7D%7D%7D)+%5Ctag4" alt="[公式]"></p>
 <p>作者这么设计的原因是考虑到在NLP任务中，除了单词的绝对位置，单词的相对位置也非常重要。</p>
 <ul>
 <li><strong>优点</strong></li>
@@ -977,7 +989,7 @@
 <p>（1）<strong>ProbSparse Self-Attention</strong></p>
 <p>在典型的Self-Attention机制中，少数点积对主要注意有贡献，其他点积对可以忽略，所以引入Query Sparsity评估。</p>
 <p>并且使用最大值代替复杂的对数计算，既解决了计算精度问题，也降低了计算复杂度。</p>
-<p><img src="http://img.fdchen.host/Informer-ProSparseSelfAttention%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="image-20210731210037446"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Informer-ProSparseSelfAttention%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="image-20210731210037446"></p>
 <p>（2）<strong>Self-attention Distilling</strong></p>
 <p>作为ProbSparse Self-attention的自然结果，encoder的特征映射会带来V值的冗余组合，利用distilling对具有支配特征的优势特征进行特权化，使它们的输出维度对齐。</p>
 <p>（3）<strong>Generating long sequential outputs</strong></p>
@@ -995,27 +1007,27 @@
 <li><strong>算法模型</strong></li>
 </ul>
 <p>ELMo用到上文提到的双向的language model，给定N个tokens (t1, t2,…,tN), language model通过<strong>给定前面的k-1个位置的token序列计算第k个token的出现的概率:</strong></p>
-<p><img src="https://www.zhihu.com/equation?tex=p(t_1,+t_2,+...,+t_N)+=+%5Cprod_%7Bk=1%7D%5EN+p(t_k%7Ct_1,+t_2,+...,+t_%7Bk-1%7D)" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=p(t_1,+t_2,+...,+t_N)+=+%5Cprod_%7Bk=1%7D%5EN+p(t_k%7Ct_1,+t_2,+...,+t_%7Bk-1%7D)" alt="[公式]"></p>
 <p><strong>后向的计算方法与前向相似</strong>:</p>
-<p><img src="https://www.zhihu.com/equation?tex=p%5Cleft(t_%7B1%7D,+t_%7B2%7D,+%5Cldots,+t_%7BN%7D%5Cright)=%5Cprod_%7Bk=1%7D%5E%7BN%7D+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+t_%7Bk+2%7D,+%5Cldots,+t_%7BN%7D%5Cright)" alt="[公式]"></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=p%5Cleft(t_%7B1%7D,+t_%7B2%7D,+%5Cldots,+t_%7BN%7D%5Cright)=%5Cprod_%7Bk=1%7D%5E%7BN%7D+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+t_%7Bk+2%7D,+%5Cldots,+t_%7BN%7D%5Cright)" alt="[公式]"></p>
 <p><strong>biLM训练过程中的目标就是最大化</strong>:</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5Csum_%7Bk=1%7D%5E%7BN%7D%5Cleft(%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7B1%7D,+%5Cldots,+t_%7Bk-1%7D+;+%5CTheta_%7Bx%7D,+%5Cvec%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)+%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+%5Cldots,+t_%7BN%7D+;+%5CTheta_%7Bx%7D,+%5Cstackrel%7B%5Cleftarrow%7D%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)%5Cright)" alt="[公式]"></p>
-<p><strong>ELMo对于每个token <img src="https://www.zhihu.com/equation?tex=t_k" alt="[公式]"> , 通过一个L层的biLM计算出2L+1个表示:</strong></p>
-<p><img src="https://www.zhihu.com/equation?tex=R_k+=+%5C%7Bx_k%5E%7BLM%7D,+%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D,+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D+%5Cvert+j=1,+...,+L%5C%7D+=+%5C%7Bh_%7Bk,j%7D%5E%7BLM%7D+%5Cvert+j=0,...,+L%5C%7D" alt="[公式]"></p>
-<p>其中 <img src="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> 是对token进行直接编码的结果(这里是<strong>字符通过CNN编码</strong>)， <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bh%7D_%7Bk,+0%7D%5E%7BL+M%7D" alt="[公式]"> 代表 <img src="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> <img src="https://www.zhihu.com/equation?tex=h_%7Bk,j%7D%5E%7BLM%7D+=+%5B%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D;+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D%5D" alt="[公式]"> 是每个biLSTM层输出的结果。在实验中还发现不同层的biLM的输出的token表示对于不同的任务效果不同.最上面一层的输出 <img src="https://www.zhihu.com/equation?tex=%5Coverrightarrow%7B%5Cmathbf%7Bh%7D%7D_%7Bk,+L%7D%5E%7BL+M%7D" alt="[公式]"> 是用softmax来预测下面一个单词 <img src="https://www.zhihu.com/equation?tex=t_%7Bk+1%7D" alt="[公式]">。</p>
-<p>应用中将ELMo中所有层的输出R压缩为单个向量， <img src="https://www.zhihu.com/equation?tex=ELMo_k+=+E(R_k;%5CTheta+_%5Cepsilon)" alt="[公式]">，最简单的压缩方法是取最上层的结果做为token的表示: <img src="https://www.zhihu.com/equation?tex=E(R_k)+=+h_%7Bk,L%7D%5E%7BLM%7D" alt="[公式]"> ，更通用的做法是<strong>通过一些参数来联合所有层的信息得到最终的ELMo向量:</strong></p>
-<p><strong><img src="https://www.zhihu.com/equation?tex=E+L+M+o_%7Bk%7D%5E%7Bt+a+s+k%7D=E%5Cleft(R_%7Bk%7D+;+%5CTheta%5E%7Bt+a+s+k%7D%5Cright)=%5Cgamma%5E%7Bt+a+s+k%7D+%5Csum_%7Bj=0%7D%5E%7BL%7D+s_%7Bj%7D%5E%7Bt+a+s+k%7D+h_%7Bk,+j%7D%5E%7BL+M%7D" alt="[公式]"></strong></p>
-<p>其中 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname%7Btas%7D+k%7D" alt="[公式]"> 是一个softmax出来的结果, γ是一个任务相关的scale参数，我试了平均每个层的信息和学出来 <img src="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname+%7Btask%7D%7D" alt="[公式]"> 发现学习出来的效果会好很多。 文中提到γ在不同任务中取不同的值效果会有较大的差异， 需要注意， 在SQuAD中设置为0.01取得的效果要好于设置为1时。</p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Csum_%7Bk=1%7D%5E%7BN%7D%5Cleft(%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7B1%7D,+%5Cldots,+t_%7Bk-1%7D+;+%5CTheta_%7Bx%7D,+%5Cvec%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)+%5Clog+p%5Cleft(t_%7Bk%7D+%7C+t_%7Bk+1%7D,+%5Cldots,+t_%7BN%7D+;+%5CTheta_%7Bx%7D,+%5Cstackrel%7B%5Cleftarrow%7D%7B%5CTheta%7D_%7BL+S+T+M%7D,+%5CTheta_%7Bs%7D%5Cright)%5Cright)" alt="[公式]"></p>
+<p><strong>ELMo对于每个token <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=t_k" alt="[公式]"> , 通过一个L层的biLM计算出2L+1个表示:</strong></p>
+<p><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=R_k+=+%5C%7Bx_k%5E%7BLM%7D,+%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D,+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D+%5Cvert+j=1,+...,+L%5C%7D+=+%5C%7Bh_%7Bk,j%7D%5E%7BLM%7D+%5Cvert+j=0,...,+L%5C%7D" alt="[公式]"></p>
+<p>其中 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> 是对token进行直接编码的结果(这里是<strong>字符通过CNN编码</strong>)， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bh%7D_%7Bk,+0%7D%5E%7BL+M%7D" alt="[公式]"> 代表 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=x_k%5E%7BLM%7D" alt="[公式]"> <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=h_%7Bk,j%7D%5E%7BLM%7D+=+%5B%5Coverrightarrow%7Bh%7D_%7Bk,j%7D%5E%7BLM%7D;+%5Coverleftarrow%7Bh%7D_%7Bk,+j%7D%5E%7BLM%7D%5D" alt="[公式]"> 是每个biLSTM层输出的结果。在实验中还发现不同层的biLM的输出的token表示对于不同的任务效果不同.最上面一层的输出 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Coverrightarrow%7B%5Cmathbf%7Bh%7D%7D_%7Bk,+L%7D%5E%7BL+M%7D" alt="[公式]"> 是用softmax来预测下面一个单词 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=t_%7Bk+1%7D" alt="[公式]">。</p>
+<p>应用中将ELMo中所有层的输出R压缩为单个向量， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=ELMo_k+=+E(R_k;%5CTheta+_%5Cepsilon)" alt="[公式]">，最简单的压缩方法是取最上层的结果做为token的表示: <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=E(R_k)+=+h_%7Bk,L%7D%5E%7BLM%7D" alt="[公式]"> ，更通用的做法是<strong>通过一些参数来联合所有层的信息得到最终的ELMo向量:</strong></p>
+<p><strong><img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=E+L+M+o_%7Bk%7D%5E%7Bt+a+s+k%7D=E%5Cleft(R_%7Bk%7D+;+%5CTheta%5E%7Bt+a+s+k%7D%5Cright)=%5Cgamma%5E%7Bt+a+s+k%7D+%5Csum_%7Bj=0%7D%5E%7BL%7D+s_%7Bj%7D%5E%7Bt+a+s+k%7D+h_%7Bk,+j%7D%5E%7BL+M%7D" alt="[公式]"></strong></p>
+<p>其中 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname%7Btas%7D+k%7D" alt="[公式]"> 是一个softmax出来的结果, γ是一个任务相关的scale参数，我试了平均每个层的信息和学出来 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=%5Cmathbf%7Bs%7D%5E%7B%5Coperatorname+%7Btask%7D%7D" alt="[公式]"> 发现学习出来的效果会好很多。 文中提到γ在不同任务中取不同的值效果会有较大的差异， 需要注意， 在SQuAD中设置为0.01取得的效果要好于设置为1时。</p>
 <p>文章中提到的Pre-trained的language model是用了两层的biLM， <strong>对token进行上下文无关的编码是通过CNN对字符级进行编码，</strong> 然后将三层的输出scale到1024维， 最后对每个token输出3个1024维的向量表示。 这里之所以将3层的输出都作为token的embedding表示是因为实验已经证实不同层的LM输出的信息对于不同的任务作用是不同的， 也就是所不同层的输出捕捉到的token的信息是不相同的。</p>
 <ul>
 <li><strong>具体实现</strong></li>
 </ul>
 <p>以下内容来自博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63115885">NAACL2018:高级词向量(ELMo)详解(超详细) 经典</a></p>
 <p>ELMO 采用了典型的两阶段过程，<strong>第一个阶段是利用语言模型进行预训练；第二个阶段是在做下游任务时，从预训练网络中提取对应单词的网络各层的 Word Embedding 作为新特征补充到下游任务中。</strong></p>
-<p><img src="https://pic2.zhimg.com/80/v2-945ea2c964e548cb9a9128864b5f6d49_720w.jpg" alt="img"></p>
-<p>上图展示的是其预训练过程，它的网络结构采用了双层双向 LSTM，目前语言模型训练的任务目标是根<strong>据单词 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上下文去正确预测单词 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> ， <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 之前的单词序列 Context-before 称为上文，之后的单词序列 Context-after 称为下文</strong>。图中左端的前向双层LSTM代表正方向编码器，输入的是从左到右顺序的除了预测单词外 <img src="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上文 Context-before；右端的逆向双层 LSTM 代表反方向编码器，输入的是从右到左的逆序的句子下文 Context-after；<strong>每个编码器的深度都是两层 LSTM 叠加。这个网络结构其实在 NLP 中是很常用的</strong>。</p>
+<p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/80/v2-945ea2c964e548cb9a9128864b5f6d49_720w.jpg" alt="img"></p>
+<p>上图展示的是其预训练过程，它的网络结构采用了双层双向 LSTM，目前语言模型训练的任务目标是根<strong>据单词 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上下文去正确预测单词 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> ， <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 之前的单词序列 Context-before 称为上文，之后的单词序列 Context-after 称为下文</strong>。图中左端的前向双层LSTM代表正方向编码器，输入的是从左到右顺序的除了预测单词外 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=W_%7Bi%7D" alt="[公式]"> 的上文 Context-before；右端的逆向双层 LSTM 代表反方向编码器，输入的是从右到左的逆序的句子下文 Context-after；<strong>每个编码器的深度都是两层 LSTM 叠加。这个网络结构其实在 NLP 中是很常用的</strong>。</p>
 <p>使用这个网络结构利用大量语料做语言模型任务就能预先训练好这个网络，如果训练好这个网络后，输入一个新句子Snew，<strong>句子中每个单词都能得到对应的三个Embedding</strong>:<strong>最底层是单词的 Word Embedding，往上走是第一层双向LSTM中对应单词位置的 Embedding，这层编码单词的句法信息更多一些；再往上走是第二层LSTM中对应单词位置的 Embedding，这层编码单词的语义信息更多一些</strong>。也就是说，ELMO 的预训练过程不仅仅学会单词的 Word Embedding，还学会了一个双层双向的LSTM网络结构，而这两者后面都有用。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-e53a17ada1d510958215cc860c33efb9_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/80/v2-e53a17ada1d510958215cc860c33efb9_720w.jpg" alt="img"></p>
 <p>上面介绍的是 ELMO 的第一阶段：预训练阶段。那么预训练好网络结构后，如何给下游任务使用呢？上图展示了下游任务的使用过程，比如我们的下游任务仍然是 QA 问题，此时<strong>对于问句 X，我们可以先将句子 X 作为预训练好的 ELMO 网络的输入，这样句子 X 中每个单词在 ELMO 网络中都能获得对应的三个 Embedding，之后给予这三个 Embedding 中的每一个 Embedding 一个权重a，这个权重可以学习得来，根据各自权重累加求和，将三个 Embedding 整合成一个。</strong></p>
 <p><strong>然后将整合后的这个 Embedding 作为 X 句在自己任务的那个网络结构中对应单词的输入，以此作为补充的新特征给下游任务使用。</strong>对于上图所示下游任务 QA 中的回答句子 Y 来说也是如此处理。</p>
 <p>因为 <strong>ELMO给下游提供的是每个单词的特征形式，所以这一类预训练的方法被称为“Feature-based Pre-Training”</strong>。</p>
@@ -1029,7 +1041,7 @@
 <ul>
 <li><strong>ELMo到XLnet模型</strong></li>
 </ul>
-<p><img src="http://img.fdchen.host/ELMo%E5%88%B0XLnet.png" alt="ElMo到XLnet"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/ELMo%E5%88%B0XLnet.png" alt="ElMo到XLnet"></p>
 <h1 id="10-Bert"><a href="#10-Bert" class="headerlink" title="10 Bert"></a>10 Bert</h1><ul>
 <li>全称：Bidirectional Encoder Representations from Transformers    </li>
 <li>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for </a><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1810.04805.pdf">Language Understanding</a></li>
@@ -1041,13 +1053,13 @@
 </ul>
 <p>模型的主要创新点都在pre-train方法上，即用了<strong>Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的representation。</strong></p>
 <p>由于模型的构成元素Transformer已经解析过，就不多说了，BERT模型的结构如下图最左：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-d942b566bde7c44704b7d03a1b596c0c_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic1.zhimg.com/80/v2-d942b566bde7c44704b7d03a1b596c0c_720w.jpg" alt="img"></p>
 <p><strong>对比OpenAI GPT(Generative pre-trained transformer)，BERT是双向的Transformer block连接；就像单向RNN和双向RNN的区别，直觉上来讲效果会好一些。</strong></p>
-<p><strong>对比ELMo，虽然都是“双向”，但目标函数其实是不同的。</strong>ELMo是分别以<img src="https://www.zhihu.com/equation?tex=P(w_i%7C+w_1,+...w_%7Bi-1%7D)" alt="[公式]"> 和 <img src="https://www.zhihu.com/equation?tex=P(w_i%7Cw_%7Bi+1%7D,+...w_n)" alt="[公式]"> 作为目标函数，独立训练处两个representation然后拼接，而BERT则是以 <img src="https://www.zhihu.com/equation?tex=P(w_i%7Cw_1,++...,w_%7Bi-1%7D,+w_%7Bi+1%7D,...,w_n)" alt="[公式]"> 作为目标函数训练LM。</p>
+<p><strong>对比ELMo，虽然都是“双向”，但目标函数其实是不同的。</strong>ELMo是分别以<img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=P(w_i%7C+w_1,+...w_%7Bi-1%7D)" alt="[公式]"> 和 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=P(w_i%7Cw_%7Bi+1%7D,+...w_n)" alt="[公式]"> 作为目标函数，独立训练处两个representation然后拼接，而BERT则是以 <img src="/medias/loading.gif" data-original="https://www.zhihu.com/equation?tex=P(w_i%7Cw_1,++...,w_%7Bi-1%7D,+w_%7Bi+1%7D,...,w_n)" alt="[公式]"> 作为目标函数训练LM。</p>
 <ul>
 <li><strong>Embedding</strong></li>
 </ul>
-<p><img src="https://pic2.zhimg.com/80/v2-11505b394299037e999d12997e9d1789_720w.jpg" alt="img"></p>
+<p><img src="/medias/loading.gif" data-original="https://pic2.zhimg.com/80/v2-11505b394299037e999d12997e9d1789_720w.jpg" alt="img"></p>
 <p>其中：</p>
 <ol>
 <li><strong>Token Embeddings</strong>是词向量，第一个单词是CLS标志，可以用于之后的分类任务</li>
@@ -1347,10 +1359,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1398,7 +1410,7 @@
                 <a href="/2021/linux-shell-bian-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/shell.jpg" class="responsive-img" alt="Shell编程">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/shell.jpg" class="responsive-img" alt="Shell编程">
                         
                         <span class="card-title">Shell编程</span>
                     </div>
@@ -1428,16 +1440,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Shell/">
+                        <span class="chip bg-color">Shell</span>
+                    </a>
+                    
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
                     </a>
                     
                     <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                         <span class="chip bg-color">常见用法</span>
-                    </a>
-                    
-                    <a href="/tags/Shell/">
-                        <span class="chip bg-color">Shell</span>
                     </a>
                     
                 </div>
@@ -1454,7 +1466,7 @@
                 <a href="/2021/shu-xue-xian-xing-dai-shu/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/linear_algebra.jpg" class="responsive-img" alt="_线性代数">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/linear_algebra.jpg" class="responsive-img" alt="_线性代数">
                         
                         <span class="card-title">_线性代数</span>
                     </div>
@@ -1665,7 +1677,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2020-2022</span>
             
             <a href="/about" target="_blank">fdChen</a>
             <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1704,10 +1716,10 @@
                         var days = hours * 24;
                         var years = days * 365;
                         var today = new Date();
-                        var startYear = "2022";
+                        var startYear = "2020";
                         var startMonth = "3";
-                        var startDate = "16";
-                        var startHour = "17";
+                        var startDate = "7";
+                        var startHour = "0";
                         var startMinute = "0";
                         var startSecond = "0";
                         var todayYear = today.getFullYear();
@@ -1910,6 +1922,29 @@ $(function () {
     </a>
 </div>
 
+    
+    <div id="loading-box">
+      <div class="loading-left-bg"></div>
+      <div class="loading-right-bg"></div>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+      </div>
+    </div>
+    <!-- 页面加载动画 -->
+    <script>
+      $(document).ready(function () {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+      })
+    </script>
+  
+  
 
 
     <script src="/libs/materialize/materialize.min.js"></script>
@@ -2002,19 +2037,19 @@ $(function () {
     
 
     
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
-    
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>

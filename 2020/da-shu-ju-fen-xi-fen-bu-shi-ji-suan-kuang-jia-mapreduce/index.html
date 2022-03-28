@@ -29,7 +29,7 @@
 
     <title>分布式计算框架MapReduce | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-
+    <link rel="stylesheet" type="text/css" href="/css/loading.css">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
@@ -45,6 +45,16 @@
 
 
 
+   <style>
+    body{
+       background-image: url(https://img.fdchen.host/wall.jpg);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
 
 <body>
     <header class="navbar-fixed">
@@ -52,10 +62,12 @@
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">fdChen的掉发收集箱</span>
+                    <div>
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">fdChen的掉发收集箱</span>
+                    </div>
                 </a>
             </div>
             
@@ -141,7 +153,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">fdChen的掉发收集箱</div>
         <div class="logo-desc">
@@ -516,7 +528,7 @@
 </ol>
 <span id="more"></span>
 
-<h2 id="1-3-MapReduce核心思想"><a href="#1-3-MapReduce核心思想" class="headerlink" title="1.3 MapReduce核心思想"></a>1.3 MapReduce核心思想</h2><p><img src="http://img.fdchen.host/MapReduce%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3.png" alt="MapReduce核心编程思想"></p>
+<h2 id="1-3-MapReduce核心思想"><a href="#1-3-MapReduce核心思想" class="headerlink" title="1.3 MapReduce核心思想"></a>1.3 MapReduce核心思想</h2><p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/MapReduce%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3.png" alt="MapReduce核心编程思想"></p>
 <center>图1.1 MapReduce核心编程思想</center>
 
 <ul>
@@ -618,7 +630,7 @@ xue	<span class="token number">1</span><span aria-hidden="true" class="line-numb
 <ol start="2">
 <li><strong>需求分析</strong></li>
 </ol>
-<p>按照MapReduce编程规范，分别编写Mapper，Reducer，Driver，如图1.2：<br><img src="http://img.fdchen.host/WordCount%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.png" alt="WordCount案例需求分析"></p>
+<p>按照MapReduce编程规范，分别编写Mapper，Reducer，Driver，如图1.2：<br><img src="/medias/loading.gif" data-original="http://img.fdchen.host/WordCount%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.png" alt="WordCount案例需求分析"></p>
 <center>图1.2 WordCount案例需求分析</center>
 
 <ol start="3">
@@ -806,7 +818,7 @@ xue	<span class="token number">1</span><span aria-hidden="true" class="line-numb
 <p>（1）如果电脑系统是win7的就将win7的hadoop jar包解压到非中文路径，并在Windows环境上配置HADOOP_HOME环境变量。如果是电脑win10操作系统，就解压win10的hadoop jar包，并配置HADOOP_HOME环境变量。</p>
 <p><strong>Tip：win8电脑和win10家庭版操作系统可能有问题，需要重新编译源码或者更改操作系统。</strong></p>
 <p>（2）在Eclipse&#x2F;Idea上运行程序，如图1.3：</p>
-<p><img src="http://img.fdchen.host/RunConfiguration%E8%AE%BE%E7%BD%AE.jpg" alt="RunConfiguration设置"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/RunConfiguration%E8%AE%BE%E7%BD%AE.jpg" alt="RunConfiguration设置"></p>
 <center>图1.3 RunConfiguration设置</center>
 
 <p><strong>Tip：输出路径目录必须未创建，不然会报错。</strong></p>
@@ -869,13 +881,13 @@ xue	<span class="token number">1</span><span aria-hidden="true" class="line-numb
 <li><p><strong>如图1.4报错无法操作存储节点，原因是DataNode被yarn进程屏蔽</strong></p>
 </li>
 </ul>
-<p><img src="/" alt="DataNode被yarn进程屏蔽报错无法操作存储节点"></p>
+<p><img src="/medias/loading.gif" data-original="/" alt="DataNode被yarn进程屏蔽报错无法操作存储节点"></p>
 <center>图1.4 DataNode被yarn进程屏蔽报错无法操作存储节点</center>
 
 <ul>
 <li><strong>如图1.5报错无法连接，原因是未启动yarn</strong></li>
 </ul>
-<p><img src="http://img.fdchen.host/DataNode%E8%A2%AByarn%E8%BF%9B%E7%A8%8B%E5%B1%8F%E8%94%BD%E6%8A%A5%E9%94%99%E6%97%A0%E6%B3%95%E6%93%8D%E4%BD%9C%E9%9B%86%E7%BE%A4%E5%AD%98%E5%82%A8%E8%8A%82%E7%82%B9.jpg" alt="未启动yarn报错无法连接"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/DataNode%E8%A2%AByarn%E8%BF%9B%E7%A8%8B%E5%B1%8F%E8%94%BD%E6%8A%A5%E9%94%99%E6%97%A0%E6%B3%95%E6%93%8D%E4%BD%9C%E9%9B%86%E7%BE%A4%E5%AD%98%E5%82%A8%E8%8A%82%E7%82%B9.jpg" alt="未启动yarn报错无法连接"></p>
 <center>图1.5 未启动yarn报错无法连接</center>
 
 <h1 id="2-Hadoop序列化"><a href="#2-Hadoop序列化" class="headerlink" title="2 Hadoop序列化"></a>2 Hadoop序列化</h1><h2 id="2-1-序列化概述"><a href="#2-1-序列化概述" class="headerlink" title="2.1 序列化概述"></a>2.1 序列化概述</h2><h3 id="2-1-1-什么是序列化"><a href="#2-1-1-什么是序列化" class="headerlink" title="2.1.1 什么是序列化"></a>2.1.1 什么是序列化</h3><ol>
@@ -1189,7 +1201,7 @@ id	手机号码		网络ip			上行流量  下行流量     网络状态码<span 
 <li><strong>数据切片：</strong>数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储。</li>
 <li>MapTask并行度决定机制如图3.1：</li>
 </ul>
-<p><img src="http://img.fdchen.host/MapTask%E5%B9%B6%E8%A1%8C%E5%BA%A6%E5%86%B3%E5%AE%9A%E6%9C%BA%E5%88%B6.png" alt="MapTask并行度决定机制"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/MapTask%E5%B9%B6%E8%A1%8C%E5%BA%A6%E5%86%B3%E5%AE%9A%E6%9C%BA%E5%88%B6.png" alt="MapTask并行度决定机制"></p>
 <center>图3.1 MapTask并行度决定机制</center>
 
 <ul>
@@ -1235,7 +1247,7 @@ submitter<span class="token punctuation">.</span><span class="token function">su
 status <span class="token operator">=</span> submitClient<span class="token punctuation">.</span><span class="token function">submitJob</span><span class="token punctuation">(</span>jobId<span class="token punctuation">,</span> submitJobDir<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> job<span class="token punctuation">.</span><span class="token function">getCredentials</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>（2）Job提交流程图解，如图3.2：</p>
-<p><img src="http://img.fdchen.host/Job%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%A7%A3.png" alt="Job提交流程图解"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Job%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%A7%A3.png" alt="Job提交流程图解"></p>
 <center>图3.2 Job提交流程图解</center>
 
 <ol start="2">
@@ -1295,7 +1307,7 @@ status <span class="token operator">=</span> submitClient<span class="token punc
 <ul>
 <li>生成切片过程包括：<strong>虚拟存储过程和切片过程二部分</strong>。</li>
 </ul>
-<p><img src="http://img.fdchen.host/CombineTextInputFormat%E5%88%87%E7%89%87%E6%9C%BA%E5%88%B6.png" alt="CombineTextInputFormat切片机制"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/CombineTextInputFormat%E5%88%87%E7%89%87%E6%9C%BA%E5%88%B6.png" alt="CombineTextInputFormat切片机制"></p>
 <center>图3.3 CombineTextInputFormat切片机制</center>
 
 <p>（1）<strong>虚拟存储过程：</strong></p>
@@ -1348,7 +1360,7 @@ job<span class="token punctuation">.</span><span class="token function">setInput
 <li><strong>A：</strong>FileInputFormat常见的接口实现类包括：<strong>TextInputFormat 、KeyValueTextInputFormat、NLineInputF ormat、CombineTextInputFormat和自定义InputFormat</strong>等。</li>
 </ul>
 <p><strong>Tip：在Eclipse中点击FileInputFormat类，然后按下“CTRL+T”可查看FileInputFormat类的层级结构，如图3.4：</strong></p>
-<p><img src="http://img.fdchen.host/FileInputFormat%E7%B1%BB%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.jpg" alt="FileInputFormat类的层级结构"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/FileInputFormat%E7%B1%BB%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.jpg" alt="FileInputFormat类的层级结构"></p>
 <center>图3.4 FileInputFormat类的层级结构</center>
 
 <ol>
@@ -1432,7 +1444,7 @@ xihuan	2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <ol start="2">
 <li><strong>案例分析</strong></li>
 </ol>
-<p><img src="http://img.fdchen.host/KeyValueTextInputFormat%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="KeyValueTextInputFormat使用案例分析"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/KeyValueTextInputFormat%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="KeyValueTextInputFormat使用案例分析"></p>
 <center>图3.5 KeyValueTextInputFormat使用案例分析</center>
 
 <ol start="3">
@@ -1577,7 +1589,7 @@ xihuan	6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <ol start="2">
 <li><strong>需求分析</strong></li>
 </ol>
-<p><img src="http://img.fdchen.host/NLineInputFormat%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="NLineInputFormat案例分析"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/NLineInputFormat%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="NLineInputFormat案例分析"></p>
 <center>图3.6 NLineInputFormat案例分析</center>
 
 <p>3 <strong>代码实现</strong></p>
@@ -1721,7 +1733,7 @@ xihuan hadoop banzhang<span aria-hidden="true" class="line-numbers-rows"><span><
 <ul>
 <li>控制台运行结果如下</li>
 </ul>
-<p><img src="http://img.fdchen.host/NLineInputFormat%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE.jpg" alt="NLineInputFormat使用案例运行截图"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/NLineInputFormat%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE.jpg" alt="NLineInputFormat使用案例运行截图"></p>
 <center>图3.7 NLineInputFormat使用案例运行截图</center>
 
 <ul>
@@ -1763,7 +1775,7 @@ mazong kailun yuhang yixin<span aria-hidden="true" class="line-numbers-rows"><sp
 <ol start="2">
 <li><strong>需求分析</strong></li>
 </ol>
-<p><img src="http://img.fdchen.host/%E8%87%AA%E5%AE%9A%E4%B9%89InputFormat%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="自定义InputFormat案例分析"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%87%AA%E5%AE%9A%E4%B9%89InputFormat%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.png" alt="自定义InputFormat案例分析"></p>
 <center>图3.8 自定义InputFormat案例分析</center>
 
 <ol start="3">
@@ -1989,10 +2001,10 @@ mazong kailun yuhang yixin<span aria-hidden="true" class="line-numbers-rows"><sp
 		<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-2-MapReduce工作流程"><a href="#3-2-MapReduce工作流程" class="headerlink" title="3.2 MapReduce工作流程"></a>3.2 MapReduce工作流程</h2><h3 id="3-2-1-MapReduce工作流程示意图"><a href="#3-2-1-MapReduce工作流程示意图" class="headerlink" title="3.2.1 MapReduce工作流程示意图"></a>3.2.1 MapReduce工作流程示意图</h3><p><img src="http://img.fdchen.host/MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89.png" alt="MapReduce工作流程（一）"></p>
+<h2 id="3-2-MapReduce工作流程"><a href="#3-2-MapReduce工作流程" class="headerlink" title="3.2 MapReduce工作流程"></a>3.2 MapReduce工作流程</h2><h3 id="3-2-1-MapReduce工作流程示意图"><a href="#3-2-1-MapReduce工作流程示意图" class="headerlink" title="3.2.1 MapReduce工作流程示意图"></a>3.2.1 MapReduce工作流程示意图</h3><p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89.png" alt="MapReduce工作流程（一）"></p>
 <center>图3.9 MapReduce工作流程（一）</center>
 
-<p><img src="http://img.fdchen.host/MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.png" alt="MapReduce工作流程（二）"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89.png" alt="MapReduce工作流程（二）"></p>
 <center>图3.10 MapReduce工作流程（二）</center>
 
 <h3 id="3-2-2-MapReduce工作流程详解"><a href="#3-2-2-MapReduce工作流程详解" class="headerlink" title="3.2.2 MapReduce工作流程详解"></a>3.2.2 MapReduce工作流程详解</h3><p>上面的流程是整个MapReduce最全工作流程，但是Shuffle过程只是从第7步开始到第16步结束，具体Shuffle过程详解，如下：</p>
@@ -2027,7 +2039,7 @@ context<span class="token punctuation">.</span><span class="token function">writ
 <h2 id="3-3-Shuffle机制"><a href="#3-3-Shuffle机制" class="headerlink" title="3.3 Shuffle机制"></a>3.3 Shuffle机制</h2><h3 id="3-3-1-Shuffle机制"><a href="#3-3-1-Shuffle机制" class="headerlink" title="3.3.1 Shuffle机制"></a>3.3.1 Shuffle机制</h3><ul>
 <li>Map方法之后，Reduce方法之前的数据处理过程称之为Shuffle。如图3.11所示：</li>
 </ul>
-<p><img src="http://img.fdchen.host/Shuffle%E6%9C%BA%E5%88%B6.png" alt="Shuffle机制"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Shuffle%E6%9C%BA%E5%88%B6.png" alt="Shuffle机制"></p>
 <center>图3.11 Shuffle机制</center>
 
 <h3 id="3-3-2-Partition分区"><a href="#3-3-2-Partition分区" class="headerlink" title="3.3.2 Partition分区"></a>3.3.2 Partition分区</h3><ol>
@@ -2436,7 +2448,7 @@ job<span class="token punctuation">.</span><span class="token function">setNumRe
 <li><p>输入输出示例如图3.12：</p>
 </li>
 </ul>
-<p><img src="http://img.fdchen.host/WritableComparable%E6%8E%92%E5%BA%8F%E6%A1%88%E4%BE%8B%EF%BC%88%E5%8C%BA%E5%86%85%E6%8E%92%E5%BA%8F%EF%BC%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B.png" alt="WritableComparable排序案例（区内排序）输入输出示例"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/WritableComparable%E6%8E%92%E5%BA%8F%E6%A1%88%E4%BE%8B%EF%BC%88%E5%8C%BA%E5%86%85%E6%8E%92%E5%BA%8F%EF%BC%89%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B.png" alt="WritableComparable排序案例（区内排序）输入输出示例"></p>
 <center>图3.12 WritableComparable排序案例（区内排序）输入输出示例</center>
 
 <ol start="3">
@@ -2497,7 +2509,7 @@ job<span class="token punctuation">.</span><span class="token function">setNumRe
 <ul>
 <li>例如，Combiner适用于求和、汇总等场景，Combiner不适用求平均值场景，原因如图3.13：</li>
 </ul>
-<p><img src="http://img.fdchen.host/Combiner%E4%B8%8D%E9%80%82%E7%94%A8%E4%BA%8EMapReduce%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%E5%9C%BA%E6%99%AF%E5%8E%9F%E5%9B%A0.jpg" alt="Combiner不适用于MapReduce求平均值场景原因"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Combiner%E4%B8%8D%E9%80%82%E7%94%A8%E4%BA%8EMapReduce%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%E5%9C%BA%E6%99%AF%E5%8E%9F%E5%9B%A0.jpg" alt="Combiner不适用于MapReduce求平均值场景原因"></p>
 <center>图3.13 Combiner不适用于MapReduce求平均值场景原因</center>
 
 <ol start="6">
@@ -2542,7 +2554,7 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
 <p>（2）期望输出：</p>
 <p>Map阶段输出到Reduce阶段时经过合并，输出数据降低。</p>
 <p>期望控制台显示如图3.13所示：</p>
-<p><img src="http://img.fdchen.host/Combiner%E6%88%90%E5%8A%9F%E7%A4%BA%E4%BE%8B.jpg" alt="Combiner成功示例"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/Combiner%E6%88%90%E5%8A%9F%E7%A4%BA%E4%BE%8B.jpg" alt="Combiner成功示例"></p>
 <center>图3.13 Combiner成功示例</center>
 
 <ol start="2">
@@ -2635,7 +2647,7 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
 </ol>
 <p>（1）利用“订单id和成交金额”作为key，可以将Map阶段读取到的所有订单数据按照id升序排序，如果id相同再按照金额降序排序，发送到Reduce。</p>
 <p>（2）在Reduce端利用groupingComparator将订单id相同的kv聚合成组，然后取第一个即是该订单中最贵商品，如图3.14所示。</p>
-<p><img src="http://img.fdchen.host/GroupingComparator%E5%88%86%E7%BB%84%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.png" alt="GroupingComparator分组案例需求分析"></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/GroupingComparator%E5%88%86%E7%BB%84%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.png" alt="GroupingComparator分组案例需求分析"></p>
 <center>图3.14 GroupingComparator分组案例需求分析</center>
 
 <ol start="3">
@@ -3068,10 +3080,10 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -3119,7 +3131,7 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
                 <a href="/2020/java-ji-ben-yong-fa/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/java.jpg" class="responsive-img" alt="Java_基本用法">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/java.jpg" class="responsive-img" alt="Java_基本用法">
                         
                         <span class="card-title">Java_基本用法</span>
                     </div>
@@ -3171,7 +3183,7 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
                 <a href="/2020/da-shu-ju-fen-xi-fen-bu-shi-wen-jian-xi-tong-hdfs/">
                     <div class="card-image">
                         
-                        <img src="https://img.fdchen.host/hdfs.jpg" class="responsive-img" alt="分布式文件系统HDFS">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/hdfs.jpg" class="responsive-img" alt="分布式文件系统HDFS">
                         
                         <span class="card-title">分布式文件系统HDFS</span>
                     </div>
@@ -3394,7 +3406,7 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2020-2022</span>
             
             <a href="/about" target="_blank">fdChen</a>
             <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -3433,10 +3445,10 @@ job<span class="token punctuation">.</span><span class="token function">setCombi
                         var days = hours * 24;
                         var years = days * 365;
                         var today = new Date();
-                        var startYear = "2022";
+                        var startYear = "2020";
                         var startMonth = "3";
-                        var startDate = "16";
-                        var startHour = "17";
+                        var startDate = "7";
+                        var startHour = "0";
                         var startMinute = "0";
                         var startSecond = "0";
                         var todayYear = today.getFullYear();
@@ -3639,6 +3651,29 @@ $(function () {
     </a>
 </div>
 
+    
+    <div id="loading-box">
+      <div class="loading-left-bg"></div>
+      <div class="loading-right-bg"></div>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+      </div>
+    </div>
+    <!-- 页面加载动画 -->
+    <script>
+      $(document).ready(function () {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+      })
+    </script>
+  
+  
 
 
     <script src="/libs/materialize/materialize.min.js"></script>
@@ -3731,19 +3766,19 @@ $(function () {
     
 
     
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
-    
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
