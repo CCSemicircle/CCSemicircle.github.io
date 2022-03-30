@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
+    <lastmod>2022-03-29</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
     <lastmod>2022-03-27</lastmod>
   </url>
@@ -26,10 +30,6 @@
   </url>
   <url>
     <loc>https://blog.fdchen.host/2022/python-tensorflow/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
