@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.6k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    15 分
                 </div>
                 
 
@@ -598,12 +598,28 @@
 
 <h1 id="2-调参技巧"><a href="#2-调参技巧" class="headerlink" title="2 调参技巧"></a>2 调参技巧</h1><h2 id="2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应"><a href="#2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应" class="headerlink" title="2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应"></a>2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应</h2><h2 id="2-2-为节省时间，避免用循环，尽量用矩阵操作"><a href="#2-2-为节省时间，避免用循环，尽量用矩阵操作" class="headerlink" title="2.2 为节省时间，避免用循环，尽量用矩阵操作"></a>2.2 为节省时间，避免用循环，尽量用矩阵操作</h2><p>循环操作虽然只增加2-3秒，但是在大数据集下，会显得尤为突出，2-3秒在很多个batch下会被放大</p>
 <h2 id="2-3-模型的内容尽量写在forward里，避免不断地调用函数"><a href="#2-3-模型的内容尽量写在forward里，避免不断地调用函数" class="headerlink" title="2.3 模型的内容尽量写在forward里，避免不断地调用函数"></a>2.3 模型的内容尽量写在forward里，避免不断地调用函数</h2><p>当数据集大时会非常损耗时间，本来1秒的运行时间可能会因为循环调用函数变成10+秒，甚至重复操作也比重复调用函数来得快</p>
-<h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2><h2 id="2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor"><a href="#2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor" class="headerlink" title="2.7 报错 WARNING:root:NaN or Inf found in input tensor."></a>2.7 报错 WARNING:root:NaN or Inf found in input tensor.</h2><p>目前可能的原因有多种：</p>
+<h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2><h2 id="2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor"><a href="#2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor" class="headerlink" title="2.7 报错 WARNING:root:NaN or Inf found in input tensor."></a>2.7 报错 WARNING:root:NaN or Inf found in input tensor.</h2><h3 id="2-7-1-寻找梯度消失的位置与原因"><a href="#2-7-1-寻找梯度消失的位置与原因" class="headerlink" title="2.7.1 寻找梯度消失的位置与原因"></a>2.7.1 寻找梯度消失的位置与原因</h3><ul>
+<li><strong>大概Debug步骤</strong></li>
+</ul>
+<ol>
+<li>通过打印梯度，找到最先出现nan值的地方</li>
+<li>找到出现nan值地方后，根据下面可能的原因一一排查</li>
+</ol>
 <ul>
+<li><strong>通过如下代码可以打印梯度，可以快速找到梯度从哪里开始出现nan值</strong></li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> name<span class="token punctuation">,</span> parms <span class="token keyword">in</span> net<span class="token punctuation">.</span>named_parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>	
+		<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'-->name:'</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token string">'-->grad_requirs:'</span><span class="token punctuation">,</span>parms<span class="token punctuation">.</span>requires_grad<span class="token punctuation">,</span> \
+		 <span class="token string">' -->grad_value:'</span><span class="token punctuation">,</span>parms<span class="token punctuation">.</span>grad<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Jee_King/article/details/103017077">https://blog.csdn.net/Jee_King/article/details/103017077</a></p>
+<h3 id="2-7-2-可能的原因"><a href="#2-7-2-可能的原因" class="headerlink" title="2.7.2 可能的原因"></a>2.7.2 可能的原因</h3><ul>
 <li><strong>梯度消失或梯度爆炸</strong></li>
 </ul>
 <ol>
-<li>调小或调大学习率</li>
+<li>调小或调大学习率，如果涉及到多个损失函数，可以找出哪一项导致了梯度爆炸，通过减小其权重解决。</li>
 <li>增大正则惩罚，如L1&#x2F;L2正则化</li>
 </ol>
 <ul>
@@ -624,6 +640,23 @@
 <ol>
 <li>检查是否有越界数据或者Nan、Inf的数据</li>
 </ol>
+<ul>
+<li><strong>代码原因（可能导致梯度反向传播的计算图出现问题，待证实 todo）</strong></li>
+</ul>
+<ol>
+<li>避免对网络参数使用torch.diag_embed()操作，使用循环代替</li>
+</ol>
+<ul>
+<li><strong>出现坏样本</strong></li>
+</ul>
+<p>设置训练data loader的batch size为1（<strong>根据数据规模而定，当运行时间很长时，可以设置较大的batch size，然后确定大致范围再一步一步缩小batch size</strong>），逐个样本送入网络，同时设置shuffle为False，也就是不打乱顺序。出现loss为NaN表示遇到了坏样本，此时迭代的批次数，就是该坏样本在数据集的位置，从而定位了坏样本出现位置。排除后重新训练，继续观察loss的情况，直到能正常训练一个epoch，表示所有的坏样本均被去掉，可以开始正常的训练了。</p>
+<p>另外也可以在数据集读取样本时保留其原始文件名，同样设置batch size为1，遇到loss变为NaN就输出文件名，更加方便一些。</p>
+<ul>
+<li><strong>不合适的损失函数带来的数学问题</strong></li>
+</ul>
+<p>采用一些涉及到除法、对数函数等的损失函数时，要注意除零、对数输入负数等情况，这样同样会导致loss变为NaN。这种情况的出现，一般是在开始训练就出现，不存在loss逐渐增大到爆炸的过程。</p>
+<p>一般通过对网络输出值域以及损失函数定义的数学分析可以进行判断，并进行相应地调整。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/andyL_05/article/details/119138160">训练过程中Loss突然变为NaN的可能原因与解决</a></p>
 <h2 id="2-8-留点数据用于最终验证"><a href="#2-8-留点数据用于最终验证" class="headerlink" title="2.8 留点数据用于最终验证"></a>2.8 留点数据用于最终验证</h2><p>如果数据还算充裕，最好能留⼀部分数据，在训练结束之后再⽆偏验证⼀下模型们的表现。</p>
 <h1 id="3-权重初始化"><a href="#3-权重初始化" class="headerlink" title="3 权重初始化"></a>3 权重初始化</h1><h2 id="3-1-Xavier"><a href="#3-1-Xavier" class="headerlink" title="3.1 Xavier"></a>3.1 Xavier</h2><p>对于每个经过的层，我们希望方差保持相同，这有助于防止梯度爆炸或消失。换句话说，我们需要以使 x 和 y  的方差保持相同的方式来初始化权重，此初始化过程称为Xavier初始化（Xavier initialization）。（Xavier 读音 zeivier）</p>
 <h1 id="4-多分类问题的评价指标"><a href="#4-多分类问题的评价指标" class="headerlink" title="4 多分类问题的评价指标"></a>4 多分类问题的评价指标</h1><h2 id="4-1-准确率、召回率与F1分数"><a href="#4-1-准确率、召回率与F1分数" class="headerlink" title="4.1 准确率、召回率与F1分数"></a>4.1 准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
@@ -642,6 +675,13 @@
 <li><p>开外挂，本来下⼀步要⾛向死亡的，结果被外挂给拽回了安全区，如batch normalization策略等</p>
 </li>
 </ol>
+<h2 id="5-2-Pytoch梯度反向传播"><a href="#5-2-Pytoch梯度反向传播" class="headerlink" title="5.2 Pytoch梯度反向传播"></a>5.2 Pytoch梯度反向传播</h2><p>对于梯度反向传播的理解，参考下面两篇博客即可，博客内容很详细也很容易理解，此处不赘述。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/83172023">Pytorch autograd,backward详解</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://haokailong.top/2020/11/01/pytorch-loss-backward-%E7%9A%84%E7%90%86%E8%A7%A3/">pytorch loss.backward()的理解</a></p>
+</li>
+</ul>
 
                 
             </div>
@@ -1171,7 +1211,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">129.3k</span>
+                        class="white-color">130.3k</span>
             
             
             

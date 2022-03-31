@@ -446,12 +446,12 @@
                                 <span class="chip bg-color">环境配置</span>
                             </a>
                         
-                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常见用法</span>
-                            </a>
-                        
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                <span class="chip bg-color">常见用法</span>
                             </a>
                         
                     </div>
@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    928
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -578,6 +578,31 @@
 <h3 id="3-2-9-后台进程管理"><a href="#3-2-9-后台进程管理" class="headerlink" title="3.2.9 后台进程管理"></a>3.2.9 后台进程管理</h3><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012787436/article/details/39722583">Linux后台进程管理以及ctrl+z（挂起）、ctrl+c（中断）、ctrl+\（退出）和ctrl+d（EOF）的区别</a></li>
 </ul>
+<h3 id="3-2-10-网络下载，wget"><a href="#3-2-10-网络下载，wget" class="headerlink" title="3.2.10 网络下载，wget"></a>3.2.10 网络下载，wget</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget -P dir&#x2F; https:&#x2F;&#x2F;xxxx  # 将文件保存至目录dir下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-2-11-自定义alias"><a href="#3-2-11-自定义alias" class="headerlink" title="3.2.11 自定义alias"></a>3.2.11 自定义alias</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">function enshort() &#123;
+    alias l&#x3D;&#39;ls -a&#39;
+    alias d&#x3D;&#39;du -h --max-depth 1&#39;
+    alias n&#x3D;&#39;nvidia-smi&#39;
+    alias vb&#x3D;&#39;vi ~&#x2F;.bashrc&#39;
+    alias sb&#x3D;&#39;.~&#x2F;.bashrc&#39;
+    alias sc&#x3D;&#39;screen&#39;
+    alias nvfind&#x3D;&#39;fuser -V &#x2F;dev&#x2F;nvidia*&#39;
+    alias nving&#x3D;&#39;watch -n 0.1 nvidia-smi&#39;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用source让函数生效</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">source ~&#x2F;.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>编辑保存后每次连接服务器需要调用此函数才能使用如上alias</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">enshort  # 每次开机后使用此函数命令即可使用如上简化alias<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>PS：可以封装一个更高层的函数包含ensort等函数，避免每次连接需要启动多个.bashrc里面的自定义函数</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/1lShNbX9gYQnP0yNHOyMrA">https://mp.weixin.qq.com/s/1lShNbX9gYQnP0yNHOyMrA</a></p>
 <h1 id="4-系统配置"><a href="#4-系统配置" class="headerlink" title="4 系统配置"></a>4 系统配置</h1><blockquote>
 <p>系统为 CentOS 7 </p>
 </blockquote>
@@ -621,6 +646,16 @@
 <li>设置密码</li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd bbee<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="5-2-ubuntu-新建用户不能使用ll等指令，显示出来的信息没有颜色区分的解决方案，usermod-s"><a href="#5-2-ubuntu-新建用户不能使用ll等指令，显示出来的信息没有颜色区分的解决方案，usermod-s" class="headerlink" title="5.2 ubuntu 新建用户不能使用ll等指令，显示出来的信息没有颜色区分的解决方案，usermod -s"></a>5.2 ubuntu 新建用户不能使用ll等指令，显示出来的信息没有颜色区分的解决方案，usermod -s</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">echo $SHELL #这时会发现使用的&#x2F;bin&#x2F;sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>把用户所使用的shell编译器修改成&#x2F;bin&#x2F;bash即可</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">usermod -s &#x2F;bin&#x2F;bash test #test是用户名字<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>此时,在echo $SHELL 一下,就会发现是&#x2F;bin&#x2F;bash了。(退出,重新登陆一下)</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23934063/article/details/80827911">https://blog.csdn.net/qq_23934063/article/details/80827911</a></p>
 
                 
             </div>
@@ -689,12 +724,12 @@
                                     <span class="chip bg-color">环境配置</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常见用法</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                    <span class="chip bg-color">常见用法</span>
                                 </a>
                             
                         </div>
@@ -905,12 +940,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                        <span class="chip bg-color">常见用法</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                        <span class="chip bg-color">常见用法</span>
                     </a>
                     
                     <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
@@ -1158,7 +1193,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">129.3k</span>
+                        class="white-color">130.3k</span>
             
             
             
