@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
-                            </a>
-                        
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                             <a href="/tags/Pytorch/">
@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    20 分
                 </div>
                 
 
@@ -788,8 +788,177 @@ torch<span class="token punctuation">.</span>le<span class="token punctuation">(
 torch<span class="token punctuation">.</span>lt<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 逐元素比较，&lt;</span>
 torch<span class="token punctuation">.</span>ne<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 逐元素比较，!=</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="5-8-复制tensor，repeat-size"><a href="#5-8-复制tensor，repeat-size" class="headerlink" title="5.8 复制tensor，repeat(*size)"></a>5.8 复制tensor，repeat(*size)</h2><ul>
+<li>注意不同于numpy.repeat()，numpy.repeat()逐元素复制，torch.repeat()可以赋值扩展到新的size</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment">### 结果 ###</span>
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">,</span>  <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+x<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 1代表维持第3个维度的大小不变</span>
+<span class="token comment"># torch.Size([4, 2, 3])</span>
+
+numpy<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment"># array([1, 1, 2, 2, 3, 3])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-8-在已有维度上拼接tensor，torch-cat-inputs-dim"><a href="#5-8-在已有维度上拼接tensor，torch-cat-inputs-dim" class="headerlink" title="5.8 在已有维度上拼接tensor，torch.cat(inputs, dim)"></a>5.8 在已有维度上拼接tensor，torch.cat(inputs, dim)</h2><ol>
+<li>对于需要拼接的tensor，维度数量必须相同，指定拼接的维度的尺寸可以不同，但是其它维度的尺寸必须相同。</li>
+<li>inputs可以是tensor也可以是list</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1997</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6900</span><span class="token punctuation">,</span>  <span class="token number">0.7039</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.0268</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0140</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.9764</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>cat<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>	<span class="token comment"># 在 0 维(纵向)进行拼接</span>
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1997</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6900</span><span class="token punctuation">,</span>  <span class="token number">0.7039</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.0268</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0140</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.9764</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1997</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6900</span><span class="token punctuation">,</span>  <span class="token number">0.7039</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.0268</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0140</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.9764</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1997</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6900</span><span class="token punctuation">,</span>  <span class="token number">0.7039</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.0268</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0140</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.9764</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-9-在新维度上拼接tensor，torch-stack-inputs-dim"><a href="#5-9-在新维度上拼接tensor，torch-stack-inputs-dim" class="headerlink" title="5.9 在新维度上拼接tensor，torch.stack(inputs, dim)"></a>5.9 在新维度上拼接tensor，torch.stack(inputs, dim)</h2><p>把相同形状的tensor合并，并根据提供的维度序列在相应位置插入新的维度，函数会根据位置来排列数据。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x1 <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x2 <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>stack<span class="token punctuation">(</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment"># 在 0 维插入一个维度，进行区分拼接</span>
+torch<span class="token punctuation">.</span>Size<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>stack<span class="token punctuation">(</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment"># 在 1 维插入一个维度，进行组合拼接</span>
+torch<span class="token punctuation">.</span>Size<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-10-在指定位置插入维度1，torch-unsqueeze-input-dim"><a href="#5-10-在指定位置插入维度1，torch-unsqueeze-input-dim" class="headerlink" title="5.10 在指定位置插入维度1，torch.unsqueeze(input, dim)"></a>5.10 在指定位置插入维度1，torch.unsqueeze(input, dim)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment"># tensor([[1.],</span>
+<span class="token comment">#         [2.],</span>
+<span class="token comment">#         [3.],</span>
+<span class="token comment">#         [4.]])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-11-去除大小为1的维度，torch-squeeze-input-dim"><a href="#5-11-去除大小为1的维度，torch-squeeze-input-dim" class="headerlink" title="5.11 去除大小为1的维度，torch.squeeze(input, dim)"></a>5.11 去除大小为1的维度，torch.squeeze(input, dim)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">m <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># torch.Size([2, 1, 2, 1, 2])</span>
+n <span class="token operator">=</span> torch<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># torch.Size([2, 2, 2])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="6-PyG-torch-geometirc"><a href="#6-PyG-torch-geometirc" class="headerlink" title="6 PyG-torch.geometirc"></a>6 PyG-torch.geometirc</h1><blockquote>
+<p>图神经网络神器</p>
+</blockquote>
+<h2 id="6-1-入门教程"><a href="#6-1-入门教程" class="headerlink" title="6.1 入门教程"></a>6.1 入门教程</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94491664">图神经网络之神器——PyTorch Geometric 上手 &amp; 实战</a></li>
+</ul>
+<h2 id="6-2-构建输入"><a href="#6-2-构建输入" class="headerlink" title="6.2 构建输入"></a>6.2 构建输入</h2><p>PyG的特征输入有三种格式：Dataset，List[Data]，List[HeteroData]</p>
+<h3 id="6-2-1-构建Dataset"><a href="#6-2-1-构建Dataset" class="headerlink" title="6.2.1 构建Dataset"></a>6.2.1 构建Dataset</h3><ul>
+<li><strong>创建一次读入内存的数据</strong></li>
+</ul>
+<p>构建torch_geometric.data.InMemoryDataset，需要重写（区分重载和重写）四个函数：<br>（1）torch_geometric.data.InMemoryDataset.raw_file_names()<br>存放raw_dir目录下所有数据文件名的字符串列表，用于下载时的检查过程（正如之前的文章提到的，数据集下载的时候会检测是否已经存在，避免重复下载，也就是如何避免自动下载的httperror的解决方案）。<br>（2）torch_geometric.data.InMemoryDataset.processed_file_names()<br>和（1）类似，存放processed_dir目录下的文件名的列表，用于检测是否已经存在（不会二次处理）。<br>（3）torch_geometric.data.InMemoryDataset.download()<br>下载数据到raw_dir目录下。<br>（4）torch_geometric.data.InMemoryDataset.process()<br>对raw_dir下的数据进行处理并存储到processed_dir目录下。<br>因此，可以发现关键在于第四个函数的实现，函数内首先需要读取原始数据并创建一个torch_geometric.data.Data对象的列表，并存储到processed_dir目录下面。直接存储和使用这个python-list时间代价很高，所以在存储之前调用torch_geometric.data.InMemoryDataset.collate()函数将列表转换为一个torch_geometric.data.Data对象。处理后的数据被整合到了一个数据对象中（作为返回值），同时返回一个slices字典来获取到这个数据对象中单个数据，所以总结下来process过程一共分四步：</p>
+<ol>
+<li>加载数据创建列表</li>
+<li>进行各种处理过程</li>
+<li>调用collate()函数</li>
+<li>存储本地</li>
+</ol>
+<p>最后在数据类的构造函数中加载数据集并赋值给self.data和self.slices</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch_geometric<span class="token punctuation">.</span>data <span class="token keyword">import</span> InMemoryDataset
+
+<span class="token keyword">class</span> <span class="token class-name">MyDataset</span><span class="token punctuation">(</span>InMemoryDataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> pre_transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 数据的下载和处理过程在父类中调用实现</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>MyDataset<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>root<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> pre_transform<span class="token punctuation">)</span>
+        <span class="token comment"># 加载数据</span>
+        self<span class="token punctuation">.</span>data<span class="token punctuation">,</span> self<span class="token punctuation">.</span>slices <span class="token operator">=</span> torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span>self<span class="token punctuation">.</span>processed_paths<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 将函数修饰为类属性</span>
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">raw_file_names</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'file_1'</span><span class="token punctuation">,</span> <span class="token string">'file_2'</span><span class="token punctuation">]</span>
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">processed_file_names</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'data.pt'</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">download</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># download to self.raw_dir</span>
+        <span class="token keyword">pass</span>
+
+    <span class="token keyword">def</span> <span class="token function">process</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        data_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>pre_filter <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            data_list <span class="token operator">=</span> <span class="token punctuation">[</span>data <span class="token keyword">for</span> data <span class="token keyword">in</span> data_list <span class="token keyword">if</span> self<span class="token punctuation">.</span>pre_filter<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>pre_filter <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            data_list <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>pre_transform<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token keyword">for</span> data <span class="token keyword">in</span> data_list<span class="token punctuation">]</span>
+
+        data<span class="token punctuation">,</span> slices <span class="token operator">=</span> self<span class="token punctuation">.</span>collate<span class="token punctuation">(</span>data_list<span class="token punctuation">)</span>
+        <span class="token comment"># 这里的save方式以及路径需要对应构造函数中的load操作</span>
+        torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> slices<span class="token punctuation">)</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>processed_paths<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>创建大规模数据</strong></li>
+</ul>
+<p>大数据集一般不会直接加载到内存中，这里构建数据集的时候需要继承父类torch_geometric.data.Dataset。在上面构建数据集时，重写了四个函数，此处还需要多实现两个函数：<br>（1）torch_geometric.data.Dataset.len()<br>返回数据集的文件个数。<br>（2）torch_geometric.data.Dataset.get()<br>实现对单个数据（图数据集的话一般是单个图）的加载逻辑。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">.</span>path <span class="token keyword">as</span> osp
+<span class="token keyword">import</span> torch <span class="token comment"># 这里就不能用InMemoryDataset了</span>
+<span class="token keyword">from</span> torch_geometric<span class="token punctuation">.</span>data <span class="token keyword">import</span> Dataset
+
+<span class="token keyword">class</span> <span class="token class-name">MyDataset</span><span class="token punctuation">(</span>Dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 默认预处理函数的参数都是None</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> pre_transform<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>MyDataset<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>root<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> pre_transform<span class="token punctuation">)</span>
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">raw_file_names</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'file_1'</span><span class="token punctuation">,</span> <span class="token string">'file_2'</span><span class="token punctuation">]</span>
+    
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">processed_file_names</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 一次无法加载所有数据，所以对数据进行了分解</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'data1.pt'</span><span class="token punctuation">,</span> <span class="token string">'data2.pt'</span><span class="token punctuation">,</span> <span class="token string">'data3.pt'</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> <span class="token function">download</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># Download to raw_dir</span>
+        <span class="token keyword">pass</span>
+    
+	<span class="token keyword">def</span> <span class="token function">process</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment"># 遍历每一个文件路径</span>
+        <span class="token keyword">for</span> raw_path <span class="token keyword">in</span> self<span class="token punctuation">.</span>raw_paths<span class="token punctuation">:</span>
+            data <span class="token operator">=</span> Data<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>pre_filter <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span> <span class="token keyword">and</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>pre_filter<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>pre_transform <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                data <span class="token operator">=</span> self<span class="token punctuation">.</span>pre_transform<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+            torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>data<span class="token punctuation">,</span> osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>processed_dir<span class="token punctuation">,</span> <span class="token string">'data_&#123;&#125;.pt'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+            
+	<span class="token keyword">def</span> <span class="token function">len</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>processed_file_names<span class="token punctuation">)</span>
+    
+	<span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> idx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        data <span class="token operator">=</span> torch<span class="token punctuation">.</span>load<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>processed_dir<span class="token punctuation">,</span> <span class="token string">'data&#123;&#125;.pt'</span><span class="token punctuation">,</span><span class="token builtin">format</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+<ul>
+<li>其他细节以及解释，查看原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/TwT520Ly/article/details/105633847">【PyG入门学习】四：构建自己的数据集</a></li>
+</ul>
+<h3 id="6-2-2-构建List-Data"><a href="#6-2-2-构建List-Data" class="headerlink" title="6.2.2 构建List[Data]"></a>6.2.2 构建List[Data]</h3><p>Data的结构由节点特征x与边索引edge_index构成，生成多个Data组成List即可，下面的示例包含使用batch处理。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">graph_data_list <span class="token operator">=</span> <span class="token punctuation">[</span>Data<span class="token punctuation">(</span>x<span class="token operator">=</span>x<span class="token punctuation">,</span> edge_index<span class="token operator">=</span>self<span class="token punctuation">.</span>graph_edge_index<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> feature_input<span class="token punctuation">]</span>
+graph_dataloader <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>graph_data_list<span class="token punctuation">,</span> batch_size<span class="token operator">=</span>self<span class="token punctuation">.</span>batch_size<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> 
+<span class="token keyword">for</span> graph_batch_data <span class="token keyword">in</span> graph_dataloader<span class="token punctuation">:</span>
+    GATConv<span class="token punctuation">(</span>graph_batch_data<span class="token punctuation">.</span>x<span class="token punctuation">,</span> graph_batch_data<span class="token punctuation">.</span>edge_index<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>更多数据集解释见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_59596990/article/details/121435638?utm_source=app&app_version=5.3.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">图神经网络框架-PyTorch Geometric(PyG)的使用及踩坑</a></li>
+</ul>
+<h3 id="6-2-3-构建异质图List-HeteroData"><a href="#6-2-3-构建异质图List-HeteroData" class="headerlink" title="6.2.3 构建异质图List[HeteroData]"></a>6.2.3 构建异质图List[HeteroData]</h3><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_59596990/article/details/121435638?utm_source=app&app_version=5.3.0&code=app_1562916241&uLinkId=usr1mkqgl919blen">图神经网络框架-PyTorch Geometric(PyG)的使用及踩坑</a></li>
+</ul>
+<h2 id="6-3-源码解释"><a href="#6-3-源码解释" class="headerlink" title="6.3 源码解释"></a>6.3 源码解释</h2><h3 id="6-3-1-GATConv源码解释"><a href="#6-3-1-GATConv源码解释" class="headerlink" title="6.3.1 GATConv源码解释"></a>6.3.1 GATConv源码解释</h3><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44839047/article/details/115724958">笔记：Pytorch-geometric: GAT代码超详细解读 | source node | target node | source_to_target</a></li>
+</ul>
+<h3 id="6-3-2-GCNConv源码解释"><a href="#6-3-2-GCNConv源码解释" class="headerlink" title="6.3.2 GCNConv源码解释"></a>6.3.2 GCNConv源码解释</h3><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Cyril_KI/article/details/123457698?spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5.pc_relevant_aa&utm_relevant_index=10">PyG搭建GCN实现节点分类（GCNConv参数详解）</a></li>
+</ul>
 
                 
             </div>
@@ -854,12 +1023,12 @@ torch<span class="token punctuation">.</span>ne<span class="token punctuation">(
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                                 <a href="/tags/Pytorch/">
@@ -1320,7 +1489,7 @@ torch<span class="token punctuation">.</span>ne<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">130.3k</span>
+                        class="white-color">138.4k</span>
             
             
             

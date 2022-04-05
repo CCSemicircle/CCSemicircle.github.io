@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    18 分
                 </div>
                 
 
@@ -537,7 +537,7 @@
 <p><strong>（1）数据集分析</strong></p>
 <p>在开始之前对数据集做个简单的分析，可能有助于大大降低之后的体力劳动（提前排除不靠谱的策略和不敏感的超参数），并大大降低<br>初次接触新任务时犯致命错误的概率。</p>
 <p><strong>（2）预处理策略与算法策略</strong></p>
-<p>这个环节最直接方法就是搬运上一节的调研结果，将一些paper中比较有效的策略搬过来进行验证。不过，<strong>尤其是注意一个meaningful的问题，即搬运这个策略，甚至设计一个新的策略，目的是什么？要解决什么问题？</strong>毕竟很多paper中的策略的适用场景是很局限的，毫无目的的搬运可能会大大增加无用功。同时，这也是避免“结果主义”（魔改的模型结果好再去找原因）炼丹。</p>
+<p>这个环节最直接方法就是搬运上一节的调研结果，将一些paper中比较有效的策略搬过来进行验证。不过，<strong>尤其是注意一个meaningful的问题，即搬运这个策略，甚至设计一个新的策略，目的是什么？要解决什么问题？</strong>毕竟很多paper中的策略的适用场景是很局限的，毫无目的的搬运可能会大大增加无用功。同时，这也是避免“结果主义”（魔改的模型结果好再去找原因）炼丹。<strong>因此在调研时，面对不同的模型，也要学会思考背后的理论原理或数学逻辑，才能深刻理解模型。也可以方便自己思考新的解决方案</strong></p>
 <p><strong>（3）模型评价</strong></p>
 <p>业务中可能有一些模棱两可的算法任务，如何无偏地评价一个模型的好坏，就需要在大规模开搞之前仔细设计清楚了。没有一个客观、无偏且自动的评价指标，策略迭代无疑会非常缓慢甚至到后期推翻重来。</p>
 <p>即便是有一些常用的指标，也要经过你自己的思考之后再决定是否采用。</p>
@@ -585,7 +585,7 @@
 <blockquote>
 <p>更多Git使用技巧参考：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/z_zFveiiLu9vLvWuBcsaIg">Git从入门到进阶，你想要的全在这里</a></p>
 </blockquote>
-<h1 id="1-Pytorch使用技巧"><a href="#1-Pytorch使用技巧" class="headerlink" title="1 Pytorch使用技巧"></a>1 Pytorch使用技巧</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
+<h1 id="1-Pytorch使用"><a href="#1-Pytorch使用" class="headerlink" title="1 Pytorch使用"></a>1 Pytorch使用</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
 <li>self.training通过model.train() &#x2F; model.eval() 设置值</li>
 </ul>
 <h2 id="1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型"><a href="#1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型" class="headerlink" title="1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型"></a>1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### train_label 为 doK_matrix (0,0) 1.0</span>
@@ -596,7 +596,7 @@
 
 
 
-<h1 id="2-调参技巧"><a href="#2-调参技巧" class="headerlink" title="2 调参技巧"></a>2 调参技巧</h1><h2 id="2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应"><a href="#2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应" class="headerlink" title="2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应"></a>2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应</h2><h2 id="2-2-为节省时间，避免用循环，尽量用矩阵操作"><a href="#2-2-为节省时间，避免用循环，尽量用矩阵操作" class="headerlink" title="2.2 为节省时间，避免用循环，尽量用矩阵操作"></a>2.2 为节省时间，避免用循环，尽量用矩阵操作</h2><p>循环操作虽然只增加2-3秒，但是在大数据集下，会显得尤为突出，2-3秒在很多个batch下会被放大</p>
+<h1 id="2-调整超参"><a href="#2-调整超参" class="headerlink" title="2 调整超参"></a>2 调整超参</h1><h2 id="2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应"><a href="#2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应" class="headerlink" title="2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应"></a>2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应</h2><h2 id="2-2-为节省时间，避免用循环，尽量用矩阵操作"><a href="#2-2-为节省时间，避免用循环，尽量用矩阵操作" class="headerlink" title="2.2 为节省时间，避免用循环，尽量用矩阵操作"></a>2.2 为节省时间，避免用循环，尽量用矩阵操作</h2><p>循环操作虽然只增加2-3秒，但是在大数据集下，会显得尤为突出，2-3秒在很多个batch下会被放大</p>
 <h2 id="2-3-模型的内容尽量写在forward里，避免不断地调用函数"><a href="#2-3-模型的内容尽量写在forward里，避免不断地调用函数" class="headerlink" title="2.3 模型的内容尽量写在forward里，避免不断地调用函数"></a>2.3 模型的内容尽量写在forward里，避免不断地调用函数</h2><p>当数据集大时会非常损耗时间，本来1秒的运行时间可能会因为循环调用函数变成10+秒，甚至重复操作也比重复调用函数来得快</p>
 <h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2><h2 id="2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor"><a href="#2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor" class="headerlink" title="2.7 报错 WARNING:root:NaN or Inf found in input tensor."></a>2.7 报错 WARNING:root:NaN or Inf found in input tensor.</h2><h3 id="2-7-1-寻找梯度消失的位置与原因"><a href="#2-7-1-寻找梯度消失的位置与原因" class="headerlink" title="2.7.1 寻找梯度消失的位置与原因"></a>2.7.1 寻找梯度消失的位置与原因</h3><ul>
 <li><strong>大概Debug步骤</strong></li>
@@ -644,8 +644,9 @@
 <li><strong>代码原因（可能导致梯度反向传播的计算图出现问题，待证实 todo）</strong></li>
 </ul>
 <ol>
-<li>避免对网络参数使用torch.diag_embed()操作，使用循环代替</li>
+<li>数学上成立的偏导数在PyTorch的计算图中可能会因为数据集过大出现梯度消失的情况，比如如下公式：</li>
 </ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0%E7%9A%84%E7%A4%BA%E4%BE%8B-1.png" alt="梯度消失代码原因的示例-1"></p>
 <ul>
 <li><strong>出现坏样本</strong></li>
 </ul>
@@ -660,7 +661,7 @@
 <h2 id="2-8-留点数据用于最终验证"><a href="#2-8-留点数据用于最终验证" class="headerlink" title="2.8 留点数据用于最终验证"></a>2.8 留点数据用于最终验证</h2><p>如果数据还算充裕，最好能留⼀部分数据，在训练结束之后再⽆偏验证⼀下模型们的表现。</p>
 <h1 id="3-权重初始化"><a href="#3-权重初始化" class="headerlink" title="3 权重初始化"></a>3 权重初始化</h1><h2 id="3-1-Xavier"><a href="#3-1-Xavier" class="headerlink" title="3.1 Xavier"></a>3.1 Xavier</h2><p>对于每个经过的层，我们希望方差保持相同，这有助于防止梯度爆炸或消失。换句话说，我们需要以使 x 和 y  的方差保持相同的方式来初始化权重，此初始化过程称为Xavier初始化（Xavier initialization）。（Xavier 读音 zeivier）</p>
 <h1 id="4-多分类问题的评价指标"><a href="#4-多分类问题的评价指标" class="headerlink" title="4 多分类问题的评价指标"></a>4 多分类问题的评价指标</h1><h2 id="4-1-准确率、召回率与F1分数"><a href="#4-1-准确率、召回率与F1分数" class="headerlink" title="4.1 准确率、召回率与F1分数"></a>4.1 准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
-<h1 id="5-模型收敛技巧"><a href="#5-模型收敛技巧" class="headerlink" title="5 模型收敛技巧"></a>5 模型收敛技巧</h1><h2 id="5-1-避免陷入“高原平坦区”"><a href="#5-1-避免陷入“高原平坦区”" class="headerlink" title="5.1 避免陷入“高原平坦区”"></a>5.1 避免陷入“高原平坦区”</h2><p>以下内容节选自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTNZOPgWZiN28Hm30SwstA">《你的模型真的陷⼊局部最优点了吗？》</a></p>
+<h1 id="5-模型收敛"><a href="#5-模型收敛" class="headerlink" title="5 模型收敛"></a>5 模型收敛</h1><h2 id="5-1-避免陷入“高原平坦区”"><a href="#5-1-避免陷入“高原平坦区”" class="headerlink" title="5.1 避免陷入“高原平坦区”"></a>5.1 避免陷入“高原平坦区”</h2><p>以下内容节选自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTNZOPgWZiN28Hm30SwstA">《你的模型真的陷⼊局部最优点了吗？》</a></p>
 <p>在⾼维空间⾥（深度学习问题上）真正可怕的不是局部最优也不是鞍点问题，⽽是⼀些特殊地形。⽐如⼤⾯积的平坦区域。</p>
 <p>在平坦区域，虽然导数不为0但是却不⼤。虽然是在不断下降但是路程却⾮常⻓。对于优化算法来说，它需要⾛很多很多步才有可能⾛过这⼀⽚平坦区域。甚⾄在这段地形的⼆阶导数过于特殊的情况下，⼀阶优化算法⾛⽆穷多步也⾛不出去（设想⼀下，如果终点在⼀⽶外，但是你第⼀次⾛0.5⽶，后续每⼀步都是前⼀步的⼀半⻓度，那么你永远也⾛不到⾯前的⼀⽶终点处）。 </p>
 <p>所以相⽐于栽到最优点和鞍点上，优化算法更有可能载到这种类似平坦区的地形中（如果这个平坦区⼜是“⾼原地带”，即loss值很⾼的地带，那么恭喜你悲剧了）。更糟糕的是，由于⾼维地形难以可视化，还有很多更复杂的未知地形会导致假收敛，<strong>⼀旦陷⼊到这些危险地形中，⼏乎是⽆解的。</strong> </p>
@@ -682,6 +683,85 @@
 <li><p><a target="_blank" rel="noopener" href="http://haokailong.top/2020/11/01/pytorch-loss-backward-%E7%9A%84%E7%90%86%E8%A7%A3/">pytorch loss.backward()的理解</a></p>
 </li>
 </ul>
+<h1 id="6-减少训练时间"><a href="#6-减少训练时间" class="headerlink" title="6 减少训练时间"></a>6 减少训练时间</h1><h2 id="6-1-用列表生成式代替循环"><a href="#6-1-用列表生成式代替循环" class="headerlink" title="6.1 用列表生成式代替循环"></a>6.1 用列表生成式代替循环</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span>x <span class="token operator">*</span> x <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>列表生成式用C语言实现，效率非常高</li>
+</ul>
+<h2 id="6-2-遍历list远快于遍历tensor，避免遍历tensor"><a href="#6-2-遍历list远快于遍历tensor，避免遍历tensor" class="headerlink" title="6.2 遍历list远快于遍历tensor，避免遍历tensor"></a>6.2 遍历list远快于遍历tensor，避免遍历tensor</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> time
+
+num <span class="token operator">=</span> <span class="token number">1000000</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+b <span class="token operator">=</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+
+start_time1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> a<span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+elapse_time1 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start_time1
+
+start_time2 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> b<span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+elapse_time2 <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start_time2
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Traverside Tensor Elapse Time: '</span><span class="token punctuation">,</span> elapse_time1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Traverside List Elapse Time: '</span><span class="token punctuation">,</span> elapse_time2<span class="token punctuation">)</span>
+<span class="token comment"># Traverside Tensor Elapse Time:  2.491483449935913</span>
+<span class="token comment"># Traverside List Elapse Time:  0.036934614181518555</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="6-3-多线程（含线程同步）示例"><a href="#6-3-多线程（含线程同步）示例" class="headerlink" title="6.3 多线程（含线程同步）示例"></a>6.3 多线程（含线程同步）示例</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 多线程处理代码（含线程同步）</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+global_graph_data_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 由_acquire解锁执行后释放_release锁</span>
+<span class="token keyword">def</span> <span class="token function">genegrate_graph_data</span><span class="token punctuation">(</span>feature_tensor<span class="token punctuation">,</span> edge_index<span class="token punctuation">,</span> acquire_mutex<span class="token punctuation">:</span> Lock<span class="token punctuation">,</span> release_mutex<span class="token punctuation">:</span> Lock<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token comment"># 不需要同步操作</span>
+    part_data_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> edge_index<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> feature_tensor<span class="token punctuation">]</span>
+    <span class="token comment"># 同步操作</span>
+    acquire_mutex<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    global_graph_data_list<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>part_data_list<span class="token punctuation">)</span>  <span class="token comment"># 进程同步以便按顺序插入</span>
+    release_mutex<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+n_thread <span class="token operator">=</span> <span class="token number">4</span>
+n_user <span class="token operator">=</span> <span class="token number">100</span>
+graph_edge_index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+node_user_embeddings <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span>n_user<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 此代码用于检验是否同步成功</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>node_user_embeddings<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    node_user_embeddings<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+
+<span class="token comment"># 创建n_thread个锁供n_thread个线程使用</span>
+mutex <span class="token operator">=</span> <span class="token punctuation">[</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n_thread<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mutex<span class="token punctuation">)</span>
+<span class="token comment"># 定义n_thread个线程</span>
+step <span class="token operator">=</span> n_user <span class="token operator">//</span> n_thread
+threads <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n_thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    feature_tensors <span class="token operator">=</span> node_user_embeddings<span class="token punctuation">[</span>step <span class="token operator">*</span> i<span class="token punctuation">:</span> step <span class="token operator">*</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">&lt;</span> n_thread <span class="token keyword">else</span> node_user_embeddings<span class="token punctuation">[</span>step <span class="token operator">*</span> i<span class="token punctuation">:</span><span class="token punctuation">]</span>
+    thread <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>genegrate_graph_data<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>feature_tensors<span class="token punctuation">,</span> graph_edge_index<span class="token punctuation">,</span> mutex<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> mutex<span class="token punctuation">[</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> n_thread<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    threads<span class="token punctuation">.</span>append<span class="token punctuation">(</span>thread<span class="token punctuation">)</span>
+
+<span class="token comment"># 把除了第1个的进程锁上</span>
+<span class="token punctuation">[</span>mutex<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n_thread<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token comment"># 接下来只有线程1可以先执行是因为mutex[0]并没有被占用</span>
+<span class="token comment"># 之后的分别等待着前一个锁的释放才能继续执行</span>
+<span class="token punctuation">[</span>thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> thread <span class="token keyword">in</span> threads<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>thread<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> thread <span class="token keyword">in</span> threads<span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>global_graph_data_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>原文链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1738395">浅谈Python3多线程之间的执行顺序问题</a></p>
+<h2 id="6-4-减少函数调用"><a href="#6-4-减少函数调用" class="headerlink" title="6.4 减少函数调用"></a>6.4 减少函数调用</h2><p>函数的开销很大。尽量把循环放在函数内进行。而不要让每次迭代都调用函数。</p>
+<h2 id="6-5-尽量使用内置方法"><a href="#6-5-尽量使用内置方法" class="headerlink" title="6.5 尽量使用内置方法"></a>6.5 尽量使用内置方法</h2><p>尽量使用内置方法，因为内置的是C写的，效率肯定高很多。</p>
+<h2 id="6-6-用xrange代替range"><a href="#6-6-用xrange代替range" class="headerlink" title="6.6 用xrange代替range"></a>6.6 用xrange代替range</h2><h2 id="6-7-对于可迭代对象尽量直接使用"><a href="#6-7-对于可迭代对象尽量直接使用" class="headerlink" title="6.7 对于可迭代对象尽量直接使用"></a>6.7 对于可迭代对象尽量直接使用</h2><h2 id="6-8-复制可迭代对象使用自带的构造函数，不要使用列表生成式"><a href="#6-8-复制可迭代对象使用自带的构造函数，不要使用列表生成式" class="headerlink" title="6.8 复制可迭代对象使用自带的构造函数，不要使用列表生成式"></a>6.8 复制可迭代对象使用自带的构造函数，不要使用列表生成式</h2><h2 id="6-9-对列表的每一个元素都调用函数，应该使用map-f-x-L"><a href="#6-9-对列表的每一个元素都调用函数，应该使用map-f-x-L" class="headerlink" title="6.9 对列表的每一个元素都调用函数，应该使用map(f(x), L)"></a>6.9 对列表的每一个元素都调用函数，应该使用map(f(x), L)</h2><p>如果想对列表的每一个元素都调用函数，应该用L1&#x3D;map(f,L),而不是L1&#x3D;[f(x) for x in L]，这里使用map的原因是涉及到重复调用函数，列表列表生成式会更慢，如果不是函数调用，则可以用列表生成式。</p>
+<h2 id="6-10-生成器与列表生成式的选择"><a href="#6-10-生成器与列表生成式的选择" class="headerlink" title="6.10 生成器与列表生成式的选择"></a>6.10 生成器与列表生成式的选择</h2><ul>
+<li>如果你希望使用整个列表，则使用列表推导，因为他会节省生成器带来的系统开销；</li>
+<li>如果你只想用列表的一部分，那么使用生成器吧。</li>
+</ul>
+<h2 id="6-11-shuffle-取前n项，获取列表随机元素"><a href="#6-11-shuffle-取前n项，获取列表随机元素" class="headerlink" title="6.11 shuffle()+取前n项，获取列表随机元素"></a>6.11 shuffle()+取前n项，获取列表随机元素</h2><p>随机取出列表里的元素应该先用random.shuffle(list)把元素随机的打乱，然后顺序的取每一项即可。如果不想取到重复的，可以用list.pop()，既取出来了，又把这个元素从列表中删除。而且内置的pop方法，非常快速。</p>
+<p>6.4 - 6.11 节选自他人博客，原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_35560840/article/details/114418462">python列表生成式和map效率_python提高效率(优化)的心得总结（不断补充）</a></p>
 
                 
             </div>
@@ -933,7 +1013,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/python-ji-ben-yong-fa/">
+                <a href="/2022/python-chang-jian-yong-fa/">
                     <div class="card-image">
                         
                         <img src="/medias/loading.gif" data-original="https://img.fdchen.host/python.jpg" class="responsive-img" alt="Python_常见用法">
@@ -1211,7 +1291,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">130.3k</span>
+                        class="white-color">138.4k</span>
             
             
             

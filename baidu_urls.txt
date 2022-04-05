@@ -1,6 +1,6 @@
 https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/
 https://blog.fdchen.host/2022/python-tensorflow/
-https://blog.fdchen.host/2022/python-ji-ben-yong-fa/
+https://blog.fdchen.host/2022/python-chang-jian-yong-fa/
 https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/
 https://blog.fdchen.host/2022/python-numpy/
 https://blog.fdchen.host/2022/java-springboot-debug/
@@ -9,6 +9,7 @@ https://blog.fdchen.host/2022/python-pandas/
 https://blog.fdchen.host/2022/python-pytorch/
 https://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/
 https://blog.fdchen.host/2021/python-debug/
+https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/
 https://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/
 https://blog.fdchen.host/2021/linux-shell-bian-cheng/
 https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/

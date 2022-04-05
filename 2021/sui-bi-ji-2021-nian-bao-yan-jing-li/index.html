@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则表达式,常见用法,教程">
-    <meta name="description" content="正则表达式的常见用法总结">
+    <meta name="keywords" content="记2021年保研经历, NLP,软件工程">
+    <meta name="description" content="本人2021年保研经历的回顾">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -38,7 +38,7 @@
 </script>
 
 
-    <title>正则表达式 | fdChen的掉发收集箱</title>
+    <title>记2021年保研经历 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.fdchen.host/正则表达式.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则表达式</h1>
+                    <h1 class="description center-align post-title">记2021年保研经历</h1>
                 </div>
             </div>
         </div>
@@ -442,16 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
+                            <a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">经验总结</span>
                             </a>
                         
-                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常见用法</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                                <span class="chip bg-color">正则表达式</span>
+                            <a href="/tags/%E4%BF%9D%E7%A0%94%E7%BB%8F%E5%8E%86/">
+                                <span class="chip bg-color">保研经历</span>
                             </a>
                         
                     </div>
@@ -462,8 +458,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%8C%BF%E5%9F%BA%E7%A1%80/" class="post-category">
-                                猿基础
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                随笔
                             </a>
                         
                     </div>
@@ -475,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-11-07
                 </div>
                 
 
@@ -484,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    14 分
                 </div>
                 
 
@@ -515,277 +511,102 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>Tip: <a target="_blank" rel="noopener" href="https://regexr.com/">正则表达式练习网站点此进入</a></strong></p>
+<p>你所走的每一步，都决定着你未来的路！</p>
 </blockquote>
-<h1 id="1-常用匹配符号"><a href="#1-常用匹配符号" class="headerlink" title="1 常用匹配符号"></a>1 常用匹配符号</h1><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>.</td>
-<td>匹配除断行之外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配阿拉伯数字、英文大小写字母和下划线</td>
-</tr>
-<tr>
-<td>\W</td>
-<td>匹配被\w排除在外的字符（非阿拉伯数字、英文大小写字母或下划线）</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配阿拉伯数字</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配被\d排除在外的字符（非阿拉伯数字）</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配空白字符：空格、制表符tab、断行等</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配被\s排除在外的字符（非空白字符）</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束，意思是出现空白字符即停止之前的匹配</td>
-</tr>
-<tr>
-<td>[]</td>
-<td>代表1个字符，比如选择[yY]代表选择y或Y的1个字符</td>
-</tr>
-<tr>
-<td>[选择范围]</td>
-<td>匹配括号中范围内的任意一个字符（采用Unicode编码），比如[0-9]匹配数字0-9、[a-z]匹配小写字母a-z、[\u4e00-\u9fa5]匹配所有汉字</td>
-</tr>
-<tr>
-<td>[范围]+</td>
-<td>重复上一个字符<strong>一次或多次</strong></td>
-</tr>
-<tr>
-<td>[范围]*</td>
-<td>重复上一个字符<strong>零次或多次</strong></td>
-</tr>
-<tr>
-<td>[范围]?</td>
-<td>重复上一个字符<strong>零次或一次</strong></td>
-</tr>
-<tr>
-<td>{a,b}</td>
-<td>重复上一个字符<strong>a次至b次</strong>，{a,}代表至少a次，但不能表示最多几次</td>
-</tr>
-<tr>
-<td>()</td>
-<td>分组匹配，将括号里的表达式匹配的字符分为一组，可以用$1, $2调用（调用有限制）</td>
-</tr>
-<tr>
-<td>^</td>
-<td>1. <strong>限定开头</strong>，匹配输入字符串的开始位置，比如 &#x2F;^A&#x2F;会匹配”An e”中的A；2. 在中括号表达式中使用，当该符号在中括号表达式中使用时，表示<strong>不接受该中括号表达式中的字符集合</strong>，比如：&#x2F;[^a-z\s]&#x2F;会匹配”my 3 sisters”中的”3” ，这里的”^”的意思是字符类的否定，上面的正则表达式的意思是匹配不是（a到z和空白字符）的字符。</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天是2021年11月7日，一直想记录一下自己前面大半年的推免经历，但是从9月28号到现在，一直沉迷于游戏和手机😅，除了前一段时间偶尔看看论文，再也没有认真学习过。但是也是有ddl在身，所以一时间不知道该先完成ddl，还是写这个不知道写多久的随笔。感觉就是想写的很多，但是一时间不知道从哪里写起，所以大概率会是连载把，最后写个结尾记录一下最终完成的时间。</p>
+<p>PS：其实每个部分感觉第一次肯定写的不全，后面想到了会再补充。</p>
+<h1 id="1-本人情况"><a href="#1-本人情况" class="headerlink" title="1 本人情况"></a>1 本人情况</h1><p><strong>学校：</strong>某末流985</p>
+<p><strong>专业：</strong>软件工程</p>
+<p><strong>排名：</strong>夏令营 12&#x2F;243，预推免 8&#x2F;243</p>
+<p><strong>英语：</strong>CET-4：441，CET-6：493</p>
+<p><strong>奖励：</strong>国家级奖项1个，国家级大创1个，省部级大创1个，国家励志奖学金1个，其他都是一些校级奖项。</p>
+<p><strong>科研：</strong>国家级大创（学科交叉），重点是模型应用；课设项目，重点也是模型实现与应用。</p>
+<p><strong>去向：</strong>国防科技大学 计算机学院 电子信息专业</p>
+<h1 id="2-推免前准备"><a href="#2-推免前准备" class="headerlink" title="2. 推免前准备"></a>2. 推免前准备</h1><h2 id="2-1-一定要咨询学长学姐，经验贴也必不可少"><a href="#2-1-一定要咨询学长学姐，经验贴也必不可少" class="headerlink" title="2.1 一定要咨询学长学姐，经验贴也必不可少"></a>2.1 一定要咨询学长学姐，经验贴也必不可少</h2><p>首先，当然是推免前的准备了，这个推免前的准备期其实很长，虽然大多数学校的夏令营都是六七月份开始报名，但是实际上从3月份甚至寒假就需要开始提前准备了，<font color='red'><strong>具体的准备流程及事项一定要去听取学长学姐的意见【1】</strong></font>。因为他们都是亲身经历过的人，经验是很重要的，像我就没有去问过学长学姐，比如在联系老师时总是担心鸽了老师会不会不好，只联系一定会去的学校导师，却不曾想，在没有得到机会前，这种担心完全是多余的。</p>
+<p>我也是到9月27号才知道什么叫offer，offer是成功通过学院考核，并联系到老师接收的才叫offer，个别学校只需要通过学院考核，那些没有到手的offer都不能保证你有书读，毕竟保研一片天，鸽子满天飞，鸽老师的，鸽学生的都有。总而言之，<font color='red'><strong>在整个推免过程中，在面临重大选择时，最好都与学长学姐或者学校关系比较好的老师商量下，多方调查再做选择。选择跟努力同等重要，因为如果方向错了，怎么努力都是徒劳【2】</strong></font>，后面我有很多决策失误就是因为没有咨询他人导致最终去向不是很满意。</p>
+<aside> 💡 [1] 代表标记，后面会一一分析教训并总结，防止后面我自己或者其他看到的人踩坑。
+</aside>
 
-<h1 id="2-特殊字符"><a href="#2-特殊字符" class="headerlink" title="2 特殊字符"></a>2 特殊字符</h1><table>
-<thead>
-<tr>
-<th align="left">特殊字符 &amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">$</td>
-<td align="left">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 \$。</td>
-</tr>
-<tr>
-<td align="left">( )</td>
-<td align="left">标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用\( 和\)。</td>
-</tr>
-<tr>
-<td align="left">*</td>
-<td align="left">匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 \*。</td>
-</tr>
-<tr>
-<td align="left">+</td>
-<td align="left">匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 \+。</td>
-</tr>
-<tr>
-<td align="left">.</td>
-<td align="left">匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 \. 。</td>
-</tr>
-<tr>
-<td align="left">[</td>
-<td align="left">标记一个中括号表达式的开始。要匹配 [，请使用 \[。</td>
-</tr>
-<tr>
-<td align="left">?</td>
-<td align="left">匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
-</tr>
-<tr>
-<td align="left">\</td>
-<td align="left">将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\\‘ 匹配 “\“，而 ‘\(‘ 则匹配 “(“。</td>
-</tr>
-<tr>
-<td align="left">^</td>
-<td align="left">匹配输入字符串的开始位置，除非在中括号表达式中使用，当该符号在中括号表达式中使用时，表示不接受该中括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
-</tr>
-<tr>
-<td align="left">{</td>
-<td align="left">标记限定符表达式的开始。要匹配 {，请使用 \{。</td>
-</tr>
-<tr>
-<td align="left">|</td>
-<td align="left">指明两项之间的一个选择。要匹配 |，请使用 \</td>
-</tr>
-</tbody></table>
-<p><strong>PS</strong>：更多详细语法与教程参考<a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-tutorial.html">正则表达式|菜鸟教程</a>。</p>
-<h1 id="3-C-正则表达式"><a href="#3-C-正则表达式" class="headerlink" title="3 C++正则表达式"></a>3 C++正则表达式</h1><blockquote>
-<p>转载<a target="_blank" rel="noopener" href="https://changkun.de/modern-cpp/zh-cn/06-regex/index.html%EF%BC%8C%E6%AD%A4%E5%A4%84%E5%86%85%E5%AE%B9%E6%9C%89%E7%9C%81%E7%95%A5">https://changkun.de/modern-cpp/zh-cn/06-regex/index.html，此处内容有省略</a></p>
-</blockquote>
-<h2 id="3-1-正则表达式简介"><a href="#3-1-正则表达式简介" class="headerlink" title="3.1 正则表达式简介"></a>3.1 正则表达式简介</h2><p>正则表达式不是 C++ 语言的一部分，这里仅做简单的介绍。</p>
-<p>正则表达式描述了一种字符串匹配的模式。一般使用正则表达式主要是实现下面三个需求：</p>
+<p>当然，CSDN或者知乎（主要是这两大平台）上的经验贴也是值得看的。不过因为2020年受疫情影响，很多学校采用线上面试，导致海王们面试没有太多成本（路费、时间等等），推免形势有所变化，所以如果后面推免大多是线上面试，关于定位与选择上，最好是参考近两年的经验贴，会比较有参考性。我对推免的了解主要是通过一篇本校的学长的经验贴，我觉得写得很好，链接贴上：**<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38633884/article/details/102322912">计算机保研夏令营准备流程建议</a>**，我后面也主要根据这个里面的流程来写，然后在其基础上通过穿插自己的</p>
+<h2 id="2-2-确定自己的读研方向及意向"><a href="#2-2-确定自己的读研方向及意向" class="headerlink" title="2.2 确定自己的读研方向及意向"></a>2.2 确定自己的读研方向及意向</h2><p>其实这个问题应该很早之前就要做出选择，但是我到大概5月份才想清楚，因为我主要是记录自己的经历，读博与否的选择的话，我仅做出我自己的理解。国内读博肯定是直博大于先硕再博，不过如果想要在科研领域有更好的发展，硕士国内Top2或华五人，博士出国（当然学校或导师要比国内的好）。</p>
+<p>那么，<strong>关键问题在于是否读博？</strong>我对自己的人生规划是比较清晰的，在初高中就有自己的大致规划，所以科研应该算一种尝试，以此决定在研究生毕业后如何发展。</p>
+<p>我在本科阶段做过三年学生工作，也做过很多工程项目。研究生想要尝试一下研究岗位，但是目的还是很明确的，读博出来在高校内做研究肯定不是我的路子，因为最想的还是生（gao）活（qian）嘛，所以读<strong>研后的选择就很明确了：（1）继续读博进研究岗，（2）直接研究生后进研究岗或算法岗。</strong>所以我大概率不会选择直博或者有延毕风险的直博（这也是我没有尝试梦校直博的原因），这个选择我觉得不能评价好坏，只能说人都有自己的选择。如果让我读六七年，二十八九了才找工作，我觉得这种生活我是不太愿意的，我还是希望能够尽早地经济独立。顺带提一句，只有不断增长自己的本事，才不会被社会淘汰，有句话说得好，<font color='red'><strong>有多大本事挣多少钱，不要只看到别人的高薪，也要看到别人的真材实料</strong>[3]</font>。</p>
+<h2 id="2-3-确定目标院校与招生途径"><a href="#2-3-确定目标院校与招生途径" class="headerlink" title="2.3 确定目标院校与招生途径"></a>2.3 确定目标院校与招生途径</h2><h3 id="2-3-1-确定目标院校"><a href="#2-3-1-确定目标院校" class="headerlink" title="2.3.1 确定目标院校"></a>2.3.1 确定目标院校</h3><p>确定目标院校非常重要，主要是有两点。</p>
+<p><strong>第一，要注意分为“冲一冲”、”稳一稳“、”保一保“</strong>，每个层次所对应的学校一定要去横向对比本学院的学长学姐的录取情况，而不是自己想当然就确定了，不然“保一保”就变成“稳一稳”，“稳一稳”变成“冲一冲”，“冲一冲”的直接变成“寄一寄”。</p>
+<p><strong>第二，一定要注意不要”挑三拣四“。</strong>以我的经验来说，一个很重要的点是：<font color='red'><strong>你有了offer才有了选择权，而不是没拿到offer就开始选择。[4]</strong></font>这里的offer的意思包含了学校与导师，并不是通过学校就行，一定要找到接收的导师才算。首先，有些学校如天津大学智算学部，是必须确定接收导师，才发放对应的offer；其次，导师对于研究生阶段来说十分重要，除非是奔着title去的就另当别论，否则找不到心意导师，这个offer也算白搭。另外，不要因为同时拿了几个导师的offer而自责，可能你的导师也有好几个备胎，我觉得听人说过的一句话很到位：<strong>你不担心你自己，反而担心那些穿金带银的主，你只有一次保研机会，而他们又有多少次可以招收学生的机会。</strong>据我所看到的，到保研前一天才释放offer的大有人在，且不在少数，最后一天释放的也都有。</p>
+<p>我自己就是因为没有注意上面两点，导致夏令营颗粒无收，只有预推免混了一两个offer，还都是专硕，属于是上大当了。</p>
+<h3 id="2-3-2-确定招生途径"><a href="#2-3-2-确定招生途径" class="headerlink" title="2.3.2 确定招生途径"></a>2.3.2 确定招生途径</h3><p>对于这一部分而言，其实我个人主要是通过保研群和保研信息仓库收集，当然，各学校&#x2F;学院官网肯定会有，但是除非特别关注，不然容易遗漏，所以在这里推荐一下保研群与保研信息仓库。</p>
+<p><strong>保研群（俗称：绿群）</strong>：</p>
+<p>一群：605176069</p>
+<p>二群：943826679</p>
+<p><strong>保研仓库</strong>：绿群公告中一般有，此处附上2021年保研仓库，里面的保研公告信息已经删除，但是还有一些保研经验贴，<a target="_blank" rel="noopener" href="https://github.com/richardodliu/CS-BAOYAN">CS-BAOYAN</a>。</p>
+<h2 id="2-4-制作个人简历与个人介绍"><a href="#2-4-制作个人简历与个人介绍" class="headerlink" title="2.4 制作个人简历与个人介绍"></a>2.4 制作个人简历与个人介绍</h2><h3 id="2-4-1-简历基本内容"><a href="#2-4-1-简历基本内容" class="headerlink" title="2.4.1 简历基本内容"></a>2.4.1 简历基本内容</h3><ul>
+<li><strong>保研简历与求职简历</strong></li>
+</ul>
+<p>保研简历与求职简历的基本模块还是有比较不同，个人认为，保研简历侧重展现大学前三年的各类成就，研究项目虽然重，但是仍然是精练介绍，其他部分（如英语、成绩等）都是比较重要的，总的篇幅在1页左右。</p>
+<p>但是求职简历目标很明确，专业技能，与面试岗位要求不相关的技能等基本没用，且需要花更大的篇幅详细介绍项目中你负责的内容，总的篇幅是1-2页。</p>
+<ul>
+<li><strong>保研简历的基本模块</strong></li>
+</ul>
 <ol>
-<li>检查一个串是否包含某种形式的子串；</li>
-<li>将匹配的子串替换；</li>
-<li>从某个串中取出符合条件的子串。</li>
+<li><strong>教育经历</strong>：主要是包括成绩排名、部分课程成绩、英语成绩等；</li>
+<li><strong>荣誉奖项</strong>：主要包括科研竞赛、奖学金、荣誉称号等；</li>
+<li><strong>科研竞赛</strong>：各类项目介绍，注意有先后顺序与篇幅大小之分；</li>
+<li><strong>组织经历</strong>：参与组织活动的经历，学生工作等，可有可无；</li>
+<li><strong>其他</strong>：个人兴趣、爱好、技能等，可有可无；</li>
+<li><strong>个人总结</strong>：可有可无，从不同角度非常精准地定位自己，指出自己的优势与未来可发展潜力（这里的总结应当在前面的内容中能够体现，否则就是吹捧自己），可有可无。</li>
 </ol>
-<p>正则表达式是由普通字符（例如 a 到 z）以及特殊字符组成的文字模式。模式描述在搜索文本时要匹配的一个或多个字符串。 正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。</p>
-<h2 id="3-2-std-regex-及其相关"><a href="#3-2-std-regex-及其相关" class="headerlink" title="3.2 std::regex 及其相关"></a>3.2 std::regex 及其相关</h2><h3 id="3-2-0-综述"><a href="#3-2-0-综述" class="headerlink" title="3.2.0 综述"></a>3.2.0 综述</h3><p>对字符串内容进行匹配的最常见手段就是使用正则表达式。 可惜在传统 C++ 中正则表达式一直没有得到语言层面的支持，没有纳入标准库， 而 C++ 作为一门高性能语言，在后台服务的开发中，对 URL 资源链接进行判断时， 使用正则表达式也是工业界最为成熟的普遍做法。</p>
-<p>一般的解决方案就是使用 <code>boost</code> 的正则表达式库。 而 C++11 正式将正则表达式的的处理方法纳入标准库的行列，从语言级上提供了标准的支持， 不再依赖第三方。</p>
-<p>C++11 提供的正则表达式库操作 <code>std::string</code> 对象， 模式 <code>std::regex</code> (本质是 <code>std::basic_regex</code>)进行初始化， 通过 <code>std::regex_match</code> 进行匹配， 从而产生 <code>std::smatch</code> （本质是 <code>std::match_results</code> 对象）。</p>
-<p>我们通过一个简单的例子来简单介绍这个库的使用。考虑下面的正则表达式:</p>
+<h3 id="2-4-2-个人介绍基本内容"><a href="#2-4-2-个人介绍基本内容" class="headerlink" title="2.4.2 个人介绍基本内容"></a>2.4.2 个人介绍基本内容</h3><p>个人介绍这里我在夏令营的时候属于是上当了，在网上找了一些关于怎么写个人介绍的内容，我一度认为需要用“真情实感去打动老师，讲诉自己的故事”，后来才明白，这里是国内，上面的套路用来申请国外学位或许可行，国内是行不通的，属于是上大当了，我现在想想可能还是因为这个错失了软件所的面试机会。</p>
+<p>总的来说，个人介绍其实是对个人简历的扩展，因为简历篇幅有限，很多东西都不详细，个人介绍就是用来把简历的内容讲清楚。</p>
 <ul>
-<li><code>[a-z]+\.txt</code>: 在这个正则表达式中, <code>[a-z]</code> 表示匹配一个小写字母, <code>+</code> 可以使前面的表达式匹配多次， 因此 <code>[a-z]+</code> 能够匹配一个小写字母组成的字符串。 在正则表达式中一个 <code>.</code> 表示匹配任意字符，而 <code>\.</code> 则表示匹配字符 <code>.</code>， 最后的 <code>txt</code> 表示严格匹配 <code>txt</code> 则三个字母。因此这个正则表达式的所要匹配的内容就是由纯小写字母组成的文本文件。</li>
+<li><strong>个人介绍的基本模块</strong></li>
 </ul>
-<p><code>std::regex_match</code> 用于匹配字符串和正则表达式，有很多不同的重载形式。 最简单的一个形式就是传入 <code>std::string</code> 以及一个 <code>std::regex</code> 进行匹配， 当匹配成功时，会返回 <code>true</code>，否则返回 <code>false</code>。例如：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;regex&gt;
-
-int main() &#123;
-    std::string fnames[] &#x3D; &#123;&quot;foo.txt&quot;, &quot;bar.txt&quot;, &quot;test&quot;, &quot;a0.txt&quot;, &quot;AAA.txt&quot;&#125;;
-    &#x2F;&#x2F; 在 C++ 中 \ 会被作为字符串内的转义符，为使 \. 作为正则表达式传递进去生效，需要对 \ 进行二次转义，从而有 \\.
-    std::regex txt_regex(&quot;[a-z]+\\.txt&quot;); 
-    std::regex txt_regex(&quot;[a-z]+\\.txt&quot;, regex::icase); &#x2F;&#x2F; regex::icase 不区分大小写
-    for (const auto &amp;fname: fnames)
-        std::cout &lt;&lt; fname &lt;&lt; &quot;: &quot; &lt;&lt; std::regex_match(fname, txt_regex) &lt;&lt; std::endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>另一种常用的形式就是依次传入 <code>std::string</code>&#x2F;<code>std::smatch</code>&#x2F;<code>std::regex</code> 三个参数， 其中 <code>std::smatch</code> 的本质其实是 <code>std::match_results</code>。 在标准库中， <code>std::smatch</code> 被定义为了 <code>std::match_results&lt;std::string::const_iterator&gt;</code>， 也就是一个子串迭代器类型的 <code>match_results</code>。 使用 <code>std::smatch</code> 可以方便的对匹配的结果进行获取，例如：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">std::regex base_regex(&quot;([a-z]+)\\.txt&quot;);
-std::smatch base_match;
-for(const auto &amp;fname: fnames) &#123;
-    if (std::regex_match(fname, base_match, base_regex)) &#123;
-        &#x2F;&#x2F; std::smatch 的第一个元素匹配整个字符串
-        &#x2F;&#x2F; std::smatch 的第二个元素匹配了第一个括号表达式
-        if (base_match.size() &#x3D;&#x3D; 2) &#123;
-            std::string base &#x3D; base_match[1].str();
-            std::cout &lt;&lt; &quot;sub-match[0]: &quot; &lt;&lt; base_match[0].str() &lt;&lt; std::endl;
-            std::cout &lt;&lt; fname &lt;&lt; &quot; sub-match[1]: &quot; &lt;&lt; base &lt;&lt; std::endl;
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>以上两个代码段的输出结果为：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">foo.txt: 1
-bar.txt: 1
-test: 0
-a0.txt: 0
-AAA.txt: 0
-sub-match[0]: foo.txt
-foo.txt sub-match[1]: foo
-sub-match[0]: bar.txt
-bar.txt sub-match[1]: bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>以下转载<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34802416/article/details/79307102">https://blog.csdn.net/qq_34802416/article/details/79307102</a></p>
-</blockquote>
-<h3 id="3-2-1-regex-match"><a href="#3-2-1-regex-match" class="headerlink" title="3.2.1 regex_match"></a>3.2.1 regex_match</h3><h4 id="3-2-1-1-基本概念"><a href="#3-2-1-1-基本概念" class="headerlink" title="3.2.1.1 基本概念"></a>3.2.1.1 基本概念</h4><p>match是全文匹配，即要求整个字符串符合匹配规则。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为0
-cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d+&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-<p>上述方法返回值为bool值，主要用于if条件表达式中。</p>
-<h4 id="3-2-1-2-匹配结果"><a href="#3-2-1-2-匹配结果" class="headerlink" title="3.2.1.2 匹配结果"></a>3.2.1.2 匹配结果</h4><p>更多的时候我们希望能够获得匹配结果（字符串），对结果进行操作。这时就需要对匹配结果进行存储，共有两种存储方式。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">match_results&lt;string::const_iterator&gt; result;
-smatch result;			&#x2F;&#x2F;推荐<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-<p>第二种方式使用起来更简洁、方便，推荐使用。</p>
-<h4 id="3-2-1-3-实例"><a href="#3-2-1-3-实例" class="headerlink" title="3.2.1.3 实例"></a>3.2.1.3 实例</h4><p>下面看一个match方法匹配的实例，看看实际应用：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018&quot;;
-smatch result;
-regex pattern(&quot;(.&#123;5&#125;)_(\\d&#123;4&#125;)&quot;);	&#x2F;&#x2F;匹配5个任意单字符 + 下划线 + 4个数字
-
-if (regex_match(str, result, pattern))
-&#123;
-	cout &lt;&lt; result[0] &lt;&lt; endl;		&#x2F;&#x2F;完整匹配结果，Hello_2018
-	cout &lt;&lt; result[1] &lt;&lt; endl;		&#x2F;&#x2F;第一组匹配的数据，Hello
-	cout &lt;&lt; result[2] &lt;&lt; endl;		&#x2F;&#x2F;第二组匹配的数据，2018
-	cout&lt;&lt;&quot;结果显示形式2&quot;&lt;&lt;endl;
-	cout&lt;&lt; result.str() &lt;&lt; endl;	&#x2F;&#x2F;完整结果，Hello_2018
-	cout&lt;&lt; result.str(1) &lt;&lt; endl;	&#x2F;&#x2F;第一组匹配的数据，Hello
-	cout &lt;&lt; result.str(2) &lt;&lt; endl;	&#x2F;&#x2F;第二组匹配的数据，2018
-&#125;
-
-&#x2F;&#x2F;遍历结果
-for (int i &#x3D; 0; i &lt; result.size(); ++i)
-&#123;
-	cout &lt;&lt; result[i] &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>result[]与result.str()这两种方式能够获得相同的值，我更喜欢用数组形式的。<br><strong>在匹配规则中，以括号()的方式来划分组别</strong>，实例中的规则共有两个括号，所以共有两组数据。</p>
-<h3 id="3-2-2-regex-search"><a href="#3-2-2-regex-search" class="headerlink" title="3.2.2 regex_search"></a>3.2.2 regex_search</h3><h4 id="3-2-2-1-基本概念"><a href="#3-2-2-1-基本概念" class="headerlink" title="3.2.2.1 基本概念"></a>3.2.2.1 基本概念</h4><p>search是搜索匹配，即搜索字符串中存在符合规则的子字符串。<br>match与search一比较便知：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为0
-cout &lt;&lt; regex_search(&quot;123&quot;, regex(&quot;\\d&quot;)) &lt;&lt; endl;		&#x2F;&#x2F;结果为1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="3-2-2-2-实例"><a href="#3-2-2-2-实例" class="headerlink" title="3.2.2.2 实例"></a>3.2.2.2 实例</h4><p>直接看例子：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello 2018, Bye 2017&quot;;
-smatch result;
-regex pattern(&quot;\\d&#123;4&#125;&quot;);	&#x2F;&#x2F;匹配四个数字
-
-&#x2F;&#x2F;迭代器声明
-string::const_iterator iterStart &#x3D; str.begin();
-string::const_iterator iterEnd &#x3D; str.end();
-string temp;
-while (regex_search(iterStart, iterEnd, result, pattern))
-&#123;
-	temp &#x3D; result[0];
-	cout &lt;&lt; temp &lt;&lt; &quot; &quot;;
-	iterStart &#x3D; result[0].second;	&#x2F;&#x2F;更新搜索起始位置,搜索剩下的字符串
-&#125;
-&#x2F;&#x2F; 输出结果：2018 2017<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<p>只需要利用迭代器就可以很轻松的访问到所有匹配的结果值。</p>
-<h3 id="3-2-3-regex-replace"><a href="#3-2-3-regex-replace" class="headerlink" title="3.2.3 regex_replace"></a>3.2.3 regex_replace</h3><h4 id="3-2-3-1-基本概念"><a href="#3-2-3-1-基本概念" class="headerlink" title="3.2.3.1 基本概念"></a>3.2.3.1 基本概念</h4><p>replace是替换匹配，即可以将符合匹配规则的子字符串替换为其他字符串。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018!&quot;;
-regex pattern(&quot;Hello&quot;);	
-cout &lt;&lt; regex_replace(str, pattern, &quot;&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：_2018，将Hello替换为&quot;&quot;
-cout &lt;&lt; regex_replace(str, pattern, &quot;Hi&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hi_2018，将Hello替换为Hi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="3-2-3-2-扩展"><a href="#3-2-3-2-扩展" class="headerlink" title="3.2.3.2 扩展"></a>3.2.3.2 扩展</h4><p>除了直接替换以外，还有可以用来调整字符串内容（缩短、顺序等）。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">string str &#x3D; &quot;Hello_2018!&quot;;	
-regex pattern2(&quot;(.&#123;3&#125;)(.&#123;2&#125;)_(\\d&#123;4&#125;)&quot;);				&#x2F;&#x2F;匹配3个任意字符+2个任意字符+下划线+4个数字
-cout &lt;&lt; regex_replace(str, pattern2, &quot;$1$3&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hel2018，将字符串替换为第一个和第三个表达式匹配的内容
-cout &lt;&lt; regex_replace(str, pattern2, &quot;$1$3$2&quot;) &lt;&lt; endl;	&#x2F;&#x2F;输出：Hel2018lo，交换位置顺序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>$n用于表示第n组匹配数据</strong>（组这个概念在文章前面部分提到过），所以我们可以利用这种方式来将字符串的内容进行调整。</p>
-<h3 id="3-2-4-匹配忽略大小写"><a href="#3-2-4-匹配忽略大小写" class="headerlink" title="3.2.4 匹配忽略大小写"></a>3.2.4 匹配忽略大小写</h3><p>有时我们希望能够匹配的时候忽略大小写，这时候就要用到Regex的语法选项了。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;, regex::icase)) &lt;&lt; endl;	&#x2F;&#x2F;结果为1
-cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; endl;					&#x2F;&#x2F;结果为0
-&#x2F;&#x2F; regex::icase：匹配时忽略大小写。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-2-5-帮助网站"><a href="#3-2-5-帮助网站" class="headerlink" title="3.2.5 帮助网站"></a>3.2.5 帮助网站</h3><p>附上两个写正则表达式常用到的网站</p>
+<ol>
+<li><strong>学术背景：</strong>把简历里的教育经历以及荣誉奖项用书面语言精炼陈述；</li>
+<li><strong>科研竞赛：</strong>把每个项目内容与自己负责的部分详细阐述，采用<strong>项目名称-项目内容-负责内容-最终成果</strong>的四段式阐述；</li>
+<li><strong>社会实践：</strong>参与的其他社会实践项目等；</li>
+<li><strong>研究规划：</strong>未来的研究方向，目前所做的努力，未来简单计划等。</li>
+</ol>
+<h3 id="2-4-3-注意事项"><a href="#2-4-3-注意事项" class="headerlink" title="2.4.3 注意事项"></a>2.4.3 注意事项</h3><p>制作个人简历和个人介绍而言，<strong>主要是不断地修改，精炼语言</strong>。注意如下几点：</p>
+<ol>
+<li><strong>对于一般的老师而言，最看重的是科研创新能力，其次是编程能力，然后是英语能力。</strong>因此可以得到项目优先级：科研项目 &gt;  编程竞赛 &gt; 工程项目，当然，科研项目也不一定就要发论文，参与算法研究类的竞赛也是可以的；</li>
+<li><strong>一定要突出重点，重要的、参与得多的项目经历占更多的篇幅；</strong></li>
+<li><strong>不熟悉的项目一定要不写上去，写在简历上的项目一定要是自己非常熟悉的，连同相关的知识点也是要熟悉，</strong>不然被问到却不会就很减分； </li>
+<li>······</li>
+</ol>
+<p>PS：如果有需要借鉴我的简历与个人介绍，可以联系我，这里就不直接放了。</p>
+<h1 id="3-联系导师"><a href="#3-联系导师" class="headerlink" title="3 联系导师"></a>3 联系导师</h1><h2 id="3-1-选择导师"><a href="#3-1-选择导师" class="headerlink" title="3.1 选择导师"></a>3.1 选择导师</h2><p>在研究生阶段，选择一个好的导师可以说是非常重要的，因为你的导师可能决定了你今后发展，以下是选择导师的几个方向，具体优先级因人而异。</p>
+<ol>
+<li><strong>导师的研究方向</strong>：这个一般可以在学校官网上看到；</li>
+<li><strong>导师的人品</strong>：这个可以在导师评价网看到，本来有两个网站，但是现在去看有一个网站挂了，就先放一个吧；</li>
+<li><strong>导师的学术能力</strong>：导师的学术能力可以通过多个渠道查看，最直观的是谷歌学术上导师的个人主页，这个还可以查看导师近几年的著作，可以知道是否还在科研一线，其次是知乎、交流论坛等，这里放几个CV、NLP领域的比较厉害导师名单；</li>
+<li><strong>导师的title</strong>：这个也可以在学校官网上看到，一定程度上页可以反映导师的学术能力与资源，导师的资源是很重要的，有好的项目会有更大机会发优秀的文章。</li>
+</ol>
 <ul>
-<li><a target="_blank" rel="noopener" href="http://tool.oschina.net/regex/">在线正则表达式验证</a></li>
-<li><a target="_blank" rel="noopener" href="https://regexper.com/">regexper</a>（显示正则表达式匹配结构）</li>
+<li><strong>资源链接</strong></li>
 </ul>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.yankong.org/review">研控</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CCSemicircle/CS-BAOYAN/tree/main/%E5%AF%BC%E5%B8%88%E6%8E%A8%E8%8D%90">CS-BAOYAN&#x2F;导师推荐</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/291266315">国内有哪些自然语言处理(NLP)专业比较厉害的985高校？</a></li>
+</ol>
+<h2 id="3-2-联系导师"><a href="#3-2-联系导师" class="headerlink" title="3.2 联系导师"></a>3.2 联系导师</h2><p>取得offer前联系导师是很重要的，其优势在我推荐的经验贴中有所提到，但是我这里想再重申一下。</p>
+<ol>
+<li><strong>可能会帮助你更容易入营或通过学院考核</strong>，而且对于某些强导师制的学校，导师有权利决定是否入营，比如中科大，夏令营A营就是来自导师推荐，这样提前联系好导师一方面可以避免绩点筛，另一方面更大几率通过。</li>
+<li><strong>抢手的导师可能帮你预留名额</strong>，如果你想联系的导师名额都给出去了的话，无论你多么优秀也没有名额了。</li>
+<li><strong>提前与导师保持联系</strong>，会给老师留下较深刻印象，有利于之后的交流。</li>
+</ol>
+<p>在这里还要陈述的一点是，<font color='red'><strong>一定要提前联系导师，不要害怕被忽视，不论上岸机会有多小，每个学校都要联系导师【5】。</strong></font></p>
+<p>首先导师每天都有很多事情忙，晚回邮件是很正常的；其次，你联系的导师肯定很抢手，有时候入不了老师的眼也是正常的，可能是导师水平太高了，此时换个导师联系就行；然后，每一个学校都要联系导师，我夏令营申请的学校基本都联系了导师，个别学校如中科大，因为不报希望没联系导师，结果错失了通过导师入营的机会，直接因为绩点排名被筛掉。</p>
+<h1 id="4-专业课与数学复习"><a href="#4-专业课与数学复习" class="headerlink" title="4 专业课与数学复习"></a>4 专业课与数学复习</h1><p>这一部分的复习一方面是为了应对部分学校的笔试以及几乎所有学校的面试提问，所以<font color='red'><strong>专业课与数学复习至关重要，越早准备越好，准备得越久越好，拒绝临时抱佛脚，如果非要抱佛脚，刷题比系统背记好【6】。</strong></font></p>
+<p>南大的夏令营就是通过线上笔试刷人，我通过寻找一些网上的精简的复习材料，尝试系统背记，但是最终被无情刷掉，而室友通过刷题进入复试，当然有一点也得说一下，我基本是考完专业课就忘，室友基础更加扎实，后续也因此顺利通过南大面试，还拿到学硕。所以除了抱佛脚多刷题外，<font color='red'><strong>对于专业课，平时认真学习多应用，多回顾也是非常重要的，特别是保研涉及的专业课基本都是是行业基础，就业面试也会考核【7】。</strong></font></p>
+<h2 id="4-1-专业课复习"><a href="#4-1-专业课复习" class="headerlink" title="4.1 专业课复习"></a>4.1 专业课复习</h2><h1 id="5-准备机试"><a href="#5-准备机试" class="headerlink" title="5 准备机试"></a>5 准备机试</h1><h1 id="6-面试经历"><a href="#6-面试经历" class="headerlink" title="6 面试经历"></a>6 面试经历</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><h2 id="基本事项"><a href="#基本事项" class="headerlink" title="基本事项"></a>基本事项</h2><p>【1】具体的准备流程及事项一定要去听取学长学姐的意见；</p>
+<p>【2】在面临重大选择时，最好都与学长学姐或者学校关系比较好的老师商量下，多方调查再做选择。选择跟努力同等重要，因为如果方向错了，怎么努力都是徒劳；</p>
+<p>【3】有多大本事拿多少钱，不要只看到别人的高薪，也要看到别人的真材实料；</p>
+<p>【4】你有了offer才有了选择权，而不是没拿到offer就开始选择；</p>
+<p>【5】一定要提前联系导师，不要害怕被忽视，不论上岸机会有多小，每个学校都要联系导师；</p>
+<p>【6】专业课与数学复习至关重要，越早准备越好，准备得越久越好，拒绝临时抱佛脚，如果非要抱佛脚，刷题比系统背记好；</p>
+<p>【7】对于专业课，平时认真学习多应用，多回顾也是非常重要的，特别是保研涉及的专业课基本都是是行业基础，就业面试也会考核</p>
 
                 
             </div>
@@ -812,7 +633,7 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.fdchen.host/2021/yuan-ji-chu-zheng-ze-biao-da-shi/">https://blog.fdchen.host/2021/yuan-ji-chu-zheng-ze-biao-da-shi/</a>
+                    <a href="https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/">https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -850,16 +671,12 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
+                                <a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">经验总结</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常见用法</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                                    <span class="chip bg-color">正则表达式</span>
+                                <a href="/tags/%E4%BF%9D%E7%A0%94%E7%BB%8F%E5%8E%86/">
+                                    <span class="chip bg-color">保研经历</span>
                                 </a>
                             
                         </div>
@@ -1037,30 +854,30 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/cqu-ruan-jian-jia-gou-yu-she-ji/">
+                <a href="/2021/python-debug/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/software_architectural.jpg" class="responsive-img" alt="软件架构与设计">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/python_debug.jpg" class="responsive-img" alt="Python_Debug">
                         
-                        <span class="card-title">软件架构与设计</span>
+                        <span class="card-title">Python_Debug</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CQU开设的《软件架构与设计》课程的复习笔记
+                            Python使用遇到的一些DeBug的案例
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CQU/" class="post-category">
-                                    CQU
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -1070,16 +887,8 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CQU/">
-                        <span class="chip bg-color">CQU</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">课程笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">软件架构</span>
+                    <a href="/tags/Debug/">
+                        <span class="chip bg-color">Debug</span>
                     </a>
                     
                 </div>
@@ -1093,30 +902,30 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/linux-ru-men-jiao-cheng/">
+                <a href="/2021/ying-yu-chang-yong-dan-ci/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/linux.jpg" class="responsive-img" alt="Linux_入门教程">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/word.jpg" class="responsive-img" alt="常用单词">
                         
-                        <span class="card-title">Linux_入门教程</span>
+                        <span class="card-title">常用单词</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux的入门教程，包括一些常用操作以及环境的安装配置等
+                            在计算机领域一些常用的英文单词
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
+                                    英语
                                 </a>
                             
                             
@@ -1126,16 +935,8 @@ cout &lt;&lt; regex_match(&quot;aaaAAA&quot;, regex(&quot;a*&quot;)) &lt;&lt; en
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                        <span class="chip bg-color">常见用法</span>
+                    <a href="/tags/%E5%B8%B8%E7%94%A8%E5%8D%95%E8%AF%8D/">
+                        <span class="chip bg-color">常用单词</span>
                     </a>
                     
                 </div>
