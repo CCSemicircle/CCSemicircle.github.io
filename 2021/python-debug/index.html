@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    205
+                    469
                 </div>
                 
 
@@ -535,6 +535,16 @@ papers <span class="token operator">=</span> <span class="token punctuation">[</
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     <span class="token comment"># your code</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="5-PytorchWarning-Leaking-Caffe2-thread-pool-after-fork"><a href="#5-PytorchWarning-Leaking-Caffe2-thread-pool-after-fork" class="headerlink" title="5. PytorchWarning: Leaking Caffe2 thread-pool after fork"></a>5. PytorchWarning: Leaking Caffe2 thread-pool after fork</h3><ul>
+<li><p>解决办法：设置pin_memory&#x3D;False</p>
+</li>
+<li><p>pin_memory解释</p>
+</li>
+</ul>
+<p>pin_memory就是锁页内存，创建DataLoader时，设置pin_memory&#x3D;True，则意味着生成的Tensor数据最开始是属于内存中的锁页内存，<strong>这样将内存的Tensor转到GPU的显存就会更快一些</strong>。</p>
+<p>主机中的内存，有两种存在方式，一是锁页，二是不锁页，锁页内存存放的内容在任何情况下都不会与主机的虚拟内存进行交换（注：虚拟内存就是硬盘），而不锁页内存在主机内存不足时，数据会存放在虚拟内存中。而显卡中的显存全部是锁页内存！</p>
+<p>当计算机的内存充足的时候，可以设置pin_memory&#x3D;True。当系统卡住，或者交换内存使用过多的时候，设pin_memory&#x3D;False。因为pin_memory与电脑硬件性能有关，pytorch开发者不能确保每一个炼丹玩家都有高端设备，因此pin_memory默认为False。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/real_ilin/article/details/105320344">pytorch pin_memory</a></p>
 
                 
             </div>
@@ -1058,7 +1068,7 @@ papers <span class="token operator">=</span> <span class="token punctuation">[</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">138.4k</span>
+                        class="white-color">139.2k</span>
             
             
             
