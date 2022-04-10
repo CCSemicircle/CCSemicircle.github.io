@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -659,6 +659,17 @@
 <p>一般通过对网络输出值域以及损失函数定义的数学分析可以进行判断，并进行相应地调整。</p>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/andyL_05/article/details/119138160">训练过程中Loss突然变为NaN的可能原因与解决</a></p>
 <h2 id="2-8-留点数据用于最终验证"><a href="#2-8-留点数据用于最终验证" class="headerlink" title="2.8 留点数据用于最终验证"></a>2.8 留点数据用于最终验证</h2><p>如果数据还算充裕，最好能留⼀部分数据，在训练结束之后再⽆偏验证⼀下模型们的表现。</p>
+<h3 id="2-9-网格搜索寻找最优超参"><a href="#2-9-网格搜索寻找最优超参" class="headerlink" title="2.9 网格搜索寻找最优超参"></a>2.9 网格搜索寻找最优超参</h3><ul>
+<li>通过设置超参数的范围（有些超参数彼此影响需要共同搜索，比如batch size与learning rate），在多个超参数取值下逐个遍历尝试，即为网格搜索</li>
+<li>在进行网格搜索前，首先需要了解相关模型一般的敏感超参数以及其范围，这些可以通过去了解对比模型的论文参数设置收集</li>
+<li>其次是封装好遍历运行脚本，并记录好相关结果，<strong>最好是对每一次搜索的结果都即时记录，以防一次完整搜索出现问题就要从头开始重新搜索</strong></li>
+<li>在运行脚本前，<strong>最好对模型的执行效率进行检查，确保最大程度利用显卡性能，减少实验的时间</strong></li>
+</ul>
+<p>PS：更多的超参数调整信息，可以查看以下博客</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://leesen998.github.io/2017/11/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0_%E8%B6%85%E5%8F%82%E6%95%B0%E8%B0%83%E6%95%B4/">深度学习 超参数调整</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41785031">【DL碎片4】深度学习中的的超参数调节</a></li>
+</ol>
 <h1 id="3-权重初始化"><a href="#3-权重初始化" class="headerlink" title="3 权重初始化"></a>3 权重初始化</h1><h2 id="3-1-Xavier"><a href="#3-1-Xavier" class="headerlink" title="3.1 Xavier"></a>3.1 Xavier</h2><p>对于每个经过的层，我们希望方差保持相同，这有助于防止梯度爆炸或消失。换句话说，我们需要以使 x 和 y  的方差保持相同的方式来初始化权重，此初始化过程称为Xavier初始化（Xavier initialization）。（Xavier 读音 zeivier）</p>
 <h1 id="4-多分类问题的评价指标"><a href="#4-多分类问题的评价指标" class="headerlink" title="4 多分类问题的评价指标"></a>4 多分类问题的评价指标</h1><h2 id="4-1-准确率、召回率与F1分数"><a href="#4-1-准确率、召回率与F1分数" class="headerlink" title="4.1 准确率、召回率与F1分数"></a>4.1 准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
 <h1 id="5-模型收敛"><a href="#5-模型收敛" class="headerlink" title="5 模型收敛"></a>5 模型收敛</h1><h2 id="5-1-避免陷入“高原平坦区”"><a href="#5-1-避免陷入“高原平坦区”" class="headerlink" title="5.1 避免陷入“高原平坦区”"></a>5.1 避免陷入“高原平坦区”</h2><p>以下内容节选自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTNZOPgWZiN28Hm30SwstA">《你的模型真的陷⼊局部最优点了吗？》</a></p>
@@ -762,6 +773,12 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
 </ul>
 <h2 id="6-11-shuffle-取前n项，获取列表随机元素"><a href="#6-11-shuffle-取前n项，获取列表随机元素" class="headerlink" title="6.11 shuffle()+取前n项，获取列表随机元素"></a>6.11 shuffle()+取前n项，获取列表随机元素</h2><p>随机取出列表里的元素应该先用random.shuffle(list)把元素随机的打乱，然后顺序的取每一项即可。如果不想取到重复的，可以用list.pop()，既取出来了，又把这个元素从列表中删除。而且内置的pop方法，非常快速。</p>
 <p>6.4 - 6.11 节选自他人博客，原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_35560840/article/details/114418462">python列表生成式和map效率_python提高效率(优化)的心得总结（不断补充）</a></p>
+<h2 id="6-12-查看GPU即时使用情况，watch-n-1-nvidia-smi"><a href="#6-12-查看GPU即时使用情况，watch-n-1-nvidia-smi" class="headerlink" title="6.12 查看GPU即时使用情况，watch -n 1 nvidia-smi"></a>6.12 查看GPU即时使用情况，watch -n 1 nvidia-smi</h2><ul>
+<li><p>1代表1秒</p>
+</li>
+<li><p>可以通过nvidia-smi查看当前GPU使用情况</p>
+</li>
+</ul>
 
                 
             </div>
@@ -1291,7 +1308,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">139.2k</span>
+                        class="white-color">144.3k</span>
             
             
             
