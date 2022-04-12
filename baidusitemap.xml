@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
+    <lastmod>2022-04-12</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/</loc>
     <lastmod>2022-04-12</lastmod>
   </url>
@@ -51,10 +55,6 @@
   <url>
     <loc>https://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/</loc>
     <lastmod>2022-04-01</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
-    <lastmod>2022-03-27</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2020/qian-duan-kai-fa-wei-xin-xiao-cheng-xu/</loc>

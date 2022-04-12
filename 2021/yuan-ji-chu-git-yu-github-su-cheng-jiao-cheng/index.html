@@ -152,6 +152,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -169,7 +180,7 @@
         <div class="logo-name">fdChen的掉发收集箱</div>
         <div class="logo-desc">
             
-            一些想到什么写什么的记录
+            技术博客、生活日志都在这里
             
         </div>
     </div>
@@ -238,6 +249,17 @@
 			    <i class="fa-fw fas fa-comments"></i>
 			
 			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
 		</a>
           
         </li>
@@ -488,7 +510,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    558
+                    583
                 </div>
                 
 
@@ -530,7 +552,7 @@
 <h1 id="4-常见用法"><a href="#4-常见用法" class="headerlink" title="4 常见用法"></a>4 常见用法</h1><h2 id="4-1-建立SSH连接后，利用Git-提交文件至远程仓库"><a href="#4-1-建立SSH连接后，利用Git-提交文件至远程仓库" class="headerlink" title="4.1 建立SSH连接后，利用Git 提交文件至远程仓库"></a>4.1 建立SSH连接后，利用Git 提交文件至远程仓库</h2><p><font color="green">&#x2F;&#x2F; 删除文件需要单独使用 git rm xxx(文件名)，一一删除</font></p>
 <ul>
 <li>**git config –global user.name “username” **  &#x2F;&#x2F;配置用户名 </li>
-<li>**git config –global user.email “<a href="mailto:&#x78;&#120;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x78;&#120;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a>“ ** &#x2F;&#x2F;配置邮箱</li>
+<li>**git config –global user.email “<a href="mailto:&#120;&#120;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#120;&#120;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a>“ ** &#x2F;&#x2F;配置邮箱</li>
 <li><strong>git init</strong>  &#x2F;&#x2F;初始化生成一个本地仓库</li>
 <li>**git add . ** &#x2F;&#x2F;添加到暂存区</li>
 <li><strong>git commit –m “message”</strong>  &#x2F;&#x2F;提交到本地仓库 </li>
@@ -567,6 +589,9 @@
 <li>ssh git到本地之后，首次需要进行账号密码的设置，当再次push 到远程github上面的时候就不需要进行账号密码的输入了</li>
 </ol>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xudailong_blog/article/details/78697628">https://blog.csdn.net/xudailong_blog/article/details/78697628</a></p>
+<h2 id="4-4-初始化本地仓库，git-init"><a href="#4-4-初始化本地仓库，git-init" class="headerlink" title="4.4 初始化本地仓库，git init"></a>4.4 初始化本地仓库，git init</h2><ul>
+<li>git init会清除本地仓库的信息，慎用</li>
+</ul>
 <h1 id="5-Debug"><a href="#5-Debug" class="headerlink" title="5 Debug"></a>5 Debug</h1><h2 id="5-1-fatal-Not-a-valid-object-name-‘master’"><a href="#5-1-fatal-Not-a-valid-object-name-‘master’" class="headerlink" title="5.1 fatal: Not a valid object name: ‘master’"></a>5.1 fatal: Not a valid object name: ‘master’</h2><ul>
 <li>要先commit一次才会真正建立master分支，此时就可以新建立分支了。</li>
 </ul>
