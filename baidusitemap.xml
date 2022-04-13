@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
     <lastmod>2022-04-12</lastmod>
   </url>
@@ -10,10 +14,6 @@
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/</loc>
-    <lastmod>2022-04-12</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/</loc>
     <lastmod>2022-04-12</lastmod>
   </url>
   <url>
