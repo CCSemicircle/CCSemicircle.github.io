@@ -1,4 +1,5 @@
 https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/
+https://blog.fdchen.host/2022/yuan-ji-chu-da-jian-ge-ren-bo-ke/
 https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/
 https://blog.fdchen.host/2022/python-tensorflow/
 https://blog.fdchen.host/2022/python-chang-jian-yong-fa/
@@ -26,7 +27,6 @@ https://blog.fdchen.host/2021/python-jupyter/
 https://blog.fdchen.host/2021/cqu-ruan-jian-jia-gou-yu-she-ji/
 https://blog.fdchen.host/2021/yuan-ji-chu-zheng-ze-biao-da-shi/
 https://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/
-https://blog.fdchen.host/2021/yuan-ji-chu-da-jian-ge-ren-bo-ke/
 https://blog.fdchen.host/2021/yuan-ji-chu-vs-code-shi-yong/
 https://blog.fdchen.host/2021/cqu-ren-gong-zhi-neng-dao-lun/
 https://blog.fdchen.host/2020/cqu-duo-mei-ti-ji-zhu/
