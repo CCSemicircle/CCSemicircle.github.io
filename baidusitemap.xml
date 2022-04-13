@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2020/sui-bi-shou-cang-jia/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/yuan-ji-chu-da-jian-ge-ren-bo-ke/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/</loc>
     <lastmod>2022-04-13</lastmod>
   </url>
@@ -39,10 +55,6 @@
   <url>
     <loc>https://blog.fdchen.host/2021/linux-shell-bian-cheng/</loc>
     <lastmod>2022-04-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2020/sui-bi-shou-cang-jia/</loc>
-    <lastmod>2022-04-05</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
@@ -138,10 +150,6 @@
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
