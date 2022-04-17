@@ -23,7 +23,9 @@ https://blog.fdchen.host/2021/qian-duan-kai-fa-react/
 https://blog.fdchen.host/2021/sui-bi-mei-sai-zong-jie/
 https://blog.fdchen.host/2021/sui-bi-da-bian-jing-yan/
 https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/
+https://blog.fdchen.host/2021/cqu-ruan-jian-ce-shi/
 https://blog.fdchen.host/2021/python-jupyter/
+https://blog.fdchen.host/2021/cqu-ruan-jian-xiang-mu-guan-li/
 https://blog.fdchen.host/2021/cqu-ruan-jian-jia-gou-yu-she-ji/
 https://blog.fdchen.host/2021/yuan-ji-chu-zheng-ze-biao-da-shi/
 https://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/
