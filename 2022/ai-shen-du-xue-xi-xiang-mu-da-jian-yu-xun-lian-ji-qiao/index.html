@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    5.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    20 分
                 </div>
                 
 
@@ -671,7 +671,7 @@
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41785031">【DL碎片4】深度学习中的的超参数调节</a></li>
 </ol>
 <h1 id="3-权重初始化"><a href="#3-权重初始化" class="headerlink" title="3 权重初始化"></a>3 权重初始化</h1><h2 id="3-1-Xavier"><a href="#3-1-Xavier" class="headerlink" title="3.1 Xavier"></a>3.1 Xavier</h2><p>对于每个经过的层，我们希望方差保持相同，这有助于防止梯度爆炸或消失。换句话说，我们需要以使 x 和 y  的方差保持相同的方式来初始化权重，此初始化过程称为Xavier初始化（Xavier initialization）。（Xavier 读音 zeivier）</p>
-<h1 id="4-多分类问题的评价指标"><a href="#4-多分类问题的评价指标" class="headerlink" title="4 多分类问题的评价指标"></a>4 多分类问题的评价指标</h1><h2 id="4-1-准确率、召回率与F1分数"><a href="#4-1-准确率、召回率与F1分数" class="headerlink" title="4.1 准确率、召回率与F1分数"></a>4.1 准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
+<h1 id="4-评价指标"><a href="#4-评价指标" class="headerlink" title="4 评价指标"></a>4 评价指标</h1><h2 id="4-1-多分类问题的准确率、召回率与F1分数"><a href="#4-1-多分类问题的准确率、召回率与F1分数" class="headerlink" title="4.1 多分类问题的准确率、召回率与F1分数"></a>4.1 多分类问题的准确率、召回率与F1分数</h2><p>把每个类别单独视为”正“，所有其它类型视为”负“，考虑使用混淆矩阵，分别计算各个类别的精确率与召回率。</p>
 <h1 id="5-模型收敛"><a href="#5-模型收敛" class="headerlink" title="5 模型收敛"></a>5 模型收敛</h1><h2 id="5-1-避免陷入“高原平坦区”"><a href="#5-1-避免陷入“高原平坦区”" class="headerlink" title="5.1 避免陷入“高原平坦区”"></a>5.1 避免陷入“高原平坦区”</h2><p>以下内容节选自：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTNZOPgWZiN28Hm30SwstA">《你的模型真的陷⼊局部最优点了吗？》</a></p>
 <p>在⾼维空间⾥（深度学习问题上）真正可怕的不是局部最优也不是鞍点问题，⽽是⼀些特殊地形。⽐如⼤⾯积的平坦区域。</p>
 <p>在平坦区域，虽然导数不为0但是却不⼤。虽然是在不断下降但是路程却⾮常⻓。对于优化算法来说，它需要⾛很多很多步才有可能⾛过这⼀⽚平坦区域。甚⾄在这段地形的⼆阶导数过于特殊的情况下，⼀阶优化算法⾛⽆穷多步也⾛不出去（设想⼀下，如果终点在⼀⽶外，但是你第⼀次⾛0.5⽶，后续每⼀步都是前⼀步的⼀半⻓度，那么你永远也⾛不到⾯前的⼀⽶终点处）。 </p>
@@ -779,6 +779,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
 <li><p>可以通过nvidia-smi查看当前GPU使用情况</p>
 </li>
 </ul>
+<h1 id="7-搭建模型"><a href="#7-搭建模型" class="headerlink" title="7 搭建模型"></a>7 搭建模型</h1><h2 id="7-1-一定要在人为构造的极小数据集上验证模型每个模块的正确性"><a href="#7-1-一定要在人为构造的极小数据集上验证模型每个模块的正确性" class="headerlink" title="7.1 一定要在人为构造的极小数据集上验证模型每个模块的正确性"></a>7.1 一定要在人为构造的极小数据集上验证模型每个模块的正确性</h2><p>为了避免在验证模型策略时正确有效，必须保证依据模型策略搭建的模型是正确的，<strong>必须事先人为构造极小的数据集进行测试，每一步人工计算可能的结果，然后打印验证。</strong>有时可以简单设置为tensor shape的验证，但是最好通过计算具体值来验证，保证万无一失。</p>
 
                 
             </div>
@@ -1330,12 +1331,12 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                         <span class="chip bg-color">常见用法</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
@@ -1575,7 +1576,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">169.1k</span>
+                        class="white-color">169.5k</span>
             
             
             
