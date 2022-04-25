@@ -1,3 +1,4 @@
+https://blog.fdchen.host/2022/ji-suan-ji-ji-chu-shu-ju-jie-gou/
 https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/
 https://blog.fdchen.host/2022/yuan-ji-chu-da-jian-ge-ren-bo-ke/
 https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/
@@ -15,6 +16,8 @@ https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/
 https://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/
 https://blog.fdchen.host/2021/linux-shell-bian-cheng/
 https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/
+https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-wang-luo/
+https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/
 https://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/
 https://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/
 https://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/

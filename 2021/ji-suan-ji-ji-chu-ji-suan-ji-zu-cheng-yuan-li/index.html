@@ -1,0 +1,4299 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4a943d1ca56da567bf16a9c4e2d1368e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+<link rel="stylesheet" href="/js/prism/prism.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机基础,八股文,计算机组成原理">
+    <meta name="description" content="计算机组成原理知识点总结">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7MRBCYRJPD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-7MRBCYRJPD');
+</script>
+
+
+    <title>计算机组成原理 | fdChen的掉发收集箱</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="fdChen的掉发收集箱" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://img.fdchen.host/wall.jpg);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">fdChen的掉发收集箱</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fdChen的掉发收集箱</div>
+        <div class="logo-desc">
+            
+            fdChen的技术博客与生活日志
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/CCSemicircle" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/CCSemicircle" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.fdchen.host/computer-composition-principle.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机组成原理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">计算机组成原理</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    40k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    142 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="1-计算机系统概述"><a href="#1-计算机系统概述" class="headerlink" title="1 计算机系统概述"></a>1 计算机系统概述</h1><h2 id="1-1-计算机发展历程"><a href="#1-1-计算机发展历程" class="headerlink" title="1.1 计算机发展历程"></a>1.1 计算机发展历程</h2><h3 id="1-1-1-计算机的硬件发展"><a href="#1-1-1-计算机的硬件发展" class="headerlink" title="1.1.1 计算机的硬件发展"></a>1.1.1 计算机的硬件发展</h3><ul>
+<li><strong>发展变化</strong></li>
+</ul>
+<ol>
+<li>第一代：电子管时代</li>
+</ol>
+<p>特点：（1）使用机器语言编程；（2）容量小，体积大，成本高，性能低</p>
+<ol start="2">
+<li>第二代：晶体管时代</li>
+</ol>
+<p>特点：（1）速度提升；（2）软件使用高级语言；（3）形成操作系统雏形</p>
+<ol start="3">
+<li>第三代：中小规模集成电路时代</li>
+</ol>
+<p>特点：（1）使用半导体存储器；（2）操作系统继续发展，出现时分操作系统；（3）高级语言开始发展</p>
+<ol start="4">
+<li>第四代：超大规模集成电路时代</li>
+</ol>
+<p>特点：（1）微处理器出现；（2）并行，流水线，高速缓存，虚拟存储器出现</p>
+<ul>
+<li><strong>元件的更新变化</strong></li>
+</ul>
+<ol>
+<li>摩尔定律：每18个月集成电路上可容纳的晶体管翻一倍，性能也将提升一倍</li>
+<li>半导体存储器不断发展</li>
+<li>微处理器不断发展</li>
+</ol>
+<h3 id="1-1-2-计算机软件发展"><a href="#1-1-2-计算机软件发展" class="headerlink" title="1.1.2 计算机软件发展"></a>1.1.2 计算机软件发展</h3><ul>
+<li><strong>面向机器</strong></li>
+</ul>
+<ol>
+<li>机器语言</li>
+<li>汇编语言</li>
+</ol>
+<ul>
+<li><strong>面向问题的高级语言</strong></li>
+</ul>
+<p>FORTRAN –&gt; PASCAL –&gt; C++ –&gt; JAVA</p>
+<h3 id="1-1-3-计算机的分类与发展方向"><a href="#1-1-3-计算机的分类与发展方向" class="headerlink" title="1.1.3 计算机的分类与发展方向"></a>1.1.3 计算机的分类与发展方向</h3><ul>
+<li><strong>电子计算机</strong></li>
+</ul>
+<ol>
+<li>电子模拟计算机</li>
+<li>电子数字计算机</li>
+</ol>
+<ul>
+<li><strong>数字计算机</strong></li>
+</ul>
+<ol>
+<li>专用计算机</li>
+<li>通用计算机</li>
+</ol>
+<ul>
+<li><strong>通用计算机</strong></li>
+</ul>
+<ol>
+<li>巨型机、大型机、中型机、小型机、微型机、单片机</li>
+<li>体积、功耗、性能、数据存储量、指令复杂程度、价格  依次递减</li>
+</ol>
+<ul>
+<li><strong>依照指令与数据流分类</strong></li>
+</ul>
+<ol>
+<li>单指令流和单数据流（SISD）：冯诺依曼体系结构</li>
+<li>单指令流和多数据流（SIMD）：阵列存储器和向量存储器</li>
+<li>多指令流和单数据流（MISD）：不存在</li>
+<li>多指令流和多数据流（MIMD）：多处理器和多计算机系统</li>
+</ol>
+<ul>
+<li><strong>计算机的发展趋势</strong></li>
+</ul>
+<ol>
+<li>微型计算机：体积小、高性能、多用途</li>
+<li>巨型机：更大、超高速、并行处理、更智能</li>
+</ol>
+<h2 id="1-2-计算机系统结构"><a href="#1-2-计算机系统结构" class="headerlink" title="1.2 计算机系统结构"></a>1.2 计算机系统结构</h2><h3 id="1-2-1-计算机系统构成"><a href="#1-2-1-计算机系统构成" class="headerlink" title="1.2.1 计算机系统构成"></a>1.2.1 计算机系统构成</h3><ul>
+<li><p>硬件、软件，硬件与软件在逻辑上是等效的。</p>
+</li>
+<li><p>功能实现上，使用频繁、硬件实现成本低的功能使用硬件实现；特点是硬件实现效率高于软件实现。</p>
+</li>
+</ul>
+<h3 id="1-2-2-计算机硬件的基本组成"><a href="#1-2-2-计算机硬件的基本组成" class="headerlink" title="1.2.2 计算机硬件的基本组成"></a>1.2.2 计算机硬件的基本组成</h3><ul>
+<li><strong>早期冯诺依曼机</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://wiki.jsswsq.com/images/5/52/8.3.1.png" alt="早期冯诺依曼机"></p>
+<ol>
+<li>组成：运算器、存储器、控制器、输入设备、输出设备</li>
+<li>指令与数据共存于存储器，按照地址访问</li>
+<li>指令与数据以二进制代码构成</li>
+<li>指令组成：操作码与地址码，操作码表示操作，地址码表示数据存储位置</li>
+<li>指令顺序存放，顺序执行（特定条件可改变执行顺序）</li>
+<li>运算器为中心（早期），输入输出设备通过运算器与存储器传送（现代以存储器为中心）</li>
+<li>“存储程序”：存储程序原理是冯·诺依曼于1946年提出的将程序像数据一样存储到计算机内部存储器中的一种设计原理。 存储程序原理就是将我们为解决特定问题而编写的程序存放在计算机存储器中，然后按存储器存储程序的首地址执行程序的第一条指令。 以后就按照该程序的规定顺序执行其他指令，直至程序结束执行。（本质是一种思想）</li>
+</ol>
+<ul>
+<li><strong>现代计算机结构</strong></li>
+</ul>
+<ol>
+<li>存储器为中心</li>
+<li>I&#x2F;O操作尽可能地绕开CPU（Central Processing Unit，中央处理器），直接在I&#x2F;O设备与存储器之间完成</li>
+</ol>
+<h3 id="1-2-3-计算机软件的分类"><a href="#1-2-3-计算机软件的分类" class="headerlink" title="1.2.3 计算机软件的分类"></a>1.2.3 计算机软件的分类</h3><ul>
+<li><strong>以功能进行分类</strong></li>
+</ul>
+<ol>
+<li><strong>系统软件：</strong>操作系统（OS）、数据库管理系统（DBMS）、语言处理程序、分布式软件系统、网络软件系统、标准库程序、服务性程序等</li>
+<li><strong>应用软件：</strong>为用户解决某个问题的程序：科学计算类程序、工程设计类程序、数据统计与处理程序</li>
+</ol>
+<ul>
+<li><strong>语言分类</strong>：最后一定会变成机器语言，因为机器语言是计算机唯一可以直接识别和执行的语言</li>
+</ul>
+<ol>
+<li><strong>机器语言（二进制代码语言）：</strong>机器语言是计算机唯一可以直接识别和执行的语言</li>
+<li><strong>汇编语言：</strong>利用英文单词代替二进制指令代码，有助于记忆（必须要经过汇编程序对其进行翻译）</li>
+<li><strong>方便程序设计人员使用的语言：</strong>高级语言 –&gt; 汇编语言 –&gt; 机器语言或者高级语言 –&gt; 机器语言</li>
+</ol>
+<h3 id="1-2-4-计算机工作过程"><a href="#1-2-4-计算机工作过程" class="headerlink" title="1.2.4 计算机工作过程"></a>1.2.4 计算机工作过程</h3><ul>
+<li><strong>具体步骤</strong></li>
+</ul>
+<ol>
+<li>程序、数据转入主存</li>
+<li>从程序起始地址开始运行</li>
+<li>程序首地址取出指令  –&gt; 指令译码、指令执行 –&gt; 完成功能并计算下一条指令地址</li>
+<li>新得到的指令地址读出下一条指令，直到程序结束</li>
+</ol>
+<ul>
+<li><strong>信息流程</strong></li>
+</ul>
+<ol>
+<li><strong>取指令：</strong>PC –&gt; MAR –&gt; 存储器M –&gt; MDR –&gt; IR</li>
+<li><strong>分析指令：</strong>操作码OR (IR) –&gt; CU</li>
+<li><strong>执行指令：</strong>地址码Ad (IR) –&gt; MAR –&gt; M –&gt; MDR –&gt; 累加器ACC</li>
+</ol>
+<p>取完指令，PC自动加一，自动形成下一条指令地址。</p>
+<h3 id="1-2-5-计算机系统的多级层次结构"><a href="#1-2-5-计算机系统的多级层次结构" class="headerlink" title="1.2.5 计算机系统的多级层次结构"></a>1.2.5 计算机系统的多级层次结构</h3><ul>
+<li><strong>虚拟机器（高级语言机器）</strong>：用汇编程序翻译成汇编语言程序</li>
+<li><strong>虚拟机器（汇编语言机器）</strong>：汇编程序翻译成机器语言程序</li>
+<li><strong>虚拟机器（操作系统机器）</strong>：机器语言解释操作系统</li>
+<li>——软硬件交互界面———–</li>
+<li><strong>传统机器（使用机器语言的机器）</strong>：微程序解释机器指令</li>
+<li><strong>微程序机器（微指令系统）</strong>：硬件直接执行微指令</li>
+</ul>
+<h3 id="1-2-6-各硬部件"><a href="#1-2-6-各硬部件" class="headerlink" title="1.2.6 各硬部件"></a>1.2.6 各硬部件</h3><ul>
+<li><strong>主存（主存储器）</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img2020.cnblogs.com/blog/1781524/202008/1781524-20200825180837553-1561312357.png" alt="主存储器逻辑图"></p>
+<p>CPU能够直接访问的存储器是主存储器，辅助存储器用于帮助主存储器记忆更多的信息，辅助存储器中的信息必须调入主存后，才能为CPU访问。</p>
+<p><strong>主存储器的工作方式</strong>是按照存储单元的地址进行存取，这种存取方式称为按地址存取方式（相联存储器是按内容访问的）。</p>
+<p>存储体存放二进制信息，地址寄存器（MAR）存放访存地址，经过地址译码后找到所选的存储单元。数据寄存器（MDR）用于暂存要从存储器中读或写的信息，时序控制逻辑用于产生存储器操作所需的各种时序信号。</p>
+<ol>
+<li><strong>存储元：</strong>存储元（Storage Unit）是存储器的最小存储单元，它的作用是用来存放一位二进制代码0或1。</li>
+<li><strong>存储单元：</strong>在存储器中有大量的存储元，把它们按相同的位划分为组，组内所有的存储元同时进行读出或写入操作，这样的一组存储元称为一个存储单元。一个存储单元通常可以存放一个字节；存储单元是CPU访问存储器的基本单位。</li>
+<li><strong>存储字：</strong>存储字是指存放在一个存储单元中的二进制代码组合。一个存储字可代表一个二进制数，也可代表一串字符，还可代表一条指令。</li>
+<li><strong>存储字长：</strong>存储单元中的二进制代码（存储字）位数，存储字长可以是1B（8bit）或是字节的偶数倍。</li>
+<li><strong>MAR</strong>：用于寻址，其位数对应着存储单元的个数，如MAR为10位，则有2^10&#x3D;1024个存储单元，记为1K。MAR的长度与PC的长度相等。</li>
+<li><strong>MDR</strong>：位数与存储字长相等，一般为字节的整数倍。</li>
+<li>MAR和MDR虽然是存储器的一部分，但是在现代CPU中却是存在于CPU中的；高速缓存（Cache）也是存在于CPU中。</li>
+</ol>
+<ul>
+<li><strong>运算器</strong></li>
+</ul>
+<ol>
+<li><strong>累加器Accumulator（ACC）：</strong>存放操作数、运算的结果</li>
+<li><strong>乘商寄存器Multiple—Quotient Register（MQ）：</strong>进行乘、除法时用得到</li>
+<li><strong>通用寄存器X：</strong>存放操作数</li>
+<li><strong>算术逻辑单元Arithmetic and Logical Unit（ALU）：</strong>用电路实现各种算术运算、逻辑运算</li>
+</ol>
+<ul>
+<li><strong>控制器</strong></li>
+</ul>
+<ol>
+<li><strong>程序计数器Program Count（PC）：</strong>存放下一条指令的地址</li>
+<li><strong>指令寄存器Instruction Register（IR）：</strong>存放当前执行的指令</li>
+<li><strong>控制单元Control Unit（CU）：</strong>分析指令，给出控制信号</li>
+</ol>
+<ul>
+<li><strong>工作过程</strong></li>
+</ul>
+<ol>
+<li>初始：指令、数据存入主存，PC指向第一条指令</li>
+<li>从主存中取指令放入IR、PC自动加1、CU分析指令、CU指挥其他部件执行指令</li>
+</ol>
+<h2 id="1-3-计算机性能指标"><a href="#1-3-计算机性能指标" class="headerlink" title="1.3 计算机性能指标"></a>1.3 计算机性能指标</h2><h3 id="1-3-1-计算机的主要性能指标"><a href="#1-3-1-计算机的主要性能指标" class="headerlink" title="1.3.1 计算机的主要性能指标"></a>1.3.1 计算机的主要性能指标</h3><ul>
+<li><strong>机器字长</strong>：计算机进行一次整数运算可处理的二进制位数</li>
+</ul>
+<ol>
+<li>受到CPU寄存器位数、加法器影响</li>
+<li>一般情况下机器字长等于内部存储器大小</li>
+<li>字长越长，表示范围越大，精度越高</li>
+</ol>
+<ul>
+<li><strong>数据通路带宽</strong>：数据总线一次性所能传送信息的位数</li>
+</ul>
+<p>此数据通路是指外部数据总线宽度，与CPU内部的数据总线宽度可能不同。</p>
+<ul>
+<li><strong>主存容量</strong>：主存储器的最大容量</li>
+</ul>
+<p>MAR位数反应存储单元个数，反映最大寻址范围（最大寻址范围不等于实际寻址范围）</p>
+<ul>
+<li><strong>运算速度</strong></li>
+</ul>
+<ol>
+<li><strong>吞吐量：</strong>单位时间内处理请求的数量，取决于主存的存取周期。</li>
+<li><strong>响应时间：</strong>用户发送请求，然后系统对请求做出相应并且获得所希望结果的等待时间，CPU时间+等待时间（磁盘访问、存储器访问、I&#x2F;O操作、操作系统开销）。</li>
+<li><strong>CPU时钟周期：</strong>节拍脉冲或者是T周期，主频倒数，CPU的最小时间单位，每个动作至少需要一个时钟周期。</li>
+<li><strong>主频：</strong>机器内部主时钟的频率，衡量机器速度的重要参数，主频倒数是CPU时钟周期。同一型号计算机，主频越高，执行指令速度越快。</li>
+<li><strong>CPI：</strong>执行一条指令所需要的时钟周期数。</li>
+<li><strong>CPU执行时间：</strong>运行一个程序所花时间，影响因素：主频、每条指令的执行周期、指令条数。CPU执行时间 &#x3D; CPU时钟周期数&#x2F;主频 &#x3D; （指令条数*CPI）&#x2F;主频。</li>
+<li><strong>计算能力：</strong>浮点数运算能力可以用来衡量用于科学计算的计算机的系统性能。<ul>
+<li>MIPS：每秒执行多少百万条指令</li>
+<li>MFLOPS：每秒执行多少百万次浮点运算</li>
+<li>GFLOPS：每秒执行多少十亿次浮点运算</li>
+<li>TFLOPS：每秒执行多少万亿次浮点运算</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-3-2-专业术语"><a href="#1-3-2-专业术语" class="headerlink" title="1.3.2 专业术语"></a>1.3.2 专业术语</h3><ul>
+<li><strong>系列机</strong></li>
+</ul>
+<p>相同的体系结构，使用基本指令系统的多个不同型号的计算机组成的一个产品系列。</p>
+<ul>
+<li><strong>兼容</strong></li>
+</ul>
+<p>计算机软件与硬件的通用性。</p>
+<ul>
+<li><strong>软件可移植性</strong></li>
+</ul>
+<p>某个系列的计算机中软件，直接或者进行很少的修改然后运行在另一个系列计算机中的可能性。</p>
+<ul>
+<li><strong>固件</strong></li>
+</ul>
+<p>将程序固定在ROM（只读存储器）中组成的部分称为固件。</p>
+<ol>
+<li>拥有软件特性的硬件，性能介于硬件和软件之间，是软硬结合产物（段页表也是软硬件结合产物）</li>
+<li>速度快于软件，灵活性高于硬件</li>
+</ol>
+<h1 id="2-数据表示和运算"><a href="#2-数据表示和运算" class="headerlink" title="2 数据表示和运算"></a>2 数据表示和运算</h1><h2 id="2-1-数制与编码"><a href="#2-1-数制与编码" class="headerlink" title="2.1 数制与编码"></a>2.1 数制与编码</h2><h3 id="2-1-1-进位计数制及其相互转换"><a href="#2-1-1-进位计数制及其相互转换" class="headerlink" title="2.1.1 进位计数制及其相互转换"></a>2.1.1 进位计数制及其相互转换</h3><ul>
+<li><strong>基本概念</strong></li>
+</ul>
+<ol>
+<li>常见种类：十进制、二进制、八进制、十六进制</li>
+<li>特点：逢X进一（X进制）</li>
+</ol>
+<ul>
+<li><strong>种类特点</strong></li>
+</ul>
+<ol>
+<li>二进制：计算机使用最多，0、1组成</li>
+<li>八进制：0-7组成，二进制的一种书写形式，<strong>二进制的3位数码编为一组就是八进制数码</strong>（3位二进制最大为7）</li>
+<li>十六进制：二进制的4位数码编为一组就是十六进制数码（4位二进制最大为15）</li>
+</ol>
+<ul>
+<li><strong>进制转换</strong></li>
+</ul>
+<ol>
+<li>二进制转化为八进制&#x2F;十六进制：只需要将二进制的3&#x2F;4位编为一组即可</li>
+<li>八进制与十六进制相互转换：先换成二进制再转换</li>
+<li>任意进制转换为十进制：任意进制数码与权重相乘，然后再将乘积相加</li>
+<li>十进制转换为任意进制：<ul>
+<li>整数部分：除基取余，逆序排列（从下往上）</li>
+<li>小数部分：乘基取整，顺序排列（从上往下）</li>
+<li>任意二进制小数都可以用十进制表示，但是并不是每个十进制小数都能用二进制表示（如0.3）</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-1-2-真值和机器数"><a href="#2-1-2-真值和机器数" class="headerlink" title="2.1.2 真值和机器数"></a>2.1.2 真值和机器数</h3><ul>
+<li><strong>真值</strong>：带符号的数，如-1，2，-3</li>
+<li><strong>机器数</strong>：常用最高位表示正负，0表示正，1表示负</li>
+</ul>
+<h3 id="2-1-3-BCD码"><a href="#2-1-3-BCD码" class="headerlink" title="2.1.3 BCD码"></a>2.1.3 BCD码</h3><p>二进制编码的十进制数（Binary-Coded Decimal，BCD）通常采用4位二进制数来表示一位十进制数中的0-9这10个数码。这种编码方法使二进制数和十进制数之间的转换得以快速进行。但4位二进制数可以组合出16种代码，因此必有6种状态为冗余状态。</p>
+<p>PS：<strong>用四位数表示一个十进制数，最高位的零可以省略</strong>，如 (10 1001)BCD代表29D，就是省略了最高位的两个0。</p>
+<ul>
+<li><strong>8421码（最常用）</strong></li>
+</ul>
+<p>8421码是一种有权码，权值由高到低分别为8，4，2，1，它表示的十进制数为 D &#x3D;8b3+4b2+2b1+1b0，如8-&gt;1000; 9-&gt;1001。</p>
+<p>若两个8421码相加之和小于等于(1001)2，即(9)10，则不需要修正；若相加之和大于等于(1010)2，即(10)10，则要加6修正（从1010到1111这6个位无效码，当运算结果落于这个区间时，需要将运算结果加上6），并向高位进位，进位可以在首次相加或修正时产生。</p>
+<ul>
+<li><strong>余3码（无权码）</strong></li>
+</ul>
+<p>这是一种无权码，是在8421码的基础上加(0011)2形成的，因每个数都多余3，因此称为余3码。如8-&gt;1011; 9-&gt;1100。</p>
+<ul>
+<li><strong>2421码（有权码）</strong></li>
+</ul>
+<p>这是一种有权码，权值由高到低分别为2，4，2，1，特点是大于等于5的4位二进制数中最高位为1，小于5的最高位为0（由权值决定）。如5-&gt;1011而非0101。</p>
+<h3 id="2-1-4-字符与字符串"><a href="#2-1-4-字符与字符串" class="headerlink" title="2.1.4 字符与字符串"></a>2.1.4 字符与字符串</h3><ul>
+<li><strong>字符串编码ASCⅡ码</strong></li>
+</ul>
+<p>7位二进制编码，每个字节的最高位保持为0，可用于传输时的奇偶检验位。</p>
+<p>编码值0-31为控制字符，用于通信控制或设备的功能控制；</p>
+<p>编码值127是DEL码；</p>
+<p>编码值32是空格SP；</p>
+<p>编码值32-126共95个字符称为可印刷字符。</p>
+<p>0-9的编码值为48（011 0000）- 57（011 1001），去掉高3位，只保留低4位，正好是二进制形式的0-9。</p>
+<ul>
+<li><strong>汉字的表示和编码</strong>：每个编码用两个字节表示</li>
+</ul>
+<ol>
+<li>种类：输入编码（计算机输入）、汉字内码（计算机内部处理）、汉字字形码（计算机输出）。</li>
+</ol>
+<p>GB2312码是1981年实施的国家标准GB2312-1980中收录的汉字编码，目前最新的汉字编码是2000年公布的国家标准GB18023码，编码标准采用1B，2B，4B。</p>
+<p>区位码是1980年国家公布的一个字符编码标准。每一个字符都有对应一个4位十进制数字码位表示，其中前两位为“区”，后两位为“位”。</p>
+<p>区位码和国标码都是输入码，它们与汉字内码的关系（十六进制）如下：</p>
+<p>国标码 &#x3D; (区位码)16+2020H，汉字内码 &#x3D; (国标码)16+8080H</p>
+<ul>
+<li><strong>字符串存放</strong></li>
+</ul>
+<ol>
+<li>小端模式：将数据的<strong>最高有效位</strong>存放在<strong>高地址单元</strong>中</li>
+<li>大端模式：将数据的<strong>最高有效位</strong>存放在<strong>低地址单元</strong>中</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20190818201112130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L215Z29kMjAwOG9r,size_16,color_FFFFFF,t_70" alt="小端模式与大端模式"></p>
+<h3 id="2-1-5-校验码"><a href="#2-1-5-校验码" class="headerlink" title="2.1.5 校验码"></a>2.1.5 校验码</h3><ul>
+<li><strong>概念</strong></li>
+</ul>
+<p>能够发现或者自动纠错的数据编码</p>
+<ul>
+<li><strong>原理</strong></li>
+</ul>
+<p>通过添加一些冗余码，实现检验或者纠错编码</p>
+<ul>
+<li><strong>码距</strong></li>
+</ul>
+<p>一个编码系统中任意两个合法编码（码字）之间不同的二进数位（bit）数叫这两个码字的码距，而整个编码系统中任意两个码字的的最小距离就是该编码系统的码距。</p>
+<p>对于码距不小于2的数据校验码，开始具有检错能力，码距越大，检错、纠错的能力越强，而且检错能力总是大于等于纠错能力。</p>
+<p>1100和1101 码距为1，只需翻转最后位，1001和0010的码距为3，需要翻转后三位。</p>
+<ul>
+<li><strong>奇偶校验码</strong></li>
+</ul>
+<p>在原编码上加一个校验位，它的码距等于2，可以检测出一位错误（或奇数位错误），但不能确定出错的位置，也不能够检测出偶数位错误，也不能纠错，增加的冗余位称为奇偶校验位。</p>
+<ol>
+<li>奇校验码：整个校验码（有效信息位和校验位）中1的个数为奇数</li>
+<li>偶校验码：整个校验码（有效信息位和校验位）中1的个数为偶数</li>
+<li>实现方法：通过增加一位校验位使得码字中”1”的个数恒为奇数或偶数</li>
+</ol>
+<ul>
+<li><strong>海明校验码Hamming Code</strong></li>
+</ul>
+<p><strong>基本思想：</strong>海明码（也译为汉明码）是广泛采用的一种有效的校验码，它实际上是一种多重奇偶校验码。其实现原理是在有效信息位中加入几个校验位形成海明码，并把海明码的每个二进制位分配到几个奇偶校验组中。当某一位出错后，就会引起有关的几个校验位的值发生变化，这不但可以发现错位，还能指出出错位的位置，为自动纠错提供依据。</p>
+<p><strong>纠错理论：</strong> L - 1 &#x3D; D+C, 且D ≥ C，L是指编码的码距，D是指检测错误的位数，C是指纠正错误的位数。编码的最小码距L越大，检测位数越多，纠错能力越强，但检错能力大于等于纠错能力。</p>
+<p><strong>求海明码1010的步骤：</strong></p>
+<p><strong>（1）确定海明码的位数</strong></p>
+<p>设n为有效信息的位数，k为校验位的位数，则信息位n和校验位k应满足 n+k ≤ 2^k - 1（若要检测两位错，则需再增加1位校验位，即 k+1位），如 n+k &#x3D;7 ≤ 2^3 -1，确定海明码位数为7</p>
+<p><strong>（2）确定校验位的分布</strong></p>
+<p>规定<strong>校验位Pi在海明位号2^(i-1)的位置上</strong>，其余各位为信息位，得到海明码的分布如下</p>
+<pre class="line-numbers language-none"><code class="language-none">H7 H6 H5 H4 H3 H2 H1
+D4 D3 D2 P3 D1 P2 P1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>（3）分组以形成校验关系</strong></p>
+<p>每个数据位用多个校验位进行校验，但要满足条件：<strong>被校验数据位的海明位号等于校验该数据位的各校验位海明位号之和</strong>。另外，校验位不需要再被校验。</p>
+<pre class="line-numbers language-none"><code class="language-none">D1放在H3上，由P2P1校验；（P2为第2位，P1为第1位）
+D2放在H5上，由P3P1校验；（P3为第4位，P1为第1位）
+D3放在H6上，由P3P2校验；（P3为第4位，P2为第2位）
+D4放在H7上，由P3P2P1校验；（P3为第4位，P2为第2位，P1为第1位）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>（4）校验位取值</strong></p>
+<p>校验位Pi的值为第i组（由该校验位校验的数据位）所有位求异或</p>
+<p>根据（3）中的分组得到</p>
+<pre class="line-numbers language-none"><code class="language-none">P1 &#x3D; D1 ⊕ D2 ⊕ D4 &#x3D; 0 ⊕ 1 ⊕ 1 &#x3D; 0
+P2 &#x3D; D1 ⊕ D3 ⊕ D4 &#x3D; 0 ⊕ 0 ⊕ 1 &#x3D; 1
+P3 &#x3D; D2 ⊕ D3 ⊕ D4 &#x3D; 1 ⊕ 0 ⊕ 1 &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>得到对应的海明码为 101<u><strong>0</strong></u>0<u><strong>10</strong></u>，下划线的为校验位，其他为信息位</p>
+<p><strong>（5）海明码的校验原理</strong></p>
+<p>每个校验组分别利用校验位和参与形成该校验位的信息位进行奇偶校验检查，构成k个校验方程：</p>
+<pre class="line-numbers language-none"><code class="language-none">S1 &#x3D; P1 ⊕ D1 ⊕ D2 ⊕ D4
+S2 &#x3D; P2 ⊕ D1 ⊕ D3 ⊕ D4 
+S3 &#x3D; P3 ⊕ D2 ⊕ D3 ⊕ D4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>若 S3S2S1的值位 000，代表没错；否则说明出错，且这个数的十进制表示就是错误位的位号，如S3S2S1&#x3D; 111，代表H7出错，直接将该位取反就达到了纠错的目的。</p>
+<p><strong>补充：</strong>海明码有1位纠错能力，2位检错能力，为了区分1位错和2位错，还需添加”全校验位“对整体及逆行偶校验。</p>
+<ul>
+<li><strong>循环冗余校验码（Cyclic redundancy check，通称“CRC”）</strong></li>
+</ul>
+<p><strong>基本思想：</strong>在K位信息码后再拼接R位的校验码，整个编码长度为N位，因此，这种编码又称为（N,K）码。</p>
+<p><strong>格式：</strong>信息位（K位）  校验位（R位）。</p>
+<p><strong>具体做法：</strong>CRC码基于线性编码理论，在发送端，将要传送的K位二进制信息码左移R位，将它与多项式G(X)做模2出发，生成一个R位校验码，并附在信息码后，构成一个新的二进制码CRC码，共K+R位。在接受端，利用生成多项式对接收到的编码做模2除法，以检测和确定出错的位置，无错则整除，其中生成多项式是接收端和发送端的一个约定。</p>
+<p><strong>多项式：</strong>任意一个二进制数码都可以用一个系数仅为0或1的多项式与其对应。生成多项式G(X)的最高次幂为R，转换成对应的二进制数有R+1位。例如 x^3+x^2+1对应的二进制数为1101。</p>
+<p><strong>设生成多项式为G(X) &#x3D;  x^3+x^2+1，信息码为101001，求CRC码的步骤：</strong></p>
+<p>R &#x3D; 生成多项式最高次幂 &#x3D; 3，K&#x3D;信息码长度 &#x3D; 6， N &#x3D; K+R &#x3D; 9</p>
+<p>生成多项式G(X)对应的二进制码为1101.</p>
+<p><strong>（1）移位</strong></p>
+<p>将原信息码左移R位，低位补0</p>
+<p>101001 –&gt; 101001 000</p>
+<p><strong>（2）相除</strong></p>
+<p>对移位后的信息码，用生成多项式进行模2除法，产生余数</p>
+<p>模2除法：模2假发和剑法的结果相同，都是做异或运算。模2除法和算数除法类似，但每位除（减）的结果不影响其他位，即不借位，步骤如下：</p>
+<p>① 用除数对被除数最高几位做模2减（异或），不借位。</p>
+<p>② 除数右移一位，若余数最高位为1，商为1，并对余数做模2减，若余数最高位为0，商为0，除数继续右移一位。</p>
+<p>③ 循环知道余数位数小于除数时，该余数为最终余数。</p>
+<p><img src="/medias/loading.gif" data-original="https://bkimg.cdn.bcebos.com/pic/f3d3572c11dfa9ecd22fa7b76fd0f703918fc109?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg" alt="模2除法"></p>
+<p>最终得到余数 001，则CRC码为101001 **<u>001</u>**（下划线为校验位）</p>
+<p><strong>（3）检错和纠错</strong></p>
+<p>接收端收到的CRC码，用生成多项式G(X)做模2除法，若余数为0，则码字无错。</p>
+<p>若接收端收到的CRC码为C9C8C7C6C5C4C3C2C1&#x3D;101001 011，将这个数据与1101进行模2除法，得到的余数为 010（2D），则说明C2出错，将C2取反即可。</p>
+<p><strong>补充：</strong>可检测出所有奇数个错误，可检测出所有双比特（位号）的错误，可检测出所有小于等于校验位长度的连续错误，若选择合适的生成多项式，且 2^R ≥ K+R+1，则可纠正单比特错</p>
+<h2 id="2-2-定点数的表示与运算"><a href="#2-2-定点数的表示与运算" class="headerlink" title="2.2 定点数的表示与运算"></a>2.2 定点数的表示与运算</h2><h3 id="2-2-1-定点数的表示"><a href="#2-2-1-定点数的表示" class="headerlink" title="2.2.1 定点数的表示"></a>2.2.1 定点数的表示</h3><ul>
+<li><strong>真值零表示方式</strong></li>
+</ul>
+<ol>
+<li><strong>两种表示法</strong></li>
+</ol>
+<p>原码：正零 00000 负零 10000</p>
+<p>反码：正零 00000 负零 11111</p>
+<ol start="2">
+<li><strong>唯一表示</strong></li>
+</ol>
+<p>补码、移码</p>
+<ul>
+<li><strong>有符号和无符号</strong></li>
+</ul>
+<p>无符号数：整个机器字长的全部二进制数均为数值位，没有符号位</p>
+<p>有符号数：最高位的0&#x2F;1分别表示正&#x2F;负</p>
+<ul>
+<li><strong>机器数定点表示</strong></li>
+</ul>
+<ol>
+<li>定点小数：<strong>定点小数是纯小数</strong>，约定小数点位置在符号位之后、有效数值部分最高位之前。</li>
+</ol>
+<p>符号位x0 .(隐含小数点位置) 数值部分x1-xn，除去符号位，其最大值的绝对值为 1-2^(-n)</p>
+<ol start="2">
+<li>定点整数：定点整数是纯整数，小数点位置在有效数值部分的最低位之后。</li>
+</ol>
+<p>符号位x0 x1-xn .(隐含小数点位置)，除去符号位，其最大值的绝对值为 2^n-1</p>
+<ul>
+<li><strong>机器数表示方法</strong></li>
+</ul>
+<ol>
+<li><strong>原码表示法</strong></li>
+</ol>
+<p><strong>最高位为符号位，其余各位为表示数的绝对值。</strong></p>
+<p>纯小数的原码：字长为n+1，范围为 -(1-2^(-n)) ≤ X ≤ 1-2^(-n)，关于原点对称</p>
+<p>纯整数的原码：字长为n+1，范围为 -(2^n-1) ≤ X ≤ 2^n-1，关于原点对称</p>
+<ol start="2">
+<li><strong>补码表示法</strong></li>
+</ol>
+<p>由于原码表示中加减法计算复杂，补码表示法可以更好地去表示加减法。</p>
+<p><strong>对于正数，补码与原码的表示相同；对于负数，原码符号位不变，数值部分按位取反，末位加1（即所谓的”取反加1“），此规则同样适用于又补码求原码。</strong></p>
+<p>纯小数的补码：表示范围 -1 ≤  X ≤  1-2^(-n)，比原码多表示 -1</p>
+<p>纯整数的补码：表示范围 -2^n ≤ X ≤ 2^n-1，比原码多表示-2^n</p>
+<p>补码的算数移位：</p>
+<p>（1）符号位与数值位一起右移，保持原符号位数值不变，可实现除2功能</p>
+<p>（2）变形补码（模4补码）：正 00 负11，用在完成算数运算的ALU部件中。</p>
+<ol start="3">
+<li><strong>反码表示法</strong></li>
+</ol>
+<p>原码与补码相互转化的过渡。</p>
+<p><strong>对于正数，反码与原码的表示相同；对于负数，原码符号位不变，数值部分按位取反</strong>。</p>
+<p>纯小数反码：表示范围 -(1-2^(-n)) ≤ X ≤ 1-2^(-n)，关于原点对称</p>
+<p>纯整数反码：表示范围为 -(2^n-1) ≤ X ≤ 2^n-1，关于原点对称</p>
+<ol start="4">
+<li><strong>移码表示法</strong></li>
+</ol>
+<p>常用来表示浮点数的阶码，它只能表示整数。</p>
+<p>移码就是在真值X上加上一个常数（偏置值），通常这个常数取2^n，相当于X在数轴上向正方向偏移了若干单位，这就是”移码“一词的由来。定义为 [x]移 &#x3D; 2^n + x（2^n &gt; x ≥ -2^n，其中机器字长为n+1），如n+1&#x3D;5时，当X&#x3D;+3，则[X]移&#x3D;10011，当X&#x3D;-3，则[X]移&#x3D;01101</p>
+<p>最小值 -2^n（全为0），最大值 2^n-1（全为1）</p>
+<p>特点：</p>
+<p>（1）移码中零的表示唯一：+0 &#x3D; 2^n+0 &#x3D; -0 &#x3D; x^n-0 &#x3D; 100（n个0）</p>
+<p>（2）一个真值的移码和补码仅差一个符号位，[x]补的符号位取反即得[x]移</p>
+<p>（3）移码保持了数据原有的大小顺序，移码大真值就大，移码小真值就小</p>
+<h3 id="2-2-2-定点数的运算"><a href="#2-2-2-定点数的运算" class="headerlink" title="2.2.2 定点数的运算"></a>2.2.2 定点数的运算</h3><ul>
+<li><strong>定点数移位运算</strong></li>
+</ul>
+<ol>
+<li><strong>算数移位（数值含义上的移动，乘除法）</strong></li>
+</ol>
+<p>（1）正数：移位后补零</p>
+<p>（2）负数：原码补零，补码左0右1，反码全部补1</p>
+<p>（3）符号位不参与运算</p>
+<ol start="2">
+<li><strong>逻辑移位（二进制表示码的移动）</strong></li>
+</ol>
+<p>（1）将操作数看作无符号数</p>
+<p>（2）左移或者右移，都要补0</p>
+<ol start="3">
+<li><strong>循环移位</strong>：适合将数据的低字节数据与高字节数据互换</li>
+</ol>
+<p>（1）带进位标志位CF的循环移位（大循环）</p>
+<p>（2）不带进位标志位CF的循环移位（小循环）</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D.png" alt="image-20210805143731276"></p>
+<ul>
+<li><strong>原码定点数的加减法运算</strong></li>
+</ul>
+<p><strong>加法准则：</strong></p>
+<p>（1）符号相同，绝对值相加，符号不变</p>
+<p>（2）符号不同：绝对值大的减去绝对值小的，符号取绝对值大的数</p>
+<p><strong>减法准则：</strong></p>
+<p>（1）减数的符号取反，将其与被减数做原码的加法运算</p>
+<ul>
+<li><strong>补码定点数加减法运算</strong></li>
+</ul>
+<ol>
+<li>参与的操作数均为补码</li>
+<li>按照二进制规则运算，逢二进一</li>
+<li>符号位与数值位同时参与运算，符号位产生的进位丢掉，结果的符号位由运算得出</li>
+<li>补码运算的结果仍然是补码</li>
+</ol>
+<ul>
+<li><strong>符号扩展</strong>：把给定位数表示的数转换成具有不同位数的某种表示形式，如把8位数二进制数扩展成32位二进制数</li>
+</ul>
+<p><strong>正数：</strong>在原有的基础上，高位补0凑位数即可</p>
+<p><strong>负数：</strong></p>
+<p>（1）原码：将原有形式的符号移动到新形式的符号位上，新形式的新增位补0</p>
+<p>（2）补码：高位加1处理</p>
+<p>（3）反码：高位加1处理</p>
+<ul>
+<li><strong>溢出概念和判别方法</strong></li>
+</ul>
+<p><strong>上溢：</strong>大于最大可以表示的正数</p>
+<p><strong>下溢：</strong>小于最小可以表示的负数</p>
+<p><strong>补码判断溢出方法：</strong></p>
+<p>（1）一位符号位：参加运算的两个数的符号相同，但是结果符号出现变化，则结果溢出</p>
+<p>（2）双符号位：（模4补码）00 正数 无溢出，01 正溢出，10 负溢出，11 负数 无溢出</p>
+<p>（3）一位符号位根据数据位进行判断，符号位进位与最高位进位相同，则无溢出 </p>
+<ul>
+<li><strong>定点数的乘法运算</strong></li>
+</ul>
+<ol>
+<li><strong>原码一位乘法：符号位与数值位分开求得</strong></li>
+</ol>
+<p>（1）符号位：由两个数的符号位异或</p>
+<p>（2）数值：两个数的绝对值相乘之积</p>
+<p><strong>运算规则：</strong></p>
+<p>① 被乘数和乘数均取绝对值参加运算，符号位为 Xs 和 Ys异或</p>
+<p>② 部分积的长度等同于被乘数，取 n+1 位，以便存放乘法过程中绝对值大于等于1的值，初值为0</p>
+<p>③ 从乘数的最低位yn开始判断：若yn &#x3D; 1，则部分积加上被乘数|x|，然后右移一位；若yn&#x3D;0，则部分积加上0，然后右移一位</p>
+<p>④ 重复步骤③，判断n次。</p>
+<p>由于乘积的数值部分是两数绝对值相乘的结果，因此原码一位乘法运算过程中的右移操作均为逻辑右移。且考虑大运算时可能出现绝对值大于1的情况（但此刻并非溢出），所以部<strong>分积和被乘数取双符号位</strong>。</p>
+<p><strong>运算示例：</strong></p>
+<p>① 设置部分积，被乘数与乘数的绝对值</p>
+<p>A&#x3D;00.0000，B&#x3D;|X|&#x3D;00.1101，C&#x3D;.1011</p>
+<p>② 若判断位（乘数C的最后一位）为0，则部分积+0000；若为1，部分积+B</p>
+<p> <img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%8E%9F%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95.png" alt="原码一位乘法"></p>
+<ol start="2">
+<li><strong>补码一位乘法（Booth算法）：一种有符号数的乘法，采用相加和相减操作计算补码数据的乘积</strong></li>
+</ol>
+<p><strong>运算规则：</strong></p>
+<p>① 符号位参与运算，运算的数均以补码表示</p>
+<p>② 被乘数一般取双符号位参与运算，部分积取双符号位，初值为0，乘数可取单符号位</p>
+<p>③ 乘数末位增设附加位 y(n+1)，且初值为0</p>
+<p>④ 根据(yn, y(n+1))的取值来确定操作</p>
+<table>
+<thead>
+<tr>
+<th>yn高位</th>
+<th>y(n+1)低位</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>部分积右移一位</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>部分积加[x]补，右移一位</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>部分积加[-x]补，右移一位</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>部分积右移一位</td>
+</tr>
+</tbody></table>
+<p>⑤ 移位按补码右移规则进行（算数移位）</p>
+<p>⑥ 按照上述算法进行n+1步操作，但第n+1步不再移位（共进行n+1次累加和n次右移），仅根据yn与y(n+1)，的比较结果做相应的运算。</p>
+<p><strong>运算示例：</strong></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%A1%A5%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E7%A4%BA%E4%BE%8B.png" alt="image-20210805154106942"></p>
+<ul>
+<li><strong>定点数的除法运算</strong></li>
+</ul>
+<ol>
+<li><strong>原码除法运算（不恢复余数法）</strong></li>
+</ol>
+<p>原码除法主要采用原码不恢复余数法，也称原码加减交替法。特点是商符和商值是分开进行的，商符由两个操作数的符号位”异或“形成。</p>
+<p><strong>求商值的规则如下：</strong></p>
+<p>① 商的符号：Qs &#x3D; Xs ⊕ Ys</p>
+<p>② 商的数值：Qs  &#x3D; |X|&#x2F;|Y|</p>
+<p><strong>求|Q|的不恢复余数运算规则如下：</strong></p>
+<p>① 符号位不参与运算</p>
+<p>② 先用被除数减去除数，当余数为正时，商上1，余数和商左移一位，再减去除数；当余数为负时，商上0，余数和商左移一位，再加上除数。</p>
+<p>③ 当第n+1步余数为负，需加上|Y|得到第n+1步正确的余数。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%95%E8%BF%90%E7%AE%97%E7%A4%BA%E4%BE%8B.png" alt="image-20210805162801929"></p>
+<ul>
+<li><strong>补码除法运算（加减交替法）</strong></li>
+</ul>
+<p><strong>加减交替法运算规则如下：</strong></p>
+<p>① 符号位参加运算，除数和被除数均用补码表示，商和余数也用补码表示</p>
+<p>② 若被除数（部分余数）与除数同号，则被除数（部分余数）减去除数；若被除数（部分余数）与除数异号，则被除数加上除数。</p>
+<p>③ 若余数与除数同号，则商上1，余数左移一位减去除数；若余数与除数异号，则商上0，余数左移一位加上除数。</p>
+<p>④ 重复执行第③步操作n次。</p>
+<p>⑤ 若对商的精度没有特殊要求，则一般采用”末位恒置1“法。</p>
+<p>运算示例：</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95.png" alt="image-20210805163613368"></p>
+<ul>
+<li><strong>强制类型转换</strong></li>
+</ul>
+<ol>
+<li>强制类型转换的结果时保持二进制码位值不变，仅改变解释这些位的方式。</li>
+<li>对于不同字长的整数之间的数值转换，当大字长变量向小字长变量强制类型转换时，系统把多余的高位字长部分直接截断，低位直接赋值，也是一种保持位值的处理方法；而短字长到长字长的转换，补位保证最终数值相等即可。</li>
+</ol>
+<h3 id="2-3-浮点数的表示和运算"><a href="#2-3-浮点数的表示和运算" class="headerlink" title="2.3 浮点数的表示和运算"></a>2.3 浮点数的表示和运算</h3><h3 id="2-3-1-浮点数的表示"><a href="#2-3-1-浮点数的表示" class="headerlink" title="2.3.1 浮点数的表示"></a>2.3.1 浮点数的表示</h3><ul>
+<li><strong>表示格式</strong></li>
+</ul>
+<p>通常，浮点数表示为：N &#x3D; r^E * M，</p>
+<p>r时浮点数阶码的低，与尾数的基数相同，通常r&#x3D;2。E和M都是有符号的定点数，E称为阶码，M称为尾数。可见，浮点数由阶码和尾数两部分组成。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%A0%BC%E5%BC%8F.png" alt="image-20210805164740434"></p>
+<ul>
+<li><strong>规格化浮点数</strong></li>
+</ul>
+<p>为了提高运算的精度，需要充分利用尾数的有效位数，通常<strong>采取浮点数规格化形式，即规定尾数的最高数位必须是一个有效值。</strong></p>
+<p>所谓<strong>规格化操作</strong>，是指通过调整一个非规格化浮点数的尾数和阶码的大小，使非零的浮点数在尾数的最高数位上保证是一个有效值。</p>
+<p><strong>左规：</strong>尾数算数左移一位，阶码减1（基数为2）</p>
+<p><strong>右规：</strong>结果出现溢出（双符号位01或10），将尾数算数右移一位，阶码加1（基数为2）。</p>
+<p>左规可以多次，右规只能一次。</p>
+<ul>
+<li><strong>规格化的原码和补码</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%A7%84%E6%A0%BC%E5%8C%96%E7%9A%84%E5%8E%9F%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81.png" alt="image-20210805170056643"></p>
+<ul>
+<li><strong>IEEE754标准</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/IEEE754.png" alt="image-20210805170217179"></p>
+<p>偏置值是指用移码表示阶码，如float型为 2^(8-1)-1&#x3D;127。</p>
+<ul>
+<li><strong>定点数与浮点数的区别</strong></li>
+</ul>
+<ol>
+<li>相同字长，浮点数范围更大</li>
+<li>浮点数精度降低</li>
+<li>浮点数运算复杂</li>
+<li>浮点数只有规格化后阶码超出表示范围才发生溢出</li>
+</ol>
+<h3 id="2-3-2-浮点数的加减运算"><a href="#2-3-2-浮点数的加减运算" class="headerlink" title="2.3.2 浮点数的加减运算"></a>2.3.2 浮点数的加减运算</h3><ul>
+<li><strong>运算步骤</strong></li>
+</ul>
+<ol>
+<li><p><strong>对阶：</strong>小阶看齐大阶，阶码小的尾数右移1位（基数2），阶加1，直到阶码相等。尾数右移时，舍弃掉有效位会产生误差，影响精度。（牺牲尾数的位数增加阶码位数）</p>
+</li>
+<li><p><strong>尾数求和：</strong>尾数按照定点数加减规则运算</p>
+</li>
+<li><p><strong>规格化（补码）：</strong>最高数值位与符号位不同即为规格化形式</p>
+</li>
+<li><p><strong>舍入：</strong></p>
+</li>
+</ol>
+<p>（1）0舍1入法：尾数右移时，被移去所有尾数末位的最高数值位为0，则舍去；被移去所有尾数末位的最高数值位为1，则尾数末位加1。可能会溢出，此时需要再一次右规。<br>（2）恒置1法：尾数右移，不论最高数值位丢掉的是1还是0，都将尾数末位恒置1.</p>
+<ol start="5">
+<li><strong>溢出判断：</strong></li>
+</ol>
+<p>只有右规后，仍然溢出，此时才是真正溢出。</p>
+<p>上溢出：进入中断处理</p>
+<p>下溢出：按机器零处理</p>
+<ol start="6">
+<li><strong>强制类型转换</strong></li>
+</ol>
+<p>char –&gt; int，在前面补0</p>
+<p>int &lt;–&gt; unsigned，彼此都可能因为溢出丢失数据</p>
+<p>int &lt;–&gt; float， float转换为int可能会出现精度损失和溢出，int转换为float可能会出现数据舍入</p>
+<ul>
+<li><strong>边界对齐</strong></li>
+</ul>
+<p>现代计算机通常是按字节编址，即每个字节对应1个地址。</p>
+<p>通常也会支持按字、按半字、按字节寻址。</p>
+<p><strong>32位计算机：1字&#x3D;32位&#x3D;4字节，64位计算机：1字&#x3D;64位&#x3D;8字节</strong></p>
+<h2 id="2-4-算数逻辑单元ALU"><a href="#2-4-算数逻辑单元ALU" class="headerlink" title="2.4 算数逻辑单元ALU"></a>2.4 算数逻辑单元ALU</h2><p>运算器组成：算数逻辑单元、累加器、状态寄存器(status register, SR)、通用寄存器</p>
+<h3 id="2-4-1-串行加法器和并行加法器"><a href="#2-4-1-串行加法器和并行加法器" class="headerlink" title="2.4.1 串行加法器和并行加法器"></a>2.4.1 串行加法器和并行加法器</h3><ul>
+<li><strong>一位全加器FA</strong></li>
+</ul>
+<p>两个加数输入，以及低位进位输入，输出为本位结果和进位输出</p>
+<ul>
+<li><strong>串行加法器</strong></li>
+</ul>
+<p>只有一个全加器，数据逐位的送入加法器中运算，逐位送回寄存器。</p>
+<p>操作数n位，则进行n次；成本低，但是速度慢。</p>
+<ul>
+<li><strong>并行加法器</strong></li>
+</ul>
+<p>多个加法器共同组成，每个全加器都有一个低位送来的进位输入，最终向高位输出进位。</p>
+<p>进位方式：</p>
+<p>（1）串行进位，将全加器接在一起，每级进位依赖于前一级进位</p>
+<p>（2）并行进位，同时进位，各级进位信号同时形成，即将各级低位产生的本级G（进位产生函数）信号和P（进位传递函数）信号一次同时送到高位个全加器的输入，使它们同时形成进位信号。</p>
+<h3 id="2-4-2-算术逻辑单元的功能和结构"><a href="#2-4-2-算术逻辑单元的功能和结构" class="headerlink" title="2.4.2 算术逻辑单元的功能和结构"></a>2.4.2 算术逻辑单元的功能和结构</h3><ul>
+<li><p><strong>带标志加法器</strong>：无符号加法器只能用于两个无符号数相加，为了能进行带符号整数的加减运算，需要在无符号数加法器的基础上增加相应的逻辑门电路。</p>
+</li>
+<li><p><strong>ALU</strong>：算数运算和逻辑运算</p>
+</li>
+<li><p><strong>补码加减运算部件</strong></p>
+</li>
+</ul>
+<h1 id="3-存储系统"><a href="#3-存储系统" class="headerlink" title="3 存储系统"></a>3 存储系统</h1><h2 id="3-1-存储器的层次结构"><a href="#3-1-存储器的层次结构" class="headerlink" title="3.1 存储器的层次结构"></a>3.1 存储器的层次结构</h2><h3 id="3-1-1-存储器分类"><a href="#3-1-1-存储器分类" class="headerlink" title="3.1.1 存储器分类"></a>3.1.1 存储器分类</h3><ul>
+<li><strong>层次分类</strong></li>
+</ul>
+<ol>
+<li><strong>主存储器，主存（内存储器，内存）</strong></li>
+</ol>
+<p>（1）存放计算机运行时的程序与数据</p>
+<p>（2）可以被CPU直接访问，也可以与Cache和辅存进行交换数据</p>
+<p>（3）容量小，速度快，价格高</p>
+<ol start="2">
+<li><strong>辅助存储器，辅存（外存储器，外存）</strong></li>
+</ol>
+<p>（1）存储当前暂时不用的程序和数据，以及一些永久保留数据</p>
+<p>（2）不可以与CPU直接交互</p>
+<p>（3）容量大，速度慢，价格低</p>
+<ol start="3">
+<li><strong>高速缓冲存储器（Cache）</strong></li>
+</ol>
+<p>（1）位于主存与CPU之间，缓解CPU与主存之间速度差距问题</p>
+<p>（2）CPU可以直接访问</p>
+<p>（3）容量小，速度与CPU相匹配，价格高，现代计算机将他们放在CPU中</p>
+<ul>
+<li><strong>存储介质分类</strong></li>
+</ul>
+<ol>
+<li><strong>磁表面存储器</strong>：磁盘、磁带</li>
+<li><strong>磁芯存储器半导体存储器</strong>：MOS（场效应管）型存储器、双极型存储器</li>
+<li><strong>光存储器</strong>：光盘</li>
+</ol>
+<ul>
+<li><strong>存取方式分类</strong></li>
+</ul>
+<ol>
+<li><strong>随机存储器RAM</strong></li>
+</ol>
+<p>（1）随机存取，读写方便，使用灵活</p>
+<p>（2）用途：主存、Cache</p>
+<p>（3）类型：静态RAM（触发器原理）、动态RAM（电容充电原理）</p>
+<ol start="2">
+<li><strong>只读存储器ROM</strong></li>
+</ol>
+<p>（1）只能读出不能写入</p>
+<p>（2）用途：与随机存储器构成主存，存储固定不变的程序（甚至操作系统的固化）</p>
+<p>（3）ROM也派生出可以反复重写的类型</p>
+<ul>
+<li><strong>信息可保存性</strong></li>
+</ul>
+<ol>
+<li><strong>易失性存储器</strong>：如RAM，断电后存储信息就消失的存储器。</li>
+<li><strong>非易失性存储器</strong>：如ROM、磁表面存储器、光存储器，断电后信息仍按保存在存储器中。</li>
+</ol>
+<p><strong>读出类型的分类：</strong></p>
+<p>（1）破坏性读出：读出后，原存储信息被破坏，需要对存储信息再生</p>
+<p>（2）非破坏性读出：读出后，不会对原存储信息造成破坏</p>
+<h3 id="3-1-2-存储器的性能指标"><a href="#3-1-2-存储器的性能指标" class="headerlink" title="3.1.2 存储器的性能指标"></a>3.1.2 存储器的性能指标</h3><p>计算机追求的目标：大容量、低成本、高速度</p>
+<ul>
+<li><strong>存储容量</strong> &#x3D; 存储字数 * 字长</li>
+<li><strong>单位成本</strong> &#x3D; 总成本 &#x2F; 容量</li>
+<li><strong>存储速度</strong>：数据传输率 &#x3D; 数据宽度&#x2F;存储周期</li>
+</ul>
+<p>（1）<strong>存取时间</strong>：存储器启动到完成操作，分为读出时间和写入时间</p>
+<p>（2）<strong>存取周期（读写周期、访问周期）</strong>：存储器进行一次完整读写操作所需要的时间</p>
+<p>（3）<strong>主存带宽</strong>：数据传输率，每秒主存进出信息的最大数量</p>
+<h2 id="3-2-存储器的层次化结构"><a href="#3-2-存储器的层次化结构" class="headerlink" title="3.2 存储器的层次化结构"></a>3.2 存储器的层次化结构</h2><p>上面的为<strong>三级存储系统层级结构</strong>，下面的为<strong>多级存储器结构</strong>。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E5%8C%96%E7%BB%93%E6%9E%84.png" alt="image-20210805191706527"></p>
+<h2 id="3-3-半导体随机存储器"><a href="#3-3-半导体随机存储器" class="headerlink" title="3.3 半导体随机存储器"></a>3.3 半导体随机存储器</h2><p><em>RAM</em> 一般指随机存取存储器。随机存取存储器（英语：Random Access Memory，缩写：<em>RAM</em>）。</p>
+<h3 id="3-3-1-SRAM和DRAM"><a href="#3-3-1-SRAM和DRAM" class="headerlink" title="3.3.1 SRAM和DRAM"></a>3.3.1 SRAM和DRAM</h3><ul>
+<li><strong>SRAM静态随机存储器</strong></li>
+</ul>
+<ol>
+<li><p>使用双稳态触发器（六晶体管MOS）记忆信息</p>
+</li>
+<li><p>非破坏性读出，易失性存储器</p>
+</li>
+<li><p>存取速度快，集成度低，功耗大，成本高，常用来组成Cache</p>
+</li>
+<li><p>同时送行列地址</p>
+</li>
+</ol>
+<ul>
+<li><strong>DRAM动态随机存储器</strong></li>
+</ul>
+<ol>
+<li>利用电荷存储信息</li>
+<li>破坏性读出，易失性存储器</li>
+<li>存取速度慢，集成度高，功耗大，容量大，成本低，常用来组成主存系统</li>
+<li>分两次送行列地址</li>
+<li>刷新方法（DRAM特有）：刷新单位是行</li>
+</ol>
+<p>（1）集中刷新：在一个刷新周期内，利用一段固定的时间，依次对存储器的所有行进行逐一再生，在此期间停止对存储器的读写操作，称为”死时间“，又称访存”死区“。优点是读写操作时不收刷新工作影响；缺点是集中刷新期间（死区）不能访问存储器。</p>
+<p>（2）分散刷新：把对每行的刷新分散到各个工作期中，这种刷新方式增加了系统的刷新周期。优点是没有死区；缺点是加长了系统的存取周期，降低了整机的速度。</p>
+<p>（3）异步刷新：集中刷新和分散刷新结合，既缩短了死时间，又提高了整机速度。</p>
+<p>注意事项：①刷新对CPU是透明的，即刷新不依赖于外部的访问；②刷新的单位是行；③刷新操作类似于读操作，但有所不同。另外刷新不需要选片，即整个存储器的所有芯片同时刷新。</p>
+<ul>
+<li><strong>存储器芯片的内部结构</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84.png" alt="image-20210805193753050"></p>
+<ol>
+<li><strong>存储体（存储矩阵）</strong>：存储体是存储单元的集合，它由行选择线（X）和列选择线（Y）来选择访问单位，存储体的相同行、列上的位被同时读出或写入。</li>
+<li><strong>地址译码器：</strong>用来将地址转换为译码输出线上的高电平，以便驱动相应的读写电路。</li>
+<li><strong>I&#x2F;O控制电路：</strong>用以控制被选中的单元的读出或写入，具有放大信息的作用。</li>
+<li><strong>片选择信号：</strong>单个芯片容量太小，往往满足不了计算机对存储器容量的要求，因此要用一定数量的芯片进行存储器的扩展。在访问某个字时，必须”选中“该存储字所在的芯片，而其他芯片不被”选中“，因此需要有片选控制信号。</li>
+<li><strong>读&#x2F;写控制信号：</strong>根据CPU给出的是读命令还是写命令，控制被选中大暖进行读或写。</li>
+</ol>
+<ul>
+<li><strong>存储器的读写周期</strong></li>
+</ul>
+<ol>
+<li><strong>RAM读周期</strong>：存储芯片<strong>进行两次连续读操作时，必须间隔的时间</strong>，读周期总是大于等于读出时间</li>
+<li><strong>RAM写周期</strong>：数据总线上的信息<strong>能够可靠的写入存储器，必须间隔的时间</strong>。</li>
+</ol>
+<h3 id="3-3-2-只读存储器"><a href="#3-3-2-只读存储器" class="headerlink" title="3.3.2 只读存储器"></a>3.3.2 只读存储器</h3><ul>
+<li><strong>ROM特点</strong></li>
+</ul>
+<ol>
+<li>随机存取，非易失性存储器</li>
+<li>结构简单，位密度比可读写存储器高</li>
+</ol>
+<ul>
+<li><strong>ROM类型</strong></li>
+</ul>
+<ol>
+<li>掩模式只读存储器（MROM）：可靠性高，集成度高，价格便宜，但是灵活性差</li>
+<li>一次性可编程只读存储器（PROM）：写入内容无法修改</li>
+<li>可擦除可编程只读存储器（EPROM）：可以对内容进行多次改写，通过紫外线或电擦除</li>
+<li>闪速存储器（Flash Memory）：可长期保存信息，可重写，价格便宜，集成度高，擦写速度快。</li>
+<li>固态硬盘（SSD）：可以长期保存信息，快速擦除，重写，相对于传统硬盘，读写速度快，低功耗，但是价格高。</li>
+</ol>
+<h2 id="3-4-主存储器和CPU的连接"><a href="#3-4-主存储器和CPU的连接" class="headerlink" title="3.4 主存储器和CPU的连接"></a>3.4 主存储器和CPU的连接</h2><ul>
+<li><strong>连接原理</strong>：主存储器于CPU通过数据总线、地址总线、控制总线连接</li>
+</ul>
+<ol>
+<li>数据总线的位数与工作频率的乘积正比于数据传输率</li>
+<li>地址总线的位数决定了可寻址的最大内存空间</li>
+<li>控制总线（读&#x2F;写）指出了总线周期的类型和本次输入&#x2F;输出完成的时刻。</li>
+</ol>
+<ul>
+<li><strong>主存容量扩展</strong></li>
+</ul>
+<ol>
+<li><strong>位扩展：将多个存储芯片并联</strong>，增加存储字长，8片 8K x 1位 –&gt; 8K x 8 位</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%BD%8D%E6%89%A9%E5%B1%95.png" alt="image-20210805200912468"></p>
+<ol start="2">
+<li><strong>字扩展：多个存储芯片串联</strong>，增加存储字数量，4片 16K x 8位 –&gt; 64K x 8 位</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%AD%90%E6%89%A9%E5%B1%95.png" alt="image-20210805201045496"></p>
+<p>其中，CS 为片选信号，WE 为读写信号。</p>
+<ol start="3">
+<li><strong>字位同时扩展：增加存储字数量，增加存储字长</strong>，相当于并联与串联结合在一起</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%AD%97%E4%BD%8D%E5%90%8C%E6%97%B6%E6%89%A9%E5%B1%95.png" alt="image-20210805201225864"></p>
+<ul>
+<li><strong>存储芯片的地址分配和片选</strong></li>
+</ul>
+<ol>
+<li><strong>线选法</strong>：<br>（1）通过地址线直接对芯片进行选择，某地址线信息为0即为选中，假设有4片芯片，就需要4根地址线<br>（2）优点是不需要地址译码器线路简单<br>（3）缺点是地址空间不连续，不能充分利用系统存储空间，造成地址资源浪费</li>
+<li><strong>译码片选法</strong>：<br>（1）通过使用地址译码器对芯片进行选择，每一个芯片对应一个片选信号，8个芯片需要8个译码信号，此时可以使用3根地址线表示8个片选信<br>（2）优点是每片芯片的地址范围是唯一确定的，而且是连续的，也便于扩展<br>（3）缺点是对译码电路要求过高</li>
+</ol>
+<ul>
+<li><strong>存储器与CPU的连接</strong></li>
+</ul>
+<ol>
+<li><strong>合理选择存储芯片</strong></li>
+</ol>
+<p>（1）RAM为用户编程设置的</p>
+<p>（2）ROM存放系统程序</p>
+<ol start="2">
+<li><strong>地址线的选择</strong>：芯片容量不同，地址线不同</li>
+</ol>
+<p>（1）CPU地址线低位与存储芯片的地址线连接（片内寻址，字选）</p>
+<p>（2）CPU地址线高位用于扩展芯片使用（片选）</p>
+<ol start="3">
+<li><strong>数据线的选择</strong></li>
+</ol>
+<p>（1）CPU数据线数与存储芯片线数相等时可以直接连接</p>
+<p>（2）CPU数据线数与存储芯片线数不等时，必须对存储芯片进行扩位，使其相等</p>
+<ol start="4">
+<li><strong>读&#x2F;写命令线的连接</strong></li>
+</ol>
+<p>高电平为读，低电平为写</p>
+<ol start="5">
+<li><strong>片选线的连接</strong></li>
+</ol>
+<p>（1）片选线的作用在于选择哪一片存储芯片被选中，是CPU与存储芯片连接的关键。</p>
+<p>（2）片选有效信号与CPU访存控制信号有关，因为只有当CPU访存时，才要求选中存储芯片，若CPU访问I&#x2F;O，表示不要求存储器工作。</p>
+<h2 id="3-5-双端口RAM和多模块存储器"><a href="#3-5-双端口RAM和多模块存储器" class="headerlink" title="3.5 双端口RAM和多模块存储器"></a>3.5 双端口RAM和多模块存储器</h2><ul>
+<li><strong>目的</strong></li>
+</ul>
+<p>为了提高CPU访问存储器的速度采用双端口存储器（空间并行）、多模块存储器（时间并行）</p>
+<ul>
+<li><strong>双端口RAM</strong></li>
+</ul>
+<ol>
+<li>一个存储单元有左右两个独立端口，分别具有两组相互独立的地址线、数据线、读写控制线</li>
+<li>冲突情况：对于同一地址单元，两个端口同时写入数据；或者对于同一个地址单元，一个端口写，一个端口读。<strong>解决方法：置”忙“信号为0，由判断逻辑决定暂时关闭一个端口。</strong></li>
+<li>无冲突情况：对于同一个地址单元，两个端口同时读；或者对于同一个地质单元，两个端口不同时写。</li>
+</ol>
+<ul>
+<li><strong>多模块存储器</strong></li>
+</ul>
+<p>目的：为了提高访问速度。</p>
+<ol>
+<li><strong>单体多字存储器</strong></li>
+</ol>
+<p>（1）按照地址顺序读出数据，存储单元存储m个字，总线宽度也为m个字，一次性并行读出m个字。</p>
+<p>（2）优点：增大了存储器带宽，提高单体存储器工作速度</p>
+<p>（3）缺点：指令和数据在主存内必须是连续存放的</p>
+<ol start="2">
+<li><strong>多体并行存储器</strong></li>
+</ol>
+<p>（1）多个模块构成，每个模块有着相同的容量和存取速度，各模块既可并行工作也可交叉工作</p>
+<p>（2）<strong>高位交叉编制：高位地址表示体号，低位地址表示体内地址</strong>，把低位的体内地址送到由高位体号确定的模块内进行译码。</p>
+<p>访问一个连续主存块，总是先在一个模块内访问，等到该模块访问完才转到下一个模块访问（<strong>每个块内地址需要根据上一个的访问结果来确定</strong>），本质上仍然是顺序存储器，不能提高存储器的效率。</p>
+<p>（3）<strong>低位交叉编制：低位地址表示体号，高位地址表示体内地址</strong>，把高位的体内地址送到由低位体号确定的模块内进行译码。</p>
+<p>因为程序连续存放在相邻模块中，因此采用此编址方式的存储器为交叉存储器。可以在不改变每个模块的存取周期的前提下（<strong>块内地址已经提前知道</strong>），采用流水线的方式并行存储，可以提高存储器的带宽。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%A4%9A%E4%BD%93%E5%B9%B6%E8%A1%8C%E5%AD%98%E5%82%A8%E5%99%A8.png" alt="image-20210805203905400"></p>
+<h2 id="3-6-高速缓冲存储器"><a href="#3-6-高速缓冲存储器" class="headerlink" title="3.6 高速缓冲存储器"></a>3.6 高速缓冲存储器</h2><h3 id="3-6-1-程序访问的局部性原理"><a href="#3-6-1-程序访问的局部性原理" class="headerlink" title="3.6.1 程序访问的局部性原理"></a>3.6.1 程序访问的局部性原理</h3><ol>
+<li><strong>时间局部性：</strong>最近的将要使用的信息可能是现在正在使用的信息，因为程序中存在循环。</li>
+<li><strong>空间局部性：</strong>最近的将要使用的信息可能与正在使用的信息在存储空间上是邻近的，因为指令通常是顺序存放、顺序执行的，数据一般也是以向量、数组等形式簇聚在一起的。</li>
+</ol>
+<p>高速缓冲技术就是利用程序访问你的局部性原理，把程序中正在使用的部分存放在一个高速的、容量较小的Cache中，使CPU的访存操作大多数针对Cache进行，从而大大提高程序的执行速度。</p>
+<h3 id="3-6-2-Cache基本工作原理"><a href="#3-6-2-Cache基本工作原理" class="headerlink" title="3.6.2 Cache基本工作原理"></a>3.6.2 Cache基本工作原理</h3><ol>
+<li>通常使用SRAM制造</li>
+<li>Cache和主存都被划分为相等的块，Cache块又称Cache行，每块由若干字节组成，块的长度称为块长（Cache行长）。Cache中的块数远少于主存中的块数，仅存储主存中最为活跃的信息副本，按照某种策略将这些活跃的信息存入到Cache中。</li>
+<li>CPU发出读请求：<ul>
+<li>若访存地址在Cache中，命中：将访问地址转换成Cache地址，直接对Cache进行读操作</li>
+<li>若访存地址不在Cache中，不命中：CPU访问主存操作，并且将访问数据所在的块一次性送入到Cache中。若此时Cache已满，需根据某种替换算法，用这个块替换Cache中原来的某块信息。</li>
+</ul>
+</li>
+<li>CPU发出写请求：<ul>
+<li>若CPU命中，有可能遇到Cache与主存中的内容不一致的访问问题。需按照一定的写策略处理，常见的处理方法有全写法和写回法。</li>
+</ul>
+</li>
+</ol>
+<p>CPU与Cache直接交换数据的基本单位是字，Cache与主存之间交换数据的基本单位是Cache块。</p>
+<h3 id="3-6-3-Cache与主存的映射方式"><a href="#3-6-3-Cache与主存的映射方式" class="headerlink" title="3.6.3 Cache与主存的映射方式"></a>3.6.3 Cache与主存的映射方式</h3><p>按照一定的规则将主存中的某些数据存入到Cache中。</p>
+<ul>
+<li><strong>直接映射</strong></li>
+</ul>
+<ol>
+<li><p><strong>主要原理：</strong>主存数据块只能装入Cache中的唯一位置，若这个位置已有内容，则产生块冲突，原来的块将无条件被替换出去（无须使用替换算法）。</p>
+</li>
+<li><p><strong>优缺点：</strong>直接映射实现简单，但不够灵活，即使Cache的其他许多地址空着也不能占用，这使得直接映射的块冲突概率最高，空间利用率最低。</p>
+</li>
+<li><p><strong>映射关系：</strong>主存块在Cache中的<strong>位置 &#x3D; 主存块号 % Cache总块数</strong></p>
+</li>
+<li><p><strong>直接映射的访问地址结构为：标志  Cache行号  块内地址</strong></p>
+</li>
+<li><p><strong>CPU访存过程：</strong></p>
+</li>
+</ol>
+<p>首先根据访存地址（默认是主存地址）中间的c位（主存地址块号的低c位正好是Cache行号），找到对应的Cache行，将对应Cache行中的标记和主存地址的高t位进行比较，若相等且有效位为1，则访问Cache“命中”，此时根据主存地址中低位的块内地址，在对应的Cache行中存取信息；若不相等或者有效位为0，则“不命中”，此时CPU从主存中读出该地址所在的一块信息送到对应的Cache行中，将有效位置1，并将标记设置为地址中的高t位，同时将该地址中的内容送到CPU。</p>
+<ul>
+<li><strong>全相联映射</strong></li>
+</ul>
+<ol>
+<li><strong>主要原理：</strong>主存的每一块可以装入Cache中的任何位置，每行的标记用于指出该行取自主存的哪一块（主存地址），所以CPU访存时需要与所有Cache行的标记进行比较。</li>
+<li><strong>优缺点：</strong>全相联映射方式的优点是比较灵活，Cache块的冲突概率低，空间利用率高，命中率也高；缺点是标记的比较速度较慢，实现成本较高。</li>
+<li><strong>全相联映射的访问地址结构为：标记（主存块号）  块内地址</strong></li>
+</ol>
+<ul>
+<li><strong>组相联映射</strong></li>
+</ul>
+<ol>
+<li><strong>主要原理：</strong>将Cache空间分成大小相同的组，主存的一个数据块可以装入一组内的任何一个位置，即组间采取直接映射，而组内采取全相联映射。假设每组有r个Cache行，则称之为r路组相联映射。</li>
+<li><strong>映射关系：Cache行的组号 &#x3D; 主存的块号 % Cache的组数</strong></li>
+<li><strong>组相联映射的地址结构为：标记  组号  块内地址</strong></li>
+<li><strong>优缺点：</strong>路数越大，即每组Cache行的数量越大，发生块冲突的概率越低，但相联比较电路也越复杂。选定适当的数量，可使组相联映射的成本接近直接映射，而性能上仍接近全相联映射。</li>
+<li><strong>CPU访存过程：</strong></li>
+</ol>
+<p>首先根据访存地址中间的组号找到对应的Cache组；将对应Cache组中的每个行的标记与主存地址的高位标记进行比较；若有一个相等且有效位为1，则访问Cache命中，此时根据主存地址中的块内地址，在对应Cache行中存取信息；若不相等或者有效位为0，则不命中，此时CPU从主存中读出该地址所在的一块信息送到对应Cache组的任意一个空闲位中，将有效位置1，并设置标记，同时将该地址中的内容送到CPU。</p>
+<h3 id="3-6-4-Cache中的替换算法"><a href="#3-6-4-Cache中的替换算法" class="headerlink" title="3.6.4 Cache中的替换算法"></a>3.6.4 Cache中的替换算法</h3><ul>
+<li><strong>随机算法（RAND）</strong></li>
+</ul>
+<p>随机确定替换的Cache块。优点是实现简单，缺点是没有依据局部性原理，命中率低。</p>
+<ul>
+<li><strong>先进先出算法（FIFO）</strong></li>
+</ul>
+<p>选择最早调入的行进行替换。优点是实现简单，缺点是没有依据局部性原理，命中率低。</p>
+<ul>
+<li><strong>近期最少使用算法（LRU，Least Recently Used）</strong></li>
+</ul>
+<p>依据程序访问的局部性原理，选择近期内长久未访问过的Cache作为替换的行，平均命中率要比FIFO高，是堆栈类算法。</p>
+<ol>
+<li><strong>堆栈类算法：</strong>当一个新的进程访问某页面时，便将该页面号压入栈顶，其他的页面号往栈底移，如果内存不够，则将栈底的页面号移除。这样，栈顶始终是最新被访问的页面的编号，而栈底则是最近最久未访问的页面的页面号。</li>
+<li><strong>LRU算法实现：</strong>对每个Cache设置一个计数器，用计数值来记录主存块的使用情况（计数值代表未被访问的次数），并根据计数值选择淘汰某个块（计数值最大的淘汰），计数值的位数与Cache组大小有关，2路时有一位LRU位，4路时，有两位LRU位。</li>
+<li><strong>抖动：在更换页面时，如果更换页面是一个很快会被再次访问的页面，则再次缺页中断后又很快会发生新的缺页中断。整个系统的效率急剧下降——这种现象称为颠簸（抖动）</strong>。在这里指的是Cache反复加载和驱动Cache块相同的组。如访问块号序列为1 2 3 4 5 1 2 3 4 5，而路数为4，导致命中率为0。</li>
+</ol>
+<ul>
+<li><strong>最不经常使用算法（LFU，Least Frequently Used）</strong></li>
+</ul>
+<p>将一段时间内被访问次数最少的Cache行换出。</p>
+<ol>
+<li><strong>LFU算法实现</strong>：每行设置一个计数器，新行建立后从0开始计数，每访问一次，被访问的行计数器加1，需要替换时比较各特定行的计数值，将计数值最小的行换出。与LRU不同的是，此处是被访问行次数增加，换出计数值最小的行。</li>
+</ol>
+<h3 id="3-6-5-Cache写策略"><a href="#3-6-5-Cache写策略" class="headerlink" title="3.6.5 Cache写策略"></a>3.6.5 Cache写策略</h3><ul>
+<li><strong>写命中</strong></li>
+</ul>
+<ol>
+<li><strong>全写法（写直通法，write-through）：</strong>对Cache写命中后，数据同时写入Cache和主存。实现简单，随时保持主存数据正确性，但是增加了访存次数，降低了效率。</li>
+<li><strong>写回法（write-back）：</strong>对Cache命中时，只修改Cache内容，不立即写入主存，只有当此块被换出时才写回主存。减少了访存次数，但是存在数据不一致的隐患，每个Cache行必须设置一个标志位（脏位），以此放映此块是否被CPU修改过。</li>
+</ol>
+<ul>
+<li><strong>写不命中</strong></li>
+</ul>
+<ol>
+<li><strong>写分配法（write-allocate）：</strong>加载主存中的块到Cache中，然后更新Cache块。试图使用空间局部性原理，缺点是每次不命中都需要从Cache主存中读取一块。</li>
+<li><strong>非写分配法（not-write-allocate）：</strong>只写入主存，不进行调块。</li>
+</ol>
+<ul>
+<li><strong>多级Cache（通常为3级）</strong></li>
+</ul>
+<p>现代计算机通常设置多级Cache，按离CPU的远近可各自取名为L1 Cache，L2 Cache，L3 Cache，离CPU越远，访问速度越慢，容量越大。指令Cache与数据Cache分离一般在L1级，此时通常为写分配法与写回法合用。</p>
+<p>多级Cache由于访问速度仍然大于主存，可以有效避免频繁写时造成的写缓冲饱和溢出。</p>
+<h2 id="3-7-虚拟存储器"><a href="#3-7-虚拟存储器" class="headerlink" title="3.7 虚拟存储器"></a>3.7 虚拟存储器</h2><ul>
+<li><strong>基本概念</strong></li>
+</ul>
+<p>将主存或者辅存的地址空间统一编址，形成一个庞大的地址空间，在这个空间中，用户可以自由编程，而不必在乎实际的主存容量和程序在主存中实际的存放位置。</p>
+<p>用户编程允许涉及的地址称为<strong>虚地址或逻辑地址</strong>，虚地址对应的存储空间称为<strong>虚拟空间或程序空间</strong>。实际的主存单元地址称为<strong>实地址或物理地址</strong>，实地址对应的时主存地址空间，也称实地址空间。虚拟地址要比实地址大很多。</p>
+<p>CPU使用虚地址时，由辅助硬件找出虚地址和实地址之间的对应关系，并判断这个虚地址对应的存储单元内容是否已装入主存。若已在主存中，则通过地址变换，CPU可直接访问主存指示的实际单元；若不存在主存中，则把包含这个字的一页或一段调入主存后再由CPU访问。若主存已满，则采用替换算法置换主存中的一页或一段。</p>
+<p>实际物理地址存储中，需要使用的程序和数据先送入主存，暂时不用的放在磁盘中。</p>
+<h3 id="3-7-1-页式虚拟存储器"><a href="#3-7-1-页式虚拟存储器" class="headerlink" title="3.7.1 页式虚拟存储器"></a>3.7.1 页式虚拟存储器</h3><p>以页为基本单位的虚拟存储器称为页式虚拟存储器。</p>
+<ul>
+<li><strong>基本概念</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%B8%BB%E5%AD%98%E4%B8%AD%E7%9A%84%E9%A1%B5%E8%A1%A8%E7%A4%BA%E4%BE%8B.png" alt="image-20210816204353736"></p>
+<ol>
+<li><strong>有效位也称装入位</strong>，用来表示对应页面是否在主存，若为1，则表示该虚拟页已从外存调入主存，此时页表项存放该页的物理页号；若为0，则表示没有调入主存，此时页表项可以存放该页的磁盘地址。</li>
+<li><strong>脏位也称修改位</strong>，用来表示页面是否被修改过，虚存机制中采用回写策略（写回法），利用脏位可判断替换时是否需要写回磁盘。</li>
+<li><strong>引用位也称使用位</strong>，用来配合替换策略进行设置，例如是否实现最先调入(FIFO 位)或最近最少用(LRU位)策略等。</li>
+</ol>
+<ul>
+<li><strong>页式虚拟存储器的地址变换过程</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E9%A1%B5%E5%BC%8F%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E8%BF%87%E7%A8%8B.png" alt="image-20210816204621787"></p>
+<ol>
+<li>虚拟地址&#x3D;虚页号+页内地址</li>
+<li>虚页号+页表起始地址&#x3D;页表地址</li>
+<li>根据页表地址查找实页号</li>
+<li>实页号+页内地址&#x3D;实地址</li>
+</ol>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>页面长度固定，调入方便。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>由于程序不可能正好是页面的整数倍，最后一页的的零头浪费，并且页不是逻辑上的实体，对页的处理、保护、共享不是特别方便。</p>
+<h3 id="3-7-2-段式虚拟存储器"><a href="#3-7-2-段式虚拟存储器" class="headerlink" title="3.7.2 段式虚拟存储器"></a>3.7.2 段式虚拟存储器</h3><p>段式虚拟存储器中的段是按程序的逻辑结构划分的，各个段的长度因程序而异。</p>
+<ul>
+<li><strong>基本概念：</strong>装入位。</li>
+<li><strong>段式虚拟存储器的地址变换过程</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%AE%B5%E5%BC%8F%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E8%BF%87%E7%A8%8B.png" alt="image-20210816205105298"></p>
+<ol>
+<li>虚地址&#x3D;段号+段内地址</li>
+<li>段号+段表起始地址&#x3D;段表地址</li>
+<li>查询段表数据（段表项）</li>
+<li>实地址&#x3D;段表所得数据（段表项）+段内地址</li>
+</ol>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>段分界与程序分界相对应，易于编译、管理、修改、保护、共享。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>段长分配不便存在段间碎片。</p>
+<h3 id="3-7-3-段页式虚拟存储器"><a href="#3-7-3-段页式虚拟存储器" class="headerlink" title="3.7.3 段页式虚拟存储器"></a>3.7.3 段页式虚拟存储器</h3><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<ol>
+<li>先将程序按逻辑分段，再将每段分为固定大小页。</li>
+<li>每个程序对应一个段表，每段对应一个页表。段长必须是页的整数倍，段的起点必须是某一页的起点。</li>
+<li>虛地址&#x3D;段号+段内页号+页内地址。CPU根据虚地址访存时，首先根据段号得到段表地址，然后从段表中取出<strong>该段的页表起始地址</strong>，与虚地址段内页号合成，得到页表地址，最后从页表中取出实页号，与页内地址拼接形成主存实地址。</li>
+</ol>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>可以按段实现共享和保护，同时也有着页的调用方便。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>地址变换要两次查表，开销较大。</p>
+<h3 id="3-7-4-快表（TLB）"><a href="#3-7-4-快表（TLB）" class="headerlink" title="3.7.4 快表（TLB）"></a>3.7.4 快表（TLB）</h3><ul>
+<li><strong>基本思想</strong></li>
+</ul>
+<p>根据局部性原理，将一些经常访问的页表项放入高速缓冲器中构成快表，可以极大提高查询的效率。</p>
+<p>相应的在主存中的页表称为 慢表（Page）。</p>
+<ul>
+<li>通常采用全相联或组相联方式。</li>
+<li><strong>访问顺序：</strong>TLB –&gt; Page –&gt; Cache –&gt; 主存</li>
+<li><strong>具有TLB和Cache的多级存储系统</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%85%B7%E6%9C%89TLB%E5%92%8CCache%E7%9A%84%E5%A4%9A%E7%BA%A7%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.png" alt="image-20210816225429438"></p>
+<p>如图是一个具有TLB和Cache的多级存储系统，其中Cache采用二路组相联方式。CPU给出一个32位的虚拟地址，TLB采用全相联方式，每一项都有一个比较器。</p>
+<ol>
+<li>查找时将虚页号与每个TLB标记字段同时进行比较，若有某一项相等且对应有效位为1，则TLB命中，此时可直接通过TLB进行地址转换。</li>
+<li>若TLB未命中，则TLB缺失，需要访问主存去查页表。图<strong>中所示的是两级页表方式，虚页号被分成页目录索引和页表索引两部分</strong>，由这两部分得到对应的页表项，从而进行地址转换，并将相应表项调入TLB；若TLB已满，则还需要采用替换策略。</li>
+<li>完成由虚拟地址到物理地址的转换后，Cache 机构根据映射方式将物理地址划分成多个字段，然后根据映射规则找到对应的Cache行或组，将对应Cache 行中的标记与物理地址中的高位部分进行比较，若相等且对应有效位为1，则Cache命中，此时根据块内地址取出对应的字送CPU。</li>
+</ol>
+<p>PS：查找时，快表和慢表也可以同步进行，若快表中有此虚页号，则能很快地找到对应的实页号，并使慢表的查找作废，从而就能做到虽采用虚拟存储器但访问主存速度几乎没有下降。</p>
+<ul>
+<li><strong>TLB、Page、Cache三种缺失的可能组合</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/TLB%E3%80%81Page%E3%80%81Cache%E4%B8%89%E7%A7%8D%E7%BC%BA%E5%A4%B1%E7%9A%84%E5%8F%AF%E8%83%BD%E7%BB%84%E5%90%88.png" alt="image-20210816230008145"></p>
+<ul>
+<li><strong>带TLB的虚拟存储器的CPU访存过程</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img-blog.csdnimg.cn/20201227220250350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FpeGlhb2xvbmd0aGw=,size_16,color_FFFFFF,t_70" alt="带TLB的虚拟存储器的CPU访存过程"></p>
+<h2 id="3-8-虚拟存储器与Cache异同"><a href="#3-8-虚拟存储器与Cache异同" class="headerlink" title="3.8 虚拟存储器与Cache异同"></a>3.8 虚拟存储器与Cache异同</h2><ul>
+<li><strong>相同之处</strong></li>
+</ul>
+<ol>
+<li>目的都是为了提高系统性能</li>
+<li>数据分为小信息块，作为基本的传递单位</li>
+<li>都存在地址映射，替换算法，更新策略</li>
+<li>按照局部性原理，将活跃的数据放到高速部件中</li>
+</ol>
+<ul>
+<li><strong>不同之处</strong></li>
+</ul>
+<ol>
+<li>Cache解决系统速度问题；虚拟存储器解决主存容量问题</li>
+<li>Cache全部由硬件实现，是硬件存储器；虚拟存储器由OS和硬件共同实现，是逻辑上的存储器</li>
+<li>Cache对所有程序员透明；虚拟存储器对应用程序员透明，对系统程序员不透明</li>
+<li>虚拟存储器不命中对系统性能影响更大</li>
+<li>CPU只能与Cache和主存直接交互；虚拟存储器只能先将数据从硬盘调入主存，不能与CPU直接通信</li>
+</ol>
+<h1 id="4-指令系统"><a href="#4-指令系统" class="headerlink" title="4 指令系统"></a>4 指令系统</h1><h2 id="4-1-指令格式"><a href="#4-1-指令格式" class="headerlink" title="4.1 指令格式"></a>4.1 指令格式</h2><h3 id="4-1-1-指令的基本格式（操作码-地址码）"><a href="#4-1-1-指令的基本格式（操作码-地址码）" class="headerlink" title="4.1.1 指令的基本格式（操作码+地址码）"></a>4.1.1 指令的基本格式（操作码+地址码）</h3><ul>
+<li><strong>结构</strong></li>
+</ul>
+<ol>
+<li><strong>操作码：</strong>指出指令中应该执行什么性质的操作和具有何种功能</li>
+<li><strong>地址码：</strong>给出被操作的信息（指令或数据）的地址</li>
+</ol>
+<ul>
+<li><strong>长度</strong></li>
+</ul>
+<ol>
+<li><strong>单字长指令：</strong>长度等于机器字长</li>
+<li><strong>双字长指令：</strong>长度等于两倍机器字长</li>
+<li><strong>半字长指令：</strong>长度等于半个机器字长</li>
+</ol>
+<ul>
+<li><strong>根据操作数地址数目分类</strong></li>
+</ul>
+<ol>
+<li><strong>零地址指令：</strong>OP</li>
+</ol>
+<p>只有操作码OP，没有给出地址。</p>
+<p><strong>指令用途：</strong></p>
+<p>（1）空操作指令，停机指令，关中断指令</p>
+<p>（2）零地址的运算类指令仅使用在堆栈计算机中</p>
+<ol start="2">
+<li><strong>一地址指令：</strong>OP A1</li>
+</ol>
+<p><strong>指令用途：</strong></p>
+<p>（1）只有目的操作数的单操作指令，加1、减1、求反、求补</p>
+<p>（2）隐含约定目的地址的双操作数指令</p>
+<ol start="3">
+<li><strong>二地址指令：</strong>OP A1 A2</li>
+</ol>
+<p><strong>指令用途：</strong></p>
+<p>（1）算数和逻辑运算指令</p>
+<p>（2）往往需要两个操作数,分别给出目的操作数和源操作数地址，目的操作数地址还用于保存本次的运算结果</p>
+<ol start="4">
+<li><strong>三地址指令：</strong>OP A1 A2 A3（结果）</li>
+</ol>
+<p><strong>指令用途：</strong>算术和逻辑运算指令,相对于二地址指令,结果直接存放在A3中</p>
+<p><strong>需要访问4次存储器：</strong>取指令( 1次)、取两个操作数 ( 2次)、存放结果(1次)</p>
+<ol start="5">
+<li><strong>四地址指令：</strong>OP A1 A2 A3（结果） A4（下址）</li>
+</ol>
+<p><strong>指令用途：</strong>算术和逻辑运算指令，相对于三地址指令多了下一条执行命令的地址( A4 )</p>
+<h3 id="4-1-2-定长操作码指令格式"><a href="#4-1-2-定长操作码指令格式" class="headerlink" title="4.1.2 定长操作码指令格式"></a>4.1.2 定长操作码指令格式</h3><ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>定长操作码对于简化计算机硬件设计，提高指令译码和识别速度很有利</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>指令数量增加时会占用更多固定位，初始表示操作数地址的位数受限</p>
+<h3 id="4-1-3-扩展操作码指令格式（变长）"><a href="#4-1-3-扩展操作码指令格式（变长）" class="headerlink" title="4.1.3 扩展操作码指令格式（变长）"></a>4.1.3 扩展操作码指令格式（变长）</h3><ul>
+<li><strong>实现</strong></li>
+</ul>
+<p>全部指令的操作码字段位数不固定，分散在指令字的不同位置上</p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>丰富了指令的种类</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>增加了指令译码和分析难度，控制器设计变的复杂</p>
+<p>PS：短码不能是长码的前缀；指令操作码不能重复。</p>
+<h2 id="4-2-指令寻址方式"><a href="#4-2-指令寻址方式" class="headerlink" title="4.2 指令寻址方式"></a>4.2 指令寻址方式</h2><h3 id="4-2-1-指令寻址和数据寻址"><a href="#4-2-1-指令寻址和数据寻址" class="headerlink" title="4.2.1 指令寻址和数据寻址"></a>4.2.1 指令寻址和数据寻址</h3><ul>
+<li><strong>指令寻址</strong></li>
+</ul>
+<ol>
+<li><strong>顺序寻址：</strong>通过程序计数器( PC )加1，自动生成下一条指令的地址</li>
+<li><strong>跳跃寻址：</strong>跳跃的结果是当前指令修改pc值</li>
+</ol>
+<p>（1）<strong>绝对地址：</strong>由标记符直接得到</p>
+<p>（2）<strong>相对地址：</strong>相对于当前指地址的偏移量，</p>
+<h3 id="4-2-2-常见的数据寻址方式"><a href="#4-2-2-常见的数据寻址方式" class="headerlink" title="4.2.2 常见的数据寻址方式"></a>4.2.2 常见的数据寻址方式</h3><ul>
+<li><strong>隐含寻址：</strong>不访存</li>
+</ul>
+<p>不显式的给出操作数地址,在指令中隐含操作数地址。如累加器（ACC）对单地址指令格式来说就是隐含地址。</p>
+<p><strong>优点：</strong>有利于缩短指令字长</p>
+<p><strong>缺点：</strong>增加存储操作数或隐含地址的硬件</p>
+<ul>
+<li><strong>立即（数）寻址：</strong>不访存</li>
+</ul>
+<p>地址字段给出的不是操作数的地址，而是操作数本身，又称为立即数。</p>
+<p><strong>优点：</strong>不需要访问主存，指令执行时间最短。</p>
+<p><strong>缺点：</strong>位数限制了立即数的范围</p>
+<ul>
+<li><strong>直接寻址：</strong>访存1次</li>
+</ul>
+<p>指令字中的形式地址就是真实地址。</p>
+<p><strong>优点：</strong>访问一次主存，不需要专门计算操作数的地址。</p>
+<p><strong>缺点：</strong>形式地址的位数限制了寻址范围，操作数地址不易修改。</p>
+<ul>
+<li><strong>间接寻址：</strong>一般问到扩大寻址范围，通常指寄存器间接寻址，访存多次( 具体看几次间接寻址)</li>
+</ul>
+<p>指令的地址字段给出存储地址信息的地址（类似于嵌套访存）。</p>
+<p><strong>优点：</strong>扩大了寻址范围，方便编制程序。</p>
+<p><strong>缺点：</strong>需要多次访存,访问速度过慢,这种寻址方式不是特别常用。</p>
+<ul>
+<li><strong>寄存器寻址：</strong>不访存</li>
+</ul>
+<p>指令字中直接给出操作数所在的寄存器编号。</p>
+<p><strong>优点：</strong>不访问主存，执行速度快，支持向量&#x2F;矩阵运算</p>
+<p><strong>缺点：</strong>寄存器价格高昂，寄存器中的寄存器个数有限</p>
+<ul>
+<li><strong>寄存器间接寻址：</strong>访存多次（具体看几次间接寻址）</li>
+</ul>
+<p>寄存器间接寻址是指在寄存器中给出的不是一个操作数，而是操作数所在主存单元的地址。</p>
+<p><strong>特点：</strong>与一般间接寻址相比速度更快，但指令的执行阶段需要访问主存(因为操作数在主存中)。</p>
+<ul>
+<li><strong>相对寻址：</strong>访存1次</li>
+</ul>
+<p>相对寻址是把程序计数器(PC)的内容加上指令格式中的形式地址A（当前指令地址的位移量）而形成操作数的有效地址。</p>
+<p><strong>优点：</strong>操作数的地址不是固定的，它随PC值的变化而变化，且与指令地址之间总是相差-一个固定值，因此便于程序浮动。相对寻址广泛应用于转移指令。</p>
+<ul>
+<li><strong>基址寻址：</strong>访存1次</li>
+</ul>
+<p>基址寻址是指将CPU中基址寄存器(BR) 的内容加上指令格式中的形式地址A，而形成操<br>作数的有效地址，即EA&#x3D; (BR)+ A，其中基址寄存器既可采用专用寄存器，又可采用通用寄存。</p>
+<p><strong>基址寄存器是面向操作系统的</strong>，其内容由操作系统或管理程序确定，主要用于解决程序逻辑空间与存储器物理空间的无关性。<strong>在程序执行过程中，基址寄存器的内容不变(作为基地址)，形式地址可变(作为偏移量)。</strong>采用通用寄存器作为基址寄存器时，可由用户决定哪个寄存器作为基址寄存器，但其内容仍由操作系统确定。</p>
+<p><strong>优点：</strong>可扩大寻址范围(基址寄存器的位数大于形式地址A的位数)；用户不必考虑自己的程序存于主存的哪个空间区城，因此有利于多道程序设计，并可用于编制浮动程序。</p>
+<p><strong>缺点：</strong>形式地址A的位数较短。</p>
+<ul>
+<li><strong>变址寻址：</strong>访存1次</li>
+</ul>
+<p>变址寻址是指有效地址EA等于指令字中的形式地址A与变址寄存器 IX 的内容之和，即<br>EA&#x3D; (IX)+ A，其中IX为变址寄存器(专用)，也可用通用寄存器作为变址寄存器。</p>
+<p><strong>变址寄存器是面向用户的，在程序执行过程中，变址寄存器的内容可由用户改变(作为偏移量),形式地址A不变(作为基地址)。</strong></p>
+<p><strong>优点：</strong>可扩大寻址范围（变址寄存器的位数大于形式地址A的位数）；在数组处理过程中，可设定A为数组的首地址，不断改变变址寄存器 IX 的内容，便可很容易形成数组中任一数据的地址， 特别适合编制循环程序。偏移量(变址寄存器IX)的位数足以表示整个存储空间。</p>
+<ul>
+<li><strong>堆栈寻址：</strong>硬堆栈不访存，软堆栈访存1次</li>
+</ul>
+<p>堆栈是存储器(或专用寄存器组)中一块特定的、按后进先出(LIFO)原则管理的存储区，该存储区中读&#x2F;写单元的地址是用-一个特定的寄存器给出的，该寄存器称为堆栈指针(SP)。</p>
+<ol>
+<li><p>寄存器堆栈又称硬堆栈。寄存器堆栈的成本较高，不适合做大容量的堆栈；</p>
+</li>
+<li><p>从主存中划出一段区域来做堆栈是最合算且最常用的方法，这种堆栈称为软堆栈。</p>
+</li>
+</ol>
+<p>在采用堆栈结构的计算机系统中，大部分指令表面上都表现为无操作数指令的形式，因为操作数地址都隐含使用了SP。 通常情况下，在读&#x2F;写堆栈中的一个单元的前后都伴有自动完成对SP内容的增量或减量操作。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E3%80%81%E6%9C%89%E6%95%88%E5%9C%B0%E5%9D%80%E5%8F%8A%E8%AE%BF%E5%AD%98%E6%AC%A1%E6%95%B0.png" alt="image-20210817170000941"></p>
+<h3 id="4-2-3-X86汇编指令入门"><a href="#4-2-3-X86汇编指令入门" class="headerlink" title="4.2.3 X86汇编指令入门"></a>4.2.3 X86汇编指令入门</h3><ul>
+<li><strong>相关寄存器</strong></li>
+</ul>
+<p>X86处理器中有8个32位的通用寄存器，各寄存器及说明如图所示。为了向后兼容，EAX、EBX、ECX和EDX的高两位字节和低两位字节可以独立使用，E为Extended,表示32<br>位的寄存器。例如，EAX的低两位字节称为AX,而AX的高低字节又可分别作为两个8位寄存器，分别称为AH和AL。寄存器的名称与大小写无关，既可以用EAX，又可以用eax。除EBP和ESP外，其他几个寄存器的用途是比较任意的。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/X86%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E4%B8%BB%E8%A6%81%E5%AF%84%E5%AD%98%E5%99%A8.png" alt="image-20210817181758333"></p>
+<ul>
+<li><strong>寻址方式和内存分配</strong></li>
+</ul>
+<ol>
+<li><strong>寻址模式</strong></li>
+</ol>
+<p>X86提供了一种灵活的内存寻址方式，这里以mov指令为例。mov用于在内存和寄存器之间移动数据，它有两个参数：第一个是目的地址，第二个是源地址。</p>
+<p>汇编程序中常见的方式：</p>
+<pre class="line-numbers language-none"><code class="language-none">mov eax, [ebx]			;将ebx值指示的内存地址中的4字节传送到eax
+mov [var], ebx			;将ebx值传送到var的值指示的内存地址中
+mov eax, [esi-4]		;将esi-4值指示的内容地址中的4字节传送到eax
+mov [esi+eax], c1		;将C1值传送到esi+eax值指示的内存地址中
+mov edx, [esi+4*ebxJ	;将esi+4*ebx值指示的内存中的4字节传送到edx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最多只能利用两个32位寄存器和一个32位的有符号常数<strong>相加</strong>计算出一个内存地址。</p>
+<ol start="2">
+<li><strong>数据类型长度规定</strong></li>
+</ol>
+<p>在汇编语言中声明内存大小时，一般显式地使用 DB (字母D表示Data，字母B表示<br>Byte)、DW (字母W表示Word，2Bytes) 和DD (第二个字母D表示Double Word，4Bytes)，这样就能很好地指导编译器分配内存空间。</p>
+<p>对于 mov  [ebx], 2; 若无特殊标识，则不确定常数2是单字节、双字节还是双字。</p>
+<p>对于这种情况，X86提供了三个指示规则标记，分别为BYTE PTR、WORD PTR和DWORD PTR，如将上例写成</p>
+<pre class="line-numbers language-none"><code class="language-none">mov byte ptr [ebx], 2		;将2以单字节形式传送到ebx值指示的内存地址中
+mov word ptr [ebx], 2		;将2以双字节形式传送到ebx值指示的内存地址中
+mov dword ptr [ebx], 2		;将2以四字节形式传送到ebx值指示的内存地址中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>常用指令</strong></li>
+</ul>
+<p>汇编指令通常可以分为数据传送指令、逻辑计算指令和控制流指令，以下用于操作数的标记分别表示寄存器、内存和常数：&lt;reg&gt;表示任意寄存器，其后数字代表其位数；&lt;mem&gt;表示内存地址；&lt;con&gt;表示8位、16位或32位常数。</p>
+<ol>
+<li><strong>数据传送指令</strong></li>
+</ol>
+<p><strong>mov指令</strong></p>
+<p>mov指令将第二个操作数(寄存器的内容、内存中的内容或常数值)复制到第一个操作数(寄存器或内存)。但不能用于直接从内存复制到内存，其语法如下：</p>
+<pre class="line-numbers language-mov" data-language="mov"><div class="caption"><span><reg>, <reg></span></div><code class="language-mov">mov &lt;reg&gt;,&lt;mem&gt;
+mov &lt;mem&gt;,&lt;reg&gt;
+mov &lt;reg&gt;,&lt;con&gt;
+mov &lt;mem&gt;,&lt;con&gt;
+举例:
+mov eax, ebx			;将ebx值复制到eax
+mov byte ptr [var], 5	;将5保存到var值指示的内存地址的-字节中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>push指令</strong></p>
+<p>push指令将操作数压入内存的栈，常用于函数调用。ESP是栈顶，压栈前先将ESP值减4<br>(<strong>栈增长方向与内存地址增长方向相反</strong>)，然后将操作数压入ESP指示的地址。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">push &lt;reg32&gt;
+push &lt;mem&gt;
+push &lt;con32&gt;
+举例(注意，栈中元素固定为32位):
+push eax			;将eax值压栈
+push [var]			;将var值指示的内存地址的4字节值压栈<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>pop指令</strong></p>
+<p>与push指令相反，pop指令执行的是出栈工作，出栈前先将ESP 指示的地址中的内容出<br>栈，然后将ESP值加4。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">pop edi			;弹出栈顶元素送到edi
+pop [ebx]		;弹出栈顶元素送到ebx值指示的内存地址的4字节中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li><strong>算数和逻辑运算指令</strong></li>
+</ol>
+<p><strong>add&#x2F;sub指令</strong></p>
+<p>add指令将两个操作数相加，相加的结果保存到第一个操作数中。sub 指令用于两个操作数相减，相减的结果保存到第-一个操作数中。它们的语法格式类似，语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">add &lt;reg&gt;,&lt;reg&gt; &#x2F; sub &lt;reg&gt;,&lt;reg&gt;
+add &lt;reg&gt;,&lt;mem&gt; &#x2F; sub &lt;reg&gt;, &lt;mem&gt;
+add &lt;mem&gt;,&lt;reg&gt; &#x2F; sub &lt;mem&gt;, &lt;reg&gt;
+add &lt;reg&gt;,&lt;con&gt; &#x2F; sub &lt;reg&gt;,&lt;con&gt;
+add &lt;mem&gt;,&lt;con&gt; &#x2F; sub &lt;mem&gt;, ccon&gt;.
+举例:
+sub eax, 10					;eax ⬅ eax-10
+add byte ptr [var], 10		;10与var值指示的内存地址的一字节值相加，并将结果
+							;保存在var值指示的内存地址字节中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>inc&#x2F;dec指令</strong></p>
+<p>inc、dec 指令分别表示将操作数自加1、自减1，其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">inc &lt;reg&gt; &#x2F; dec. &lt;reg&gt;
+inc &lt;mem&gt; &#x2F; dec &lt;mem&gt;
+举例:
+dec eax				;eax值自减1
+inc dword ptr [var]	;var值指示的内存地址的4字节值自加1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>imul指令</strong></p>
+<p>带符号整数乘法指令，它有两种格式：①两个操作数，将两个操作数相乘，并将结果保存在第一个操作数中，第一个操作数必须为寄存器；②三个操作数，将第二个和第三个操作数相乘，并将结果保存在第一-个操作数中， 第一个操作数必须为寄存器。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">imul &lt;reg32&gt;,&lt;reg32&gt;
+imul &lt;reg32&gt;,&lt;mem&gt;
+imul &lt;reg32&gt;,&lt;reg32&gt;,&lt;con&gt;。
+imul &lt;reg32&gt;,&lt;mem&gt;,&lt;con&gt;
+举例:
+imul eax, [var]			;eax ⬅ eax * [var]
+imul esi, edi, 25		;esi ⬅ edi * 25<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>乘法操作结果可能溢出，则编译器置溢出标志OF&#x3D;1，以使CPU调出溢出异常处理程序。</p>
+<p><strong>idiv指令</strong></p>
+<p>idiv是带符号整数除法指令，它只有一-个操作数，即除数，而被除数则为edx:eax 中的内容(64位整数)，操作结果有两部分：商和余数，商送到eax，余数则送到edx。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">idiv &lt;reg32&gt;
+idiv &lt;mem&gt;
+举例:
+idiv ebx
+idiv dword ptr [var]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>and&#x2F;or&#x2F;xor指令</strong></p>
+<p>and、or、xor 指令分别是逻辑与、逻辑或、逻辑异或操作指令，用于操作数的位操作，操作结果放在第一个操作数中。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">and &lt;reg&gt;,&lt;reg&gt; &#x2F; or &lt;reg&gt;,&lt;reg&gt; &#x2F; xor &lt;reg&gt;,&lt;reg&gt;
+and &lt;reg&gt;,&lt;mem&gt; &#x2F; or &lt;reg&gt;,&lt;mem&gt; &#x2F; xor &lt;reg&gt;,&lt;mem&gt;
+and &lt;mem&gt;,&lt;reg&gt; &#x2F; or &lt;mem&gt;,&lt;reg&gt; &#x2F; xor &lt;mem&gt;,&lt;reg&gt;
+and &lt;reg&gt;,&lt;con&gt; &#x2F; or &lt;reg&gt;,&lt;con&gt; &#x2F; xor &lt;reg&gt;,&lt;con&gt;
+and &lt;mem&gt;,&lt;con&gt; &#x2F; or &lt;mem&gt;,&lt;con&gt; &#x2F; xor &lt;mem&gt;,&lt;con&gt;
+举例:
+and eax, 0fH		;将eax中的前28位全部置为0，最后4位保持不变
+xor edx, edx		;置edx中的内容为0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>not指令</strong></p>
+<p>not指令是位翻转指令，将操作数中的每-位翻转， 即0➡1、 1➡0.其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">not &lt;reg&gt;
+not &lt;mem&gt;
+举例:
+not byte ptr [var]		;将var值指示的内存地址的一字节的所有位翻转<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>shl&#x2F;shr指令</strong></p>
+<p>shl、shr 是逻辑移位指令，shl 为逻辑左移，shr为逻辑右移，第一个操作数表示被操作数，第二个操作数指示移位的位数。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">sh1 &lt;reg&gt;,&lt;con8&gt; &#x2F; shr &lt;reg&gt;,&lt;con8&gt;
+shl &lt;mem&gt;,&lt;con8&gt; &#x2F; shr &lt;mem&gt;,&lt;con8&gt;
+shl &lt;reg&gt;,&lt;c1&gt; &#x2F; shr &lt;reg&gt;,&lt;cl&gt;
+shl &lt;mem&gt;,&lt;cl&gt; &#x2F; shr &lt;mem&gt;,&lt;cl&gt;
+举例:
+shl eax, 1			;将eax值左移1位，相当于乘以2
+shr ebx, cl			;将ebx值右移n位(n为cl中的值)，相当于除以2^n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><strong>控制流指令</strong></li>
+</ol>
+<p>X86处理器维持着一个指示当前执行指令的指令指针(IP)，当一条指令执行后，此指针自<br>动指向下一条指令。IP寄存器不能直接操作，但可以用控制流指令更新。通常用标签(label)指示程序中的指令地址，在X86汇编代码中，可在任何指令前加入标签。例如，</p>
+<pre class="line-numbers language-none"><code class="language-none">		mov esi, [ebp+8]
+begin:	xor ecx, ecx
+		mov eax, [esi]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这样就用begin指示了第二条指令，控制流指令通过标签就可以实现程序指令的跳转。</p>
+<p><strong>jmp指令</strong></p>
+<p>jmp指令控制IP转移到label所指示的地址(从label中取出指令执行)。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">jmp &lt;label&gt;
+举例:
+jmp begin			;转跳到begin标记的指令执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>jcondition指令</strong></p>
+<p>条件转移指令，它依据处理机状态字中的一系列条件状态转移。处理机状态字中包括指示最后一个算术运算结果是否为0，运算结果是否为负数等。其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">je &lt;labe1&gt; (jump when equal)
+jne &lt;labe1&gt; (jump when not equa1)
+jz &lt;label&gt; (Jump when last result was zero)
+jg &lt;label&gt; (jump when greater than)
+jge &lt;labe1&gt; (jump when greater than or equal to)
+j1 &lt;label&gt; (jump when less than)
+jle &lt;labe1&gt; (jump when less than or, equal to)
+举例:
+cmp eax, ebx
+jle done	;如果eax的值小于等于ebx值，跳转到done指示的指令执行，否则执行下一
+			;条指令。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>cmp指令</strong></p>
+<p>cmp指令用于比较两个操作数的值，并根据比较结果设置处理机状态字中的条件码，其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">cmp &lt;reg&gt;,&lt;reg&gt;
+cmp &lt;reg&gt;,&lt;mem&gt;
+cmp &lt;mem&gt;,&lt;reg&gt;
+cmp &lt;reg&gt;,&lt;con&gt;
+cmp指令通常和jcondition指令搭配使用，举例:
+cmp dword ptr [var], 10
+jne 1oop			;如果var指示的内存地址的4字节内容等于10,则继续执行下一条指					 ;令；否则跳转到1oop指示的指令执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>call&#x2F;ret指令</strong></p>
+<p>call和ret这两条指令分别实现子程序(过程、函数等)的调用及返回。<strong>call 指令首先将当</strong><br><strong>前执行指令地址入栈，然后无条件转移到由标签指示的指令。</strong>与其他简单的跳转指令不同，call指令保存调用之前的地址信息(当call 指令结束后，返回调用之前的地址)。<strong>ret 指令实现子程序的返回机制，ret 指令弹出栈中保存的指令地址，然后无条件转移到保存的指令地址执行。</strong>call和ret是函数调用中最关键的两条指令，其语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">cal1 &lt;label&gt;
+ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="4-3-CISC-和-RISC"><a href="#4-3-CISC-和-RISC" class="headerlink" title="4.3 CISC 和 RISC"></a>4.3 CISC 和 RISC</h2><h3 id="4-3-1-复杂指令系统计算机（CISC）"><a href="#4-3-1-复杂指令系统计算机（CISC）" class="headerlink" title="4.3.1 复杂指令系统计算机（CISC）"></a>4.3.1 复杂指令系统计算机（CISC）</h3><ul>
+<li><strong>CISC主要特点</strong></li>
+</ul>
+<ol>
+<li>指令系统复杂庞大，指令数目一般为200条以上。</li>
+<li>指令的长度不固定，指令格式多，寻址方式多。</li>
+<li>可以访存的指令不受限制。</li>
+<li>各种指令使用频度相差很大。</li>
+<li>各种指令执行时间相差很大，大多数指令需多个时钟周期才能完成。</li>
+<li>控制器大多数采用微程序控制。有些指令非常复杂，以至于无法采用硬布线控制</li>
+<li>难以用优化编译生成高效的目标代码程序。</li>
+</ol>
+<h3 id="4-3-2-精简指令系统计算机（RISC）"><a href="#4-3-2-精简指令系统计算机（RISC）" class="headerlink" title="4.3.2 精简指令系统计算机（RISC）"></a>4.3.2 精简指令系统计算机（RISC）</h3><ul>
+<li><strong>RISC主要特点</strong></li>
+</ul>
+<ol>
+<li>选取使用频率较高的一些简单指令，复杂指令的功能由简单指令的组合来实现。</li>
+<li>指令长度固定，指令格式种类少，寻址方式种类少。</li>
+<li>只有Load&#x2F;Store (取数&#x2F;存数)指令访存，其余指令的操作都在寄存器之间进行。</li>
+<li>CPU中通用寄存器的数量相当多。</li>
+<li>RISC 一定采用指令流水线技术，大部分指令在一个时钟周期内完成。</li>
+<li>以硬布线控制为主，不用或少用微程序控制。</li>
+<li>特别重视编译优化工作，以减少程序执行时间。</li>
+</ol>
+<h3 id="4-3-3-CISC和RISC的比较"><a href="#4-3-3-CISC和RISC的比较" class="headerlink" title="4.3.3 CISC和RISC的比较"></a>4.3.3 CISC和RISC的比较</h3><p>和CISC相比，RISC 的优点主要体现在以下几点：</p>
+<ol>
+<li><strong>RISC更能充分利用CPU芯片的面积。</strong>CISC 的控制器大多采用微程序控制，其控制存<br>储器在CPU芯片内所占的面积达50%以上，而RISC控制器采用组合逻辑控制，其硬布线逻辑只占CPU芯片面积的10%左右。</li>
+<li><strong>RISC更能提高运算速度。</strong>RISC 的指令数、寻址方式和指令格式种类少，又设有多个通用寄存器，采用流水线技术，所以运算速度更快，大多数指令在一个时钟周期内完成。</li>
+<li><strong>RISC便于设计，可降低成本，提高可靠性。</strong>RISC指令系统简单，因此机器设计周期<br>短；其逻辑简单，因此可靠性高。</li>
+<li><strong>RISC有利于编译程序代码优化。</strong>RISC指令类型少，寻址方式少，使编译程序容易选择更有效的指令和寻址方式，并适当地调整指令顺序，使得代码执行更高效化。</li>
+</ol>
+<ul>
+<li><strong>CISC和RISC对比</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>对比项目</th>
+<th>CISC</th>
+<th>RISC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>指令系统</td>
+<td>复杂，庞大</td>
+<td>简单，精简</td>
+</tr>
+<tr>
+<td>指令数目</td>
+<td>一般不大于200条</td>
+<td>一般小于100条</td>
+</tr>
+<tr>
+<td>指令字长</td>
+<td>不固定</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>可访存指令</td>
+<td>不加限制</td>
+<td>只有Load&#x2F;Store指令</td>
+</tr>
+<tr>
+<td>各种指令执行时间</td>
+<td>相差较大</td>
+<td>绝大多数在一个周期内完成</td>
+</tr>
+<tr>
+<td>各种指令使用频度</td>
+<td>相差很大</td>
+<td>都比较常用</td>
+</tr>
+<tr>
+<td>通用寄存器数量</td>
+<td>较少</td>
+<td>多</td>
+</tr>
+<tr>
+<td>目标代码</td>
+<td>难以用优化编译生成高效的目标代码程序</td>
+<td>采用优化的便宜程序，生成代码较为高效</td>
+</tr>
+<tr>
+<td>控制方式</td>
+<td>绝大多数为微程序控制</td>
+<td>绝大多数为组合逻辑控制</td>
+</tr>
+<tr>
+<td>指令流水线</td>
+<td>可以通过一定方式实现</td>
+<td>必须实现</td>
+</tr>
+</tbody></table>
+<h1 id="5-中央处理器"><a href="#5-中央处理器" class="headerlink" title="5 中央处理器"></a>5 中央处理器</h1><h2 id="5-1-CPU的功能和基本结构"><a href="#5-1-CPU的功能和基本结构" class="headerlink" title="5.1 CPU的功能和基本结构"></a>5.1 CPU的功能和基本结构</h2><h3 id="5-1-1-CPU的功能"><a href="#5-1-1-CPU的功能" class="headerlink" title="5.1.1 CPU的功能"></a>5.1.1 CPU的功能</h3><ul>
+<li><strong>组成</strong></li>
+</ul>
+<ol>
+<li><strong>控制器</strong></li>
+</ol>
+<p>协调并控制计算机各部件执行程序的指令序列，包括取指令，分析指令，执行指令。</p>
+<ol start="2">
+<li><strong>运算器：</strong>对数据进行加工。</li>
+</ol>
+<ul>
+<li><strong>具体功能</strong></li>
+</ul>
+<ol>
+<li><strong>指令控制：</strong>完成取指令、分析指令和执行指令的操作，即程序的顺序控制。</li>
+<li><strong>操作控制：</strong>一条指令的功能往往由若干操作信号的组合来实现，CPU可以管理这些信号。</li>
+<li><strong>时间控制：</strong>对各种操作加以时间上的控制，时间控制要为每条指令按时间顺序提供应有的控制信号。</li>
+<li><strong>数据加工：</strong>对数据进行算术和逻辑运算。</li>
+<li><strong>中断处理：</strong>对计算机运行过程中出现的异常情况和特殊请求进行处理。</li>
+</ol>
+<h3 id="5-1-2-CPU的基本结构"><a href="#5-1-2-CPU的基本结构" class="headerlink" title="5.1.2 CPU的基本结构"></a>5.1.2 CPU的基本结构</h3><ul>
+<li><strong>运算器</strong></li>
+</ul>
+<ol>
+<li><p><strong>算术逻辑单元：</strong>主要功能是进行算术&#x2F;逻辑运算。</p>
+</li>
+<li><p><strong>暂存寄存器：</strong>用于暂存从主存读来的数据，暂存寄存器对应用程序员是透明的。</p>
+</li>
+<li><p><strong>累加寄存器：</strong>它是一个通用寄存器，用于暂时存放ALU运算的结果信息，可以作为加法运算的一个输入端。</p>
+</li>
+<li><p><strong>通用寄存器组：</strong>用于存放操作数(源、目的操作数及中间结果)和各种地址信息等。</p>
+</li>
+<li><p><strong>程序状态字寄存器：</strong>保留由算术逻辑运算指令或测试指令的结果而建立的各种状态信息。例如：溢出标志(OF)、符号标志(SF)、零标志(ZF)、进位标志(CF)。</p>
+</li>
+<li><p><strong>移位器：</strong>对操作数和运算结果进行移位运算。</p>
+</li>
+<li><p><strong>计数器：</strong>控制乘除运算的操作步数。</p>
+</li>
+</ol>
+<ul>
+<li><strong>控制器</strong></li>
+</ul>
+<ol>
+<li><strong>程序计数器(pc)：</strong>用于指出下一条指令在主存中的存放地址。</li>
+<li><strong>指令寄存器：</strong>用于保存当前正在执行的指令。</li>
+<li><strong>指令译码器：</strong>仅对操作码字段进行译码，向控制器提供特定的操作信号。</li>
+<li><strong>存储器地址寄存器：</strong>用于存放所要访问的主存单元的地址。</li>
+<li><strong>存储器数据寄存器：</strong>用于存放向主存写入的信息或者从主存中读出的信息。</li>
+<li><strong>时序系统：</strong>用于产生各种时序信号，他们由统一时钟( CLOCK)分频得到。</li>
+<li><strong>微操作信号发生器：</strong>根据IR的内容(指令)、PSW的内容以及时序信号，产生控制整个计算机系统所需要的信号。</li>
+</ol>
+<h2 id="5-2-指令执行过程"><a href="#5-2-指令执行过程" class="headerlink" title="5.2 指令执行过程"></a>5.2 指令执行过程</h2><h3 id="5-2-1-指令周期"><a href="#5-2-1-指令周期" class="headerlink" title="5.2.1 指令周期"></a>5.2.1 指令周期</h3><ul>
+<li><strong>概念</strong></li>
+</ul>
+<p>CPU从主存中每取出一条指令所需要的全部时间称为指令周期，即<strong>CPU完成一条指令的时间。</strong>一个指令周期包含多个机器周期，一个机器周期包含若千个时钟周期（CPU操作的基本单位）。每个指令周期内的机器周期数可以不等，每个机器周期内的节拍数可以不等。</p>
+<ul>
+<li><strong>基本组成</strong></li>
+</ul>
+<ol>
+<li><strong>取指周期：</strong>取出指令</li>
+<li><strong>间址周期：</strong>取出有效地址</li>
+<li><strong>执行周期：</strong>取出操作數</li>
+<li><strong>中断周期：</strong>保存程序断点</li>
+</ol>
+<ul>
+<li><strong>不同指令的指令周期</strong></li>
+</ul>
+<ol>
+<li><strong>无条件转移指令：</strong>不需要访存，所以只有取指周期、执行周期</li>
+<li><strong>间接寻址的指令：</strong>首先要进行访存，取出有效地址，根据有效地址取出操作数，所以其具有间址周期。</li>
+<li><strong>当CPU采用中断方式实现主机和I&#x2F;O设备的信息交换的时候</strong>，CPU在每次指令执行结束前都要发出中断查询信号，所以需要中断周期。</li>
+</ol>
+<h3 id="5-2-1-指令周期的数据流"><a href="#5-2-1-指令周期的数据流" class="headerlink" title="5.2.1 指令周期的数据流"></a>5.2.1 指令周期的数据流</h3><ul>
+<li><strong>取指周期</strong></li>
+</ul>
+<p>取指周期的任务是根据PC中的内容从主存中取出指令代码并存放在IR中。取指令的同时，PC加1。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%8F%96%E5%80%BC%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="image-20210818091652954"></p>
+<p>取指周期的数据流向如下：</p>
+<ol>
+<li>PC①MAR②地址总线③主存。</li>
+<li>CU发出控制信号④控制总线⑤主存。</li>
+<li>主存⑧数据总线⑦MDR⑧IR (存放指令)。</li>
+<li>CU发出读命令⑨PC内容加1。</li>
+</ol>
+<ul>
+<li><strong>间址周期</strong></li>
+</ul>
+<p>间址周期的任务是取操作数有效地址。以一次间址为例，将指令中的地址码送到MAR并送至地址总线，此后CU向存储器发读命令，以获取有效地址并存至MDR。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%B8%80%E6%AC%A1%E9%97%B4%E5%9D%80%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="image-20210818091945872"></p>
+<p>间址周期的数据流向如下：</p>
+<ol>
+<li><p>Ad(IR) (或MDR)①MAR②地址总线③主存。</p>
+</li>
+<li><p>CU发出读命令④控制总线⑤主存。</p>
+</li>
+<li><p>主存⑥数据总线⑦MDR (存放有效地址)。</p>
+</li>
+</ol>
+<p>其中，Ad(IR)表示取出IR中存放的指令字的地址字段。</p>
+<ul>
+<li><strong>执行周期</strong></li>
+</ul>
+<p>执行周期的任务是根据IR中的指令字的操作码和操作数通过ALU操作产生执行结果。不<br>同指令的执行周期操作不同，因此没有统一的数据流向。</p>
+<ul>
+<li><strong>中断周期</strong></li>
+</ul>
+<p>中断周期的任务是处理中断请求。假设程序断点存入堆栈中，并用SP指示栈顶地址，而且<strong>进栈操作是先修改栈顶指针</strong>（注意栈顶指针的增长方向与内存地址的增长方向相反）<strong>，后存入数据</strong>。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%B8%AD%E6%96%AD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81.png" alt="image-20210818092412749"></p>
+<p>中断周期的数据流向如下:</p>
+<ol>
+<li>CU控制将SP减1, SP①MAR②地址总线③主存。</li>
+<li>CU发出写命令④控制总线⑤主存。</li>
+<li>PC⑥MDR⑦数据总线⑧主存(程序断点存入主存)。</li>
+<li>CU (中断服务程序的入口地址)⑨PC。</li>
+</ol>
+<h3 id="5-2-3-指令执行方案"><a href="#5-2-3-指令执行方案" class="headerlink" title="5.2.3 指令执行方案"></a>5.2.3 指令执行方案</h3><ul>
+<li><strong>单指令周期</strong></li>
+</ul>
+<p>所有指令完成时间相同。指令串行执行，指令周期取决于最长指令执行时间。降低了系统整体运行速度。</p>
+<ul>
+<li><strong>多指令周期</strong></li>
+</ul>
+<p>不同类型的指令选用不同的执行步骤完成。指令串行执行，对于不同指令分配不同的周期。</p>
+<ul>
+<li><strong>流水线方案</strong></li>
+</ul>
+<p>指令之间并行，将每个时钟周期都利用起来，尽量让多个指令并行运行。</p>
+<p>PS：CISC可以通过优化实现流水线，RISC必须要实现流水线。</p>
+<h2 id="5-3-数据通路的功能和基本结构"><a href="#5-3-数据通路的功能和基本结构" class="headerlink" title="5.3 数据通路的功能和基本结构"></a>5.3 数据通路的功能和基本结构</h2><h3 id="5-3-1-数据通路的功能"><a href="#5-3-1-数据通路的功能" class="headerlink" title="5.3.1 数据通路的功能"></a>5.3.1 数据通路的功能</h3><ul>
+<li><strong>概念：</strong>数据在功能部件之间传送的路径。路径上的部件称为<strong>数据通路部件</strong>。</li>
+<li><strong>功能：</strong>实现CPU内部的运算器与寄存器之间的数据交换。</li>
+</ul>
+<h3 id="5-3-2-数据通路的基本结构"><a href="#5-3-2-数据通路的基本结构" class="headerlink" title="5.3.2 数据通路的基本结构"></a>5.3.2 数据通路的基本结构</h3><p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/CPU%E5%86%85%E9%83%A8%E6%80%BB%E7%BA%BF%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E5%92%8C%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7.png" alt="image-20210818102900936"></p>
+<ul>
+<li><strong>基本结构分类</strong></li>
+</ul>
+<ol>
+<li><strong>CPU内部单总线方式</strong></li>
+</ol>
+<p>将所有寄存器的输入输出端连接在同一 条公共通路上。<br><strong>优点：</strong>结构简单<br><strong>缺点：</strong>存在冲突现象，性能较低。</p>
+<ol start="2">
+<li><strong>CPU内部三总线方式</strong></li>
+</ol>
+<p>将所有寄存器的输入输出端连接在多个公共通路上。<br><strong>优点：</strong>执行效率高。<br><strong>缺点：</strong>实现复杂。</p>
+<ol start="3">
+<li><strong>专用数据通路方式</strong></li>
+</ol>
+<p>减少使用共享线路，专线专用。<br><strong>优点：</strong>性能高<br><strong>缺点：</strong>实现复杂,硬件量大</p>
+<ul>
+<li><strong>数据传送</strong></li>
+</ul>
+<p><strong>寄存器之间的数据传送：</strong>寄存器之间的数据传送可以通过CPU内部总线完成。</p>
+<p><strong>主存与CPU之间的数据传送：</strong>主存与CPU之间的数据传送也需要借助CPU内部总线完成。</p>
+<p><strong>执行算数或逻辑运算：</strong>由于ALU本身没有内部存储功能的组合电路，所以相加的操作数,必须在ALU两端时有效。</p>
+<h2 id="5-4-控制器的功能和工作原理"><a href="#5-4-控制器的功能和工作原理" class="headerlink" title="5.4 控制器的功能和工作原理"></a>5.4 控制器的功能和工作原理</h2><h3 id="5-4-1-控制器的结构和功能"><a href="#5-4-1-控制器的结构和功能" class="headerlink" title="5.4.1 控制器的结构和功能"></a>5.4.1 控制器的结构和功能</h3><ul>
+<li><strong>计算机硬件系统和控制器部件的组成</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%83%A8%E4%BB%B6%E7%9A%84%E7%BB%84%E6%88%90.png" alt="image-20210818103239200"></p>
+<ol>
+<li>运算器部件通过数据总线与内存储器、输入设备和输出设备传送数据。</li>
+<li>输入设备和输出设备通过接口电路与总线相连接。</li>
+<li>内存储器、输入设备和输出设备从地址总线接收地址信息，从控制总线得到控制信号，通过数据总线与其他部件传送数据。</li>
+<li>控制器部件从数据总线接收指令信息，从运算器部件接收指令转移地址，送出指令地址到地址总线，还要向系统中的部件提供它们运行所需要的控制信号。</li>
+</ol>
+<ul>
+<li><strong>控制器功能</strong></li>
+</ul>
+<ol>
+<li>从主存中取出一条指令，并指出下一条指令在主存中的位置。</li>
+<li>对指令进行译码或测试，产生相应的操作控制信号，以便启动规定的动作。</li>
+<li>指挥并控制CPU、主存、输入和输出设备之间的数据流动方向。</li>
+</ol>
+<ul>
+<li>根据产生微操作信号的方式不同，存在硬布线控制器和微程序控制器。</li>
+</ul>
+<h3 id="5-4-2-硬布线控制器"><a href="#5-4-2-硬布线控制器" class="headerlink" title="5.4.2 硬布线控制器"></a>5.4.2 硬布线控制器</h3><p>根据指令要求、当前的时序以及外部和内部的状态，按照时间的顺序发送一些微操作控制信号。又称为组合逻辑控制器。</p>
+<ul>
+<li><strong>控制单元（CU）信号来源</strong></li>
+</ul>
+<ol>
+<li>指令译码器产生的指令信息。</li>
+<li>时序系统产生的机器周期信号和节拍信号。</li>
+<li>来自执行单元的反馈信息，即标志。</li>
+<li>控制单元还接收来自系统总线的控制信号：中断请求、DMA请求</li>
+</ol>
+<p>PS：DMA，全称Direct Memory Access，即直接存储器访问。</p>
+<ul>
+<li><strong>硬布线控制器的时序系统及微操作</strong></li>
+</ul>
+<ol>
+<li><p><strong>时钟周期：</strong>用时钟信号控制节拍发生器，每个节拍的宽度正好对应一个时钟周期。每个节拍内机器可以完成或几个需要同时执行的操作。</p>
+</li>
+<li><p><strong>机器周期：</strong>机器周期可视为所有指令执行过程中的一个基准时间。<strong>通常我们以存取周期作为基准时间，即从内存中读取一个指令字的最短时间作为机器周期。</strong>在存储字长等于指令字长的前提下，取指周期可以作为机器周期.</p>
+</li>
+<li><p><strong>指令周期：</strong>取指周期，间址周期，执行周期，中断周期。</p>
+</li>
+<li><p><strong>微操作命令分析：</strong>控制单元发出各种操作序列，这些命令必须要按照一定的次序才能使得机器有序的工作。执行程序的过程中，对于不同的指令，控制单元需发出各种不同的微操作命令。</p>
+</li>
+</ol>
+<ul>
+<li><strong>CPU控制方式</strong></li>
+</ul>
+<ol>
+<li><p><strong>同步控制：</strong>使用统一的时钟<br>优点：控制电路简单<br>缺点：运行速度慢</p>
+</li>
+<li><p><strong>异步控制：</strong>不存在基准时标信号，每个部件按照自身的速度工作</p>
+<p>优点：速度快<br>缺点：电路复杂</p>
+</li>
+<li><p><strong>联合控制：</strong>同步和异步结合，大部分部件同步，小部分由异步。</p>
+</li>
+</ol>
+<ul>
+<li><strong>硬布线控制器设计</strong></li>
+</ul>
+<ol>
+<li>列出微操作命令时间表</li>
+<li>对微操作信号综合</li>
+<li>画出微操作命令的逻辑图</li>
+</ol>
+<h3 id="5-4-3-微程序控制器"><a href="#5-4-3-微程序控制器" class="headerlink" title="5.4.3 微程序控制器"></a>5.4.3 微程序控制器</h3><p>微程序控制器采用存储逻辑实现，将微操作信号代码化，控制存储器存储微程序，微操作控制信号由微指令产生。</p>
+<ul>
+<li><strong>基本概念</strong></li>
+</ul>
+<p>微程序设计思想就是将每条机器指令编写成一个微程序，每个微程序包含若干微指令，每条微指令对应一个或几个微操作命令。这些微程序可以存到一个控制存储器中，用寻址用户程序机器指令的办法来寻址每个微程序中的微指令。目前，大多数计算机都采用微程序设计技术。</p>
+<ol>
+<li><strong>微命令与微操作</strong></li>
+</ol>
+<p>一条机器指令可以分解成一个微操作序列，这些微操作是计算机中最基本的、不可再分解的操作。</p>
+<p>在微程序控制的计算机中，将控制部件向执行部件发出的各种控制命令称为微命令，它是构成控制序列的最小单位。例如，打开或关闭某个控制门的电位信号、某个寄存器的打入脉冲等。</p>
+<p>微命令和微操作是一一对应的。微命令是微操作的控制信号，微操作是微命令的执行过程。</p>
+<ol start="2">
+<li><strong>微指令与微周期</strong></li>
+</ol>
+<p>微指令是若干微命令的集合。存放微指令的控制存储器的单元地址称为微地址。一条微指令通常至少包含两大部分信息：</p>
+<p>① <strong>操作控制字段</strong>，又称微操作码字段，用于产生某一步操作所需的各种操作控制信号。<br>② <strong>顺序控制字段</strong>，又称微地址码字段，用于控制产生下一条要执行的微指令地址。</p>
+<p>微周期通常指从控制存储器中读取一条微指令并执行相应的微操作所需的时间。</p>
+<ol start="3">
+<li><strong>主存储器和控制存储器</strong></li>
+</ol>
+<p>主存储器用于存放程序和数据，在CPU外部，用RAM实现；控制存储器(CM)用于存放微程序，在CPU内部，用ROM实现。</p>
+<ol start="4">
+<li><strong>程序与微程序</strong></li>
+</ol>
+<p>程序是指令的有序集合，用于完成特定的功能；微程序是微指令的有序集合，一条指令的功能由一段微程序来实现。</p>
+<ol start="5">
+<li><strong>微程序和机器指令</strong></li>
+</ol>
+<p><strong>通常，一条机器指令对应一个微程序。</strong>由于任何一条机器指令的取指令操作都是相同的，因此可将取指令操作的微命令统一编成一个微程序，这个微程序只负责将指令从主存单元中取出并送至指令寄存器。</p>
+<p>此外，也可编出对应间址周期的微程序和中断周期的微程序。这样，<strong>控制存储器中的微程序个数应为机器指令数再加上对应取指、间址和中断周期等共用的微程序数。</strong></p>
+<p>PS：<strong>微程序（信号：机器指令） &gt; 微指令（微指令周期 &lt;&#x3D;&gt; 微周期） &gt; 微操作（控制信号：微命令）</strong></p>
+<p>PS：注意区分以下存储器</p>
+<p>① **地址寄存器(MAR)**。用于存放主存的读&#x2F;写地址。<br>② **微地址寄存器(CMAR)**。用于存放控制存储器的读&#x2F;写微指令的地址。<br>③ **指令寄存器(IR)**。 用于存放从主存中读出的指令。<br>④ **微指令寄存器(CMDR或μIR)**。用于存放从控制存储器中读出的微指令。</p>
+<ul>
+<li><strong>微程序控制器的组成和工作过程</strong></li>
+</ul>
+<ol>
+<li><strong>基本组成</strong></li>
+</ol>
+<p><strong>控制存储器：</strong>存放指令对应的微程序，ROM构成。</p>
+<p><strong>微指令寄存器：</strong>存放微指令。</p>
+<p><strong>微地址形成部件：</strong>产生初始微地址和后继微地址。</p>
+<p><strong>微地址寄存器：</strong>接收微地址。</p>
+<ol start="2">
+<li><strong>工作过程</strong></li>
+</ol>
+<p>（1）执行取值微程序公共操作。<strong>在机器开始运行时</strong>，自动将<strong>取指微程序入口地址</strong>送入CMAR，并从CM中读出微指令送入CMDR。取指微程序的入口地址一般为CM的0号单元，<strong>当取指微程序执行完后，从主存中取出的机器指令就已存入指令寄存器中</strong>。</p>
+<p>（2）机器指令操作码字段通过微地址形成部件产生微程序的入口地址，井将其送入CMAR。</p>
+<p>（3）从CM中逐条取出对应的微指令井执行。</p>
+<p>（4）执行完后，继续从头循环往复。</p>
+<ul>
+<li><strong>微指令编码方式</strong></li>
+</ul>
+<ol>
+<li><strong>直接编码法</strong></li>
+</ol>
+<p>直接编码法无须进行译码，微指令的微命令字段中每位都代表一个微命令。设计微指令时，选用或不选用某个微命令，只要将表示该微命令的对应位设置成1或0即可。每个微命令对应并控制数据通路中的一个微操作。</p>
+<p><strong>优点：</strong>简单直观不需要译码，速度快，操作并行性好。</p>
+<p><strong>缺点：</strong>对控制存储器容量有要求。</p>
+<ol start="2">
+<li><strong>字段直接编码法</strong></li>
+</ol>
+<p>微命令字段分段的原则：<br>① 互斥性微命令分在同一段内，相容性微命令分在不同段内。</p>
+<p>② 每个小段中包含的信息位不能太多，否则将增加译码线路的复杂性和译码时间。</p>
+<p>③ 一般每个小段还要留出一个状态，表示本字段不发出任何微命令。因此，当某字段的长度为3位时，最多只能表示7个互斥的微命令，通常用000表示不操作。</p>
+<p><strong>优点：</strong>缩短指令的字长</p>
+<p><strong>缺点：</strong>需要进行译码</p>
+<ol start="3">
+<li><strong>字段间接编码法</strong></li>
+</ol>
+<p>一个字段的微指令由另一个字段中的微指令解释，又称隐式编码。</p>
+<p><strong>优点：</strong>进一步缩短指令字长</p>
+<p><strong>缺点：</strong>削弱了并行控制能力，该方法只是作为字段直接编码的辅助手段。</p>
+<ul>
+<li><strong>微指令地址形成方式</strong></li>
+</ul>
+<ol>
+<li><strong>直接由微指令的下地址字段指出。</strong>微指令格式中设置一个下地址字段，由微指令的下地址字段直接指出后继微指令的地址，这种方式又称断定方式。</li>
+<li><strong>根据机器指令的操作码形成。</strong>机器指令取至指令寄存器后，微指令的地址由操作码经微地址形成部件形成。</li>
+</ol>
+<p>实际上，微指令序列地址的形成方式还有以下几种：</p>
+<p>① 增量计数器法，即(CMAR)+ 1➡CMAR，适用于后继微指令的地址连续的情况。</p>
+<p>② 根据各种标志决定微指令分支转移的地址。</p>
+<p>③ 通过网络测试形成。</p>
+<p>④ 由硬件直接产生微程序入口地址。</p>
+<p>电源加电后，第一条微指令的地址可由专门的硬件电路产生，也可由外部直接向CMAR输入微指令的地址，这个地址即为取指周期微程序的入口地址。</p>
+<ul>
+<li><strong>微指令的格式</strong></li>
+</ul>
+<ol>
+<li><strong>水平微指令</strong></li>
+</ol>
+<p>从编码方式看，直接编码、字段直接编码、字段间接编码和混合编码都属于水平型微指令。水平型微指令的基本指令格式如图所示，指令字中的一位对应一个控制信号，有输出时为1, 否则为0。<strong>一条水平型微指令定义并执行几种并行的基本操作。</strong></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%B0%B4%E5%B9%B3%E5%9E%8B%E5%BE%AE%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F.png" alt="image-20210818115850298"></p>
+<p><strong>优点：</strong>微程序短，执行速度快，并行能力强，灵活性高</p>
+<p><strong>缺点：</strong>微指令长，编写微程序麻烦</p>
+<ol start="2">
+<li><strong>垂直微指令</strong></li>
+</ol>
+<p>垂直型微指令的特点是采用类似机器指令操作码的方式，在微指令中设置微操作码字段，采用微操作码编译法，由微操作码规定微指令的功能，其基本的指令格式如图所示。<strong>一条垂直型微指令只能定义并执行一种基本操作。</strong></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%9E%82%E7%9B%B4%E5%9E%8B%E5%BE%AE%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F.png" alt="image-20210818120043086"></p>
+<p><strong>优点：</strong>微指令短，简单，规整，便于编写微程序</p>
+<p><strong>缺点：</strong>微程序长，执行速度慢，效率低下</p>
+<ol start="3">
+<li><strong>混合型微指令</strong></li>
+</ol>
+<p>在垂直型的基础上增加一些不太复杂的并行操作。微指令较短，仍便于编写；微程序也不长，执行速度加快。</p>
+<ul>
+<li><strong>微程序控制单元的设计步骤</strong></li>
+</ul>
+<ol>
+<li><strong>写出对应机器指令的微操作命令及节拍安排</strong></li>
+<li><strong>确定微指令格式</strong></li>
+<li><strong>编写微指令码点</strong></li>
+</ol>
+<ul>
+<li><strong>动态微程序设计和毫微程序设计</strong></li>
+</ul>
+<ol>
+<li><strong>动态微程序设计。</strong>在一台微程序控制的计算机中，假如能<strong>根据用户的要求改变微程序</strong>，则这台机器就具有动态微程序设计功能。<br>动态微程序的设计需要可写控制寄存器的支持，否则难以改变微程序的内容。实现动态微程序设计可**采用可擦除可编程只读存储器(EPROM)**。</li>
+<li><strong>毫微程序设计。</strong>在普通的微程序计算机中，从主存取出的每条指令是由放在控制存储器中的微程序来解释执行的，通过控制线对硬件进行直接控制。若<strong>硬件不由微程序直接控制，而是通过存放在第二级控制存储器中的毫微程序来解释的，这个第二级控制存储器就称为毫微存储器，直接控制硬件的是亳微微指令。</strong></li>
+</ol>
+<h3 id="5-4-4-硬布线和微程序控制器的特点"><a href="#5-4-4-硬布线和微程序控制器的特点" class="headerlink" title="5.4.4 硬布线和微程序控制器的特点"></a>5.4.4 硬布线和微程序控制器的特点</h3><p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E4%B8%8E%E7%A1%AC%E5%B8%83%E7%BA%BF%E6%8E%A7%E5%88%B6%E7%9A%84%E5%AF%B9%E6%AF%94.png" alt="image-20210818121334401"></p>
+<h2 id="5-5-指令流水线"><a href="#5-5-指令流水线" class="headerlink" title="5.5 指令流水线"></a>5.5 指令流水线</h2><h3 id="5-5-1-指令流水线的基本概念"><a href="#5-5-1-指令流水线的基本概念" class="headerlink" title="5.5.1 指令流水线的基本概念"></a>5.5.1 指令流水线的基本概念</h3><ul>
+<li><strong>概念</strong></li>
+</ul>
+<p>把一个重复的过程分解成若干个子过程，每个子过程可以与其他子过程并行执行。</p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>只需要增加少量的硬件就能把计算机的运算速度提高几倍。</p>
+<ul>
+<li><strong>指令流水的定义</strong></li>
+</ul>
+<ol>
+<li><strong>一条指令的执行可以分为多个阶段</strong></li>
+</ol>
+<p><strong>取指：</strong>根据PC从主存中取出指令送入IR。<br><strong>分析：</strong>对指令操作码进行译码，按照寻址方式和地址段内容形成有效地址EA，并从有效地址中取出操作数。<br><strong>执行：</strong>根据操作码字段，完成指令规定功能，将运算结果写到通用寄存器或者主存中。</p>
+<ol start="2">
+<li><strong>多条指令的处理方式</strong></li>
+</ol>
+<p><strong>（1）顺序执行方式</strong></p>
+<p>一条接一条指令执行，传统冯诺依曼机顺序执行方式。假设取值、分析、执行三个阶段的时间都相等，用t表示，T&#x3D;3nt。</p>
+<p>优点：控制简单，硬件代价小</p>
+<p>缺点：执行指令速度慢，各功能部件的利用率很低</p>
+<p><strong>（2）流水线执行方式</strong></p>
+<p>为了提高指令的执行速度，可以把取k + 1条指令提前到分析第k条指令的期间完成，而将分析第k + 1条指令与执行第k条指令同时进行。执行时间为 T &#x3D; (2+n)t。</p>
+<p>优点：程序执行时间缩短了近2&#x2F;3，各功能部件利用率提高了</p>
+<p>缺点：硬件开销代价较大，控制过程也比顺序执行复杂</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%8C%87%E4%BB%A4%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F.png" alt="image-20210818122338602"></p>
+<p>PS：流水线最重要的是一定要流动起来，如果经常出现断流情况，那么就无法体现流水线的优越性。</p>
+<ul>
+<li><strong>流水线方式的特点</strong></li>
+</ul>
+<ol>
+<li><p>一个任务分解成多个子任务</p>
+</li>
+<li><p>每个功能部件后面都要有个锁存器，用于保存本流水段的结果</p>
+</li>
+<li><p>流水线中的各功能段的时间应尽量相等，否则将会堵塞、断流</p>
+</li>
+<li><p>流水线需要装入时间和排空时间</p>
+</li>
+</ol>
+<p>（1）<strong>装入时间：</strong>第一个任务进入流水线到输出流水线的时间</p>
+<p>（2）<strong>排空时间：</strong>最后-一个任务进入流水线到输出流水线的时间</p>
+<h3 id="5-5-2-流水线的分类"><a href="#5-5-2-流水线的分类" class="headerlink" title="5.5.2 流水线的分类"></a>5.5.2 流水线的分类</h3><ul>
+<li><strong>按照流水级别分类</strong></li>
+</ul>
+<p><strong>部件功能级流水线：</strong>将<strong>复杂的算术逻辑运算</strong>组成流水线的工作方式。</p>
+<p><strong>处理机级流水线：</strong>一条<strong>指令</strong>解释成多个子过程。</p>
+<p><strong>处理机间流水线：</strong>是一种<strong>宏流水，每个处理机专门完成一个任务</strong> ，各个处理机得到的结果存放在与下一个处理机共享的存储器中。</p>
+<ul>
+<li><strong>按照功能分类</strong></li>
+</ul>
+<p><strong>单功能流水线：</strong>完成单一功能的流水线。</p>
+<p><strong>多功能流水线：</strong>各个流水段之间通过组合可以实现多种功能。</p>
+<ul>
+<li><strong>按照连接方式分类</strong></li>
+</ul>
+<p><strong>静态流水线：</strong>同一时间内，流水线的各段只能按照<strong>同一种功能的连接方式</strong>工作。</p>
+<p><strong>动态流水线：</strong>同一时间内，<strong>不同的段完成的运算可能不一样（分属不同功能）</strong>，可以提高效率，但是流水线控制变得很复杂。</p>
+<ul>
+<li><strong>按照是否存在反馈信号分类</strong></li>
+</ul>
+<p><strong>线性流水线：</strong>从输入到输出，每个功能段只允许经过一次，不存在反馈回路。</p>
+<p><strong>非线性流水线：</strong>存在反馈回路。非常适合线性递归运算。</p>
+<h3 id="5-5-3-影响流水线的因素"><a href="#5-5-3-影响流水线的因素" class="headerlink" title="5.5.3 影响流水线的因素"></a>5.5.3 影响流水线的因素</h3><ul>
+<li><strong>资源冲突（结构冒险）：</strong>同一时刻争抢统一资源。</li>
+</ul>
+<ol>
+<li><strong>解决办法：</strong></li>
+</ol>
+<p>（1）前一指令访存时，使后一条相关指令(以及其后续指令)<strong>暂停一个时钟周期</strong>。</p>
+<p>（2）<strong>单独设置数据存储器和指令存储器</strong>，使取数和取指令操作各自在不同的存储器中进行。</p>
+<ul>
+<li><strong>数据冲突（数据冒险）：</strong>一个指令的执行必须要等待前一个指令的结果。</li>
+</ul>
+<ol>
+<li><strong>分为三类：</strong></li>
+</ol>
+<p>（1）<strong>写后读(Read After Write，RAW)相关：</strong>表示当前指令将数据写入寄存器后，下一条指令才能从该寄存器读取数据。否则，先读后写，读到的就是错误(旧)数据。</p>
+<p>（2）<strong>读后写(Write After Read，WAR) 相关：</strong>表示当前指令读出数据后，下一条指令才能写<br>该寄存器。否则，先写后读，读到的就是错误(新)数据。</p>
+<p>（3）<strong>写后写(Write After Write，WAW)相关：</strong>表示当前指令写入寄存器后，下一条指令才<br>能写该寄存器。否则，下一条指令在当前指令之前写，将使寄存器的值不是最新值。</p>
+<ol start="2">
+<li><strong>解决办法：</strong></li>
+</ol>
+<p>（1）<strong>把遇到数据相关的指令及其后续指令都暂停一至几个时钟周期</strong>，直到数据相关问题消失<br>后再继续执行，可分为<strong>硬件阻塞(stall) 和软件插入“NOP”指令</strong>两种方法。</p>
+<p>（2）<strong>设置相关专用通路</strong>，即不等前一条指令把计算结果写回寄存器组，下一 条指令也不再读<br>寄存器组，而直接把前一条指令的ALU的计算结果作为自己的输入数据开始计算过程，使本来需要暂停的操作变得可以继续执行，<strong>这称为数据旁路技术</strong>。</p>
+<p>（3）通过编译器对数据相关的指令编译优化的方法，<strong>调整指令顺序来解决数据相关</strong>。</p>
+<ul>
+<li><strong>控制冲突（控制冒险）：</strong>:出现转移指令或者其他改变PC值的指令造成断流。</li>
+</ul>
+<ol>
+<li><strong>解决办法：</strong></li>
+</ol>
+<p>（1）<strong>对转移指令进行分支预测，尽早生成转移目标地址。</strong>分支预测<strong>分为简单(静态)预测和动态预测。</strong>静态预测总是预测条件不满足，即继续执行分支指令的后续指令。动态预测根据程序执行的历史情况，进行动态预测调整，有较高的预测准确率。</p>
+<p>（2）<strong>预取转移成功和不成功两个控制流方向上的目标指令。</strong></p>
+<p>（3）<strong>加快和提前形成条件码。</strong></p>
+<p>（4）<strong>提高转移方向的猜准率。</strong></p>
+<h3 id="5-5-4-流水线的性能指标"><a href="#5-5-4-流水线的性能指标" class="headerlink" title="5.5.4 流水线的性能指标"></a>5.5.4 流水线的性能指标</h3><ul>
+<li><strong>吞吐率：</strong>单位时间内流水线完成的任务数量。</li>
+</ul>
+<p>TP&#x3D;n&#x2F;Tk，其中，n是任务数，Tk是处理完n个任务的时间。</p>
+<p>当连续输入的任务n趋向于无穷时，此时为最大吞吐率。</p>
+<ul>
+<li><strong>流水线的加速比：</strong>不使用流水线与使用流水线的时间比值。</li>
+</ul>
+<p>S &#x3D; T0 &#x2F; Tk，其中T0表示不使用流水线的执行时间，Tk表示使用流水线的时间。</p>
+<p>若流水线各段执行的时间相等，可进一步推导得</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%BE%97%E5%8A%A0%E9%80%9F%E6%AF%94.png" alt="image-20210818145713833"></p>
+<p>连续输入的任务数n→∞时，最大加速比为Smax&#x3D; k。</p>
+<ul>
+<li><strong>流水线的效率：</strong>流水线的利用率，在时空图上代表完成n个任务使用的时空区的面积与n个任务所用的时间及k个流水段所围成的时空区总面积比。</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%95%88%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="image-20210818145927760"></p>
+<p>连续输入任务n趋向于无穷时，最高效率为1。</p>
+<h3 id="5-5-5-超标量流水线的基本概念"><a href="#5-5-5-超标量流水线的基本概念" class="headerlink" title="5.5.5 超标量流水线的基本概念"></a>5.5.5 超标量流水线的基本概念</h3><ul>
+<li><strong>超标量流水线技术</strong></li>
+</ul>
+<p><strong>每个时钟周期内可以并发多条独立指令</strong>，通过编译优化，把可并行执行的指令搭配起来，挖<strong>掘指令并行性</strong>。</p>
+<ul>
+<li><strong>超流水线技术</strong></li>
+</ul>
+<p><strong>在一个时钟周期内再分段，在一个时钟周期内一个功能部件使用多次</strong>，通过编译程序解决优化问题。</p>
+<ul>
+<li><strong>超长指令字</strong></li>
+</ul>
+<p>使用多个功能部件，利用编译程序<strong>挖掘出指令之间的并行性，然后将并行指令组成超长指令字</strong>。</p>
+<h2 id="5-6-指令周期执行模板-各周期的微操作命令"><a href="#5-6-指令周期执行模板-各周期的微操作命令" class="headerlink" title="5.6 指令周期执行模板(各周期的微操作命令)"></a>5.6 指令周期执行模板(各周期的微操作命令)</h2><h3 id="5-6-1-取指令周期"><a href="#5-6-1-取指令周期" class="headerlink" title="5.6.1 取指令周期"></a>5.6.1 取指令周期</h3><pre class="line-numbers language-none"><code class="language-none">PC--&gt; MAR		现行指令地址---&gt; MAR
+1 --&gt; R			命令存储器读
+M(MAR) --&gt; MDR  现行指令从存储器中读至MDR
+MDR--&gt;IR        现行指令--&gt;IR
+OP(IR)--&gt;CU		指令的操作码--&gt; CU译码
+(PC)+1--&gt; PC	形成下一条指令的地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-6-2-间址周期"><a href="#5-6-2-间址周期" class="headerlink" title="5.6.2 间址周期"></a>5.6.2 间址周期</h3><pre class="line-numbers language-none"><code class="language-none">Ad ( IR)--&gt; MAR	将指令字中的地址码(形式地址) --&gt; MAR
+1--&gt; R			命令存储器读
+M(MAR)--&gt; MDR	将有效地址从存储器读至MDR<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-6-3-指令执行周期"><a href="#5-6-3-指令执行周期" class="headerlink" title="5.6.3 指令执行周期"></a>5.6.3 指令执行周期</h3><ul>
+<li><strong>非访存指令</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">CLA		清ACC	  0--&gt;ACC
+COM		取反	   	 ^ACC--&gt;ACC
+SHR		算数右移	L(ACC)--&gt; R(ACC), ACC0--&gt;ACC0
+CSL		循环左移	R(ACC)--&gt;L(ACC), ACCn--&gt;ACCn
+STP		停机指令	0--&gt;G<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>访存指令</strong></li>
+</ul>
+<ol>
+<li><strong>加法指令</strong></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">ADD X	加法指令	Ad(IR)--&gt; MAR
+1 --&gt; R
+M(MAR)--&gt; MDR
+(ACC)+(MDR)--&gt; ACC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li><strong>存数指令</strong></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">STA X	存数指令	Ad ( IR)--&gt; MAR .
+1 --&gt; W
+ACC --&gt; MDR
+MDR --&gt; M(MAR)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><strong>取数指令</strong></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">LDA X	取数指令	Ad ( IR)--&gt; MAR .
+1--&gt; R
+M(MAR)--&gt; MDR
+MDR--&gt; ACC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li><strong>转移指令</strong></li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">JMP X	无条件转移	Ad(IR) --&gt; PC
+BAN X	条件转移(负则转) A0*Ad(IR) + ^A0*(PC) --&gt; PC<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h1 id="6-总线"><a href="#6-总线" class="headerlink" title="6 总线"></a>6 总线</h1><h2 id="6-1-总线概述"><a href="#6-1-总线概述" class="headerlink" title="6.1 总线概述"></a>6.1 总线概述</h2><h3 id="6-1-1-总线基本概念"><a href="#6-1-1-总线基本概念" class="headerlink" title="6.1.1 总线基本概念"></a>6.1.1 总线基本概念</h3><ul>
+<li><strong>总线的定义</strong></li>
+</ul>
+<p>总线是一组能为多个部件分时共享的公共信息传送线路。</p>
+<p><strong>分时：</strong>同一时刻只允许有一个部件向总线发送信息。</p>
+<p><strong>共享：</strong>总线上可以挂接多个部件，各个部件之间互相交换的信息可以通过这组线路分时共享。</p>
+<ul>
+<li><strong>总线设备</strong></li>
+</ul>
+<p><strong>主设备：</strong>总线的主设备是指获得总线控制权的设备。</p>
+<p><strong>从设备：</strong>总线的从设备是指被主设备访问的设备，只能响应从主设备发来的各种总线命令</p>
+<ul>
+<li><strong>总线特性</strong></li>
+</ul>
+<p>总线特性是指机械特性(尺寸、形状)、电气特性(传输方向和有效的电平范围)、功能特性(每根传输线的功能)和时间特性(信号和时序的关系)。</p>
+<ul>
+<li><strong>总线的猝发传输</strong></li>
+</ul>
+<p>一个总线周期内传输存储地址连续的多个数据字的总线传输方式，称为猝发传输。</p>
+<h3 id="6-1-2-总线的分类"><a href="#6-1-2-总线的分类" class="headerlink" title="6.1.2 总线的分类"></a>6.1.2 总线的分类</h3><ul>
+<li><strong>片内总线</strong></li>
+</ul>
+<p>芯片内部的总线,是CPU芯片内部寄存器与寄存器之间，寄存器与ALU之间的公共连接线。</p>
+<ul>
+<li><strong>系统总线：</strong>各个功能部件之间相互连接的总线。</li>
+</ul>
+<ol>
+<li><strong>数据总线</strong></li>
+</ol>
+<p>传输各功能部件之间的数据信息，是双向传输总线，位数与机器字长、存储字长有关。</p>
+<ol start="2">
+<li><strong>地址总线</strong></li>
+</ol>
+<p>数据总线上的源数据或目的数据所在的主存单元或I&#x2F;O端口的地址，是单向传输总线，地址总线的位数与主存地址空间的大小有关。</p>
+<ol start="3">
+<li><strong>控制总线</strong></li>
+</ol>
+<p>传输控制信息CPU送出的控制命令和主存返回CPU的反馈信号。</p>
+<p>PS：注意区分数据通路和数据总线。各个功能部件通过数据总线连接形成的数据传输路径称为数据通路。<strong>数据通路表示的是数据流经的路径，而数据总线是承载的媒介。</strong></p>
+<ul>
+<li><strong>通信总线：</strong>计算机系统之间或计算机系统与其他系统之间传送信息的总线，也被称为外部总线。</li>
+</ul>
+<ol>
+<li><strong>根据时序控制方式分类：</strong>同步总线和异步总线。</li>
+<li><strong>数据传输格式分类：</strong>并行总线和串行总线。</li>
+</ol>
+<h3 id="6-1-3-系统总线的结构"><a href="#6-1-3-系统总线的结构" class="headerlink" title="6.1.3 系统总线的结构"></a>6.1.3 系统总线的结构</h3><ul>
+<li><strong>单总线结构：</strong>将CPU、主存、I&#x2F;O设备都挂载到一组总线上。</li>
+</ul>
+<p><strong>优点：</strong>结构简单成本低容易接入新设备。</p>
+<p><strong>缺点：</strong>带宽低负载重多个部件只能争用唯一的总线，并且不支持并发传送操作。</p>
+<p>PS：注意，<strong>单总线并不是指只有一根信号线，系统总线按传送信息的不同可细分为地址总线、数据总线和控制总线。</strong></p>
+<ul>
+<li><strong>双总线结构：</strong>一条是主存总线，用于CPU、主存和通道之间传送数据；另一条是I&#x2F;O总线用于在多个外部设备和通道之间传送数据。</li>
+</ul>
+<p><strong>优点：</strong>将低速I&#x2F;O设备从单总线上分离出来，实现了存储总线和I&#x2F;O总线分离。</p>
+<p><strong>缺点：</strong>需要增加通道等硬件设备。</p>
+<ul>
+<li><strong>三总线结构：</strong>计算机系统各部件之间采用三条独立总线来构成信息通路，分别为主存总线、I&#x2F;O总线和直接内存访问(DMA)总线。</li>
+</ul>
+<p><strong>优点：</strong>提高了I&#x2F;O设备的性能，使其更快的响应命令，提高系统的吞吐量。</p>
+<p><strong>缺点：</strong>系统工作效率较低</p>
+<h3 id="6-1-4-总线的性能指标"><a href="#6-1-4-总线的性能指标" class="headerlink" title="6.1.4 总线的性能指标"></a>6.1.4 总线的性能指标</h3><ul>
+<li><strong>总线的传输周期</strong></li>
+</ul>
+<p>一次总线操作所需要的时间(申请阶段、寻址阶段、传输阶段和结束阶段)， 总线传输周期由若干个总线时钟周期构成。</p>
+<ul>
+<li><strong>总线时钟周期</strong></li>
+</ul>
+<p>即机器的时钟周期。</p>
+<ul>
+<li><strong>总线的工作频率</strong></li>
+</ul>
+<p>总线周期的倒数。</p>
+<ul>
+<li><strong>总线的时钟频率</strong></li>
+</ul>
+<p>时钟周期的倒数。</p>
+<ul>
+<li><strong>总线带宽</strong></li>
+</ul>
+<p>单位时间内总线可以传输的数据位数。</p>
+<ul>
+<li><strong>总线复用</strong></li>
+</ul>
+<p>一种信号线在不同时间传输不同的信息，节约了空间和成本。</p>
+<ul>
+<li><strong>信号线数</strong></li>
+</ul>
+<p>地址总线、数据总线、控制总线，三种总线数的总和称为信号线数。</p>
+<ul>
+<li><strong>总线带宽</strong></li>
+</ul>
+<p>总线本身的最大传输率，是衡量性能的重要指标。</p>
+<h2 id="6-2-总线仲裁"><a href="#6-2-总线仲裁" class="headerlink" title="6.2 总线仲裁"></a>6.2 总线仲裁</h2><h3 id="6-2-1-集中仲裁方式"><a href="#6-2-1-集中仲裁方式" class="headerlink" title="6.2.1 集中仲裁方式"></a>6.2.1 集中仲裁方式</h3><ul>
+<li><strong>链式查询方式</strong></li>
+</ul>
+<p>总线上所有的部件共用一根总线请求线，当有部件请求使用总线时，需经此线发总线请求信号到总线控制器。由总线控制器检查总线是否忙，若总线不忙，则立即发总线响应信号，经总线响应线BG串行地从一个部件传送到下一个部件，依次查询。若响应信号到达的部件无总线请求，则该信号立即传送到下一个部件；若响应信号到达的部件有总线请求，则信号被截住，不再传下去。</p>
+<p>越靠近总线控制器的部件优先级越高；离总线控制器越远优先级越低。</p>
+<p><strong>优点：</strong>优先级固定，结构简单，扩充容易。</p>
+<p><strong>缺点：</strong>对于电路故障敏感，优先级不可变。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E9%93%BE%E5%BC%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F.png" alt="image-20210818154046025"></p>
+<ul>
+<li><strong>计数器定时查询方式</strong></li>
+</ul>
+<p>计数器定时查询方式采用一个计数器控制总线使用权，相对链式查询方式多了一组设备地址线，少了一根总线响应线BG。它仍共用一根总线请求线，当总线控制器收到总线请求信号并判断总线空闲时，计数器开始计数，计数值通过设备地址线发向各个部件。当地址线上的计数值与请求使用总线设备的地址一致时，该设备获得总线控制权，同时中止计数器的计数及查询。</p>
+<p><strong>优点：</strong>计数可从“0”开始，此时一旦设备的优先次序被固定，设备的优先级就按0,1, ,n的顺序降序排列，而且固定不变；计数也可从上一次的终点开始，即采用一种循环方法， 此时设备使用总线的优先级相等；计数器的初值还可由程序设置，因此优先次序可以改变。</p>
+<p><strong>缺点：</strong>增加了控制线数(若设备有n个，则大致需要[logn] + 2条控制线)，控制较为复杂。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9A%E6%97%B6%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F.png" alt="image-20210818154759641"></p>
+<ul>
+<li><strong>独立请求方式</strong></li>
+</ul>
+<p>每个设备均有一对总线请求线BR,和总线允许线BG。当总线上的部件需要使用总线时，经各自的总线请求线发送总线请求信号，在总线控制器中排队，当总线控制器按一定的优先次序决定批准某个部件的请求时，给该部件发送总线响应信号，该部件接到此信号后就获得了总线使用权，开始传送数据。</p>
+<p><strong>优点：</strong>响应速度快，总线允许信号BG直接从控制器发送到有关设备，而不必在设备间传递或查询，而且对优先次序的控制相当灵活。</p>
+<p><strong>缺点：</strong>控制线数量多(设备有n个，需要2n+ 1条控制线，其中加的那条控制线为BS线，基作用是让设备向总线控制部件反馈已使用完总线)，总线控制逻辑更复杂。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E7%8B%AC%E7%AB%8B%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F.png" alt="image-20210818154915700"></p>
+<ul>
+<li><strong>三种总裁方式的对比</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%B8%89%E7%A7%8D%E4%BB%B2%E8%A3%81%E6%96%B9%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94.png" alt="image-20210818155053603"></p>
+<h3 id="6-2-2-分布仲裁方式"><a href="#6-2-2-分布仲裁方式" class="headerlink" title="6.2.2 分布仲裁方式"></a>6.2.2 分布仲裁方式</h3><p>不需要中央仲裁器，每个潜在主模块都有自己的仲裁号和仲裁器，然后进行仲裁号比较，获胜者仲裁号保留在仲裁总线上。</p>
+<h2 id="6-3-总线操作和定时"><a href="#6-3-总线操作和定时" class="headerlink" title="6.3 总线操作和定时"></a>6.3 总线操作和定时</h2><h3 id="6-3-1-总线传输的4个阶段"><a href="#6-3-1-总线传输的4个阶段" class="headerlink" title="6.3.1 总线传输的4个阶段"></a>6.3.1 总线传输的4个阶段</h3><ul>
+<li><strong>申请分配阶段：</strong>设备提出申请</li>
+<li><strong>寻址阶段：</strong>获得使用权的主设备，发出要访问模块的地址以及相关命令，启动本次传输的从模块</li>
+<li><strong>传输阶段：</strong>主模块与从模块，进行双向或者单向数据传送</li>
+<li><strong>结束阶段：</strong>主模块有关信息均从系统总线上撤除，让出总线使用权</li>
+</ul>
+<h3 id="6-3-2-同步定时方式"><a href="#6-3-2-同步定时方式" class="headerlink" title="6.3.2 同步定时方式"></a>6.3.2 同步定时方式</h3><p>系统采用一个统一的时钟信号来协调发送和接收双方的传送定时关系。时钟产生相等的时间间隔，每个间隔构成一个总线周期。在一个总线周期中，发送方和接收方可以进行一次数据传送。</p>
+<p><strong>优点：</strong>传送速度快，拥有较高的传输速率，总线控制逻辑简单。</p>
+<p><strong>缺点：</strong>主从设备属于强制性同步，不能及时进行数据通信的有效性检验，可靠性较差。</p>
+<p>适用于总线长度较短以及总线所接部件的存取时间比较接近的系统。</p>
+<h3 id="6-3-3-异步定时方式"><a href="#6-3-3-异步定时方式" class="headerlink" title="6.3.3 异步定时方式"></a>6.3.3 异步定时方式</h3><p>没有统一的时钟，完全按照传送双方相互制约的握手信号实现定时控制。通常，把交换信息的两个部件或设备分为主设备和从设备，主设备提出交换信息的“请求”信号，经接口传送到从设备；从设备接到主设备的请求后，通过接口向主设备发出“回答”信号。</p>
+<p><strong>优点：</strong>总线周期长度可变可以保证两个速度相差较大部件或设备的信息传输。</p>
+<p><strong>缺点：</strong>控制相对复杂并且速度相对较慢。</p>
+<ul>
+<li><strong>分类</strong></li>
+</ul>
+<p><strong>不互锁方式：</strong>主设备发送请求信号，不必等待从设备信号回答，一段时间便撤销请求信号。<br><strong>半互锁方式：</strong>主设备发送请求信号，必须接到从设备应答信号才能撤销请求信号。<br><strong>全互锁方式：</strong>主设备发送请求信号，从设备应答，主设备撤销请求信号，从设备知晓主设备获得应答信号后撤销应答信号。（类似两次挥手）</p>
+<h2 id="6-4-总线标准"><a href="#6-4-总线标准" class="headerlink" title="6.4 总线标准"></a>6.4 总线标准</h2><ul>
+<li><strong>系统总线</strong></li>
+</ul>
+<p>ISA( Industry Standard Architecture，工业标准体系结构 )：最早出现的微型计算机总线</p>
+<p>EISA( Extended Industry Standard Architecture，扩展的ISA )：ISA的扩展形式</p>
+<ul>
+<li><strong>局部总线</strong></li>
+</ul>
+<p>VESA( Video Electronics Standards Association，视频电子标准协会 )：针对系统高速传送活动图像的大量数据的局部总线。</p>
+<p>PCI(Peripheral Component Interconnect，外部设备互连)：为外围设备使用的总线，即插即用，采用桥连接。</p>
+<p>PCI- Express：最新的总线和接口标准用于代替PCI和AGP。</p>
+<p>AGP(Accelerated Graphiecs Port，加速图形接口)：视频接口标准用于连接主存和图型存储器。</p>
+<ul>
+<li><strong>设备总线</strong></li>
+</ul>
+<p>RS-232C( Recommended Standard，RS )：应用于串行二进制交换的数据终端设备( DTE )和数据通信设备( DCE )。</p>
+<p>USB(Universal Serial Bus，通用串行总线)：连接外部设备的I&#x2F;O总线，即插即用，采用热插拔，串行传输，具有很强的连接能力和很好的可扩充性。</p>
+<ul>
+<li>PCMCIA(Personal Computer Memory Card International Association)：用于扩展功能的小型插槽即插即用</li>
+<li>IDE(Integrated Drive Electronics，集成设备电路)：集成设备电路,又称ATA，是一种IDE接口磁盘驱动器接口类型</li>
+<li>SCSI(Small Computer System Interface，小型计算机系统接口)：用于计算机和智能设备之间系统级接口的独立处理器标准，是一种智能的通用接口标准。</li>
+<li>SATA(Serial Advanced Technology Attachment，串行高级技术附件)：是一-种基于行业标准的串行硬件驱动器接口</li>
+</ul>
+<h1 id="7-I-x2F-O系统"><a href="#7-I-x2F-O系统" class="headerlink" title="7 I&#x2F;O系统"></a>7 I&#x2F;O系统</h1><h2 id="7-1-I-x2F-O系统基本概念"><a href="#7-1-I-x2F-O系统基本概念" class="headerlink" title="7.1 I&#x2F;O系统基本概念"></a>7.1 I&#x2F;O系统基本概念</h2><h3 id="7-1-1-输入-x2F-输出系统"><a href="#7-1-1-输入-x2F-输出系统" class="headerlink" title="7.1.1 输入&#x2F;输出系统"></a>7.1.1 输入&#x2F;输出系统</h3><ul>
+<li><p><strong>外部设备：</strong>包括输入&#x2F;输出设备以及通过输入&#x2F;输出接口才能访问的外存储设备。</p>
+</li>
+<li><p><strong>接口：在各个外设与主机之间传输数据时进行各种协调工作的逻辑部件</strong>。</p>
+</li>
+<li><p><strong>输入设备：</strong>用于向计算机系统输入命令和文本、数据等信息的部件。</p>
+</li>
+<li><p><strong>输出设备：</strong>用于将计算机系统中的信息输出到计算机外部进行显示的部件。</p>
+</li>
+<li><p><strong>外存设备：</strong>除计算机内存及CPU缓存等外的存储器。</p>
+</li>
+<li><p><strong>I&#x2F;O系统：</strong></p>
+</li>
+</ul>
+<ol>
+<li><strong>I&#x2F;O软件：</strong>驱动程序、用户程序、管理程序、升级补丁。通常采用I&#x2F;O指令和通道指令实现CPU与I&#x2F;O设备的交互。</li>
+<li><strong>I&#x2F;O硬件：</strong>包括外部设备、设备控制器和接口、 I&#x2F;O总线等。</li>
+</ol>
+<h3 id="7-1-2-I-x2F-O控制方式"><a href="#7-1-2-I-x2F-O控制方式" class="headerlink" title="7.1.2 I&#x2F;O控制方式"></a>7.1.2 I&#x2F;O控制方式</h3><ul>
+<li><strong>程序查询方式：</strong>CPU通过程序不断查询I&#x2F;O设备是否已做好准备，从而控制I&#x2F;O设备与主机交换信息</li>
+<li><strong>程序中断方式：</strong>只在I&#x2F;O设备准备就绪并向CPU发出中断请求时才予以响应</li>
+</ul>
+<p><strong>以上两种方式主要用于数据传输率较低的外设。</strong></p>
+<ul>
+<li><strong>DMA方式：</strong>主存和I&#x2F;O设备之间有一条直接数据通络，当主存和I&#x2F;O设备交换信息时无须调用中断服务程序。</li>
+<li><strong>通道方式：</strong>在系统中设有通道控制部件，每个通道挂接若干外设，主机在执行I&#x2F;O指令时，只需要启动有关通道，通道执行通道程序，完成I&#x2F;O操作。</li>
+</ul>
+<p><strong>以上两种方式主要用于数据传输率较高的外设。</strong></p>
+<h2 id="7-2-外部设备"><a href="#7-2-外部设备" class="headerlink" title="7.2 外部设备"></a>7.2 外部设备</h2><h3 id="7-2-1-输入设备"><a href="#7-2-1-输入设备" class="headerlink" title="7.2.1 输入设备"></a>7.2.1 输入设备</h3><ul>
+<li><strong>键盘</strong></li>
+</ul>
+<p><strong>运作方式：</strong></p>
+<ol>
+<li>查出按下的是哪个键；</li>
+<li>将该键翻译成能被主机接收的键码(如ASCII码)；</li>
+<li>将编码送给主机。</li>
+</ol>
+<ul>
+<li><strong>鼠标</strong></li>
+</ul>
+<p><strong>运行方式：</strong>鼠标在平面上移动，底部传感器将移动距离与方向检测出来，从而控制光标的移动。</p>
+<p>常见的鼠标有机械式与光电式。</p>
+<h3 id="7-2-2-输出设备"><a href="#7-2-2-输出设备" class="headerlink" title="7.2.2 输出设备"></a>7.2.2 输出设备</h3><ul>
+<li><strong>显示器</strong></li>
+</ul>
+<ol>
+<li><strong>显示器件分类</strong></li>
+</ol>
+<p><strong>（1）阴极射线管(CRT)显示器</strong></p>
+<p><strong>组成：</strong>电子枪，偏转线圈，萌罩、高压石墨电极，荧光粉涂层和玻璃外壳。</p>
+<p><strong>优点：</strong>可视角度大，无坏点，色彩还原度高，色度均匀，可调节的多分辨率模式，响应时间短。</p>
+<p><strong>分类：</strong></p>
+<p>① <strong>字符显示器：显示字符的方法以点阵为基础</strong>。</p>
+<p>② <strong>图形显示器：将所显示图形的一组坐标点和绘图命令组成显示文件存放在缓冲存储器中的显示文件传送给矢量产生器，产生相应的模拟电压，直接控制电子束在屏幕上移动。</strong></p>
+<p>优点：分辨率高且显示的曲线平滑。</p>
+<p>缺点：显示复杂图形时，会有闪烁感。</p>
+<p><strong>（2）液晶显示器（LCD）</strong></p>
+<p><strong>原理：</strong>利用液晶的电光效应，由图像信号电压直接控制薄膜晶体管，再简介控制液晶分子的光学特性来实现图像的显示。</p>
+<p><strong>特点：</strong>体积小，重量轻，省电，无辐射，绿色环保，画面柔和，不伤眼。</p>
+<p><strong>（3）发光二极管(LED )显示器</strong></p>
+<p><strong>原理：</strong>通过控制半导体发光二极管来显示文字、图形、图像等各种信息。</p>
+<p><strong>特点：</strong>亮度、功耗、可视角度和刷新速率等方面优于LCD。</p>
+<ol start="2">
+<li><strong>按照显示信息分类</strong></li>
+</ol>
+<p><strong>（1）字符显示器</strong></p>
+<p><strong>（2）图形显示器</strong></p>
+<p><strong>（3）图像显示器</strong></p>
+<ol start="3">
+<li><strong>主要参数</strong></li>
+</ol>
+<p>（1）屏幕大小：对角线长度。</p>
+<p>（2）分辨率：所能显示的像素个数，宽与高的乘积。</p>
+<p>（3）灰度级：黑白显示器中所显示的像素点的亮暗差别，彩色显示器中颜色的不同。灰度级越高，图形越清晰越逼真。</p>
+<p>（4）刷新：光点只能保持极短的时间就会消失，必须在其消失前重新扫描一遍。</p>
+<p>（5）显示存储器(VRAM )：也称为刷新存储器，将一帧的图像存储在刷新存储器中，从而提高刷新图像的信号。</p>
+<p>分辨率越高，灰度级越多，刷新存储器容量越大，显示效果越好</p>
+<p>VRAM容量&#x3D;分辨率X灰度级位数</p>
+<p>VRAM带宽&#x3D;分辨率X灰度级位数X帧频</p>
+<ul>
+<li><strong>打印机</strong></li>
+</ul>
+<ol>
+<li><strong>针式打印机</strong></li>
+</ol>
+<p><strong>原理：</strong>主机发出打印命令，经过接口、 检测和控制电路，间歇驱动纵向送纸和打印头横向移动，同时驱动打印机间歇冲击色带打印内容。</p>
+<p><strong>优点：</strong>擅长多层复写打印，实现各种票据和蜡纸等打印，工作原理简单，造价低廉，耗材便宜。</p>
+<p><strong>缺点：</strong>打印分辨率和打印速度不够高。</p>
+<ol start="2">
+<li><strong>喷墨式打印机</strong></li>
+</ol>
+<p><strong>原理：</strong>带电的喷墨雾点经过电极偏转后，直接在纸上形成所需要的字形。</p>
+<p><strong>优点：</strong>打印噪声小，实现高质量彩色打印，打印速度比针式打印机快。</p>
+<p><strong>缺点：</strong>防水性打印成本高需要专用打印纸。</p>
+<ol start="3">
+<li><strong>激光打印机</strong></li>
+</ol>
+<p><strong>原理：</strong>计算机输出二进制信息，经过调制后的激光束扫描，在感光鼓上形成潜像，经过显影、转印和定影，在纸上得到所需的字符或图像。</p>
+<p><strong>优点：</strong>打印质量高，速度快，噪音小，处理能力强。</p>
+<p><strong>缺点：</strong>耗材多，价格贵，不能复写打印多份，对纸张要求高。</p>
+<h3 id="7-2-3-磁表面存储器"><a href="#7-2-3-磁表面存储器" class="headerlink" title="7.2.3 磁表面存储器"></a>7.2.3 磁表面存储器</h3><p><strong>优点：</strong>存储容量大，价格低，非破坏性读出，记录信息可以长久保存。</p>
+<p><strong>缺点：</strong>存取速度慢，机械机构复杂，对工作环境要求高。</p>
+<ul>
+<li><strong>磁盘存储器</strong></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://media4.open.com.cn/L603/fushi/0903/jisuanjzcyl/web/lesson/char4/image/s59.gif" alt="磁盘存储器"></p>
+<ol>
+<li><strong>组成</strong></li>
+</ol>
+<p><strong>（1）存储区域</strong></p>
+<p>一块硬盘含有若干记录面，每个记录面划分为若干磁道，而每条磁道又划分为若干扇区，扇区(也称块)是磁盘读写的最小单位，即磁盘按块存取。</p>
+<p><strong>磁头（Heads）：</strong>用于读取&#x2F;写入盘片上的记录面信息，一个记录面对应一个磁头。<br><strong>柱面数（Cylinders）：</strong>表示硬盘每个盘片上有多少磁道。<br><strong>扇片数（Sectors）：</strong>表示每条磁道上有多少个扇区。</p>
+<p>下图为一个记录面示意图，</p>
+<p><img src="/medias/loading.gif" data-original="https://bkimg.cdn.bcebos.com/pic/cf1b9d16fdfaaf51f82f37c88e5494eef11f7afc?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_auto" alt="磁盘存储器记录面"></p>
+<p><strong>（2）磁盘存储器</strong></p>
+<p><strong>磁盘驱动器：</strong>核心部件是磁头组件和盘片组件。</p>
+<p><strong>磁盘控制器：</strong>硬盘存储器和主机的接口，IDE、SCSI、SATA等。</p>
+<ol start="2">
+<li><strong>磁记录原理</strong></li>
+</ol>
+<p><strong>原理：</strong>磁头和磁性记录介质相对运动，通过电转磁完成读&#x2F;写操作。</p>
+<p><strong>编码方法：</strong>按照某种方案把一连串二进制信息变换成存储介质磁层中一个磁化翻转状态的序列，并使读&#x2F;写控制电路容易、可靠的实现变换。</p>
+<p><strong>磁记录方式：</strong>通常采用**调频制( FM )和改进型调频制( MFM )**的记录方式。</p>
+<ol start="3">
+<li><strong>磁盘的性能</strong></li>
+</ol>
+<p>（1）<strong>磁盘的容量：</strong>存储字节的数量。</p>
+<p><strong>格式化容量：</strong>按照某种特定记录方式可以记录信息的总量。</p>
+<p><strong>非格式化容量：</strong>可以利用的磁化单元总数，由道密度和位密度计算而来。</p>
+<p>PS：格式化后的容量比非格式化容量要小。</p>
+<p>（2）<strong>记录密度：</strong>盘片单位面积上记录的二进制信息量。</p>
+<p><strong>道密度：</strong>沿磁盘半径方向单位长度上的磁道数</p>
+<p><strong>位密度：</strong>磁道单位长度上能记录得二进制代码位数</p>
+<p><strong>面密度：</strong>位密度和道密度的乘积</p>
+<p>（3）<strong>平均存储时间</strong></p>
+<p><strong>寻道时间</strong>(磁头移动到目的磁道的时间) +<strong>旋转延迟时间</strong>(磁头定位到所在扇区的时间，取旋转一周时间的一半) +<strong>传输时间</strong>(传输数据所花费的时间)。由于寻道和找扇区的距离远近不一，因此前两部分通常取平均值。</p>
+<p>（4）<strong>数据传输率</strong></p>
+<p>磁盘存储器在单位时间内向主机传送数据的字节数。设磁盘转数为 r 转&#x2F;秒，每条磁道容量为N字节，则数据传输率为 D &#x3D; rN。</p>
+<ol start="4">
+<li><strong>磁盘地址</strong></li>
+</ol>
+<p>按照二进制对其对应个数进行编码。若系统中有4个驱动器，每个驱动器带-一个磁盘， 每个磁盘256个磁道、16个盘面，每个盘面划分为16个扇区，则每个扇区地址要18位二进制代码，其格式如图所示。</p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E7%A3%81%E7%9B%98%E7%9A%84%E5%9C%B0%E5%9D%80%E6%A0%BC%E5%BC%8F.png" alt="image-20210818182423116"></p>
+<ol start="5">
+<li><strong>硬盘工作过程</strong></li>
+</ol>
+<p>（1）硬盘的主要操作是<strong>寻址、读盘、写盘</strong>。每个操作都对应一个控制字，硬盘工作时，<strong>第一步</strong><br><strong>是取控制字，第二步是执行控制字。</strong></p>
+<p>（2）<strong>读写操作是串行的，不能既读又写</strong>。</p>
+<ul>
+<li><strong>磁盘阵列</strong></li>
+</ul>
+<p>RAID (Redundant Arrays of Inexpensive Disks，廉价冗余磁盘阵列)是<strong>指将多个独立的物理磁盘组成一个独立的逻辑盘，数据在多个物理盘上分割交叉存储、并行访问</strong>，具有更好的存储性能、可靠性和安全性。</p>
+<ol>
+<li><strong>RAID分级</strong></li>
+</ol>
+<p>RAID0：无冗余和无校验的磁盘阵列</p>
+<p>RAID1：镜像磁盘阵列</p>
+<p>RAID2：采用纠错的海明码的磁盘阵列</p>
+<p>RAID3：位交叉奇偶校验的磁盘阵列</p>
+<p>RAID4：块交叉奇偶校验的磁盘真理</p>
+<p>RAID5：无独立校验的就校验磁盘阵列</p>
+<p>RAID通过同时使用多个磁盘，提高了传输率；通过在多个磁盘上并行存取来大幅提高存储系统的数据吞吐量；通过镜像功能，提高安全可靠性；通过数据校验，提供容错能力。</p>
+<ul>
+<li><strong>光盘存储器</strong></li>
+</ul>
+<p><strong>原理：</strong>利用光学原理读&#x2F;写信息的存储装置，采用聚集激光束对盘式介质以非接触方式记录信息。</p>
+<p><strong>特点：</strong>具有高存储密度，携带方便，成本低，容量大，存储期限长，容易保存。</p>
+<p><strong>分类：</strong></p>
+<p>（1）CD-ROM：只读型光盘。</p>
+<p>（2）CD-R：只能写入一次信息之后不可修改。</p>
+<p>（3）CD-RW：可读可写光盘，可以重复读写。</p>
+<p>（4）DVD-ROM：高容量CD-ROM，<strong>DVD表示通用数字化多功能光盘</strong>。</p>
+<ul>
+<li><strong>固态硬盘：</strong>常用于高档笔记本电脑。</li>
+</ul>
+<h2 id="7-3-I-x2F-O接口"><a href="#7-3-I-x2F-O接口" class="headerlink" title="7.3 I&#x2F;O接口"></a>7.3 I&#x2F;O接口</h2><h3 id="7-3-1-接口功能"><a href="#7-3-1-接口功能" class="headerlink" title="7.3.1 接口功能"></a>7.3.1 接口功能</h3><ul>
+<li><p><strong>实现主机和外设之间的通信联络控制。</strong>( 时序配合问题,协调相互速度问题)保证计算机系统更能够统一协调的工作。</p>
+</li>
+<li><p><strong>进行地址译码和设备选择</strong>。</p>
+</li>
+<li><p><strong>实现数据的缓冲。</strong>消除CPU和外设之间的速度差异。</p>
+</li>
+<li><p><strong>信号格式转换。</strong>消除主机与外设之间的电平、数据格式等差异。</p>
+</li>
+<li><p><strong>传送控制命令和状态信息</strong>。协调外设的运作状态。</p>
+</li>
+</ul>
+<ol>
+<li>如启动时CPU向外设发送启动命令，外设准备好后想CPU发送准备好命令。</li>
+<li>外设向CPU提出中断请求和DMA请求时，CPU也有相应的响应信号反馈给外设。</li>
+</ol>
+<h3 id="7-3-2-I-x2F-O接口的基本结构"><a href="#7-3-2-I-x2F-O接口的基本结构" class="headerlink" title="7.3.2 I&#x2F;O接口的基本结构"></a>7.3.2 I&#x2F;O接口的基本结构</h3><p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/IO%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png" alt="image-20210819001016298"></p>
+<ul>
+<li><strong>内部接口</strong></li>
+</ul>
+<p>内部接口与系统总线相连(实质是与内存、CPU相连)。数据传输方式只能是并行传输。</p>
+<ul>
+<li><strong>外部接口</strong></li>
+</ul>
+<p>外部接口通过接口电缆和外设相连。</p>
+<p>PS：</p>
+<p>外部接口可能是串行结构，所以<strong>I&#x2F;O接口要有串&#x2F;并转换功能</strong>。</p>
+<p>对数据缓冲寄存器、状态&#x2F;控制寄存器的访问操作是通过相应的指令来完成的，通常称这类指令为<strong>I&#x2F;O指令</strong>，I&#x2F;O指令只能在操作系统内核的底层I&#x2F;O软件中使用，它们是一种特权指令。</p>
+<p><strong>接口和端口是两个不同的概念。</strong>端口是指接口电路中可以进行读&#x2F;写的寄存器，若干<br>端口加上相应的控制逻辑才可以组成接口。</p>
+<h3 id="7-3-3-I-x2F-O接口类型"><a href="#7-3-3-I-x2F-O接口类型" class="headerlink" title="7.3.3 I&#x2F;O接口类型"></a>7.3.3 I&#x2F;O接口类型</h3><ul>
+<li><strong>数据传输方式</strong></li>
+</ul>
+<ol>
+<li><strong>并行接口：</strong>一个字节或者一个字的所有位同时传送。</li>
+<li><strong>串行接口：</strong>一位一位传输。</li>
+</ol>
+<ul>
+<li><strong>控制方式分类</strong></li>
+</ul>
+<ol>
+<li>程序查询接口</li>
+<li>中断接口</li>
+<li>DMA接口</li>
+</ol>
+<ul>
+<li><strong>按照功能分类</strong></li>
+</ul>
+<ol>
+<li>可编程接口</li>
+<li>不可编程接口</li>
+</ol>
+<h3 id="7-3-4-I-x2F-O端口及其编址"><a href="#7-3-4-I-x2F-O端口及其编址" class="headerlink" title="7.3.4 I&#x2F;O端口及其编址"></a>7.3.4 I&#x2F;O端口及其编址</h3><ul>
+<li><strong>统一编址</strong></li>
+</ul>
+<p>又称<strong>存储器映射方式</strong>，将I&#x2F;O端口当做存储器单元进行地址分配。</p>
+<p><strong>优点：</strong>不需要设置专门输入输出指令，CPU访问存储器更灵活，端口编址空间较大。</p>
+<p><strong>缺点：</strong>端口占用存储器地址，数据输入输出的时候，执行速度较慢。</p>
+<ul>
+<li><strong>独立编址</strong></li>
+</ul>
+<p>又称<strong>I&#x2F;O映射方式</strong>，I&#x2F;O端口地址与存储器地址无关。</p>
+<p><strong>优点：</strong>程序编址清晰，便于理解。</p>
+<p><strong>缺点：</strong>需要设置专门的输入&#x2F;输出指令访存，增加了控制的复杂性。</p>
+<h2 id="7-4-I-x2F-O方式"><a href="#7-4-I-x2F-O方式" class="headerlink" title="7.4 I&#x2F;O方式"></a>7.4 I&#x2F;O方式</h2><h3 id="7-4-1-程序查询方式"><a href="#7-4-1-程序查询方式" class="headerlink" title="7.4.1 程序查询方式"></a>7.4.1 程序查询方式</h3><ul>
+<li><strong>原理</strong></li>
+</ul>
+<p>信息交换的控制完全由主机执行程序实现，程序查询方式接口中设置一个数据缓冲寄存器(数据端口)和一个设备状态寄存器(状态端口)。主机进行I&#x2F;O操作时，先发出询问信号，读取设备的状态并根据设备状态决定下一步操作究竟是进行数据传送还是等待。</p>
+<ul>
+<li><strong>优点</strong></li>
+</ul>
+<p>设计简单且设备量小。</p>
+<ul>
+<li><strong>缺点</strong></li>
+</ul>
+<p>CPU需要花费大量时间进行查询和等待，一段时间内只能和一台外设交互信息效率。</p>
+<p>CPU存在原地踏步现象。</p>
+<h3 id="7-4-2-程序中断方式"><a href="#7-4-2-程序中断方式" class="headerlink" title="7.4.2 程序中断方式"></a>7.4.2 程序中断方式</h3><ul>
+<li><strong>异常和中断</strong></li>
+</ul>
+<ol>
+<li><strong>异常</strong></li>
+</ol>
+<p>异常是指由CPU内部异常引起的意外事件，分为<strong>硬故障中断和程序性异常</strong>。<strong>硬故障中断是由硬连线出现异常引起的</strong>，如电源掉电、存储器线路错等。<strong>程序性异常也称软中断，是指在CPU内部因执行指令而引起的异常事件</strong>。如整除0、溢出、断点、单步跟踪、非法指令、栈溢出、地址越界、缺页、分时系统中的时间片中断及用户态到核心态的切换等。<strong>按发生异常的报告方式和返回方式不同，内部异常可分为故障(Fault)、 自陷(Trap) 和终止(Abort)三类。</strong></p>
+<p><strong>（1） 故障（Fault）</strong></p>
+<p><strong>指在引起故障等指令启动后、执行结束前被检测到的异常事件。</strong>例如，指令译码时，出现<strong>“非法操作码”</strong>；取数据时，发生<strong>“缺段”或“缺页”</strong>；执行整数除法指令时，发现<strong>“除数为0”</strong>等。</p>
+<p>对于“缺段”“缺页”等异常处理后，已将所需的段或页面从磁盘调入主存，可回到发生故障的指令继续执行，断点为当前发生故障的指令；对于“非法操作码”“除数为0”等，因为无法通过异常处理程序恢复故障，因此不能回到原断点执行，必须终止进程的执行。</p>
+<p><strong>（2）自陷（Trap）</strong></p>
+<p><strong>自陷也称陷阱或陷入，它是预先安排的一种“异常”事件，</strong>就像预先设定的“陷阱”一样。通常的做法是：事先在程序中用一条特殊指令或通过某种方式设定特殊控制标志来人为设置一个“陷阱”，当执行到被设置了“陷阱”的指令时，CPU在执行完自陷指令后，自动根据不同“陷阱”类型进行相应的处理，然后返回到自陷指令的下一条指令执行。注意，当自陷指令是转移指令时，并不是返回到下一条指令执行，而是返回到转移目标指令执行。</p>
+<p><strong>（3）终止（Abort）</strong></p>
+<p><strong>如果在执行指令的过程中发生了使计算机无法继续执行的硬件故障，如电源掉电、线路故障等，那么程序将无法继续执行，只能终止，此时，调出中断服务程序来重启系统。</strong>这种异常与故障和自陷不同，不是由特定指令产生的，而是随机发生的。</p>
+<ol start="2">
+<li><strong>外部中断</strong></li>
+</ol>
+<p><strong>外中断是指来自CPU外部、与CPU执行指令无关的事件引起的中断，</strong>包括I&#x2F;O设备发出的I&#x2F;O中断(如键盘输入、打印机缺纸等)、外部信号中断(如用户按Esc键)，以及各种定时器引起的时钟中断等。外中断在狭义上一般称为中断(若未说明，一般是指外中断)。</p>
+<p><strong>外中断与内部异常的对比：</strong></p>
+<p>（1）“缺页”或“溢出”等异常事件是由特定指令在执行过程中产生的，而中断不和任何指令相关联，也不阻止任何指令的完成。</p>
+<p>（2）异常的检测是由CPU自身完成的，不必通过外部的某个信号通知CPU。对于中断，CPU必须通过总线获取中断源的标识信息，才能获知哪个设备发生了何种中断。</p>
+<ul>
+<li><strong>中断的基本概念</strong></li>
+</ul>
+<p>当计算机出现异常情况或者特殊请求，CPU暂时中止当前程序，转去处理异常或者特殊情况。</p>
+<p><strong>作用：</strong></p>
+<ol>
+<li>实现CPU与I&#x2F;O并行工作</li>
+<li>处理硬件故障和软件错误</li>
+<li>实现人机交互，用户干预机器需要用到中断系统</li>
+<li>实现多道程序、分时操作。多道程序的切换需借助于中断系统</li>
+<li>实时处理需要借助中断系统来实现快速响应</li>
+<li>实现应用程序和操作系统(管态程序)的切換，称为”软中断”</li>
+<li>多处理器系统中各处理器之间的信息交流和任务切换</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="image-20210819091019160"></p>
+<ul>
+<li><strong>工作流程</strong></li>
+</ul>
+<ol>
+<li><strong>中断请求</strong></li>
+</ol>
+<p><strong>中断源是请求CPU中断的设备或事件，一台计算机允许有多个中断源。</strong>每个中断源向CPU发出中断请求的时间是随机的。为记录中断事件并区分不同的中断源，中断系统等对每个中断源设置中断请求标记触发器INTR，当其状态为“1”时，表示中断源有请求。这些触发器可组成中断请求标记寄存器，该寄存器可集中在CPU中，也可分散在各个中断源中。</p>
+<p>（1）<strong>内&#x2F;外中断</strong></p>
+<p><strong>内中断：</strong>内中断主要是指在处理器和内存内部产生的中断。包括程序运算引起的各种错误,如地址非法、校验错等。</p>
+<p><strong>外中断：</strong>外中断是指来自处理器和内存以外的部件引起的中断。包括I&#x2F;O设备发出的I&#x2F;O中断等。</p>
+<p>（2）<strong>硬件中断与软件中断</strong></p>
+<p><strong>硬件中断：</strong>通过外部的硬件产生的中断，硬件中断属于外中断。</p>
+<p><strong>软件中断：</strong>通过某条指令产生的中断，这种中断是可以编程实现的，软件中断是内中断。</p>
+<p>（3）<strong>非屏蔽与可屏蔽中断</strong></p>
+<p><strong>非屏蔽中断：</strong>非屏蔽中断是一种硬件中断，不受中断标志位IF的影响，即使在关中断(IF &#x3D; 0)的情况下也会被响应。</p>
+<p><strong>可屏蔽中断：</strong>可屏蔽中断也是一种硬件中断，受中断标志位IF的影响 ，在关中断情况下不接受中断请求。</p>
+<ol start="2">
+<li><strong>中断判优</strong></li>
+</ol>
+<p>中断系统在任一瞬间只能响应-一个中断源的请求。由于许多中断源提出中断请求的时间都是随机的，因此当多个中断源同时提出请求时，需<strong>通过中断判优逻辑确定响应哪个中断源的请求</strong>，例如故障中断的优先级别较高，然后是I&#x2F;O中断。</p>
+<p><strong>（1）硬件实现</strong></p>
+<p>硬件实现是通过硬件排队器实现的，它既可以设置在CPU中，又可以分散在各个中断源中。</p>
+<p><strong>（2）软件实现</strong></p>
+<p>软件实现是通过查询程序实现的。</p>
+<p><strong>（3）一般逻辑</strong></p>
+<p>一般来说，<strong>硬件故障中断属于最高级，其次是软件中断</strong>，不可屏蔽中断优于可屏蔽中断，DMA请求优于I&#x2F;O设备传送的中断请求，高速设备优于低速设备，输入设备优于输出设备，实时设备优于普通设备等。</p>
+<ol start="3">
+<li><strong>CPU响应中断的条件</strong></li>
+</ol>
+<p>（1）中断源有中断请求</p>
+<p>（2）CPU允许中断及开中断</p>
+<p>（3）一条指令执行完毕，且没有更紧迫的任务</p>
+<p>PS：CPU 响应中断的时间是在每条指令执行阶段的结束时刻。这里说的中断仅指外中断，内中断不属于此类情况。</p>
+<ol start="4">
+<li><strong>中断响应</strong></li>
+</ol>
+<p><strong>CPU响应中断后，经过某些操作，转去执行中断服务程序。这些操作是由硬件直接实现的，我们将它称为中断隐指令。</strong>中断隐指令并不是指令系统中的一条真正的指令，它没有操作，所以<strong>中断隐指令是一种不允许也不可能为用户使用的特殊指令</strong>。它所完成的操作如下：</p>
+<p><strong>（1）关中断。</strong>CPU响应中断后，首先要保护程序的断点和现场信息，在保护断点和现场的过程中，CPU不能响应更高级中断源的中断请求。</p>
+<p><strong>（2）保存断点。</strong>为保证在中断服务程序执行完毕后能正确地返回到原来的程序，必须将原来程序的断点(指令无法直接读取的PC和PSWR等的内容)保存起来。</p>
+<p><strong>（3）引出中断服务程序。</strong>实质是取出中断服务程序的入口地址并传送给程序计数器(PC)。</p>
+<ol start="5">
+<li><strong>中断向量</strong></li>
+</ol>
+<p><strong>每个中断都有一个类型号，每个中断类型号都对应一个中断服务程序， 每个中断服务程序都有一个入口地址，CPU必须找到入口地址，即中断向量，</strong>把系统中的全部中断向量集中存放到存储器的某个区域内，这个<strong>存放中断向量的存储区就称为中断向量表</strong>。</p>
+<p><strong>CPU响应中断后，中断硬件会自动将中断向量地址传送到CPU，由CPU实现程序的切换，这种方法称为中断向量法，采用中断向量法的中断称为向量中断。</strong></p>
+<ol start="6">
+<li><strong>中断处理过程</strong></li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%8F%AF%E5%B5%8C%E5%A5%97%E4%B8%AD%E6%96%AD%E7%9A%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.png" alt="image-20210819092514309"></p>
+<p>PS：<strong>现场和断点，这两类信息都不能被中断服务程序破坏。</strong>现场信息因为用指令可直接访问，所以通常在中断服务程序中通过指令把它们保存到栈中，即由软件实现；而断点信息由CPU在中断响应开始时自动保存到栈或专门的寄存器中，即由硬件实现。</p>
+<ul>
+<li><strong>多重中断和中断屏蔽技术</strong></li>
+</ul>
+<ol>
+<li><strong>多重中断</strong></li>
+</ol>
+<p>若CPU在执行中断服务程序的过程中，又出现了新的更高优先级的中断请求，而<strong>CPU对</strong><br><strong>新的中断请求不予响应，则这种中断称为单重中断。若CPU暂停现行的中断服务程序，转去处理新的中断请求，则这种中断称为多重中断，又称中断嵌套。</strong></p>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E5%8D%95%E9%87%8D%E4%B8%AD%E6%96%AD%E5%92%8C%E5%A4%9A%E9%87%8D%E4%B8%AD%E6%96%AD.png" alt="image-20210819092852515"></p>
+<ol start="2">
+<li><strong>中断屏蔽技术</strong></li>
+</ol>
+<p>中断屏蔽技术主要用于多重中断。CPU要具备多重中断的功能，必须满足下列条件：</p>
+<p>① 在中断服务程序中提前设置开中断指令。</p>
+<p>② 优先级别高的中断源有权中断优先级别低的中断源。</p>
+<p>每个中断源都有一个屏蔽触发器，1表示屏蔽该中断源的请求，0表示可以正常申请，所有屏蔽触发器组合在一起便构成一个屏蔽字寄存器，屏蔽字寄存器的内容称为屏蔽字。</p>
+<h3 id="7-4-3-DMA方式"><a href="#7-4-3-DMA方式" class="headerlink" title="7.4.3 DMA方式"></a>7.4.3 DMA方式</h3><ul>
+<li><strong>概述</strong></li>
+</ul>
+<p>DMA方式是一种完全由硬件进行成组信息传送的控制方式，它具有程序中断方式的优点，即在数据准备阶段，CPU与外设并行工作。DMA方式在外设与内存之间开辟一条“直接数据通道”，信息传送不再经过CPU,降低了CPU在传送数据时的开销，因此称为直接存储器存取方式。</p>
+<p>这种方式适用于磁盘机、磁带机等高速设备大批量数据的传送，它的硬件开销比较大。在DMA方式中，中断的作用仅限于故障和正常传送结束时的处理。</p>
+<ul>
+<li><strong>特点</strong></li>
+</ul>
+<p>① 它使主存与CPU的固定联系脱钩，主存既可被CPU访问，又可被外设访问。</p>
+<p>② 在数据块传送时，主存地址的确定、传送数据的计数等都由硬件电路直接实现.</p>
+<p>③ 主存中要开辟专用缓冲区，及时供给和接收外设的数据。</p>
+<p>④ DMA传送速度快，CPU和外设并行工作，提高了系统效率。</p>
+<p>⑤ DMA在传送开始前要通过程序进行预处理，结束后要通过中断方式进行后处理。</p>
+<ul>
+<li><strong>DMA控制器的组成</strong></li>
+</ul>
+<p>在DMA方式中，<strong>对数据传送过程进行控制的硬件称为DMA控制器(DMA接口)<strong>。当I&#x2F;O设备需要进行数据传送时，</strong>通过DMA控制器向CPU提出DMA传送请求，CPU响应之后将让出系统总线，由DMA控制器接管总线进行数据传送</strong>。其主要功能如下：</p>
+<p>（1）接受外设发出的DMA请求，并向CPU发出总线请求。</p>
+<p>（2）CPU响应此总线请求，发出总线响应信号，接管总线控制权，进入DMA操作周期。</p>
+<p>（3）确定传送数据的主存单元地址及长度，并自动修改主存地址计数和传送长度计数。</p>
+<p>（4）规定数据在主存和外设间的传送方向，发出读写等控制信号，执行数据传送操作。</p>
+<p>（5）向CPU报告DMA操作的结束。</p>
+<p><strong>组成结构：</strong></p>
+<p>（1）<strong>主存地址计数器：</strong>存放要交换数据的主存地址。</p>
+<p>（2）<strong>传送长度计数器：</strong>记录传送数据的长度，计数溢出时，数据即传送完毕，自动发中断请求信号。</p>
+<p>（3）<strong>数据寄存器：</strong>暂存每次传送的数据。</p>
+<p>（4）<strong>DMA请求触发器：</strong>每当I&#x2F;O设备准备好数据后，给出一个控制信号，使DMA请求触发器置位。</p>
+<p>（5）<strong>“控制&#x2F;状态” 逻辑：</strong>由控制和时序电路及状态标志组成，用于指定传送方向，修改传送参数，并对DMA请求信号和CPU响应信号进行协调和同步。</p>
+<p>（6）<strong>中断机构：</strong>当一个数据块传送完毕后触发中断机构，向CPU提出中断请求。</p>
+<ul>
+<li><strong>传送方式</strong></li>
+</ul>
+<p>主存和IO设备之间交换信息时，不通过CPU.但当I&#x2F;O设备和CPU同时访问主存时，可能发生冲突，为了有效地使用主存，DMA控制器与CPU通常采用以下3种方式使用主存：</p>
+<ol>
+<li><strong>停止CPU访问主存：</strong>CPU放弃地址线、数据线和有关控制线的使用权, DMA接口获得总线控制权。</li>
+<li><strong>周期挪用：</strong></li>
+</ol>
+<p>（1）CPU不在访存，I&#x2F;O的访存请求与CPU未发生冲突。</p>
+<p>（2）CPU正在访存，此时必须待存取周期结束后，CPU再将总线占有权让出。</p>
+<p>（3）I&#x2F;O和CPU同时请求访存，出现访存冲突，此时CPU要暂时放弃总线占有权，由I&#x2F;O设备挪用一个或几个存取周期，传送完一个数据后立即释放总线，是一种单字传送方式。</p>
+<ol start="3">
+<li><strong>DMA与CPU交替访存：</strong>这种方式适用于CPU的工作周期比主存存取周期长的情况。</li>
+</ol>
+<p>例如，若CPU的工作周期是1.2μs, 主存的存取周期小于0.6μs， 则可将一个 CPU周期<br>分为C1和C2两个周期，其中C1专供DMA访存，C2专供CPU访存。这种方式不需要总线使用权的申请、建立和归还过程，总线使用权是通过C1和C2分时控制的。</p>
+<ul>
+<li><strong>传送过程</strong></li>
+</ul>
+<ol>
+<li><strong>预处理：</strong>由CPU完成一些必要的准备工作(寄存器置初值、设置传送方向、启动该设备)。</li>
+<li><strong>数据传送：</strong>DMA的数据传输可以以单字节(或字)为基本单位，也可以以数据块为基本单位，数据传送阶段完全由DMA (硬件)控制。</li>
+<li><strong>后处理：</strong>DMA控制器向CPU发送中断请求，CPU执行中断服务程序做DMA结束处理。</li>
+</ol>
+<ul>
+<li><strong>DMA方式和中断方式的重要区别</strong></li>
+</ul>
+<p>① 中断方式是程序的切换，需要保护和恢复现场；而DMA方式除了预处理和后处理，其他时候不占用CPU的任何资源。</p>
+<p>② 对中断请求的响应只能发生在每条指令执行完毕时(即指令的执行周期后)；而对DMA请求的响应可以发生在每个机器周期结束时(在取指周期、间址周期、执行周期后均可)，只要CPU不占用总线就可被响应。</p>
+<p>③ 中断传送过程需要CPU的干预；而DMA传送过程不需要CPU的干预，因此数据传输率非常高，适合于高速外设的成组数据传送。</p>
+<p>④ DMA请求的优先级高于中断请求。</p>
+<p>⑤ 中断方式具有对异常事件的处理能力，而DMA方式仅局限于传送数据块的I&#x2F;O操作。</p>
+<p>⑥ 从数据传送来看，中断方式靠程序传送，DMA方式靠硬件传送。</p>
+<p>​    </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fdChen</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/">https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">fdChen</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">计算机组成原理</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tcK03mL1mpaBq1nRNoEYy3e4-gzGzoHsz',
+        appKey: 'h8N9NwAkLQWY7wCMIufRFw18',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '填写昵称与邮箱即可添加评论，支持通过Gravatar official graphics设置头像，欢迎交流讨论~',
+        requiredFields: ['nick','mail'], //设置必填项
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/ji-suan-ji-ji-chu-ji-suan-ji-wang-luo/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/compute-network.jpg" class="responsive-img" alt="计算机网络">
+                        
+                        <span class="card-title">计算机网络</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机网络知识点总结
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/shu-xue-xian-xing-dai-shu/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/linear_algebra.jpg" class="responsive-img" alt="_线性代数">
+                        
+                        <span class="card-title">_线性代数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            AI领域常用的线性代数原理
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                                    数学
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: fdChen的掉发收集箱<br />'
+            + '文章作者: fdChen<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <script src="/js/prism/prism.js" async></script>
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <a href="/about" target="_blank">fdChen</a>
+            <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">255.1k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "3";
+                        var startDate = "7";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="/beian.miit.gov.cn" target="_blank">湘ICP备20016057号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/CCSemicircle" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fangd.chen@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我: fangd.chen@gmail.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2914756796" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2914756796" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/semi-circle-42/posts" class="tooltipped" target="_blank" data-tooltip="关注我的知乎" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    
+    <div id="loading-box">
+      <div class="loading-left-bg"></div>
+      <div class="loading-right-bg"></div>
+      <div class="spinner-box">
+        <div class="configure-border-1">
+          <div class="configure-core"></div>
+        </div>
+        <div class="configure-border-2">
+          <div class="configure-core"></div>
+        </div>
+        <div class="loading-word">加载中...</div>
+      </div>
+    </div>
+    <!-- 页面加载动画 -->
+    <script>
+      $(document).ready(function () {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loading-box').classList.add("loaded")
+      })
+    </script>
+  
+  
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/js/matery.js"></script>
+
+    <!-- 引入Googlefonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+    </style>
+
+
+
+
+    
+
+    
+
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/others/sakura-small.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4a943d1ca56da567bf16a9c4e2d1368e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="18, 150, 219"
+        pointColor="18, 150, 219" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
+</html>

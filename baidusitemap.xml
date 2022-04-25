@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/ji-suan-ji-ji-chu-shu-ju-jie-gou/</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-wang-luo/</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
+    <lastmod>2022-04-25</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
     <lastmod>2022-04-23</lastmod>
   </url>
@@ -53,10 +73,6 @@
     <lastmod>2022-04-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
-    <lastmod>2022-04-12</lastmod>
-  </url>
-  <url>
     <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
     <lastmod>2022-04-12</lastmod>
   </url>
@@ -75,10 +91,6 @@
   <url>
     <loc>https://blog.fdchen.host/2021/linux-shell-bian-cheng/</loc>
     <lastmod>2022-04-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
-    <lastmod>2022-04-05</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/python-jupyter/</loc>

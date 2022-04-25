@@ -6,7 +6,7 @@
   <link href="https://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="https://blog.fdchen.host/"/>
-  <updated>2022-04-13T12:40:33.575Z</updated>
+  <updated>2022-04-25T13:14:41.429Z</updated>
   <id>https://blog.fdchen.host/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="https://blog.fdchen.host/2022/ji-suan-ji-ji-chu-shu-ju-jie-gou/"/>
+    <id>https://blog.fdchen.host/2022/ji-suan-ji-ji-chu-shu-ju-jie-gou/</id>
+    <published>2022-04-25T13:14:00.000Z</published>
+    <updated>2022-04-25T13:14:41.429Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-数组与字符串&quot;&gt;&lt;a href=&quot;#1-数组与字符串&quot; class=&quot;headerlink&quot; title=&quot;1 数组与字符串&quot;&gt;&lt;/a&gt;1</summary>
+        
+      
+    
+    
+    
+    <category term="计算机基础" scheme="https://blog.fdchen.host/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="数据结构" scheme="https://blog.fdchen.host/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>NLP_入门教程</title>
@@ -134,7 +161,7 @@
     <link href="https://blog.fdchen.host/2022/python-chang-jian-yong-fa/"/>
     <id>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</id>
     <published>2022-03-15T19:18:00.000Z</published>
-    <updated>2022-04-12T12:54:15.017Z</updated>
+    <updated>2022-04-25T09:11:56.769Z</updated>
     
     
       
@@ -151,9 +178,9 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
-    
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
@@ -191,7 +218,7 @@
     <link href="https://blog.fdchen.host/2022/python-numpy/"/>
     <id>https://blog.fdchen.host/2022/python-numpy/</id>
     <published>2022-03-05T09:18:00.000Z</published>
-    <updated>2022-04-05T11:39:55.498Z</updated>
+    <updated>2022-04-25T08:59:49.089Z</updated>
     
     
       
@@ -234,9 +261,9 @@
     <category term="Java" scheme="https://blog.fdchen.host/categories/Java/"/>
     
     
-    <category term="SpringBoot" scheme="https://blog.fdchen.host/tags/SpringBoot/"/>
-    
     <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
+    
+    <category term="SpringBoot" scheme="https://blog.fdchen.host/tags/SpringBoot/"/>
     
   </entry>
   
@@ -261,13 +288,13 @@
     <category term="数据库" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
     
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
-    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
-    
     <category term="MySQL" scheme="https://blog.fdchen.host/tags/MySQL/"/>
+    
+    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
   </entry>
   
@@ -320,11 +347,11 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
+    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
+    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
     
   </entry>
   
@@ -455,11 +482,11 @@
     <category term="Linux" scheme="https://blog.fdchen.host/categories/Linux/"/>
     
     
-    <category term="Shell" scheme="https://blog.fdchen.host/tags/Shell/"/>
-    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="Shell" scheme="https://blog.fdchen.host/tags/Shell/"/>
     
   </entry>
   
@@ -486,86 +513,63 @@
     <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
     
     
+    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
     <category term="经典模型" scheme="https://blog.fdchen.host/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"/>
     
-    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-wang-luo/"/>
+    <id>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-wang-luo/</id>
+    <published>2021-09-05T12:00:00.000Z</published>
+    <updated>2022-04-25T13:14:29.244Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-计算机网络体系结构&quot;&gt;&lt;a href=&quot;#1-计算机网络体系结构&quot; class=&quot;headerlink&quot; title=&quot;1 计算机网络体系结构&quot;&gt;&lt;/a&gt;1 计算机网络体系结构&lt;/h1&gt;&lt;h2 id=&quot;1-1-计算机网络概述&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="计算机基础" scheme="https://blog.fdchen.host/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="计算机网络" scheme="https://blog.fdchen.host/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
-    <title>_线性代数</title>
-    <link href="https://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/"/>
-    <id>https://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/</id>
-    <published>2021-08-13T12:20:00.000Z</published>
-    <updated>2022-03-24T13:28:14.036Z</updated>
+    <title>计算机组成原理</title>
+    <link href="https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/"/>
+    <id>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/</id>
+    <published>2021-09-01T11:00:00.000Z</published>
+    <updated>2022-04-25T13:12:55.796Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;1-矩阵&quot;&gt;&lt;a href=&quot;#1-矩阵&quot; class=&quot;headerlink&quot; title=&quot;1 矩阵&quot;&gt;&lt;/a&gt;1 矩阵&lt;/h1&gt;&lt;h2 id=&quot;1-1-正定矩阵&quot;&gt;&lt;a href=&quot;#1-1-正定矩阵&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;1-计算机系统概述&quot;&gt;&lt;a href=&quot;#1-计算机系统概述&quot; class=&quot;headerlink&quot; title=&quot;1 计算机系统概述&quot;&gt;&lt;/a&gt;1 计算机系统概述&lt;/h1&gt;&lt;h2 id=&quot;1-1-计算机发展历程&quot;&gt;&lt;a href=&quot;#1-1-计算机发展历程&quot;</summary>
         
       
     
     
     
-    <category term="数学" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="计算机基础" scheme="https://blog.fdchen.host/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="线性代数" scheme="https://blog.fdchen.host/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
     
-  </entry>
-  
-  <entry>
-    <title>高等数学</title>
-    <link href="https://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/"/>
-    <id>https://blog.fdchen.host/2021/shu-xue-gao-deng-shu-xue/</id>
-    <published>2021-08-12T13:21:00.000Z</published>
-    <updated>2022-03-24T13:28:07.875Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1-条件概率及链式法则&quot;&gt;&lt;a href=&quot;#1-条件概率及链式法则&quot; class=&quot;headerlink&quot; title=&quot;1. 条件概率及链式法则&quot;&gt;&lt;/a&gt;1. 条件概率及链式法则&lt;/h1&gt;&lt;h2 id=&quot;1-1-条件概率&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="数学" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="高等数学" scheme="https://blog.fdchen.host/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《开放域语义解析》总结</title>
-    <link href="https://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/"/>
-    <id>https://blog.fdchen.host/2021/nlp-kai-fang-yu-yu-yi-jie-xi-zong-jie/</id>
-    <published>2021-08-07T02:25:00.000Z</published>
-    <updated>2022-03-24T13:27:40.292Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;原文章所属Github项目链接：&lt;a href=&quot;https://github.com/casnlu/Semantic-Parsing&quot;&gt;https://github.com/casnlu/Semantic-Parsing&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;1-语义解析简介&quot;&gt;&lt;a href=&quot;#1-语义解析简介&quot; class=&quot;headerlink&quot; title=&quot;1 语义解析简介&quot;&gt;&lt;/a&gt;1 语义解析简介&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;自然语言多样，具有歧义，其理解依赖世界知识和情境。&lt;/li&gt;
-&lt;li&gt;计算机能理解的语言时统一语义、显式结构、无歧义的。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
-    
-    
-    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="语义解析" scheme="https://blog.fdchen.host/tags/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90/"/>
+    <category term="计算机组成原理" scheme="https://blog.fdchen.host/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
