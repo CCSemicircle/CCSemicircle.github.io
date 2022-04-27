@@ -67,9 +67,9 @@
     <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
     
     
-    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -105,7 +105,7 @@
     <link href="https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/"/>
     <id>https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/</id>
     <published>2022-03-26T08:27:00.000Z</published>
-    <updated>2022-04-13T08:36:53.990Z</updated>
+    <updated>2022-04-26T12:51:10.365Z</updated>
     
     
       
@@ -288,13 +288,13 @@
     <category term="数据库" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
-    
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
-    <category term="MySQL" scheme="https://blog.fdchen.host/tags/MySQL/"/>
-    
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
+    
+    <category term="MySQL" scheme="https://blog.fdchen.host/tags/MySQL/"/>
     
   </entry>
   
@@ -347,11 +347,11 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
     
   </entry>
   
@@ -482,9 +482,9 @@
     <category term="Linux" scheme="https://blog.fdchen.host/categories/Linux/"/>
     
     
-    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="Shell" scheme="https://blog.fdchen.host/tags/Shell/"/>
     
