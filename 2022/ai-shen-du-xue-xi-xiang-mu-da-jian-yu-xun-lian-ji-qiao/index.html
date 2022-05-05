@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    5.7k
                 </div>
                 
 
@@ -659,11 +659,17 @@
 <p>一般通过对网络输出值域以及损失函数定义的数学分析可以进行判断，并进行相应地调整。</p>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/andyL_05/article/details/119138160">训练过程中Loss突然变为NaN的可能原因与解决</a></p>
 <h2 id="2-8-留点数据用于最终验证"><a href="#2-8-留点数据用于最终验证" class="headerlink" title="2.8 留点数据用于最终验证"></a>2.8 留点数据用于最终验证</h2><p>如果数据还算充裕，最好能留⼀部分数据，在训练结束之后再⽆偏验证⼀下模型们的表现。</p>
-<h3 id="2-9-网格搜索寻找最优超参"><a href="#2-9-网格搜索寻找最优超参" class="headerlink" title="2.9 网格搜索寻找最优超参"></a>2.9 网格搜索寻找最优超参</h3><ul>
-<li>通过设置超参数的范围（有些超参数彼此影响需要共同搜索，比如batch size与learning rate），在多个超参数取值下逐个遍历尝试，即为网格搜索</li>
-<li>在进行网格搜索前，首先需要了解相关模型一般的敏感超参数以及其范围，这些可以通过去了解对比模型的论文参数设置收集</li>
-<li>其次是封装好遍历运行脚本，并记录好相关结果，<strong>最好是对每一次搜索的结果都即时记录，以防一次完整搜索出现问题就要从头开始重新搜索</strong></li>
-<li>在运行脚本前，<strong>最好对模型的执行效率进行检查，确保最大程度利用显卡性能，减少实验的时间</strong></li>
+<h2 id="2-9-网格搜索寻找最优超参"><a href="#2-9-网格搜索寻找最优超参" class="headerlink" title="2.9 网格搜索寻找最优超参"></a>2.9 网格搜索寻找最优超参</h2><ul>
+<li><p>通过设置超参数的范围（有些超参数彼此影响需要共同搜索，比如batch size与learning rate），在多个超参数取值下逐个遍历尝试，即为网格搜索</p>
+</li>
+<li><p>在进行网格搜索前，首先需要了解相关模型一般的敏感超参数以及其范围，这些可以通过去了解对比模型的论文参数设置收集</p>
+</li>
+<li><p>其次是封装好遍历运行脚本，并记录好相关结果，<strong>最好是对每一次搜索的结果都即时记录，以防一次完整搜索出现问题就要从头开始重新搜索</strong></p>
+</li>
+<li><p>在运行脚本前，<strong>最好对模型的执行效率进行检查，确保最大程度利用显卡性能，减少实验的时间</strong></p>
+</li>
+<li><p><strong>对于与迭代epoch次数无关的超参数，比如模型自身的参数设置等，可以设置较少的epoch，这些参数在较少的epoch下即可分出优劣</strong>，但是如学习率等超参数必须设置较大的epoch才能对比出结果，有时还需要结合loss图像观察，比如观察学习率是否合适</p>
+</li>
 </ul>
 <p>PS：更多的超参数调整信息，可以查看以下博客</p>
 <ol>
@@ -1331,12 +1337,12 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                         <span class="chip bg-color">常见用法</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
@@ -1576,7 +1582,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">255.2k</span>
+                        class="white-color">273.4k</span>
             
             
             

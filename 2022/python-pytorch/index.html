@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
-                            </a>
-                        
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                             <a href="/tags/Pytorch/">
@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    4.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -866,6 +866,10 @@ n <span class="token operator">=</span> torch<span class="token punctuation">.</
 
 <h2 id="5-12-查找某个值，torch-nonzero-a-x3D-x3D-10-squeeze"><a href="#5-12-查找某个值，torch-nonzero-a-x3D-x3D-10-squeeze" class="headerlink" title="5.12 查找某个值，torch.nonzero(a&#x3D;&#x3D;10).squeeze()"></a>5.12 查找某个值，torch.nonzero(a&#x3D;&#x3D;10).squeeze()</h2><h2 id="5-13-将tensor最高维度转换为list，其他维度维持tensor格式"><a href="#5-13-将tensor最高维度转换为list，其他维度维持tensor格式" class="headerlink" title="5.13 将tensor最高维度转换为list，其他维度维持tensor格式"></a>5.13 将tensor最高维度转换为list，其他维度维持tensor格式</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">list</span><span class="token punctuation">(</span>Tensor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h2 id="5-14-重构tensor维度大小，view"><a href="#5-14-重构tensor维度大小，view" class="headerlink" title="5.14 重构tensor维度大小，view"></a>5.14 重构tensor维度大小，view</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>view<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>  <span class="token comment"># a * b</span>
+torch<span class="token punctuation">.</span>view<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># a * n/a, n代表元素个数</span>
+torch<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># n, 一维结构</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 
 
 <h1 id="6-PyG-torch-geometirc"><a href="#6-PyG-torch-geometirc" class="headerlink" title="6 PyG-torch.geometirc"></a>6 PyG-torch.geometirc</h1><blockquote>
@@ -1052,12 +1056,12 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                                 <a href="/tags/Pytorch/">
@@ -1592,12 +1596,12 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%8D%E5%88%9B/">
-                        <span class="chip bg-color">服创</span>
-                    </a>
-                    
                     <a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
                         <span class="chip bg-color">经验总结</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%8D%E5%88%9B/">
+                        <span class="chip bg-color">服创</span>
                     </a>
                     
                 </div>
@@ -1785,7 +1789,7 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">255.2k</span>
+                        class="white-color">273.4k</span>
             
             
             
