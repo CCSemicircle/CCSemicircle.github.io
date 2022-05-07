@@ -14,11 +14,8 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="NLP,软件工程">
-    <meta name="description" content="注意事项
-手机上的信息电脑端看不到时不一定没有适配电脑端，需要自己去找，或者去查一下，手机端信息电脑端一般都有
-找到对应网页后不要直接开始在HTML中爬取，最好是找到返回的json数据，直接请求该链接
-找到对应请求链接后，一定要确保访问的h">
+    <meta name="keywords" content="爬虫,微博爬虫">
+    <meta name="description" content="微博爬虫项目与注意事项">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -41,7 +38,7 @@
 </script>
 
 
-    <title>fdChen的掉发收集箱</title>
+    <title>微博爬虫 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -324,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.fdchen.host/spider.jps')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">微博爬虫</h1>
                 </div>
             </div>
         </div>
@@ -443,12 +440,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+                                <span class="chip bg-color">代码示例</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -457,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-01
+                    2022-05-06
                 </div>
                 
 
@@ -466,7 +480,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    217
                 </div>
                 
 
@@ -496,7 +510,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+                <h1 id="爬虫示例"><a href="#爬虫示例" class="headerlink" title="爬虫示例"></a>爬虫示例</h1><ul>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/CCSemicircle/WeiboSpider">WeiboSpider</a></li>
+</ul>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
 <li>手机上的信息电脑端看不到时不一定没有适配电脑端，需要自己去找，或者去查一下，手机端信息电脑端一般都有</li>
 <li>找到对应网页后不要直接开始在HTML中爬取，最好是找到返回的json数据，直接请求该链接</li>
 <li>找到对应请求链接后，一定要确保访问的header正确（需要去找这个header，待确定简单的方法todo）</li>
@@ -566,7 +583,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+                                    <span class="chip bg-color">代码示例</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1013,31 +1038,46 @@
                 <a href="/2022/pa-chong-wei-bo-pa-chong/">
                     <div class="card-image">
                         
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/spider.jps" class="responsive-img" alt="微博爬虫">
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">微博爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            微博爬虫项目与注意事项
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fdChen
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+                        <span class="chip bg-color">代码示例</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
