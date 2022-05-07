@@ -6,7 +6,7 @@
   <link href="https://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="https://blog.fdchen.host/"/>
-  <updated>2022-05-07T04:04:49.690Z</updated>
+  <updated>2022-05-07T04:11:48.275Z</updated>
   <id>https://blog.fdchen.host/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.fdchen.host/2022/pa-chong-wei-bo-pa-chong/"/>
     <id>https://blog.fdchen.host/2022/pa-chong-wei-bo-pa-chong/</id>
     <published>2022-05-06T12:00:00.000Z</published>
-    <updated>2022-05-07T04:04:49.690Z</updated>
+    <updated>2022-05-07T04:11:48.275Z</updated>
     
     
       
@@ -510,9 +510,9 @@
     <category term="Linux" scheme="https://blog.fdchen.host/categories/Linux/"/>
     
     
-    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
-    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
     <category term="Shell" scheme="https://blog.fdchen.host/tags/Shell/"/>
     
