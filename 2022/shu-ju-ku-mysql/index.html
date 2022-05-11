@@ -442,20 +442,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Debug/">
-                                <span class="chip bg-color">Debug</span>
-                            </a>
-                        
                             <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">环境配置</span>
                             </a>
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
-                            </a>
-                        
                             <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                 <span class="chip bg-color">常见用法</span>
+                            </a>
+                        
+                            <a href="/tags/Debug/">
+                                <span class="chip bg-color">Debug</span>
+                            </a>
+                        
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -488,14 +488,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    765
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -577,6 +577,15 @@
 <p>[Err] 1690 - BIGINT UNSIGNED value is out of range in ‘(resume.r_resume.status - 1)’</p>
 <p>原因：取绝对值之前得到负值，看看是不是status勾选了unsigned，去掉再试试。</p>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xinxinmifan/p/11548935.html">https://www.cnblogs.com/xinxinmifan/p/11548935.html</a></p>
+<h2 id="1-5-时间比较"><a href="#1-5-时间比较" class="headerlink" title="1.5 时间比较"></a>1.5 时间比较</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">date</span><span class="token punctuation">(</span><span class="token keyword">datetime</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">2022</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">11</span>  <span class="token comment"># 错误，2022-05-11会识别成数字</span>
+<span class="token keyword">date</span><span class="token punctuation">(</span><span class="token keyword">datetime</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token string">"2022-05-11"</span>  <span class="token comment"># 正确，必须是字符串格式才能比较</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="1-6-查询语句中的字符串变量必须加引号"><a href="#1-6-查询语句中的字符串变量必须加引号" class="headerlink" title="1.6 查询语句中的字符串变量必须加引号"></a>1.6 查询语句中的字符串变量必须加引号</h2><pre class="line-numbers language-pytho" data-language="pytho"><code class="language-pytho">sql &#x3D; f&#39;select uid from &#123;sql_table_name&#125; where date&#x3D;&quot;&#123;date&#125;&quot; and period_type &#x3D;&quot;&#123;period_type&#125;&quot;&#39;  # 必须加引号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="1-7-跨表查询，in"><a href="#1-7-跨表查询，in" class="headerlink" title="1.7 跨表查询，in"></a>1.7 跨表查询，in</h2><h2 id="1-8-更新记录，update"><a href="#1-8-更新记录，update" class="headerlink" title="1.8 更新记录，update"></a>1.8 更新记录，update</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table_name <span class="token keyword">SET</span> field1<span class="token operator">=</span>new<span class="token operator">-</span>value1<span class="token punctuation">,</span> field2<span class="token operator">=</span>new<span class="token operator">-</span>value2 <span class="token punctuation">[</span><span class="token keyword">WHERE</span> Clause<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <h1 id="2-Debug"><a href="#2-Debug" class="headerlink" title="2 Debug"></a>2 Debug</h1><h2 id="2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES"><a href="#2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES" class="headerlink" title="2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)"></a>2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36675754/article/details/81381341">在MySQL登录时出现Access denied for user ‘root‘@‘localhost‘ (using password: YES) 拒绝访问，并可修改MySQL密码</a></li>
 </ul>
@@ -603,6 +612,159 @@
 <h2 id="2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误"><a href="#2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误" class="headerlink" title="2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误"></a>2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/cainiao_accp/article/details/68962579">MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</a></li>
 </ul>
+<h1 id="3-PyMySQL"><a href="#3-PyMySQL" class="headerlink" title="3 PyMySQL"></a>3 PyMySQL</h1><h2 id="3-1-下载安装数据库连接池DBUtils"><a href="#3-1-下载安装数据库连接池DBUtils" class="headerlink" title="3.1 下载安装数据库连接池DBUtils"></a>3.1 下载安装数据库连接池DBUtils</h2><p>DBUtils 是一套用于管理<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0&spm=1001.2101.3001.7020">数据库连接池</a>的包，为高频度高并发的数据库访问提供更好的性能，可以自动管理连接对象的创建和释放。最常用的两个外部接口是 PersistentDB 和 PooledDB，前者提供了单个线程专用的数据库连接池，后者则是进程内所有线程共享的数据库连接池。</p>
+<ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mys_35088/article/details/119301713">Python DBUtils安装之后 from DBUtils.PooledDB import PooledDB 报红</a></li>
+</ul>
+<h2 id="3-2-MySQL数据类型及占用空间"><a href="#3-2-MySQL数据类型及占用空间" class="headerlink" title="3.2 MySQL数据类型及占用空间"></a>3.2 MySQL数据类型及占用空间</h2><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D.jpg" alt="MySQL数据类型介绍"></p>
+<h2 id="3-3-插入字典到数据库"><a href="#3-3-插入字典到数据库" class="headerlink" title="3.3 插入字典到数据库"></a>3.3 插入字典到数据库</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">placeholder <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'%s'</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+sql <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"insert into </span><span class="token interpolation"><span class="token punctuation">&#123;</span>table_name<span class="token punctuation">&#125;</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>dic<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">) values (</span><span class="token interpolation"><span class="token punctuation">&#123;</span>placeholder<span class="token punctuation">&#125;</span></span><span class="token string">)"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="3-4-多线程操作数据库-数据库连接池"><a href="#3-4-多线程操作数据库-数据库连接池" class="headerlink" title="3.4 多线程操作数据库-数据库连接池"></a>3.4 多线程操作数据库-数据库连接池</h2><ul>
+<li><p>该示例来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mxdzchallpp/article/details/80411514">python多线程操作数据库问题</a></p>
+</li>
+<li><p><strong>重点在于每次对数据库的操作都要保持conn与cursor一致，否则会出现数据库访问错误等问题</strong></p>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> MySQLdb
+<span class="token keyword">from</span> DBUtils<span class="token punctuation">.</span>PooledDB <span class="token keyword">import</span> PooledDB
+ 
+<span class="token keyword">class</span> <span class="token class-name">MySQL</span><span class="token punctuation">:</span>
+ 
+	host <span class="token operator">=</span> <span class="token string">'localhost'</span>
+	user <span class="token operator">=</span> <span class="token string">'root'</span>
+	port <span class="token operator">=</span> <span class="token number">3306</span>
+	pasword <span class="token operator">=</span> <span class="token string">''</span>
+	db <span class="token operator">=</span> <span class="token string">'testDB'</span>
+	charset <span class="token operator">=</span> <span class="token string">'utf8'</span>
+ 
+	pool <span class="token operator">=</span> <span class="token boolean">None</span>
+	limit_count <span class="token operator">=</span> <span class="token number">3</span> <span class="token comment"># 最低预启动数据库连接数量</span>
+ 
+	<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		self<span class="token punctuation">.</span>pool <span class="token operator">=</span> PooledDB<span class="token punctuation">(</span>MySQLdb<span class="token punctuation">,</span> self<span class="token punctuation">.</span>limit_count<span class="token punctuation">,</span> host <span class="token operator">=</span> self<span class="token punctuation">.</span>host<span class="token punctuation">,</span> user <span class="token operator">=</span> self<span class="token punctuation">.</span>user<span class="token punctuation">,</span> passwd <span class="token operator">=</span> self<span class="token punctuation">.</span>pasword<span class="token punctuation">,</span> db <span class="token operator">=</span> self<span class="token punctuation">.</span>db<span class="token punctuation">,</span>
+			port <span class="token operator">=</span> self<span class="token punctuation">.</span>port<span class="token punctuation">,</span> charset <span class="token operator">=</span> self<span class="token punctuation">.</span>charset<span class="token punctuation">,</span> use_unicode <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+ 
+	<span class="token keyword">def</span> <span class="token function">select</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		conn <span class="token operator">=</span> self<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+		result <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> result
+ 
+	<span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> table<span class="token punctuation">,</span> sql<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		conn <span class="token operator">=</span> self<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">try</span><span class="token punctuation">:</span>
+			cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+			conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token string">'result'</span><span class="token punctuation">:</span><span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">(</span>cursor<span class="token punctuation">.</span>lastrowid<span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
+		<span class="token keyword">except</span> Exception <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+			conn<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token string">'result'</span><span class="token punctuation">:</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token string">'err'</span><span class="token punctuation">:</span>err<span class="token punctuation">&#125;</span>
+		<span class="token keyword">finally</span><span class="token punctuation">:</span>
+			cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>本文尝试的包装的数据库连接池类</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#-*- coding: utf-8 -*-</span>
+<span class="token keyword">from</span> DBUtils<span class="token punctuation">.</span>PooledDB <span class="token keyword">import</span> PooledDB
+<span class="token keyword">import</span> pymysql
+<span class="token keyword">from</span> utils<span class="token punctuation">.</span>config <span class="token keyword">import</span> mysql_info
+
+
+<span class="token keyword">class</span> <span class="token class-name">DB_POOL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    __pool <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>db_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__pool <span class="token operator">=</span> PooledDB<span class="token punctuation">(</span>pymysql<span class="token punctuation">,</span> mincached<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> maxcached<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> host<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'host'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          passwd<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'passwd'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> db<span class="token operator">=</span>db_name<span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> setsession<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'SET AUTOCOMMIT = 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          cursorclass<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">)</span>
+
+
+    <span class="token keyword">def</span> <span class="token function">to_connect</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">is_connected</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Check if the server is alive"""</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            conn<span class="token punctuation">.</span>ping<span class="token punctuation">(</span>reconnect<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            <span class="token comment"># print("db is connecting")</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            conn <span class="token operator">=</span> self<span class="token punctuation">.</span>to_connect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"db reconnect"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> conn
+
+    <span class="token keyword">def</span> <span class="token function">__getInsertId</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> cursor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'select @@IDENTITY AS id'</span><span class="token punctuation">)</span>
+        result <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">__query</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        conn <span class="token operator">=</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> param <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            count <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            count <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">,</span> cursor
+
+    <span class="token keyword">def</span> <span class="token function">getAll</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># param查询条件值(元组\列表)</span>
+        <span class="token comment"># 返回list\boolean</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">getOne</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">getMany</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> num<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchmany<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">insertOne</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        conn <span class="token operator">=</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__getInsertId<span class="token punctuation">(</span>cursor<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">insert_dict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dic<span class="token punctuation">,</span> table_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        placeholder <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'%s'</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        sql <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"insert into </span><span class="token interpolation"><span class="token punctuation">&#123;</span>table_name<span class="token punctuation">&#125;</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>dic<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">) values (</span><span class="token interpolation"><span class="token punctuation">&#123;</span>placeholder<span class="token punctuation">&#125;</span></span><span class="token string">)"</span></span>
+        <span class="token comment"># print('sql', sql)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>insertOne<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+db <span class="token operator">=</span> DB_POOL<span class="token punctuation">(</span><span class="token string">'weibo'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># 以下为测试代码</span>
+    db <span class="token operator">=</span> DB_POOL<span class="token punctuation">(</span><span class="token string">'weibo'</span><span class="token punctuation">)</span>
+    sql <span class="token operator">=</span> <span class="token string">'select * from top100'</span>
+    res1 <span class="token operator">=</span> db<span class="token punctuation">.</span>getOne<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+    res2 <span class="token operator">=</span> db<span class="token punctuation">.</span>getAll<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+    res3 <span class="token operator">=</span> db<span class="token punctuation">.</span>getMany<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    res4 <span class="token operator">=</span> db<span class="token punctuation">.</span>insertOne<span class="token punctuation">(</span><span class="token string">"insert into top100(date, period_type, score, field_id, field_name, curr_rank, uid, screen_name) values (%s, %s,%s, %s, %s,%s,%s,%s)"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'20220418'</span><span class="token punctuation">,</span> <span class="token string">'month'</span><span class="token punctuation">,</span><span class="token number">96.4</span><span class="token punctuation">,</span> <span class="token number">1001</span><span class="token punctuation">,</span><span class="token string">'时尚美妆'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3929704484</span><span class="token punctuation">,</span><span class="token string">'美妆笔记Lucia'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    res5 <span class="token operator">=</span> db<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token string">"update top100 set date='20220424' where uid=3929704484"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -667,20 +829,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Debug/">
-                                    <span class="chip bg-color">Debug</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">环境配置</span>
                                 </a>
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                                     <span class="chip bg-color">常见用法</span>
+                                </a>
+                            
+                                <a href="/tags/Debug/">
+                                    <span class="chip bg-color">Debug</span>
+                                </a>
+                            
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
                         </div>
@@ -1158,12 +1320,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
                     <a href="/tags/Debug/">
                         <span class="chip bg-color">Debug</span>
+                    </a>
+                    
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
@@ -1403,7 +1565,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">273.5k</span>
+                        class="white-color">274.4k</span>
             
             
             

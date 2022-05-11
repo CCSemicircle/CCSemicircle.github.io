@@ -547,6 +547,12 @@ args <span class="token operator">=</span> argparse<span class="token punctuatio
 <span class="token comment"># Namespace => dict</span>
 dic <span class="token operator">=</span> <span class="token builtin">vars</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="1-4-判断类型，type-与-isinstance"><a href="#1-4-判断类型，type-与-isinstance" class="headerlink" title="1.4 判断类型，type() 与 isinstance()"></a>1.4 判断类型，type() 与 isinstance()</h2><p><strong>isinstance() 与 type() 区别：</strong></p>
+<p>type() 不会认为子类是一种父类类型，不考虑继承关系。</p>
+<p>isinstance() 会认为子类是一种父类类型，考虑继承关系。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">isinstance</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
+<span class="token builtin">type</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 
 
 <h1 id="2-文件操作"><a href="#2-文件操作" class="headerlink" title="2 文件操作"></a>2 文件操作</h1><h2 id="2-1-创建文件和文件夹"><a href="#2-1-创建文件和文件夹" class="headerlink" title="2.1 创建文件和文件夹"></a>2.1 创建文件和文件夹</h2><h3 id="2-1-1-创建文件夹"><a href="#2-1-1-创建文件夹" class="headerlink" title="2.1.1 创建文件夹"></a>2.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
@@ -960,6 +966,10 @@ data3 <span class="token operator">=</span> <span class="token punctuation">[</s
 <h2 id="13-11-添加多个元素，extend"><a href="#13-11-添加多个元素，extend" class="headerlink" title="13.11 添加多个元素，extend()"></a>13.11 添加多个元素，extend()</h2><ul>
 <li>append一个list时，会把list当作整体添加</li>
 <li>extend一个list时，会把list内所有元素逐个添加</li>
+</ul>
+<h2 id="13-12-json与list互换"><a href="#13-12-json与list互换" class="headerlink" title="13.12 json与list互换"></a>13.12 json与list互换</h2><ul>
+<li>list转换成json：<code>str_json = json.dumps(list, ensure_ascii=False, indent=2)</code></li>
+<li>json转换成list：<code>list = json.loads(str_json)</code></li>
 </ul>
 <h1 id="14-数字Number"><a href="#14-数字Number" class="headerlink" title="14 数字Number"></a>14 数字Number</h1><h2 id="14-1-round"><a href="#14-1-round" class="headerlink" title="14.1 round()"></a>14.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
 <h1 id="15-内存管理"><a href="#15-内存管理" class="headerlink" title="15 内存管理"></a>15 内存管理</h1><h2 id="15-1-手动释放内存，del-gc-collect"><a href="#15-1-手动释放内存，del-gc-collect" class="headerlink" title="15.1 手动释放内存，del + gc.collect()"></a>15.1 手动释放内存，del + gc.collect()</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gc
@@ -1819,7 +1829,7 @@ ax <span class="token operator">=</span> sns<span class="token punctuation">.</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">273.5k</span>
+                        class="white-color">274.4k</span>
             
             
             

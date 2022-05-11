@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
-                                <span class="chip bg-color">代码示例</span>
-                            </a>
-                        
                             <a href="/tags/%E7%AC%94%E8%AE%B0/">
                                 <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+                                <span class="chip bg-color">代码示例</span>
                             </a>
                         
                     </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    217
+                    613
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -510,16 +510,89 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="爬虫示例"><a href="#爬虫示例" class="headerlink" title="爬虫示例"></a>爬虫示例</h1><ul>
+                <h1 id="1-爬虫示例"><a href="#1-爬虫示例" class="headerlink" title="1 爬虫示例"></a>1 爬虫示例</h1><ul>
 <li>Github：<a target="_blank" rel="noopener" href="https://github.com/CCSemicircle/WeiboSpider">WeiboSpider</a></li>
 </ul>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<h1 id="2-注意事项"><a href="#2-注意事项" class="headerlink" title="2 注意事项"></a>2 注意事项</h1><ol>
 <li>手机上的信息电脑端看不到时不一定没有适配电脑端，需要自己去找，或者去查一下，手机端信息电脑端一般都有</li>
 <li>找到对应网页后不要直接开始在HTML中爬取，最好是找到返回的json数据，直接请求该链接</li>
 <li>找到对应请求链接后，一定要确保访问的header正确（需要去找这个header，待确定简单的方法todo）</li>
 <li>请求头中的Accept-Encoding是设置返回的编码，一般不需要设置，如果返回的数据无法decode，一般是这个地方设置不当</li>
 <li>如果报错400，代表请求格式错误，先打印url，然后在浏览器访问url尝试url有效性，然后再去找其他错误，如cookie过期等</li>
+<li>可以通过Fildder抓包数据请求链接</li>
 </ol>
+<h1 id="3-BeautifuSoup"><a href="#3-BeautifuSoup" class="headerlink" title="3 BeautifuSoup"></a>3 BeautifuSoup</h1><h2 id="3-1-BeautifulSoup库未写明解析器警告"><a href="#3-1-BeautifulSoup库未写明解析器警告" class="headerlink" title="3.1 BeautifulSoup库未写明解析器警告"></a>3.1 BeautifulSoup库未写明解析器警告</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> urllib<span class="token punctuation">.</span>request <span class="token keyword">import</span> urlopen
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+html <span class="token operator">=</span> urlopen<span class="token punctuation">(</span><span class="token string">"http://www.pythonscraping.com/pages/page1.html"</span><span class="token punctuation">)</span>
+bsObj <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 会警告</span>
+bsObj <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>  <span class="token comment"># 正确写法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="3-2-BeautifulSoup查找、选择、删除标签，获取标签属性、文本等"><a href="#3-2-BeautifulSoup查找、选择、删除标签，获取标签属性、文本等" class="headerlink" title="3.2 BeautifulSoup查找、选择、删除标签，获取标签属性、文本等"></a>3.2 BeautifulSoup查找、选择、删除标签，获取标签属性、文本等</h2><ul>
+<li>本节内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yezi1993/article/details/109644944">BeautifulSoup查找、选择、删除标签，获取标签属性、文本等</a></li>
+</ul>
+<ol>
+<li>新建BeautifulSoup对象</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>查找</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 根据标签查找</span>
+imgs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span>
+<span class="token comment"># 根据属性查找</span>
+imgs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">,</span> attrs<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">"class"</span><span class="token punctuation">:</span> <span class="token string">"avatar"</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment"># 根据样式查找（支持正则）</span>
+tabs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>style<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'.*display:none.*?'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>获得标签的属性</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取img标签的src属性</span>
+imgs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> img <span class="token keyword">in</span> imgs<span class="token punctuation">:</span>
+    url <span class="token operator">=</span> img<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>获取标签内文本</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取文本（分隔符、去除空白）</span>
+soup<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span>separator<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">,</span> strip<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="5">
+<li>根据CSS选择器选择标签</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#获取a标签中具有href属性的标签</span>
+soup<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">'a[href]'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="6">
+<li>正则匹配标签</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 选取所有的h标签，替换内容（去除h标签内的标签，只保留文本）</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">"^h[1-6]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	i<span class="token punctuation">.</span>string <span class="token operator">=</span> i<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="7">
+<li>删除标签</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 删除style中包含隐藏的标签</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> self<span class="token punctuation">.</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>style<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'.*display:none.*?'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i<span class="token punctuation">.</span>decompose<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="8">
+<li>去除空标签</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 删除空白标签（例如&lt;p>&lt;/p>、&lt;p>&lt;br>&lt;/p>, img、video、hr除外）</span>
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>clean_content<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token keyword">lambda</span> tag<span class="token punctuation">:</span> <span class="token builtin">len</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> tag<span class="token punctuation">.</span>name <span class="token keyword">not</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"img"</span><span class="token punctuation">,</span> <span class="token string">"video"</span><span class="token punctuation">,</span> <span class="token string">"br"</span><span class="token punctuation">]</span> <span class="token keyword">and</span> tag<span class="token punctuation">.</span>name <span class="token operator">!=</span> <span class="token string">"br"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> i<span class="token punctuation">.</span>descendants<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> j<span class="token punctuation">.</span>name <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"img"</span><span class="token punctuation">,</span> <span class="token string">"video"</span><span class="token punctuation">,</span> <span class="token string">"br"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        i<span class="token punctuation">.</span>decompose<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -584,12 +657,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
-                                    <span class="chip bg-color">代码示例</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%AC%94%E8%AE%B0/">
                                     <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/">
+                                    <span class="chip bg-color">代码示例</span>
                                 </a>
                             
                         </div>
@@ -1067,12 +1140,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
                     <a href="/tags/Office%E8%BD%AF%E4%BB%B6/">
                         <span class="chip bg-color">Office软件</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -1312,7 +1385,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">273.5k</span>
+                        class="white-color">274.4k</span>
             
             
             
