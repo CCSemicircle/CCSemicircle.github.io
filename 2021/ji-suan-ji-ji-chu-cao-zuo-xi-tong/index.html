@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
                             <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
                                 <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -892,31 +892,34 @@
 <li>如果进程中一个线程被阻塞，内核可以调度同一个进程中的另一个线程</li>
 <li>当有多个处理机时，一个进程的多个线程可以同时执行</li>
 </ul>
-<h1 id="6-CPU调度"><a href="#6-CPU调度" class="headerlink" title="6 CPU调度"></a>6 CPU调度</h1><p>（以下内容有待排版）</p>
-<p> 6.1. 基本概念</p>
-<p> 6.1.1. 调度是操作系统的基本功能</p>
-<p> 6.1.1.1. 空间资源的调度-内存</p>
-<p> 6.1.1.2. 时间资源的调度-CPU</p>
-<p> 6.1.2. 当前进程（线程）不能执行时，操作系统必须调度另一个就绪的进程（线程）执行</p>
-<p> 6.2. CPU-I&#x2F;O 爆发周期</p>
-<p> By CFD 24</p>
-<p> 6.2.1. 进程执行由CPU执行和I&#x2F;O等待的周期组成</p>
-<p> 6.2.2. 进程在这两个状态中轮流切换</p>
-<p> <strong>6.2.3.</strong></p>
-<p> 6.3. CPU调度器</p>
-<p> 6.3.1. 概念</p>
-<p> 6.3.1.1. 从内存中的挑选已经准备的进程去执行，并把CPU分配到其中一个进程。也称为短期调度器</p>
-<p> 6.3.2. CPU调度决策发生在当进程发生如下情况时</p>
-<p> 6.3.2.1. 进程终止</p>
-<p> 6.3.2.2. 从运行状态变成等待状态</p>
-<p> 6.3.2.3. 非抢占式的</p>
-<p> 6.3.2.4. 从运行状态变成就绪状态</p>
-<p> 6.3.2.5. 从等待状态变成就绪状态</p>
-<p> 6.3.2.6. 抢占式的</p>
-<p> 6.4. 调度算法</p>
-<p> 6.4.1. 先到先服务First-come, first-served(FCFS)</p>
-<p> By CFD 25</p>
-<p> <strong>6.4.1.1.</strong></p>
+<h1 id="6-CPU调度"><a href="#6-CPU调度" class="headerlink" title="6 CPU调度"></a>6 CPU调度</h1><h2 id="6-1-基本概念"><a href="#6-1-基本概念" class="headerlink" title="6.1 基本概念"></a>6.1 基本概念</h2><h3 id="6-1-1-调度是操作系统的基本功能"><a href="#6-1-1-调度是操作系统的基本功能" class="headerlink" title="6.1.1 调度是操作系统的基本功能"></a>6.1.1 调度是操作系统的基本功能</h3><ul>
+<li>空间资源的调度-内存</li>
+<li>时间资源的调度-CPU</li>
+<li>当前进程（线程）不能执行时，操作系统必须调度另一个就绪的进程（线程）执行</li>
+</ul>
+<h2 id="6-2-CPU-I-x2F-O-爆发周期"><a href="#6-2-CPU-I-x2F-O-爆发周期" class="headerlink" title="6.2 CPU-I&#x2F;O 爆发周期"></a>6.2 CPU-I&#x2F;O 爆发周期</h2><ol>
+<li>进程执行由CPU执行和I&#x2F;O等待的周期组成</li>
+<li>进程在这两个状态中轮流切换</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/CPU-IO%E7%88%86%E5%8F%91%E5%91%A8%E6%9C%9F.png" alt="CPU-IO爆发周期"></p>
+<h2 id="6-3-CPU调度器"><a href="#6-3-CPU调度器" class="headerlink" title="6.3 CPU调度器"></a>6.3 CPU调度器</h2><h3 id="6-3-1-概念"><a href="#6-3-1-概念" class="headerlink" title="6.3.1 概念"></a>6.3.1 概念</h3><ol>
+<li>从内存中的挑选已经准备的进程去执行，并把CPU分配到其中一个进程。也称为短期调度器</li>
+</ol>
+<h3 id="6-3-2-CPU调度决策发生情况"><a href="#6-3-2-CPU调度决策发生情况" class="headerlink" title="6.3.2 CPU调度决策发生情况"></a>6.3.2 CPU调度决策发生情况</h3><ol>
+<li><p>进程终止</p>
+</li>
+<li><p>从运行状态变成等待状态</p>
+</li>
+<li><p>非抢占式的</p>
+</li>
+<li><p>从运行状态变成就绪状态</p>
+</li>
+<li><p>从等待状态变成就绪状态</p>
+</li>
+<li><p>抢占式的</p>
+</li>
+</ol>
+<h2 id="6-4-调度算法"><a href="#6-4-调度算法" class="headerlink" title="6.4 调度算法"></a>6.4 调度算法</h2><h3 id="6-4-1-先到先服务First-come-first-served-FCFS"><a href="#6-4-1-先到先服务First-come-first-served-FCFS" class="headerlink" title="6.4.1 先到先服务First-come, first-served(FCFS)"></a>6.4.1 先到先服务First-come, first-served(FCFS)</h3><p> <strong>6.4.1.1.</strong></p>
 <p> 6.4.2. 耗时最小的工作先执行Shortest-job-First(SJF) --调度最优解，可以获得最小的平均等待时间</p>
 <p> 6.4.2.1. 非抢占式 -等待时间是从到达之后开始计算</p>
 <p> <strong>6.4.2.1.1.</strong></p>
@@ -1709,12 +1712,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
                                     <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -2437,7 +2440,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">274.4k</span>
+                        class="white-color">274.3k</span>
             
             
             
