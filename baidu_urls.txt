@@ -15,7 +15,7 @@ https://blog.fdchen.host/2022/python-pytorch/
 https://blog.fdchen.host/2021/sui-bi-fu-chuang-zong-jie/
 https://blog.fdchen.host/2021/python-debug/
 https://blog.fdchen.host/2021/sui-bi-ji-2021-nian-bao-yan-jing-li/
-https://blog.fdchen.host/2021/ying-yu-chang-yong-dan-ci/
+https://blog.fdchen.host/2021/ying-yu-chang-yong-ci-hui-yu-yu-ju/
 https://blog.fdchen.host/2021/linux-shell-bian-cheng/
 https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/
 https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-cao-zuo-xi-tong/
