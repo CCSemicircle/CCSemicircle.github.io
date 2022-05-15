@@ -442,16 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Pytorch/">
-                                <span class="chip bg-color">Pytorch</span>
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
+                            <a href="/tags/Pytorch/">
+                                <span class="chip bg-color">Pytorch</span>
                             </a>
                         
                     </div>
@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    22 分
                 </div>
                 
 
@@ -550,6 +550,22 @@ conda create <span class="token operator">-</span><span class="token operator">-
 <li>C:\xxx\xxx\Anaconda3\Scripts</li>
 <li>C:\xxx\xxx\Anaconda3\Library\bin</li>
 </ol>
+<h2 id="1-7-安装pytorch版本过低，可能是指定cuda版本过高"><a href="#1-7-安装pytorch版本过低，可能是指定cuda版本过高" class="headerlink" title="1.7 安装pytorch版本过低，可能是指定cuda版本过高"></a>1.7 安装pytorch版本过低，可能是指定cuda版本过高</h2><p>在安装pytorch之前先查看本地cuda版本，Linux可以通过“nvidia-smi”查看，可得知<strong>支持的最高版本的cuda，不能高于这个版本，否则会自动安装低版本pytorch。</strong></p>
+<h2 id="1-8-conda创建、删除、激活、推出环境"><a href="#1-8-conda创建、删除、激活、推出环境" class="headerlink" title="1.8 conda创建、删除、激活、推出环境"></a>1.8 conda创建、删除、激活、推出环境</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 创建环境
+conda create -n py36 python&#x3D;3.6 
+
+# 删除环境
+conda create -n py39 python&#x3D;3.6
+
+# 激活环境
+conda activate py36
+
+# 退出环境
+conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="1-9-conda环境迁移"><a href="#1-9-conda环境迁移" class="headerlink" title="1.9 conda环境迁移"></a>1.9 conda环境迁移</h2><ul>
+<li>详见博客<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87344422">：Conda 环境迁移</a></li>
+</ul>
 <h1 id="2-常用指令"><a href="#2-常用指令" class="headerlink" title="2 常用指令"></a>2 常用指令</h1><h2 id="2-1-一般指令"><a href="#2-1-一般指令" class="headerlink" title="2.1 一般指令"></a>2.1 一般指令</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#矩阵乘法</span>
 torch<span class="token punctuation">.</span>mm<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> mat2<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> → Tensor
 <span class="token comment">#矩阵转置</span>
@@ -606,6 +622,11 @@ metrics <span class="token operator">=</span> checkpoint<span class="token punct
 <ul>
 <li>具体详情见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73711222">torch.backends.cudnn.benchmark ?!</a></li>
 </ul>
+<h2 id="2-5-查看torch版本"><a href="#2-5-查看torch版本" class="headerlink" title="2.5 查看torch版本"></a>2.5 查看torch版本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="3-重要函数"><a href="#3-重要函数" class="headerlink" title="3 重要函数"></a>3 重要函数</h1><h2 id="3-1-torch-svd-A"><a href="#3-1-torch-svd-A" class="headerlink" title="3.1 torch.svd(A)"></a>3.1 torch.svd(A)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#计算矩阵或矩阵批次的奇异值分解input，奇异值按降序返回</span>
 torch<span class="token punctuation">.</span>svd<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> some<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span>Tensor<span class="token punctuation">,</span> Tensor<span class="token punctuation">,</span> Tensor<span class="token punctuation">)</span>
 U<span class="token punctuation">,</span>S<span class="token punctuation">,</span>V<span class="token operator">=</span>torch<span class="token punctuation">.</span>svd<span class="token punctuation">(</span>A<span class="token punctuation">)</span>。 <span class="token comment">#返回对形如 n×m的实矩阵 A 进行奇异值分解的结果，使得 A=USV^T。 U 为左奇异向量，形状为 n×n，S 为特征值矩阵，形状为 n×m ，V 为右奇异向量，形状为 m×m</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -870,7 +891,24 @@ n <span class="token operator">=</span> torch<span class="token punctuation">.</
 torch<span class="token punctuation">.</span>view<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># a * n/a, n代表元素个数</span>
 torch<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># n, 一维结构</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="5-15-求均值，mean-input-dim-keepdim-x3D-False"><a href="#5-15-求均值，mean-input-dim-keepdim-x3D-False" class="headerlink" title="5.15 求均值，mean(input, dim, keepdim&#x3D;False)"></a>5.15 求均值，mean(input, dim, keepdim&#x3D;False)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> dim<span class="token punctuation">,</span> keepdim<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<ul>
+<li><strong>keepdim</strong> (<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#bool"><em>bool</em></a>) – 是否保持原来的维度</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> a
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.3841</span><span class="token punctuation">,</span>  <span class="token number">0.6320</span><span class="token punctuation">,</span>  <span class="token number">0.4254</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.7384</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.9644</span><span class="token punctuation">,</span>  <span class="token number">1.0131</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6549</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.4279</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.2951</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.3350</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.7694</span><span class="token punctuation">,</span>  <span class="token number">0.5600</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1.0842</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.9580</span><span class="token punctuation">,</span>  <span class="token number">0.3623</span><span class="token punctuation">,</span>  <span class="token number">0.2343</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.0163</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5085</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.4599</span><span class="token punctuation">,</span>  <span class="token number">0.1807</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.0163</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.5085</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.4599</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.1807</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="6-PyG-torch-geometirc"><a href="#6-PyG-torch-geometirc" class="headerlink" title="6 PyG-torch.geometirc"></a>6 PyG-torch.geometirc</h1><blockquote>
 <p>图神经网络神器</p>
@@ -1056,16 +1094,16 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Pytorch/">
-                                    <span class="chip bg-color">Pytorch</span>
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
+                                <a href="/tags/Pytorch/">
+                                    <span class="chip bg-color">Pytorch</span>
                                 </a>
                             
                         </div>
@@ -1543,12 +1581,12 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Pandas/">
-                        <span class="chip bg-color">Pandas</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Pandas/">
+                        <span class="chip bg-color">Pandas</span>
                     </a>
                     
                 </div>
@@ -1789,7 +1827,7 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">274.9k</span>
+                        class="white-color">275.3k</span>
             
             
             

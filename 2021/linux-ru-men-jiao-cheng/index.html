@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
-                            </a>
-                        
                             <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">环境配置</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
                             </a>
                         
                             <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -606,7 +606,7 @@
 <h3 id="3-2-12-向文件追加内容，echo-content-gt-gt-file"><a href="#3-2-12-向文件追加内容，echo-content-gt-gt-file" class="headerlink" title="3.2.12 向文件追加内容，echo content &gt;&gt; file"></a>3.2.12 向文件追加内容，echo content &gt;&gt; file</h3><ul>
 <li><strong>这里注意 &gt;是覆盖，&gt;&gt;是追加</strong></li>
 </ul>
-<h2 id="3-2-13-删除指定前后缀文件-find-x2F-name-‘pre-’-exec-rm"><a href="#3-2-13-删除指定前后缀文件-find-x2F-name-‘pre-’-exec-rm" class="headerlink" title="3.2.13 删除指定前后缀文件 find .&#x2F; -name ‘pre*’ -exec rm {}"></a>3.2.13 删除指定前后缀文件 find .&#x2F; -name ‘pre*’ -exec rm {}</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 指定前缀
+<h3 id="3-2-13-删除指定前后缀文件-find-x2F-name-‘pre-’-exec-rm"><a href="#3-2-13-删除指定前后缀文件-find-x2F-name-‘pre-’-exec-rm" class="headerlink" title="3.2.13 删除指定前后缀文件 find .&#x2F; -name ‘pre*’ -exec rm {}"></a>3.2.13 删除指定前后缀文件 find .&#x2F; -name ‘pre*’ -exec rm {}</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 指定前缀
 find .&#x2F; -name &#39;pre*&#39; -exec rm &#123;&#125; \;
 
 # 指定后缀
@@ -620,6 +620,13 @@ find .&#x2F; -name &#39;*.exe&#39; -type f -print -exec rm -rf &#123;&#125; \;
 <ul>
 <li>exec选项后面跟随着所要执行的命令或脚本，然后是一对{}，一个空格和一个\，最后是一个分号;</li>
 </ul>
+<h3 id="3-2-14-查看磁盘大小，df-hl"><a href="#3-2-14-查看磁盘大小，df-hl" class="headerlink" title="3.2.14 查看磁盘大小，df -hl"></a>3.2.14 查看磁盘大小，df -hl</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">df -hl：查看磁盘剩余空间
+df -h：查看每个根路径的分区大小
+du -sh [目录名]：返回该目录的大小
+du -sm [文件夹]：返回该文件夹总M数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="4-系统配置"><a href="#4-系统配置" class="headerlink" title="4 系统配置"></a>4 系统配置</h1><blockquote>
 <p>系统为 CentOS 7 </p>
 </blockquote>
@@ -738,12 +745,12 @@ find .&#x2F; -name &#39;*.exe&#39; -type f -print -exec rm -rf &#123;&#125; \;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">环境配置</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
                                 </a>
                             
                                 <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
@@ -1478,7 +1485,7 @@ find .&#x2F; -name &#39;*.exe&#39; -type f -print -exec rm -rf &#123;&#125; \;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">274.9k</span>
+                        class="white-color">275.3k</span>
             
             
             

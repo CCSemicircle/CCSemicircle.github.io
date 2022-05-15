@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/</loc>
+    <lastmod>2022-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
+    <lastmod>2022-05-13</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
     <lastmod>2022-05-13</lastmod>
   </url>
   <url>
@@ -49,10 +57,6 @@
     <lastmod>2022-04-30</lastmod>
   </url>
   <url>
-    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
-    <lastmod>2022-04-30</lastmod>
-  </url>
-  <url>
     <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
     <lastmod>2022-04-28</lastmod>
   </url>
@@ -71,10 +75,6 @@
   <url>
     <loc>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-ji-suan-ji-zu-cheng-yuan-li/</loc>
     <lastmod>2022-04-25</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/</loc>
-    <lastmod>2022-04-23</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2020/cqu-duo-mei-ti-ji-zhu/</loc>
