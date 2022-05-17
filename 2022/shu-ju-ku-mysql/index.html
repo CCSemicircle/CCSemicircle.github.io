@@ -442,16 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常见用法</span>
-                            </a>
-                        
                             <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">环境配置</span>
                             </a>
                         
                             <a href="/tags/Debug/">
                                 <span class="chip bg-color">Debug</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                <span class="chip bg-color">常见用法</span>
                             </a>
                         
                             <a href="/tags/MySQL/">
@@ -488,14 +488,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -539,8 +539,35 @@
 <li>C:\ProgramData\MySQL\MySQL Server 8.0</li>
 </ul>
 <h2 id="0-3-centOS-7-安装MySQL"><a href="#0-3-centOS-7-安装MySQL" class="headerlink" title="0.3 centOS 7 安装MySQL"></a>0.3 centOS 7 安装MySQL</h2><ul>
-<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a774630093/article/details/79270080">CentOS7 64位安装mysql教程，亲测完美</a></li>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.51cto.com/qiuyue/5290234">CentOS 7.9 yum方式安装最新版本的MySQL 5.7</a></p>
+</li>
+<li><p>注意&#x2F;etc&#x2F;my.cnf配置文件里面必须包含[mysqld]</p>
+</li>
 </ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[mysqld]  # 必须包含
+port&#x3D;3306
+socket&#x3D;&#x2F;var&#x2F;lib&#x2F;mysql&#x2F;mysql.sock
+datadir&#x3D;&#x2F;var&#x2F;lib&#x2F;mysql
+pid-file&#x3D;&#x2F;var&#x2F;run&#x2F;mysqld&#x2F;mysqld.pid
+log-error&#x3D;&#x2F;var&#x2F;log&#x2F;mysqld.log
+lower_case_table_names&#x3D;1
+character_set_server&#x3D;utf8mb4
+collation_server&#x3D;utf8mb4_general_ci
+innodb_file_per_table&#x3D;1
+skip_name_resolve&#x3D;1
+slow_query_log&#x3D;1
+slow_query_log_file&#x3D;mysql-slow.log
+symbolic-links&#x3D;0
+explicit_defaults_for_timestamp&#x3D;1
+server_id&#x3D;1
+sync_binlog&#x3D;1
+innodb_flush_log_at_trx_commit&#x3D;1
+log_bin&#x3D;mysql-bin
+log_bin_index&#x3D;mysql-bin.index
+binlog_format&#x3D;row<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="0-4-centOS-7-执行sql文件"><a href="#0-4-centOS-7-执行sql文件" class="headerlink" title="0.4 centOS 7 执行sql文件"></a>0.4 centOS 7 执行sql文件</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaishi/p/7575301.html">Centos 执行sql文件</a></li>
 </ul>
@@ -584,8 +611,12 @@
 
 <h2 id="1-7-跨表查询，in"><a href="#1-7-跨表查询，in" class="headerlink" title="1.7 跨表查询，in"></a>1.7 跨表查询，in</h2><h2 id="1-8-更新记录，update"><a href="#1-8-更新记录，update" class="headerlink" title="1.8 更新记录，update"></a>1.8 更新记录，update</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table_name <span class="token keyword">SET</span> field1<span class="token operator">=</span>new<span class="token operator">-</span>value1<span class="token punctuation">,</span> field2<span class="token operator">=</span>new<span class="token operator">-</span>value2 <span class="token punctuation">[</span><span class="token keyword">WHERE</span> Clause<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
+<h2 id="1-9-修改用户密码"><a href="#1-9-修改用户密码" class="headerlink" title="1.9 修改用户密码"></a>1.9 修改用户密码</h2><ul>
+<li>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33285112/article/details/78982766">MySQL修改root密码的4种方法</a></li>
+</ul>
+<p><strong>方法1： 用SET PASSWORD命令</strong><br>首先登录MySQL。<br>格式：mysql&gt; set password for 用户名@localhost &#x3D; password(‘新密码’);<br>例子：mysql&gt; set password for root@localhost &#x3D; password(‘123’);</p>
+<p><strong>方法2：用mysqladmin</strong><br>格式：mysqladmin -u用户名 -p旧密码 password 新密码<br>例子：mysqladmin -uroot -p123456 password 123</p>
+<p><strong>方法3：用UPDATE直接编辑user表</strong><br>首先登录MySQL。<br>mysql&gt; use mysql;<br>mysql&gt; update user set password&#x3D;password(‘123’) where user&#x3D;’root’ and host&#x3D;’localhost’;<br>mysql&gt; flush privileges;</p>
 <h1 id="2-Debug"><a href="#2-Debug" class="headerlink" title="2 Debug"></a>2 Debug</h1><h2 id="2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES"><a href="#2-1-登录时报错Access-denied-for-user-‘root‘-‘localhost‘-using-password-YES" class="headerlink" title="2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)"></a>2.1 登录时报错Access denied for user ‘root‘@‘localhost‘ (using password: YES)</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36675754/article/details/81381341">在MySQL登录时出现Access denied for user ‘root‘@‘localhost‘ (using password: YES) 拒绝访问，并可修改MySQL密码</a></li>
 </ul>
@@ -611,6 +642,12 @@
 </ul>
 <h2 id="2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误"><a href="#2-7-MySql-执行-DELETE-x2F-UPDATE时，报-Error-Code-1175错误" class="headerlink" title="2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误"></a>2.7 MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</h2><ul>
 <li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/cainiao_accp/article/details/68962579">MySql 执行 DELETE&#x2F;UPDATE时，报 Error Code: 1175错误</a></li>
+</ul>
+<h2 id="2-8-mysql-8-0-首次更改密码报错解决-You-must-reset-your-password-using-ALTER-USER-statement-before"><a href="#2-8-mysql-8-0-首次更改密码报错解决-You-must-reset-your-password-using-ALTER-USER-statement-before" class="headerlink" title="2.8 mysql 8.0+ 首次更改密码报错解决 You must reset your password using ALTER USER statement before"></a>2.8 mysql 8.0+ 首次更改密码报错解决 You must reset your password using ALTER USER statement before</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/eggsound/article/details/105621149">mysql 8.0+ 首次更改密码报错解决 You must reset your password using ALTER USER statement before</a></li>
+</ul>
+<h2 id="2-9-mysql5-7设置简单密码报错ERROR-1819-HY000-Your-password-does-not-satisfy-the-current-policy-requirements"><a href="#2-9-mysql5-7设置简单密码报错ERROR-1819-HY000-Your-password-does-not-satisfy-the-current-policy-requirements" class="headerlink" title="2.9 mysql5.7设置简单密码报错ERROR 1819 (HY000): Your password does not satisfy the current policy requirements"></a>2.9 mysql5.7设置简单密码报错ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kuluzs/article/details/51924374">mysql5.7设置简单密码报错ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</a></li>
 </ul>
 <h1 id="3-PyMySQL"><a href="#3-PyMySQL" class="headerlink" title="3 PyMySQL"></a>3 PyMySQL</h1><h2 id="3-1-下载安装数据库连接池DBUtils"><a href="#3-1-下载安装数据库连接池DBUtils" class="headerlink" title="3.1 下载安装数据库连接池DBUtils"></a>3.1 下载安装数据库连接池DBUtils</h2><p>DBUtils 是一套用于管理<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0&spm=1001.2101.3001.7020">数据库连接池</a>的包，为高频度高并发的数据库访问提供更好的性能，可以自动管理连接对象的创建和释放。最常用的两个外部接口是 PersistentDB 和 PooledDB，前者提供了单个线程专用的数据库连接池，后者则是进程内所有线程共享的数据库连接池。</p>
 <ul>
@@ -829,16 +866,16 @@ db <span class="token operator">=</span> DB_POOL<span class="token punctuation">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常见用法</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                                 <a href="/tags/Debug/">
                                     <span class="chip bg-color">Debug</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                    <span class="chip bg-color">常见用法</span>
                                 </a>
                             
                                 <a href="/tags/MySQL/">
@@ -1565,7 +1602,7 @@ db <span class="token operator">=</span> DB_POOL<span class="token punctuation">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">275.5k</span>
+                        class="white-color">276.7k</span>
             
             
             

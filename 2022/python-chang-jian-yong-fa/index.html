@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                <span class="chip bg-color">常见用法</span>
-                            </a>
-                        
                             <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">环境配置</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                <span class="chip bg-color">常见用法</span>
                             </a>
                         
                     </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    21 分
                 </div>
                 
 
@@ -587,6 +587,12 @@ folder <span class="token operator">=</span> os<span class="token punctuation">.
 <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="2-2-2-获取文件绝对路径"><a href="#2-2-2-获取文件绝对路径" class="headerlink" title="2.2.2 获取文件绝对路径"></a>2.2.2 获取文件绝对路径</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="2-2-3-改变当前工作目录"><a href="#2-2-3-改变当前工作目录" class="headerlink" title="2.2.3 改变当前工作目录"></a>2.2.3 改变当前工作目录</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">"目标目录"</span><span class="token punctuation">)</span>   <span class="token comment">#修改当前工作目录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
 
 <h2 id="2-3-删除文件与文件夹"><a href="#2-3-删除文件与文件夹" class="headerlink" title="2.3 删除文件与文件夹"></a>2.3 删除文件与文件夹</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os
 <span class="token keyword">import</span> shutil
@@ -1032,11 +1038,139 @@ python setup.py install<span aria-hidden="true" class="line-numbers-rows"><span>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span class="token punctuation">;</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 <span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns<span class="token punctuation">;</span> sns<span class="token punctuation">.</span>set_theme<span class="token punctuation">(</span><span class="token punctuation">)</span>
 uniform_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span>
-ax <span class="token operator">=</span> sns<span class="token punctuation">.</span>heatmap<span class="token punctuation">(</span>uniform_data<span class="token punctuation">)</span>  <span class="token comment"># 输入二维数据即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+ax <span class="token operator">=</span> sns<span class="token punctuation">.</span>heatmap<span class="token punctuation">(</span>uniform_data<span class="token punctuation">,</span> cbar<span class="token operator">=</span>Fasle<span class="token punctuation">)</span>  <span class="token comment"># 输入二维数据即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>Python自带颜色条colormap：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUwOTg0MjczNw==&mid=2247484329&idx=1&sn=20ec36f7f5077221671b32d47c3412c8&chksm=f90d47f7ce7acee11449c5584a11a020cf05c27f7a60b9357bbdc35181cc7e8420c594d09fc5&scene=158#rd">Python可视化|matplotlib07-自带颜色条Colormap（三）</a></li>
+<li>cbar：是否绘制颜色条</li>
 </ul>
+<h2 id="21-2-plot示例"><a href="#21-2-plot示例" class="headerlink" title="21.2 plot示例"></a>21.2 plot示例</h2><ul>
+<li>官方文档：<a target="_blank" rel="noopener" href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.plot.html">matplotlib.pyplot.plot</a></li>
+</ul>
+<h3 id="2-1-2-1-多图简单示例"><a href="#2-1-2-1-多图简单示例" class="headerlink" title="2.1.2.1 多图简单示例"></a>2.1.2.1 多图简单示例</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">y1 <span class="token operator">=</span> figure<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>  <span class="token comment"># 图总数为1行1列，第1个图</span>
+y1<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>node_dropout<span class="token punctuation">,</span> hr<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> clip_on<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>color：线条颜色</li>
+<li>linestype：线条风格</li>
+<li>clip_on：超出部分是否剪切，设置False可以让边界上的 marker 也显示完整</li>
+<li>marker：代表每个点的样式</li>
+</ul>
+<h3 id="21-2-2-设置轴标签"><a href="#21-2-2-设置轴标签" class="headerlink" title="21.2.2 设置轴标签"></a>21.2.2 设置轴标签</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">y1<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'HR@10'</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="21-2-3-设置图标题"><a href="#21-2-3-设置图标题" class="headerlink" title="21.2.3 设置图标题"></a>21.2.3 设置图标题</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">y1<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span>title<span class="token punctuation">)</span>  <span class="token comment"># 设置图标题</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="21-2-4-设置背景栅格"><a href="#21-2-4-设置背景栅格" class="headerlink" title="21.2.4 设置背景栅格"></a>21.2.4 设置背景栅格</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">y1<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>color<span class="token operator">=</span><span class="token string">'black'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-'</span><span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span>  <span class="token comment"># alpha为透明度</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="21-2-5-设置边框属性-颜色等"><a href="#21-2-5-设置边框属性-颜色等" class="headerlink" title="21.2.5 设置边框属性-颜色等"></a>21.2.5 设置边框属性-颜色等</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>gca<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 获取当前的axes</span>
+
+ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'left'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_color<span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'right'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_color<span class="token punctuation">(</span><span class="token string">'blue'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="21-2-6-设置左右边界与图的间隔"><a href="#21-2-6-设置左右边界与图的间隔" class="headerlink" title="21.2.6 设置左右边界与图的间隔"></a>21.2.6 设置左右边界与图的间隔</h3><pre class="line-numbers language-pyth" data-language="pyth"><code class="language-pyth">figure.subplots_adjust(right&#x3D;0.89)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="21-2-7-设置刻度文字颜色"><a href="#21-2-7-设置刻度文字颜色" class="headerlink" title="21.2.7 设置刻度文字颜色"></a>21.2.7 设置刻度文字颜色</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">y1<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token string">'y'</span><span class="token punctuation">,</span> colors<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="21-2-8-导出图片"><a href="#21-2-8-导出图片" class="headerlink" title="21.2.8 导出图片"></a>21.2.8 导出图片</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span>output_predir<span class="token operator">+</span><span class="token builtin">type</span><span class="token operator">+</span><span class="token string">'.jpg'</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">,</span> transparent<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>dpi：图片大小</li>
+<li>transparent：背景是否透明</li>
+</ul>
+<h3 id="21-2-9-关闭坐标轴显示"><a href="#21-2-9-关闭坐标轴显示" class="headerlink" title="21.2.9 关闭坐标轴显示"></a>21.2.9 关闭坐标轴显示</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'off'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="21-3-绘制双Y轴图"><a href="#21-3-绘制双Y轴图" class="headerlink" title="21.3 绘制双Y轴图"></a>21.3 绘制双Y轴图</h2><ul>
+<li>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/autoliuweijie/article/details/51594373">python matplotlib 绘制双Y轴曲线图</a></li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0.</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>e<span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span>
+y1 <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span>
+y2 <span class="token operator">=</span> np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ax1 <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Y values for exp(-x)'</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Double Y axis"</span><span class="token punctuation">)</span>
+
+ax2 <span class="token operator">=</span> ax1<span class="token punctuation">.</span>twinx<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 关键函数</span>
+ax2<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y2<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+ax2<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>e<span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax2<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Y values for ln(x)'</span><span class="token punctuation">)</span>
+ax2<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Same X for both exp(-x) and ln(x)'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="21-4-多图绘制"><a href="#21-4-多图绘制" class="headerlink" title="21.4 多图绘制"></a>21.4 多图绘制</h2><h3 id="21-4-1-subplot，有规律分布"><a href="#21-4-1-subplot，有规律分布" class="headerlink" title="21.4.1 subplot，有规律分布"></a>21.4.1 subplot，有规律分布</h3><ul>
+<li>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zyg123/p/10517711.html">4.9Python数据处理篇之Matplotlib系列(九)—子图分布</a></li>
+</ul>
+<p>subplot是均匀的分割绘图区，来进行子图的放置。</p>
+<ol>
+<li>需要注意的是subplot并不适合来绘制跨行或者跨列的子图，跨行与跨列的子图绘制，交给subplot2grid()更容易完成。</li>
+<li>如果分割的图只是个位数时，那么原本的表示方法：(2,2,1),与(221)等效，其他的不可如此。</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入模块</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 数据</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+y1 <span class="token operator">=</span> x
+y2 <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">2</span>
+y3 <span class="token operator">=</span> x<span class="token operator">**</span><span class="token number">3</span>
+
+<span class="token comment"># 创建一个figure窗体</span>
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token string">"子图得比较"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"draw some subplot"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 绘制第一个子图</span>
+ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"y1 = x"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 绘制第二个子图</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y2<span class="token punctuation">)</span>
+ax2<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"y2=x**2"</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 绘制第三个子图</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">223</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y3<span class="token punctuation">)</span>
+ax3<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"y3=x**3"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 展示</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/subplot%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B.png" alt="subplot输出示例"></p>
+<h3 id="21-4-2-subplot2grid，无规律分布"><a href="#21-4-2-subplot2grid，无规律分布" class="headerlink" title="21.4.2 subplot2grid，无规律分布"></a>21.4.2 subplot2grid，无规律分布</h3><ul>
+<li>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zyg123/p/10517711.html">4.9Python数据处理篇之Matplotlib系列(九)—子图分布</a></li>
+</ul>
+<p>subplot2grid((分割)，（起始位置），colspan&#x3D;列宽, rowspan&#x3D;行宽)</p>
+<p>例如：plt.subplot2grid((3, 3), (1, 0), colspan&#x3D;2, rowspan&#x3D;1)，</p>
+<p>将整块figure画布分成3行3列的格子，从第2行，第一列画起该子图，列宽占两格，行宽占一格。</p>
+<p>像figure一样，定义subplot2grid()子图以后，后续的操作都在该子图上，直到另一个子图的出现。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token comment"># 创建画布</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 创建子图</span>
+ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"No1"</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/subplot2grid%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B.png" alt="subplot2grid输出示例"></p>
 
                 
             </div>
@@ -1101,12 +1235,12 @@ ax <span class="token operator">=</span> sns<span class="token punctuation">.</s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                                    <span class="chip bg-color">常见用法</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">环境配置</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                    <span class="chip bg-color">常见用法</span>
                                 </a>
                             
                         </div>
@@ -1833,7 +1967,7 @@ ax <span class="token operator">=</span> sns<span class="token punctuation">.</s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">275.5k</span>
+                        class="white-color">276.7k</span>
             
             
             
