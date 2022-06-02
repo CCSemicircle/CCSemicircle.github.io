@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="爬虫,微博爬虫">
-    <meta name="description" content="微博爬虫项目与注意事项">
+    <meta name="description" content="微博爬虫项目与教程">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -38,7 +38,7 @@
 </script>
 
 
-    <title>微博爬虫 | fdChen的掉发收集箱</title>
+    <title>爬虫教程 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -326,7 +326,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微博爬虫</h1>
+                    <h1 class="description center-align post-title">爬虫教程</h1>
                 </div>
             </div>
         </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    648
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    10 分
                 </div>
                 
 
@@ -510,38 +510,154 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="0-注意事项"><a href="#0-注意事项" class="headerlink" title="0. 注意事项"></a>0. 注意事项</h1><ol>
-<li>手机上的信息电脑端看不到时不一定没有适配电脑端，需要自己去找，或者去查一下，手机端信息电脑端一般都有</li>
-<li>找到对应请求链接后，一定要确保访问的header正确（需要去找这个header，待确定简单的方法todo）</li>
-<li>请求头中的Accept-Encoding是设置返回的编码，一般不需要设置，如果返回的数据无法decode，一般是这个地方设置不当</li>
-<li>如果报错400，代表请求格式错误，先打印url，然后在浏览器访问url尝试url有效性，然后再去找其他错误，如cookie过期等</li>
+                <h1 id="0-基本事项"><a href="#0-基本事项" class="headerlink" title="0. 基本事项"></a>0. 基本事项</h1><h2 id="0-1-基本原则"><a href="#0-1-基本原则" class="headerlink" title="0.1 基本原则"></a>0.1 基本原则</h2><ol>
+<li><strong>编写爬虫之前查找网络上是否有源码</strong>，测试是否可用（请求连接是否有效），可用则用</li>
+<li><strong>优先选择API接口，其次为HTML链接</strong>，理由是虽然寻找API链接需要花较多时间，但是处理HTML的不规整数据同样也耗费时间</li>
+<li>手机上的信息电脑端看不到时不一定没有适配电脑端，需要自己去找，或者去查一下，<strong>手机端信息电脑端一般都有</strong></li>
 </ol>
-<h1 id="1-爬虫示例"><a href="#1-爬虫示例" class="headerlink" title="1 爬虫示例"></a>1 爬虫示例</h1><ul>
+<h2 id="0-2-注意事项"><a href="#0-2-注意事项" class="headerlink" title="0.2 注意事项"></a>0.2 注意事项</h2><ol>
+<li><strong>找到对应请求链接后，一定要确保访问的header正确</strong>，需要通过<strong>查看网页请求详情</strong>去找这个header</li>
+<li><strong>请求头中的Accept-Encoding是设置返回的编码，一般不需要设置，</strong>如果返回的数据无法decode，一般是这个地方设置不当</li>
+<li><strong>如果报错400，代表请求格式错误，先打印url，然后在浏览器访问url尝试url有效性，然后再去找其他错误，如cookie过期等</strong></li>
+<li>如果要获取网页请求链接，不要使用Google浏览器，Google浏览器隐藏了网页请求连接详情，可以用<strong>Microsoft  Edge浏览器或者360浏览器</strong>查看，特别是查看请求接口</li>
+</ol>
+<h2 id="0-3-爬虫示例"><a href="#0-3-爬虫示例" class="headerlink" title="0.3 爬虫示例"></a>0.3 爬虫示例</h2><h3 id="0-3-1-微博爬虫"><a href="#0-3-1-微博爬虫" class="headerlink" title="0.3.1 微博爬虫"></a>0.3.1 微博爬虫</h3><ul>
 <li>Github：<a target="_blank" rel="noopener" href="https://github.com/CCSemicircle/WeiboSpider">WeiboSpider</a></li>
 </ul>
-<h1 id="2-获取请求头与请求链接等"><a href="#2-获取请求头与请求链接等" class="headerlink" title="2 获取请求头与请求链接等"></a>2 获取请求头与请求链接等</h1><h2 id="2-1-通过Filddler抓包"><a href="#2-1-通过Filddler抓包" class="headerlink" title="2.1 通过Filddler抓包"></a>2.1 通过Filddler抓包</h2><ul>
-<li>可以通过Filddler抓包请求头、cookie与请求链接等</li>
+<h1 id="1-链接类别"><a href="#1-链接类别" class="headerlink" title="1 链接类别"></a>1 链接类别</h1><h2 id="1-1-API接口"><a href="#1-1-API接口" class="headerlink" title="1.1 API接口"></a>1.1 API接口</h2><ul>
+<li><p>数据规整</p>
+</li>
+<li><p>内容详细</p>
+</li>
+<li><p>比较难获得</p>
+</li>
 </ul>
-<h2 id="2-2-首选api接口，次选html文件"><a href="#2-2-首选api接口，次选html文件" class="headerlink" title="2.2 首选api接口，次选html文件"></a>2.2 首选api接口，次选html文件</h2><ul>
-<li>找到对应网页后不要直接开始在HTML中爬取，最好是找到返回的json数据，直接请求该链接</li>
+<h2 id="1-2-HTML链接"><a href="#1-2-HTML链接" class="headerlink" title="1.2 HTML链接"></a>1.2 HTML链接</h2><ul>
+<li>所见即所得，HTML里面有的元素原则上都可以获取（除非有反爬机制）</li>
+<li>万能办法</li>
+<li>获取对应数据比较麻烦</li>
 </ul>
-<h1 id="3-BeautifuSoup"><a href="#3-BeautifuSoup" class="headerlink" title="3 BeautifuSoup"></a>3 BeautifuSoup</h1><h2 id="3-1-BeautifulSoup库未写明解析器警告"><a href="#3-1-BeautifulSoup库未写明解析器警告" class="headerlink" title="3.1 BeautifulSoup库未写明解析器警告"></a>3.1 BeautifulSoup库未写明解析器警告</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> urllib<span class="token punctuation">.</span>request <span class="token keyword">import</span> urlopen
-<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
-html <span class="token operator">=</span> urlopen<span class="token punctuation">(</span><span class="token string">"http://www.pythonscraping.com/pages/page1.html"</span><span class="token punctuation">)</span>
-bsObj <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 会警告</span>
-bsObj <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>  <span class="token comment"># 正确写法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-链接获取"><a href="#2-链接获取" class="headerlink" title="2 链接获取"></a>2 链接获取</h1><h2 id="2-1-神器：浏览器开发者工具查看网络请求"><a href="#2-1-神器：浏览器开发者工具查看网络请求" class="headerlink" title="2.1 神器：浏览器开发者工具查看网络请求"></a>2.1 神器：浏览器开发者工具查看网络请求</h2><ul>
+<li><strong>Microsoft Edge浏览器与360浏览器使用F12可看（或者右键选择开发者工具）</strong>，Google新版浏览器不可以看</li>
+</ul>
+<h2 id="2-2-查看HTML请求"><a href="#2-2-查看HTML请求" class="headerlink" title="2.2 查看HTML请求"></a>2.2 查看HTML请求</h2><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%9F%A5%E7%9C%8BHTML%E8%AF%B7%E6%B1%82%E9%93%BE%E6%8E%A5.png" alt="查看HTML请求链接"></p>
+<h2 id="2-3-查看API请求"><a href="#2-3-查看API请求" class="headerlink" title="2.3 查看API请求"></a>2.3 查看API请求</h2><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%9F%A5%E7%9C%8BAPI%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82.png" alt="查看API接口请求"></p>
+<h1 id="3-链接请求"><a href="#3-链接请求" class="headerlink" title="3 链接请求"></a>3 链接请求</h1><h2 id="3-1-必要的headers信息"><a href="#3-1-必要的headers信息" class="headerlink" title="3.1 必要的headers信息"></a>3.1 必要的headers信息</h2><ul>
+<li><strong>user-agent</strong>：伪装浏览器代理，避免被服务器识别成爬虫</li>
+<li><strong>cookie</strong>：网站请求的必要信息，代表请求者信息</li>
+<li>可以在网络请求中查看对应的设置，除了user-agent和cookie必要，其他信息可有可无，如果请求返回代码是”4XX”（如请求返回码是401，代表要求身份认证，需要添加cookie），可以依据返回码信息适当再添加信息。事实上，一般有user-agent和cookie必要信息即可，如果报错一般是其他地方的原因。</li>
+<li>HTTP状态码解释：<a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-status-codes.html">菜鸟教程</a></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%BF%85%E8%A6%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%BF%A1%E6%81%AF.png" alt="必要的请求头信息"></p>
+<h2 id="3-2-模拟请求"><a href="#3-2-模拟请求" class="headerlink" title="3.2 模拟请求"></a>3.2 模拟请求</h2><h3 id="3-2-1-基于requests"><a href="#3-2-1-基于requests" class="headerlink" title="3.2.1 基于requests"></a>3.2.1 基于requests</h3><ul>
+<li><strong>GET请求</strong>：基本适用大多数的爬虫场景</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+ 
+<span class="token comment"># Method1: 使用params参数</span>
+url <span class="token operator">=</span> <span class="token string">"https://www.sogou.com/tx?"</span>
+key_dict <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"query"</span><span class="token punctuation">:</span> <span class="token string">"python"</span><span class="token punctuation">&#125;</span>  <span class="token comment"># 视情况而定</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"</span><span class="token punctuation">,</span><span class="token punctuation">&#125;</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token operator">=</span>key_dict<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+<span class="token comment"># 查看请求结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<h2 id="3-2-BeautifulSoup查找、选择、删除标签，获取标签属性、文本等"><a href="#3-2-BeautifulSoup查找、选择、删除标签，获取标签属性、文本等" class="headerlink" title="3.2 BeautifulSoup查找、选择、删除标签，获取标签属性、文本等"></a>3.2 BeautifulSoup查找、选择、删除标签，获取标签属性、文本等</h2><ul>
+<span class="token comment"># Method2: 不使用params参数</span>
+url <span class="token operator">=</span> <span class="token string">"https://www.sogou.com/tx?query=python"</span>  <span class="token comment"># GET请求可以直接在链接后加参数</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"user-agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"</span><span class="token punctuation">,</span><span class="token punctuation">&#125;</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+<span class="token comment"># 查看请求结果，注意此处是response.content.decode('utf-8')，采用content获取</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">### response.text与response.content区别 ###</span>
+<span class="token comment"># text返回的是Unicode型的数据 </span>
+<span class="token comment"># content返回的是是二进制的数据。 </span>
+<span class="token comment"># 总结：如果想取文本，可以通过r.text；如果想取图片和文件，则可以通过r.content</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/requests%E5%B1%9E%E6%80%A7.png" alt="requests返回结果属性"></p>
+<ul>
+<li><strong>POST请求</strong>：POST一般需要设置好请求参数，使用场景较少，并且获取对应参数比较复杂</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> json
+ 
+url <span class="token operator">=</span> <span class="token string">"https://fanyi.qq.com/api/translate"</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"Origin"</span><span class="token punctuation">:</span> <span class="token string">"https://fanyi.qq.com"</span><span class="token punctuation">,</span>
+    <span class="token string">"user-agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+time_str <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+key_dict <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"source"</span><span class="token punctuation">:</span> <span class="token string">"zh"</span><span class="token punctuation">,</span>
+    <span class="token string">"target"</span><span class="token punctuation">:</span> <span class="token string">"en"</span><span class="token punctuation">,</span>
+    <span class="token string">"sourceText"</span><span class="token punctuation">:</span> <span class="token string">"发送 POST 请求"</span><span class="token punctuation">,</span>
+    <span class="token string">"sessionUuid "</span><span class="token punctuation">:</span> <span class="token string">"translate_uuid"</span> <span class="token operator">+</span> time_str
+    <span class="token punctuation">&#125;</span>  <span class="token comment"># 必要的POST请求参数</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>key_dict<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+<span class="token comment"># 查看请求结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+result <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># response自带json解码函数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2-2-基于urllib"><a href="#3-2-2-基于urllib" class="headerlink" title="3.2.2 基于urllib"></a>3.2.2 基于urllib</h3><ul>
+<li><strong>urllib介绍</strong></li>
+</ul>
+<p>urllib.request ：最基本的http请求模块，用来模拟发送请求。<br>urllib.error ：异常处理模块。<br>urllib.parse ：工具模块，提供了许多URL处理方法，如：拆分、解析、合并等。<br>urllib.robotparser ：解析网站的robots.txt文件。</p>
+<ul>
+<li><strong>GET请求</strong></li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request  <span class="token comment"># 注意正确的imprt格式</span>
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+<span class="token builtin">dict</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token punctuation">:</span><span class="token string">'red'</span><span class="token punctuation">,</span><span class="token string">'number'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">&#125;</span> <span class="token comment">#随便写的参数数据</span>
+params <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+url <span class="token operator">=</span> <span class="token string">"http://baidu.com?%s"</span> <span class="token operator">%</span> params <span class="token comment">#GET方法的参数在url后面，也可以不带参数，此时默认为GET方法</span>
+resp <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span class="token comment"># 不设置data参数，使用GET请求</span>
+
+<span class="token comment"># 查看请求结果，注意此处是 resp.read().decode("utf-8")，采用read函数获取</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>POST请求</strong></li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse
+<span class="token builtin">dict</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token punctuation">:</span><span class="token string">'red'</span><span class="token punctuation">,</span><span class="token string">'number'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">&#125;</span>
+params <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
+params <span class="token operator">=</span> params<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span>
+resp <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span><span class="token string">"http://baidu.com"</span><span class="token punctuation">,</span>data<span class="token operator">=</span>params<span class="token punctuation">)</span>  <span class="token comment"># 设置data参数，使用POST请求</span>
+
+<span class="token comment"># 查看请求结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="4-处理返回结果"><a href="#4-处理返回结果" class="headerlink" title="4 处理返回结果"></a>4 处理返回结果</h1><h2 id="4-0-API接口返回结果与HTML链接返回结果"><a href="#4-0-API接口返回结果与HTML链接返回结果" class="headerlink" title="4.0 API接口返回结果与HTML链接返回结果"></a>4.0 API接口返回结果与HTML链接返回结果</h2><ul>
+<li><p>API接口返回的链接十分规整，通过json解码即可获取</p>
+</li>
+<li><p>HTML链接返回的结果杂乱，需要借助工具，后续均针对处理HTML链接返回结果</p>
+</li>
+</ul>
+<h2 id="4-1-BeautifuSoup获取指定信息"><a href="#4-1-BeautifuSoup获取指定信息" class="headerlink" title="4.1 BeautifuSoup获取指定信息"></a>4.1 BeautifuSoup获取指定信息</h2><h3 id="4-1-1-基本示例"><a href="#4-1-1-基本示例" class="headerlink" title="4.1.1 基本示例"></a>4.1.1 基本示例</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+html <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span><span class="token string">"http://www.pythonscraping.com/pages/page1.html"</span><span class="token punctuation">)</span>
+<span class="token comment"># bsObj = BeautifulSoup(html.read())  # 会警告</span>
+bsObj <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>  <span class="token comment"># 正确写法，注意添加parser格式 html.parser</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>此处用的是urllib.request.urlopen所以需要用read()函数读取返回结果</li>
+</ul>
+<h3 id="4-1-2-查找、选择、删除标签，获取标签属性、文本等"><a href="#4-1-2-查找、选择、删除标签，获取标签属性、文本等" class="headerlink" title="4.1.2 查找、选择、删除标签，获取标签属性、文本等"></a>4.1.2 查找、选择、删除标签，获取标签属性、文本等</h3><ul>
 <li>本节内容来自博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yezi1993/article/details/109644944">BeautifulSoup查找、选择、删除标签，获取标签属性、文本等</a></li>
 </ul>
 <ol>
-<li>新建BeautifulSoup对象</li>
+<li><strong>新建BeautifulSoup对象</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
-soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>html<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="2">
-<li>查找</li>
+<li><strong>查找</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 根据标签查找</span>
 imgs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span>
@@ -551,7 +667,7 @@ imgs <span class="token operator">=</span> soup<span class="token punctuation">.
 tabs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>style<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'.*display:none.*?'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
-<li>获得标签的属性</li>
+<li><strong>获得标签的属性</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取img标签的src属性</span>
 imgs <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
@@ -560,33 +676,33 @@ imgs <span class="token operator">=</span> soup<span class="token punctuation">.
     <span class="token keyword">print</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
-<li>获取标签内文本</li>
+<li><strong>获取标签内文本</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 获取文本（分隔符、去除空白）</span>
 soup<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span>separator<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">,</span> strip<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="5">
-<li>根据CSS选择器选择标签</li>
+<li><strong>根据CSS选择器选择标签</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#获取a标签中具有href属性的标签</span>
 soup<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">'a[href]'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="6">
-<li>正则匹配标签</li>
+<li><strong>正则匹配标签</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 选取所有的h标签，替换内容（去除h标签内的标签，只保留文本）</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">"^h[1-6]"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
 	i<span class="token punctuation">.</span>string <span class="token operator">=</span> i<span class="token punctuation">.</span>get_text<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="7">
-<li>删除标签</li>
+<li><strong>删除标签</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 删除style中包含隐藏的标签</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> self<span class="token punctuation">.</span>soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span>style<span class="token operator">=</span>re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'.*display:none.*?'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     i<span class="token punctuation">.</span>decompose<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ol start="8">
-<li>去除空标签</li>
+<li><strong>去除空标签</strong></li>
 </ol>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 删除空白标签（例如&lt;p>&lt;/p>、&lt;p>&lt;br>&lt;/p>, img、video、hr除外）</span>
 soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>clean_content<span class="token punctuation">,</span> features<span class="token operator">=</span><span class="token string">"html.parser"</span><span class="token punctuation">)</span>
@@ -597,6 +713,132 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         i<span class="token punctuation">.</span>decompose<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="4-2-正则表达式"><a href="#4-2-正则表达式" class="headerlink" title="4.2 正则表达式"></a>4.2 正则表达式</h2><ul>
+<li>有时候HTML链接返回结果中的信息无法通过Beautifulsoup处理，可以通过正则表达式处理</li>
+</ul>
+<h3 id="4-2-1-示例"><a href="#4-2-1-示例" class="headerlink" title="4.2.1 示例"></a>4.2.1 示例</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> re  <span class="token comment"># 正则表达式的依赖包</span>
+<span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+
+<span class="token comment"># 请求链接</span>
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'</span><span class="token punctuation">,</span>
+    <span class="token string">'Cookie'</span><span class="token punctuation">:</span> cookie  <span class="token comment"># cookie自行获取，方法可见上文</span>
+<span class="token punctuation">&#125;</span>
+uid <span class="token operator">=</span> <span class="token number">1906123125</span>
+url <span class="token operator">=</span> <span class="token string">"https://weibo.com/%s?is_hot=1"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>uid<span class="token punctuation">)</span>
+add <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+
+<span class="token comment"># 获得请求结果</span>
+page <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token operator">=</span>add<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 正则查找</span>
+grade_info <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">r'title=.*?class=\\"W_icon icon_pf_(.*?)\\"'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>  <span class="token comment"># 一般用findall函数即可，page代表待查找的内容</span>
+
+<span class="token comment"># 查看结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'page:'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'grapde info:'</span><span class="token punctuation">,</span> grade_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>详细的正则表达式教程查看：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-reg-expressions.html">菜鸟教程</a>，重点是《正则表达式模式》</li>
+</ul>
+<h1 id="5-存储爬取数据"><a href="#5-存储爬取数据" class="headerlink" title="5 存储爬取数据"></a>5 存储爬取数据</h1><h2 id="5-1-sql语句（推荐）"><a href="#5-1-sql语句（推荐）" class="headerlink" title="5.1 sql语句（推荐）"></a>5.1 sql语句（推荐）</h2><ul>
+<li><p>优点：数据比较规整，且可以便于判断信息是否已经爬取，以方便设置断点，下次可以继续爬取</p>
+</li>
+<li><p>缺点：不能直接用于数据分析，需要使用python获取指定条件下的数据</p>
+</li>
+<li><p>使用如下的sql工具即可</p>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#-*- coding: utf-8 -*-</span>
+<span class="token keyword">from</span> DBUtils<span class="token punctuation">.</span>PooledDB <span class="token keyword">import</span> PooledDB
+<span class="token keyword">import</span> pymysql
+<span class="token keyword">from</span> utils<span class="token punctuation">.</span>config <span class="token keyword">import</span> mysql_info
+
+
+<span class="token keyword">class</span> <span class="token class-name">DB_POOL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    __pool <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>db_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__pool <span class="token operator">=</span> PooledDB<span class="token punctuation">(</span>pymysql<span class="token punctuation">,</span> mincached<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> maxcached<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> host<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'host'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          passwd<span class="token operator">=</span>mysql_info<span class="token punctuation">[</span><span class="token string">'passwd'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> db<span class="token operator">=</span>db_name<span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span> setsession<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'SET AUTOCOMMIT = 1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          cursorclass<span class="token operator">=</span>pymysql<span class="token punctuation">.</span>cursors<span class="token punctuation">.</span>DictCursor<span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">'utf8mb4'</span><span class="token punctuation">)</span>
+
+
+    <span class="token keyword">def</span> <span class="token function">to_connect</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">is_connected</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Check if the server is alive"""</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            conn<span class="token punctuation">.</span>ping<span class="token punctuation">(</span>reconnect<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+            <span class="token comment"># print("db is connecting")</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            conn <span class="token operator">=</span> self<span class="token punctuation">.</span>to_connect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"db reconnect"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> conn
+
+    <span class="token keyword">def</span> <span class="token function">__getInsertId</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> cursor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'select @@IDENTITY AS id'</span><span class="token punctuation">)</span>
+        result <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">__query</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        conn <span class="token operator">=</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> param <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            count <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            count <span class="token operator">=</span> cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> count<span class="token punctuation">,</span> cursor
+
+    <span class="token keyword">def</span> <span class="token function">getAll</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># param查询条件值(元组\列表)</span>
+        <span class="token comment"># 返回list\boolean</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">getOne</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">getMany</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> num<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        count<span class="token punctuation">,</span> cursor <span class="token operator">=</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> count <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchmany<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">insertOne</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        conn <span class="token operator">=</span> self<span class="token punctuation">.</span>__pool<span class="token punctuation">.</span>connection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__getInsertId<span class="token punctuation">(</span>cursor<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sql<span class="token punctuation">,</span> param<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__query<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">insert_dict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dic<span class="token punctuation">,</span> table_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        placeholder <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'%s'</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        sql <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"insert into </span><span class="token interpolation"><span class="token punctuation">&#123;</span>table_name<span class="token punctuation">&#125;</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token string">','</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>dic<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">) values (</span><span class="token interpolation"><span class="token punctuation">&#123;</span>placeholder<span class="token punctuation">&#125;</span></span><span class="token string">)"</span></span>
+        <span class="token comment"># print('sql', sql)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>insertOne<span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>dic<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+db <span class="token operator">=</span> DB_POOL<span class="token punctuation">(</span><span class="token string">'weibo'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-2-csv文件"><a href="#5-2-csv文件" class="headerlink" title="5.2 csv文件"></a>5.2 csv文件</h2><ul>
+<li>基于pandas操作即可</li>
+<li>优点：csv数据可以直接用于数据分析</li>
+<li>缺点：会遇到数据乱码或乱序或缺失等问题</li>
+<li>局限：如果不是一条一条数据存储，csv文件可能需要较大的内存</li>
+</ul>
 
                 
             </div>
@@ -623,7 +865,7 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.fdchen.host/2022/pa-chong-wei-bo-pa-chong/">https://blog.fdchen.host/2022/pa-chong-wei-bo-pa-chong/</a>
+                    <a href="https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/">https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1389,7 +1631,7 @@ soup <span class="token operator">=</span> BeautifulSoup<span class="token punct
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">276.7k</span>
+                        class="white-color">278.7k</span>
             
             
             

@@ -442,16 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
+                            <a href="/tags/Pytorch/">
+                                <span class="chip bg-color">Pytorch</span>
                             </a>
                         
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/Pytorch/">
-                                <span class="chip bg-color">Pytorch</span>
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                     </div>
@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.2k
                 </div>
                 
 
@@ -910,6 +910,15 @@ tensor<span class="token punctuation">(</span><span class="token punctuation">[<
         <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.4599</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
         <span class="token punctuation">[</span> <span class="token number">0.1807</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="5-16-生成一个顺序tensor，torch-arange-n"><a href="#5-16-生成一个顺序tensor，torch-arange-n" class="headerlink" title="5.16 生成一个顺序tensor，torch.arange(n)"></a>5.16 生成一个顺序tensor，torch.arange(n)</h2><h2 id="5-17-取对角元素，torch-diag"><a href="#5-17-取对角元素，torch-diag" class="headerlink" title="5.17 取对角元素，torch.diag()"></a>5.17 取对角元素，torch.diag()</h2><ul>
+<li>torch.diag()可以取tensor对角元素</li>
+</ul>
+<h2 id="5-18-一维tensor转为对角矩阵，torch-diag-embed"><a href="#5-18-一维tensor转为对角矩阵，torch-diag-embed" class="headerlink" title="5.18 一维tensor转为对角矩阵，torch.diag_embed()"></a>5.18 一维tensor转为对角矩阵，torch.diag_embed()</h2><p>通过利用torch.diag()和torch.diag_embed()可以令对角元素为0</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> a <span class="token operator">-</span> torch<span class="token punctuation">.</span>diag_embed<span class="token punctuation">(</span>a<span class="token punctuation">.</span>diag<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="5-19-mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）"><a href="#5-19-mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）" class="headerlink" title="5.19 mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）"></a>5.19 mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）</h2><h2 id="5-20-张量点乘，tensordot"><a href="#5-20-张量点乘，tensordot" class="headerlink" title="5.20 张量点乘，tensordot"></a>5.20 张量点乘，tensordot</h2><ul>
+<li>官方文档：<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.tensordot.html#torch.tensordot">TORCH.TENSORDOT</a></li>
+</ul>
 <h1 id="6-PyG-torch-geometirc"><a href="#6-PyG-torch-geometirc" class="headerlink" title="6 PyG-torch.geometirc"></a>6 PyG-torch.geometirc</h1><blockquote>
 <p>图神经网络神器</p>
 </blockquote>
@@ -1094,16 +1103,16 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
+                                <a href="/tags/Pytorch/">
+                                    <span class="chip bg-color">Pytorch</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/Pytorch/">
-                                    <span class="chip bg-color">Pytorch</span>
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                         </div>
@@ -1634,12 +1643,12 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">经验总结</span>
-                    </a>
-                    
                     <a href="/tags/%E6%9C%8D%E5%88%9B/">
                         <span class="chip bg-color">服创</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">经验总结</span>
                     </a>
                     
                 </div>
@@ -1827,7 +1836,7 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">276.7k</span>
+                        class="white-color">278.7k</span>
             
             
             

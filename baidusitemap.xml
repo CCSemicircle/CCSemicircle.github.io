@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/yuan-ji-chu-office-ruan-jian-shi-yong-ji-qiao/</loc>
+    <lastmod>2022-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
+    <lastmod>2022-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
+    <lastmod>2022-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
+    <lastmod>2022-05-20</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-pandas/</loc>
+    <lastmod>2022-05-18</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/shu-ju-ku-mysql/</loc>
     <lastmod>2022-05-17</lastmod>
   </url>
@@ -9,20 +33,8 @@
     <lastmod>2022-05-17</lastmod>
   </url>
   <url>
-    <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
-    <lastmod>2022-05-17</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
-    <lastmod>2022-05-17</lastmod>
-  </url>
-  <url>
     <loc>https://blog.fdchen.host/2022/ai-ji-chu-zhi-shi/</loc>
     <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
-    <lastmod>2022-05-14</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/linux-ru-men-jiao-cheng/</loc>
@@ -33,20 +45,8 @@
     <lastmod>2022-05-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.fdchen.host/2022/python-pandas/</loc>
-    <lastmod>2022-05-13</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/pa-chong-wei-bo-pa-chong/</loc>
-    <lastmod>2022-05-12</lastmod>
-  </url>
-  <url>
     <loc>https://blog.fdchen.host/2021/ji-suan-ji-ji-chu-cao-zuo-xi-tong/</loc>
     <lastmod>2022-05-11</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/yuan-ji-chu-office-ruan-jian-shi-yong-ji-qiao/</loc>
-    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/yuan-ji-chu-zheng-ze-biao-da-shi/</loc>
