@@ -1,3 +1,4 @@
+https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/
 https://blog.fdchen.host/2022/ai-ji-chu-zhi-shi/
 https://blog.fdchen.host/2022/yuan-ji-chu-office-ruan-jian-shi-yong-ji-qiao/
 https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/
@@ -41,8 +42,8 @@ https://blog.fdchen.host/2021/cqu-ren-gong-zhi-neng-dao-lun/
 https://blog.fdchen.host/2020/cqu-duo-mei-ti-ji-zhu/
 https://blog.fdchen.host/2020/cqu-ruan-jian-xu-qiu-fen-xi/
 https://blog.fdchen.host/2020/java-ji-ben-yong-fa/
-https://blog.fdchen.host/2020/da-shu-ju-fen-xi-fen-bu-shi-ji-suan-kuang-jia-mapreduce/
-https://blog.fdchen.host/2020/da-shu-ju-fen-xi-fen-bu-shi-wen-jian-xi-tong-hdfs/
+https://blog.fdchen.host/2020/shu-ju-fen-xi-fen-bu-shi-ji-suan-kuang-jia-mapreduce/
+https://blog.fdchen.host/2020/shu-ju-fen-xi-fen-bu-shi-wen-jian-xi-tong-hdfs/
 https://blog.fdchen.host/2020/sui-bi-shou-cang-jia/
 https://blog.fdchen.host/2020/java-eclipse-chuang-jian-maven-project-huan-jing-pei-zhi-debug/
 https://blog.fdchen.host/2020/fu-wu-qi-li-yong-mstsc-jin-xing-lian-jie-a-li-yun-windows-fu-wu-qi/

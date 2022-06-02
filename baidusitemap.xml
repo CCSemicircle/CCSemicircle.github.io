@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2020/shu-ju-fen-xi-fen-bu-shi-wen-jian-xi-tong-hdfs/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2020/shu-ju-fen-xi-fen-bu-shi-ji-suan-kuang-jia-mapreduce/</loc>
     <lastmod>2022-06-02</lastmod>
   </url>
   <url>
@@ -170,14 +182,6 @@
   </url>
   <url>
     <loc>https://blog.fdchen.host/2020/fu-wu-qi-li-yong-mstsc-jin-xing-lian-jie-a-li-yun-windows-fu-wu-qi/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2020/da-shu-ju-fen-xi-fen-bu-shi-wen-jian-xi-tong-hdfs/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2020/da-shu-ju-fen-xi-fen-bu-shi-ji-suan-kuang-jia-mapreduce/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>

@@ -6,7 +6,7 @@
   <link href="https://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="https://blog.fdchen.host/"/>
-  <updated>2022-05-16T11:53:28.588Z</updated>
+  <updated>2022-06-02T16:57:55.289Z</updated>
   <id>https://blog.fdchen.host/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据处理</title>
+    <link href="https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/"/>
+    <id>https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/</id>
+    <published>2022-06-01T13:40:00.000Z</published>
+    <updated>2022-06-02T16:57:55.289Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-数据导入&quot;&gt;&lt;a href=&quot;#1-数据导入&quot; class=&quot;headerlink&quot; title=&quot;1 数据导入&quot;&gt;&lt;/a&gt;1 数据导入&lt;/h1&gt;&lt;h2 id=&quot;1-1-导入sql数据&quot;&gt;&lt;a href=&quot;#1-1-导入sql数据&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据分析" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="代码示例" scheme="https://blog.fdchen.host/tags/%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>基础知识</title>
@@ -37,9 +64,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -74,8 +101,8 @@
     <title>爬虫教程</title>
     <link href="https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/</id>
-    <published>2022-05-06T12:00:00.000Z</published>
-    <updated>2022-06-02T05:19:55.351Z</updated>
+    <published>2022-05-02T12:00:00.000Z</published>
+    <updated>2022-06-02T13:46:34.864Z</updated>
     
     
       
@@ -315,9 +342,9 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="Numpy" scheme="https://blog.fdchen.host/tags/Numpy/"/>
-    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Numpy" scheme="https://blog.fdchen.host/tags/Numpy/"/>
     
   </entry>
   
@@ -369,9 +396,9 @@
     <category term="数据库" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
-    
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
     
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
     
@@ -428,11 +455,11 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
     
   </entry>
   
@@ -541,32 +568,6 @@
     
     
     <category term="常用单词" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E7%94%A8%E5%8D%95%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Shell编程</title>
-    <link href="https://blog.fdchen.host/2021/linux-shell-bian-cheng/"/>
-    <id>https://blog.fdchen.host/2021/linux-shell-bian-cheng/</id>
-    <published>2021-10-05T05:48:00.000Z</published>
-    <updated>2022-04-07T16:06:59.494Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;1-教程&quot;&gt;&lt;a href=&quot;#1-教程&quot; class=&quot;headerlink&quot; title=&quot;1 教程&quot;&gt;&lt;/a&gt;1 教程&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;视频教程：&lt;a href=&quot;https://www.bilibili.com/video/BV1dW411M7xL?p=58&quot;&gt;尚硅谷Linux教程&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;文字教程：&lt;a href=&quot;https://www.runoob.com/linux/linux-shell.html&quot;&gt;Shell教程|菜鸟教程&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://blog.fdchen.host/categories/Linux/"/>
-    
-    
-    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
-    
-    <category term="Shell" scheme="https://blog.fdchen.host/tags/Shell/"/>
     
   </entry>
   
