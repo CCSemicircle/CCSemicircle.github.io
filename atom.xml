@@ -6,7 +6,7 @@
   <link href="https://blog.fdchen.host/atom.xml" rel="self"/>
   
   <link href="https://blog.fdchen.host/"/>
-  <updated>2022-06-02T16:57:55.289Z</updated>
+  <updated>2022-06-03T08:35:51.957Z</updated>
   <id>https://blog.fdchen.host/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/"/>
     <id>https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/</id>
     <published>2022-06-01T13:40:00.000Z</published>
-    <updated>2022-06-02T16:57:55.289Z</updated>
+    <updated>2022-06-03T08:35:51.957Z</updated>
     
     
       
@@ -102,7 +102,7 @@
     <link href="https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/pa-chong-pa-chong-jiao-cheng/</id>
     <published>2022-05-02T12:00:00.000Z</published>
-    <updated>2022-06-02T13:46:34.864Z</updated>
+    <updated>2022-06-03T07:36:50.836Z</updated>
     
     
       
@@ -175,9 +175,9 @@
     <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
     
     
-    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -297,7 +297,7 @@
     <link href="https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
     <id>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
     <published>2022-03-15T13:10:00.000Z</published>
-    <updated>2022-05-13T15:32:18.399Z</updated>
+    <updated>2022-06-10T05:10:30.495Z</updated>
     
     
       
@@ -398,9 +398,9 @@
     
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
-    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
-    
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
     
     <category term="MySQL" scheme="https://blog.fdchen.host/tags/MySQL/"/>
     

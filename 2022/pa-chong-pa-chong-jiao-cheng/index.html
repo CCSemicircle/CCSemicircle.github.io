@@ -614,10 +614,11 @@ result <span class="token operator">=</span> response<span class="token punctuat
 <span class="token builtin">dict</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'color'</span><span class="token punctuation">:</span><span class="token string">'red'</span><span class="token punctuation">,</span><span class="token string">'number'</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">&#125;</span> <span class="token comment">#随便写的参数数据</span>
 params <span class="token operator">=</span> urllib<span class="token punctuation">.</span>parse<span class="token punctuation">.</span>urlencode<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">)</span>
 url <span class="token operator">=</span> <span class="token string">"http://baidu.com?%s"</span> <span class="token operator">%</span> params <span class="token comment">#GET方法的参数在url后面，也可以不带参数，此时默认为GET方法</span>
-resp <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span class="token comment"># 不设置data参数，使用GET请求</span>
+add <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+resp <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>add<span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span class="token comment"># 不设置data参数，使用GET请求</span>
 
 <span class="token comment"># 查看请求结果，注意此处是 resp.read().decode("utf-8")，采用read函数获取</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><strong>POST请求</strong></li>
@@ -638,7 +639,7 @@ resp <span class="token operator">=</span> urllib<span class="token punctuation"
 <li><p>HTML链接返回的结果杂乱，需要借助工具，后续均针对处理HTML链接返回结果</p>
 </li>
 </ul>
-<h2 id="4-1-BeautifuSoup获取指定信息"><a href="#4-1-BeautifuSoup获取指定信息" class="headerlink" title="4.1 BeautifuSoup获取指定信息"></a>4.1 BeautifuSoup获取指定信息</h2><h3 id="4-1-1-基本示例"><a href="#4-1-1-基本示例" class="headerlink" title="4.1.1 基本示例"></a>4.1.1 基本示例</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<h2 id="4-1-BeautifulSoup获取指定信息"><a href="#4-1-BeautifulSoup获取指定信息" class="headerlink" title="4.1 BeautifulSoup获取指定信息"></a>4.1 BeautifulSoup获取指定信息</h2><h3 id="4-1-1-基本示例"><a href="#4-1-1-基本示例" class="headerlink" title="4.1.1 基本示例"></a>4.1.1 基本示例</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
 <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 html <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span><span class="token string">"http://www.pythonscraping.com/pages/page1.html"</span><span class="token punctuation">)</span>
 <span class="token comment"># bsObj = BeautifulSoup(html.read())  # 会警告</span>
@@ -732,11 +733,12 @@ add <span class="token operator">=</span> urllib<span class="token punctuation">
 page <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token operator">=</span>add<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span>encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
 
 <span class="token comment"># 正则查找</span>
-grade_info <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">r'title=.*?class=\\"W_icon icon_pf_(.*?)\\"'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>  <span class="token comment"># 一般用findall函数即可，page代表待查找的内容</span>
+str1<span class="token operator">=</span> <span class="token string">'div111111111'</span>
+grade_info <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">r'div'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>  <span class="token comment"># 一般用findall函数即可，page代表待查找的内容</span>
 
 <span class="token comment"># 查看结果</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'page:'</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'grapde info:'</span><span class="token punctuation">,</span> grade_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'grapde info:'</span><span class="token punctuation">,</span> grade_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>详细的正则表达式教程查看：<a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-reg-expressions.html">菜鸟教程</a>，重点是《正则表达式模式》</li>
@@ -1631,7 +1633,7 @@ db <span class="token operator">=</span> DB_POOL<span class="token punctuation">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">280.2k</span>
+                        class="white-color">280.6k</span>
             
             
             
