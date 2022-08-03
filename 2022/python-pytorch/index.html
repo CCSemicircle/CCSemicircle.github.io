@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    23 分
                 </div>
                 
 
@@ -543,6 +543,10 @@ conda create <span class="token operator">-</span><span class="token operator">-
 
 <h3 id="1-5-2-下载PyG"><a href="#1-5-2-下载PyG" class="headerlink" title="1.5.2 下载PyG"></a>1.5.2 下载PyG</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install pyg -c pyg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h3 id="1-5-3-下载sklearn"><a href="#1-5-3-下载sklearn" class="headerlink" title="1.5.3 下载sklearn"></a>1.5.3 下载sklearn</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install scikit-learn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <h2 id="1-6-window添加conda环境变量"><a href="#1-6-window添加conda环境变量" class="headerlink" title="1.6 window添加conda环境变量"></a>1.6 window添加conda环境变量</h2><ul>
 <li>添加路径到系统变量Path下：</li>
 </ul>
@@ -566,6 +570,13 @@ conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <h2 id="1-9-conda环境迁移"><a href="#1-9-conda环境迁移" class="headerlink" title="1.9 conda环境迁移"></a>1.9 conda环境迁移</h2><ul>
 <li>详见博客<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87344422">：Conda 环境迁移</a></li>
 </ul>
+<h2 id="1-10-下载不了目标依赖包，添加-c-anaconda"><a href="#1-10-下载不了目标依赖包，添加-c-anaconda" class="headerlink" title="1.10 下载不了目标依赖包，添加 -c anaconda"></a>1.10 下载不了目标依赖包，添加 -c anaconda</h2><ul>
+<li>如果下载显示下载完成，但是实际上没有下载对应包，需要添加channel</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">conda install <span class="token operator">-</span>c anaconda scikit<span class="token operator">-</span>learn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <h1 id="2-常用指令"><a href="#2-常用指令" class="headerlink" title="2 常用指令"></a>2 常用指令</h1><h2 id="2-1-一般指令"><a href="#2-1-一般指令" class="headerlink" title="2.1 一般指令"></a>2.1 一般指令</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#矩阵乘法</span>
 torch<span class="token punctuation">.</span>mm<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> mat2<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> out<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span> → Tensor
 <span class="token comment">#矩阵转置</span>
@@ -919,6 +930,30 @@ tensor<span class="token punctuation">(</span><span class="token punctuation">[<
 <h2 id="5-19-mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）"><a href="#5-19-mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）" class="headerlink" title="5.19 mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）"></a>5.19 mm和mul的区别，mm是矩阵乘法，mul是对位相乘（不求和）</h2><h2 id="5-20-张量点乘，tensordot"><a href="#5-20-张量点乘，tensordot" class="headerlink" title="5.20 张量点乘，tensordot"></a>5.20 张量点乘，tensordot</h2><ul>
 <li>官方文档：<a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/generated/torch.tensordot.html#torch.tensordot">TORCH.TENSORDOT</a></li>
 </ul>
+<h2 id="5-21-any"><a href="#5-21-any" class="headerlink" title="5.21 any"></a>5.21 any</h2><h3 id="5-21-1-any-1"><a href="#5-21-1-any-1" class="headerlink" title="5.21.1 any(-1)"></a>5.21.1 any(-1)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">a
+Out<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span><span class="token builtin">any</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token boolean">True</span><span class="token punctuation">,</span>  <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b<span class="token punctuation">[</span>a<span class="token punctuation">.</span><span class="token builtin">any</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token number">0</span>
+b
+Out<span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">]</span><span class="token punctuation">:</span> 
+tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">,</span> <span class="token number">1.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+         <span class="token punctuation">[</span><span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">,</span> <span class="token number">0.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="6-PyG-torch-geometirc"><a href="#6-PyG-torch-geometirc" class="headerlink" title="6 PyG-torch.geometirc"></a>6 PyG-torch.geometirc</h1><blockquote>
 <p>图神经网络神器</p>
 </blockquote>
@@ -1836,7 +1871,7 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">280.6k</span>
+                        class="white-color">283k</span>
             
             
             

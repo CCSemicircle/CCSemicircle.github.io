@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    23 分
                 </div>
                 
 
@@ -553,9 +553,7 @@ dic <span class="token operator">=</span> <span class="token builtin">vars</span
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">isinstance</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
 <span class="token builtin">type</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-
-
-<h1 id="2-文件操作"><a href="#2-文件操作" class="headerlink" title="2 文件操作"></a>2 文件操作</h1><h2 id="2-1-创建文件和文件夹"><a href="#2-1-创建文件和文件夹" class="headerlink" title="2.1 创建文件和文件夹"></a>2.1 创建文件和文件夹</h2><h3 id="2-1-1-创建文件夹"><a href="#2-1-1-创建文件夹" class="headerlink" title="2.1.1 创建文件夹"></a>2.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
+<h2 id="1-5-装饰器或者矩阵乘法matmul"><a href="#1-5-装饰器或者矩阵乘法matmul" class="headerlink" title="1.5 @ 装饰器或者矩阵乘法matmul"></a>1.5 @ 装饰器或者矩阵乘法matmul</h2><h1 id="2-文件操作"><a href="#2-文件操作" class="headerlink" title="2 文件操作"></a>2 文件操作</h1><h2 id="2-1-创建文件和文件夹"><a href="#2-1-创建文件和文件夹" class="headerlink" title="2.1 创建文件和文件夹"></a>2.1 创建文件和文件夹</h2><h3 id="2-1-1-创建文件夹"><a href="#2-1-1-创建文件夹" class="headerlink" title="2.1.1 创建文件夹"></a>2.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
 <span class="token keyword">import</span> os
 
 <span class="token keyword">def</span> <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -916,7 +914,38 @@ name <span class="token operator">=</span> <span class="token string">'processin
 <li>key – 字典中要查找的键。</li>
 <li>default – 如果指定键的值不存在时，返回该默认值。</li>
 </ul>
-<h2 id="11-3-按key删除元素，pop-key"><a href="#11-3-按key删除元素，pop-key" class="headerlink" title="11.3 按key删除元素，pop(key)"></a>11.3 按key删除元素，pop(key)</h2><h1 id="12-字符串str"><a href="#12-字符串str" class="headerlink" title="12 字符串str"></a>12 字符串str</h1><h2 id="12-1-移除字符串头尾指定的字符，strip"><a href="#12-1-移除字符串头尾指定的字符，strip" class="headerlink" title="12.1 移除字符串头尾指定的字符，strip()"></a>12.1 移除字符串头尾指定的字符，strip()</h2><p>Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
+<h2 id="11-3-按key删除元素，pop-key"><a href="#11-3-按key删除元素，pop-key" class="headerlink" title="11.3 按key删除元素，pop(key)"></a>11.3 按key删除元素，pop(key)</h2><h2 id="11-4-遍历字典，for-k-v-in-dict-item"><a href="#11-4-遍历字典，for-k-v-in-dict-item" class="headerlink" title="11.4 遍历字典，for k,v in dict.item()"></a>11.4 遍历字典，for k,v in dict.item()</h2><h2 id="11-5-一般复制为浅复制，对原dict操作会修改新dict"><a href="#11-5-一般复制为浅复制，对原dict操作会修改新dict" class="headerlink" title="11.5 一般复制为浅复制，对原dict操作会修改新dict"></a>11.5 一般复制为浅复制，对原dict操作会修改新dict</h2><ul>
+<li>来源博客：[<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bymo/p/8709726.html">Python] dict字典的浅复制与深复制</a></li>
+</ul>
+<p>Python中针对dict字典有两种复制：</p>
+<p>（１）浅复制：利用 copy() 或者 dict() ；复制后对原dict的内部子对象(方括号[]内元素)进行操作时，由浅复制得到的dict<strong>会</strong>受该操作影响</p>
+<p>（２）深复制：利用 deepcopy() ；复制后对原dict的内部子对象(方括号[]内元素)进行操作时，由深复制得到的dict<strong>不会</strong>受该操作影响</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> copy <span class="token keyword">import</span> deepcopy
+
+<span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    d1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"a"</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token string">"keys"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token string">"keys"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+    d2 <span class="token operator">=</span> d1<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token comment"># 浅复制</span>
+    d3 <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>d1<span class="token punctuation">)</span>             <span class="token comment"># 浅复制</span>
+    d4 <span class="token operator">=</span> deepcopy<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>         <span class="token comment"># 深复制</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"d1=%s \nd2=%s \nd3=%s \nd4=%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>d1<span class="token punctuation">,</span> d2<span class="token punctuation">,</span> d3<span class="token punctuation">,</span> d4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    d1<span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"keys"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>  <span class="token comment"># 修改d1的值</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"d1 modified."</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"d1=%s \nd2=%s \nd3=%s \nd4=%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>d1<span class="token punctuation">,</span> d2<span class="token punctuation">,</span> d3<span class="token punctuation">,</span> d4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+输出结果：
+d1=&#123;'a': &#123;'keys': [1, 2, 3]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d2=&#123;'a': &#123;'keys': [1, 2, 3]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d3=&#123;'a': &#123;'keys': [1, 2, 3]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d4=&#123;'a': &#123;'keys': [1, 2, 3]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125;
+d1 modified.
+d1=&#123;'a': &#123;'keys': [1, 2]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d2=&#123;'a': &#123;'keys': [1, 2]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d3=&#123;'a': &#123;'keys': [1, 2]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125; 
+d4=&#123;'a': &#123;'keys': [1, 2, 3]&#125;, 'b': &#123;'keys': [4, 5, 6]&#125;&#125;
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="12-字符串str"><a href="#12-字符串str" class="headerlink" title="12 字符串str"></a>12 字符串str</h1><h2 id="12-1-移除字符串头尾指定的字符，strip"><a href="#12-1-移除字符串头尾指定的字符，strip" class="headerlink" title="12.1 移除字符串头尾指定的字符，strip()"></a>12.1 移除字符串头尾指定的字符，strip()</h2><p>Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。</p>
 <h2 id="12-2-eval"><a href="#12-2-eval" class="headerlink" title="12.2 eval()"></a>12.2 eval()</h2><p>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>x <span class="token operator">=</span> <span class="token number">7</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">eval</span><span class="token punctuation">(</span> <span class="token string">'3 * x'</span> <span class="token punctuation">)</span>
@@ -977,9 +1006,15 @@ data3 <span class="token operator">=</span> <span class="token punctuation">[</s
 </ul>
 <h2 id="13-13-将多维list转为一维，多层嵌套的列表推导式"><a href="#13-13-将多维list转为一维，多层嵌套的列表推导式" class="headerlink" title="13.13 将多维list转为一维，多层嵌套的列表推导式"></a>13.13 将多维list转为一维，多层嵌套的列表推导式</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">c <span class="token operator">=</span> <span class="token punctuation">[</span>j <span class="token keyword">for</span> i <span class="token keyword">in</span> b <span class="token keyword">for</span> j <span class="token keyword">in</span> i<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h2 id="13-14-将元组列表分成为多个列表"><a href="#13-14-将元组列表分成为多个列表" class="headerlink" title="13.14 将元组列表分成为多个列表"></a>13.14 将元组列表分成为多个列表</h2><ul>
+<li>以两个元素的元组为例</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">a,b &#x3D; zip(*y)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>或者需要它们作为列表而不是元组</p>
+<pre class="line-numbers language-none"><code class="language-none">a,b &#x3D; map(list,zip(*y))<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h1 id="14-数字Number"><a href="#14-数字Number" class="headerlink" title="14 数字Number"></a>14 数字Number</h1><h2 id="14-1-round"><a href="#14-1-round" class="headerlink" title="14.1 round()"></a>14.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
+<h2 id="13-15-删除元素"><a href="#13-15-删除元素" class="headerlink" title="13.15 删除元素"></a>13.15 删除元素</h2><h3 id="13-15-1-根据索引删除一个或多个，del-listname-index"><a href="#13-15-1-根据索引删除一个或多个，del-listname-index" class="headerlink" title="13.15.1 根据索引删除一个或多个，del listname[index]"></a>13.15.1 根据索引删除一个或多个，del listname[index]</h3><h3 id="13-15-2-根据索引删除一个，listname-pop-index"><a href="#13-15-2-根据索引删除一个，listname-pop-index" class="headerlink" title="13.15.2 根据索引删除一个，listname.pop(index)"></a>13.15.2 根据索引删除一个，listname.pop(index)</h3><h3 id="13-15-3-根据值删除，listname-remove-value"><a href="#13-15-3-根据值删除，listname-remove-value" class="headerlink" title="13.15.3 根据值删除，listname.remove(value)"></a>13.15.3 根据值删除，listname.remove(value)</h3><h3 id="13-15-4-删除所有元素，listname-clear"><a href="#13-15-4-删除所有元素，listname-clear" class="headerlink" title="13.15.4 删除所有元素，listname.clear()"></a>13.15.4 删除所有元素，listname.clear()</h3><h1 id="14-数字Number"><a href="#14-数字Number" class="headerlink" title="14 数字Number"></a>14 数字Number</h1><h2 id="14-1-round"><a href="#14-1-round" class="headerlink" title="14.1 round()"></a>14.1 round()</h2><p><strong>round()</strong> 方法返回浮点数x的四舍五入值。</p>
 <h1 id="15-内存管理"><a href="#15-内存管理" class="headerlink" title="15 内存管理"></a>15 内存管理</h1><h2 id="15-1-手动释放内存，del-gc-collect"><a href="#15-1-手动释放内存，del-gc-collect" class="headerlink" title="15.1 手动释放内存，del + gc.collect()"></a>15.1 手动释放内存，del + gc.collect()</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gc
 <span class="token keyword">del</span> a
 gc<span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -996,6 +1031,11 @@ gc<span class="token punctuation">.</span>collect<span class="token punctuation"
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span>  <span class="token comment"># 对数据进行编码。</span>
 json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>json_data<span class="token punctuation">)</span>  <span class="token comment">#对数据进行解码。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h2 id="16-2-python使用json-dump-的中文编码问题"><a href="#16-2-python使用json-dump-的中文编码问题" class="headerlink" title="16.2 python使用json.dump()的中文编码问题"></a>16.2 python使用json.dump()的中文编码问题</h2><p>当json中有中文字符串时:</p>
+<ul>
+<li><strong>open时加上encoding&#x3D;‘utf-8’，</strong></li>
+<li><strong>dump时加上ensure_ascii&#x3D;False，（</strong>这是因为json.dumps 序列化时对中文默认使用的ascii编码.想输出真正的中文需要指定ensure_ascii&#x3D;False<strong>）</strong></li>
+</ul>
 <h1 id="17-异常处理"><a href="#17-异常处理" class="headerlink" title="17 异常处理"></a>17 异常处理</h1><h2 id="17-1-try-except-finally"><a href="#17-1-try-except-finally" class="headerlink" title="17.1 try-except-finally"></a>17.1 try-except-finally</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
     divide<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token keyword">except</span><span class="token punctuation">:</span>
@@ -1965,7 +2005,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">280.6k</span>
+                        class="white-color">283k</span>
             
             
             

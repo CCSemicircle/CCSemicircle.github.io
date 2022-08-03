@@ -595,8 +595,8 @@
 <span class="token punctuation">(</span>users<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> train_label  <span class="token comment"># False</span>
 <span class="token punctuation">(</span>users<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">in</span> train_label  <span class="token comment"># True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
+<h2 id="1-4-Debug"><a href="#1-4-Debug" class="headerlink" title="1.4 Debug"></a>1.4 Debug</h2><p>在设置断点后，在此处运行部分添加参数，即可像命令行一样运行，同时可以进行Debug。不添加参数则默认无参数运行，一般会报错切无法Debug。</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/PyCharm_DebugConfig.png" alt="PyCharm_DebugConfig"></p>
 <h1 id="2-调整超参"><a href="#2-调整超参" class="headerlink" title="2 调整超参"></a>2 调整超参</h1><h2 id="2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应"><a href="#2-1-模型第一次完整运行注意打印关键信息，否则可能长时间无响应" class="headerlink" title="2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应"></a>2.1 模型第一次完整运行注意打印关键信息，否则可能长时间无响应</h2><h2 id="2-2-为节省时间，避免用循环，尽量用矩阵操作"><a href="#2-2-为节省时间，避免用循环，尽量用矩阵操作" class="headerlink" title="2.2 为节省时间，避免用循环，尽量用矩阵操作"></a>2.2 为节省时间，避免用循环，尽量用矩阵操作</h2><p>循环操作虽然只增加2-3秒，但是在大数据集下，会显得尤为突出，2-3秒在很多个batch下会被放大</p>
 <h2 id="2-3-模型的内容尽量写在forward里，避免不断地调用函数"><a href="#2-3-模型的内容尽量写在forward里，避免不断地调用函数" class="headerlink" title="2.3 模型的内容尽量写在forward里，避免不断地调用函数"></a>2.3 模型的内容尽量写在forward里，避免不断地调用函数</h2><p>当数据集大时会非常损耗时间，本来1秒的运行时间可能会因为循环调用函数变成10+秒，甚至重复操作也比重复调用函数来得快</p>
 <h2 id="2-6-train-data一定要shuffle，使得loss更新"><a href="#2-6-train-data一定要shuffle，使得loss更新" class="headerlink" title="2.6 train data一定要shuffle，使得loss更新"></a>2.6 train data一定要shuffle，使得loss更新</h2><h2 id="2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor"><a href="#2-7-报错-WARNING-root-NaN-or-Inf-found-in-input-tensor" class="headerlink" title="2.7 报错 WARNING:root:NaN or Inf found in input tensor."></a>2.7 报错 WARNING:root:NaN or Inf found in input tensor.</h2><h3 id="2-7-1-寻找梯度消失的位置与原因"><a href="#2-7-1-寻找梯度消失的位置与原因" class="headerlink" title="2.7.1 寻找梯度消失的位置与原因"></a>2.7.1 寻找梯度消失的位置与原因</h3><ul>
@@ -1600,7 +1600,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">280.6k</span>
+                        class="white-color">283k</span>
             
             
             

@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.fdchen.host/2022/python-tensorflow/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
+    <lastmod>2022-08-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</loc>
+    <lastmod>2022-08-02</lastmod>
+  </url>
+  <url>
     <loc>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</loc>
-    <lastmod>2022-06-21</lastmod>
+    <lastmod>2022-07-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
+    <lastmod>2022-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.fdchen.host/2020/sui-bi-shou-cang-jia/</loc>
+    <lastmod>2022-07-14</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2022/shu-ju-fen-xi-shu-ju-chu-li/</loc>
@@ -27,14 +51,6 @@
   <url>
     <loc>https://blog.fdchen.host/2022/python-numpy/</loc>
     <lastmod>2022-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-pytorch/</loc>
-    <lastmod>2022-05-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</loc>
-    <lastmod>2022-05-20</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2022/python-pandas/</loc>
@@ -67,14 +83,6 @@
   <url>
     <loc>https://blog.fdchen.host/2022/ai-gpu-yun-fu-wu-qi/</loc>
     <lastmod>2022-05-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2020/sui-bi-shou-cang-jia/</loc>
-    <lastmod>2022-04-30</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2021/yuan-ji-chu-git-yu-github-su-cheng-jiao-cheng/</loc>
-    <lastmod>2022-04-28</lastmod>
   </url>
   <url>
     <loc>https://blog.fdchen.host/2021/shu-xue-xian-xing-dai-shu/</loc>
@@ -117,10 +125,6 @@
     <lastmod>2022-04-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</loc>
-    <lastmod>2022-04-13</lastmod>
-  </url>
-  <url>
     <loc>https://blog.fdchen.host/2021/nlp-jing-dian-mo-xing/</loc>
     <lastmod>2022-04-13</lastmod>
   </url>
@@ -146,10 +150,6 @@
   </url>
   <url>
     <loc>https://blog.fdchen.host/2020/qian-duan-kai-fa-wei-xin-xiao-cheng-xu/</loc>
-    <lastmod>2022-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.fdchen.host/2022/python-tensorflow/</loc>
     <lastmod>2022-03-24</lastmod>
   </url>
   <url>
