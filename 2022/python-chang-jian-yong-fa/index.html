@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.3k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    24 分
                 </div>
                 
 
@@ -553,7 +553,7 @@ dic <span class="token operator">=</span> <span class="token builtin">vars</span
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">isinstance</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span>
 <span class="token builtin">type</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="1-5-装饰器或者矩阵乘法matmul"><a href="#1-5-装饰器或者矩阵乘法matmul" class="headerlink" title="1.5 @ 装饰器或者矩阵乘法matmul"></a>1.5 @ 装饰器或者矩阵乘法matmul</h2><h1 id="2-文件操作"><a href="#2-文件操作" class="headerlink" title="2 文件操作"></a>2 文件操作</h1><h2 id="2-1-创建文件和文件夹"><a href="#2-1-创建文件和文件夹" class="headerlink" title="2.1 创建文件和文件夹"></a>2.1 创建文件和文件夹</h2><h3 id="2-1-1-创建文件夹"><a href="#2-1-1-创建文件夹" class="headerlink" title="2.1.1 创建文件夹"></a>2.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
+<h2 id="1-5-装饰器或者矩阵乘法matmul"><a href="#1-5-装饰器或者矩阵乘法matmul" class="headerlink" title="1.5 @ 装饰器或者矩阵乘法matmul"></a>1.5 @ 装饰器或者矩阵乘法matmul</h2><h2 id="1-6-返回不可变集合，frozenset"><a href="#1-6-返回不可变集合，frozenset" class="headerlink" title="1.6 返回不可变集合，frozenset()"></a>1.6 返回不可变集合，frozenset()</h2><h1 id="2-文件操作"><a href="#2-文件操作" class="headerlink" title="2 文件操作"></a>2 文件操作</h1><h2 id="2-1-创建文件和文件夹"><a href="#2-1-创建文件和文件夹" class="headerlink" title="2.1 创建文件和文件夹"></a>2.1 创建文件和文件夹</h2><h3 id="2-1-1-创建文件夹"><a href="#2-1-1-创建文件夹" class="headerlink" title="2.1.1 创建文件夹"></a>2.1.1 创建文件夹</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### 创建文件夹</span>
 <span class="token keyword">import</span> os
 
 <span class="token keyword">def</span> <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1209,6 +1209,20 @@ ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/subplot2grid%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B.png" alt="subplot2grid输出示例"></p>
+<h1 id="22-itertools"><a href="#22-itertools" class="headerlink" title="22 itertools"></a>22 itertools</h1><p>Itertools模块， itertools提供了高效快捷的用于操作迭代对象的函数。通过使用这个模块，可以简化代码。</p>
+<h2 id="22-1-去除迭代元素内嵌的迭代元素，itertools-chain"><a href="#22-1-去除迭代元素内嵌的迭代元素，itertools-chain" class="headerlink" title="22.1 去除迭代元素内嵌的迭代元素，itertools.chain"></a>22.1 去除迭代元素内嵌的迭代元素，itertools.chain</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> itertools <span class="token keyword">as</span> it
+b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+b_update<span class="token operator">=</span>it<span class="token punctuation">.</span>chain<span class="token punctuation">(</span><span class="token operator">*</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>b_update<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#itertools返回的对象是个类</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>b_update<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#转化成列表输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="22-2-对传进来的iterable对象逐个进行某个操作，itertools-accumulate"><a href="#22-2-对传进来的iterable对象逐个进行某个操作，itertools-accumulate" class="headerlink" title="22.2 对传进来的iterable对象逐个进行某个操作，itertools.accumulate"></a>22.2 对传进来的iterable对象逐个进行某个操作，itertools.accumulate</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+b<span class="token operator">=</span>accumulate<span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment">#默认是累加，可以添加累乘，传入参数operator.mul即可</span>
+<span class="token operator">>></span><span class="token operator">></span> b   <span class="token comment">#这里返回的是一个可迭代对象</span>
+<span class="token operator">&lt;</span>itertools<span class="token punctuation">.</span>accumulate <span class="token builtin">object</span> at <span class="token number">0x7f3e5c2f4e48</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">list</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>   <span class="token comment">#强制转化</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -2005,7 +2019,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">283k</span>
+                        class="white-color">284.1k</span>
             
             
             

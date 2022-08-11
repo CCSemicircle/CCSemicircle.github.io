@@ -64,9 +64,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -156,7 +156,7 @@
     <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
     <published>2022-04-13T12:39:00.000Z</published>
-    <updated>2022-08-02T11:28:57.169Z</updated>
+    <updated>2022-08-11T12:14:22.544Z</updated>
     
     
       
@@ -175,9 +175,9 @@
     <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
     
     
-    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -269,7 +269,7 @@
     <link href="https://blog.fdchen.host/2022/python-chang-jian-yong-fa/"/>
     <id>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</id>
     <published>2022-03-15T19:18:00.000Z</published>
-    <updated>2022-08-03T14:08:31.027Z</updated>
+    <updated>2022-08-11T07:09:07.982Z</updated>
     
     
       
@@ -396,11 +396,11 @@
     <category term="数据库" scheme="https://blog.fdchen.host/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
+    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
+    
     <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
-    
-    <category term="Debug" scheme="https://blog.fdchen.host/tags/Debug/"/>
     
     <category term="MySQL" scheme="https://blog.fdchen.host/tags/MySQL/"/>
     
@@ -438,7 +438,7 @@
     <link href="https://blog.fdchen.host/2022/python-pytorch/"/>
     <id>https://blog.fdchen.host/2022/python-pytorch/</id>
     <published>2021-12-31T16:00:00.000Z</published>
-    <updated>2022-08-02T11:35:52.501Z</updated>
+    <updated>2022-08-11T09:10:28.487Z</updated>
     
     
       
@@ -455,11 +455,11 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
     
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="Pytorch" scheme="https://blog.fdchen.host/tags/Pytorch/"/>
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   

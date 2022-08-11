@@ -442,12 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">学习笔记</span>
-                            </a>
-                        
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">学习笔记</span>
                             </a>
                         
                     </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    9 分
                 </div>
                 
 
@@ -602,6 +602,65 @@ result <span class="token operator">=</span> jieba<span class="token punctuation
 <span class="token keyword">for</span> tk <span class="token keyword">in</span> result<span class="token punctuation">:</span>
   <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"word %s\t\t start: %d \t\t end:%d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>tk<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tk<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tk<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h1 id="3-NLP资源"><a href="#3-NLP资源" class="headerlink" title="3 NLP资源"></a>3 NLP资源</h1><h2 id="3-1-公开数据集与榜单"><a href="#3-1-公开数据集与榜单" class="headerlink" title="3.1 公开数据集与榜单"></a>3.1 公开数据集与榜单</h2><h3 id="3-1-1-关系抽取-Relation-Extraction"><a href="#3-1-1-关系抽取-Relation-Extraction" class="headerlink" title="3.1.1 关系抽取  Relation Extraction"></a>3.1.1 关系抽取  Relation Extraction</h3><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Intro</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/docred">DocRED</a></td>
+<td><strong>DocRED</strong>（<strong>文档级关系提取数据集</strong>）是从维基百科和维基数据构建的关系提取数据集。数据集中的每个文档都带有人工注释，其中包含命名的实体提及、共指信息、句内和句间关系以及支持证据。DocRED需要阅读文档中的多个句子来提取实体并通过综合文档的所有信息来推断它们之间的关系。除了人工注释的数据外，该数据集还提供了大规模的远程监督数据。</td>
+<td>DocRED包含132，375个实体和56，354个关系事实，并在5，053个维基百科文档中进行了注释。除了人工注释的数据外，该数据集还提供了超过101，873个文档的大规模远程监督数据。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/tacred">TACRED</a></td>
+<td>TACRED是一个<strong>大规模的关系提取数据集</strong>，这些示例来自年度TAC知识库群体（TAC KBP）挑战中使用的语料库的新闻线和Web文本。</td>
+<td>TACRED包含106，264个示例，涵盖 TAC KBP 挑战中使用的 41 种关系类型（例如，per：schools_attended 和 org：members），如果没有建立定义的关系，则标记为no_relation。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ace-2005">ACE 2005</a></td>
+<td><strong>ACE 2005 多语言培训语料库</strong>包含用于 2005 年自动内容提取 （ACE） 技术评估的全套英语、阿拉伯语和中文培训数据。</td>
+<td><img src="/medias/loading.gif" data-original="https://production-media.paperswithcode.com/datasets/ACE_2005-0000000755-b06aa98d_mX16X6Q.jpg" alt="ACE2005"></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/semeval-2010-task-8">SemEval-2010 Task 8</a></td>
+<td><strong>SemEval-2010 任务 8</strong> 的数据集是用于<strong>对名词之间互斥语义关系的多路分类</strong>的数据集。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/sota/relation-extraction-on-nyt">NYT </a></td>
+<td>现存NYT数据集的变体，其中包括<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/nyt-h">NYT-H</a>和<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/nyt11-hrl">NYT11-HRL</a>。NYT-H是<strong>用于远程监督关系提取</strong>的数据集，其中使用DS标记的训练数据，并雇用几个注释器来标记测试数据。</td>
+<td><img src="/medias/loading.gif" data-original="https://production-media.paperswithcode.com/datasets/Screenshot_2021-01-26_at_16.01.22.png" alt="NYT-H"></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/sota/relation-extraction-on-conll04">CoNLL04</a></td>
+<td>现存CoNLL数据集的变体，包含很多<a target="_blank" rel="noopener" href="https://paperswithcode.com/datasets?q=CoNLL04">CoNLL数据集</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ade-corpus">ADE</a></td>
+<td>支持<strong>从医疗病例报告中自动提取</strong>与药物有关的不良反应。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/webnlg">WebNLG</a></td>
+<td><strong>WebNLG <strong>语料库</strong>由三元组组成</strong>，以自然语言文本的形式描述事实（实体和它们之间的关系）和相应的事实。语料库包含最多包含 7 个三元组的集合，以及每个集合的一个或多个参考文本。测试集分为两部分：seen，包含为在训练数据中看到的属于 DBpedia 类别的实体和关系创建的输入;unseen，包含为实体提取的输入和属于 5 个未见过类别的关系。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/chemprot">ChemProt</a></td>
+<td><strong>ChemProt由1，820篇PubMed摘要组成</strong>，其中化学 - 蛋白质相互作用由领域专家注释，并用于BioCreative VI文本挖掘化学 - 蛋白质相互作用共享任务。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ace-2004">ACE2004</a></td>
+<td><strong>ACE 2004多语言培训语料库</strong>包含用于 2004 年自动内容提取 （ACE） 技术评估的全套英文、阿拉伯文和中文训练数据。</td>
+<td></td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -666,12 +725,12 @@ result <span class="token operator">=</span> jieba<span class="token punctuation
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">学习笔记</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">学习笔记</span>
                                 </a>
                             
                         </div>
@@ -1394,7 +1453,7 @@ result <span class="token operator">=</span> jieba<span class="token punctuation
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">283k</span>
+                        class="white-color">284.1k</span>
             
             
             

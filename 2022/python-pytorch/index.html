@@ -442,16 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">环境配置</span>
+                            <a href="/tags/Pytorch/">
+                                <span class="chip bg-color">Pytorch</span>
                             </a>
                         
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/Pytorch/">
-                                <span class="chip bg-color">Pytorch</span>
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
                             </a>
                         
                     </div>
@@ -484,14 +484,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.3k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    24 分
                 </div>
                 
 
@@ -525,6 +525,9 @@
 </ul>
 <h2 id="1-3-在conda环境中安装Pytorch"><a href="#1-3-在conda环境中安装Pytorch" class="headerlink" title="1.3 在conda环境中安装Pytorch"></a>1.3 在conda环境中安装Pytorch</h2><p>从官网选择对应的版本，复制下载指令即可，官网链接：</p>
 <p><a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<h2 id="1-3-1-安装旧版本pytorch"><a href="#1-3-1-安装旧版本pytorch" class="headerlink" title="1.3.1 安装旧版本pytorch"></a>1.3.1 安装旧版本pytorch</h2><ul>
+<li>从官网旧版本网站选取：<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">Previous PyTorch Versions | PyTorch</a></li>
+</ul>
 <h2 id="1-4-conda导出-x2F-导入环境"><a href="#1-4-conda导出-x2F-导入环境" class="headerlink" title="1.4 conda导出&#x2F;导入环境"></a>1.4 conda导出&#x2F;导入环境</h2><ul>
 <li><strong>不同系统迁移</strong></li>
 </ul>
@@ -539,9 +542,35 @@ conda env create <span class="token operator">-</span>f env_name<span class="tok
 conda create <span class="token operator">-</span><span class="token operator">-</span>name python<span class="token operator">-</span>course <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">file</span> requirements<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>原文链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87344422">Conda 环境迁移</a></p>
+<h3 id="1-4-1-打包虚拟环境与迁移"><a href="#1-4-1-打包虚拟环境与迁移" class="headerlink" title="1.4.1 打包虚拟环境与迁移"></a>1.4.1 打包虚拟环境与迁移</h3><ul>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/shirukai/article/details/108822729">使用Conda Pack打包Python独立运行时环境</a></p>
+</li>
+<li><p>下载conda pack</p>
+</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install -c conda-forge conda-pack<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>打包虚拟环境</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda pack -n my_env_name -o out_name.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>复制压缩文件到新的电脑环境</li>
+</ul>
+<ol>
+<li>进到conda的安装目录：&#x2F;anaconda(或者miniconda)&#x2F;envs&#x2F;</li>
+<li>在该名目录下创建文件夹</li>
+<li>解压conda环境：<code>tar -zxvf output.tar.gz -C /anaconda(或者miniconda)/envs/创建的文件夹/</code></li>
+<li>执行如下命令激活环境：<code>source env_name/bin/activate</code></li>
+<li>使用<code>conda env list</code>查看虚拟环境</li>
+</ol>
 <h2 id="1-5-下载特殊安装包"><a href="#1-5-下载特殊安装包" class="headerlink" title="1.5 下载特殊安装包"></a>1.5 下载特殊安装包</h2><h3 id="1-5-1-下载tensorboardx"><a href="#1-5-1-下载tensorboardx" class="headerlink" title="1.5.1 下载tensorboardx"></a>1.5.1 下载tensorboardx</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install -c conda-forge tensorboardx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="1-5-2-下载PyG"><a href="#1-5-2-下载PyG" class="headerlink" title="1.5.2 下载PyG"></a>1.5.2 下载PyG</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install pyg -c pyg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-5-2-下载PyG"><a href="#1-5-2-下载PyG" class="headerlink" title="1.5.2 下载PyG"></a>1.5.2 下载PyG</h3><ul>
+<li><strong>注意pyg不支持PyTorch 1.12，注意下载旧版本的PyTorch</strong></li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install pyg -c pyg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="1-5-3-下载sklearn"><a href="#1-5-3-下载sklearn" class="headerlink" title="1.5.3 下载sklearn"></a>1.5.3 下载sklearn</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install scikit-learn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -1138,16 +1167,16 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">环境配置</span>
+                                <a href="/tags/Pytorch/">
+                                    <span class="chip bg-color">Pytorch</span>
                                 </a>
                             
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/Pytorch/">
-                                    <span class="chip bg-color">Pytorch</span>
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
                                 </a>
                             
                         </div>
@@ -1871,7 +1900,7 @@ graph_dataloader <span class="token operator">=</span> DataLoader<span class="to
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">283k</span>
+                        class="white-color">284.1k</span>
             
             
             
