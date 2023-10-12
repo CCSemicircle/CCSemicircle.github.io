@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux,常用命令,shell,">
+    <meta name="keywords" content="Linux,常见用法,shell,">
     <meta name="description" content="Shell编程的教程，包括一些常用操作等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -38,7 +38,7 @@
 </script>
 
 
-    <title>Linux_Shell编程 | fdChen的掉发收集箱</title>
+    <title>Shell编程 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://github.com/CCSemicircle/img/blob/main/images/shell.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.fdchen.host/shell.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux_Shell编程</h1>
+                    <h1 class="description center-align post-title">Shell编程</h1>
                 </div>
             </div>
         </div>
@@ -442,12 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Shell/">
-                                <span class="chip bg-color">Shell</span>
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                                <span class="chip bg-color">教程 - 常用命令</span>
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                <span class="chip bg-color">常见用法</span>
+                            </a>
+                        
+                            <a href="/tags/Shell/">
+                                <span class="chip bg-color">Shell</span>
                             </a>
                         
                     </div>
@@ -480,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    172
+                    377
                 </div>
                 
 
@@ -516,7 +520,7 @@
 </ol>
 <span id="more"></span>
 
-<h1 id="2-补充"><a href="#2-补充" class="headerlink" title="2 补充"></a>2 补充</h1><h2 id="2-1-指令补充"><a href="#2-1-指令补充" class="headerlink" title="2.1 指令补充"></a>2.1 指令补充</h2><h3 id="2-1-1-条件测试："><a href="#2-1-1-条件测试：" class="headerlink" title="2.1.1 条件测试："></a>2.1.1 条件测试：</h3><ol>
+<h1 id="2-补充"><a href="#2-补充" class="headerlink" title="2 补充"></a>2 补充</h1><h2 id="2-1-指令补充"><a href="#2-1-指令补充" class="headerlink" title="2.1 指令补充"></a>2.1 指令补充</h2><h3 id="2-1-1-条件测试"><a href="#2-1-1-条件测试" class="headerlink" title="2.1.1 条件测试"></a>2.1.1 条件测试</h3><ol>
 <li><p>用途：测试特定的表达式是否成立，<strong>当条件成立时，命令执行后返回值为0</strong>，否则为其他值。</p>
 </li>
 <li><p>格式：</p>
@@ -541,6 +545,38 @@
 </ul>
 </li>
 </ol>
+<h3 id="2-1-2-传递参数，-1"><a href="#2-1-2-传递参数，-1" class="headerlink" title="2.1.2 传递参数，$1"></a>2.1.2 传递参数，$1</h3><ul>
+<li>注意传递的参数第0个为执行的文件名，从第1个开始才是用户真正想传递的参数。</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">echo &quot;Shell 传递参数实例！&quot;;
+echo &quot;执行的文件名：$0&quot;;
+echo &quot;第一个参数为：$1&quot;;
+echo &quot;第二个参数为：$2&quot;;
+echo &quot;第三个参数为：$3&quot;;
+
+# 执行的文件名：.&#x2F;test.sh
+# 第一个参数为：1
+# 第二个参数为：2
+# 第三个参数为：3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-1-3-条件控制"><a href="#2-1-3-条件控制" class="headerlink" title="2.1.3 条件控制"></a>2.1.3 条件控制</h3><p>PS：condition必须用[]包住，比较符号两边必须有空格，变量或者常数与[]之间也要有空格。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a<span class="token operator">=</span><span class="token number">10</span>
+b<span class="token operator">=</span><span class="token number">20</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> $a <span class="token operator">==</span> $b <span class="token punctuation">]</span>
+then
+   echo <span class="token string">"a 等于 b"</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> $a <span class="token operator">-</span>gt $b <span class="token punctuation">]</span>
+then
+   echo <span class="token string">"a 大于 b"</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> $a <span class="token operator">-</span>lt $b <span class="token punctuation">]</span>
+then
+   echo <span class="token string">"a 小于 b"</span>
+<span class="token keyword">else</span>
+   echo <span class="token string">"没有符合的条件"</span>
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -605,12 +641,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Shell/">
-                                    <span class="chip bg-color">Shell</span>
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                                    <span class="chip bg-color">教程 - 常用命令</span>
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
+                                    <span class="chip bg-color">常见用法</span>
+                                </a>
+                            
+                                <a href="/tags/Shell/">
+                                    <span class="chip bg-color">Shell</span>
                                 </a>
                             
                         </div>
@@ -1058,9 +1098,9 @@
                 <a href="/2021/linux-shell-bian-cheng/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/shell.jpg" class="responsive-img" alt="Shell编程">
+                        <img src="/medias/loading.gif" data-original="https://github.com/CCSemicircle/img/blob/main/images/shell.jpg" class="responsive-img" alt="Linux_Shell编程">
                         
-                        <span class="card-title">Shell编程</span>
+                        <span class="card-title">Linux_Shell编程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1088,16 +1128,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
-                        <span class="chip bg-color">常见用法</span>
-                    </a>
-                    
                     <a href="/tags/Shell/">
                         <span class="chip bg-color">Shell</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">教程 - 常用命令</span>
                     </a>
                     
                 </div>
@@ -1337,7 +1373,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">415.3k</span>
+                        class="white-color">415.5k</span>
             
             
             

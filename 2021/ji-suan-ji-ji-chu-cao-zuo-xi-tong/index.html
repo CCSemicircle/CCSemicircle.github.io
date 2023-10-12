@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="/js/prism/prism.css">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="计算机基础,八股文,计算机网络">
-    <meta name="description" content="计算机网络知识点总结">
+    <meta name="keywords" content="计算机基础,八股文,操作系统">
+    <meta name="description" content="操作系统知识点总结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -38,7 +38,7 @@
 </script>
 
 
-    <title>计算机网络 | fdChen的掉发收集箱</title>
+    <title>操作系统 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -326,7 +326,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机网络</h1>
+                    <h1 class="description center-align post-title">操作系统</h1>
                 </div>
             </div>
         </div>
@@ -446,8 +446,8 @@
                                 <span class="chip bg-color">笔记</span>
                             </a>
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">计算机网络</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
                     </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    18k
+                    16.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    74 分
+                    67 分
                 </div>
                 
 
@@ -510,392 +510,416 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>操作系统</p>
-<p> 1. 介绍</p>
-<p> 1.1. 什么是操作系统</p>
-<p> 1.1.1. 控制程序</p>
-<p> 1.1.2. 资源分配器</p>
-<p> 1.1.3. 虚拟机</p>
-<p> 1.1.4. 一个可使用的计算系统1.2. 操作系统的组成</p>
-<p> 1.2.1. CPU 管理器</p>
-<p> 1.2.2. 内存管理器</p>
-<p> By CFD 1</p>
-<p> 1.2.3. 文件系统</p>
-<p> 1.2.4. 设备管理器</p>
-<p> 1.3. 大型机和小型机的操作系统</p>
-<p> 1.3.1. 大型机和小型机有专用的操作系统</p>
-<p> 1.3.2. 大型机的发展历程：批处理系统 》 多道程序设计系统 》分时系统</p>
-<p> 1.3.3. 批处理系统</p>
-<p> 1.3.3.1. 同一时间能且只能运行一个应用</p>
-<p> 1.3.3.2. 批处理相似的任务</p>
-<p> 1.3.3.3. 第一个原始的操作系统</p>
-<p> 1.3.4. 多道程序设计系统</p>
-<p> 1.3.4.1. 同时把多个程序放入内存并允许它们交替执行和共享</p>
-<p> 系统中的各类资源。即当一道程序因某种原因（如I&#x2F;O请求）而暂停执行时，CPU立即转去执行另一道程序。</p>
-<p> <strong>1.3.4.2.</strong></p>
-<p> 1.3.5. 分时系统</p>
-<p> 1.3.5.1. CPU在多个保存在内存中的任务之间切换（CPU仅分配给保存在内存中的任务）</p>
-<p> By CFD 2</p>
-<p> 1.3.5.2. 为了需要快速响应的交互式计算而设计</p>
-<p> 1.3.5.3. 造成”并发”假象，实质：快速切换</p>
-<p> 1.4. 桌面计算机的操作系统</p>
-<p> <strong>1.4.1. Apple: Macintosh</strong></p>
-<p> <strong>1.4.2. Microsoft: MS-DOS, Windows 9x&#x2F;NT</strong></p>
-<p> <strong>1.4.3. IBM: OS&#x2F;2</strong></p>
-<p> <strong>1.4.4. Unix</strong></p>
-<p> 1.4.4.1. BSD:(Berkeley Software Distribution) Unix, 包括FreeBSD，OpenBSD，NetBSD</p>
-<p> 1.4.4.2. Sun microsystem的Solaris</p>
-<p> 1.4.4.3. Apple：macOS</p>
-<p> <strong>1.4.5. Linux</strong></p>
-<p> 1.5. 嵌入式系统的操作系统</p>
-<p> 1.5.1. 通常用于控制设备的专用程序中，比如说工厂控制系统（资源受到限制）</p>
-<p> 1.5.2. 一些控制设备有时间需求</p>
-<p> 1.5.2.1. 比如说：即时性</p>
-<p> 1.5.2.1.1. 硬即时</p>
-<p> 1.5.2.1.2. 软即时</p>
-<p> 2. 计算机系统结构</p>
-<p> 2.1. Bootstrap引导</p>
-<p> 2.1.1. 把操作系统的内核从持久存储中加载出来</p>
-<p> 2.1.2. 然后把控制在非常基本的环境下转移到操作系统的入口</p>
-<p> By CFD 3</p>
-<p> 2.1.3. 引导操作系统的过程</p>
-<p> 2.1.4. 进行引导的程序叫做引导器，每个操作系统都需要有引导器boot-loader</p>
-<p> 2.2. 中断</p>
-<p> 2.2.1. 现代计算器和操作系统都是中断驱动</p>
-<p> 2.2.1.1. 外围设备使用中断向CPU发送信号提示某些事要发生</p>
-<p> 2.2.2. 当CPU发生中断时，必须响应中断，过程如下</p>
-<p> 2.2.2.1. 1.硬件：存储相关寄存器信息并跳转到中断服务例程interrupt service routine（ISR）</p>
-<p> 2.2.2.2. 2.ISR中的汇编语言程序：存储剩下的必要的寄存器信息并建立一个方便的环境</p>
-<p> 2.2.2.3. 3.ISR中的C语言程序：实际响应&#x2F;服务中断，通常是读取并缓存从外围设备输入的数据</p>
-<p> 2.2.2.4. 4.ISR中的C语言程序：返回到ISR中的汇编语言程序</p>
-<p> 2.2.2.5. 5.ISR中的汇编语言程序：软件负责恢复寄存器数据并返回到发生中断的位置</p>
-<p> 2.2.3. 中断向量</p>
-<p> 2.2.3.1. CPU用一个独特的号码标记每一个外部设备，称为中断请求号码interrupt request number(IRQ)</p>
-<p> 2.2.3.2. 所有ISR都被收集到一个表格之中，称为中断向量表<strong>interrupt vector table(IVT)</strong></p>
-<p> 2.2.3.3. 当发生中断的时候，CPU使用IRQ去IVT中索引中断向量获得ISR的地址，并跳转到对应的ISR</p>
-<p> 2.2.3.4. 中断处理流程</p>
-<p> <strong>2.2.3.4.1.</strong></p>
-<p> By CFD 4</p>
-<p> <strong>2.2.3.4.1.1.</strong></p>
-<p> 2.2.4. 中断对比异常</p>
-<p> 2.2.4.1. 中断</p>
-<p> 2.2.4.1.1. 外围设备触发</p>
-<p> 2.2.4.1.2. 异步</p>
-<p> 2.2.4.2. 异常</p>
-<p> 2.2.4.2.1. 异常由CPU在执行程序过程中检测出来的，例如：除0错误和无效内存访问异常</p>
-<p> 2.2.4.2.2. 除此之外，异常与中断一样完全一样，而且异常也有异常号码</p>
-<p> 2.2.4.2.3. 异常又被称为software-generated interrupt软中断或者synchronous interrupt同步中断</p>
-<p> 2.3. CPU访问外围设备</p>
-<p> By CFD 5</p>
-<p> 2.3.1. CPU通过设备控制器来访问外围设备，设备控制器包含命令寄存器和数据寄存器</p>
-<p> 2.3.2. 两种方式访问外围设备</p>
-<p> 2.3.2.1. I&#x2F;O端口 I&#x2F;O port</p>
-<p> 2.3.2.1.1. 所有的寄存器包括设备控制器都有一个特别的地址进行标识，称为端口port</p>
-<p> 2.3.2.1.2. I&#x2F;O指令用来允许数据在寄存器和内存之间传递</p>
-<p> 2.3.2.1.3. I&#x2F;O端口是独立的地址空间，不消耗内存空间</p>
-<p> 2.3.2.2. 内存映射I&#x2F;O Mempry-mapped I&#x2F;O</p>
-<p> 2.3.2.2.1. 用独特的内存地址来标识每一个寄存器，而不是用端口地址</p>
-<p> 2.3.2.2.2. 内存映射I&#x2F;O使用相同的总线来访问内存地址和I&#x2F; O设备的地址</p>
-<p> 2.3.2.2.3. 为了容纳I&#x2F;O设备，CPU必须为I&#x2F;O设备保留可用地址空间</p>
-<p> <strong>2.3.2.2.4.</strong></p>
-<p> 2.3.2.2.5. 优缺点</p>
-<p> 2.3.2.2.5.1. 优点</p>
-<p> By CFD 6</p>
-<p> 每一条指令都可以查询内存，也可以查询设备控制器</p>
-<p> 寄存器</p>
-<p> 不需要用特别的保护机制来防止用户进程执行I&#x2F;O</p>
-<p> 2.3.2.2.5.2. 缺点</p>
-<p> 现在大部分计算机都有一些缓存内存字的形式，但是缓存设备控制器寄存器将会造成灾难性后果，比如缓存即时指令导致延时</p>
-<p> 解决方法：CPU可以执行特定内存是否缓存</p>
-<p> 2.3.2.3. 现代计算机系统一般使用两种方法访问外围设备</p>
-<p> 2.3.2.3.1. 使用内存映射I&#x2F;O访问数据缓存</p>
-<p> 2.3.2.3.2. 使用I&#x2F;O端口访问指令寄存器</p>
-<p> 2.4. 硬件保护方式</p>
-<p> 2.4.1. 双模式操作</p>
-<p> 2.4.1.1. 至少需要两种独立的操作模式</p>
-<p> 2.4.1.1.1. 用户态</p>
-<p> 2.4.1.1.2. 内核态（管理者supervisor、系统、特权或者内核模式）</p>
-<p> 2.4.1.2. 模式位：添加在计算机硬件中用来标识当前模式，内核态0，用户态1</p>
-<p> 2.4.1.2.1. 初始都是设置为内核态，当操作系统被加载并启动用户程序后进入用户态</p>
-<p> <strong>2.4.1.2.2.</strong></p>
-<p> By CFD 7</p>
-<p> 2.4.1.2.2.1. INTEL IA-32系统：I&#x2F;O特权级别（IOPL）</p>
-<p> 2.4.1.3. 当中断或异常发生时，硬件进入内核态</p>
-<p> 2.4.1.3.1. 此时，操作系统获得计算机控制权，属于内核态</p>
-<p> 2.4.1.3.2. 当系统把控制权交给用户程序时再次进入用户态</p>
-<p> 2.4.1.4. 保护环</p>
-<p> <strong>2.4.1.4.1.</strong></p>
-<p> 2.4.1.4.1.1. INTEL IA-32系统：0环为内核态，3环为用户态，仅使用2个环</p>
-<p> 2.4.2. 特权指令</p>
-<p> 2.4.2.1. 所有的I&#x2F;O指令都是特权指令</p>
-<p> 2.4.2.1.1. 硬件允许特权指令仅仅在内核态中执行</p>
-<p> By CFD 8</p>
-<p> 2.4.2.1.2. 当在用户态下想要执行特权指令时，硬件不会执行，而是把它当做非法指令并产生异常</p>
-<p> 2.4.2.2. 必须确保所有的用户程序在内核态下不会获得计算机的控制权</p>
-<p> 2.4.3. 内存保护</p>
-<p> 2.4.3.1. 添加两个寄存器来决定寻址程序合法访问的范围</p>
-<p> 2.4.3.1.1. 基址寄存器Base register：存储最小的合法物理内存地址</p>
-<p> 2.4.3.1.2. 限制寄存器Limit register：存储范围的大小</p>
-<p> <strong>2.4.3.2.</strong></p>
-<p> 2.4.4. CPU保护</p>
-<p> 2.4.4.1. 操作系统仅仅在可以运行时起作用，如果故障程序进入无限循环并且不返还控制权给操作系统，那么操作系统将</p>
-<p> 失去对CPU的控制权</p>
-<p> 2.4.4.2. 计时器</p>
-<p> 2.4.4.2.1. 机制：间隔一定时间中断CPU来确保操作系统维持对CPU的控制权</p>
-<p> 2.4.4.2.1.1. 理由是当中断发生时，操作系统将通过ISR获得控制权</p>
-<p> 2.4.4.2.2. 原理：计数器寄存器在石英振荡器定时发送脉冲时自动减一，当计数寄存器达到0的时候，定时器将会中断CPU，然后计数寄存器会用保存寄存器的值重新加载并重</p>
-<p> 复之前的工作。保存寄存器（Holding register）来加载计</p>
-<p> By CFD 9</p>
-<p> 数器。</p>
-<p> 2.4.4.2.3. 作用</p>
-<p> 2.4.4.2.3.1. 维持时钟</p>
-<p> 2.4.4.2.3.2. 分时系统的关键设备</p>
-<p> 2.4.4.2.3.3. 保护CPU，维持操作系统对CPU的控制权</p>
-<p> 2.5. System call系统调用</p>
-<p> 2.5.1. 操作系统本身没有任何用处，但是给用户程序提供了很多有用的服务，这些服务通过系统调用来提供，即系统调用是操</p>
-<p> 作系统同用户程序之间的接口</p>
-<p> 2.5.2. 特点</p>
-<p> 2.5.2.1. 用户程序只能通过系统调用来请求操作系统提供的服务</p>
-<p> 2.5.2.2. 接口中的系统调用因操作系统的不同而不同</p>
-<p> 2.5.2.3. 系统调用又称为监督器调用supervisor call</p>
-<p> 2.5.3. 调用过程</p>
-<p> 2.5.3.1. 1-3准备参数</p>
-<p> 2.5.3.2. 4 调用系统调用的包装wrapper（用汇编语言编写）</p>
-<p> 2.5.3.2.1. 将汇编语言”转换”成C语言，以便C文件调用：即变成C语言接口</p>
-<p> 2.5.3.2.2. 将服务名称转为数字</p>
-<p> 2.5.3.3. 5 把系统调用号码存到寄存器</p>
-<p> 2.5.3.4. 6 进入（trap into）操作系统</p>
-<p> 2.5.3.5. 7 通过系统调用号码在系统调用表中索引，获得系统调用服务例程</p>
-<p> By CFD 10</p>
-<p> 2.5.3.6. 8-11 运行系统调用例程，完成以后然后返回用户程序</p>
-<p> <strong>2.5.3.7.</strong></p>
-<p> <strong>2.5.3.7.1.</strong></p>
-<p> 2.5.4. 进入操作系统</p>
-<p> 2.5.4.1. 用户程序不能直接进入操作系统，进入操作系统的方法有两种</p>
-<p> 2.5.4.1.1. 异常（软件生成中断）</p>
-<p> 2.5.4.1.2. 特殊指令（触发异常）</p>
-<p> 2.5.4.1.3. 实质均为触发异常</p>
-<p> <strong>2.5.4.2. INTEL IA-32</strong></p>
-<p> By CFD 11</p>
-<p> 2.5.4.2.1. 提供了一条指令触发异常，INT</p>
-<p> 2.5.4.2.2. 由于INT指令的额外开销，提供了特殊指令，SYSENTER和SYSEXIT</p>
-<p> 2.5.4.2.2.1. ARM处理器使用swi（Software Interrupt，软件中断）进入操作系统</p>
-<p> 2.5.5. 系统调用对比库函数</p>
-<p> 2.5.5.1. 系统调用会进入操作系统内核，但是库函数不会。这也导致系统调用比库函数慢很多</p>
-<p> 2.5.5.2. 库函数等同于用户自定义的函数，我们可以用我们自己的库函数版本代替已有库函数，但是我们不能代替系统调</p>
+                <blockquote>
+<p>声明：本文内容及图片大部分来自CQU洪明坚老师的《操作系统》课程内容</p>
+</blockquote>
+<h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h1><h2 id="1-1-什么是操作系统"><a href="#1-1-什么是操作系统" class="headerlink" title="1.1 什么是操作系统"></a>1.1 什么是操作系统</h2><ul>
+<li><p>控制程序</p>
+</li>
+<li><p>资源分配器</p>
+</li>
+<li><p>虚拟机</p>
+</li>
+<li><p>一个可使用的计算系统</p>
+</li>
+</ul>
+<h2 id="1-2-操作系统的组成"><a href="#1-2-操作系统的组成" class="headerlink" title="1.2 操作系统的组成"></a>1.2 操作系统的组成</h2><ul>
+<li>CPU 管理器</li>
+<li>内存管理器</li>
+<li>文件系统</li>
+<li>设备管理器</li>
+</ul>
+<h2 id="1-3-大型机和小型机的操作系统"><a href="#1-3-大型机和小型机的操作系统" class="headerlink" title="1.3 大型机和小型机的操作系统"></a>1.3 大型机和小型机的操作系统</h2><p>大型机和小型机有专用的操作系统</p>
+<h3 id="1-3-1-大型机的发展历程"><a href="#1-3-1-大型机的发展历程" class="headerlink" title="1.3.1 大型机的发展历程"></a>1.3.1 大型机的发展历程</h3><p>批处理系统  &gt;  多道程序设计系统 &gt; 分时系统</p>
+<h3 id="1-3-2-批处理系统"><a href="#1-3-2-批处理系统" class="headerlink" title="1.3.2  批处理系统"></a>1.3.2  批处理系统</h3><ul>
+<li>同一时间能且只能运行一个应用</li>
+<li>批处理相似的任务</li>
+<li>第一个原始的操作系统</li>
+</ul>
+<h3 id="1-3-4-多道程序设计系统"><a href="#1-3-4-多道程序设计系统" class="headerlink" title="1.3.4 多道程序设计系统"></a>1.3.4 多道程序设计系统</h3><p>同时把多个程序放入内存并允许它们交替执行和共享系统中的各类资源。即当一道程序因某种原因（如I&#x2F;O请求）而暂停执行时，CPU立即转去执行另一道程序。</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%A4%9A%E9%81%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%B3%BB%E7%BB%9F.png" alt="多道程序设计系统"></p>
+<h3 id="1-3-5-分时系统"><a href="#1-3-5-分时系统" class="headerlink" title="1.3.5 分时系统"></a>1.3.5 分时系统</h3><ul>
+<li>CPU在多个保存在内存中的任务之间切换（CPU仅分配给保存在内存中的任务）</li>
+<li>为了需要快速响应的交互式计算而设计</li>
+<li>造成”并发”假象，实质：快速切换</li>
+</ul>
+<h2 id="1-4-桌面计算机的操作系统"><a href="#1-4-桌面计算机的操作系统" class="headerlink" title="1.4 桌面计算机的操作系统"></a>1.4 桌面计算机的操作系统</h2><ul>
+<li><p>Apple: Macintosh</p>
+</li>
+<li><p>Microsoft: MS-DOS, Windows 9x&#x2F;NT</p>
+</li>
+<li><p>IBM: OS&#x2F;2</p>
+</li>
+<li><p>Unix：</p>
+<ul>
+<li>BSD:(Berkeley Software Distribution) Unix, 包括FreeBSD，OpenBSD，NetBSD</li>
+<li>Sun microsystem的Solaris</li>
+<li>Apple：macOS</li>
+</ul>
+</li>
+<li><p>Linux</p>
+</li>
+</ul>
+<h2 id="1-5-嵌入式系统的操作系统"><a href="#1-5-嵌入式系统的操作系统" class="headerlink" title="1.5 嵌入式系统的操作系统"></a>1.5 嵌入式系统的操作系统</h2><ul>
+<li>通常用于控制设备的专用程序中，比如说工厂控制系统（资源受到限制）</li>
+<li>一些控制设备有时间需求，比如说：即时性——硬即时、软即时</li>
+</ul>
+<h1 id="2-计算机系统结构"><a href="#2-计算机系统结构" class="headerlink" title="2 计算机系统结构"></a>2 计算机系统结构</h1><h2 id="2-1-Bootstrap引导"><a href="#2-1-Bootstrap引导" class="headerlink" title="2.1 Bootstrap引导"></a>2.1 Bootstrap引导</h2><p>过程：</p>
+<ol>
+<li>把操作系统的内核从持久存储中加载出来</li>
+<li>然后把控制在非常基本的环境下转移到操作系统的入口</li>
+</ol>
+<p>Bootstrap引导，即引导操作系统的过程，进行引导的程序叫做引导器，每个操作系统都需要有引导器boot-loader。</p>
+<h2 id="2-2-中断"><a href="#2-2-中断" class="headerlink" title="2.2 中断"></a>2.2 中断</h2><p> 现代计算器和操作系统都是中断驱动，外围设备使用中断向CPU发送信号提示某些事要发生。</p>
+<h3 id="2-2-1-响应中断过程"><a href="#2-2-1-响应中断过程" class="headerlink" title="2.2.1 响应中断过程"></a>2.2.1 响应中断过程</h3><p>当CPU发生中断时，必须响应中断，过程如下</p>
+<ol>
+<li>硬件：存储相关寄存器信息并跳转到中断服务例程interrupt service routine（ISR）</li>
+<li>ISR中的汇编语言程序：存储剩下的必要的寄存器信息并建立一个方便的环境</li>
+<li>ISR中的C语言程序：实际响应&#x2F;服务中断，通常是读取并缓存从外围设备输入的数据</li>
+<li>ISR中的C语言程序：返回到ISR中的汇编语言程序</li>
+<li>ISR中的汇编语言程序：软件负责恢复寄存器数据并返回到发生中断的位置</li>
+</ol>
+<h3 id="2-2-2-中断向量"><a href="#2-2-2-中断向量" class="headerlink" title="2.2.2 中断向量"></a>2.2.2 中断向量</h3><ul>
+<li>CPU用一个独特的号码标记每一个外部设备，称为中断请求号码interrupt request number(IRQ)。</li>
+<li>所有ISR都被收集到一个表格之中，称为中断向量表<strong>interrupt vector table(IVT)</strong></li>
+<li>当发生中断的时候，CPU使用IRQ去IVT中索引中断向量获得ISR的地址，并跳转到对应的ISR</li>
+</ul>
+<h3 id="2-2-3-中断处理流程"><a href="#2-2-3-中断处理流程" class="headerlink" title="2.2.3 中断处理流程"></a>2.2.3 中断处理流程</h3><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B-1.png" alt="中断处理流程-1"></p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B-2.png" alt="中断处理流程-2"></p>
+<h3 id="2-2-4-中断对比异常"><a href="#2-2-4-中断对比异常" class="headerlink" title="2.2.4 中断对比异常"></a>2.2.4 中断对比异常</h3><p><strong>中断：</strong></p>
+<ul>
+<li>外围设备触发</li>
+<li>异步</li>
+</ul>
+<p> <strong>异常：</strong></p>
+<ul>
+<li>异常由CPU在执行程序过程中检测出来的，例如：除0错误和无效内存访问异常</li>
+<li>除此之外，异常与中断一样完全一样，而且异常也有异常号码</li>
+<li>异常又被称为software-generated interrupt软中断或者synchronous interrupt同步中断</li>
+</ul>
+<h2 id="2-3-CPU访问外围设备"><a href="#2-3-CPU访问外围设备" class="headerlink" title="2.3 CPU访问外围设备"></a>2.3 CPU访问外围设备</h2><p>CPU通过设备控制器来访问外围设备，设备控制器包含命令寄存器和数据寄存器。具有以下两种方式访问外围设备。</p>
+<h3 id="2-3-1-I-x2F-O端口-I-x2F-O-port"><a href="#2-3-1-I-x2F-O端口-I-x2F-O-port" class="headerlink" title="2.3.1 I&#x2F;O端口 I&#x2F;O port"></a>2.3.1 I&#x2F;O端口 I&#x2F;O port</h3><ol>
+<li>所有的寄存器包括设备控制器都有一个特别的地址进行标识，称为端口port</li>
+<li>I&#x2F;O指令用来允许数据在寄存器和内存之间传递</li>
+<li>I&#x2F;O端口是独立的地址空间，不消耗内存空间</li>
+</ol>
+<h3 id="2-3-2-内存映射I-x2F-O-Mempry-mapped-I-x2F-O"><a href="#2-3-2-内存映射I-x2F-O-Mempry-mapped-I-x2F-O" class="headerlink" title="2.3.2 内存映射I&#x2F;O Mempry-mapped I&#x2F;O"></a>2.3.2 内存映射I&#x2F;O Mempry-mapped I&#x2F;O</h3><ol>
+<li>用独特的内存地址来标识每一个寄存器，而不是用端口地址</li>
+<li>内存映射I&#x2F;O使用相同的总线来访问内存地址和I&#x2F; O设备的地址</li>
+<li>为了容纳I&#x2F;O设备，CPU必须为I&#x2F;O设备保留可用地址空间</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84.png" alt="内存映射"></p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>每一条指令都可以查询内存，也可以查询设备控制器寄存器</li>
+<li>不需要用特别的保护机制来防止用户进程执行I&#x2F;O</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>现在大部分计算机都有一些缓存内存字的形式，但是缓存设备控制器寄存器将会造成灾难性后果，比如缓存即时指令导致延时</li>
+<li>解决方法：CPU可以执行特定内存是否缓存</li>
+</ul>
+<h3 id="2-3-3-现代计算机系统一般使用两种方法访问外围设备"><a href="#2-3-3-现代计算机系统一般使用两种方法访问外围设备" class="headerlink" title="2.3.3 现代计算机系统一般使用两种方法访问外围设备"></a>2.3.3 现代计算机系统一般使用两种方法访问外围设备</h3><ul>
+<li>使用内存映射I&#x2F;O访问数据缓存</li>
+<li>使用I&#x2F;O端口访问指令寄存器</li>
+</ul>
+<h2 id="2-4-硬件保护方式"><a href="#2-4-硬件保护方式" class="headerlink" title="2.4 硬件保护方式"></a>2.4 硬件保护方式</h2><h3 id="2-4-1-双模式操作"><a href="#2-4-1-双模式操作" class="headerlink" title="2.4.1 双模式操作"></a>2.4.1 双模式操作</h3><ul>
+<li><p>至少需要两种独立的操作模式</p>
+<ul>
+<li>用户态</li>
+<li>内核态（管理者supervisor、系统、特权或者内核模式）</li>
+</ul>
+</li>
+<li><p>模式位：添加在计算机硬件中用来标识当前模式，内核态0，用户态1</p>
+</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/INTEL-IA-32%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%BC%8F%E4%BD%8D.png" alt="INTEL-IA-32系统模式位"></p>
+<ul>
+<li><p>初始都是设置为内核态，当操作系统被加载并启动用户程序后进入用户态</p>
+</li>
+<li><p>当中断或异常发生时，硬件进入内核态，此时，操作系统获得计算机控制权，属于内核态。当系统把控制权交给用户程序时再次进入用户态</p>
+</li>
+<li><p><strong>保护环</strong>： INTEL IA-32系统中，0环为内核态，3环为用户态，仅使用2个环</p>
+</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="http://img.fdchen.host/%E4%BF%9D%E6%8A%A4%E7%8E%AF.png" alt="保护环"></p>
+<h3 id="2-4-2-特权指令"><a href="#2-4-2-特权指令" class="headerlink" title="2.4.2 特权指令"></a>2.4.2 特权指令</h3><ul>
+<li><p>所有的I&#x2F;O指令都是特权指令：</p>
+<ul>
+<li>硬件允许特权指令仅仅在内核态中执行</li>
+<li>当在用户态下想要执行特权指令时，硬件不会执行，而是把它当做非法指令并产生异常</li>
+</ul>
+</li>
+<li><p>必须确保所有的用户程序在内核态下不会获得计算机的控制权</p>
+</li>
+</ul>
+<h3 id="2-4-3-内存保护"><a href="#2-4-3-内存保护" class="headerlink" title="2.4.3 内存保护"></a>2.4.3 内存保护</h3><ul>
+<li>添加两个寄存器来决定寻址程序合法访问的范围<ul>
+<li>基址寄存器Base register：存储最小的合法物理内存地址</li>
+<li>限制寄存器Limit register：存储范围的大小</li>
+</ul>
+</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%86%85%E5%AD%98%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6.png" alt="内存保护机制"></p>
+<h3 id="2-4-4-CPU保护"><a href="#2-4-4-CPU保护" class="headerlink" title="2.4.4 CPU保护"></a>2.4.4 CPU保护</h3><p>操作系统仅仅在可以运行时起作用，如果故障程序进入无限循环并且不返还控制权给操作系统，那么操作系统将失去对CPU的控制权</p>
+<ul>
+<li><strong>计时器</strong><ul>
+<li><strong>机制：</strong>间隔一定时间中断CPU来确保操作系统维持对CPU的控制权。理由是当中断发生时，操作系统将通过ISR获得控制权</li>
+<li><strong>原理：</strong>计数器寄存器在石英振荡器定时发送脉冲时自动减一，当计数寄存器达到0的时候，定时器将会中断CPU，然后计数寄存器会用保存寄存器的值重新加载并重复之前的工作。保存寄存器（Holding register）来加载计数器。</li>
+<li><strong>作用：</strong>维持时钟、分时系统的关键设备、保护CPU，维持操作系统对CPU的控制权</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5-System-call系统调用"><a href="#2-5-System-call系统调用" class="headerlink" title="2.5 System call系统调用"></a>2.5 System call系统调用</h2><p>操作系统本身没有任何用处，但是给用户程序提供了很多有用的服务，这些服务通过系统调用来提供，即系统调用是操作系统同用户程序之间的接口。</p>
+<h3 id="2-5-1-特点"><a href="#2-5-1-特点" class="headerlink" title="2.5.1 特点"></a>2.5.1 <strong>特点</strong></h3><ul>
+<li>用户程序只能通过系统调用来请求操作系统提供的服务</li>
+<li>接口中的系统调用因操作系统的不同而不同</li>
+<li>系统调用又称为监督器调用supervisor call</li>
+</ul>
+<h3 id="2-5-2-调用过程"><a href="#2-5-2-调用过程" class="headerlink" title="2.5.2 调用过程"></a>2.5.2 调用过程</h3><p>1-3 准备参数</p>
+<p>4 调用系统调用的包装wrapper（用汇编语言编写）：将汇编语言”转换”成C语言，以便C文件调用：即变成C语言接口；将服务名称转为数字</p>
+<p>5 把系统调用号码存到寄存器</p>
+<p>6 进入（trap into）操作系统</p>
+<p>7 通过系统调用号码在系统调用表中索引，获得系统调用服务例程</p>
+<p>8-11 运行系统调用例程，完成以后然后返回用户程序</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8.png" alt="系统调用"></p>
+<h3 id="2-5-3-进入操作系统"><a href="#2-5-3-进入操作系统" class="headerlink" title="2.5.3 进入操作系统"></a>2.5.3 进入操作系统</h3><ul>
+<li>用户程序不能直接进入操作系统，进入操作系统的方法有两种（实质均为触发异常）</li>
+</ul>
+<ol>
+<li><p>异常（软件生成中断）</p>
+</li>
+<li><p>特殊指令（触发异常）</p>
+</li>
+</ol>
+<ul>
+<li><strong>INTEL IA-32</strong><ul>
+<li>提供了一条指令触发异常，INT</li>
+<li>由于INT指令的额外开销，提供了特殊指令，SYSENTER和SYSEXIT，ARM处理器使用swi（Software Interrupt，软件中断）进入操作系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-5-4-系统调用对比库函数"><a href="#2-5-4-系统调用对比库函数" class="headerlink" title="2.5.4 系统调用对比库函数"></a>2.5.4 系统调用对比库函数</h3><ol>
+<li><p>系统调用会进入操作系统内核，但是库函数不会。这也导致系统调用比库函数慢很多</p>
+</li>
+<li><p>库函数等同于用户自定义的函数，我们可以用我们自己的库函数版本代替已有库函数，但是我们不能代替系统调</p>
+</li>
+</ol>
 <p> 用</p>
-<p> 2.5.5.3. 一个操作系统中的系统调用可能成为另一个操作系统的中的库函数</p>
-<p> 2.5.5.3.1. 将系统调用封装成库函数，以便程序从一个系统移植到另一个系统</p>
-<p> <strong>2.5.5.3.2.</strong></p>
-<p> 3. 操作系统结构</p>
-<p> 3.1. 操作系统结构</p>
-<p> 3.1.1. 简单结构或者无结构</p>
-<p> By CFD 12</p>
-<p> 3.1.1.1. 举例</p>
-<p> <strong>3.1.1.1.1. MS-DOS</strong></p>
-<p> <strong>3.1.1.1.2. Unix</strong></p>
-<p> <strong>3.1.1.2.</strong></p>
-<p> 3.1.2. 分层结构</p>
-<p> 3.1.2.1. 操作系统被分为多层，每一层建立在较低层的上面</p>
-<p> <strong>3.1.2.2.</strong></p>
-<p> 3.1.2.3. 举例：THE操作系统，Dijkstra创建</p>
-<p> <strong>3.1.2.3.1.</strong></p>
-<p> 3.1.2.4. 主要困难</p>
-<p> By CFD 13</p>
-<p> 3.1.2.4.1. 分层界限模糊</p>
-<p> 3.1.2.4.2. 低效率</p>
-<p> 3.1.3. 微内核结构</p>
-<p> 3.1.3.1. 微内核方法通过从内核中删除所有非必要的组件并且把它们作为系统级和用户级的程序实现</p>
-<p> 3.1.3.2. 应该留在微内核中的结构</p>
-<p> 3.1.3.2.1. CPU管理器</p>
-<p> 3.1.3.2.2. 内存管理器</p>
-<p> 3.1.3.2.3. 通信设施</p>
-<p> <strong>3.1.3.3.</strong></p>
-<p> 3.1.3.4. 举例</p>
-<p> <strong>3.1.3.4.1. Mach</strong></p>
-<p> 3.1.3.4.1.1. 用于Apple macOS&#x2F;iOS&#x2F;tvOS&#x2F;watchOS</p>
-<p> <strong>3.1.3.4.2. Micorsoft Windows NT&#x2F;XP</strong></p>
-<p> 3.1.3.5. PS：纯微内核不可行</p>
-<p> 3.1.4. 虚拟机</p>
-<p> 3.1.4.1. 底层真实硬件被”克隆”成几个相同的虚拟机，该虚拟机提供与底层裸机硬件相同的接口</p>
-<p> 3.1.4.2. 操作系统就建立在虚拟机的上面</p>
-<p> <strong>3.1.4.2.1.</strong></p>
-<p> By CFD 14</p>
-<p> 3.1.4.3. 虚拟机分类</p>
-<p> 3.1.4.3.1. 硬件虚拟机（依据实现方法分类）</p>
-<p> 3.1.4.3.1.1. 仿真&#x2F;模拟：虚拟机模拟完整的硬件，允许一个完全不同的未修改的操作系统 CPU运行</p>
-<p> <strong>VMware VirtualBox QEMU Bochs</strong></p>
-<p> 3.1.4.3.1.2. 克隆-半虚拟化：虚拟机不模拟硬件，而是提供了一个特殊的API，需要操作系统修改运行</p>
-<p> 剑桥大学的Xen</p>
-<p> 3.1.4.3.1.3. 克隆-完全虚拟化：虚拟机的一部分模拟足够的硬件以允许未修改的操作系统独立运行，但是客户操</p>
-<p> 作系统必须为之设计同一类型的CPU</p>
-<p> IBM的VM&#x2F;370</p>
-<p> 适用于Linux的KVM</p>
-<p> 3.1.4.3.2. 应用程序虚拟机</p>
-<p> 3.1.4.3.2.1. 一种将用户正在使用的应用程序与计算机隔离的计算机软件</p>
-<p> By CFD 15</p>
-<p> 3.1.4.3.2.2. 举例：Sun微系统的Java虚拟机(JVM)</p>
-<p> 3.1.4.4. 虚拟机优缺点</p>
-<p> 3.1.4.4.1. 虚拟机概念完成了对系统资源的保护，因为每个虚拟机设备都与其他虚拟机隔离开，即不允许直接共享资</p>
-<p> 源</p>
-<p> 3.1.4.4.2. 虚拟机是操作系统研究和发展的完美工具</p>
-<p> 3.1.4.4.3. 虚拟机概念很难实现，理由是需要向底层计算机提供精确副本</p>
-<p> 3.2. 操作系统设计</p>
-<p> 3.2.1. 策略Policies和机制Mechanisms</p>
-<p> 3.2.1.1. 策略-做什么</p>
-<p> 3.2.1.1.1. 比如用户不应该能够读取其他用户的文件</p>
-<p> 3.2.1.2. 机制-怎么做</p>
-<p> 3.2.1.2.1. 比如说文件访问权限应该由开放的系统调用来判断</p>
-<p> 3.2.2. 操作系统的实现</p>
-<p> 3.2.2.1. 传统的操作系统由汇编语言编写，现在可以由高级语言编写</p>
-<p> 3.2.2.2. 高级语言编写的优点</p>
-<p> 3.2.2.2.1. 编写速度更快</p>
-<p> 3.2.2.2.2. 更简洁</p>
-<p> 3.2.2.2.3. 容易理解和Debug</p>
-<p> 3.2.2.2.4. 方便移植到其他硬件上</p>
-<p> 4. 进程管理</p>
-<p> By CFD 16</p>
-<p> 4.1. 进程概念</p>
-<p> 4.1.1. 运行工作&#x2F;程序&#x2F;任务的抽象</p>
-<p> 4.1.2. 组成</p>
-<p> 4.1.2.1. 文本部分（代码）</p>
-<p> 4.1.2.2. 数据部分（数据）</p>
-<p> 4.1.2.3. 寄存器内的内容</p>
-<p> 4.1.2.4. 栈</p>
-<p> 4.1.2.5. 堆</p>
-<p> 4.1.2.6. 其他资源，如打开的文件</p>
-<p> <strong>4.1.2.7.</strong></p>
-<p> 4.1.2.7.1. Gap满时显示内存不足</p>
-<p> 4.2. 进程对比程序</p>
-<p> 4.2.1. 程序是属于存储的被动实体，进程是包含比程序更多资源的主动实体</p>
-<p> 4.2.2. 很多进程可能是运行相同的程序，但是进程应该是分开的运行队列，除了分享相同代码段，其他资源都不相同</p>
-<p> 4.3. 进程状态</p>
-<p> By CFD 17</p>
-<p> 4.3.1. 创建状态</p>
-<p> 4.3.2. 运行状态</p>
-<p> 4.3.3. 等待状态：等待某些事件发生</p>
-<p> 4.3.4. 就绪状态：等待CPU调度</p>
-<p> 4.3.5. 终止状态</p>
-<p> 4.3.6. Zombie僵尸状态：执行完毕但资源未回收</p>
-<p> 4.4. 进程状态转换</p>
-<p> <strong>4.4.1.</strong></p>
-<p> 4.5. 进程控制块Process Control Block(PCB)，也叫任务控制块</p>
-<p> 4.5.1. 进程号码-PID</p>
-<p> 4.5.2. 程序计数器-PC</p>
-<p> 4.5.3. 调度信息，包括进程优先级</p>
-<p> <strong>4.5.4.</strong></p>
-<p> By CFD 18</p>
-<p> 4.6. 进程调度-决定下一个运行的进程</p>
-<p> 4.6.1. 当前运行进程发生了什么？</p>
-<p> 4.6.1.1. 上下文切换</p>
-<p> <strong>4.6.1.1.1.</strong></p>
-<p> 4.6.1.1.2. 上下文切换是纯消耗</p>
-<p> 4.6.1.1.2.1. 取决于下层的处理器，消耗许多CPU周期</p>
-<p> 4.6.1.1.2.2. 上下文切换已经变成了运行瓶颈，需要使用新的结构（缓存）来尽可能的避免</p>
-<p> 4.6.2. 如何跟踪每一个进程应该做的事？</p>
-<p> 4.6.2.1. 调度队列</p>
-<p> 4.6.2.1.1. 工作队列：全部进程</p>
-<p> By CFD 19</p>
-<p> 4.6.2.1.2. 就绪队列：等待被调度执行的进程</p>
-<p> 4.6.2.2. I&#x2F;O设备队列</p>
-<p> <strong>4.6.2.2.1.</strong></p>
-<p> 4.6.2.3. 队列图：进程调度的一种常用表示</p>
-<p> <strong>4.6.2.3.1.</strong></p>
-<p> 4.6.3. 如何决定下一个运行的进程？</p>
-<p> 4.6.3.1. CPU调度器：从ready队列中选择一个进程，将CPU分配给这个进程</p>
-<p> 4.7. 进程的操作</p>
-<p> 4.7.1. 进程终止</p>
-<p> 4.7.1.1. 正常情况</p>
-<p> By CFD 20</p>
-<p> 4.7.1.1.1. 一个进程被操作系统删除</p>
-<p> 4.7.1.2. 非正常情况</p>
-<p> 4.7.1.2.1. 一个进程被另一个进程删除，仅内存资源回收</p>
-<p> 4.7.2. 进程协作</p>
-<p> 4.7.2.1. 协作进程之间的同步</p>
-<p> 4.7.2.2. 进程协作的优点</p>
-<p> 4.7.2.2.1. 信息共享</p>
-<p> 4.7.2.2.1.1. 几个进程共享相同的信息</p>
-<p> 4.7.2.2.2. 计算加速</p>
-<p> 4.7.2.2.2.1. 将问题分成几个可以并行的子任务</p>
-<p> 4.7.2.2.3. 模块化</p>
-<p> 4.7.2.2.3.1. 根据设计将不同功能的过程分开</p>
-<p> 4.7.2.3. 并行执行的进程需要允许进程通信的机制来同步行为</p>
-<p> 4.7.2.4. 举例：生产者、消费者问题</p>
-<p> 4.7.2.4.1. 一般选择有界限的缓冲区</p>
-<p> <strong>4.7.2.4.2.</strong></p>
-<p> 4.7.3. 进程间通讯Interprocess communication(IPC)</p>
-<p> By CFD 21</p>
-<p> 4.7.3.1. 距离远：先解决通信在解决同步问题</p>
-<p> 4.7.3.2. 距离近：同步为主要问题</p>
-<p> 4.7.3.3. 管道Pipe</p>
-<p> 4.7.3.3.1. 管道有两个端点:一个用于读取，另一个用于写入。先进先出FIFO原则</p>
-<p> 4.7.3.3.2. 种类</p>
-<p> 4.7.3.3.2.1. 匿名管道</p>
-<p> 单工，数据只在一个方向上传输</p>
-<p> 在父子进程间传递数据</p>
-<p> 仅存在于进程运行时</p>
-<p> 4.7.3.3.2.2. 命名管道</p>
-<p> 单工或者双工，允许数据同时在两个方向上传输，全</p>
-<p> 双工通信是两个单工通信方式的结合</p>
-<p> 允许任意两个进程之间的通信</p>
-<p> 可以是永久保存或者易丢失的</p>
-<p> 5. 线程管理</p>
-<p> 5.1. 线程与进程</p>
-<p> 5.1.1. 进程</p>
-<p> 5.1.1.1. 资源分配的单元 调度的单元</p>
-<p> 5.1.2. 线程</p>
-<p> 5.1.2.1. 传统的进程只控制一个线程</p>
-<p> 5.1.2.2. 进程是所调用资源的容器</p>
-<p> By CFD 22</p>
-<p> 5.1.2.3. 线程是CPU实际调度的实体</p>
-<p> 5.2. 线程概念</p>
-<p> 5.2.1. CPU调度的基础单元，又称为轻量级进程lightweight <strong>process</strong></p>
-<p> 5.2.2. 多线程</p>
-<p> 5.2.2.1. 在相同进程中存在允许多个线程</p>
-<p> 5.2.2.2. 共享进程中的资源，包括代码段、数据段、打开的文件等</p>
-<p> 5.2.2.3. 每个线程拥有私有线程内容，包括CPU寄存器设置、其他状态信息和私有栈</p>
-<p> <strong>5.2.2.3.1.</strong></p>
-<p> 5.2.3. 单线程对比多线程</p>
-<p> <strong>5.2.3.1.</strong></p>
-<p> 5.3. 线程的好处</p>
-<p> 5.3.1. 可响应性</p>
-<p> By CFD 23</p>
-<p> 5.3.2. 资源共享</p>
-<p> 5.3.3. 经济</p>
-<p> 5.3.4. 提高多处理器结构的利用率5.4. （多）线程的实现</p>
-<p> 5.4.1. 用户线程</p>
-<p> 5.4.2. 内核线程</p>
-<p> 5.4.2.1. 直接由操作系统支持，内核在内核态下执行线程的创建、调度和管理</p>
-<p> 5.4.2.2. 缺点</p>
-<p> 5.4.2.2.1. 线程管理和上下文切换需要进入内核，由内核调度，消耗大量CPU周期</p>
-<p> 5.4.2.3. 优点</p>
-<p> 5.4.2.3.1. 如果进程中一个线程被阻塞，内核可以调度同一个进程中的另一个线程</p>
-<p> 5.4.2.3.2. 当有多个处理机时，一个进程的多个线程可以同时执行</p>
-<p> 6. CPU调度</p>
-<p> 6.1. 基本概念</p>
-<p> 6.1.1. 调度是操作系统的基本功能</p>
-<p> 6.1.1.1. 空间资源的调度-内存</p>
-<p> 6.1.1.2. 时间资源的调度-CPU</p>
-<p> 6.1.2. 当前进程（线程）不能执行时，操作系统必须调度另一个就绪的进程（线程）执行</p>
-<p> 6.2. CPU-I&#x2F;O 爆发周期</p>
-<p> By CFD 24</p>
-<p> 6.2.1. 进程执行由CPU执行和I&#x2F;O等待的周期组成</p>
-<p> 6.2.2. 进程在这两个状态中轮流切换</p>
-<p> <strong>6.2.3.</strong></p>
-<p> 6.3. CPU调度器</p>
-<p> 6.3.1. 概念</p>
-<p> 6.3.1.1. 从内存中的挑选已经准备的进程去执行，并把CPU分配到其中一个进程。也称为短期调度器</p>
-<p> 6.3.2. CPU调度决策发生在当进程发生如下情况时</p>
-<p> 6.3.2.1. 进程终止</p>
-<p> 6.3.2.2. 从运行状态变成等待状态</p>
-<p> 6.3.2.3. 非抢占式的</p>
-<p> 6.3.2.4. 从运行状态变成就绪状态</p>
-<p> 6.3.2.5. 从等待状态变成就绪状态</p>
-<p> 6.3.2.6. 抢占式的</p>
-<p> 6.4. 调度算法</p>
-<p> 6.4.1. 先到先服务First-come, first-served(FCFS)</p>
-<p> By CFD 25</p>
-<p> <strong>6.4.1.1.</strong></p>
+<ol start="3">
+<li>一个操作系统中的系统调用可能成为另一个操作系统的中的库函数：将系统调用封装成库函数，以便程序从一个系统移植到另一个系统</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%9F%BA%E4%BA%8E%E5%BA%93%E5%87%BD%E6%95%B0%E7%A7%BB%E6%A4%8D%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8.png" alt="基于库函数移植系统调用"></p>
+<h1 id="3-操作系统结构"><a href="#3-操作系统结构" class="headerlink" title="3 操作系统结构"></a>3 操作系统结构</h1><h2 id="3-1-操作系统结构"><a href="#3-1-操作系统结构" class="headerlink" title="3.1 操作系统结构"></a>3.1 操作系统结构</h2><h3 id="3-1-1-简单结构或者无结构"><a href="#3-1-1-简单结构或者无结构" class="headerlink" title="3.1.1 简单结构或者无结构"></a>3.1.1 简单结构或者无结构</h3><p>举例：</p>
+<ul>
+<li>MS-DOS</li>
+<li>Unix</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%80%E5%8D%95%E7%BB%93%E6%9E%84.png" alt="操作系统简单结构"></p>
+<h3 id="3-1-2-分层结构"><a href="#3-1-2-分层结构" class="headerlink" title="3.1.2 分层结构"></a>3.1.2 分层结构</h3><p>操作系统被分为多层，每一层建立在较低层的上面</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84.png" alt="操作系统分层结构"></p>
+<p>举例：</p>
+<p>THE操作系统，Dijkstra创建</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/THE%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png" alt="THE操作系统"></p>
+<p>主要困难：</p>
+<ul>
+<li>分层界限模糊</li>
+<li>低效率</li>
+</ul>
+<h3 id="3-1-3-微内核结构"><a href="#3-1-3-微内核结构" class="headerlink" title="3.1.3 微内核结构"></a>3.1.3 微内核结构</h3><p>微内核方法通过从内核中删除所有非必要的组件并且把它们作为系统级和用户级的程序实现</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BE%AE%E5%86%85%E6%A0%B8%E7%BB%93%E6%9E%84.png" alt="操作系统微内核结构"></p>
+<p>应该留在微内核中的结构：</p>
+<ul>
+<li>CPU管理器</li>
+<li>内存管理器</li>
+<li>通信设施</li>
+</ul>
+<p>举例：</p>
+<ul>
+<li><p>Mach：用于Apple macOS&#x2F;iOS&#x2F;tvOS&#x2F;watchOS</p>
+</li>
+<li><p>Micorsoft Windows NT&#x2F;XP</p>
+</li>
+</ul>
+<p>PS：纯微内核不可行</p>
+<h3 id="3-1-4-虚拟机"><a href="#3-1-4-虚拟机" class="headerlink" title="3.1.4 虚拟机"></a>3.1.4 虚拟机</h3><p>底层真实硬件被”克隆”成几个相同的虚拟机，该虚拟机提供与底层裸机硬件相同的接口，操作系统就建立在虚拟机的上面。</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%93%E6%9E%84.png" alt="操作系统虚拟机结构"></p>
+<p><strong>虚拟机分类：</strong></p>
+<ul>
+<li><p><strong>硬件虚拟机（依据实现方法分类）</strong></p>
+<ul>
+<li>仿真&#x2F;模拟虚拟机：模拟完整的硬件，允许一个完全不同的未修改的操作系统 CPU运行，比如VMware、VirturalBox、QEMU、Bochs</li>
+<li>克隆-半虚拟化：虚拟机不模拟硬件，而是提供了一个特殊的API，需要操作系统修改运行，比如剑桥大学的Xen</li>
+<li>克隆-完全虚拟化：虚拟机的一部分模拟足够的硬件以允许未修改的操作系统独立运行，但是客户操作系统必须为之设计同一类型的CPU，比如IBM的VM&#x2F;370、适用于Linux的KVM</li>
+</ul>
+</li>
+<li><p><strong>应用程序虚拟机</strong>：一种将用户正在使用的应用程序与计算机隔离的计算机软件</p>
+<ul>
+<li>举例：Sun微系统的Java虚拟机(JVM)</li>
+</ul>
+</li>
+</ul>
+<p><strong>虚拟机优缺点：</strong></p>
+<ul>
+<li>虚拟机概念完成了对系统资源的保护，因为每个虚拟机设备都与其他虚拟机隔离开，即不允许直接共享资源</li>
+<li>虚拟机是操作系统研究和发展的完美工具</li>
+<li>虚拟机概念很难实现，理由是需要向底层计算机提供精确副本</li>
+</ul>
+<h2 id="3-2-操作系统设计"><a href="#3-2-操作系统设计" class="headerlink" title="3.2 操作系统设计"></a>3.2 操作系统设计</h2><h3 id="3-2-1-策略Policies和机制Mechanisms"><a href="#3-2-1-策略Policies和机制Mechanisms" class="headerlink" title="3.2.1 策略Policies和机制Mechanisms"></a>3.2.1 策略Policies和机制Mechanisms</h3><ul>
+<li>策略-做什么：比如用户不应该能够读取其他用户的文件</li>
+<li>机制-怎么做：比如说文件访问权限应该由开放的系统调用来判断</li>
+</ul>
+<h3 id="3-2-2-操作系统的实现"><a href="#3-2-2-操作系统的实现" class="headerlink" title="3.2.2 操作系统的实现"></a>3.2.2 操作系统的实现</h3><p>传统的操作系统由汇编语言编写，现在可以由高级语言编写。</p>
+<p>高级语言编写的优点：</p>
+<ol>
+<li><p>编写速度更快</p>
+</li>
+<li><p>更简洁</p>
+</li>
+<li><p>容易理解和Debug</p>
+</li>
+<li><p>方便移植到其他硬件上</p>
+</li>
+</ol>
+<h1 id="4-进程管理"><a href="#4-进程管理" class="headerlink" title="4 进程管理"></a>4 进程管理</h1><h2 id="4-1-进程概念"><a href="#4-1-进程概念" class="headerlink" title="4.1 进程概念"></a>4.1 进程概念</h2><p>运行工作&#x2F;程序&#x2F;任务的抽象</p>
+<h3 id="4-1-1-组成"><a href="#4-1-1-组成" class="headerlink" title="4.1.1 组成"></a>4.1.1 组成</h3><ul>
+<li>文本部分（代码）</li>
+<li>数据部分（数据）</li>
+<li>寄存器内的内容</li>
+<li>栈</li>
+<li>堆</li>
+<li>其他资源，如打开的文件</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E8%BF%9B%E7%A8%8B%E7%BB%84%E6%88%90.png" alt="https://img.fdchen.host/进程组成.png"></p>
+<p>PS：Gap满时显示内存不足</p>
+<h2 id="4-2-进程对比程序"><a href="#4-2-进程对比程序" class="headerlink" title="4.2 进程对比程序"></a>4.2 进程对比程序</h2><ul>
+<li><p>程序是属于存储的被动实体，进程是包含比程序更多资源的主动实体</p>
+</li>
+<li><p>很多进程可能是运行相同的程序，但是进程应该是分开的运行队列，除了分享相同代码段，其他资源都不相同</p>
+</li>
+</ul>
+<h2 id="4-3-进程状态"><a href="#4-3-进程状态" class="headerlink" title="4.3 进程状态"></a>4.3 进程状态</h2><ul>
+<li>创建状态</li>
+<li>运行状态</li>
+<li>等待状态：等待某些事件发生</li>
+<li>就绪状态：等待CPU调度</li>
+<li>终止状态</li>
+<li>Zombie僵尸状态：执行完毕但资源未回收</li>
+</ul>
+<h2 id="4-4-进程状态转换"><a href="#4-4-进程状态转换" class="headerlink" title="4.4 进程状态转换"></a>4.4 进程状态转换</h2><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.png" alt="进程状态转换"></p>
+<h2 id="4-5-进程控制块Process-Control-Block-PCB"><a href="#4-5-进程控制块Process-Control-Block-PCB" class="headerlink" title="4.5 进程控制块Process Control Block(PCB)"></a>4.5 进程控制块Process Control Block(PCB)</h2><p>进程控制块Process Control Block(PCB)，也叫任务控制块</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%9D%97.png" alt="进程控制块"></p>
+<ul>
+<li>进程号码-PID</li>
+<li>程序计数器-PC</li>
+<li>调度信息，包括进程优先级</li>
+</ul>
+<h2 id="4-6-进程调度"><a href="#4-6-进程调度" class="headerlink" title="4.6 进程调度"></a>4.6 进程调度</h2><p>决定下一个运行的进程。</p>
+<h3 id="4-6-1-当前运行进程发生了什么？"><a href="#4-6-1-当前运行进程发生了什么？" class="headerlink" title="4.6.1 当前运行进程发生了什么？"></a>4.6.1 当前运行进程发生了什么？</h3><ul>
+<li>上下文切换</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E8%BF%9B%E7%A8%8B%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2.png" alt="进程上下文切换"></p>
+<p>PS：上下文切换是纯消耗</p>
+<p>（1）取决于下层的处理器，消耗许多CPU周期</p>
+<p>（2）上下文切换已经变成了运行瓶颈，需要使用新的结构（缓存）来尽可能的避免</p>
+<h3 id="4-6-2-如何跟踪每一个进程应该做的事？"><a href="#4-6-2-如何跟踪每一个进程应该做的事？" class="headerlink" title="4.6.2 如何跟踪每一个进程应该做的事？"></a>4.6.2 如何跟踪每一个进程应该做的事？</h3><ul>
+<li><p>调度队列</p>
+<ul>
+<li><p>工作队列：全部进程</p>
+</li>
+<li><p>就绪队列：等待被调度执行的进程</p>
+</li>
+</ul>
+</li>
+<li><p>I&#x2F;O设备队列</p>
+</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/IO%E8%AE%BE%E5%A4%87%E9%98%9F%E5%88%97.png" alt="IO设备队列"></p>
+<ul>
+<li>队列图：进程调度的一种常用表示</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E8%BF%9B%E7%A8%8B%E9%98%9F%E5%88%97%E5%9B%BE.png" alt="进程队列图"></p>
+<h3 id="4-6-3-如何决定下一个运行的进程？"><a href="#4-6-3-如何决定下一个运行的进程？" class="headerlink" title="4.6.3 如何决定下一个运行的进程？"></a>4.6.3 如何决定下一个运行的进程？</h3><ul>
+<li>CPU调度器：从ready队列中选择一个进程，将CPU分配给这个进程</li>
+</ul>
+<h2 id="4-7-进程的操作"><a href="#4-7-进程的操作" class="headerlink" title="4.7 进程的操作"></a>4.7 进程的操作</h2><h3 id="4-7-1-进程终止"><a href="#4-7-1-进程终止" class="headerlink" title="4.7.1 进程终止"></a>4.7.1 进程终止</h3><p>正常情况：一个进程被操作系统删除</p>
+<p>非正常情况：一个进程被另一个进程删除，仅内存资源回收</p>
+<h3 id="4-7-2-进程协作"><a href="#4-7-2-进程协作" class="headerlink" title="4.7.2 进程协作"></a>4.7.2 进程协作</h3><p>协作进程之间的同步。</p>
+<p>进程协作的优点：</p>
+<ul>
+<li>信息共享：几个进程共享相同的信息</li>
+<li>计算加速：将问题分成几个可以并行的子任务</li>
+<li>模块化：根据设计将不同功能的过程分开</li>
+</ul>
+<p>并行执行的进程需要允许进程通信的机制来同步行为。举例：生产者、消费者问题，一般选择有界限的缓冲区</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E9%87%87%E7%94%A8%E7%BC%93%E5%86%B2%E5%8C%BA%E8%A7%A3%E5%86%B3%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98.png" alt="采用缓冲区解决生产者消费者问题"></p>
+<h3 id="4-7-3-进程间通讯Interprocess-communication-IPC"><a href="#4-7-3-进程间通讯Interprocess-communication-IPC" class="headerlink" title="4.7.3 进程间通讯Interprocess communication(IPC)"></a>4.7.3 进程间通讯Interprocess communication(IPC)</h3><p>距离远：先解决通信在解决同步问题</p>
+<p>距离近：同步为主要问题</p>
+<ul>
+<li>管道Pipe：管道有两个端点，一个用于读取，另一个用于写入。先进先出FIFO原则<ul>
+<li>匿名管道：单工，数据只在一个方向上传输；在父子进程间传递数据；仅存在于进程运行时</li>
+<li>命名管道：单工或者双工，允许数据同时在两个方向上传输，全双工通信是两个单工通信方式的结合；允许任意两个进程之间的通信；可以是永久保存或者易丢失的</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-线程管理"><a href="#5-线程管理" class="headerlink" title="5 线程管理"></a>5 线程管理</h1><h2 id="5-1-线程与进程"><a href="#5-1-线程与进程" class="headerlink" title="5.1 线程与进程"></a>5.1 线程与进程</h2><p>进程：资源分配的单元，调度的单元</p>
+<p>线程：传统的进程只控制一个线程，进程是所调用资源的容器，线程是CPU实际调度的实体</p>
+<h2 id="5-2-线程概念"><a href="#5-2-线程概念" class="headerlink" title="5.2 线程概念"></a>5.2 线程概念</h2><p>CPU调度的基础单元，又称为轻量级进程lightweight process</p>
+<h3 id="5-2-1-多线程"><a href="#5-2-1-多线程" class="headerlink" title="5.2.1 多线程"></a>5.2.1 多线程</h3><ul>
+<li>在相同进程中存在允许多个线程</li>
+<li>共享进程中的资源，包括代码段、数据段、打开的文件等</li>
+<li>每个线程拥有私有线程内容，包括CPU寄存器设置、其他状态信息和私有栈</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B%E7%BB%84%E6%88%90%E5%AF%B9%E6%AF%94.png" alt="线程与进程组成对比"></p>
+<h3 id="5-2-2-单线程对比多线程"><a href="#5-2-2-单线程对比多线程" class="headerlink" title="5.2.2 单线程对比多线程"></a>5.2.2 单线程对比多线程</h3><p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%AF%B9%E6%AF%94%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" alt="单线程对比多线程"></p>
+<h2 id="5-3-线程的好处"><a href="#5-3-线程的好处" class="headerlink" title="5.3 线程的好处"></a>5.3 线程的好处</h2><ul>
+<li><p>可响应性</p>
+</li>
+<li><p>资源共享</p>
+</li>
+<li><p>经济</p>
+</li>
+<li><p>提高多处理器结构的利用率</p>
+</li>
+</ul>
+<h2 id="5-4（多）线程的实现"><a href="#5-4（多）线程的实现" class="headerlink" title="5.4（多）线程的实现"></a>5.4（多）线程的实现</h2><h3 id="5-4-1-用户线程"><a href="#5-4-1-用户线程" class="headerlink" title="5.4.1 用户线程"></a>5.4.1 用户线程</h3><h3 id="5-4-2-内核线程"><a href="#5-4-2-内核线程" class="headerlink" title="5.4.2 内核线程"></a>5.4.2 内核线程</h3><p>直接由操作系统支持，内核在内核态下执行线程的创建、调度和管理。</p>
+<p>缺点：</p>
+<ul>
+<li>线程管理和上下文切换需要进入内核，由内核调度，消耗大量CPU周期</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>如果进程中一个线程被阻塞，内核可以调度同一个进程中的另一个线程</li>
+<li>当有多个处理机时，一个进程的多个线程可以同时执行</li>
+</ul>
+<h1 id="6-CPU调度"><a href="#6-CPU调度" class="headerlink" title="6 CPU调度"></a>6 CPU调度</h1><h2 id="6-1-基本概念"><a href="#6-1-基本概念" class="headerlink" title="6.1 基本概念"></a>6.1 基本概念</h2><h3 id="6-1-1-调度是操作系统的基本功能"><a href="#6-1-1-调度是操作系统的基本功能" class="headerlink" title="6.1.1 调度是操作系统的基本功能"></a>6.1.1 调度是操作系统的基本功能</h3><ul>
+<li>空间资源的调度-内存</li>
+<li>时间资源的调度-CPU</li>
+<li>当前进程（线程）不能执行时，操作系统必须调度另一个就绪的进程（线程）执行</li>
+</ul>
+<h2 id="6-2-CPU-I-x2F-O-爆发周期"><a href="#6-2-CPU-I-x2F-O-爆发周期" class="headerlink" title="6.2 CPU-I&#x2F;O 爆发周期"></a>6.2 CPU-I&#x2F;O 爆发周期</h2><ol>
+<li>进程执行由CPU执行和I&#x2F;O等待的周期组成</li>
+<li>进程在这两个状态中轮流切换</li>
+</ol>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/CPU-IO%E7%88%86%E5%8F%91%E5%91%A8%E6%9C%9F.png" alt="CPU-IO爆发周期"></p>
+<h2 id="6-3-CPU调度器"><a href="#6-3-CPU调度器" class="headerlink" title="6.3 CPU调度器"></a>6.3 CPU调度器</h2><h3 id="6-3-1-概念"><a href="#6-3-1-概念" class="headerlink" title="6.3.1 概念"></a>6.3.1 概念</h3><ol>
+<li>从内存中的挑选已经准备的进程去执行，并把CPU分配到其中一个进程。也称为短期调度器</li>
+</ol>
+<h3 id="6-3-2-CPU调度决策发生情况"><a href="#6-3-2-CPU调度决策发生情况" class="headerlink" title="6.3.2 CPU调度决策发生情况"></a>6.3.2 CPU调度决策发生情况</h3><ol>
+<li><p>进程终止</p>
+</li>
+<li><p>从运行状态变成等待状态</p>
+</li>
+<li><p>非抢占式的</p>
+</li>
+<li><p>从运行状态变成就绪状态</p>
+</li>
+<li><p>从等待状态变成就绪状态</p>
+</li>
+<li><p>抢占式的</p>
+</li>
+</ol>
+<h2 id="6-4-调度算法"><a href="#6-4-调度算法" class="headerlink" title="6.4 调度算法"></a>6.4 调度算法</h2><h3 id="6-4-1-先到先服务First-come-first-served-FCFS"><a href="#6-4-1-先到先服务First-come-first-served-FCFS" class="headerlink" title="6.4.1 先到先服务First-come, first-served(FCFS)"></a>6.4.1 先到先服务First-come, first-served(FCFS)</h3><p> <strong>6.4.1.1.</strong></p>
 <p> 6.4.2. 耗时最小的工作先执行Shortest-job-First(SJF) --调度最优解，可以获得最小的平均等待时间</p>
 <p> 6.4.2.1. 非抢占式 -等待时间是从到达之后开始计算</p>
 <p> <strong>6.4.2.1.1.</strong></p>
@@ -1692,8 +1716,8 @@
                                     <span class="chip bg-color">笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">计算机网络</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
                         </div>
@@ -2141,15 +2165,15 @@
                 <a href="/2021/ji-suan-ji-ji-chu-cao-zuo-xi-tong/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/OS.jpg" class="responsive-img" alt="操作系统">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/OS.jpg" class="responsive-img" alt="计算机网络">
                         
-                        <span class="card-title">操作系统</span>
+                        <span class="card-title">计算机网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            操作系统知识点总结
+                            计算机网络知识点总结
                         
                     </div>
                     <div class="publish-info">
@@ -2171,12 +2195,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AC%94%E8%AE%B0/">
                         <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
@@ -2416,7 +2440,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">415.3k</span>
+                        class="white-color">415.5k</span>
             
             
             
