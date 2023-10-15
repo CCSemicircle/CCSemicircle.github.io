@@ -590,7 +590,7 @@
 <blockquote>
 <p>更多Git使用技巧参考：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/z_zFveiiLu9vLvWuBcsaIg">Git从入门到进阶，你想要的全在这里</a></p>
 </blockquote>
-<h2 id="0-5-实验运行前牢记"><a href="#0-5-实验运行前牢记" class="headerlink" title="0.5 实验运行前牢记"></a>0.5 实验运行前牢记</h2><h3 id="0-5-1-seed是否可以保证实验可复现"><a href="#0-5-1-seed是否可以保证实验可复现" class="headerlink" title="0.5.1 seed是否可以保证实验可复现"></a>0.5.1 seed是否可以保证实验可复现</h3><p>设置seed的正确方式，并且只需要在定义dataloader之前设置一次即可：</p>
+<h2 id="0-5-实验运行前牢记"><a href="#0-5-实验运行前牢记" class="headerlink" title="0.5 实验运行前牢记"></a>0.5 实验运行前牢记</h2><h3 id="0-5-1-seed是否可以保证实验可复现"><a href="#0-5-1-seed是否可以保证实验可复现" class="headerlink" title="0.5.1 seed是否可以保证实验可复现"></a>0.5.1 seed是否可以保证实验可复现</h3><p>设置seed的正确方式，并且<strong>必须写在初始化模型之前</strong>：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">set_seed</span><span class="token punctuation">(</span>offset<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
   seed_num <span class="token operator">=</span> args<span class="token punctuation">.</span>seed <span class="token operator">+</span> offset
   random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>seed_num<span class="token punctuation">)</span>
@@ -1354,7 +1354,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/python-ji-ben-yong-fa/">
+                <a href="/2022/python-chang-jian-yong-fa/">
                     <div class="card-image">
                         
                         <img src="/medias/loading.gif" data-original="https://img.fdchen.host/python.jpg" class="responsive-img" alt="Python_常见用法">

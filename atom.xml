@@ -145,9 +145,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="NLP" scheme="https://blog.fdchen.host/tags/NLP/"/>
+    
+    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -228,9 +228,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -316,36 +316,6 @@
   </entry>
   
   <entry>
-    <title>NLP_入门教程</title>
-    <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
-    <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
-    <published>2022-04-13T12:39:00.000Z</published>
-    <updated>2022-12-20T03:57:58.774Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-入门项目&quot;&gt;&lt;a href=&quot;#0-入门项目&quot; class=&quot;headerlink&quot; title=&quot;0 入门项目&quot;&gt;&lt;/a&gt;0 入门项目&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;以下项目可以根据自身兴趣选择性了解&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
-    
-    
-    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>NLP入门教程</title>
     <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
@@ -369,9 +339,39 @@
     <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
     
     
+    <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
     <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
+  </entry>
+  
+  <entry>
+    <title>NLP_入门教程</title>
+    <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
+    <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
+    <published>2022-04-13T12:39:00.000Z</published>
+    <updated>2022-12-20T03:57:58.774Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-入门项目&quot;&gt;&lt;a href=&quot;#0-入门项目&quot; class=&quot;headerlink&quot; title=&quot;0 入门项目&quot;&gt;&lt;/a&gt;0 入门项目&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;以下项目可以根据自身兴趣选择性了解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="https://blog.fdchen.host/categories/NLP/"/>
+    
+    
     <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="教程" scheme="https://blog.fdchen.host/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -460,34 +460,6 @@
   
   <entry>
     <title>Python_常见用法</title>
-    <link href="https://blog.fdchen.host/2022/python-chang-jian-yong-fa/"/>
-    <id>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</id>
-    <published>2022-03-15T19:18:00.000Z</published>
-    <updated>2022-12-20T03:57:36.004Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
-    
-    
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python_常见用法</title>
     <link href="https://blog.fdchen.host/2022/python-ji-ben-yong-fa/"/>
     <id>https://blog.fdchen.host/2022/python-ji-ben-yong-fa/</id>
     <published>2022-03-15T19:18:00.000Z</published>
@@ -515,11 +487,39 @@
   </entry>
   
   <entry>
+    <title>Python_常见用法</title>
+    <link href="https://blog.fdchen.host/2022/python-chang-jian-yong-fa/"/>
+    <id>https://blog.fdchen.host/2022/python-chang-jian-yong-fa/</id>
+    <published>2022-03-15T19:18:00.000Z</published>
+    <updated>2022-12-20T03:57:36.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0-安装环境&quot;&gt;&lt;a href=&quot;#0-安装环境&quot; class=&quot;headerlink&quot; title=&quot;0 安装环境&quot;&gt;&lt;/a&gt;0 安装环境&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;使用PyCharm打开项目时，默认是base环境，如果自定义了环境，需要修改Python</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
+    
+    
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深度学习项目搭建与训练技巧</title>
     <link href="https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
     <id>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
     <published>2022-03-15T13:10:00.000Z</published>
-    <updated>2023-10-12T04:21:59.745Z</updated>
+    <updated>2023-10-15T15:07:07.379Z</updated>
     
     
       
