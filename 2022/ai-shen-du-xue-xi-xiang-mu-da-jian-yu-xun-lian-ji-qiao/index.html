@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.2k
+                    7.3k
                 </div>
                 
 
@@ -606,7 +606,7 @@
 <h3 id="0-5-3-是否已经运行对比模型"><a href="#0-5-3-是否已经运行对比模型" class="headerlink" title="0.5.3 是否已经运行对比模型"></a>0.5.3 是否已经运行对比模型</h3><h3 id="0-5-4-idea是否可行"><a href="#0-5-4-idea是否可行" class="headerlink" title="0.5.4 idea是否可行"></a>0.5.4 idea是否可行</h3><p>有了新的idea不要急于去实现，而是要反复思考其中的合理性与预期的有效性，最好是隔一天或者半天再去实现</p>
 <h3 id="0-5-5-idea是否是在最优模型上的改进"><a href="#0-5-5-idea是否是在最优模型上的改进" class="headerlink" title="0.5.5 idea是否是在最优模型上的改进"></a>0.5.5 idea是否是在最优模型上的改进</h3><p>一定要在当前最优的模型的基础上进行修改，因为提出的改进可能在最优模型上无效</p>
 <h3 id="0-5-6-代码是否正确"><a href="#0-5-6-代码是否正确" class="headerlink" title="0.5.6 代码是否正确"></a>0.5.6 代码是否正确</h3><p>实现代码之后不要马上实验，而是要一步一步地验证代码的正确性，防止出错，可以在一些baseline的基础上进行实验，还可以进行一些必要的可视化</p>
-<h1 id="1-Pytorch使用"><a href="#1-Pytorch使用" class="headerlink" title="1 Pytorch使用"></a>1 Pytorch使用</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
+<h2 id="0-6-Idea有效性的判断"><a href="#0-6-Idea有效性的判断" class="headerlink" title="0.6 Idea有效性的判断"></a>0.6 Idea有效性的判断</h2><h3 id="0-6-1-有没有类似工作，比如设计某种结构解决某类问题"><a href="#0-6-1-有没有类似工作，比如设计某种结构解决某类问题" class="headerlink" title="0.6.1 有没有类似工作，比如设计某种结构解决某类问题"></a>0.6.1 有没有类似工作，比如设计某种结构解决某类问题</h3><h3 id="0-6-2-符不符合人的直觉"><a href="#0-6-2-符不符合人的直觉" class="headerlink" title="0.6.2 符不符合人的直觉"></a>0.6.2 符不符合人的直觉</h3><h3 id="0-6-3-有效的方向往往是简单的，容易理解的"><a href="#0-6-3-有效的方向往往是简单的，容易理解的" class="headerlink" title="0.6.3 有效的方向往往是简单的，容易理解的"></a>0.6.3 有效的方向往往是简单的，容易理解的</h3><h2 id="0-7-研究推进"><a href="#0-7-研究推进" class="headerlink" title="0.7 研究推进"></a>0.7 研究推进</h2><h3 id="0-7-1-一定要有严格的ddl观念"><a href="#0-7-1-一定要有严格的ddl观念" class="headerlink" title="0.7.1 一定要有严格的ddl观念"></a>0.7.1 一定要有严格的ddl观念</h3><h3 id="0-7-2-一定要有周期性地汇报"><a href="#0-7-2-一定要有周期性地汇报" class="headerlink" title="0.7.2 一定要有周期性地汇报"></a>0.7.2 一定要有周期性地汇报</h3><h3 id="0-7-3-一定要管理好进度"><a href="#0-7-3-一定要管理好进度" class="headerlink" title="0.7.3 一定要管理好进度"></a>0.7.3 一定要管理好进度</h3><h1 id="1-Pytorch使用"><a href="#1-Pytorch使用" class="headerlink" title="1 Pytorch使用"></a>1 Pytorch使用</h1><h2 id="1-1-torch-sparse-mm-无法反向传播"><a href="#1-1-torch-sparse-mm-无法反向传播" class="headerlink" title="1.1 torch.sparse.mm 无法反向传播"></a>1.1 torch.sparse.mm 无法反向传播</h2><h2 id="1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态"><a href="#1-2-drpout一般发生在training阶段，Pytorch模型可通过self-training获取状态" class="headerlink" title="1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态"></a>1.2 drpout一般发生在training阶段，Pytorch模型可通过self.training获取状态</h2><ul>
 <li>self.training通过model.train() &#x2F; model.eval() 设置值</li>
 </ul>
 <h2 id="1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型"><a href="#1-3-Pytorch的tensor数值与一般的int等基本数据类型不同，注意用-item-统一类型" class="headerlink" title="1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型"></a>1.3 Pytorch的tensor数值与一般的int等基本数据类型不同，注意用.item()统一类型</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### train_label 为 doK_matrix (0,0) 1.0</span>
@@ -1387,12 +1387,12 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/">
                         <span class="chip bg-color">常见用法</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
                     </a>
                     
                 </div>
@@ -1630,7 +1630,7 @@ threads <span class="token operator">=</span> <span class="token punctuation">[<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">416.5k</span>
+                        class="white-color">416.6k</span>
             
             
             

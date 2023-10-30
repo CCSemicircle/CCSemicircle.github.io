@@ -38,7 +38,7 @@
 </script>
 
 
-    <title>NLP_入门教程 | fdChen的掉发收集箱</title>
+    <title>NLP入门教程 | fdChen的掉发收集箱</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/css/loading.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccsemicircle/cdn/libs/awesome/css/all.min.css">
@@ -326,7 +326,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">NLP_入门教程</h1>
+                    <h1 class="description center-align post-title">NLP入门教程</h1>
                 </div>
             </div>
         </div>
@@ -480,14 +480,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    111
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    9 分
                 </div>
                 
 
@@ -523,6 +523,144 @@
 <h2 id="0-2-文本分类"><a href="#0-2-文本分类" class="headerlink" title="0.2 文本分类"></a>0.2 文本分类</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73176084">中文文本分类 pytorch实现</a></li>
 </ul>
+<h1 id="1-常见概念"><a href="#1-常见概念" class="headerlink" title="1 常见概念"></a>1 常见概念</h1><h2 id="1-1-曝光偏差（exposure-bias）"><a href="#1-1-曝光偏差（exposure-bias）" class="headerlink" title="1.1 曝光偏差（exposure bias）"></a>1.1 曝光偏差（exposure bias）</h2><ul>
+<li>曝光误差（exposure bias）简单来讲是因为文本生成在训练和推断时的不一致造成的。</li>
+<li>不一致体现在推断和训练时使用的输入不同，在训练时每一个词输入都来自真实样本（GroudTruth），但是在推断时当前输入用的却是上一个词的输出（比如在Bert中）。</li>
+</ul>
+<h2 id="1-2-关系抽取中的关系重叠"><a href="#1-2-关系抽取中的关系重叠" class="headerlink" title="1.2 关系抽取中的关系重叠"></a>1.2 关系抽取中的关系重叠</h2><ul>
+<li>Single Entity Overlap (SEO) 单一实体重叠</li>
+<li>Entity Pair Overlap (EPO) 实体对重叠 ：即一个实体对之间存在着多种关系</li>
+<li>Subject Object Overlap (SOO) 主客体重叠 ：既是主体，又是客体</li>
+</ul>
+<h2 id="1-3-Byte-Pair-Encoding（BPE）"><a href="#1-3-Byte-Pair-Encoding（BPE）" class="headerlink" title="1.3 Byte Pair Encoding（BPE）"></a>1.3 Byte Pair Encoding（BPE）</h2><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/424631681">理解NLP最重要的编码方式 — Byte Pair Encoding (BPE)，这一篇就够了</a></li>
+</ul>
+<p><strong>BPE每一步都将最常见的一对*相邻数据单位*替换为该数据中没有出现过的一个*新单位*，反复迭代直到满足停止条件。</strong></p>
+<p>假设我们有需要编码（压缩）的数据 aaabdaaabac。相邻字节对（相邻数据单位在BPE中看作相邻字节对） aa 最常出现，因此我们将用一个新字节 Z 替换它。我们现在有了 ZabdZabac，其中 Z &#x3D; aa。下一个常见的字节对是 ab，让我们用 Y 替换它。我们现在有 ZYdZYac，其中 Z &#x3D; aa ，Y &#x3D; ab。剩下的唯一字节对是 ac，它只有一个，所以我们不对它进行编码。我们可以递归地使用字节对编码将 ZY 编码为 X。我们的数据现在已转换为 XdXac，其中 X &#x3D; ZY，Y &#x3D; ab，Z &#x3D; aa。它不能被进一步压缩，因为没有出现多次的字节对。那如何把压缩的编码复原呢？反向执行以上过程就行了。</p>
+<h2 id="1-4-CLS-SEP-UNK-MASK-标志含义"><a href="#1-4-CLS-SEP-UNK-MASK-标志含义" class="headerlink" title="1.4  [CLS] [SEP] [UNK] [MASK] 标志含义"></a>1.4  [CLS] [SEP] [UNK] [MASK] 标志含义</h2><ul>
+<li>[CLS] 标志放在第一个句子的首位，经过 BERT 得到的的表征向量 C 可以用于后续的分类任务。</li>
+<li>[SEP] 标志用于分开两个输入句子，例如输入句子 A 和 B，要在句子 A，B 后面增加 [SEP] 标志。</li>
+<li>[UNK]标志指的是未知字符</li>
+<li>[MASK] 标志用于遮盖句子中的一些单词，将单词用 [MASK] 遮盖之后，再利用 BERT 输出的 [MASK] 向量预测单词是什么。</li>
+</ul>
+<h2 id="2-Transformers"><a href="#2-Transformers" class="headerlink" title="2 Transformers"></a>2 Transformers</h2><h2 id="2-1-tokenizer"><a href="#2-1-tokenizer" class="headerlink" title="2.1 tokenizer"></a>2.1 tokenizer</h2><h3 id="2-1-1-encode和tokeninze方法的区别"><a href="#2-1-1-encode和tokeninze方法的区别" class="headerlink" title="2.1.1 encode和tokeninze方法的区别"></a>2.1.1 encode和tokeninze方法的区别</h3><ul>
+<li>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33293040/article/details/105439750">Transformers包tokenizer.encode()方法源码阅读笔记</a></li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sentence <span class="token operator">=</span> <span class="token string">"Hello, my son is cuting."</span>
+input_ids_method1 <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span>
+    tokenizer<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>sentence<span class="token punctuation">,</span> add_special_tokens<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># Batch size 1</span>
+    <span class="token comment"># tensor([ 101, 7592, 1010, 2026, 2365, 2003, 3013, 2075, 1012,  102])  # 此处add_special_tokens设置为False可以不添加 [cls]、[sep]</span>
+
+input_token2 <span class="token operator">=</span> tokenizer<span class="token punctuation">.</span>tokenize<span class="token punctuation">(</span>sentence<span class="token punctuation">)</span>
+<span class="token comment"># ['hello', ',', 'my', 'son', 'is', 'cut', '##ing', '.']</span>
+input_ids_method2 <span class="token operator">=</span> tokenizer<span class="token punctuation">.</span>convert_tokens_to_ids<span class="token punctuation">(</span>input_token2<span class="token punctuation">)</span>
+<span class="token comment"># tensor([7592, 1010, 2026, 2365, 2003, 3013, 2075, 1012])</span>
+<span class="token comment"># 并没有开头和结尾的标记：[cls]、[sep]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>从例子中可以看出，encode方法可以一步到位地生成对应模型的输入。</li>
+<li>相比之下，tokenize只是用于分词，可以分成WordPiece的类型，并且在分词之后还要手动使用convert_tokens_to_ids方法，比较麻烦。</li>
+<li>通过源码阅读，发现encode方法中调用了tokenize方法，所以在使用的过程中，我们可以通过设置encode方法中的参数，达到转化数据到可训练格式一步到位的目的，下面开始介绍encode的相关参数与具体操作。</li>
+</ul>
+<h2 id="2-2-学习率"><a href="#2-2-学习率" class="headerlink" title="2.2 学习率"></a>2.2 学习率</h2><h3 id="2-2-1-warmup"><a href="#2-2-1-warmup" class="headerlink" title="2.2.1 warmup"></a>2.2.1 warmup</h3><p>warmup是针对学习率learning rate优化的一种策略，主要过程是，在预热期间，学习率从0线性（也可非线性）增加到优化器中的初始预设lr，之后使其学习率从优化器中的初始lr线性降低到0。</p>
+<p><img src="/medias/loading.gif" data-original="https://img.fdchen.host/warmup.png" alt="warmup示例"></p>
+<ul>
+<li>transformers.get_linear_schedule_with_warmup</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">scheduler <span class="token operator">=</span> transformers<span class="token punctuation">.</span>get_linear_schedule_with_warmup<span class="token punctuation">(</span>optimizer<span class="token punctuation">,</span> num_warmup_steps<span class="token operator">=</span>args<span class="token punctuation">.</span>lr_warmup <span class="token operator">*</span> updates_total<span class="token punctuation">,</span> num_training_steps<span class="token operator">=</span>updates_total<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>参数说明：<br>optimizer： 优化器<br>num_warmup_steps：初始预热步数<br>num_training_steps：整个训练过程的总步数</p>
+<p>PS：当<code>num_warmup_steps</code>参数设置为0时，learning rate没有预热的上升过程，只有从初始设定的learning rate 逐渐衰减到0的过程。</p>
+<h1 id="2-常用工具"><a href="#2-常用工具" class="headerlink" title="2 常用工具"></a>2 常用工具</h1><h2 id="2-1-分词"><a href="#2-1-分词" class="headerlink" title="2.1 分词"></a>2.1 分词</h2><h3 id="2-1-1-jieba"><a href="#2-1-1-jieba" class="headerlink" title="2.1.1 jieba"></a>2.1.1 jieba</h3><ul>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/laobai1015/article/details/80420016">jieba分词使用方法</a></p>
+</li>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/207057233">jieba分词-强大的Python 中文分词库</a></p>
+</li>
+<li><p>详见博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Atishoo_13/article/details/86515594">jieba——分词、添加词典、词性标注、Tokenize</a></p>
+</li>
+<li><p>常见用法：</p>
+</li>
+</ul>
+<p><strong><code>jieba.cut</code> 方法接受三个输入参数: 需要分词的字符串；cut_all 参数用来控制是否采用全模式；HMM 参数用来控制是否使用 HMM 模型</strong><br><code>jieba.cut_for_search</code> 方法接受两个参数：需要分词的字符串；是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细<br>待分词的字符串可以是 unicode 或 UTF-8 字符串、GBK 字符串。注意：不建议直接输入 GBK 字符串，可能无法预料地错误解码成 UTF-8<br><code>jieba.cut</code> 以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者用<br><strong><code>jieba.lcut</code> 以及 jieba.lcut_for_search 直接返回 list</strong><br><strong><code>jieba.tokenizer(dictionary=DEFAULT_DICT)</code> 新建自定义分词器，可用于同时使用不同词典。</strong></p>
+<p><code>jieba.dt</code> 为默认分词器，所有全局分词相关函数都是该分词器的映射。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">### cut ###</span>
+<span class="token keyword">import</span> jieba
+seg_list <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span><span class="token string">"杭州的西湖像一颗光彩夺目的明珠。"</span><span class="token punctuation">,</span> cut_all<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Full Mode: "</span> <span class="token operator">+</span> <span class="token string">"/ "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>seg_list<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 全模式</span>
+seg_list <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span><span class="token string">"猛兽总是独行，牛羊才成群结队。"</span><span class="token punctuation">,</span> cut_all<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Default Mode: "</span> <span class="token operator">+</span> <span class="token string">"/ "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>seg_list<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 精确模式</span>
+seg_list <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut<span class="token punctuation">(</span><span class="token string">"知我者谓我心忧，不知我者谓我何求！"</span><span class="token punctuation">)</span>  <span class="token comment"># 默认是精确模式</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"New word recognition: "</span> <span class="token operator">+</span><span class="token string">"/"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>seg_list<span class="token punctuation">)</span><span class="token punctuation">)</span>
+seg_list <span class="token operator">=</span> jieba<span class="token punctuation">.</span>cut_for_search<span class="token punctuation">(</span><span class="token string">"轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。"</span><span class="token punctuation">)</span>  <span class="token comment"># 搜索引擎模式</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Search engine mode: "</span> <span class="token operator">+</span><span class="token string">"/"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>seg_list<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">### tokenize ###</span>
+<span class="token keyword">from</span> __future__ <span class="token keyword">import</span> unicode_literals  <span class="token comment">#将模块中显式出现的所有字符串转为unicode类型</span>
+<span class="token keyword">import</span> jieba
+result <span class="token operator">=</span> jieba<span class="token punctuation">.</span>tokenize<span class="token punctuation">(</span><span class="token string">'永和服装饰品有限公司'</span><span class="token punctuation">)</span> <span class="token comment">#默认模式进行分词，Tokenize: 返回词语在原文的起止位置</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"默认模式为："</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> tk <span class="token keyword">in</span> result<span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"word %s\t\t start: %d \t\t end:%d"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>tk<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tk<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tk<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="3-NLP资源"><a href="#3-NLP资源" class="headerlink" title="3 NLP资源"></a>3 NLP资源</h1><h2 id="3-1-公开数据集与榜单"><a href="#3-1-公开数据集与榜单" class="headerlink" title="3.1 公开数据集与榜单"></a>3.1 公开数据集与榜单</h2><h3 id="3-1-1-关系抽取-Relation-Extraction"><a href="#3-1-1-关系抽取-Relation-Extraction" class="headerlink" title="3.1.1 关系抽取  Relation Extraction"></a>3.1.1 关系抽取  Relation Extraction</h3><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Intro</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/docred">DocRED</a></td>
+<td><strong>DocRED</strong>（<strong>文档级关系提取数据集</strong>）是从维基百科和维基数据构建的关系提取数据集。数据集中的每个文档都带有人工注释，其中包含命名的实体提及、共指信息、句内和句间关系以及支持证据。DocRED需要阅读文档中的多个句子来提取实体并通过综合文档的所有信息来推断它们之间的关系。除了人工注释的数据外，该数据集还提供了大规模的远程监督数据。</td>
+<td>DocRED包含132，375个实体和56，354个关系事实，并在5，053个维基百科文档中进行了注释。除了人工注释的数据外，该数据集还提供了超过101，873个文档的大规模远程监督数据。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/tacred">TACRED</a></td>
+<td>TACRED是一个<strong>大规模的关系提取数据集</strong>，这些示例来自年度TAC知识库群体（TAC KBP）挑战中使用的语料库的新闻线和Web文本。</td>
+<td>TACRED包含106，264个示例，涵盖 TAC KBP 挑战中使用的 41 种关系类型（例如，per：schools_attended 和 org：members），如果没有建立定义的关系，则标记为no_relation。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ace-2005">ACE 2005</a></td>
+<td><strong>ACE 2005 多语言培训语料库</strong>包含用于 2005 年自动内容提取 （ACE） 技术评估的全套英语、阿拉伯语和中文培训数据。</td>
+<td><img src="/medias/loading.gif" data-original="https://production-media.paperswithcode.com/datasets/ACE_2005-0000000755-b06aa98d_mX16X6Q.jpg" alt="ACE2005"></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/semeval-2010-task-8">SemEval-2010 Task 8</a></td>
+<td><strong>SemEval-2010 任务 8</strong> 的数据集是用于<strong>对名词之间互斥语义关系的多路分类</strong>的数据集。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/sota/relation-extraction-on-nyt">NYT </a></td>
+<td>现存NYT数据集的变体，其中包括<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/nyt-h">NYT-H</a>和<a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/nyt11-hrl">NYT11-HRL</a>。NYT-H是<strong>用于远程监督关系提取</strong>的数据集，其中使用DS标记的训练数据，并雇用几个注释器来标记测试数据。</td>
+<td><img src="/medias/loading.gif" data-original="https://production-media.paperswithcode.com/datasets/Screenshot_2021-01-26_at_16.01.22.png" alt="NYT-H"></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/sota/relation-extraction-on-conll04">CoNLL04</a></td>
+<td>现存CoNLL数据集的变体，包含很多<a target="_blank" rel="noopener" href="https://paperswithcode.com/datasets?q=CoNLL04">CoNLL数据集</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ade-corpus">ADE</a></td>
+<td>支持<strong>从医疗病例报告中自动提取</strong>与药物有关的不良反应。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/webnlg">WebNLG</a></td>
+<td><strong>WebNLG <strong>语料库</strong>由三元组组成</strong>，以自然语言文本的形式描述事实（实体和它们之间的关系）和相应的事实。语料库包含最多包含 7 个三元组的集合，以及每个集合的一个或多个参考文本。测试集分为两部分：seen，包含为在训练数据中看到的属于 DBpedia 类别的实体和关系创建的输入;unseen，包含为实体提取的输入和属于 5 个未见过类别的关系。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/chemprot">ChemProt</a></td>
+<td><strong>ChemProt由1，820篇PubMed摘要组成</strong>，其中化学 - 蛋白质相互作用由领域专家注释，并用于BioCreative VI文本挖掘化学 - 蛋白质相互作用共享任务。</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://paperswithcode.com/dataset/ace-2004">ACE2004</a></td>
+<td><strong>ACE 2004多语言培训语料库</strong>包含用于 2004 年自动内容提取 （ACE） 技术评估的全套英文、阿拉伯文和中文训练数据。</td>
+<td></td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -1040,9 +1178,9 @@
                 <a href="/2022/nlp-ru-men-jiao-cheng/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/nlp.jpg" class="responsive-img" alt="NLP入门教程">
+                        <img src="/medias/loading.gif" data-original="https://img.fdchen.host/nlp.jpg" class="responsive-img" alt="NLP_入门教程">
                         
-                        <span class="card-title">NLP入门教程</span>
+                        <span class="card-title">NLP_入门教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1313,7 +1451,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">416.5k</span>
+                        class="white-color">416.6k</span>
             
             
             

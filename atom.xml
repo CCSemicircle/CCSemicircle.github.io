@@ -170,9 +170,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="NLP" scheme="https://blog.fdchen.host/tags/NLP/"/>
-    
     <category term="学习笔记" scheme="https://blog.fdchen.host/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="NLP" scheme="https://blog.fdchen.host/tags/NLP/"/>
     
   </entry>
   
@@ -253,9 +253,9 @@
     <category term="AI" scheme="https://blog.fdchen.host/categories/AI/"/>
     
     
-    <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="笔记" scheme="https://blog.fdchen.host/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="深度学习" scheme="https://blog.fdchen.host/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -341,11 +341,11 @@
   </entry>
   
   <entry>
-    <title>NLP入门教程</title>
+    <title>NLP_入门教程</title>
     <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
     <published>2022-04-13T12:39:00.000Z</published>
-    <updated>2022-12-20T03:57:38.984Z</updated>
+    <updated>2022-12-20T03:57:58.774Z</updated>
     
     
       
@@ -371,11 +371,11 @@
   </entry>
   
   <entry>
-    <title>NLP_入门教程</title>
+    <title>NLP入门教程</title>
     <link href="https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/"/>
     <id>https://blog.fdchen.host/2022/nlp-ru-men-jiao-cheng/</id>
     <published>2022-04-13T12:39:00.000Z</published>
-    <updated>2022-12-20T03:57:58.774Z</updated>
+    <updated>2022-12-20T03:57:38.984Z</updated>
     
     
       
@@ -505,9 +505,9 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
@@ -533,9 +533,9 @@
     <category term="Python" scheme="https://blog.fdchen.host/categories/Python/"/>
     
     
-    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
     <category term="常见用法" scheme="https://blog.fdchen.host/tags/%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95/"/>
+    
+    <category term="环境配置" scheme="https://blog.fdchen.host/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
@@ -544,7 +544,7 @@
     <link href="https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/"/>
     <id>https://blog.fdchen.host/2022/ai-shen-du-xue-xi-xiang-mu-da-jian-yu-xun-lian-ji-qiao/</id>
     <published>2022-03-15T13:10:00.000Z</published>
-    <updated>2023-10-15T15:07:07.379Z</updated>
+    <updated>2023-10-30T13:55:46.741Z</updated>
     
     
       
